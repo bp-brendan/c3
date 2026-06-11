@@ -646,6 +646,8 @@ body {
   position: relative;
   display: inline-block;
   letter-spacing: 0;
+  /* the zeroed tracking would otherwise tighten the gap to the next word */
+  margin-right: 0.35em;
   vertical-align: baseline;
 }
 
@@ -739,19 +741,26 @@ body {
 
 @media (min-width: 768px) {
   .site-footer-inner {
-    grid-template-columns: 1fr auto;
+    /* paragraph keeps the column; actions hug their content on the right */
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: start;
-    row-gap: 1rem;
-    column-gap: 2rem;
+    row-gap: 2rem;
+    column-gap: clamp(3rem, 6vw, 5rem);
   }
   .site-footer-inner > p:first-child {
     grid-column: 1;
     grid-row: 1;
   }
-  .footer-actions {
+  .site-footer .footer-actions {
     grid-column: 2;
     grid-row: 1;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .site-footer .footer-links {
+    flex-direction: column;
+    gap: 0.9rem;
   }
   .site-footer .footer-copyright {
     grid-column: 1 / -1;
@@ -1342,8 +1351,6 @@ a.top-pick:hover,
 }
 
 .event-detail-meta {
-  display: grid;
-  gap: 0.4rem;
   margin-bottom: 1.5rem;
   color: var(--content-ink-muted);
   font-size: 0.78rem;
@@ -1353,11 +1360,41 @@ a.top-pick:hover,
   text-transform: uppercase;
 }
 
+.event-detail-meta > span {
+  display: block;
+  margin-top: 0.4rem;
+}
+
+/* the venue starts its line in full ink with the address running on
+   lighter after it, same treatment as the listing cards (the bare date
+   span is stripped at runtime, so venue and address lead the block) */
+.event-detail-meta > span:nth-child(1),
+.event-detail-meta > span:nth-child(2) {
+  display: inline;
+  margin: 0;
+}
+
+.event-detail-meta > span:nth-child(1) {
+  color: var(--content-ink);
+}
+
+.event-detail-meta > span:nth-child(1)::after {
+  content: " ";
+}
+
+.event-detail-meta > span:nth-child(2) {
+  font-family: Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 /* rule between the venue/address block and the opening/on-view lines */
 .event-detail-meta .meta-when-divider {
   border-top: var(--hairline-light);
   padding-top: 0.65rem;
-  margin-top: 0.25rem;
+  margin-top: 0.65rem;
 }
 
 .event-detail-meta a {
@@ -1401,20 +1438,65 @@ a.top-pick:hover,
   text-transform: uppercase;
 }
 
-/* "Add to calendar:" group — its options read as quiet underlined choices */
-.calendar-cta a {
-  color: inherit;
+/* "+calendar" beside the breadcrumb date: icon button opening a small menu */
+.breadcrumb-calendar {
+  position: relative;
+  flex: none;
+  align-self: center;
+  display: inline-flex;
+}
+
+.calendar-toggle {
+  display: inline-flex;
+  padding: 0.15em;
+  border: 0;
+  background: none;
+  color: var(--content-ink-muted);
+  cursor: pointer;
+}
+
+.calendar-toggle:hover,
+.calendar-toggle[aria-expanded="true"] {
+  color: var(--content-ink);
+}
+
+.calendar-toggle svg {
+  display: block;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.calendar-menu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0; /* expands leftward so it stays on-screen at narrow widths */
+  z-index: 30;
+  display: grid;
+  gap: 0.55rem;
+  min-width: 13rem;
+  padding: 0.8rem 0.95rem;
+  background: var(--content-paper);
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.calendar-menu-label {
+  color: var(--content-ink-muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+}
+
+.calendar-menu a {
+  color: var(--content-ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.breadcrumb .calendar-menu a:hover {
+  color: var(--content-ink);
   text-decoration: underline;
-  text-underline-offset: 0.25em;
-  text-decoration-color: rgba(0, 0, 0, 0.35);
-}
-
-.calendar-cta a:hover {
-  text-decoration-color: currentColor;
-}
-
-.calendar-cta a + a {
-  margin-left: 0.9em;
+  text-underline-offset: 0.2em;
 }
 
 /* ---- Submit form --------------------------------------------------- */

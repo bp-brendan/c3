@@ -208,11 +208,13 @@ Brunswick Building fire of 1989.`;
       const title = document.querySelector('.event-detail-body .event-detail-title');
       if (!title) return;
       const dayDate = breadcrumbDayDate();
-      title.insertAdjacentElement('beforebegin', breadcrumbNav(`
+      const nav = breadcrumbNav(`
       ${origin}${BREADCRUMB_SEP}
       ${dayDate ? `<span class="breadcrumb-date">${detailDate
         ? `<a href="${escapeHtml(localHref(`index.html#archive?date=${detailDate.iso}`))}">${escapeHtml(dayDate)}</a>`
-        : escapeHtml(dayDate)}</span>` : ''}`));
+        : escapeHtml(dayDate)}</span>` : ''}${breadcrumbCalendarHtml()}`);
+      title.insertAdjacentElement('beforebegin', nav);
+      initBreadcrumbCalendar(nav);
     } else if (page === 'tag') {
       const title = document.querySelector('.tag-title');
       if (!title) return;
@@ -585,19 +587,46 @@ Brunswick Building fire of 1989.`;
   // detail pages: drop the bare date line under the title (the Opening line
   // already carries it) and compact the on-view line, linking it to the
   // exhibition's tag page via the card's own tag links (no data files here)
-  // "Add to calendar: This event / All events" in the detail page's
-  // source-links row. Each page has a pre-generated sibling .ics — opening it
-  // lands in whatever calendar app the OS calls default; "All events" is the
-  // sitewide feed
-  const addCalendarLink = () => {
-    const row = document.querySelector('.event-source-links');
-    if (!row || row.querySelector('.calendar-cta')) return;
+  // "+calendar" beside the breadcrumb date: a dropdown offering this event's
+  // pre-generated sibling .ics or the sitewide visualist.ics feed — opening
+  // either lands in whatever calendar app the OS calls default
+  const breadcrumbCalendarHtml = () => {
     const icsFile = location.pathname.split('/').pop().replace(/\.html$/, '.ics');
-    row.insertAdjacentHTML('afterbegin',
-      `<span class="event-source-link calendar-cta">Add to calendar:
-        <a href="${escapeHtml(icsFile)}">This event</a>
-        <a href="${localHref('visualist.ics')}" title="Subscribe to every Visualist event">All events</a>
-      </span>`);
+    return `
+      <span class="breadcrumb-calendar">
+        <button type="button" class="calendar-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Add to calendar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+            <line x1="8" y1="3" x2="8" y2="7"></line>
+            <line x1="16" y1="3" x2="16" y2="7"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+            <line x1="12" y1="13.5" x2="12" y2="18.5"></line>
+            <line x1="9.5" y1="16" x2="14.5" y2="16"></line>
+          </svg>
+        </button>
+        <span class="calendar-menu" hidden>
+          <span class="calendar-menu-label">Add to calendar</span>
+          <a href="${escapeHtml(icsFile)}">This event</a>
+          <a href="${localHref('visualist.ics')}" title="Subscribe to every Visualist event">All Visualist events</a>
+        </span>
+      </span>`;
+  };
+
+  const initBreadcrumbCalendar = nav => {
+    const toggle = nav.querySelector('.calendar-toggle');
+    const menu = nav.querySelector('.calendar-menu');
+    if (!toggle || !menu) return;
+    const setOpen = open => {
+      menu.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () => setOpen(menu.hidden));
+    document.addEventListener('click', event => {
+      if (!menu.hidden && !event.target.closest('.breadcrumb-calendar')) setOpen(false);
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') setOpen(false);
+    });
   };
 
   const initEventDetailMeta = () => {
@@ -630,7 +659,6 @@ Brunswick Building fire of 1989.`;
           /^(opening|on view)/i.test(text)) return;
       span.innerHTML = `<a href="http://maps.google.com/maps?q=${encodeURIComponent(text)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`;
     });
-    addCalendarLink();
     // hairline between the venue/address block and the opening/on-view lines
     const firstWhen = liveSpans.find(s => /^(opening|on view)/i.test(s.textContent.trim()));
     if (firstWhen && firstWhen !== liveSpans[0]) firstWhen.classList.add('meta-when-divider');
