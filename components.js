@@ -482,7 +482,7 @@ Brunswick Building fire of 1989.`;
     const cut = Math.max(0, body.length - 16);
     const head = escapeHtml(body.slice(0, cut));
     const tail = escapeHtml(body.slice(cut));
-    return `<p class="event-description">${head}${href
+    return `<p class="event-description clamp-lines">${head}${href
       ? `<a class="excerpt-fade" href="${escapeHtml(href)}" aria-label="Read more">${tail}</a>`
       : `<span class="excerpt-fade">${tail}</span>`}</p>`;
   };
@@ -795,6 +795,7 @@ Brunswick Building fire of 1989.`;
       const location = document.createElement('div');
       location.className = 'event-location';
       if (venue) location.append(venue);
+      if (venue && address) location.append(' ');
       if (address) location.append(address);
       meta.append(location);
     }

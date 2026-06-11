@@ -1370,6 +1370,11 @@ a.top-pick:hover,
 
 .event-location .event-address {
   font-size: 0.8rem;
+  color: var(--content-ink-muted);
+}
+
+.event-location .event-address a {
+  color: inherit;
 }
 
 .event-schedule .event-when {
