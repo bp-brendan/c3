@@ -464,11 +464,19 @@ Brunswick Building fire of 1989.`;
     return eventDetails(title, href).x || '';
   };
 
+  // scraped excerpts occasionally carry literal character references
+  // (&#8216;) or stray control characters; normalize them before escaping
+  const cleanExcerptText = text => String(text)
+    .replace(/&#(\d+);/g, (m, n) => (Number(n) <= 0x10ffff ? String.fromCodePoint(Number(n)) : m))
+    .replace(/&#x([0-9a-f]+);/gi, (m, n) => (parseInt(n, 16) <= 0x10ffff ? String.fromCodePoint(parseInt(n, 16)) : m))
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '');
+
   // a shortened excerpt (the data marks it with a trailing "...") dissolves
   // at the end instead of showing an ellipsis; the faded tail keeps the link
   // to the event's detail page
   const excerptMarkup = (text, href) => {
     if (!text) return '';
+    text = cleanExcerptText(text);
     const trail = String(text).match(/(\.{3}|…)\s*$/);
     if (!trail) return `<p class="event-description">${escapeHtml(text)}</p>`;
     const body = String(text).slice(0, trail.index).replace(/\s+$/, '');
