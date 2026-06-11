@@ -240,6 +240,10 @@ body {
 }
 
 @media (max-width: 600px) {
+  .tag-invoke {
+    width: 48px;
+    padding: 0;
+  }
   .tag-invoke > span {
     display: none;
   }
@@ -447,7 +451,7 @@ body {
   align-items: center;
   gap: 0.6em;
   flex: 1;
-  padding: 0 0.95em;
+  padding: 0 0.95em 0 0;
   border: none;
   border-right: var(--hairline-light);
   background: transparent;
