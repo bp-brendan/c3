@@ -1253,6 +1253,32 @@
     if (['this-week', 'next-week', 'archive'].includes(initialView)) showView(initialView);
 
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    // tease next week at the bottom of This Week: a full-width strip of its
+    // event images, each linking through to its event page
+    (() => {
+      const items = [...document.querySelectorAll('#view-next-week .event-card')].map(card => {
+        const img = card.querySelector('.event-thumb img');
+        const link = card.querySelector('.event-title a');
+        return img && link ? {
+          src: img.getAttribute('src'),
+          href: link.getAttribute('href'),
+          title: link.textContent.trim()
+        } : null;
+      }).filter(Boolean);
+      if (!items.length) return;
+      const want = 24;
+      const sampled = items.length <= want ? items
+        : Array.from({ length: want }, (_, k) => items[Math.floor(k * (items.length - 1) / (want - 1))]);
+      document.getElementById('view-this-week').insertAdjacentHTML('beforeend', `
+        <div class="week-peek">
+          <h2 class="week-peek-title">Next Week</h2>
+          <div class="week-peek-thumbs">
+            ${sampled.map(item =>
+              `<a href="${escapeHtml(item.href)}" aria-label="${escapeHtml(item.title)}"><img src="${escapeHtml(item.src)}" alt="" loading="lazy"></a>`).join('')}
+          </div>
+        </div>`);
+    })();
     const dateToggle = document.querySelector('.date-toggle');
     const datePanel = document.querySelector('.date-panel');
     const tagToggle = document.querySelector('.tag-toggle');
