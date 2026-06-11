@@ -614,14 +614,13 @@ Brunswick Building fire of 1989.`;
   // detail pages: drop the bare date line under the title (the Opening line
   // already carries it) and compact the on-view line, linking it to the
   // exhibition's tag page via the card's own tag links (no data files here)
-  // "+calendar" beside the breadcrumb date: a dropdown offering this event's
-  // pre-generated sibling .ics or the sitewide visualist.ics feed — opening
-  // either lands in whatever calendar app the OS calls default
+  // "+calendar" beside the breadcrumb date: offers this event's
+  // pre-generated sibling .ics — opening lands in whatever calendar app the OS calls default
   const breadcrumbCalendarHtml = () => {
     const icsFile = location.pathname.split('/').pop().replace(/\.html$/, '.ics');
     return `
       <span class="breadcrumb-calendar">
-        <button type="button" class="calendar-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Add to calendar">
+        <a href="${escapeHtml(icsFile)}" download class="calendar-toggle" aria-label="Add to calendar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="5" width="18" height="16" rx="2"></rect>
             <line x1="8" y1="3" x2="8" y2="7"></line>
@@ -630,33 +629,12 @@ Brunswick Building fire of 1989.`;
             <line x1="12" y1="13.5" x2="12" y2="18.5"></line>
             <line x1="9.5" y1="16" x2="14.5" y2="16"></line>
           </svg>
-        </button>
-        <span class="calendar-menu" hidden>
-          <span class="calendar-menu-label">Add to calendar</span>
-          <a href="${escapeHtml(icsFile)}" download>This event</a>
-          <a href="${localHref('visualist.ics')}" download title="Subscribe to every Visualist event">All Visualist events</a>
-        </span>
+        </a>
       </span>`;
   };
 
   const initBreadcrumbCalendar = nav => {
-    const toggle = nav.querySelector('.calendar-toggle');
-    const menu = nav.querySelector('.calendar-menu');
-    if (!toggle || !menu) return;
-    const setOpen = open => {
-      menu.hidden = !open;
-      toggle.setAttribute('aria-expanded', String(open));
-    };
-    toggle.addEventListener('click', () => setOpen(menu.hidden));
-    // picking an option hands the .ics to the browser and closes the menu
-    menu.querySelectorAll('a').forEach(link =>
-      link.addEventListener('click', () => setOpen(false)));
-    document.addEventListener('click', event => {
-      if (!menu.hidden && !event.target.closest('.breadcrumb-calendar')) setOpen(false);
-    });
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') setOpen(false);
-    });
+    // Menu dropped in favor of direct download, no JS needed
   };
 
   const initEventDetailMeta = () => {

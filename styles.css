@@ -191,15 +191,19 @@ body {
   z-index: 19;
   /* sits flush beneath the tab bar (cancels the band gap), full bleed */
   margin: calc(-1 * var(--band-gap)) calc(-1 * var(--edge)) 1rem;
-  padding: 0.75rem var(--edge);
+  padding: 0 var(--edge);
+  height: 48px;
+  display: flex;
+  align-items: center;
   background: var(--content-paper);
   border-bottom: var(--hairline-light);
 }
 
 .archive-controls {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: 0.6rem;
+  width: 100%;
 }
 
 /* custom tag-picker trigger: tag-shaped icon + selection count */
@@ -229,7 +233,7 @@ body {
   height: 1.05em;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .tag-invoke > span {
     display: none;
   }
