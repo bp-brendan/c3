@@ -602,7 +602,8 @@ body {
 
 /* the tabs row alone pins beneath the collapsed dark row (JS COMPACT) */
 .nav-band {
-  padding: clamp(0.5rem, 1vw, 0.85rem) var(--edge);
+  height: 48px;
+  padding: 0 var(--edge);
   margin-bottom: var(--band-gap);
   position: sticky;
   /* 2px shy of the 48px dark row: its fractional height rounds into the
@@ -610,14 +611,6 @@ body {
      higher z-index, so the overlap is hidden. */
   top: 46px;
   z-index: 20;
-  transition: padding 0.18s ease;
-}
-
-/* once pinned, slim down: just the row, vertically centered, modest margin */
-.nav-band.pinned {
-  height: 48px;
-  padding-top: 0;
-  padding-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
