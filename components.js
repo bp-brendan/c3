@@ -298,12 +298,17 @@ Brunswick Building fire of 1989.`;
       update();
     };
 
+    // the saved accordion position must be read before measure(): its
+    // update() pass writes the store and would clobber the carried-over
+    // value with 0, re-expanding the header on every page change
+    let savedScroll = null;
+    try { savedScroll = localStorage.getItem('visualistHeaderScroll'); } catch {}
+
     measure();
 
     try {
       const navEntry = performance.getEntriesByType('navigation')[0];
       const isFresh = !navEntry || navEntry.type === 'navigate';
-      const savedScroll = localStorage.getItem('visualistHeaderScroll');
       if (isFresh && savedScroll !== null && window.scrollY === 0) {
         window.scrollTo({ top: Number(savedScroll), behavior: 'instant' });
       }

@@ -1715,9 +1715,8 @@
       syncHash();
     });
     renderArchive();
-    if (currentView === 'archive') {
-      requestAnimationFrame(() => scrollToViewTop('archive'));
-    }
+    // no auto-scroll on load: the header accordion stays exactly as the
+    // previous page left it (tab clicks still scroll via showView)
 
   </script>
 
