@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260124-alex-chitty-and-norman-teague-chair-ish@thevisualist.org
+DTSTAMP:20260124T000000Z
+DTSTART;TZID=America/Chicago:20260124T180000
+DTEND;TZID=America/Chicago:20260124T193000
+SUMMARY:Alex Chitty and Norman Teague: Chair-ish
+LOCATION:Cleve Carney Museum of Art\, 425 Fawell Blvd\, Glen Ellyn\, IL 6
+ 0137
+DESCRIPTION:The Cleve Carney Museum of Art will present Chair-ish\, an ex
+ hibition of Chicago-based artists Alex Chitty and Norman Teague\, openin
+ g in January 2026. Working together for the first time\, in this exhibit
+ ion Chitty and Teague explore material\, memory\, and spatial dialogue t
+ hrough...\nMore info: https://thevisualist.org/2026/01/alex-chitty-and-n
+ orman-teague-chair-ish/\nVenue site: https://www.theccma.org/chairish
+URL:https://thevisualist.org/2026/01/alex-chitty-and-norman-teague-chair-
+ ish/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

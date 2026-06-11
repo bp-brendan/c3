@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260131-myungah-hyon-frances-lightbound-embodied-traces@thevisualist
+ .org
+DTSTAMP:20260131T000000Z
+DTSTART;TZID=America/Chicago:20260131T180000
+DTEND;TZID=America/Chicago:20260131T200000
+SUMMARY:Myungah Hyon & Frances Lightbound: Embodied Traces
+LOCATION:the gallery at a + c architects\, 4840 Main St\, Skokie\, IL 600
+ 77
+DESCRIPTION:Embodied Traces: Mapping Memory and Material presents new wor
+ k by artists Myungah Hyon and Frances Lightbound\, whose individual yet 
+ complementary practices explore connections between materiality\, memory
+ \, and perception. With a shared interest in print\, sculpture\, and arc
+ hitectural...\nMore info: https://thevisualist.org/2026/01/myungah-hyon-
+ frances-lightbound-embodied-traces/\nVenue site: https://www.acarchitect
+ s.net/acarchitectsoffice
+URL:https://thevisualist.org/2026/01/myungah-hyon-frances-lightbound-embo
+ died-traces/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

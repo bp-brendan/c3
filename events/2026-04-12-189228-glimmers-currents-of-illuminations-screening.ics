@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260412-glimmers-currents-of-illuminations-screening@thevisualist.or
+ g
+DTSTAMP:20260412T000000Z
+DTSTART;TZID=America/Chicago:20260412T120000
+DTEND;TZID=America/Chicago:20260412T180000
+SUMMARY:Glimmers: Currents of Illuminations – Screening
+LOCATION:ACRE Projects\, 2921 N Clark St\, Chicago\, IL 60657
+DESCRIPTION:Join us at ACRE Projects for an all-day video screening as pa
+ rt of programming for Glimmers: Currents of Illuminations featuring arti
+ sts glimmering in critical brilliance. Featured Artists Angel Lartigue M
+ arcos Serafim Koyoltzintli Angelina Ruiz Jesús Hilario-Reyes Victoria M
+ artinez...\nMore info: https://thevisualist.org/2026/04/glimmers-current
+ s-of-illuminations-screening/\nVenue site: https://chuquimarca.com/glimm
+ ers-chicago/
+URL:https://thevisualist.org/2026/04/glimmers-currents-of-illuminations-s
+ creening/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

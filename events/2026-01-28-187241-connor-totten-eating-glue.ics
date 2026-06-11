@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260128-connor-totten-eating-glue@thevisualist.org
+DTSTAMP:20260128T000000Z
+DTSTART;TZID=America/Chicago:20260128T160000
+DTEND;TZID=America/Chicago:20260128T180000
+SUMMARY:Connor Totten: Eating Glue
+LOCATION:SAIC SITE Gallery\, 37 S Wabash Ave\, Chicago\, IL 60603
+DESCRIPTION:Please join us for a ribbon cutting and opening reception of 
+ “Eating Glue”\, a solo Exhibition by Connor Totten in the SITE Sharp
+  Gallery on Wednesday\, January 28th from 4:00pm – 6:00pm. Light refre
+ shments and snacks will be served\, including milk and cookies. This exh
+ ibition will be...\nMore info: https://thevisualist.org/2026/01/connor-t
+ otten-eating-glue/\nVenue site: https://sites.saic.edu/sitegalleries/exh
+ ibition/eating-glue/
+URL:https://thevisualist.org/2026/01/connor-totten-eating-glue/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-floating-gardens-of-the-chicago-river-and-mexico@thevisualis
+ t.org
+DTSTAMP:20260509T000000Z
+DTSTART;VALUE=DATE:20260509
+SUMMARY:Floating Gardens of the Chicago River and México
+LOCATION:National Museum of Mexican Art\, 1852 W 19th St\, Chicago\, IL 6
+ 0608
+DESCRIPTION:Xochicago refers to the naming confluence of two waterway sys
+ tems\, one being the Chicago River and the other belonging to Xochimilco
+ \, an ancient settlement which is now a modern borough of Mexico City. T
+ hrough historic\, nostalgic\, and contemporary images and interpretation
+ s of both...\nMore info: https://thevisualist.org/2026/05/floating-garde
+ ns-of-the-chicago-river-and-mexico/\nVenue site: https://nationalmuseumo
+ fmexicanart.org/events/xochicago
+URL:https://thevisualist.org/2026/05/floating-gardens-of-the-chicago-rive
+ r-and-mexico/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260523-softly-it-remains@thevisualist.org
+DTSTAMP:20260523T000000Z
+DTSTART;TZID=America/Chicago:20260523T180000
+DTEND;TZID=America/Chicago:20260523T210000
+SUMMARY:softly\, it remains
+LOCATION:James B. Marco Gallery\, 3721 W Montrose Ave\, Chicago\, IL 6061
+ 8
+DESCRIPTION:softly\, it remains\, a curated group exhibition featuring fi
+ ve emerging artists of Asian\, Asian American and Pacific Islander backg
+ rounds whose practices engage the archive as both medium and strategy. P
+ resented in May for Asian\, Asian American\, and Pacific Islander Herita
+ ge Month\, the...\nMore info: https://thevisualist.org/2026/05/softly-it
+ -remains/\nVenue site: https://www.jamesbmarco.com/
+URL:https://thevisualist.org/2026/05/softly-it-remains/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260609-blatant-gold@thevisualist.org
+DTSTAMP:20260609T000000Z
+DTSTART;TZID=America/Chicago:20260609T180000
+DTEND;TZID=America/Chicago:20260609T210000
+SUMMARY:Blatant Gold
+LOCATION:Haymarket House\, 800 W Buena Ave\, Chicago\, IL 60613
+DESCRIPTION:Every year\, the Chicago Poetry Center’s summer poetry gath
+ ering brings together the city’s literary community. In 2026\, Blatant
+  Gold features Chicago Poet Laureate Mayda del Valle and honors Musu Ban
+ gura\, recipient of the Gwendolyn Brooks Award for Excellence in Teachin
+ g. Join us for...\nMore info: https://thevisualist.org/2026/06/blatant-g
+ old/\nVenue site: https://www.eventbrite.com/e/blatant-gold-2026-tickets
+ -1989120311397
+URL:https://thevisualist.org/2026/06/blatant-gold/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

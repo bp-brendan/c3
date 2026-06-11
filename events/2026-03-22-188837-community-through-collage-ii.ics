@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260322-community-through-collage-ii@thevisualist.org
+DTSTAMP:20260322T000000Z
+DTSTART;TZID=America/Chicago:20260322T180000
+DTEND;TZID=America/Chicago:20260322T200000
+SUMMARY:Community Through Collage II
+LOCATION:Chicago Billiard Cafe\, 5935 W Irving Park Rd\, Chicago\, IL 606
+ 34
+DESCRIPTION:Community Through Collage II features artworks that evoke the
+  vibrant connected world we all are striving to build and nurture in Chi
+ cagoland. Curated by the Chicago Collage Community with the intention of
+  highlighting the artform\, each piece was created by a locally-based ar
+ tist...\nMore info: https://thevisualist.org/2026/03/community-through-c
+ ollage-ii/\nVenue site: https://thechicagobilliardcafe.com/
+URL:https://thevisualist.org/2026/03/community-through-collage-ii/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

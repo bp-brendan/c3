@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260418-erik-jon-olson-what-a-waste@thevisualist.org
+DTSTAMP:20260418T000000Z
+DTSTART;TZID=America/Chicago:20260418T170000
+DTEND;TZID=America/Chicago:20260418T210000
+SUMMARY:Erik Jon Olson: What. A. WASTE
+LOCATION:ShadowBoxX Gallery\, 116 Washington St\, Waukegan\, IL 60085
+DESCRIPTION:This solo show highlights the work of independent artist Erik
+  Jon Olson. His vivid large-scale works are made of quilted plastic wast
+ e\, and cast a fresh eye on environmental concerns and how unfettered ca
+ pitalism and mass consumption waste our natural resources and damages ou
+ r...\nMore info: https://thevisualist.org/2026/04/erik-jon-olson-what-a-
+ waste/\nVenue site: https://www.manvshadow.com/what-a-waste-exhibition-e
+ rik-jon-olson
+URL:https://thevisualist.org/2026/04/erik-jon-olson-what-a-waste/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

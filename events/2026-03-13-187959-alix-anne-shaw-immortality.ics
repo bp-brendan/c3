@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260313-alix-anne-shaw-immortality@thevisualist.org
+DTSTAMP:20260313T000000Z
+DTSTART;VALUE=DATE:20260313
+SUMMARY:Alix Anne Shaw: Immortality
+LOCATION:Art City\, 1400 N Halsted St\, Chicago\, IL
+DESCRIPTION:Immortality Immortality presents a large-scale model of an en
+ dlessly reproducing cancer cell\, referencing the HeLa cell line taken i
+ n 1951 from Henrietta Lacks\, an African American woman treated for cerv
+ ical cancer. Without her knowledge or consent\, a doctor collected her c
+ ells...\nMore info: https://thevisualist.org/2026/03/alix-anne-shaw-immo
+ rtality/\nVenue site: https://newgallery.online/alix-anne-shaw-immortali
+ ty
+URL:https://thevisualist.org/2026/03/alix-anne-shaw-immortality/
+END:VEVENT
+END:VCALENDAR

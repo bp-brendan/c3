@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260110-family-day-myths-and-legends@thevisualist.org
+DTSTAMP:20260110T000000Z
+DTSTART;TZID=America/Chicago:20260110T110000
+DTEND;TZID=America/Chicago:20260110T150000
+SUMMARY:Family Day | Myths and Legends
+LOCATION:Museum of Contemporary Art Chicago\, 220 E Chicago Ave\, Chicago
+ \, IL 60611
+DESCRIPTION:Folklore\, fantasy\, and fortune! Take inspiration from Firel
+ ei Báez and Yoko Ono to venture forth into a mythical land. Designed fo
+ r children under 12 and their grown-ups\, MCA Family Days invite our you
+ ngest visitors to be the museum’s artists\, thinkers\, and collaborato
+ rs. Access...\nMore info: https://thevisualist.org/2026/01/family-day-my
+ ths-and-legends/\nVenue site: https://visit.mcachicago.org/events/family
+ -day-myths-and-legends/
+URL:https://thevisualist.org/2026/01/family-day-myths-and-legends/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

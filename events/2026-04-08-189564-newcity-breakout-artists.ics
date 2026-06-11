@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260408-newcity-breakout-artists@thevisualist.org
+DTSTAMP:20260408T000000Z
+DTSTART;TZID=America/Chicago:20260408T170000
+DTEND;TZID=America/Chicago:20260408T210000
+SUMMARY:Newcity Breakout Artists
+LOCATION:Chicago Artists Coalition\, 1431 W Hubbard St\, Ste 201\, Chicag
+ o\, IL 60642
+DESCRIPTION:Join us for this year’s Newcity Breakout Artists Exhibition
+ \, an annual event presented in partnership with Newcity. Chicago Artist
+ s Coalition is pleased to announce our partnership with Newcity\, in whi
+ ch CAC will host a centerpiece exhibition of this year’s Newcity Break
+ out Artists...\nMore info: https://thevisualist.org/2026/04/newcity-brea
+ kout-artists/\nVenue site: https://www.eventbrite.com/e/newcity-breakout
+ -artists-23rd-edition-exhibition-opening-tickets-1985751041821?aff=oddtd
+ tcreator&_gl=1*1fkdhl5*_up*MQ..*_ga*MjA1NDY4NTU4MS4xNzc1NDg1MTE1*_ga_TQV
+ ES5V6SH*czE3NzU0ODUxMTQkbzEkZzAkdDE3NzU0ODUxMTQkajYwJGwwJGgw&keep_tld=tr
+ ue
+URL:https://thevisualist.org/2026/04/newcity-breakout-artists/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

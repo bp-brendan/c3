@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260308-can-you-watch-him-while-i-go-smoke@thevisualist.org
+DTSTAMP:20260308T000000Z
+DTSTART;TZID=America/Chicago:20260308T120000
+DTEND;TZID=America/Chicago:20260308T170000
+SUMMARY:Can you watch him while I go smoke?
+LOCATION:Locker Room\, 2320 N Kenmore Ave\, Chicago\, IL 60614
+DESCRIPTION:Locker Room is excited to present – Can you watch him while
+  I go smoke? featuring works and inspirations by Matthew Irving\, from v
+ arious sketchbooks to photographs and designs made during his time as a 
+ student in Chicago and Tokyo. Opening March 8\, 2026 12-5p until March 1
+ 7 Matthew...\nMore info: https://thevisualist.org/2026/03/can-you-watch-
+ him-while-i-go-smoke/\nVenue site: https://www.instagram.com/locker.room
+ .chicago/
+URL:https://thevisualist.org/2026/03/can-you-watch-him-while-i-go-smoke/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

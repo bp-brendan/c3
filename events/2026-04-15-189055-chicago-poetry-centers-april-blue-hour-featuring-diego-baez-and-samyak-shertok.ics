@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260415-chicago-poetry-center-s-april-blue-hour-featuring-diego-baez
+ -and-samyak-shertok@thevisualist.org
+DTSTAMP:20260415T000000Z
+DTSTART;TZID=America/Chicago:20260415T180000
+DTEND;TZID=America/Chicago:20260415T203000
+SUMMARY:Chicago Poetry Center’s April Blue Hour Featuring Diego Baez an
+ d Samyak Shertok
+LOCATION:Haymarket House\, 800 W Buena Ave\, Chicago\, IL 60613
+DESCRIPTION:The Chicago Poetry Center presents BLUE HOUR\, a free monthly
+  in-person reading series and generative writing workshop. Our April fea
+ tured readers are Diego Baez and Samyak Shertok. Each event takes place 
+ at Haymarket House (800 W. Buena) and includes a brief open mic followed
+  by two...\nMore info: https://thevisualist.org/2026/04/chicago-poetry-c
+ enters-april-blue-hour-featuring-diego-baez-and-samyak-shertok/\nVenue s
+ ite: https://www.poetrycenter.org/
+URL:https://thevisualist.org/2026/04/chicago-poetry-centers-april-blue-ho
+ ur-featuring-diego-baez-and-samyak-shertok/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

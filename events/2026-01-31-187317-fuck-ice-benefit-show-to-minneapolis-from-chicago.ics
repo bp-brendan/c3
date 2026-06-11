@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260131-fuck-ice-benefit-show-to-minneapolis-from-chicago@thevisuali
+ st.org
+DTSTAMP:20260131T000000Z
+DTSTART;TZID=America/Chicago:20260131T133000
+DTEND;TZID=America/Chicago:20260131T153000
+SUMMARY:FUCK ICE BENEFIT SHOW TO MINNEAPOLIS FROM CHICAGO
+LOCATION:LOWDOWN\, DM For Address
+DESCRIPTION:This Saturday at 1:30pm there will be a benefit show in suppo
+ rt of Minneapolis 100% of proceeds will go to support mpls directly We w
+ ill also being accepting donations at lowdown that will be brought to Mi
+ nneapolis the next day. Examples of what we are accepting on the flyer. 
+ If you...\nMore info: https://thevisualist.org/2026/01/fuck-ice-benefit-
+ show-to-minneapolis-from-chicago/\nVenue site: https://www.instagram.com
+ /lowdown.chi/
+URL:https://thevisualist.org/2026/01/fuck-ice-benefit-show-to-minneapolis
+ -from-chicago/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

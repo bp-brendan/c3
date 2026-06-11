@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260109-eseosa-edebiri-bittersweet@thevisualist.org
+DTSTAMP:20260109T000000Z
+DTSTART;TZID=America/Chicago:20260109T180000
+DTEND;TZID=America/Chicago:20260109T210000
+SUMMARY:Eseosa Edebiri: bitterSWEET
+LOCATION:Parlour and Ramp\, 2130 W 21st St.\, Chicago\, IL 60608
+DESCRIPTION:⟡ To start off the new year\, we are excited to announce ou
+ r upcoming solo exhibition 𝘣𝘪𝘵𝘵𝘦𝘳𝘚𝘞𝘌𝘌𝘛 
+ by artist and educator Eseosa Edebiri. ⟡ Opening reception is January 
+ 9th 6-9pm. About the work: Breath in\, breath out. How do we contextuali
+ ze grief? What does care for the self look like...\nMore info: https://t
+ hevisualist.org/2026/01/eseosa-edebiri-bittersweet/\nVenue site: https:/
+ /parlourandramp.com/
+URL:https://thevisualist.org/2026/01/eseosa-edebiri-bittersweet/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-hidetaka-suzuki-breathing@thevisualist.org
+DTSTAMP:20260509T000000Z
+DTSTART;TZID=America/Chicago:20260509T120000
+DTEND;TZID=America/Chicago:20260509T170000
+SUMMARY:Hidetaka Suzuki: Breathing
+LOCATION:Ackerman Clarke\, 2544 W Fullerton Ave\, Chicago\, IL 60647
+DESCRIPTION:Tokyo-based painter\, Hidetaka Suzuki’s\, work returns to C
+ hicago after their US solo debut at Ackerman Clarke in 2023. The present
+ ation offers nine new canvases and continues through Saturday\, May 9th.
+  Gallery hours are Wednesday-Saturday from 12-5pm CDT and by appointment
+ .\nMore info: https://thevisualist.org/2026/05/hidetaka-suzuki-breathing
+ -2/\nVenue site: https://ackermanclarke.com/
+URL:https://thevisualist.org/2026/05/hidetaka-suzuki-breathing-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

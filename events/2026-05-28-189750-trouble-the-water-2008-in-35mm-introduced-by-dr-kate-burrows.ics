@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260528-trouble-the-water-2008-in-35mm-introduced-by-dr-kate-burrows
+ @thevisualist.org
+DTSTAMP:20260528T000000Z
+DTSTART;TZID=America/Chicago:20260528T190000
+DTEND;TZID=America/Chicago:20260528T213000
+SUMMARY:TROUBLE THE WATER (2008) in 35mm introduced by Dr. Kate Burrows
+LOCATION:The Block Cinema\, 40 Arts Cir Dr\, Evanston\, IL 60208
+DESCRIPTION:TROUBLE THE WATER (Tia Lessin and Carl Deal\, 2008\, 96 min\,
+  35mm) TROUBLE THE WATER is a stirring documentary centered around the s
+ elf-shot video camera footage of Kimberly Rivers Roberts\, a New Orleans
+  resident and aspiring entrepreneur who captured the harrowing ordeal of
+  Hurricane...\nMore info: https://thevisualist.org/2026/05/trouble-the-w
+ ater-2008-in-35mm-introduced-by-dr-kate-burrows/\nVenue site: https://ww
+ w.blockmuseum.northwestern.edu/cinema/2026/trouble-the-water-2008-in-35m
+ m-introduced-by-dr-kate-burrows.html
+URL:https://thevisualist.org/2026/05/trouble-the-water-2008-in-35mm-intro
+ duced-by-dr-kate-burrows/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

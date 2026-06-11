@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260221-colin-matthes-the-intelligentsia-is-at-the-gates@thevisualis
+ t.org
+DTSTAMP:20260221T000000Z
+DTSTART;TZID=America/Chicago:20260221T130000
+DTEND;TZID=America/Chicago:20260221T150000
+SUMMARY:Colin Matthes: The Intelligentsia is at the Gates
+LOCATION:OS Projects\, 601 Sixth St\, Racine\, WI 53403
+DESCRIPTION:OS Projects is pleased to present “The Intelligentsia is at
+  the Gates\,” a solo exhibition of drawings\, paintings and prints by 
+ Colin Matthes. The exhibition opens on February 21\, 2026 and will be on
+  view through April 11\, 2026. The gallery will host a reception for the
+  artist on...\nMore info: https://thevisualist.org/2026/02/colin-matthes
+ -the-intelligentsia-is-at-the-gates/\nVenue site: https://www.osprojects
+ .art
+URL:https://thevisualist.org/2026/02/colin-matthes-the-intelligentsia-is-
+ at-the-gates/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

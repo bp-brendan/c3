@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260403-a-brief-history-of-chasing-storms-screening@thevisualist.org
+DTSTAMP:20260403T000000Z
+DTSTART;TZID=America/Chicago:20260403T190000
+DTEND;TZID=America/Chicago:20260403T213000
+SUMMARY:A Brief History of Chasing Storms Screening
+LOCATION:Block Museum\, 40 Arts Cir Dr\, Evanston\, IL 60208
+DESCRIPTION:As both a witty\, digressive essay film and an American road 
+ movie\, A BRIEF HISTORY OF CHASING STORMS explores the way that tornadoe
+ s and other extreme weather events shape the geography and the cultural 
+ identity of the Midwest. Miller’s travels across the Great Plain regio
+ n take him...\nMore info: https://thevisualist.org/2026/04/a-brief-histo
+ ry-of-chasing-storms-screening/\nVenue site: https://www.blockmuseum.nor
+ thwestern.edu/cinema/2026/a-brief-history-of-chasing-storms-2025-with-cu
+ rtis-miller-robin-tanamachi.html
+URL:https://thevisualist.org/2026/04/a-brief-history-of-chasing-storms-sc
+ reening/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

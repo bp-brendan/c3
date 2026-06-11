@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260126-w-j-t-mitchell-the-academy-in-a-state-of-siege-pictures-of-a
+ n-institution@thevisualist.org
+DTSTAMP:20260126T000000Z
+DTSTART;TZID=America/Chicago:20260126T170000
+DTEND;TZID=America/Chicago:20260126T190000
+SUMMARY:W. J. T. Mitchell: THE ACADEMY IN A STATE OF SIEGE: PICTURES OF A
+ N INSTITUTION
+LOCATION:The Reva and David Logan Center for the Arts\, 915 E 60th St\, C
+ hicago\, IL 60637
+DESCRIPTION:“THE ACADEMY IN A STATE OF SIEGE: PICTURES OF AN INSTITUTIO
+ N” RSVP encouraged You are invited to join us at the Logan Center for 
+ the Arts for a public lecture by W. J. T. Mitchell titled “THE ACADEMY
+  IN A STATE OF SIEGE: PICTURES OF AN INSTITUTION.” Since there is no d
+ oubt that the...\nMore info: https://thevisualist.org/2026/01/w-j-t-mitc
+ hell-the-academy-in-a-state-of-siege-pictures-of-an-institution/\nVenue 
+ site: https://dova.uchicago.edu/events/w-j-t-mitchell-academy-state-sieg
+ e-pictures-institution
+URL:https://thevisualist.org/2026/01/w-j-t-mitchell-the-academy-in-a-stat
+ e-of-siege-pictures-of-an-institution/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

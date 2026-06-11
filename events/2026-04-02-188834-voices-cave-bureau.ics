@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260402-voices-cave-bureau@thevisualist.org
+DTSTAMP:20260402T000000Z
+DTSTART;TZID=America/Chicago:20260402T173000
+DTEND;TZID=America/Chicago:20260402T183000
+SUMMARY:VOICES: Cave bureau
+LOCATION:UIC School of Architecture\, 845 W Harrison St\, Room 1100\, Chi
+ cago\, IL 60607
+DESCRIPTION:In partnership with the UIC School of Architecture. The Nairo
+ bi-based architectural studio Cave bureau maintains a practice grounded 
+ in the belief that caves are the origins of architecture. Founded by Kab
+ ege Karanja and Stella Mutegi\, the duo has returned to million-year-old
+  caves in...\nMore info: https://thevisualist.org/2026/04/voices-cave-bu
+ reau/\nVenue site: https://gallery400.uic.edu/event/cavebureau/
+URL:https://thevisualist.org/2026/04/voices-cave-bureau/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260122-a-close-look-the-art-of-bruce-conner@thevisualist.org
+DTSTAMP:20260122T000000Z
+DTSTART;TZID=America/Chicago:20260122T153000
+DTEND;TZID=America/Chicago:20260122T163000
+SUMMARY:A Close Look: The Art of Bruce Conner
+LOCATION:Block Museum of Art\, Northwestern University\, 40 Arts Circle D
+ r\, Evanston\, IL 60208
+DESCRIPTION:Artist Bruce Conner (1933-2008) was a relentless innovator wh
+ o experimented across genres\, techniques\, and mediums\, including coll
+ age\, filmmaking\, performance\, and photography. Throughout his career\
+ , he often played the role of provocateur and at times rejected the labe
+ l of “artist\,”...\nMore info: https://thevisualist.org/2026/01/a-cl
+ ose-look-the-art-of-bruce-conner/\nVenue site: https://www.blockmuseum.n
+ orthwestern.edu/events/2026/a-close-look-the-art-of-bruce-conner.html
+URL:https://thevisualist.org/2026/01/a-close-look-the-art-of-bruce-conner
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

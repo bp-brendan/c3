@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260109-mary-lou-zelazny-rendezvous@thevisualist.org
+DTSTAMP:20260109T000000Z
+DTSTART;TZID=America/Chicago:20260109T160000
+DTEND;TZID=America/Chicago:20260109T190000
+SUMMARY:Mary Lou Zelazny: Rendezvous
+LOCATION:Zolla / Lieberman Gallery\, 325 W Huron St\, Chicago\, IL 60654
+DESCRIPTION:Mary Lou Zelazny is a significant figure in Chicago’s art c
+ ommunity and is often associated with the broader legacy of the Chicago 
+ Imagists. Her mixed-media paintings emerge from a lifelong engagement wi
+ th accumulation\, decoration\, and transformation. Influenced early by h
+ er immigrant...\nMore info: https://thevisualist.org/2026/01/mary-lou-ze
+ lazny-rendezvous/\nVenue site: https://www.zollaliebermangallery.com/mar
+ y-lou-zelazny---rendezvous.html
+URL:https://thevisualist.org/2026/01/mary-lou-zelazny-rendezvous/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

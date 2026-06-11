@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260212-severed@thevisualist.org
+DTSTAMP:20260212T000000Z
+DTSTART;TZID=America/Chicago:20260212T180000
+DTEND;TZID=America/Chicago:20260212T200000
+SUMMARY:Severed
+LOCATION:LVL3\, 1542 N Milwaukee Ave\, #3\, Chicago\, IL 60622
+DESCRIPTION:On February 12th\, in recognition of two years of Israel’s 
+ relentless genocide against Palestinians in Gaza\, as well as National D
+ isability Awareness Month in the U.S.\, LVL3 invites you to a screening 
+ of the powerful\, new\, short documentary Severed. Severed follows Moham
+ ad Saleh\, a...\nMore info: https://thevisualist.org/2026/02/severed/\nV
+ enue site: https://lvl3official.com/
+URL:https://thevisualist.org/2026/02/severed/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

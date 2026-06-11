@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260307-the-chicago-alliance-of-visual-artists-2026-annual-members-s
+ how@thevisualist.org
+DTSTAMP:20260307T000000Z
+DTSTART;TZID=America/Chicago:20260307T130000
+DTEND;TZID=America/Chicago:20260307T153000
+SUMMARY:The Chicago Alliance of Visual Artists 2026 Annual Members Show
+LOCATION:Mana Contemporary Chicago\, 2233 S Throop St\, Chicago\, IL 6060
+ 8
+DESCRIPTION:The Chicago Alliance of Visual Artists (CAVA) proudly announc
+ es its annual Member Show to be held for the first time at Mana Contempo
+ rary with works by artists aged 50 and older\, on view March 1-28. The e
+ xhibition will be displayed in the 5th floor gallery space Monday throug
+ h Friday...\nMore info: https://thevisualist.org/2026/03/the-chicago-all
+ iance-of-visual-artists-2026-annual-members-show/\nVenue site: https://w
+ ww.wearecava.org/
+URL:https://thevisualist.org/2026/03/the-chicago-alliance-of-visual-artis
+ ts-2026-annual-members-show/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

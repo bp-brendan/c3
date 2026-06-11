@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260521-nathaniel-mary-quinn-a-love-letter-to-my-mother@thevisualist
+ .org
+DTSTAMP:20260521T000000Z
+DTSTART;TZID=America/Chicago:20260521T170000
+DTEND;TZID=America/Chicago:20260521T200000
+SUMMARY:Nathaniel Mary Quinn: A Love Letter to My Mother
+LOCATION:National Public Housing Museum\, 919 S Ada St\, Chicago\, IL 606
+ 07
+DESCRIPTION:Nathaniel Mary Quinn’s first solo museum show in Chicago ex
+ plores the artist’s formative years growing up in public housing\, whi
+ ch he describes as “my first studio.” Alongside works on canvas and 
+ paper at the new National Public Housing Museum\, the exhibition include
+ s a Robert Taylor...\nMore info: https://thevisualist.org/2026/05/nathan
+ iel-mary-quinn-a-love-letter-to-my-mother/\nVenue site: https://nphm.org
+ /exhibition/nathaniel-mary-quinn-a-love-letter-to-my-mother/
+URL:https://thevisualist.org/2026/05/nathaniel-mary-quinn-a-love-letter-t
+ o-my-mother/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260515-make-a-face-1971-with-filmmaker-karen-sperling@thevisualist.
+ org
+DTSTAMP:20260515T000000Z
+DTSTART;TZID=America/Chicago:20260515T190000
+DTEND;TZID=America/Chicago:20260515T213000
+SUMMARY:MAKE A FACE (1971) with filmmaker Karen Sperling
+LOCATION:The Block Cinema\, 40 Arts Cir Dr\, Evanston\, IL 60208
+DESCRIPTION:MAKE A FACE (Karen Sperling\, 1971\, 90 min\, DCP) – New di
+ gital transfer! In New York in the fall of 1969\, writer-producer Karen 
+ Sperling and writer-director Avraham Tau began shooting MAKE A FACE\, a 
+ 35mm feature in which Sperling would play the leading role of Nina\, a y
+ oung artist...\nMore info: https://thevisualist.org/2026/05/make-a-face-
+ 1971-with-filmmaker-karen-sperling/\nVenue site: https://www.blockmuseum
+ .northwestern.edu/cinema/2026/make-a-face-1971-with-filmmaker-karen-sper
+ ling.html
+URL:https://thevisualist.org/2026/05/make-a-face-1971-with-filmmaker-kare
+ n-sperling/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

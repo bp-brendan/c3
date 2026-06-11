@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260226-sacred-places@thevisualist.org
+DTSTAMP:20260226T000000Z
+DTSTART;VALUE=DATE:20260226
+SUMMARY:Sacred Places
+LOCATION:Bernard Gallery\, 2400 New York Ave\, Whiting IN 46394
+DESCRIPTION:Sacred Places at Bernard Gallery showcases four women artists
+  of the Calumet Region\, who have transformed personal challenges into p
+ owerful creative expression. Through their artwork\, Nancy Natow-Cassidy
+ \, Kerri Mommer\, Cara Schmitt\, and Andrea Williams have found renewed 
+ connection...\nMore info: https://thevisualist.org/2026/02/sacred-places
+ /\nVenue site: https://www.ccsj.edu/student-life/bernard-gallery/
+URL:https://thevisualist.org/2026/02/sacred-places/
+END:VEVENT
+END:VCALENDAR

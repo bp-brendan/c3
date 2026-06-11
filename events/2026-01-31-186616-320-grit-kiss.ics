@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260131-320-grit-kiss@thevisualist.org
+DTSTAMP:20260131T000000Z
+DTSTART;TZID=America/Chicago:20260131T140000
+DTEND;TZID=America/Chicago:20260131T170000
+SUMMARY:320-grit Kiss
+LOCATION:compound yellow\, 244 Lake St\, Oak Park\, IL 60302
+DESCRIPTION:In 320-grit Kiss Pegah Bahador\, Hyeseul Song\, and Yue Xu\, 
+ have organized the space to reflect on desire\, tactility and surface. I
+ ncluding drawings\, photographs\, sculptures and installations\, they ex
+ plore desire as an immanent assemblage that slides along skins\, images\
+ , screens and...\nMore info: https://thevisualist.org/2026/01/320-grit-k
+ iss/\nVenue site: https://compoundyellow.com/
+URL:https://thevisualist.org/2026/01/320-grit-kiss/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260408-thomas-holton-warm-numb-jagged-spiral-hey-teddy@thevisualist
+ .org
+DTSTAMP:20260408T000000Z
+DTSTART;TZID=America/Chicago:20260408T183000
+DTEND;TZID=America/Chicago:20260408T200000
+SUMMARY:Thomas Holton: Warm Numb\, Jagged Spiral\, Hey Teddy!
+LOCATION:Skunk Cabbage Books\, 2826 N Milwaukee Ave\, Chicago\, IL 60618
+DESCRIPTION:Join us for the release of Thomas Holton’s new poetry chapb
+ ook and short film project\, Warm Numb\, Jagged Spiral\, Hey Teddy! alon
+ g with Vera Blossom. Through 15 poems and an accompanying short film\, T
+ homas Holton reckons with nostalgia\, transition\, shame\, friendship\, 
+ and his...\nMore info: https://thevisualist.org/2026/04/thomas-holton-wa
+ rm-numb-jagged-spiral-hey-teddy/\nVenue site: https://www.skunkcabbagebo
+ oks.com/events/4858220260408
+URL:https://thevisualist.org/2026/04/thomas-holton-warm-numb-jagged-spira
+ l-hey-teddy/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

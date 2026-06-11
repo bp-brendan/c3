@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260507-in-the-waves-2017-with-jacquelyn-mills-at-ams-hall@thevisual
+ ist.org
+DTSTAMP:20260507T000000Z
+DTSTART;TZID=America/Chicago:20260507T190000
+DTEND;TZID=America/Chicago:20260507T213000
+SUMMARY:IN THE WAVES (2017) with Jacquelyn Mills at AMS Hall
+LOCATION:Annie May Swift Hall\, 1920 Campus Dr\, Evanston\, IL 60201
+DESCRIPTION:Note: this event will be held at Annie May Swift Hall at Nort
+ hwestern University. Screening starts at 7:00 PM. IN THE WAVES (Jacquely
+ n Mills\, 2017\, 60 min\, DCP) Jacquelyn Mills’ debut feature IN THE W
+ AVES (2017) announced the arrival of an exceptional new voice in experim
+ ental...\nMore info: https://thevisualist.org/2026/05/in-the-waves-2017-
+ with-jacquelyn-mills-at-ams-hall/\nVenue site: https://www.blockmuseum.n
+ orthwestern.edu/cinema/2026/in-the-waves-2017-with-jacquelyn-mills-at-am
+ s-hall.html
+URL:https://thevisualist.org/2026/05/in-the-waves-2017-with-jacquelyn-mil
+ ls-at-ams-hall/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

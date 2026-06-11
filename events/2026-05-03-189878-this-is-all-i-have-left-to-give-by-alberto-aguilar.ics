@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260503-this-is-all-i-have-left-to-give-by-alberto-aguilar@thevisual
+ ist.org
+DTSTAMP:20260503T000000Z
+DTSTART;TZID=America/Chicago:20260503T140000
+DTEND;TZID=America/Chicago:20260503T170000
+SUMMARY:This is all I have left to give by Alberto Aguilar
+LOCATION:Epiphany Center for the Arts\, 201 S Ashland Ave\, Chicago\, IL 
+ 60607
+DESCRIPTION:As humans we have access to an endless amount of ideas Someti
+ mes we do not believe that they are good enough So they sit dormant or f
+ ade away in our subconscious Making ideas into reality is a skill that o
+ ne can develop It’s not necessary for the idea to even be a good one S
+ ometimes...\nMore info: https://thevisualist.org/2026/05/this-is-all-i-h
+ ave-left-to-give-by-alberto-aguilar/\nVenue site: https://epiphanychi.co
+ m/arts/
+URL:https://thevisualist.org/2026/05/this-is-all-i-have-left-to-give-by-a
+ lberto-aguilar/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

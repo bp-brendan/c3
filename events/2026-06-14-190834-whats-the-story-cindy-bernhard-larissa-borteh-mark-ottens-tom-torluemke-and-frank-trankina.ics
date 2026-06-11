@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260614-what-s-the-story-cindy-bernhard-larissa-borteh-mark-ottens-t
+ om-torluemke-and-frank-trankina@thevisualist.org
+DTSTAMP:20260614T000000Z
+DTSTART;TZID=America/Chicago:20260614T150000
+DTEND;TZID=America/Chicago:20260614T180000
+SUMMARY:What’s The Story:  Cindy Bernhard\, Larissa Borteh\, Mark Otten
+ s\, Tom Torluemke\, and Frank Trankina
+LOCATION:Riverside Arts Center\, 32 East Quincy St\, Riverside IL 60546
+DESCRIPTION:The Riverside Arts Center’s Freeark Gallery is pleased to p
+ resent What’s The Story\, guest curated by William Eckhardt Kohler. Th
+ is group exhibition of paintings will feature the art of Cindy Bernhard\
+ , Larissa Borteh\, Mark Ottens\, Tom Torluemke\, and Frank Trankina. Wha
+ t’s The Story...\nMore info: https://thevisualist.org/?p=190834\nVenue
+  site: https://www.riversideartscenter.com/freearksculpturegarden/2026/0
+ 6/whats/the/story
+URL:https://thevisualist.org/?p=190834
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

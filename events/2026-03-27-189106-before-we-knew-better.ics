@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260327-before-we-knew-better@thevisualist.org
+DTSTAMP:20260327T000000Z
+DTSTART;TZID=America/Chicago:20260327T170000
+DTEND;TZID=America/Chicago:20260327T200000
+SUMMARY:Before We Knew Better
+LOCATION:Elise Seigenthaler Gallery\, 1709 W Chicago Ave\, Chicago\, IL 6
+ 0622
+DESCRIPTION:Elise Seigenthaler Gallery is pleased to present Before We Kn
+ ew Better\, a group exhibition featuring Sarah Bedford\, Day Brièrre\, 
+ Josiah Ellner\, and Léa LeFloc’h\, whose practices draw on narrative\
+ , folklore\, and personal mythology to explore our enduring relationship
+  with the natural...\nMore info: https://thevisualist.org/2026/03/before
+ -we-knew-better/\nVenue site: https://eliseseigenthaler.com/
+URL:https://thevisualist.org/2026/03/before-we-knew-better/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260110-jigging-green-luring-bad@thevisualist.org
+DTSTAMP:20260110T000000Z
+DTSTART;TZID=America/Chicago:20260110T140000
+DTEND;TZID=America/Chicago:20260110T190000
+SUMMARY:Jigging Green / Luring Bad
+LOCATION:Watershed Art and Ecology\, 1821 S Racine Ave\, Chicago\, IL 606
+ 47
+DESCRIPTION:Watershed Art & Ecology is pleased to present two bodies of w
+ ork about the global fishing industry: “Jigging Green” by Chang-Chin
+ g Casper Su and “Luring Bad” by Rhett Tsai\, in research collaborati
+ on with Jessica Zi Chen. Fishing is a game between the artificial and th
+ e natural. From...\nMore info: https://thevisualist.org/2026/01/jigging-
+ green-luring-bad/\nVenue site: https://watershed-art.org/
+URL:https://thevisualist.org/2026/01/jigging-green-luring-bad/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

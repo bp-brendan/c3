@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260220-free-screening-bernadette-corporation-lynn-hershman-leeson-l
+ es-levine@thevisualist.org
+DTSTAMP:20260220T000000Z
+DTSTART;TZID=America/Chicago:20260220T180000
+DTEND;TZID=America/Chicago:20260220T190000
+SUMMARY:Free Screening: Bernadette Corporation\, Lynn Hershman Leeson\, L
+ es Levine
+LOCATION:Hans Goodrich\, 1747 S Halsted St\, Chicago\, IL 60608
+DESCRIPTION:Free screening of three artists’ films this Friday at 6 pm 
+ at Hans Goodrich Bernadette Corporation Hell Frozen Over\, 2000 Lynn Her
+ shman Leeson 25 Windows\, A Portrait/Project for Bonwit Teller\, 1976 Le
+ s Levine Made in New York\, 1984 Each of the three films is representati
+ ve of the...\nMore info: https://thevisualist.org/2026/02/free-screening
+ -bernadette-corporation-lynn-hershman-leeson-les-levine/\nVenue site: ht
+ tps://www.hansgoodrich.com
+URL:https://thevisualist.org/2026/02/free-screening-bernadette-corporatio
+ n-lynn-hershman-leeson-les-levine/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

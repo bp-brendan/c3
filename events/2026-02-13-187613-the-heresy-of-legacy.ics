@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260213-the-heresy-of-legacy@thevisualist.org
+DTSTAMP:20260213T000000Z
+DTSTART;TZID=America/Chicago:20260213T170000
+DTEND;TZID=America/Chicago:20260213T200000
+SUMMARY:The Heresy of Legacy
+LOCATION:Volume Gallery\, 1700 W Hubbard St Chicago\, IL 60622
+DESCRIPTION:The Heresy of Legacy\, the first exhibition at Volume Gallery
+ ’s new\, expanded\, space\, explores the cyclical nature of movements 
+ and currents in art\, architecture\, and design—how innovation emerges
+  in friction with established legacies\, and how heresy becomes the foun
+ dation for new...\nMore info: https://thevisualist.org/2026/02/the-heres
+ y-of-legacy/\nVenue site: https://wvvolumes.com/current/
+URL:https://thevisualist.org/2026/02/the-heresy-of-legacy/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

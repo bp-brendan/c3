@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260501-misa-yo-the-shape-of-many@thevisualist.org
+DTSTAMP:20260501T000000Z
+DTSTART;TZID=America/Chicago:20260501T170000
+DTEND;TZID=America/Chicago:20260501T200000
+SUMMARY:Misa Yo: The Shape of Many
+LOCATION:ARC Gallery\, 1463 W Chicago Ave\, Chicago\, IL 60642
+DESCRIPTION:The Shape of Many explores how repetition transforms into for
+ m\, questioning when accumulation is perceived as unity and when labor b
+ ecomes invisible. Working across bronze\, wood\, glass\, and ceramics\, 
+ the exhibition brings together small\, repeated gestures that build into
+  larger...\nMore info: https://thevisualist.org/2026/05/opening-receptio
+ n-for-misa-yo-the-shape-of-many-at-arc-gallery/\nVenue site: https://www
+ .arcgallery.org/exhibitions-archive/misa-yo
+URL:https://thevisualist.org/2026/05/opening-reception-for-misa-yo-the-sh
+ ape-of-many-at-arc-gallery/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

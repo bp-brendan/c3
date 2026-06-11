@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260321-dj-skid-licious@thevisualist.org
+DTSTAMP:20260321T000000Z
+DTSTART;TZID=America/Chicago:20260321T190000
+DTEND;TZID=America/Chicago:20260321T220000
+SUMMARY:DJ SKID LICIOUS
+LOCATION:Timeless Arts Gallery & Studio\, 3040 N Ashland Ave\, Chicago\, 
+ IL\, 60657
+DESCRIPTION:Head to Timeless Arts Gallery & Studio on Saturday\, March 21
+ st for DJ SKID LICIOUS\, spinning all Vinyl 70’s & 80’s Punk\, New W
+ ave & Post Punk classics to benefit The Chicago Cat Rescue. SKID\, front
+  man for David Bowie Tribute Band\, Super Creeps\, can also be found spi
+ nning monthly at...\nMore info: https://thevisualist.org/2026/03/dj-skid
+ -licious/\nVenue site: https://www.facebook.com/share/1C2GGakZqQ/
+URL:https://thevisualist.org/2026/03/dj-skid-licious/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260420-listening-session-thomas-meinecke-and-ben-lamar-gay@thevisua
+ list.org
+DTSTAMP:20260420T000000Z
+DTSTART;TZID=America/Chicago:20260420T180000
+DTEND;TZID=America/Chicago:20260420T200000
+SUMMARY:Listening Session | Thomas Meinecke and Ben LaMar Gay
+LOCATION:Goethe-Institut Chicago\, 150 N Michigan Ave\, Suite 420\, Chica
+ go\, IL 60601
+DESCRIPTION:Join us for a listening session and discussion featuring musi
+ c selected by German author\, musician\, and DJ Thomas Meinecke and comp
+ oser and multi-instrumentalist Ben LaMar Gay. Together\, we’ll explore
+  how music travels across oceans\, countries\, scenes\, and political im
+ aginaries...\nMore info: https://thevisualist.org/2026/04/listening-sess
+ ion-thomas-meinecke-and-ben-lamar-gay/\nVenue site: https://www.goethe.d
+ e/ins/us/en/ver.cfm?event_id=27253164
+URL:https://thevisualist.org/2026/04/listening-session-thomas-meinecke-an
+ d-ben-lamar-gay/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

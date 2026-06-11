@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260312-duplexes@thevisualist.org
+DTSTAMP:20260312T000000Z
+DTSTART;TZID=America/Chicago:20260312T180000
+DTEND;TZID=America/Chicago:20260312T220000
+SUMMARY:Duplexes
+LOCATION:Weatherproof\, 3336 W Lawrence Ave\, #303 Chicago\, IL 60625
+DESCRIPTION:Hey Nate\, Last weekend we hosted a small party and the guest
+ s were enamored with the ceiling’s spectacle\, small hors d’oeuvres 
+ spread on a table centered in the living room with the regular fixings\;
+  the textured screams of “we’re back in New York City baby!”– so
+ mething I loved in...\nMore info: https://thevisualist.org/2026/03/duple
+ xes/\nVenue site: https://weatherproof.zone
+URL:https://thevisualist.org/2026/03/duplexes/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

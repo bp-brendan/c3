@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-lo-marie-windy-city-tells@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T180000
+DTEND;TZID=America/Chicago:20260410T210000
+SUMMARY:Lo Marie: Windy City Tells
+LOCATION:Elephant Room Gallery\, 704 S Wabash Ave\, Chicago\, IL 60605
+DESCRIPTION:“Windy City Tells” is a collection of collage works by ar
+ tist Lo Marie\, that examine social issues within Chicago’s communitie
+ s. Exploring themes of wealth disparity\, racism and exploitation\, Lo M
+ arie creates visual narratives that are rooted in the lived experiences 
+ of Chicago...\nMore info: https://thevisualist.org/2026/04/lo-marie-wind
+ y-city-tells/\nVenue site: https://www.elephantroomgallery.com/
+URL:https://thevisualist.org/2026/04/lo-marie-windy-city-tells/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260222-arthur-wright-music-on-my-mind@thevisualist.org
+DTSTAMP:20260222T000000Z
+DTSTART;TZID=America/Chicago:20260222T120000
+DTEND;TZID=America/Chicago:20260222T130000
+SUMMARY:Arthur Wright: MUSIC ON MY MIND
+LOCATION:Fourth Presbyterian Church\, 126 E Chestnut St. Chicago\, IL 606
+ 1
+DESCRIPTION:Join Arthur in the Loggia Gallery (Fourth Presbyterian Church
+ \, 126 E. Chestnut Street\, Chicago) on Sunday\, February 22 at 12pm to 
+ meet him and chat with him about his work\; and then join us in Borwell 
+ at 12:30pm for an Artist Talk. Wright\, a native of Chicago has been cre
+ ating fine...\nMore info: https://thevisualist.org/2026/02/arthur-wright
+ -music-on-my-mind/\nVenue site: https://www.fourthchurch.org/
+URL:https://thevisualist.org/2026/02/arthur-wright-music-on-my-mind/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

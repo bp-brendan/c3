@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260523-lindsey-dorr-niro-spectral-psalm@thevisualist.org
+DTSTAMP:20260523T000000Z
+DTSTART;TZID=America/Chicago:20260523T140000
+DTEND;TZID=America/Chicago:20260523T180000
+SUMMARY:Lindsey Dorr-Niro: Spectral Psalm
+LOCATION:Compound Yellow\, 244 Lake St\, Oak Park\, IL 60302
+DESCRIPTION:Spectral Psalm A Solo Exhibition by Lindsey Dorr-Niro On View
+ : May 23 – June 20\, 2026 Opening Reception: May 23\, 2-6 PM Compound 
+ Yellow is pleased to present Spectral Psalm\, a solo exhibition by Chica
+ go-based artist Lindsey Dorr-Niro. The exhibition opens on May 23 and wi
+ ll remain on...\nMore info: https://thevisualist.org/2026/05/lindsey-dor
+ r-niro-spectral-psalm/\nVenue site: https://compoundyellow.com/opening-r
+ eception-lindsey-dorrniro-spectral-psalm/
+URL:https://thevisualist.org/2026/05/lindsey-dorr-niro-spectral-psalm/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

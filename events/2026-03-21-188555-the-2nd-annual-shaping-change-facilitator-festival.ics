@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260321-the-2nd-annual-shaping-change-facilitator-festival@thevisual
+ ist.org
+DTSTAMP:20260321T000000Z
+DTSTART;TZID=America/Chicago:20260321T090000
+DTEND;TZID=America/Chicago:20260321T140000
+SUMMARY:The 2nd Annual Shaping Change Facilitator Festival
+LOCATION:Experimental Station\, 6100 S Blackstone Ave\, Chicago\, IL 6063
+ 7
+DESCRIPTION:The Shaping Change Facilitator Festival returns for its secon
+ d year as a gathering for facilitators\, organizers\, cooperative builde
+ rs\, and community leaders committed to strengthening Chicago’s solida
+ rity economy ecosystem. Last year\, more than 60 participants came toget
+ her for a...\nMore info: https://thevisualist.org/2026/03/the-2nd-annual
+ -shaping-change-facilitator-festival/\nVenue site: https://www.zeffy.com
+ /en-US/ticketing/the-2nd-annual-shaping-change-facilitator-festival
+URL:https://thevisualist.org/2026/03/the-2nd-annual-shaping-change-facili
+ tator-festival/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

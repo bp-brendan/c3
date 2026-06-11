@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-lois-baron-real-illusions@thevisualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T140000
+DTEND;TZID=America/Chicago:20260411T180000
+SUMMARY:Lois Baron: REAL ILLUSIONS
+LOCATION:Compound Yellow\, 244 Lake Street\, Oak Park\, IL 60302
+DESCRIPTION:At age 90\, artist Lois Baron revisits the work that first br
+ ought her recognition in New York City during the early years of her car
+ eer. Real Illusions presents Baron’s cut-out paintings of clothing—h
+ ighly illusionistic images mounted flush to the wall so that they appear
+  painted...\nMore info: https://thevisualist.org/2026/04/lois-baron-real
+ -illusions/\nVenue site: https://compoundyellow.com/opening-reception-re
+ al-illusions-works-by-lois-baron/
+URL:https://thevisualist.org/2026/04/lois-baron-real-illusions/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

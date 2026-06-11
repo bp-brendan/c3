@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260525-regin-igloria-mid-day-meditations-for-may@thevisualist.org
+DTSTAMP:20260525T000000Z
+DTSTART;TZID=America/Chicago:20260525T140000
+DTEND;TZID=America/Chicago:20260525T170000
+SUMMARY:Regin Igloria: Mid-day Meditations for May
+LOCATION:Cultivator\, Bray Grove Farm
+DESCRIPTION:Regin Igloria Mid-day Meditations for May Solo Exhibition –
+  Cultivator at Bray Grove Farm Memorial Day\, Monday\, May 25\, 2026\, 2
+ -5pm Cultivator is pleased to present Regin Igloria’s exhibition Mid-d
+ ay Meditations for May during Bray Grove Farm’s Spring Farm Day. This 
+ exhibition...\nMore info: https://thevisualist.org/2026/05/regin-igloria
+ -mid-day-meditations-for-may/\nVenue site: https://www.cultivatorarts.co
+ m/Regin-Igloria.php
+URL:https://thevisualist.org/2026/05/regin-igloria-mid-day-meditations-fo
+ r-may/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

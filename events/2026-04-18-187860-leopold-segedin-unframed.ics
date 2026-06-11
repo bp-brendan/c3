@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260418-leopold-segedin-unframed@thevisualist.org
+DTSTAMP:20260418T000000Z
+DTSTART;TZID=America/Chicago:20260418T160000
+DTEND;TZID=America/Chicago:20260418T200000
+SUMMARY:Leopold Segedin: Unframed
+LOCATION:Space 900\, 816 Dempster St\, Evanston\, IL 60201
+DESCRIPTION:Leopold Segedin began painting in 1942. In a career that span
+ ned nine decades he painted myriad subjects and themes including the bib
+ le and mythology\, musicians\, games\, trains\, Maine and Michigan lands
+ capes\, and self-portraits\, but his focus always returned to Chicago. L
+ eo died...\nMore info: https://thevisualist.org/2026/04/leopold-segedin-
+ unframed/\nVenue site: http://leopoldsegedin.com
+URL:https://thevisualist.org/2026/04/leopold-segedin-unframed/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

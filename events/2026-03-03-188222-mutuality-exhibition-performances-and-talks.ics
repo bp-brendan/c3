@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260303-mutuality-exhibition-performances-and-talks@thevisualist.org
+DTSTAMP:20260303T000000Z
+DTSTART;TZID=America/Chicago:20260303T180000
+DTEND;TZID=America/Chicago:20260303T190000
+SUMMARY:Mutuality Exhibition: Performances and Talks
+LOCATION:Hyde Park Art Center\, 5020 S Cornell Ave\, Chicago\, IL 60615
+DESCRIPTION:Explore the Mutuality exhibition through an interactive publi
+ c program where artists in the Center Program share their ideas\, proces
+ ses\, and inspirations through short talks\, an installation activation\
+ , and audio and haptic performances. Performances by: Amethyst J. Davis 
+ Josué Esaú...\nMore info: https://thevisualist.org/2026/03/mutuality-e
+ xhibition-performances-and-talks/\nVenue site: https://www.hydeparkart.o
+ rg/event/mutuality-exhibition-performances-and-talks/
+URL:https://thevisualist.org/2026/03/mutuality-exhibition-performances-an
+ d-talks/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

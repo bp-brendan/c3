@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260112-chantal-danyluk-uncanny-valley@thevisualist.org
+DTSTAMP:20260112T000000Z
+DTSTART;VALUE=DATE:20260112
+SUMMARY:Chantal Danyluk: Uncanny Valley
+LOCATION:Harold Washington Library Center 8th Floor\, 400 S State St\, Ch
+ icago\, IL 60605
+DESCRIPTION:A new art exhibit\, Uncanny Valley\, opens January 12\, 2026\
+ , on the 8th floor of Harold Washington Library Center. Uncanny Valley\,
+  featuring large-scale oil paintings by Chantal Danyluk\, is the fourth 
+ and final exhibit in the 2025-2026 Eighth Floor Call for Artists cycle. 
+ Danyluk’s work...\nMore info: https://thevisualist.org/2026/01/chantal
+ -danyluk-uncanny-valley/\nVenue site: https://www.chipublib.org/news/exh
+ ibit-uncanny-valley/
+URL:https://thevisualist.org/2026/01/chantal-danyluk-uncanny-valley/
+END:VEVENT
+END:VCALENDAR

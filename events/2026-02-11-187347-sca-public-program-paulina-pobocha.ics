@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260211-sca-public-program-paulina-pobocha@thevisualist.org
+DTSTAMP:20260211T000000Z
+DTSTART;TZID=America/Chicago:20260211T180000
+DTEND;TZID=America/Chicago:20260211T190000
+SUMMARY:SCA Public Program: Paulina Pobocha
+LOCATION:Fullerton Hall\, Art Institute of Chicago\, 111 S Michigan Ave\,
+  Chicago\, IL 60603
+DESCRIPTION:ABOUT THE CURATOR Paulina Pobocha is an art historian\, write
+ r\, and curator\; she currently serves as Chair and Curator of Modern an
+ d Contemporary Art at The Art Institute of Chicago\, where she most rece
+ ntly collaborated with artist Simone Leigh on Critical Fabulations\, an 
+ exhibition...\nMore info: https://thevisualist.org/2026/02/sca-public-pr
+ ogram-paulina-pobocha/\nVenue site: https://scaaic.org/programs-and-even
+ ts/paulina-pobocha
+URL:https://thevisualist.org/2026/02/sca-public-program-paulina-pobocha/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

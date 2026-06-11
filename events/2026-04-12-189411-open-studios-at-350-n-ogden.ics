@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260412-open-studios-at-350-n-ogden@thevisualist.org
+DTSTAMP:20260412T000000Z
+DTSTART;TZID=America/Chicago:20260412T170000
+DTEND;TZID=America/Chicago:20260412T200000
+SUMMARY:Open Studios at 350 N. Ogden
+LOCATION:350 N. Ogden Ave (Second Floor Studios)\, 350 N Ogden Ave\, Chic
+ ago\, IL 60607
+DESCRIPTION:In partnership with Soho House Chicago\, artists at 350 N. Og
+ den’s studios will be opening up their spaces to public visitors. Arti
+ sts include: Olinga Bolden\, Mikey Mosher\, Mac Pierce\, Luba Mendelevic
+ h\, Simone Whiteley-Allen\, Jacob Unze\, Kate Hefferan\, Caleb Schroder 
+ and Kamilah...\nMore info: https://thevisualist.org/2026/04/open-studios
+ -at-350-n-ogden/
+URL:https://thevisualist.org/2026/04/open-studios-at-350-n-ogden/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

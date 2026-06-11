@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260404-alison-ruttan-the-paradox-of-inaction@thevisualist.org
+DTSTAMP:20260404T000000Z
+DTSTART;VALUE=DATE:20260404
+SUMMARY:Alison Ruttan: The Paradox of Inaction
+LOCATION:Hyde Park Art Center\, 5020 S Cornell Ave\, Chicago\, IL 60615
+DESCRIPTION:The Paradox of Inaction is a new site-specific installation b
+ y Alison Ruttan composed of over 160 cast ceramic forms. The ceramic pie
+ ces\, arranged in low-laying platforms throughout the 2300 sq ft gallery
+ \, appear abstract at first glance\, but when seen collectively create t
+ he illusion...\nMore info: https://thevisualist.org/2026/04/alison-rutta
+ n-the-paradox-of-inaction/\nVenue site: https://www.hydeparkart.org/exhi
+ bition-archive/alison-ruttan-the-paradox-of-inaction/
+URL:https://thevisualist.org/2026/04/alison-ruttan-the-paradox-of-inactio
+ n/
+END:VEVENT
+END:VCALENDAR

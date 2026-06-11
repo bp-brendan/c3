@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260501-miya-hannan-resonance@thevisualist.org
+DTSTAMP:20260501T000000Z
+DTSTART;TZID=America/Chicago:20260501T170000
+DTEND;TZID=America/Chicago:20260501T200000
+SUMMARY:Miya Hannan: RESONANCE
+LOCATION:ARC Gallery\, 1463 W Chicago Ave\, Chicago\, IL 60642
+DESCRIPTION:I view the world as composed of layers and linkages of histor
+ y—a chain of lives and events that lead from one to the next. I believ
+ e that landscapes hold honest records of these histories. Using images o
+ f nature and physical objects as storytellers\, my work seeks to preserv
+ e the...\nMore info: https://thevisualist.org/2026/05/miya-hannan-resona
+ nce/\nVenue site: https://www.arcgallery.org/exhibitions-archive/miya-ha
+ nnan
+URL:https://thevisualist.org/2026/05/miya-hannan-resonance/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

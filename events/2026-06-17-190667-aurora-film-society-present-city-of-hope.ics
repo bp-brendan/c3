@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260617-aurora-film-society-present-city-of-hope@thevisualist.org
+DTSTAMP:20260617T000000Z
+DTSTART;TZID=America/Chicago:20260617T183000
+DTEND;TZID=America/Chicago:20260617T220000
+SUMMARY:Aurora Film Society present: City Of Hope
+LOCATION:The Venue\, 21 S Broadway Ave\, IL Aurora 60505
+DESCRIPTION:City Of Hope [1991 / John Sayles] John Sayles remains one of 
+ our greatest independent filmmakers\, & this one is his masterpiece\, as
+  well as one of the most criminally underseen classics of the ‘90s. Ty
+ pical of Sayles’ films\, “City Of Hope” weaves together the tales 
+ of some 2 dozen...\nMore info: https://thevisualist.org/?p=190667\nVenue
+  site: https://www.aurorafilmsociety.org/afs-on-our-screen-presents-city
+ -of-hope-1991-john-sayles-129-min-june-17th/
+URL:https://thevisualist.org/?p=190667
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

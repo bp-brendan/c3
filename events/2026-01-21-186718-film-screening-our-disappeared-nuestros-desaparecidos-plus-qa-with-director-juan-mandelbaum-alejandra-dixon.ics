@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260121-film-screening-our-disappeared-nuestros-desaparecidos-plus-q
+ -a-with-director-juan-mandelbaum-alejandra-dixon@thevisualist.org
+DTSTAMP:20260121T000000Z
+DTSTART;TZID=America/Chicago:20260121T180000
+DTEND;TZID=America/Chicago:20260121T203000
+SUMMARY:Film Screening: Our Disappeared / Nuestros Desaparecidos plus Q&A
+  with director Juan Mandelbaum & Alejandra Dixon
+LOCATION:Chicago Justice Gallery\, 1344 S Halsted St\, Chicago\, IL 60607
+DESCRIPTION:Join the Social Justice Initiative and New Day Films for a fi
+ lm screening of Our Disappeared/Nuestros desaparecidos followed by discu
+ ssion with director Juan Mandelbaum and Alejandra Dixon\, sister of disa
+ ppeared Argentinian activist Patricia Dixon\, who will join us virtually
+ . In the...\nMore info: https://thevisualist.org/2026/01/film-screening-
+ our-disappeared-nuestros-desaparecidos-plus-qa-with-director-juan-mandel
+ baum-alejandra-dixon/\nVenue site: https://sji.uic.edu/events/film-scree
+ ning-our-disappeared-nuestros-desaparecidos-with-qa-with-director-juan-m
+ andelbaum/
+URL:https://thevisualist.org/2026/01/film-screening-our-disappeared-nuest
+ ros-desaparecidos-plus-qa-with-director-juan-mandelbaum-alejandra-dixon/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

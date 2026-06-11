@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260318-chicago-poetry-center-s-march-blue-hour-featuring-april-gibs
+ on-and-mira-cameron@thevisualist.org
+DTSTAMP:20260318T000000Z
+DTSTART;TZID=America/Chicago:20260318T180000
+DTEND;TZID=America/Chicago:20260318T203000
+SUMMARY:Chicago Poetry Center’s March Blue Hour Featuring April Gibson 
+ and Mira Cameron
+LOCATION:Haymarket House\, 800 W Buena Ave\, Chicago\, IL 60613
+DESCRIPTION:The Chicago Poetry Center presents BLUE HOUR\, a free monthly
+  in-person reading series and generative writing workshop. Our March fea
+ tured readers are April Gibson and Mira Cameron. Each event takes place 
+ at Haymarket House (800 W. Buena) and includes a brief open mic followed
+  by two...\nMore info: https://thevisualist.org/2026/03/chicago-poetry-c
+ enters-march-blue-hour-featuring-april-gibson-and-mira-cameron/\nVenue s
+ ite: https://www.poetrycenter.org/
+URL:https://thevisualist.org/2026/03/chicago-poetry-centers-march-blue-ho
+ ur-featuring-april-gibson-and-mira-cameron/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260404-artist-talk-all-directions-at-once-kelly-mckaig-and-deborah-
+ newmark@thevisualist.org
+DTSTAMP:20260404T000000Z
+DTSTART;TZID=America/Chicago:20260404T120000
+DTEND;TZID=America/Chicago:20260404T130000
+SUMMARY:Artist Talk: All Directions At Once\, Kelly McKaig and Deborah Ne
+ wmark
+LOCATION:Beverly Arts Center\, Simmerling Gallery\, 2407 W 111th St\, Chi
+ cago\, IL 60655
+DESCRIPTION:In All Directions At Once brings together the work of mixed m
+ edia artists Kelly McKaig and Deborah Newmark. Both artists create abstr
+ act\, intuitive work using salvaged\, handmade\, and natural materials. 
+ Their practices embrace process\, play\, and experimentation\, resulting
+  in work that...\nMore info: https://thevisualist.org/2026/04/artist-tal
+ k-all-directions-at-once-kelly-mckaig-and-deborah-newmark/\nVenue site: 
+ https://thebeverlyartscenter.com
+URL:https://thevisualist.org/2026/04/artist-talk-all-directions-at-once-k
+ elly-mckaig-and-deborah-newmark/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

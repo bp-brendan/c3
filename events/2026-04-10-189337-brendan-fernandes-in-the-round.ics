@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-brendan-fernandes-in-the-round@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;VALUE=DATE:20260410
+SUMMARY:Brendan Fernandes: In the Round
+LOCATION:The Richard H. Driehaus Museum\, 40 E Erie St\, Chicago\, IL 606
+ 11
+DESCRIPTION:The Driehaus Museum is proud to present Brendan Fernandes: In
+  the Round as the next iteration of our A Tale of Today series that plac
+ es contemporary art in dialogue with the art\, architecture\, and design
+  of the Museum. The Museum’s first artist-in-residence\, Fernandes wil
+ l transform...\nMore info: https://thevisualist.org/2026/04/brendan-fern
+ andes-in-the-round/\nVenue site: https://driehausmuseum.org/exhibition/b
+ rendan-fernandes-in-the-round/Programs
+URL:https://thevisualist.org/2026/04/brendan-fernandes-in-the-round/
+END:VEVENT
+END:VCALENDAR

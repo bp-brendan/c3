@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260213-i-dream-i-cross-the-river-in-one-stride@thevisualist.org
+DTSTAMP:20260213T000000Z
+DTSTART;VALUE=DATE:20260213
+SUMMARY:I Dream I Cross the River in One Stride
+LOCATION:MARIANE IBRAHIM\, 437 N Paulina St\, Chicago\, IL 60622
+DESCRIPTION:Mariane Ibrahim is pleased to present I Dream I Cross the Riv
+ er in One Stride\, a group exhibition that gathers the work of Clémence
+  Gbonon (b. 1994)\, Brittney Leeanne Williams (b. 1990) and Autumn Walla
+ ce (b. 1996). I Dream I Cross the River in One Stride takes Lorraine O
+ ’Grady’s...\nMore info: https://thevisualist.org/2026/02/i-dream-i-c
+ ross-the-river-in-one-stride/\nVenue site: https://marianeibrahim.com/ex
+ hibitions/113-i-dream-i-cross-the-river-in-one-group-exhibition/overview
+ /
+URL:https://thevisualist.org/2026/02/i-dream-i-cross-the-river-in-one-str
+ ide/
+END:VEVENT
+END:VCALENDAR

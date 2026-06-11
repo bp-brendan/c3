@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260606-masasarap-na-panaginip-delicious-dreams@thevisualist.org
+DTSTAMP:20260606T000000Z
+DTSTART;TZID=America/Chicago:20260606T120000
+DTEND;TZID=America/Chicago:20260606T160000
+SUMMARY:Masasarap na Panaginip (Delicious Dreams)
+LOCATION:The Filipino American Historical Society of Chicago Museum (FAHS
+ C) | 3rd Floor Gallery\, Mana Contemporary\, Suite 316\, 2233 S Throop S
+ t\, Chicago\, IL 60608
+DESCRIPTION:The Filipino American Historical Society of Chicago (FAHSC) M
+ useum is thrilled to announce Masasarap na Panaginip (Delicious Dreams)\
+ , a solo exhibition of drawings by Filipina American artist Lisa Villa-M
+ oser\, curated by Lisa Villa-Moser herself\, Set Gozo and James Mamuad\,
+  opening...\nMore info: https://thevisualist.org/2026/06/masasarap-na-pa
+ naginip-delicious-dreams/\nVenue site: https://fanhschicago.wordpress.co
+ m/
+URL:https://thevisualist.org/2026/06/masasarap-na-panaginip-delicious-dre
+ ams/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

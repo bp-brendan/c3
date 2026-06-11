@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260207-sheri-rush-the-dwelling-place-of-spirits@thevisualist.org
+DTSTAMP:20260207T000000Z
+DTSTART;TZID=America/Chicago:20260207T180000
+DTEND;TZID=America/Chicago:20260207T210000
+SUMMARY:Sheri Rush: The Dwelling Place of Spirits
+LOCATION:boundary\, 2334 W. 111th Place
+DESCRIPTION:Sheri Rush The Dwelling Place of Spirits Sheri Rush is a Chic
+ ago-based painter and sculptor whose work responds to the current world 
+ by considering the intersection of identity\, landscape\, and recollecti
+ on. Her work reflects on the current danger to the forest ecosystem whil
+ e...\nMore info: https://thevisualist.org/2026/02/sheri-rush-the-dwellin
+ g-place-of-spirits/\nVenue site: https://www.boundarychicago.space/
+URL:https://thevisualist.org/2026/02/sheri-rush-the-dwelling-place-of-spi
+ rits/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

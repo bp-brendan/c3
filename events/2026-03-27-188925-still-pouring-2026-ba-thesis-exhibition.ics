@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260327-still-pouring-2026-ba-thesis-exhibition@thevisualist.org
+DTSTAMP:20260327T000000Z
+DTSTART;TZID=America/Chicago:20260327T180000
+DTEND;TZID=America/Chicago:20260327T200000
+SUMMARY:still pouring: 2026 BA Thesis Exhibition
+LOCATION:Logan Center Exhibitions\, 915 E 60th St\, Chicago\, IL 60637
+DESCRIPTION:The University of Chicago’s Department of Visual Arts and L
+ ogan Center Exhibitions present the 2026 BA Thesis Exhibition still pour
+ ing featuring works by Lucy Bulley\, Raquel Dawson\, Ayla Eichler\, Sofi
+ a Li\, Gemma Lippman\, and Taylor Pate.\nMore info: https://thevisualist
+ .org/2026/03/still-pouring-2026-ba-thesis-exhibition/\nVenue site: https
+ ://www.loganexhibitions.uchicago.edu/exhibitions/ba2026
+URL:https://thevisualist.org/2026/03/still-pouring-2026-ba-thesis-exhibit
+ ion/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

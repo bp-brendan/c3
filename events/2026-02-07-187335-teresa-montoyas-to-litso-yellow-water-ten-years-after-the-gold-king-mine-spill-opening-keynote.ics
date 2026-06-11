@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260207-teresa-montoya-s-to-itso-yellow-water-ten-years-after-the-go
+ ld-king-mine-spill-opening-keynote@thevisualist.org
+DTSTAMP:20260207T000000Z
+DTSTART;TZID=America/Chicago:20260207T140000
+DTEND;TZID=America/Chicago:20260207T153000
+SUMMARY:Teresa Montoya’s Tó Łitso (Yellow Water): Ten Years after the
+  Gold King Mine Spill: Opening Keynote
+LOCATION:Block Museum of Art\, Northwestern University\, 40 Arts Circle D
+ r\, Evanston\, IL 60208
+DESCRIPTION:Celebrate the opening of Teresa Montoya’s Tó Łitso (Yello
+ w Water): Ten Years after the Gold King Mine Spill. The exhibition explo
+ res the impact of the 2015 Gold King Mine spill on Diné (Navajo) commun
+ ities in the Animas and San Juan watersheds. Combining documentary photo
+ graphs with...\nMore info: https://thevisualist.org/2026/02/teresa-monto
+ yas-to-litso-yellow-water-ten-years-after-the-gold-king-mine-spill-openi
+ ng-keynote/\nVenue site: https://www.blockmuseum.northwestern.edu/exhibi
+ tions/2026/teresa-montoya.html
+URL:https://thevisualist.org/2026/02/teresa-montoyas-to-litso-yellow-wate
+ r-ten-years-after-the-gold-king-mine-spill-opening-keynote/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260307-botanical-readiness@thevisualist.org
+DTSTAMP:20260307T000000Z
+DTSTART;TZID=America/Chicago:20260307T180000
+DTEND;TZID=America/Chicago:20260307T220000
+SUMMARY:Botanical Readiness
+LOCATION:GAG\, 3528 W Fulton Blvd\, Chicago\, IL 60624
+DESCRIPTION:This is a physical manifestation of Botanical Readiness\, a b
+ i-annual online periodical established in 2024. A starting point: film t
+ railer for Garden of Death (1974) https://tinyurl.com/32we6day Artists: 
+ Tom Burtonwood\, Heather Charley\, Sean Desantis\, Jen Donahue\, Cat Gil
+ bert\, Terence...\nMore info: https://thevisualist.org/2026/03/botanical
+ -readiness-2/\nVenue site: https://www.archeospiritist.com/
+URL:https://thevisualist.org/2026/03/botanical-readiness-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

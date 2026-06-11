@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260516-strategies-of-resistance-immigrant-bodies-beyond-assimilatio
+ n-virtual-artist-talk@thevisualist.org
+DTSTAMP:20260516T000000Z
+DTSTART;TZID=America/Chicago:20260516T120000
+DTEND;TZID=America/Chicago:20260516T130000
+SUMMARY:Strategies of Resistance: Immigrant Bodies Beyond Assimilation- V
+ irtual Artist Talk
+LOCATION:Heaven Gallery\, Online
+DESCRIPTION:Opening: Friday\, April 24th\, 7-11 PM On View: April 24th\, 
+ 2026 – June 7th\, 2026 Artist Talk: Saturday\, May 16th\, 12-1PM Artis
+ ts: Lorena Molina\, J Molina-Garcia\, Martín Wannam\, hazel batrezchave
+ z\, Dominique Muñoz\, Victor Yañez-Lazcano Join us for the opening of 
+ our latest exhibition...\nMore info: https://thevisualist.org/2026/05/st
+ rategies-of-resistance-immigrant-bodies-beyond-assimilation-virtual-arti
+ st-talk-2/\nVenue site: https://www.heavengallery.com/blog/strategies-re
+ sistance-immigrant-bodies-beyond-assimilation-opening-reception
+URL:https://thevisualist.org/2026/05/strategies-of-resistance-immigrant-b
+ odies-beyond-assimilation-virtual-artist-talk-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260127-copyright-guidance-for-designers-a-practical-guide-in-the-ag
+ e-of-ai@thevisualist.org
+DTSTAMP:20260127T000000Z
+DTSTART;TZID=America/Chicago:20260127T180000
+DTEND;TZID=America/Chicago:20260127T193000
+SUMMARY:Copyright Guidance for Designers: A practical guide in the age of
+  AI
+LOCATION:Virtual\, Online
+DESCRIPTION:Join us for a practical seminar on copyright guidance for des
+ igners in the age of AI. This event will feature attorneys Faye Vasilopo
+ ulos and Joseph Marinelli from Irwin IP LLP who will guide you through t
+ he fundamentals of copyright law and the evolving legal landscape shaped
+  by AI...\nMore info: https://thevisualist.org/2026/01/copyright-guidanc
+ e-for-designers-a-practical-guide-in-the-age-of-ai-2/\nVenue site: https
+ ://chicagographicdesign.club/programming/copyright-guidance-for-designer
+ s/
+URL:https://thevisualist.org/2026/01/copyright-guidance-for-designers-a-p
+ ractical-guide-in-the-age-of-ai-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

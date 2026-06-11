@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260409-onion-city-opening-reception-at-150-media-stream@thevisualis
+ t.org
+DTSTAMP:20260409T000000Z
+DTSTART;TZID=America/Chicago:20260409T173000
+DTEND;TZID=America/Chicago:20260409T193000
+SUMMARY:ONION CITY OPENING RECEPTION AT 150 MEDIA STREAM
+LOCATION:150 Media Stream\, 150 N Riverside Plaza\, Chicago\, IL 60606
+DESCRIPTION:The Onion City Experimental Film Festival opens on Thursday\,
+  April 9\, 2026 with a digital art installation and reception in the lob
+ by of 150 N. Riverside Plaza from 5:30pm to 7:30pm\, hosted and sponsore
+ d by 150 Media Stream. Digital and new media artist Peter Burr\, known f
+ or his...\nMore info: https://thevisualist.org/2026/04/onion-city-openin
+ g-reception-at-150-media-stream/\nVenue site: https://chicagofilmmakers.
+ org/upcoming-screenings-and-events/onion-city-opening-reception-at-150-m
+ edia-stream-free-rsvp
+URL:https://thevisualist.org/2026/04/onion-city-opening-reception-at-150-
+ media-stream/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

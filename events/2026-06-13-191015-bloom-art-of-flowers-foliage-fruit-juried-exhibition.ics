@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260613-bloom-art-of-flowers-foliage-fruit-juried-exhibition@thevisu
+ alist.org
+DTSTAMP:20260613T000000Z
+DTSTART;TZID=America/Chicago:20260613T130000
+DTEND;TZID=America/Chicago:20260613T150000
+SUMMARY:BLOOM: Art of Flowers\, Foliage & Fruit Juried Exhibition
+LOCATION:Oak Park Art League\, 720 Chicago Ave\, Oak Park\, IL 60302
+DESCRIPTION:This juried exhibition celebrates the diverse ways artists in
+ terpret\, reimagine\, and respond to floral and botanical subjects throu
+ gh contemporary perspectives and explores the timeless yet ever-evolving
+  relationship between humanity and the botanical world. From intimate st
+ udies of...\nMore info: https://thevisualist.org/?p=191015\nVenue site: 
+ https://www.oakparkartleague.org/
+URL:https://thevisualist.org/?p=191015
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

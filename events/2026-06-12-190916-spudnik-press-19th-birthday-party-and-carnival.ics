@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260612-spudnik-press-19th-birthday-party-and-carnival@thevisualist.
+ org
+DTSTAMP:20260612T000000Z
+DTSTART;TZID=America/Chicago:20260612T180000
+DTEND;TZID=America/Chicago:20260612T210000
+SUMMARY:Spudnik Press 19th Birthday Party and Carnival
+LOCATION:Spudnik Press\, 1821 W Hubbard St\, Suite 302 Chicago\, IL 60622
+DESCRIPTION:Step right up and test your luck and skill at our carnival ga
+ mes\, delight in our birthday cake and fine drinks\, then redeem your wi
+ nning tickets at the prize booth for a chance to win prints\, merchandis
+ e\, and more. Nineteen years of ink\, community\, and creativity — and
+  we’re...\nMore info: https://thevisualist.org/?p=190916\nVenue site: 
+ https://www.spudnikpress.org/event/spudnik19/
+URL:https://thevisualist.org/?p=190916
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

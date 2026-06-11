@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260407-cecilia-vicuna-lecture@thevisualist.org
+DTSTAMP:20260407T000000Z
+DTSTART;TZID=America/Chicago:20260407T180000
+DTEND;TZID=America/Chicago:20260407T193000
+SUMMARY:Cecilia Vicuña Lecture
+LOCATION:The Art Institute of Chicago\, Fullerton Hall\, 111 S Michigan A
+ ve\, Chicago\, IL 60603
+DESCRIPTION:Join us for a lecture by artist Cecilia Vicuña followed by a
+ n audience Q & A. Cecilia Vicuña is a Chilean visual artist\, poet\, fi
+ lmmaker\, and activist based in New York. She created the autonomous con
+ cept of “Precarious Art” in the mid-1960s in Chile to name what disa
+ ppears. Her...\nMore info: https://thevisualist.org/2026/04/cecilia-vicu
+ na-lecture/\nVenue site: https://www.saic.edu/events/cecilia-vicuna-lect
+ ure
+URL:https://thevisualist.org/2026/04/cecilia-vicuna-lecture/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

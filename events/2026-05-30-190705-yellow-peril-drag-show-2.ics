@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260530-yellow-peril-drag-show@thevisualist.org
+DTSTAMP:20260530T000000Z
+DTSTART;TZID=America/Chicago:20260530T180000
+DTEND;TZID=America/Chicago:20260530T210000
+SUMMARY:Yellow Peril Drag Show
+LOCATION:The Chinese American Museum of Chicago\, 238 W 23rd St\, Chicago
+ \, IL 60616
+DESCRIPTION:Show your Pride in Chicago’s queer Asian community here in 
+ the heart of Chinatown ✨ To close out AANHPI Heritage Month and set of
+ f upcoming Pride Month festivities\, CAMOC and the Heritage Museum of As
+ ian Art are joining forces to bring back our Pride Kick-off party to cel
+ ebrate...\nMore info: https://thevisualist.org/2026/05/yellow-peril-drag
+ -show-2/\nVenue site: https://www.camochicago.org/events
+URL:https://thevisualist.org/2026/05/yellow-peril-drag-show-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

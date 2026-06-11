@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260109-eleonora-bilinska-my-tribute-to-the-creator@thevisualist.org
+DTSTAMP:20260109T000000Z
+DTSTART;TZID=America/Chicago:20260109T190000
+DTEND;TZID=America/Chicago:20260109T210000
+SUMMARY:Eleonora Bilinska: MY TRIBUTE TO THE CREATOR
+LOCATION:Ukrainian National Museum of Chicago\, 2249 W Superior St\, Chic
+ ago\, IL 60612
+DESCRIPTION:This exhibition is a personal and spiritual tribute to Jesus 
+ Christ — the source of inspiration and light for the artist Eleonora B
+ ilinska. Each painting carries not only an artistic title but also a ded
+ ication to a specific person\, community\, or meaningful theme in human 
+ existence...\nMore info: https://thevisualist.org/2026/01/eleonora-bilin
+ ska-my-tribute-to-the-creator/\nVenue site: http://ukrainiannationalmuse
+ um.org/my-tribute-to-the-creator/
+URL:https://thevisualist.org/2026/01/eleonora-bilinska-my-tribute-to-the-
+ creator/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

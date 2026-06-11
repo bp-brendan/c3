@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260501-jesse-ly-try-take-time-take-time-try@thevisualist.org
+DTSTAMP:20260501T000000Z
+DTSTART;TZID=America/Chicago:20260501T170000
+DTEND;TZID=America/Chicago:20260501T200000
+SUMMARY:Jesse Ly: try\, take time – take time\, try
+LOCATION:Filter Photo\, 1821 W Hubabrd St\, Suite 207 Chicago\, IL 60622
+DESCRIPTION:Filter Photo is pleased to present try\, take time – take t
+ ime\, try\, a solo exhibition by Asian-American artist Jesse Ly. try\, t
+ ake time – take time\, try is a body of developing works compiling pho
+ tographic\, sculptural\, and installation approaches concerned with the 
+ dualities of care...\nMore info: https://thevisualist.org/2026/05/try-ta
+ ke-time-take-time-try-by-jesse-ly/\nVenue site: https://www.filterphoto.
+ org/current-exhibitions/try-take-time-take-time-try
+URL:https://thevisualist.org/2026/05/try-take-time-take-time-try-by-jesse
+ -ly/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

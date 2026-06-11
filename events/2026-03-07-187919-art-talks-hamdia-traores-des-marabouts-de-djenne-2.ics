@@ -1,0 +1,55 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260307-art-talks-hamdia-traore-s-des-marabouts-de-djenne@thevisuali
+ st.org
+DTSTAMP:20260307T000000Z
+DTSTART;TZID=America/Chicago:20260307T123000
+DTEND;TZID=America/Chicago:20260307T133000
+SUMMARY:Art Talks! Hamdia Traoré’s “Des marabouts de Djenné”
+LOCATION:Block Museum of Art\, Northwestern University\, 40 Arts Circle D
+ r\, Evanston\, IL 60208
+DESCRIPTION:Join the Block Museum Student Associates in our galleries for
+  a close look at one or two works on view in Hamdia Traoré’s “Des m
+ arabouts de Djenné” and Muslim Portraiture in Mali. The exhibition of
+ fers perspectives on the storied city of Jenne\, a center of Islamic lea
+ rning\, study\, and...\nMore info: https://thevisualist.org/2026/03/art-
+ talks-hamdia-traores-des-marabouts-de-djenne-2/\nVenue site: https://www
+ .blockmuseum.northwestern.edu/events/2026/2-art-talks-hamdia-traor%C3%A9
+ -des-marabouts-de-djenn%C3%A9.htmldjenn%C3%A9.html%C5%82isto.htmlconvers
+ ation.htmlutm_source=Block+Museum+of+Art+Northwestern+University&utm_cam
+ paign=9b74743135-EMAIL_CAMPAIGN_9_27_2021_COPY_01&utm_medium=email&utm_t
+ erm=0_a04c98ee9f-9b74743135-309161421&mc_cid=9b74743135&mc_eid=369c0b783
+ f
+URL:https://thevisualist.org/2026/03/art-talks-hamdia-traores-des-marabou
+ ts-de-djenne-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

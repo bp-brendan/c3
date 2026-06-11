@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260227-play-002@thevisualist.org
+DTSTAMP:20260227T000000Z
+DTSTART;TZID=America/Chicago:20260227T200000
+DTEND;TZID=America/Chicago:20260227T220000
+SUMMARY:PLAY [002]
+LOCATION:Public Works Gallery\, 2141 W North Ave \,Chicago\, IL 60647
+DESCRIPTION:Join us for our second installment — a night of live electr
+ onics\, experimental techno\, ambient sounds\, with artists making waves
+  in Chicago’s underground. Featuring Urakan @urakan2001 Josh Tong @jos
+ h_tong_ Lokua @lokua Fri. Feb 27th Doors at 8PM\, Show at 830PM 18+ even
+ t $15 suggested...\nMore info: https://thevisualist.org/2026/02/play-002
+ /\nVenue site: https://partiful.com/e/2hvfpua6SWb3513SzWJv?utm_source=Kl
+ aviyo&utm_medium=campaign&utm_campaign=Campaign+Feb+19%2C+2026%2C+3%3A40
+ +PM&utm_id=01KHVXHN16DR8ZBHDACAB13F0N&_kx=5Yks5ds-rFUNgwm058bzWObrfIPKjJ
+ Cy2hyMHqKTEiIViYaXN1hxYrzZbM5xkoMa.V8KEih
+URL:https://thevisualist.org/2026/02/play-002/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

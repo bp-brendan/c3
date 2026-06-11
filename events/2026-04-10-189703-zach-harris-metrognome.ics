@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-zach-harris-metrognome@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T200000
+DTEND;TZID=America/Chicago:20260410T230000
+SUMMARY:Zach Harris – MetroGnome
+LOCATION:Soccer Club Club\, 2921 N Cicero Ave\, Chicago IL 60641
+DESCRIPTION:Soccer Club Club is pleased to announce “MetroGnome”\, a 
+ solo-exhibition by Los Angeles-based artist Zach Harris. “Drawing all 
+ life. Deepest into painting. Loving art from all ages. Don’t believe i
+ n progress. Only poetry of process. Presence\, Imagination\, Execution c
+ an be one. Value...\nMore info: https://thevisualist.org/2026/04/zach-ha
+ rris-metrognome/\nVenue site: https://www.soccerclub.club/
+URL:https://thevisualist.org/2026/04/zach-harris-metrognome/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

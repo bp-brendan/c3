@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260407-maurizio-cattelan-beware-of-yourself-book-signing@thevisuali
+ st.org
+DTSTAMP:20260407T000000Z
+DTSTART;TZID=America/Chicago:20260407T153000
+DTEND;TZID=America/Chicago:20260407T170000
+SUMMARY:MAURIZIO CATTELAN\, BEWARE OF YOURSELF: BOOK SIGNING
+LOCATION:Chicago Athletic Association\, 12 S Michigan Ave\, Chicago\, IL 
+ 60603
+DESCRIPTION:Part autobiography\, part monograph\, part catalogue raisonn
+ é\, Beware of Yourself\, the 400-page volume gathers nearly forty years
+  of the artist’s words—drawn from interviews\, essays\, and conversa
+ tions—deconstructed and reassembled into an unpredictable self-portrai
+ t told with Cattelan’s...\nMore info: https://thevisualist.org/2026/04
+ /maurizio-cattelan-beware-of-yourself-book-signing/\nVenue site: https:/
+ /www.chicagoathletichotel.com/events/#!/e/book-signing-maurizio-cattelan
+ -beware-of-yourself-b8cb5cd5
+URL:https://thevisualist.org/2026/04/maurizio-cattelan-beware-of-yourself
+ -book-signing/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

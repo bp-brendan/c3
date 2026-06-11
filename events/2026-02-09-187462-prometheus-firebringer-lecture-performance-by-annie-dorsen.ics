@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260209-prometheus-firebringer-lecture-performance-by-annie-dorsen@t
+ hevisualist.org
+DTSTAMP:20260209T000000Z
+DTSTART;TZID=America/Chicago:20260209T170000
+DTEND;TZID=America/Chicago:20260209T190000
+SUMMARY:Prometheus Firebringer: Lecture Performance by Annie Dorsen
+LOCATION:The Reva and David Logan Center for the Arts\, 915 E 60th St\, C
+ hicago\, IL 60637
+DESCRIPTION:In ancient Greek mythology\, Prometheus stole the gods’ fir
+ e to give to humans – sparking sudden and dramatic advances in technol
+ ogy and the arts\, and dramatic new sources of conflict. His story is to
+ ld in the 2\,500-year-old Prometheia trilogy attributed to Aeschylus\, o
+ f which only...\nMore info: https://thevisualist.org/2026/02/prometheus-
+ firebringer-lecture-performance-by-annie-dorsen/\nVenue site: https://ne
+ ubauercollegium.uchicago.edu/events/prometheus-firebringer-lecture-perfo
+ rmance-by-annie-dorsen#
+URL:https://thevisualist.org/2026/02/prometheus-firebringer-lecture-perfo
+ rmance-by-annie-dorsen/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

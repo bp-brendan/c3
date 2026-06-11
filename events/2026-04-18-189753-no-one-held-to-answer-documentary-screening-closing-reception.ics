@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260418-no-one-held-to-answer-documentary-screening-closing-receptio
+ n@thevisualist.org
+DTSTAMP:20260418T000000Z
+DTSTART;TZID=America/Chicago:20260418T180000
+DTEND;TZID=America/Chicago:20260418T220000
+SUMMARY:No One Held To Answer – Documentary Screening + Closing Recepti
+ on
+LOCATION:SPACE 01\, 4850 W Bloomingdale Ave\, Chicago\, IL 60639
+DESCRIPTION:Who do we hold accountable for war\, genocide\, and governmen
+ t-enacted violence? ​​’No One Held To Answer’ is a group exhibit
+ ion and fundraiser curated with the support of Chicago Torture Justice M
+ emorials Foundation. ​The closing reception will feature an 8pm screen
+ ing of Letters to...\nMore info: https://thevisualist.org/2026/04/no-one
+ -held-to-answer-documentary-screening-closing-reception/\nVenue site: ht
+ tps://s01.world/
+URL:https://thevisualist.org/2026/04/no-one-held-to-answer-documentary-sc
+ reening-closing-reception/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

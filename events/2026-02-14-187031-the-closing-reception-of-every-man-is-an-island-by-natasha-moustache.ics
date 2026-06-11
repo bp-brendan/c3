@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-the-closing-reception-of-every-man-is-an-island-by-natasha-m
+ oustache@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;TZID=America/Chicago:20260214T170000
+DTEND;TZID=America/Chicago:20260214T200000
+SUMMARY:The Closing Reception of Every Man is an Island by Natasha Mousta
+ che
+LOCATION:Epiphany Center for the Arts\, 201 S Ashland Ave\, Chicago\, IL 
+ 60607
+DESCRIPTION:Metaphysical poet John Donne famously wrote\, “No man is an
+  island\, entire of itself\,” in his 1624 meditation on the interconne
+ ctedness of humanity. In Every Man is an Island\, artist Natasha Moustac
+ he turns this idea inward\, asking what it means to exist both within an
+ d apart. To...\nMore info: https://thevisualist.org/2026/02/the-closing-
+ reception-of-every-man-is-an-island-by-natasha-moustache/\nVenue site: h
+ ttps://epiphanychi.com/arts/
+URL:https://thevisualist.org/2026/02/the-closing-reception-of-every-man-i
+ s-an-island-by-natasha-moustache/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

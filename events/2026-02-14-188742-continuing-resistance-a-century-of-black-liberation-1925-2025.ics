@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-continuing-resistance-a-century-of-black-liberation-1925-202
+ 5@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;VALUE=DATE:20260214
+SUMMARY:Continuing Resistance: A Century of Black Liberation (1925–2025
+ )
+LOCATION:Kavi Gupta\, 835 W Washington Blvd. Chicago\, IL 60607
+DESCRIPTION:Continuing Resistance: A Century of Black Liberation (1925–
+ 2025) positions artistic production within the Black radical tradition a
+ s an enduring site of political imagination and insurgent knowledge acro
+ ss a century of practice. Rather than framing resistance as episodic or 
+ reactive...\nMore info: https://thevisualist.org/2026/02/continuing-resi
+ stance-a-century-of-black-liberation-1925-2025/\nVenue site: https://kav
+ igupta.com/exhibitions/709-continuing-resistance-a-century-of-black-libe
+ ration-19252025-kavi-gupta-washington-blvd.-fl.-1w/
+URL:https://thevisualist.org/2026/02/continuing-resistance-a-century-of-b
+ lack-liberation-1925-2025/
+END:VEVENT
+END:VCALENDAR

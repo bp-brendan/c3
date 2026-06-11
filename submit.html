@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit an Event | The Visualist</title>
+  <link rel="icon" href="visualist-favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="taglines.js"></script>
+  <script src="components.js"></script>
+</head>
+<body data-page="submit">
+
+  <header class="site-header" data-visualist-header></header>
+
+  <main class="site-main submit-main">
+    <div data-visualist-nav></div>
+
+    <section class="view submit-view" aria-labelledby="submit-title">
+      <h1 class="submit-title" id="submit-title">Add Event</h1>
+
+      <form class="submit-form" action="#" method="post" enctype="multipart/form-data">
+        <fieldset class="submit-section">
+          <label class="submit-field" for="event-url">
+            <span>URL <i class="metadata-spinner" data-metadata-spinner hidden aria-hidden="true"></i></span>
+            <input id="event-url" name="post-website" type="url" placeholder="https://example.org/event" autocomplete="url" required>
+          </label>
+          <div class="metadata-preview" data-metadata-preview hidden>
+            <img data-preview-image alt="">
+            <div>
+              <span>Detected</span>
+              <strong data-preview-title></strong>
+              <p data-preview-description></p>
+            </div>
+          </div>
+          <label class="submit-field" for="post-title">
+            <span>Title</span>
+            <input id="post-title" name="post-title" type="text" placeholder="Title of the show or event" required>
+          </label>
+          <div class="submit-field">
+            <span id="post-artists-label">Artists <em class="submit-optional">optional</em></span>
+            <div class="tag-input" data-artist-box>
+              <input id="post-artists" type="text" placeholder="Type to add artists" autocomplete="off" role="combobox" aria-expanded="false" aria-labelledby="post-artists-label">
+              <div class="search-suggest" data-artist-suggest role="listbox" aria-label="Matching artists" hidden></div>
+            </div>
+            <input type="hidden" name="your-artists" data-artists-value>
+          </div>
+          <label class="submit-field" for="post-venue">
+            <span>Venue</span>
+            <div class="typeahead">
+              <input id="post-venue" name="post-venue" type="text" placeholder="Name of the gallery or space" autocomplete="off" role="combobox" aria-expanded="false" required>
+              <div class="search-suggest" data-venue-suggest role="listbox" aria-label="Matching venues" hidden></div>
+            </div>
+          </label>
+          <label class="submit-field" for="post-address">
+            <span>Address</span>
+            <input id="post-address" name="post-address" type="text" placeholder="Address - full mailing address works best" required>
+          </label>
+          <div class="submit-field">
+            <span id="listing-type-label">Listing type</span>
+            <div class="listing-type-toggle" role="radiogroup" aria-labelledby="listing-type-label">
+              <label class="listing-type-option">
+                <input type="radio" name="listing-type" value="event" checked>
+                <span>One-time event</span>
+              </label>
+              <label class="listing-type-option">
+                <input type="radio" name="listing-type" value="exhibition">
+                <span>Multi-day exhibition</span>
+              </label>
+            </div>
+          </div>
+          <div class="submit-row submit-row-3" data-when="event">
+            <label class="submit-field" for="post-event-date">
+              <span>Event Date</span>
+              <input id="post-event-date" name="post-event-date" type="date">
+            </label>
+            <label class="submit-field" for="post-event-start">
+              <span>Start</span>
+              <input id="post-event-start" name="post-event-start" type="text" placeholder="5PM">
+            </label>
+            <label class="submit-field" for="post-event-end">
+              <span>End</span>
+              <input id="post-event-end" name="post-event-end" type="text" placeholder="9PM">
+            </label>
+          </div>
+          <div class="submit-row submit-row-2" data-when="exhibition" hidden>
+            <label class="submit-field" for="post-exhibition-start">
+              <span>Exhibition Start</span>
+              <input id="post-exhibition-start" name="post-exhibition-start" type="date">
+            </label>
+            <label class="submit-field" for="post-exhibition-end">
+              <span>Exhibition End</span>
+              <input id="post-exhibition-end" name="post-exhibition-end" type="date">
+            </label>
+          </div>
+          <label class="submit-field" for="post-image-url" data-image-url-field hidden>
+            <span>Image URL</span>
+            <input id="post-image-url" name="post-image-url" type="url" placeholder="Detected social image URL">
+          </label>
+          <label class="submit-field" for="post-featured-image">
+            <span>Image</span>
+            <input id="post-featured-image" name="your-image-upload" type="file" accept=".jpg,.jpeg,.png,.gif" required>
+            <small class="submit-hint">Images at least 800px wide work best &mdash; listings show the full image uncropped, any height. Install shots and artwork read better than text-heavy flyers.</small>
+          </label>
+          <label class="submit-field" for="post-content">
+            <span>Description</span>
+            <textarea id="post-content" name="post-content" rows="10" required></textarea>
+          </label>
+          <label class="submit-field" for="post-contact-email">
+            <span>Contact Email</span>
+            <input id="post-contact-email" name="ContactE-mail" type="email" required>
+          </label>
+          <div class="submit-field">
+            <span id="post-tags-label">Tags <em class="submit-optional">optional</em></span>
+            <div class="tag-input" data-tag-box>
+              <input id="post-tags" type="text" placeholder="Type to add tags" autocomplete="off" role="combobox" aria-expanded="false" aria-labelledby="post-tags-label">
+              <div class="search-suggest" data-tag-suggest role="listbox" aria-label="Matching tags" hidden></div>
+            </div>
+            <input type="hidden" name="your-tags" data-tags-value>
+          </div>
+        </fieldset>
+
+        <div class="submit-actions">
+          <button class="form-button form-button-primary" type="submit">Submit</button>
+          <p>Prototype only</p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-visualist-footer></footer>
+
+  <script src="tags2026.js"></script>
+  <script>
+    Visualist.renderChrome();
+    Visualist.initHeaderAccordion();
+    Visualist.initDatePickers();
+
+    const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    // one-time event vs multi-day exhibition: show and require only the relevant dates
+    const whenSections = document.querySelectorAll('[data-when]');
+    const setListingType = value => {
+      whenSections.forEach(section => {
+        const active = section.dataset.when === value;
+        section.hidden = !active;
+        section.querySelectorAll('input').forEach(input => { input.required = active; });
+      });
+    };
+    document.querySelectorAll('input[name="listing-type"]').forEach(radio => {
+      radio.addEventListener('change', () => setListingType(radio.value));
+    });
+    setListingType('event');
+
+    // prototype submit: validate, then hand off to the mock confirmation page
+    document.querySelector('.submit-form').addEventListener('submit', event => {
+      event.preventDefault();
+      location.href = 'submitted.html';
+    });
+
+    // ---- type-ahead over TAGS_2026, shared by tags / artists / venue ----
+    const highlightTag = (name, q) => {
+      const at = name.toLowerCase().indexOf(q);
+      if (at < 0) return escapeHtml(name);
+      return escapeHtml(name.slice(0, at)) +
+        `<mark>${escapeHtml(name.slice(at, at + q.length))}</mark>` +
+        escapeHtml(name.slice(at + q.length));
+    };
+
+    const suggestEngine = (input, suggestEl, { allowCreate = true, exclude = () => new Set(), onPick }) => {
+      let options = [];
+      let index = -1;
+      const hide = () => {
+        options = [];
+        index = -1;
+        suggestEl.hidden = true;
+        suggestEl.innerHTML = '';
+        input.setAttribute('aria-expanded', 'false');
+      };
+      const paint = () => {
+        [...suggestEl.querySelectorAll('.search-suggest-item')].forEach((item, i) => {
+          item.classList.toggle('active', i === index);
+          item.setAttribute('aria-selected', String(i === index));
+        });
+      };
+      const render = () => {
+        const raw = input.value.trim();
+        const q = raw.toLowerCase();
+        if (!q) return hideAll();
+        const skip = exclude();
+        const starts = [];
+        const contains = [];
+        for (const tag of TAGS_2026) {
+          if (skip.has(tag.n.toLowerCase())) continue;
+          const name = tag.n.toLowerCase();
+          if (name.startsWith(q)) starts.push(tag);
+          else if (name.includes(q)) contains.push(tag);
+        }
+        options = [...starts, ...contains].slice(0, 7).map(tag => ({ n: tag.n, c: tag.c }));
+        if (allowCreate && !options.some(option => option.n.toLowerCase() === q)) {
+          options.push({ n: raw, create: true });
+        }
+        if (!options.length) return hideAll();
+        index = 0;
+        suggestEl.innerHTML = options.map(option => option.create
+          ? `<button type="button" class="search-suggest-item search-suggest-create" role="option">
+               <span>Create &ldquo;${escapeHtml(option.n)}&rdquo;</span>
+               <span class="search-suggest-count">new tag</span>
+             </button>`
+          : `<button type="button" class="search-suggest-item" role="option">
+               <span>${highlightTag(option.n, q)}</span>
+               <span class="search-suggest-count">${option.c} event${option.c === 1 ? '' : 's'}</span>
+             </button>`).join('');
+        suggestEl.hidden = false;
+        input.setAttribute('aria-expanded', 'true');
+        paint();
+        [...suggestEl.querySelectorAll('.search-suggest-item')].forEach((item, i) => {
+          item.addEventListener('mousedown', event => event.preventDefault());
+          item.addEventListener('click', () => { onPick(options[i]); hide(); });
+          item.addEventListener('mousemove', () => {
+            if (index !== i) { index = i; paint(); }
+          });
+        });
+      };
+      const hideAll = hide;
+      input.addEventListener('input', render);
+      input.addEventListener('blur', hide);
+      input.addEventListener('keydown', event => {
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          if (suggestEl.hidden) return;
+          event.preventDefault();
+          const step = event.key === 'ArrowDown' ? 1 : -1;
+          index = (index + step + options.length) % options.length;
+          paint();
+        } else if (event.key === 'Enter' && !suggestEl.hidden && options[index]) {
+          event.preventDefault();
+          onPick(options[index]);
+          hide();
+        } else if (event.key === 'Escape') {
+          hide();
+        }
+      });
+      return { hide };
+    };
+
+    // chip boxes (tags, artists): committed values become removable chips
+    const createChipField = ({ box, input, suggest, hidden, onAdd, onRemove }) => {
+      const chosen = [];
+      const render = () => {
+        [...box.querySelectorAll('.tag-chip-locked')].forEach(el => el.remove());
+        chosen.forEach((tag, i) => {
+          const chip = document.createElement('span');
+          chip.className = 'tag-chip-locked' + (tag.isNew ? ' tag-chip-new' : '');
+          chip.innerHTML = `${escapeHtml(tag.n)}${tag.isNew ? ' <em>new</em>' : ''}<button type="button" aria-label="Remove ${escapeHtml(tag.n)}">&times;</button>`;
+          chip.querySelector('button').addEventListener('click', () => {
+            chosen.splice(i, 1);
+            render();
+            if (onRemove) onRemove(tag);
+            input.focus();
+          });
+          box.insertBefore(chip, input);
+        });
+        if (hidden) hidden.value = chosen.map(tag => tag.n).join(', ');
+      };
+      const has = name => chosen.some(tag => tag.n.toLowerCase() === name.toLowerCase());
+      // focusAfter is false when another field mirrors a value in
+      const add = (option, focusAfter = true) => {
+        if (!option || !option.n) return;
+        if (!has(option.n)) {
+          chosen.push({ n: option.n, isNew: !!option.create });
+          render();
+          if (focusAfter && onAdd) onAdd(option);
+        }
+        if (focusAfter) {
+          input.value = '';
+          engine.hide();
+          input.focus();
+        }
+      };
+      const remove = name => {
+        const i = chosen.findIndex(tag => tag.n.toLowerCase() === name.toLowerCase());
+        if (i >= 0) {
+          chosen.splice(i, 1);
+          render();
+        }
+      };
+      const commitRaw = () => {
+        const raw = input.value.trim();
+        if (!raw) return;
+        const exact = TAGS_2026.find(tag => tag.n.toLowerCase() === raw.toLowerCase());
+        add(exact ? { n: exact.n } : { n: raw, create: true });
+      };
+      const engine = suggestEngine(input, suggest, {
+        exclude: () => new Set(chosen.map(tag => tag.n.toLowerCase())),
+        onPick: option => add(option)
+      });
+      box.addEventListener('click', () => input.focus());
+      input.addEventListener('keydown', event => {
+        if (event.key === ',') {
+          event.preventDefault();
+          commitRaw();
+        } else if (event.key === 'Enter' && suggest.hidden) {
+          if (input.value.trim()) event.preventDefault();
+          commitRaw();
+        } else if (event.key === 'Backspace' && !input.value && chosen.length) {
+          const removed = chosen.pop();
+          render();
+          if (onRemove) onRemove(removed);
+        }
+      });
+      return { add, remove, has };
+    };
+
+    const tagField = createChipField({
+      box: document.querySelector('[data-tag-box]'),
+      input: document.getElementById('post-tags'),
+      suggest: document.querySelector('[data-tag-suggest]'),
+      hidden: document.querySelector('[data-tags-value]')
+    });
+
+    // artists mirror into the tags by default (removable there if unwanted)
+    const artistField = createChipField({
+      box: document.querySelector('[data-artist-box]'),
+      input: document.getElementById('post-artists'),
+      suggest: document.querySelector('[data-artist-suggest]'),
+      hidden: document.querySelector('[data-artists-value]'),
+      onAdd: option => tagField.add(option, false),
+      onRemove: tag => tagField.remove(tag.n)
+    });
+
+    // the venue mirrors into the tags too, replacing its previous value
+    const venueInput = document.getElementById('post-venue');
+    let venueTag = '';
+    const mirrorVenue = value => {
+      if (venueTag && venueTag.toLowerCase() !== value.toLowerCase()) tagField.remove(venueTag);
+      if (value && !tagField.has(value)) {
+        const known = TAGS_2026.find(tag => tag.n.toLowerCase() === value.toLowerCase());
+        tagField.add(known ? { n: known.n } : { n: value, create: true }, false);
+      }
+      venueTag = value;
+    };
+    suggestEngine(venueInput, document.querySelector('[data-venue-suggest]'), {
+      allowCreate: false,
+      onPick: option => {
+        venueInput.value = option.n;
+        mirrorVenue(option.n);
+      }
+    });
+    venueInput.addEventListener('change', () => mirrorVenue(venueInput.value.trim()));
+
+    const previewEl = document.querySelector('[data-metadata-preview]');
+    const imageUrlField = document.querySelector('[data-image-url-field]');
+    const previewImage = document.querySelector('[data-preview-image]');
+    const previewTitle = document.querySelector('[data-preview-title]');
+    const previewDescription = document.querySelector('[data-preview-description]');
+    const spinner = document.querySelector('[data-metadata-spinner]');
+    const fields = {
+      url: document.querySelector('#event-url'),
+      title: document.querySelector('#post-title'),
+      content: document.querySelector('#post-content'),
+      imageUrl: document.querySelector('#post-image-url'),
+      venue: document.querySelector('#post-venue'),
+      address: document.querySelector('#post-address'),
+      eventDate: document.querySelector('#post-event-date'),
+      eventStart: document.querySelector('#post-event-start'),
+      eventEnd: document.querySelector('#post-event-end'),
+      exhibitionStart: document.querySelector('#post-exhibition-start'),
+      exhibitionEnd: document.querySelector('#post-exhibition-end')
+    };
+
+    const defaultMetadataEndpoint = ['localhost', '127.0.0.1'].includes(location.hostname)
+      ? 'http://127.0.0.1:8787/api/meta'
+      : '/api/meta';
+    const metadataEndpoint = window.VISUALIST_META_ENDPOINT || defaultMetadataEndpoint;
+
+    const fetchMetadata = async url => {
+      const response = await fetch(metadataEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ url })
+      });
+      if (!response.ok) throw new Error('Metadata unavailable');
+      const payload = await response.json();
+      if (!payload.ok || !payload.metadata) throw new Error('Metadata unavailable');
+      return payload.metadata;
+    };
+
+    const datePart = value => String(value || '').match(/\d{4}-\d{2}-\d{2}/)?.[0] || '';
+    const timePart = value => {
+      const match = String(value || '').match(/T(\d{2}):(\d{2})/);
+      if (!match) return '';
+      let hour = Number(match[1]);
+      const minute = match[2];
+      const suffix = hour >= 12 ? 'PM' : 'AM';
+      hour = hour % 12 || 12;
+      return `${hour}${minute === '00' ? '' : `:${minute}`}${suffix}`;
+    };
+    const setIfEmpty = (field, value) => {
+      if (field && value && !field.value) field.value = value;
+    };
+
+    const applyMetadata = metadata => {
+      if (!metadata.title && !metadata.description && !metadata.image) {
+        previewEl.hidden = true;
+        return;
+      }
+
+      setIfEmpty(fields.title, metadata.title);
+      setIfEmpty(fields.content, metadata.description);
+      setIfEmpty(fields.venue, metadata.locationName);
+      setIfEmpty(fields.address, metadata.locationAddress);
+      if (metadata.locationName && !venueTag) mirrorVenue(metadata.locationName);
+
+      const startDate = datePart(metadata.startDate);
+      const endDate = datePart(metadata.endDate);
+      if (startDate && endDate && startDate !== endDate) {
+        const exhibitionRadio = document.querySelector('input[name="listing-type"][value="exhibition"]');
+        exhibitionRadio.checked = true;
+        setListingType('exhibition');
+        setIfEmpty(fields.exhibitionStart, startDate);
+        setIfEmpty(fields.exhibitionEnd, endDate);
+      } else {
+        setIfEmpty(fields.eventDate, startDate);
+        setIfEmpty(fields.eventStart, timePart(metadata.startDate));
+        setIfEmpty(fields.eventEnd, timePart(metadata.endDate));
+      }
+
+      if (metadata.image) fields.imageUrl.value = metadata.image;
+      imageUrlField.hidden = !metadata.image; // only surface the detected URL when there is one
+      // a detected image satisfies the requirement; otherwise an upload is required
+      document.getElementById('post-featured-image').required = !metadata.image;
+
+      previewTitle.textContent = metadata.title || 'Untitled';
+      previewDescription.textContent = metadata.description || 'No description found.';
+      previewImage.src = metadata.image || '';
+      previewImage.alt = metadata.title ? `${metadata.title} preview image` : 'Detected preview image';
+      previewEl.hidden = false;
+      previewEl.classList.toggle('metadata-preview-no-image', !metadata.image);
+    };
+
+    let metadataTimer;
+    let metadataRequestId = 0;
+    let lastFetchedUrl = '';
+
+    const setLoading = isLoading => {
+      spinner.hidden = !isLoading;
+      fields.url.toggleAttribute('aria-busy', isLoading);
+    };
+
+    const queueMetadataFetch = () => {
+      const rawUrl = fields.url.value.trim();
+      window.clearTimeout(metadataTimer);
+
+      if (!rawUrl || !fields.url.validity.valid) {
+        setLoading(false);
+        previewEl.hidden = true;
+        imageUrlField.hidden = true;
+        return;
+      }
+
+      metadataTimer = window.setTimeout(async () => {
+        let sourceUrl;
+        try {
+          sourceUrl = new URL(rawUrl).href;
+        } catch {
+          return;
+        }
+
+        if (sourceUrl === lastFetchedUrl) return;
+        lastFetchedUrl = sourceUrl;
+
+        const requestId = ++metadataRequestId;
+        setLoading(true);
+        previewEl.hidden = true;
+        try {
+          const metadata = await fetchMetadata(sourceUrl);
+          if (requestId === metadataRequestId) applyMetadata(metadata);
+        } catch {
+          if (requestId === metadataRequestId) previewEl.hidden = true;
+        } finally {
+          if (requestId === metadataRequestId) setLoading(false);
+        }
+      }, 500);
+    };
+
+    fields.url.addEventListener('input', queueMetadataFetch);
+    fields.url.addEventListener('blur', queueMetadataFetch);
+  </script>
+
+</body>
+</html>

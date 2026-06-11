@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260226-conversations-at-the-edge-kioto-aoki-findings@thevisualist.o
+ rg
+DTSTAMP:20260226T000000Z
+DTSTART;TZID=America/Chicago:20260226T180000
+DTEND;TZID=America/Chicago:20260226T200000
+SUMMARY:Conversations at the Edge | Kioto Aoki: Findings
+LOCATION:Siskel Film Center\, 164 N. State St\, Chicago\, IL 60601
+DESCRIPTION:Join Chicago-based filmmaker\, photographer\, and musician Ki
+ oto Aoki for a survey of her 16mm films—finely attuned compositions of
+  sensorial and perceptual play—alongside the debut of a new 35mm slide
+  work and a live improvisatory score by Robbie Lynn Hunsinger and Jamie 
+ Kempkers...\nMore info: https://thevisualist.org/2026/02/conversations-a
+ t-the-edge-kioto-aoki-findings/\nVenue site: https://www.siskelfilmcente
+ r.org/findings
+URL:https://thevisualist.org/2026/02/conversations-at-the-edge-kioto-aoki
+ -findings/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

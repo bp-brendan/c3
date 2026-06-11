@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-lvl-3-expo-week-extended-open-hours@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T180000
+DTEND;TZID=America/Chicago:20260410T210000
+SUMMARY:LVL 3 EXPO Week Extended Open Hours
+LOCATION:@ LVL3\, 1542 N Milwaukee Ave\, #3\, Chicago\, IL 60622
+DESCRIPTION:LVL3 is excited to present the two-person exhibition\, Carria
+ ge\, featuring the work of Hyeseul Song (Chicago\, IL) and Häsler Góme
+ z (Richmond\, VA). Carriage will remain on view until May 3rd\, 2026. Ob
+ jects of support are ubiquitous in contemporary life. Containers are mad
+ e to be held by...\nMore info: https://thevisualist.org/2026/04/lvl-3-ex
+ po-week-extended-open-hours/\nVenue site: https://lvl3official.com/
+URL:https://thevisualist.org/2026/04/lvl-3-expo-week-extended-open-hours/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

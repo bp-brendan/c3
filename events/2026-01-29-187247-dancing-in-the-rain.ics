@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260129-dancing-in-the-rain@thevisualist.org
+DTSTAMP:20260129T000000Z
+DTSTART;TZID=America/Chicago:20260129T180000
+DTEND;TZID=America/Chicago:20260129T200000
+SUMMARY:Dancing in the Rain
+LOCATION:Dittmar Memorial Gallery\, 1999 Campus Drive\, Evanston\, IL 602
+ 08
+DESCRIPTION:Dancing in the Rain interrogates the fraught relationship bet
+ ween Black identity and Americanism. This body of work does not seek def
+ initive answers but unfolds as an embodied exploration\, a reflection of
+  the artist’s lived experience in a space that claims his belonging ye
+ t...\nMore info: https://thevisualist.org/2026/01/dancing-in-the-rain/\n
+ Venue site: https://www.northwestern.edu/norris/arts/dittmar-gallery
+URL:https://thevisualist.org/2026/01/dancing-in-the-rain/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

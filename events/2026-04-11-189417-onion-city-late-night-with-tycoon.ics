@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-onion-city-late-night-with-tycoon@thevisualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T200000
+DTEND;TZID=America/Chicago:20260411T220000
+SUMMARY:Onion City: Late Night With Tycoon
+LOCATION:Chicago Filmmakers Firehouse Cinema\, 1326 W Hollywood Ave\, Chi
+ cago\, IL 60660
+DESCRIPTION:In her feature directorial debut\, TYCOON (2025)\, Charlotte 
+ Zhang remixes low-budget filmmaking techniques to reimagine a dystopian 
+ Los Angeles in the near future\, seen through the eyes of two wandering 
+ youths. The program opens with DIRTY EYE (2025) by Keng U Lao\, a journe
+ y through...\nMore info: https://thevisualist.org/2026/04/onion-city-lat
+ e-night-with-tycoon/\nVenue site: https://chicagofilmmakers.org/upcoming
+ -screenings-and-events/late-night-with-tycoon
+URL:https://thevisualist.org/2026/04/onion-city-late-night-with-tycoon/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

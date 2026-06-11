@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260119-mlk-day-2026-chaos-or-community@thevisualist.org
+DTSTAMP:20260119T000000Z
+DTSTART;TZID=America/Chicago:20260119T110000
+DTEND;TZID=America/Chicago:20260119T160000
+SUMMARY:MLK Day 2026: Chaos or Community?
+LOCATION:Hyde Park Art Center\, 5020 S Cornell Ave\, Chicago\, IL 60615
+DESCRIPTION:Hyde Park Art Center proudly presents a free public Martin Lu
+ ther King Jr. Day celebration MLK DAY 2026: CHAOS OR COMMUNITY on Monday
+ \, January 19\, from 11 AM – 4 PM at 5020 South Cornell Avenue. Eclect
+ ic programming for all ages blends live music\, thought-provoking film\,
+  artmaking...\nMore info: https://thevisualist.org/2026/01/mlk-day-2026-
+ chaos-or-community/\nVenue site: https://www.hydeparkart.org/event/mlk-2
+ 026-chaos-or-community/
+URL:https://thevisualist.org/2026/01/mlk-day-2026-chaos-or-community/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

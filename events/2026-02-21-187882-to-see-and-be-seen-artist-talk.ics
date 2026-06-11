@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260221-to-see-and-be-seen-artist-talk@thevisualist.org
+DTSTAMP:20260221T000000Z
+DTSTART;TZID=America/Chicago:20260221T120000
+DTEND;TZID=America/Chicago:20260221T130000
+SUMMARY:to see and be seen – Artist Talk
+LOCATION:Heaven Gallery\, 1550 N Milwaukee Ave\, Chicago\, IL 60622
+DESCRIPTION:Curator: Gracie Hammond Artists: Ese Ametri Gagoh\, Anna Jung
+ -Hwa\, Genesis “Geno” Falls\, Princess Egbo\, and Cherith Clottey. J
+ oin us for the artist talk of our latest exhibition “To See and Be See
+ n” To See and Be Seen gathers a selection of works by Chicago artists 
+ working across...\nMore info: https://thevisualist.org/2026/02/to-see-an
+ d-be-seen-artist-talk/\nVenue site: https://www.heavengallery.com/blog/s
+ ee-and-be-seen-artist-talk
+URL:https://thevisualist.org/2026/02/to-see-and-be-seen-artist-talk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

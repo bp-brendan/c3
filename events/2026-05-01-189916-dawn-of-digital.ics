@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260501-dawn-of-digital@thevisualist.org
+DTSTAMP:20260501T000000Z
+DTSTART;TZID=America/Chicago:20260501T190000
+DTEND;TZID=America/Chicago:20260501T230000
+SUMMARY:DAWN OF DIGITAL
+LOCATION:Public Works\, 2141 W North Ave\, Chicago\, IL 60647
+DESCRIPTION:Join us for the grand opening of DAWN OF DIGITAL—a gallery 
+ installation and sensory experience at Public Works Gallery. Opening Fri
+ day May 1st 7-11pm feat DJ sets by: @ritalukea & @ommen of @_pixelgrip_ 
+ To kick off the months long installation\, we’re hosting a three-day e
+ vent series...\nMore info: https://thevisualist.org/2026/05/dawn-of-digi
+ tal/\nVenue site: https://publicworksgallery.com/blogs/events
+URL:https://thevisualist.org/2026/05/dawn-of-digital/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

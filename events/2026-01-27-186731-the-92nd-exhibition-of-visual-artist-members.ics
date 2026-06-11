@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260127-the-92nd-exhibition-of-visual-artist-members@thevisualist.or
+ g
+DTSTAMP:20260127T000000Z
+DTSTART;TZID=America/Chicago:20260127T180000
+DTEND;TZID=America/Chicago:20260127T200000
+SUMMARY:The 92nd Exhibition of Visual Artist Members
+LOCATION:The Arts Club of Chicago\, 201 E Ontario St\, Chicago\, IL 60611
+DESCRIPTION:The Arts Club’s Exhibition of Visual Artist Members is a be
+ loved tradition that brings great pride and prestige to the institution 
+ and its membership. Following an inaugural exhibition of paintings by Jo
+ hn Singer Sargent in 1916\, the second exhibition ever mounted at The Ar
+ ts Club was...\nMore info: https://thevisualist.org/2026/01/the-92nd-exh
+ ibition-of-visual-artist-members/\nVenue site: https://www.artsclubchica
+ go.org/exhibit/the-92nd-exhibition-of-visual-artist-members/
+URL:https://thevisualist.org/2026/01/the-92nd-exhibition-of-visual-artist
+ -members/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

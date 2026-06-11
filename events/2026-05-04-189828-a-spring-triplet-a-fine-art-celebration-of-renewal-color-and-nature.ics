@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260504-a-spring-triplet-a-fine-art-celebration-of-renewal-color-and
+ -nature@thevisualist.org
+DTSTAMP:20260504T000000Z
+DTSTART;TZID=America/Chicago:20260504T090000
+DTEND;TZID=America/Chicago:20260504T170000
+SUMMARY:A SPRING TRIPLET: A Fine Art Celebration of Renewal\, Color\, and
+  Nature
+LOCATION:North Shore Senior Center\, 161 Northfield Rd\, Northfield\, IL 
+ 60093
+DESCRIPTION:Celebrate the beauty of the season at A Spring Triplet\, a co
+ lorful group exhibition featuring Juli Janovicz\, Samira Gdisis\, and Ke
+ ndra Kett during May & June. Through watercolor\, printmaking\, and mixe
+ d media\, the artists explore florals\, movement\, and renewal in over 4
+ 0 vibrant works...\nMore info: https://thevisualist.org/2026/05/a-spring
+ -triplet-a-fine-art-celebration-of-renewal-color-and-nature/\nVenue site
+ : https://www.kendrakett.com/
+URL:https://thevisualist.org/2026/05/a-spring-triplet-a-fine-art-celebrat
+ ion-of-renewal-color-and-nature/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

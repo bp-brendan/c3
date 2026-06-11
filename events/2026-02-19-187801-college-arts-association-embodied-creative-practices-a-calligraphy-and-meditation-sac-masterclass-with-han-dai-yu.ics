@@ -1,0 +1,54 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260219-college-arts-association-embodied-creative-practices-a-calli
+ graphy-and-meditation-sac-masterclass-with-han-dai-yu@thevisualist.org
+DTSTAMP:20260219T000000Z
+DTSTART;TZID=America/Chicago:20260219T143000
+DTEND;TZID=America/Chicago:20260219T160000
+SUMMARY:College Arts Association: Embodied Creative Practices: A Calligra
+ phy and Meditation SAC Masterclass with Han Dai-Yu
+LOCATION:Hilton Chicago - Lower Level - Mobley Room\, 720 S Michigan Ave\
+ , Chicago\, IL 60605
+DESCRIPTION:This masterclass explores the intersection of calligraphy\, m
+ editation\, and embodied creative practices. Participants will be guided
+  through mindful drawing and writing exercises using simple and traditio
+ nal materials—ink\, water\, pencil\, and charcoal. The session will in
+ clude breathing...\nMore info: https://thevisualist.org/2026/02/college-
+ arts-association-embodied-creative-practices-a-calligraphy-and-meditatio
+ n-sac-masterclass-with-han-dai-yu/\nVenue site: https://docs.google.com/
+ forms/d/e/1FAIpQLSfTnboBWl_8-DLOdOnPSlIi99Qz20TKMnjZMAzJQB-6TAcOjA/viewf
+ orm
+URL:https://thevisualist.org/2026/02/college-arts-association-embodied-cr
+ eative-practices-a-calligraphy-and-meditation-sac-masterclass-with-han-d
+ ai-yu/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

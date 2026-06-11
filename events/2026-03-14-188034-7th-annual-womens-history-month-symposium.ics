@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260314-7th-annual-women-s-history-month-symposium@thevisualist.org
+DTSTAMP:20260314T000000Z
+DTSTART;TZID=America/Chicago:20260314T103000
+DTEND;TZID=America/Chicago:20260314T120000
+SUMMARY:7th annual Women’s History Month Symposium!
+LOCATION:Heaven Gallery\, 1550 N Milwaukee Ave\, Chicago\, IL 60622
+DESCRIPTION:To celebrate this year’s Women’s History Month\, Heaven G
+ allery and Equity Arts invite three women that embody generosity\, colla
+ boration and equity. This year’s International Women’s Day theme is 
+ Give to Gain\, encouraging a mindset to forge equality with a focus on g
+ iving respect...\nMore info: https://thevisualist.org/2026/03/7th-annual
+ -womens-history-month-symposium/\nVenue site: https://www.heavengallery.
+ com/blog/7th-annual-womens-history-month-symposium
+URL:https://thevisualist.org/2026/03/7th-annual-womens-history-month-symp
+ osium/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

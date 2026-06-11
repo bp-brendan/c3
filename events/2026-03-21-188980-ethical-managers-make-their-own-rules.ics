@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260321-ethical-managers-make-their-own-rules@thevisualist.org
+DTSTAMP:20260321T000000Z
+DTSTART;TZID=America/Chicago:20260321T180000
+DTEND;TZID=America/Chicago:20260321T200000
+SUMMARY:Ethical Managers Make Their Own Rules
+LOCATION:Bodenrader\, 1620 W Carroll Ave\, Chicago\, IL 60612
+DESCRIPTION:The exhibition supports the exhibition and vice versa\, you k
+ now? I think it’s a reflex. It’s a gift to write something and say n
+ othing\, and vice versa. So much\, so little\, and so on. Does that mean
+  what I think it does? I mean\, it is mean. Display can be a descriptive
+  and effacing...\nMore info: https://thevisualist.org/2026/03/ethical-ma
+ nagers-make-their-own-rules/\nVenue site: https://bodenrader.com/
+URL:https://thevisualist.org/2026/03/ethical-managers-make-their-own-rule
+ s/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

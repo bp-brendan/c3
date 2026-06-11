@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260516-data-translation-environment@thevisualist.org
+DTSTAMP:20260516T000000Z
+DTSTART;TZID=America/Chicago:20260516T130000
+DTEND;TZID=America/Chicago:20260516T160000
+SUMMARY:Data Translation Environment
+LOCATION:Locker Room\, 2320 N Kenmore Ave\, Chicago\, IL 60614
+DESCRIPTION:Soft Systems & Locker Room present Data Translation Environme
+ nt — an opening reception and video screening taking place Saturday\, 
+ May 16 from 1–4pm at 2320 N Kenmore Ave\, Chicago. The show will be on
+  view from May 16 – May 26\, 2026\, open hours 12-4 M-Th. Email ourloc
+ ker121@gmail.com...\nMore info: https://thevisualist.org/2026/05/data-tr
+ anslation-environment/\nVenue site: https://www.instagram.com/softsystem
+ s/
+URL:https://thevisualist.org/2026/05/data-translation-environment/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

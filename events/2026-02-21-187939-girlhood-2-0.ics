@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260221-girlhood-2-0@thevisualist.org
+DTSTAMP:20260221T000000Z
+DTSTART;TZID=America/Chicago:20260221T180000
+DTEND;TZID=America/Chicago:20260221T200000
+SUMMARY:Girlhood 2.0
+LOCATION:Her Artist Collective\, RSVP for Address
+DESCRIPTION:Join us for the gallery opening of Girlhood 2.0! Festuring wo
+ rk form 20+ Chicago Artists! Join us in our celebration of Girlhood ft l
+ ive artist talks\, yummy drinks\, a photobooth and MORE! Hosted by Her A
+ rtist Collective RSVP for address: https://partiful.com/e/aPLMmo3NwS7DDP
+ IWXCqx\nMore info: https://thevisualist.org/2026/02/girlhood-2-0/\nVenue
+  site: https://partiful.com/e/aPLMmo3NwS7DDPIWXCqx
+URL:https://thevisualist.org/2026/02/girlhood-2-0/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

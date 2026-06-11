@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260417-dispossessions-in-the-americas-the-extraction-of-bodies-land
+ -and-heritage-from-la-conquista-to-the-present@thevisualist.org
+DTSTAMP:20260417T000000Z
+DTSTART;VALUE=DATE:20260417
+SUMMARY:Dispossessions in the Americas: The Extraction of Bodies\, Land\,
+  and Heritage from La Conquista to the Present
+LOCATION:Wrightwood 659\, 659 Wrightwood Ave\, Chicago\, IL 60614
+DESCRIPTION:Dispossession—the deprivation of land\, culture\, language\
+ , or all three—has been a defining and enduring condition across the A
+ mericas\, initiated by the expansion of European colonialism. Dispossess
+ ions in the Americas: The Extraction of Bodies\, Land\, and Heritage fro
+ m La Conquista to...\nMore info: https://thevisualist.org/2026/04/dispos
+ sessions-in-the-americas-the-extraction-of-bodies-land-and-heritage-from
+ -la-conquista-to-the-present/\nVenue site: https://wrightwood659.org/
+URL:https://thevisualist.org/2026/04/dispossessions-in-the-americas-the-e
+ xtraction-of-bodies-land-and-heritage-from-la-conquista-to-the-present/
+END:VEVENT
+END:VCALENDAR

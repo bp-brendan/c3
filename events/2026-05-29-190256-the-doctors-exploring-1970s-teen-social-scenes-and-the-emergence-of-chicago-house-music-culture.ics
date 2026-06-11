@@ -1,0 +1,53 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260529-the-doctors-exploring-1970-s-teen-social-scenes-and-the-emer
+ gence-of-chicago-house-music-culture@thevisualist.org
+DTSTAMP:20260529T000000Z
+DTSTART;TZID=America/Chicago:20260529T180000
+DTEND;TZID=America/Chicago:20260529T220000
+SUMMARY:The Doctors: Exploring 1970’s Teen Social Scenes and the Emerge
+ nce of Chicago House Music Culture
+LOCATION:First Church of the Brethren\, 425 S Central Park Blvd\, Chicago
+ \, IL 60624
+DESCRIPTION:This exhibition documents the pre-house era influence and inn
+ ovation of a 1970’s dance crew based in Chicago’s Roseland community
+ . These young Black men from Mendel Catholic High School elevated the sc
+ hool’s parties to new prominence\, creating significant social cultura
+ l contributions...\nMore info: https://thevisualist.org/2026/05/the-doct
+ ors-exploring-1970s-teen-social-scenes-and-the-emergence-of-chicago-hous
+ e-music-culture/\nVenue site: https://www.honeypotperformance.org/events
+ /2026/5/16/the-doctors-exploring-1970s-teen-social-scenes-and-house-musi
+ c-culture-in-chicago
+URL:https://thevisualist.org/2026/05/the-doctors-exploring-1970s-teen-soc
+ ial-scenes-and-the-emergence-of-chicago-house-music-culture/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

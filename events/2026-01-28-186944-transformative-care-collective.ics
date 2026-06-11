@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260128-transformative-care-collective@thevisualist.org
+DTSTAMP:20260128T000000Z
+DTSTART;TZID=America/Chicago:20260128T180000
+DTEND;TZID=America/Chicago:20260128T203000
+SUMMARY:Transformative Care Collective
+LOCATION:Walls Turned Sideways\, 2717 W Madison St\, Chicago\, IL 60612
+DESCRIPTION:Step into a creative ritual of intention-setting and possibil
+ ity. In this vision board workshop\, we’ll gather in community to hono
+ r the turning of the year and to imagine what’s waiting to unfold. Ann
+ ie Novotny\, LCPC and Registered Art Therapist\, will guide participants
+  through a...\nMore info: https://thevisualist.org/2026/01/transformativ
+ e-care-collective/\nVenue site: https://wallsturnedsideways.org/event/tr
+ ansformative-care-collective-13/
+URL:https://thevisualist.org/2026/01/transformative-care-collective/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

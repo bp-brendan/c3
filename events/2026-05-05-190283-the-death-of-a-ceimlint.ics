@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260505-the-death-of-a-ceimlint@thevisualist.org
+DTSTAMP:20260505T000000Z
+DTSTART;TZID=America/Chicago:20260505T163000
+DTEND;TZID=America/Chicago:20260505T180000
+SUMMARY:THE DEATH OF A CEIMLINT
+LOCATION:THE DEATH OF A CEIMLINT\, 5134 N Kedzie Ave\, Chicago\, IL 60625
+DESCRIPTION:Reception and Artist Talk: May 5\, 4:30 p.m. in Carlson Tower
+  Galleries Stephanie Walkowiak is an artist born and raised in Chicago\,
+  majoring in art education K-12 at North Park University. Through field 
+ experience at Concordia University and North Park University\, she has h
+ ad the...\nMore info: https://thevisualist.org/2026/05/the-death-of-a-ce
+ imlint/\nVenue site: https://www.northpark.edu/event-calendar/student-ex
+ hibition-stephanie-walkowiak-c27-art-education/
+URL:https://thevisualist.org/2026/05/the-death-of-a-ceimlint/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

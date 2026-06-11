@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260501-school-of-the-art-institute-of-chicago-fashion-design-runway
+ -presentation-2026-matinee@thevisualist.org
+DTSTAMP:20260501T000000Z
+DTSTART;TZID=America/Chicago:20260501T160000
+DTEND;TZID=America/Chicago:20260501T180000
+SUMMARY:School of the Art Institute of Chicago Fashion Design Runway Pres
+ entation 2026 (MATINEE)
+LOCATION:167 GREEN\, 167 N Green St\, Chicago\, IL 60607
+DESCRIPTION:The School of the Art Institute of Chicago (SAIC) invites you
+  to an evening celebrating the next generation of fashion designers Join
+  us on May 1 for the annual runway presentation featuring the Senior Cap
+ stone collections of SAIC’s Fashion Design students. Arrive in the mid
+ dle of it…...\nMore info: https://thevisualist.org/2026/05/school-of-t
+ he-art-institute-of-chicago-fashion-design-runway-presentation-2026-mati
+ nee/\nVenue site: https://www.eventbrite.com/e/matinee-saic-fashion-desi
+ gn-runway-presentation-2026-in-medias-res-tickets-1986828078266?aff=oddt
+ dtcreator
+URL:https://thevisualist.org/2026/05/school-of-the-art-institute-of-chica
+ go-fashion-design-runway-presentation-2026-matinee/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

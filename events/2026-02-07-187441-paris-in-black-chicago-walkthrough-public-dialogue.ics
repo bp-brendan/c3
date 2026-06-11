@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260207-paris-in-black-chicago-walkthrough-public-dialogue@thevisual
+ ist.org
+DTSTAMP:20260207T000000Z
+DTSTART;TZID=America/Chicago:20260207T100000
+DTEND;TZID=America/Chicago:20260207T120000
+SUMMARY:PARIS IN BLACK / CHICAGO: WALKTHROUGH & PUBLIC DIALOGUE
+LOCATION:South Side Community Art Center\, 3831 S Michigan Ave\, Chicago\
+ , IL 60653
+DESCRIPTION:In connection with PARIS IN BLACK: Internationalism and the B
+ lack Renaissance\, the South Side Community Art Center (SSCAC) invites t
+ he public to a curator-led exhibition walkthrough and dialogue at the Du
+ Sable Black History Museum and Education Center. Led by Danny Dunson\, D
+ irector of...\nMore info: https://thevisualist.org/2026/02/paris-in-blac
+ k-chicago-walkthrough-public-dialogue/\nVenue site: https://sscartcenter
+ .org/event/paris-in-black-chicago-walkthrough-public-dialogue/
+URL:https://thevisualist.org/2026/02/paris-in-black-chicago-walkthrough-p
+ ublic-dialogue/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

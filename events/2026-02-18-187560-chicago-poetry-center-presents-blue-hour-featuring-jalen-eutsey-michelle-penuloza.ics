@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260218-chicago-poetry-center-presents-blue-hour-featuring-jalen-eut
+ sey-michelle-penuloza@thevisualist.org
+DTSTAMP:20260218T000000Z
+DTSTART;TZID=America/Chicago:20260218T190000
+DTEND;TZID=America/Chicago:20260218T210000
+SUMMARY:Chicago Poetry Center Presents: Blue Hour featuring Jalen Eutsey 
+ + Michelle Penuloza
+LOCATION:Haymarket House\, 800 W Buena Ave\, Chicago\, IL 60613
+DESCRIPTION:The Chicago Poetry Center presents BLUE HOUR\, a free monthly
+  in-person reading series and generative writing workshop. Our February 
+ featured readers are Jalen Eutsey and Michelle Peñaloza. Each event tak
+ es place at Haymarket House (800 W. Buena) and includes a brief open mic
+  followed...\nMore info: https://thevisualist.org/2026/02/chicago-poetry
+ -center-presents-blue-hour-featuring-jalen-eutsey-michelle-penuloza/\nVe
+ nue site: https://www.poetrycenter.org/
+URL:https://thevisualist.org/2026/02/chicago-poetry-center-presents-blue-
+ hour-featuring-jalen-eutsey-michelle-penuloza/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

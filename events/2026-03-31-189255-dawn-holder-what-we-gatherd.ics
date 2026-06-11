@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260331-dawn-holder-what-we-gatherd@thevisualist.org
+DTSTAMP:20260331T000000Z
+DTSTART;TZID=America/Chicago:20260331T110000
+DTEND;TZID=America/Chicago:20260331T123000
+SUMMARY:Dawn Holder: What We Gatherd
+LOCATION:Sculpture & New Media Gallery\, 15800 S State St\, South Holland
+ \, IL 60473
+DESCRIPTION:The Art & Design Department of South Suburban College is plea
+ sed to announce What We Gathered\, an exhibition of mixed-media sculptur
+ es by Indianapolis-based artist Dawn Holder\, on display now in the Scul
+ pture & New Media Gallery through April 16\, 2026. Dawn Holder is a scul
+ ptor...\nMore info: https://thevisualist.org/2026/03/dawn-holder-what-we
+ -gatherd/\nVenue site: https://www.ssc.edu/services/art-galleries/
+URL:https://thevisualist.org/2026/03/dawn-holder-what-we-gatherd/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

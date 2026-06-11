@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260320-for-the-art-of-it-all-newspaper-launch-party@thevisualist.or
+ g
+DTSTAMP:20260320T000000Z
+DTSTART;TZID=America/Chicago:20260320T190000
+DTEND;TZID=America/Chicago:20260320T210000
+SUMMARY:For The Art Of It All! Newspaper Launch Party
+LOCATION:Lot'sa\, 4150 N Elston Ave\, Chicago\, IL 60618
+DESCRIPTION:For The Art Of It All! is a biannual newspaper lovingly craft
+ ed in Chicago featuring artists from across the country working in visua
+ l art\, poetry\, humor writing\, essays\, and more. By analyzing art thr
+ ough the lens of the belief that everything is art\, For The Art Of It A
+ ll! aims to...\nMore info: https://thevisualist.org/2026/03/for-the-art-
+ of-it-all-newspaper-launch-party/\nVenue site: https://partiful.com/e/6L
+ fKkgljVVZXi2ZO4eCP?c=bmcKIFEs
+URL:https://thevisualist.org/2026/03/for-the-art-of-it-all-newspaper-laun
+ ch-party/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260605-samuel-schwindt-pleasure-puncture@thevisualist.org
+DTSTAMP:20260605T000000Z
+DTSTART;TZID=America/Chicago:20260605T180000
+DTEND;TZID=America/Chicago:20260605T210000
+SUMMARY:Samuel Schwindt: Pleasure Puncture
+LOCATION:Ignition Project Space\, 3839 W Grand Ave\, Chicago\, IL 60651
+DESCRIPTION:Even though phantom muscle and bone pains can rattle and scar
+ \, here they comfort. This solo exhibition is a broken leg that didn’t
+  heal properly\; it’s a glimmer from a childhood crash that—instead 
+ of a wince—is a Cheshire smile. In Samuel Schwindt’s second solo exh
+ ibition—”Pleasure...\nMore info: https://thevisualist.org/2026/06/sa
+ muel-schwindt-pleasure-puncture/\nVenue site: https://www.ignitionprojec
+ ts.org
+URL:https://thevisualist.org/2026/06/samuel-schwindt-pleasure-puncture/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

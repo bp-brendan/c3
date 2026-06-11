@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260311-imagining-tomorrow-closing-reception@thevisualist.org
+DTSTAMP:20260311T000000Z
+DTSTART;TZID=America/Chicago:20260311T170000
+DTEND;TZID=America/Chicago:20260311T210000
+SUMMARY:Imagining Tomorrow – Closing Reception
+LOCATION:Forum301chicago\, 301 W Ohio St Chicago\, IL 60629
+DESCRIPTION:About the event The exhibition asks fundamental questions abo
+ ut the future of art\, culture\, and community\, positioning Forum 301 a
+ s a space not only for presentation but for inquiry\, dialogue\, and exp
+ erimentation. How do we imagine what comes next when the present feels u
+ ncertain...\nMore info: https://thevisualist.org/2026/03/imagining-tomor
+ row-closing-reception-2/\nVenue site: https://www.forum301.org/event-det
+ ails/imagining-tomorrow-exhibition-closing-reception
+URL:https://thevisualist.org/2026/03/imagining-tomorrow-closing-reception
+ -2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

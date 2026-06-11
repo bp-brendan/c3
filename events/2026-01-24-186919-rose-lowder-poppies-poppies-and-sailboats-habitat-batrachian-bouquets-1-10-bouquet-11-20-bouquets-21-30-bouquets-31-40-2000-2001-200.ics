@@ -1,0 +1,55 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260124-rose-lowder-poppies-poppies-and-sailboats-habitat-batrachian
+ -bouquets-1-10-bouquet-11-20-bouquets-21-30-bouquets-31-40-2000-2001-200
+ 6-1995-2011-2001-2022@thevisualist.org
+DTSTAMP:20260124T000000Z
+DTSTART;TZID=America/Chicago:20260124T190000
+DTEND;TZID=America/Chicago:20260124T210000
+SUMMARY:Rose Lowder: Poppies / Poppies and Sailboats / Habitat\, Batrachi
+ an / Bouquets 1-10 / Bouquet 11-20 / Bouquets 21-30 / Bouquets 31-40 (20
+ 00 / 2001 / 2006 / 1995 / 2011 / 2001 / 2022)
+LOCATION:Doc Films at the University of Chicago\, 1212 E 59th St\, Chicag
+ o\, IL 60637
+DESCRIPTION:Cinema’s Garden: The Films of Rose Lowder Programmed by: Ol
+ ivia Hunter-Willke The practice of French-Peruvian avant-garde filmmaker
+  Rose Lowder (born 1941) concentrates on radical ways to refine photogra
+ phic and temporal features of the image. Equipped with a 16mm Bolex and 
+ filming...\nMore info: https://thevisualist.org/2026/01/rose-lowder-popp
+ ies-poppies-and-sailboats-habitat-batrachian-bouquets-1-10-bouquet-11-20
+ -bouquets-21-30-bouquets-31-40-2000-2001-2006-1995-2011-2001-2022/\nVenu
+ e site: https://docfilms.org/calendar/2026winter/lowder
+URL:https://thevisualist.org/2026/01/rose-lowder-poppies-poppies-and-sail
+ boats-habitat-batrachian-bouquets-1-10-bouquet-11-20-bouquets-21-30-bouq
+ uets-31-40-2000-2001-2006-1995-2011-2001-2022/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

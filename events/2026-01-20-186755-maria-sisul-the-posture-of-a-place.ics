@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260120-maria-sisul-the-posture-of-a-place@thevisualist.org
+DTSTAMP:20260120T000000Z
+DTSTART;VALUE=DATE:20260120
+SUMMARY:Maria Sisul: The Posture of a Place
+LOCATION:McHenry County College | Epping Gallery\, 8900 U.S. Highway 14\,
+  Crystal Lake\, IL 60012
+DESCRIPTION:McHenry County College is excited to present Maria Sisul’s 
+ solo exhibition\, “The Posture of a Place.” January 20 – February 
+ 13\, 2026 McHenry County College | Epping Gallery 8900 U.S. Highway 14\,
+  Crystal Lake\, IL 60012 ───────────────
+ ─────── ARTIST STATEMENT I paint naturally occurring...\nM
+ ore info: https://thevisualist.org/2026/01/maria-sisul-the-posture-of-a-
+ place/\nVenue site: https://www.mchenry.edu/artgallery/current.html
+URL:https://thevisualist.org/2026/01/maria-sisul-the-posture-of-a-place/
+END:VEVENT
+END:VCALENDAR

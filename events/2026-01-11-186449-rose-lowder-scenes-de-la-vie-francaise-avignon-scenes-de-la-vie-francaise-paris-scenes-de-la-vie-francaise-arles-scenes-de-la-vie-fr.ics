@@ -1,0 +1,55 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260111-rose-lowder-scenes-de-la-vie-francaise-avignon-scenes-de-la-
+ vie-francaise-paris-scenes-de-la-vie-francaise-arles-scenes-de-la-vie-fr
+ ancaise-la-ciotat-1986-1986-1985-1986@thevisualist.org
+DTSTAMP:20260111T000000Z
+DTSTART;TZID=America/Chicago:20260111T190000
+DTEND;TZID=America/Chicago:20260111T210000
+SUMMARY:Rose Lowder: Scènes de la vie française: Avignon / Scènes de l
+ a vie française: Paris / Scènes de la vie française: Arles / Scènes 
+ de la vie française: La Ciotat (1986 / 1986 / 1985 / 1986)
+LOCATION:Doc Films at the University of Chicago\, 1212 E 59th St\, Chicag
+ o\, IL 60637
+DESCRIPTION:Cinema’s Garden: The Films of Rose Lowder Programmed by: Ol
+ ivia Hunter-Willke The practice of French-Peruvian avant-garde filmmaker
+  Rose Lowder (born 1941) concentrates on radical ways to refine photogra
+ phic and temporal features of the image. Equipped with a 16mm Bolex and 
+ filming...\nMore info: https://thevisualist.org/2026/01/rose-lowder-scen
+ es-de-la-vie-francaise-avignon-scenes-de-la-vie-francaise-paris-scenes-d
+ e-la-vie-francaise-arles-scenes-de-la-vie-francaise-la-ciotat-1986-1986-
+ 1985-1986/\nVenue site: https://docfilms.org/calendar/2026winter/lowder
+URL:https://thevisualist.org/2026/01/rose-lowder-scenes-de-la-vie-francai
+ se-avignon-scenes-de-la-vie-francaise-paris-scenes-de-la-vie-francaise-a
+ rles-scenes-de-la-vie-francaise-la-ciotat-1986-1986-1985-1986/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

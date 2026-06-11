@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260515-between-us-a-collaboration-with-atelier-corners-in-osaka-jap
+ an@thevisualist.org
+DTSTAMP:20260515T000000Z
+DTSTART;TZID=America/Chicago:20260515T183000
+DTEND;TZID=America/Chicago:20260515T213000
+SUMMARY:Between Us: A Collaboration with Atelier Corners in Osaka\, Japan
+LOCATION:Project Onward\, 1200 W 35th St. 4th Fl\, Chicago\, IL 60609
+DESCRIPTION:This exhibition chronicles the collaboration between the arti
+ sts of Project Onward and Atelier Corners\, neurodiverse art studios loc
+ ated in the sister cities of Chicago and Osaka\, Japan. Artists at each 
+ studio began individual works that were then mailed overseas to be compl
+ eted by a...\nMore info: https://thevisualist.org/2026/05/between-us-a-c
+ ollaboration-with-atelier-corners-in-osaka-japan/\nVenue site: https://w
+ ww.projectonward.org/events-1/between-us
+URL:https://thevisualist.org/2026/05/between-us-a-collaboration-with-atel
+ ier-corners-in-osaka-japan/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

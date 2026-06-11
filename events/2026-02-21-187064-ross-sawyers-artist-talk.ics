@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260221-ross-sawyers-artist-talk@thevisualist.org
+DTSTAMP:20260221T000000Z
+DTSTART;TZID=America/Chicago:20260221T140000
+DTEND;TZID=America/Chicago:20260221T170000
+SUMMARY:Ross Sawyers Artist Talk
+LOCATION:Riverside Arts Center\, 32 E Quincy St\, Riverside\, IL 60546
+DESCRIPTION:Ross Sawyers: The Future Still Isn’t What It Used to Be Art
+ ist Talk: Saturday\, February 21\, 2026\, 2:00 PM Exhibition Dates: Febr
+ uary 1 – March 7\, 2026 Exhibition on view: Thursdays\, Fridays\, and 
+ Saturdays 1:00 – 5:00 PM The Riverside Arts Center is pleased to prese
+ nt Ross Sawyer’s...\nMore info: https://thevisualist.org/2026/02/ross-
+ sawyers-artist-talk/\nVenue site: https://www.riversideartscenter.com/fr
+ eearksculpturegarden/202602/ross/sawyers
+URL:https://thevisualist.org/2026/02/ross-sawyers-artist-talk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

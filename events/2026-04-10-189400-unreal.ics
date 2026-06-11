@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-unreal@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T170000
+DTEND;TZID=America/Chicago:20260410T200000
+SUMMARY:UNREAL
+LOCATION:SECRIST | BEACH\, 1801 W Hubbard St\, Chicago\, IL 60622
+DESCRIPTION:From the multitude of definitions\, surrealism readily encaps
+ ulates the rejection of rationalism and the embrace of imagination\, cre
+ ating an intriguing baseline. UNREAL draws upon a variety of the machina
+ tions that evoke the multiplicities of the original 1920s cultural movem
+ ent...\nMore info: https://thevisualist.org/2026/04/unreal/\nVenue site:
+  https://secristbeach.com/exhibitions/58-unreal/
+URL:https://thevisualist.org/2026/04/unreal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

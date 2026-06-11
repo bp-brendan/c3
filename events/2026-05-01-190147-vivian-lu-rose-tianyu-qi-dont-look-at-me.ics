@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260501-vivian-lu-rose-tianyu-qi-don-t-look-at-me@thevisualist.org
+DTSTAMP:20260501T000000Z
+DTSTART;TZID=America/Chicago:20260501T170000
+DTEND;TZID=America/Chicago:20260501T200000
+SUMMARY:Vivian Lu & Rose Tianyu Qi: Don’t Look At Me
+LOCATION:ARC Gallery\, 1463 W Chicago Ave\, Chicago\, IL 60642
+DESCRIPTION:Don’t Look At Me is an interactive installation in which a 
+ life-cast wax sculpture is progressively destroyed by the attention of i
+ ts viewers. When a viewer looks at the body\, the observed area will be 
+ melted. The wax softens\, deforms\, and melts away. The sculpture does n
+ ot reset...\nMore info: https://thevisualist.org/2026/05/vivian-lu-rose-
+ tianyu-qi-dont-look-at-me/\nVenue site: https://www.arcgallery.org/exhib
+ itions-archive/vivian-lu-rose-qi
+URL:https://thevisualist.org/2026/05/vivian-lu-rose-tianyu-qi-dont-look-a
+ t-me/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

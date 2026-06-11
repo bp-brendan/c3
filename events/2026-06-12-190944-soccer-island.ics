@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260612-soccer-island@thevisualist.org
+DTSTAMP:20260612T000000Z
+DTSTART;TZID=America/Chicago:20260612T190000
+DTEND;TZID=America/Chicago:20260612T210000
+SUMMARY:soccer island
+LOCATION:Roman Susan at Berger Park Cultural Center\, 6215 N Sheridan Roa
+ d\, Chicago IL 60660
+DESCRIPTION:soccer island Berger Park Cultural Center Theater 6215 N Sher
+ idan Road\, Chicago IL Readings Friday\, June 12 at 7 PM Saturday\, June
+  13 at 2 PM Written and Directed by Gabriel Chalfin-Piney-González Perf
+ ormed by Amari Amai\, Fionn Casper-Strauss\, Rosé Hernandez\, and Zacha
+ ry Nicol Two...\nMore info: https://thevisualist.org/?p=190944\nVenue si
+ te: https://romansusan.org/soccer-island
+URL:https://thevisualist.org/?p=190944
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260226-in-the-realm-of-senses-presents-myths-legends@thevisualist.o
+ rg
+DTSTAMP:20260226T000000Z
+DTSTART;TZID=America/Chicago:20260226T200000
+DTEND;TZID=America/Chicago:20260226T220000
+SUMMARY:In the Realm of Senses presents: Myths & Legends
+LOCATION:Chopin Theatre\, 1543 W Division St\, Chicago IL 60642
+DESCRIPTION:Join us at Chopin Theatre for an enchanting evening of immers
+ ive music paired to live art\, dance\, and perfumery!\nMore info: https:
+ //thevisualist.org/2026/02/in-the-realm-of-senses-presents-myths-legends
+ /\nVenue site: https://ITROS-myths-legends.eventbrite.com
+URL:https://thevisualist.org/2026/02/in-the-realm-of-senses-presents-myth
+ s-legends/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

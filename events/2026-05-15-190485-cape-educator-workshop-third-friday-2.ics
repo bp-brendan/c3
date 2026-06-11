@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260515-cape-educator-workshop-third-friday@thevisualist.org
+DTSTAMP:20260515T000000Z
+DTSTART;TZID=America/Chicago:20260515T170000
+DTEND;TZID=America/Chicago:20260515T220000
+SUMMARY:CAPE Educator Workshop/Third Friday
+LOCATION:CAPE Gallery\, 1010 W 35th St\, Suite 697\, Chicago\, IL 60609
+DESCRIPTION:Join CAPE for a free\, hands-on workshop exploring the power 
+ of arts integration! Hear from our Artist/Researcher Partners-teams of t
+ eachers and teaching artists transforming public school classrooms-as th
+ ey share real-world projects and lead engaging artmaking activities that
+  connect...\nMore info: https://thevisualist.org/2026/05/cape-educator-w
+ orkshop-third-friday-2/\nVenue site: https://capechicago.org/
+URL:https://thevisualist.org/2026/05/cape-educator-workshop-third-friday-
+ 2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

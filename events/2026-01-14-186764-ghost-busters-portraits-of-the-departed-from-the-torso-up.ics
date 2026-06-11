@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260114-ghost-busters-portraits-of-the-departed-from-the-torso-up@th
+ evisualist.org
+DTSTAMP:20260114T000000Z
+DTSTART;TZID=America/Chicago:20260114T180000
+DTEND;TZID=America/Chicago:20260114T200000
+SUMMARY:GHOST BUSTERS: portraits of the departed [from the torso up]
+LOCATION:Empty Bottle\, 1035 N Western Ave\, Chicago\, IL 60622
+DESCRIPTION:GHOST BUSTERS: portraits of the departed [from the torso up] 
+ F.T. OVER 30 OF CHICAGO’S FINEST ARTISTS ONE NIGHT ONLY\nMore info: ht
+ tps://thevisualist.org/2026/01/ghost-busters-portraits-of-the-departed-f
+ rom-the-torso-up/\nVenue site: https://www.emptybottle.com/
+URL:https://thevisualist.org/2026/01/ghost-busters-portraits-of-the-depar
+ ted-from-the-torso-up/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

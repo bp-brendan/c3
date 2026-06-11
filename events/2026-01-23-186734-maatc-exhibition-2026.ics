@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260123-maatc-exhibition-2026@thevisualist.org
+DTSTAMP:20260123T000000Z
+DTSTART;TZID=America/Chicago:20260123T110000
+DTEND;TZID=America/Chicago:20260123T180000
+SUMMARY:MAATC Exhibition 2026
+LOCATION:SAIC Galleries\, 33 E Washington St\, Chicago\, IL 60602
+DESCRIPTION:The annual MAATC Exhibition presents the artwork and practice
+ s of students graduating with a Master of Arts in Art Therapy and Counse
+ ling. The educational aim of this exhibition is to provide an opportunit
+ y for students to present their own individual lived practices and...\nM
+ ore info: https://thevisualist.org/2026/01/maatc-exhibition-2026/\nVenue
+  site: https://www.saic.edu/events/maatc-exhibition-2026
+URL:https://thevisualist.org/2026/01/maatc-exhibition-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

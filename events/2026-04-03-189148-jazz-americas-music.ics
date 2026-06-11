@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260403-jazz-america-s-music@thevisualist.org
+DTSTAMP:20260403T000000Z
+DTSTART;TZID=America/Chicago:20260403T180000
+DTEND;TZID=America/Chicago:20260403T220000
+SUMMARY:JAZZ: AMERICA’S MUSIC
+LOCATION:Fulton Street Collective\, 1821 W Hubbard St\, Chicago IL 60622
+DESCRIPTION:Fulton Street Collective\, in collaboration with West Town Ch
+ amber of Commerce\, presents JAZZ: AMERICA’S MUSIC Art Opening on Frid
+ ay April 3rd\, from 6-10pm. Curated by Ryan Miller Jazz covers a lot of 
+ musical ground – from the blues of Louis Armstrong and bebop sounds of
+  Charlie...\nMore info: https://thevisualist.org/2026/04/jazz-americas-m
+ usic/\nVenue site: https://fultonstreetcollective.com/
+URL:https://thevisualist.org/2026/04/jazz-americas-music/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

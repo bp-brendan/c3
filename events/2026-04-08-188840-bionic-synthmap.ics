@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260408-bionic-synthmap@thevisualist.org
+DTSTAMP:20260408T000000Z
+DTSTART;TZID=America/Chicago:20260408T200000
+DTEND;TZID=America/Chicago:20260408T220000
+SUMMARY:Bionic Synthmap
+LOCATION:Symphony Center\, 220 S Michigan Ave\, Chicago\, IL 60604
+DESCRIPTION:Join the Chicago Symphony Orchestra Overture Council in a fir
+ st-of-its-kind opportunity to interact with — and be part of the music
+  — right on stage. In this Soundpost event\, the Overture Council’s 
+ event series that explores the ever-evolving medium of music\, CSO celli
+ st Katinka...\nMore info: https://thevisualist.org/2026/04/bionic-synthm
+ ap/\nVenue site: https://cso.org/performances/25-26/events/soundpost-bio
+ nic-synthmap/
+URL:https://thevisualist.org/2026/04/bionic-synthmap/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

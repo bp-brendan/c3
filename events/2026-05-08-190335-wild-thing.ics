@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260508-wild-thing@thevisualist.org
+DTSTAMP:20260508T000000Z
+DTSTART;TZID=America/Chicago:20260508T170000
+DTEND;TZID=America/Chicago:20260508T200000
+SUMMARY:Wild Thing
+LOCATION:Circle Contemporary Chicago\, 2010 W Carroll Ave\, Chicago\, IL 
+ 60612
+DESCRIPTION:Elena Ailes – Chris Austin – Sayera Anwar – Cecilia Bea
+ ven – Renata Berdes – Chris Bradley – Zachary Cahill – Isamu Guy
+  Conners – Mari Eastman – Sam Filicky – Joshi Radin Flores – Ros
+ emary Hall – Erin Hayden – Lucy Cash and Mark Jeffery – Lawrence M
+ . – Allyson Packer – Jasmeen Patheja...\nMore info: https://thevisua
+ list.org/2026/05/wild-thing/\nVenue site: https://artsoflife.org/event/w
+ ild-thing/
+URL:https://thevisualist.org/2026/05/wild-thing/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

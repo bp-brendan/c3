@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260302-propagation-lab-stop-motion-plant@thevisualist.org
+DTSTAMP:20260302T000000Z
+DTSTART;TZID=America/Chicago:20260302T183000
+DTEND;TZID=America/Chicago:20260302T213000
+SUMMARY:Propagation Lab – Stop Motion Plant
+LOCATION:Agitator Gallery\, 3851 W Fullerton Ave\, Chicago\, IL 60647
+DESCRIPTION:STOP MOTION PLANT are the 2025-2026 Artists in Residence at A
+ gitator Gallery. They host monthly creativity sessions offering open stu
+ dio time to share ideas\, create community and work on projects together
+ . Just like their Salon Series\, the Propagation Labs are “masks requi
+ red” (to...\nMore info: https://thevisualist.org/2026/03/propagation-l
+ ab-stop-motion-plant/\nVenue site: https://www.agitatorgallery.com/calen
+ dar/propagation-lab-monthly
+URL:https://thevisualist.org/2026/03/propagation-lab-stop-motion-plant/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

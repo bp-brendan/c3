@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260116-to-see-and-be-seen@thevisualist.org
+DTSTAMP:20260116T000000Z
+DTSTART;TZID=America/Chicago:20260116T190000
+DTEND;TZID=America/Chicago:20260116T230000
+SUMMARY:to see and be seen
+LOCATION:Heaven Gallery\, 1550 N Milwaukee Ave\, Floor #2 Chicago\, IL 60
+ 622
+DESCRIPTION:Heaven Gallery is pleased to present To See and Be Seen. To S
+ ee and Be Seen gathers a selection of works by Chicago artists working a
+ cross painting\, photography\, and multimedia practices. Through varied 
+ mediums\, these works interpret the portrait as intimacy\, reflection\, 
+ and...\nMore info: https://thevisualist.org/2026/01/to-see-and-be-seen/\
+ nVenue site: https://www.heavengallery.com/blog/see-and-be-seen-opening-
+ reception
+URL:https://thevisualist.org/2026/01/to-see-and-be-seen/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

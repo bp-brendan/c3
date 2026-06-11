@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-bill-brady-drawing-with-metal@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;VALUE=DATE:20260410
+SUMMARY:Bill Brady: Drawing with Metal
+LOCATION:Intuit Art Museum\, 756 N Milwaukee Ave\, Chicago\, IL 60642
+DESCRIPTION:William ​“Bill” Brady\, Jr.\, (American\, b. 1943) lear
+ ned metalsmithing from his father\, which led him to his own creative pr
+ actice primarily working with tin. He began by making replicas of early 
+ American objects\, such as tin lanterns\, cups and candlesticks\, which 
+ he would sell at...\nMore info: https://thevisualist.org/2026/04/bill-br
+ ady-drawing-with-metal/\nVenue site: https://art.org/exhibitions/drawing
+ -with-metal-sculpture-by-bill-brady
+URL:https://thevisualist.org/2026/04/bill-brady-drawing-with-metal/
+END:VEVENT
+END:VCALENDAR

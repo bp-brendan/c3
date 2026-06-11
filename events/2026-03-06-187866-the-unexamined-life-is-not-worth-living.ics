@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260306-the-unexamined-life-is-not-worth-living@thevisualist.org
+DTSTAMP:20260306T000000Z
+DTSTART;TZID=America/Chicago:20260306T190000
+DTEND;TZID=America/Chicago:20260306T230000
+SUMMARY:The Unexamined Life is Not Worth Living
+LOCATION:Heaven Gallery\, 1550 N Milwaukee Ave\, #2\, Chicago\, IL 60622
+DESCRIPTION:Join us for the opening of our newest exhibition “The Unexa
+ mined Life is Not Worth Living!” The exhibition unfolds through a soft
+  interplay of fantasy and material inquiry\, weaving together ideasof ar
+ tist-as-philosopher and practice-as-self-reflection. Schenck presents la
+ rge-format...\nMore info: https://thevisualist.org/2026/03/the-unexamine
+ d-life-is-not-worth-living/\nVenue site: https://www.heavengallery.com
+URL:https://thevisualist.org/2026/03/the-unexamined-life-is-not-worth-liv
+ ing/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

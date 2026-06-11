@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-noelle-africh-signal-artist-talk@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T150000
+DTEND;TZID=America/Chicago:20260410T170000
+SUMMARY:Noelle Africh\, “Signal” Artist Talk
+LOCATION:Twelve Ten Gallery\, 1104 West Thorndale Ave.\, Chicago\, IL 606
+ 60
+DESCRIPTION:Twelve Ten Gallery invites you to an artist talk with Noelle 
+ Africh on the occasion of their first solo exhibition with the gallery. 
+ Their exhibition\, “Signal”\, explores the mutability of distemper\,
+  a medium historically associated with decorative painting\, but here tr
+ ansformed into...\nMore info: https://thevisualist.org/2026/04/noelle-af
+ rich-signal-artist-talk/\nVenue site: https://twelvetengallery.us11.list
+ -manage.com/track/click?u=acb8c0fb5a6397cbff7e6647b&id=311fbb57ff&e=b0ca
+ c30894
+URL:https://thevisualist.org/2026/04/noelle-africh-signal-artist-talk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260114-canceled-drink-draw-new-year-s-resolutions-with-meg-and-aver
+ y@thevisualist.org
+DTSTAMP:20260114T000000Z
+DTSTART;TZID=America/Chicago:20260114T180000
+DTEND;TZID=America/Chicago:20260114T200000
+SUMMARY:Canceled: Drink & Draw: New Year’s Resolutions with Meg and Ave
+ ry
+LOCATION:Spudnik Press\, 1821 W Hubbard St\, Suite 302 Chicago\, IL 60622
+DESCRIPTION:This event has been canceled Drink & Draw: New Year’s Resol
+ utions with Meg and Avery Come have a drink with us! Join us for a very 
+ special Drink & Draw on January 14. In this session\, staff members Meg 
+ Duguid and Avery Johnson will lead a session in writing and creating New
+  Year’s...\nMore info: https://thevisualist.org/2026/01/drink-draw-new
+ -years-resolutions-with-meg-and-avery/\nVenue site: https://www.spudnikp
+ ress.org/event/drink-draw-new-years-resolutions-with-meg-and-avery/
+URL:https://thevisualist.org/2026/01/drink-draw-new-years-resolutions-wit
+ h-meg-and-avery/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

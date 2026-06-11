@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260402-mooove-voice@thevisualist.org
+DTSTAMP:20260402T000000Z
+DTSTART;TZID=America/Chicago:20260402T180000
+DTEND;TZID=America/Chicago:20260402T200000
+SUMMARY:Mooove Voice
+LOCATION:Roman Susan at Loyola Park Fieldhouse\, 1230 W Greenleaf Ave\, C
+ hicago IL 60626
+DESCRIPTION:Mooove Voice combines classical vocal techniques with fundame
+ ntal Butoh exercises\, exploring the physical sensations of vocal sounds
+  in our bodies and in the space around us. We work up to group improvisa
+ tional scores by playfully passing sound and movement in simple patterns
+ . No...\nMore info: https://thevisualist.org/2026/04/mooove-voice/\nVenu
+ e site: https://romansusan.org/Mooove-Voice
+URL:https://thevisualist.org/2026/04/mooove-voice/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

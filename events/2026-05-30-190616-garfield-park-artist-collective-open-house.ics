@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260530-garfield-park-artist-collective-open-house@thevisualist.org
+DTSTAMP:20260530T000000Z
+DTSTART;TZID=America/Chicago:20260530T110000
+DTEND;TZID=America/Chicago:20260530T160000
+SUMMARY:Garfield Park Artist Collective Open House
+LOCATION:Multiple Artist Studios\, 319 N Albany Ave\, Chicago IL 60612
+DESCRIPTION:On Saturday\, May 30\, 2026\, from 11 a.m. to 4 p.m.\, the Ga
+ rfield Park Artist Collective will open the doors of three working-artis
+ t buildings on Chicago’s West Side for a free\, one-day public Open St
+ udio. Visitors are invited to step inside the studios of over 40 artists
+  – meet the...\nMore info: https://thevisualist.org/2026/05/garfield-p
+ ark-artist-collective-open-house/\nVenue site: https://www.garfieldparka
+ rtistcollective.com/open-studios
+URL:https://thevisualist.org/2026/05/garfield-park-artist-collective-open
+ -house/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

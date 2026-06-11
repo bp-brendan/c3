@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260602-chicago-poet-laureate-mayda-del-valle-with-poetry-editor-in-
+ chief-adrian-matejka@thevisualist.org
+DTSTAMP:20260602T000000Z
+DTSTART;TZID=America/Chicago:20260602T180000
+DTEND;TZID=America/Chicago:20260602T195000
+SUMMARY:Chicago Poet Laureate Mayda del Valle with Poetry Editor-in-Chief
+  Adrian Matejka
+LOCATION:The Arts Club of Chicago\, 201 E Ontario St\, Chicago\, IL 60611
+DESCRIPTION:Wine Reception 6:00 pm | Program 6:30 pm | Book Signing to fo
+ llow At the beginning of 2026 Mayor Johnson\, with DCASE\, the Chicago P
+ ublic Library\, and the Poetry Foundation\, announced Mayda Alexandra de
+ l Valle as Chicago’s Second Poet Laureate. A poet\, performer\, educat
+ or and...\nMore info: https://thevisualist.org/2026/06/chicago-poet-laur
+ eate-mayda-del-valle-with-poetry-editor-in-chief-adrian-matejka/\nVenue 
+ site: https://www.artsclubchicago.org/program/chicago-poet-laureate-mayd
+ a-del-valle-with-poetry-editor-in-chief-adrian-matejka/
+URL:https://thevisualist.org/2026/06/chicago-poet-laureate-mayda-del-vall
+ e-with-poetry-editor-in-chief-adrian-matejka/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260612-chicago-alliance-of-visual-artists-small-works-exhibition-20
+ 26@thevisualist.org
+DTSTAMP:20260612T000000Z
+DTSTART;TZID=America/Chicago:20260612T180000
+DTEND;TZID=America/Chicago:20260612T210000
+SUMMARY:Chicago Alliance of Visual Artists Small Works Exhibition 2026
+LOCATION:Elmhurst Artists Guild Gallery at the Elmhurst Art Museum\, 150 
+ S Cottage Hill\, Elmhurst\, IL 60126
+DESCRIPTION:The Chicago Alliance of Visual Artists (CAVA) returns to the 
+ Elmhurst Artists’ Guild Gallery inside the Elmhurst Art Museum with th
+ eir Small Works Exhibition\, on view May 30–June 26\, 2026. Featuring 
+ more than 100 works\, the exhibition highlights the power and creativity
+  of small-scale...\nMore info: https://thevisualist.org/?p=190599\nVenue
+  site: https://www.wearecava.org/
+URL:https://thevisualist.org/?p=190599
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

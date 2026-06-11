@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260208-lit-artists-gallery-talk@thevisualist.org
+DTSTAMP:20260208T000000Z
+DTSTART;TZID=America/Chicago:20260208T113000
+DTEND;TZID=America/Chicago:20260208T123000
+SUMMARY:“LIT!” Artists Gallery Talk
+LOCATION:Lubeznik Center for the Arts\, 101 W 2nd St\, Michigan City\, IN
+ \, 46360
+DESCRIPTION:Join us at Lubeznik Center for the Arts for a free Gallery Ta
+ lk with the exhibiting artists of “LIT! Site-Specific Installations by
+  Maria Burundarena and Luftwerk.” Hear directly from the artists about
+  their artwork\, inspirations and processes. You can ask questions and j
+ oin in on the...\nMore info: https://thevisualist.org/2026/02/lit-artist
+ s-gallery-talk/\nVenue site: https://lubeznikcenter.org/events
+URL:https://thevisualist.org/2026/02/lit-artists-gallery-talk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

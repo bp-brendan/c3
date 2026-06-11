@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260130-winter-warm-up@thevisualist.org
+DTSTAMP:20260130T000000Z
+DTSTART;TZID=America/Chicago:20260130T170000
+DTEND;TZID=America/Chicago:20260130T220000
+SUMMARY:Winter Warm Up
+LOCATION:Co-Prosperity\, 3219-21 S Morgan St\, Chicago\, IL 6060
+DESCRIPTION:CHICAGO – on January 30th\, MURS hosts the Winter Warm Up 
+ – a free\, all ages cypher at Co-Prosperity. Each rapper gets 16 bars 
+ – every 16 rappers\, the beat switches\, with 16 beats from some of Ch
+ icago’s best producers. Doors open at 5pm with free food from Antique 
+ Taco – cypher starts...\nMore info: https://thevisualist.org/2026/01/w
+ inter-warm-up/\nVenue site: https://coprosperity.org/
+URL:https://thevisualist.org/2026/01/winter-warm-up/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

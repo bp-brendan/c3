@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagged | The Visualist</title>
+  <link rel="icon" href="visualist-favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="taglines.js"></script>
+  <script src="components.js"></script>
+</head>
+<body data-page="tag">
+
+  <header class="site-header" data-visualist-header></header>
+
+  <main class="site-main tag-page">
+    <div data-visualist-nav></div>
+    <h1 class="tag-title"><span id="tag-name"></span><span class="tag-count" id="tag-count"></span></h1>
+    <div class="archive-listing" id="tag-results"></div>
+    <p class="view-empty" id="tag-empty" hidden>No 2026 events carry this tag.</p>
+  </main>
+
+  <footer class="site-footer" data-visualist-footer></footer>
+
+  <script src="tags2026.js"></script>
+  <script src="tagevents2026.js"></script>
+  <script src="archiveevents2026.js"></script>
+  <script>
+    Visualist.renderChrome();
+    Visualist.initHeaderAccordion();
+
+    const slug = new URLSearchParams(location.search).get('tag') || '';
+    // "today" and "tomorrow" are virtual tags: everything opening or on view then, always current
+    const isTodayPage = slug === 'today';
+    const isTomorrowPage = slug === 'tomorrow';
+    const tag = TAGS_2026.find(t => t.s === slug);
+    const label = isTodayPage ? 'Today' : (isTomorrowPage ? 'Tomorrow' : (tag ? tag.n : slug || 'unknown'));
+    const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    document.getElementById('tag-name').textContent = label;
+    document.title = `Tagged: ${label} | The Visualist`;
+
+    Visualist.trackEventLinks(() => ({
+      label: (isTodayPage || isTomorrowPage) ? label : `Tagged “${label}”`,
+      nav: 'archive',
+      href: `tag.html?tag=${encodeURIComponent(slug)}`
+    }));
+
+    const today = Visualist.todayIso();
+    const tomorrow = Visualist.tomorrowIso();
+    const runsToday = e => e.d <= today && (Visualist.onViewEndIso(e) || e.d) >= today;
+    const runsTomorrow = e => e.d <= tomorrow && (Visualist.onViewEndIso(e) || e.d) >= tomorrow;
+    const hits = TAG_EVENTS_2026
+      .filter(e => isTodayPage ? runsToday(e) : (isTomorrowPage ? runsTomorrow(e) : e.g.includes(slug)))
+      .sort((a, b) => b.d.localeCompare(a.d));
+    document.getElementById('tag-count').textContent = `(${hits.length})`;
+
+    if (hits.length) {
+      const ordinalDay = n => {
+        const teen = n % 100;
+        if (teen >= 11 && teen <= 13) return `${n}th`;
+        return `${n}${['th', 'st', 'nd', 'rd'][n % 10] || 'th'}`;
+      };
+      const openingLine = e => {
+        const date = new Date(`${e.d}T12:00:00`);
+        const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
+        const month = date.toLocaleDateString('en-US', { month: 'long' });
+        let line = `Opening ${weekday}, ${month} ${ordinalDay(date.getDate())}`;
+        if (e.w) line += e.w.includes('–') ? `, from ${e.w}` : `, at ${e.w}`;
+        return line;
+      };
+      const tagLabel = tagSlug => (TAGS_2026.find(t => t.s === tagSlug) || {}).n || tagSlug;
+      const renderTags = tagSlugs => {
+        const tags = [...new Set(tagSlugs || [])].slice(0, 4);
+        if (!tags.length) return '';
+        return `<span class="listing-tags">${tags.map(tagSlug =>
+          `<a href="tag.html?tag=${encodeURIComponent(tagSlug)}">${escapeHtml(tagLabel(tagSlug))}</a>`
+        ).join('')}</span>`;
+      };
+      let lastDate = '';
+      document.getElementById('tag-results').innerHTML = hits.map(e => `
+        ${e.d !== lastDate ? Visualist.dayHeadingHtml(lastDate = e.d) : ''}
+        <article class="event-card">
+          ${e.i
+            ? `<a class="event-thumb" href="${escapeHtml(e.p || e.u)}"><img src="${escapeHtml(e.i)}" alt="" loading="lazy"></a>`
+            : '<span class="event-thumb event-thumb-empty"></span>'}
+          <div class="event-info">
+            <h3 class="event-title"><a href="${escapeHtml(e.p || e.u)}">${escapeHtml(e.t || 'Untitled')}</a>${e.k ? ' <a class="top-pick" href="tag.html?tag=top-pick">Top Pick</a>' : ''}</h3>
+            ${(e.v || e.a || e.d || e.o) ? `<div class="event-meta-grid">
+              ${(e.v || e.a) ? `<div class="event-location">
+                ${e.v ? `<p class="event-venue">${e.vu ? `<a href="${escapeHtml(e.vu)}" target="_blank" rel="noopener">${escapeHtml(e.v)}</a>` : escapeHtml(e.v)}</p>` : ''}
+                ${e.a ? `<p class="event-address">${e.m ? `<a href="${escapeHtml(e.m)}" target="_blank" rel="noopener">${escapeHtml(e.a)}</a>` : escapeHtml(e.a)}</p>` : ''}
+              </div>` : ''}
+              <div class="event-schedule">
+                <p class="event-when">${Visualist.scheduleLineHtml(openingLine(e))}</p>
+                ${Visualist.onViewHtml(e)}
+              </div>
+            </div>` : ''}
+            ${Visualist.excerptHtml(e.x, e.p || e.u)}
+            ${renderTags(e.g)}
+            <div class="event-liner"></div>
+          </div>
+        </article>`).join('');
+    } else {
+      document.getElementById('tag-empty').hidden = false;
+    }
+  </script>
+
+</body>
+</html>

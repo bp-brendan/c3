@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260305-shared-practice@thevisualist.org
+DTSTAMP:20260305T000000Z
+DTSTART;TZID=America/Chicago:20260305T170000
+DTEND;TZID=America/Chicago:20260305T200000
+SUMMARY:Shared Practice
+LOCATION:Lillstreet Art Center\, 4401 N Ravenswood Ave\, Chicago\, IL 606
+ 40
+DESCRIPTION:Carrie Haase / Jesus Torres-Medina Lounge Gallery\, March 1-3
+ 1\, 2026 Opening reception: Thursday\, March 5\, 2026 Shared Practice br
+ ings together two metal artists whose work emerges from a common foundat
+ ion of traditional metalsmithing\, yet moves in distinct directions. Thr
+ ough jewelry...\nMore info: https://thevisualist.org/2026/03/shared-prac
+ tice/\nVenue site: https://lillstreet.com/upcoming-events
+URL:https://thevisualist.org/2026/03/shared-practice/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

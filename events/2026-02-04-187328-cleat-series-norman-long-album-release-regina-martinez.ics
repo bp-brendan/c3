@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260204-cleat-series-norman-long-album-release-regina-martinez@thevi
+ sualist.org
+DTSTAMP:20260204T000000Z
+DTSTART;TZID=America/Chicago:20260204T200000
+DTEND;TZID=America/Chicago:20260204T220000
+SUMMARY:CLEAT Series: Norman Long (Album Release)\, Regina Martinez
+LOCATION:Elastic Arts\, 3429 W Diversey Ave\, #208\, Chicago\, IL 60647
+DESCRIPTION:We’re happy to once again welcome Norman Long back to the C
+ LEAT system to celebrate his new album Scenes of Contestation…And the 
+ Expanded out now on Amalgam. Joining the evening will be another CLEAT a
+ lum\, Regina Martinez performing solo. This new Norman Long album is a j
+ ourney from...\nMore info: https://thevisualist.org/2026/02/cleat-series
+ -norman-long-album-release-regina-martinez/\nVenue site: https://elastic
+ arts.org/events/cleat-series-norman-long-album-release-regina-martinez
+URL:https://thevisualist.org/2026/02/cleat-series-norman-long-album-relea
+ se-regina-martinez/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

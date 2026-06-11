@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260114-dei-legal-information-for-arts-organizations@thevisualist.or
+ g
+DTSTAMP:20260114T000000Z
+DTSTART;TZID=America/Chicago:20260114T130000
+DTEND;TZID=America/Chicago:20260114T143000
+SUMMARY:DEI: Legal Information for Arts Organizations
+LOCATION:Lawyers for the Creative Arts\, Online
+DESCRIPTION:The national conversation around Diversity\, Equity\, and Inc
+ lusion (“DEI”) has shifted dramatically over the last year. Previous
+ ly a goal in the non-profit and commercial sectors\, seemingly overnight
+  DEI has become the basis for adverse actions by government agencies and
+  other...\nMore info: https://thevisualist.org/2026/01/dei-legal-informa
+ tion-for-arts-organizations/\nVenue site: https://law-arts.org/event/dei
+ -legal-information-for-arts-organizations
+URL:https://thevisualist.org/2026/01/dei-legal-information-for-arts-organ
+ izations/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260220-decisive-gesture-towards-uncertain-outcome@thevisualist.org
+DTSTAMP:20260220T000000Z
+DTSTART;TZID=America/Chicago:20260220T170000
+DTEND;TZID=America/Chicago:20260220T200000
+SUMMARY:Decisive Gesture Towards Uncertain Outcome
+LOCATION:NEIU Fine Arts Center Gallery\, 5500 N St. Louis Ave\, Building 
+ E\, Chicago\, IL
+DESCRIPTION:Decisive Gesture Towards Uncertain Outcomes pairs the work of
+  Mark Banks\, Brian Petrone and Ryan Standfest who each address infrastr
+ ucture\, the built landscape and its failings. Standfest’s paintings\,
+  drawings and prints approach these shadows of industry as unheroic\; hi
+ ghlighting...\nMore info: https://thevisualist.org/2026/02/decisive-gest
+ ure-towards-uncertain-outcome-2/\nVenue site: https://www.neiu.edu/acade
+ mics/colleges-departments/arts-and-sciences/departments/art-design/fine-
+ arts-center-gallery/exhibitions
+URL:https://thevisualist.org/2026/02/decisive-gesture-towards-uncertain-o
+ utcome-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

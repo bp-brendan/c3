@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260206-craft-3rd-annual-black-history-month-showcase@thevisualist.o
+ rg
+DTSTAMP:20260206T000000Z
+DTSTART;TZID=America/Chicago:20260206T180000
+DTEND;TZID=America/Chicago:20260206T230000
+SUMMARY:CRAFT : 3rd Annual Black History Month Showcase
+LOCATION:Parlour and Ramp\, 2130 W 21 St. Chicago\, IL 60608
+DESCRIPTION:Explore the vast expressions of Afro-futurism in Craft The Th
+ ird Annual Black History Month Showcase at Parlour and Ramp. Join us in 
+ a celebration of Black art\, culture and community FRIDAY\, FEBRUARY 6th
+  6-11 PM. We’re excited to welcome all 13 Chicago based artists and th
+ is year’s...\nMore info: https://thevisualist.org/2026/02/craft-3rd-an
+ nual-black-history-month-showcase-2/\nVenue site: https://parlourandramp
+ .com/
+URL:https://thevisualist.org/2026/02/craft-3rd-annual-black-history-month
+ -showcase-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

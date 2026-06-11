@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260204-maria-jose-murillo-weaving-as-a-matrix-of-re-existence@thevi
+ sualist.org
+DTSTAMP:20260204T000000Z
+DTSTART;TZID=America/Chicago:20260204T111500
+DTEND;TZID=America/Chicago:20260204T121500
+SUMMARY:Maria José Murillo: Weaving as a Matrix of Re-existence
+LOCATION:SAIC\, 37 S Wabash Ave\, Chicago\, IL 66003
+DESCRIPTION:In this lecture\, Peruvian artist and cultural worker María 
+ José Murillo presents weaving as the core of her practice: an embodied 
+ process through which she reaches simultaneously into the ancient past a
+ nd toward the future to critically engage the layered complexities of he
+ r cultural...\nMore info: https://thevisualist.org/2026/02/maria-jose-mu
+ rillo-weaving-as-a-matrix-of-re-existence/\nVenue site: https://www.saic
+ .edu/events/maria-jose-murillo-weaving-matrix-re-existence
+URL:https://thevisualist.org/2026/02/maria-jose-murillo-weaving-as-a-matr
+ ix-of-re-existence/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

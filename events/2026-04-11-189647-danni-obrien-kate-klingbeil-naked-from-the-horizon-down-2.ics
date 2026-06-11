@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-danni-o-brien-kate-klingbeil-naked-from-the-horizon-down@the
+ visualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T180000
+DTEND;TZID=America/Chicago:20260411T220000
+SUMMARY:Danni O”Brien & Kate Klingbeil: Naked From the Horizon Down
+LOCATION:Junior.\, 1950 S Troy St\, 3F\, Chicago\, IL 60623
+DESCRIPTION:Across their practices\, Danni O’Brien and Kate Klingbeil w
+ ork through fragments—kept\, discarded\, and recovered—reconfigured 
+ into dense\, interdependent systems. Their processes move through cycles
+  of breakdown and reassembly\, mapping psychological states onto ecologi
+ cal logics. Nothing...\nMore info: https://thevisualist.org/2026/04/dann
+ i-obrien-kate-klingbeil-naked-from-the-horizon-down-2/\nVenue site: http
+ s://www.jrjrjr.biz
+URL:https://thevisualist.org/2026/04/danni-obrien-kate-klingbeil-naked-fr
+ om-the-horizon-down-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260528-exhibitionism-vol-1@thevisualist.org
+DTSTAMP:20260528T000000Z
+DTSTART;TZID=America/Chicago:20260528T180000
+DTEND;TZID=America/Chicago:20260528T200000
+SUMMARY:Exhibitionism Vol.1
+LOCATION:Gerber/Hart Library and Archives\, 6500 N Clark St\, Chicago\, I
+ L 60626
+DESCRIPTION:Exhibitionism by Clover Tipton An aural art installation abou
+ t Queer debauchery with visual stimulation provided by alterotics. This 
+ installation with Chicago Audiomakers Collective explores intimacy\, sex
+ \, and identity in the vein of Mermaid Palace’s The Heart\, LOVE+RADIO
+ ’s The...\nMore info: https://thevisualist.org/2026/05/exhibitionism-v
+ ol-1/\nVenue site: https://www.eventbrite.com/e/exhibitionism-tickets-19
+ 89149854762?aff=oddtdtcreator
+URL:https://thevisualist.org/2026/05/exhibitionism-vol-1/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

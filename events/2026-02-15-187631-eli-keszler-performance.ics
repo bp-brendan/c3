@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260215-eli-keszler-performance@thevisualist.org
+DTSTAMP:20260215T000000Z
+DTSTART;TZID=America/Chicago:20260215T140000
+DTEND;TZID=America/Chicago:20260215T160000
+SUMMARY:Eli Keszler: Performance
+LOCATION:The Renaissance Society\, 5811 S Ellis Ave\, Cobb Hall\, 4th Fl\
+ , Chicago\, IL 60637
+DESCRIPTION:Eli Keszler is a Grammy-nominated artist\, composer\, and per
+ cussionist based in New York. Whether performing an improvised solo set 
+ at the drum kit or writing an electro-acoustic score for a film\, he bri
+ ngs an agile experimentation to his work. For this site-specific appeara
+ nce...\nMore info: https://thevisualist.org/2026/02/eli-keszler-performa
+ nce/\nVenue site: https://renaissancesociety.org/events/1416/eli-keszler
+ /
+URL:https://thevisualist.org/2026/02/eli-keszler-performance/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260121-the-young-lords-speak-conversation-and-celebration@thevisual
+ ist.org
+DTSTAMP:20260121T000000Z
+DTSTART;TZID=America/Chicago:20260121T180000
+DTEND;TZID=America/Chicago:20260121T193000
+SUMMARY:The Young Lords Speak: Conversation and Celebration
+LOCATION:DePaul Art Museum\, 935 W Fullerton Ave\, Chicago\, IL 60614
+DESCRIPTION:Join us for an evening of reflection and celebration centered
+  on the enduring impact of the Young Lords Organization. Guest curator a
+ nd DePaul professor Dr. Jacqueline Lazú will moderate a conversation fe
+ aturing original Young Lord Omar López\, muralist John Weber\, artist R
+ icardo...\nMore info: https://thevisualist.org/2026/01/the-young-lords-s
+ peak-conversation-and-celebration/\nVenue site: https://events.humanitix
+ .com/the-young-lords-speak-conversation-and-celebration
+URL:https://thevisualist.org/2026/01/the-young-lords-speak-conversation-a
+ nd-celebration/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

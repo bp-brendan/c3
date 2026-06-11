@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-the-uncivil-canvas-art-in-the-age-of-discord-closing-recepti
+ on-walkthrough@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;TZID=America/Chicago:20260214T140000
+DTEND;TZID=America/Chicago:20260214T160000
+SUMMARY:The Uncivil Canvas: Art in the Age of Discord – Closing Recepti
+ on & Walkthrough
+LOCATION:Woman Made Gallery\, 1332 S Halsted St\, Chicago\, IL 60607
+DESCRIPTION:Closing Reception & Walkthrough: Saturday\, February 14\, 2
+ –4 PM CST — CHICAGO—Woman Made Gallery (WMG) is pleased to announc
+ e The Uncivil Canvas: Art in the Age of Discord\, a juried group exhibit
+ ion opening January 17\, 2026\, with an artist reception from 4 to 7 p.m
+ . Juror Karen M...\nMore info: https://thevisualist.org/2026/02/the-unci
+ vil-canvas-art-in-the-age-of-discord-closing-reception-walkthrough/\nVen
+ ue site: https://womanmade.org/uncivil-canvas/
+URL:https://thevisualist.org/2026/02/the-uncivil-canvas-art-in-the-age-of
+ -discord-closing-reception-walkthrough/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

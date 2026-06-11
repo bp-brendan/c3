@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260212-union-2024-with-filmmaker-brett-story-in-person@thevisualist
+ .org
+DTSTAMP:20260212T000000Z
+DTSTART;TZID=America/Chicago:20260212T190000
+DTEND;TZID=America/Chicago:20260212T210000
+SUMMARY:UNION (2024) with filmmaker Brett Story in-person
+LOCATION:The Block Cinema\, 40 Arts Cir Dr\, Evanston\, IL 60208
+DESCRIPTION:In 2020\, in the midst of a global pandemic\, historic supply
+  chain disruptions\, and soaring profits\, Amazon workers at Staten Isla
+ nd’s JFK8 Warehouse launched an unprecedented unionization attempt. Le
+ d by charismatic organizer and fired warehouse worker Chris Smalls\, the
+  effort drew...\nMore info: https://thevisualist.org/2026/02/union-2024-
+ with-filmmaker-brett-story-in-person/\nVenue site: https://www.blockmuse
+ um.northwestern.edu/cinema/
+URL:https://thevisualist.org/2026/02/union-2024-with-filmmaker-brett-stor
+ y-in-person/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

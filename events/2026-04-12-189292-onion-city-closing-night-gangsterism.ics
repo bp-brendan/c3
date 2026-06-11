@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260412-onion-city-closing-night-gangsterism@thevisualist.org
+DTSTAMP:20260412T000000Z
+DTSTART;TZID=America/Chicago:20260412T190000
+DTEND;TZID=America/Chicago:20260412T210000
+SUMMARY:Onion City: Closing Night – Gangsterism
+LOCATION:Gene Siskel Film Center\, 164 N. State St Chicago\, IL 60601
+DESCRIPTION:Co-presented by OFF CENTER\, Gene Siskel Film Center Celebrat
+ e closing night of Onion City Experimental Film Festival at the Gene Sis
+ kel Film Center with Isiah Medina’s latest feature. GANGSTERISM (2025\
+ , Canada\, 84 min) updates the gangster film as the tale of director-gan
+ gster Clem...\nMore info: https://thevisualist.org/2026/04/onion-city-cl
+ osing-night-gangsterism/\nVenue site: https://www.siskelfilmcenter.org/g
+ angsterism
+URL:https://thevisualist.org/2026/04/onion-city-closing-night-gangsterism
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

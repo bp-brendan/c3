@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260424-dual-exhibition-exchange-arc-gallery-elise-seigenthaler-gall
+ ery@thevisualist.org
+DTSTAMP:20260424T000000Z
+DTSTART;TZID=America/Chicago:20260424T100000
+DTEND;TZID=America/Chicago:20260424T120000
+SUMMARY:DUAL-EXHIBITION EXCHANGE: ARC GALLERY & ELISE SEIGENTHALER GALLER
+ Y
+LOCATION:ARC Gallery\, 1463 W Chicago Ave\, Chicago\, IL 60642
+DESCRIPTION:ARC Gallery and Elise Seigenthaler Gallery are pleased to inv
+ ite you to a co-programmed exhibition coffee crawl placing their current
+  group exhibitions—The Given Distance (ARC Gallery) and Before We Knew
+  Better (Elise Seigenthaler Gallery)—in direct dialogue about humanity
+ ’s enduring...\nMore info: https://thevisualist.org/2026/04/dual-exhib
+ ition-exchange-arc-gallery-elise-seigenthaler-gallery/\nVenue site: http
+ s://www.arcgallery.org/
+URL:https://thevisualist.org/2026/04/dual-exhibition-exchange-arc-gallery
+ -elise-seigenthaler-gallery/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

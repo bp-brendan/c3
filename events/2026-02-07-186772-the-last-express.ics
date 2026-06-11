@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260207-the-last-express@thevisualist.org
+DTSTAMP:20260207T000000Z
+DTSTART;TZID=America/Chicago:20260207T110000
+DTEND;TZID=America/Chicago:20260207T170000
+SUMMARY:The Last Express
+LOCATION:Chicago Gamespace\, 2418 W Bloomingdale Ave\, Chicago. IL 60647
+DESCRIPTION:Chicago Gamespace is delighted to present the computer game T
+ he Last Express (1997) by Jordan Mechner and Smoking Car Productions. Fe
+ atured as part of the multi-site exhibition The Plot Thickens: Storytell
+ ing in Gaming\, The Last Express was notable for its evocative setting a
+ board the...\nMore info: https://thevisualist.org/2026/02/the-last-expre
+ ss/\nVenue site: https://www.chicagogamespace.com/exhibitions/the-last-e
+ xpress
+URL:https://thevisualist.org/2026/02/the-last-express/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

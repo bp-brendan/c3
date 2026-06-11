@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260206-primary-pictures@thevisualist.org
+DTSTAMP:20260206T000000Z
+DTSTART;TZID=America/Chicago:20260206T180000
+DTEND;TZID=America/Chicago:20260206T210000
+SUMMARY:Primary Pictures
+LOCATION:crosswalk\, 1856 N Richmond St\, Chicago\, IL 60647
+DESCRIPTION:Hey\, here’s a bio: Omair Hussain was born in Cincinnati\, 
+ Ohio and received his BFA and MFA from SAIC. His work attempts to inheri
+ t the problems and issues raised by the history of abstract painting. Th
+ is history\, for Hussain\, is not a dead archive to be rummaged through\
+ , but a living...\nMore info: https://thevisualist.org/2026/02/primary-p
+ ictures/\nVenue site: https://crosswalk-gallery.us/home.html
+URL:https://thevisualist.org/2026/02/primary-pictures/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-wallace-bowling-ensemble@thevisualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T170000
+DTEND;TZID=America/Chicago:20260411T190000
+SUMMARY:Wallace Bowling: Ensemble
+LOCATION:Bert Green Fine Art\, 8 S Michigan Ave\, Suite 620\, Chicago IL 
+ 60603
+DESCRIPTION:Wallace Bowling’s “constructs” are three dimensional\, 
+ interactive artworks that juxtapose natural materials and cultural touch
+ stones with sensual innuendo. Using mostly found objects and printed mat
+ ter\, Bowling\, who was trained as an architect\, crafts objects into st
+ ructures which...\nMore info: https://thevisualist.org/2026/04/wallace-b
+ owling-ensemble/\nVenue site: https://bgfa.us
+URL:https://thevisualist.org/2026/04/wallace-bowling-ensemble/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260314-carriage@thevisualist.org
+DTSTAMP:20260314T000000Z
+DTSTART;TZID=America/Chicago:20260314T180000
+DTEND;TZID=America/Chicago:20260314T210000
+SUMMARY:Carriage
+LOCATION:LVL3\, 1542 N Milwaukee Ave\, #3\, Chicago\, IL 60622
+DESCRIPTION:LVL3 is excited to announce the two-person exhibition\, Carri
+ age\, featuring the work of Hyeseul Song (Chicago\, IL) and Häsler Góm
+ ez (Richmond\, VA). Carriage will open on March 14th\, 2026 and will rem
+ ain on view until May 3rd\, 2026. Objects of support are ubiquitous in c
+ ontemporary...\nMore info: https://thevisualist.org/2026/03/carriage/\nV
+ enue site: https://lvl3official.com/
+URL:https://thevisualist.org/2026/03/carriage/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

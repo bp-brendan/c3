@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260521-book-launch-how-do-you-throw-a-brick-through-the-window@thev
+ isualist.org
+DTSTAMP:20260521T000000Z
+DTSTART;TZID=America/Chicago:20260521T180000
+DTEND;TZID=America/Chicago:20260521T193000
+SUMMARY:Book Launch: How do you throw a brick through the window…
+LOCATION:UIC Architecture + Design Studios\, Room 1100\, 845 W Harrison S
+ t\, Chicago\, IL 60607
+DESCRIPTION:Presented by John Michael Kohler Arts Center\, Tufts Universi
+ ty Art Galleries\, and UIC Gallery 400 The publication launch of How do 
+ you throw a brick through the window…\, produced alongside the exhibit
+ ion of the same name. Both the exhibition and publication take inspirati
+ on from...\nMore info: https://thevisualist.org/2026/05/book-launch-how-
+ do-you-throw-a-brick-through-the-window/\nVenue site: https://gallery400
+ .uic.edu/event/how-do-you-throw-a-brick-through-the-window/
+URL:https://thevisualist.org/2026/05/book-launch-how-do-you-throw-a-brick
+ -through-the-window/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

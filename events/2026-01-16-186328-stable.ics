@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260116-stable@thevisualist.org
+DTSTAMP:20260116T000000Z
+DTSTART;TZID=America/Chicago:20260116T190000
+DTEND;TZID=America/Chicago:20260116T230000
+SUMMARY:Stable
+LOCATION:Heaven Gallery\, 1550 N Milwaukee Ave
+DESCRIPTION:Heaven Gallery is pleased to present Stable\, a show featurin
+ g Rebekka Federle\, Laveen Gammie\, and Susan Jablonski. For all the spa
+ ce between the two\, between that and you\, far less merely is and far m
+ ore has become. What you see is done\, bound up in its own becoming with
+  the ways...\nMore info: https://thevisualist.org/2026/01/stable/\nVenue
+  site: https://www.heavengallery.com/
+URL:https://thevisualist.org/2026/01/stable/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

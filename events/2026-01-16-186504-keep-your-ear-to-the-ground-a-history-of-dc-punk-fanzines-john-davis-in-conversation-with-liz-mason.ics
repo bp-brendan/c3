@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260116-keep-your-ear-to-the-ground-a-history-of-dc-punk-fanzines-jo
+ hn-davis-in-conversation-with-liz-mason@thevisualist.org
+DTSTAMP:20260116T000000Z
+DTSTART;TZID=America/Chicago:20260116T183000
+DTEND;TZID=America/Chicago:20260116T203000
+SUMMARY:Keep Your Ear to the Ground: A History of DC Punk Fanzines John D
+ avis in Conversation with Liz Mason
+LOCATION:Quimby's Bookstore\, 1854 W North Ave\, Chicago\, IL 60622
+DESCRIPTION:Keep Your Ear to the Ground: A History of DC Punk Fanzines Jo
+ hn Davis in Conversation with Liz Mason Friday\, January 16th\, 2026 –
+  6:30-8:30 Keep Your Ear to the Ground is the first history of the fanzi
+ nes that emerged from Washington\, DC’s highly influential punk commun
+ ity. DIY...\nMore info: https://thevisualist.org/2026/01/keep-your-ear-t
+ o-the-ground-a-history-of-dc-punk-fanzines-john-davis-in-conversation-wi
+ th-liz-mason/\nVenue site: https://www.quimbys.com/store/
+URL:https://thevisualist.org/2026/01/keep-your-ear-to-the-ground-a-histor
+ y-of-dc-punk-fanzines-john-davis-in-conversation-with-liz-mason/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

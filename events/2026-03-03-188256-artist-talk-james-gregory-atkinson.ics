@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260303-artist-talk-james-gregory-atkinson@thevisualist.org
+DTSTAMP:20260303T000000Z
+DTSTART;TZID=America/Chicago:20260303T180000
+DTEND;TZID=America/Chicago:20260303T200000
+SUMMARY:Artist Talk | James Gregory Atkinson
+LOCATION:Goethe-Institut Chicago\, 150 N Michigan Ave\, Suite 420\, Chica
+ go\, IL 60601
+DESCRIPTION:Join us for a talk by the Frankfurt-based artist James Gregor
+ y Atkinson\, whose research-driven practice weaves social and political 
+ histories with autobiographical narratives to foreground Afro-German exp
+ eriences. Working across film\, sound\, installation\, and performative 
+ practices...\nMore info: https://thevisualist.org/2026/03/artist-talk-ja
+ mes-gregory-atkinson/\nVenue site: https://www.eventbrite.com/e/artist-t
+ alk-james-gregory-atkinson-tickets-1983493629841?utm-campaign=social&utm
+ -content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=
+ cp&aff=ebdsshcopyurl
+URL:https://thevisualist.org/2026/03/artist-talk-james-gregory-atkinson/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

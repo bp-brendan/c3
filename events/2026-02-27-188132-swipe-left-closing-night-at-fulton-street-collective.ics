@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260227-swipe-left-closing-night-at-fulton-street-collective@thevisu
+ alist.org
+DTSTAMP:20260227T000000Z
+DTSTART;TZID=America/Chicago:20260227T180000
+DTEND;TZID=America/Chicago:20260227T210000
+SUMMARY:SWIPE LEFT: Closing Night at Fulton Street Collective
+LOCATION:Fulton Street Collective\, 1821 W Hubbard St\, Chicago\, IL 6062
+ 2
+DESCRIPTION:Fulton Street Collective presents the closing night of our cu
+ rrent installation SWIPE LEFT on Friday February 27th\, from 6:30pm-9:30
+ pm. In an era of infinite choice\, how do we process the finite sting of
+  a broken heart? “Swipe Left” explores the intersection of tradition
+ al romantic...\nMore info: https://thevisualist.org/2026/02/swipe-left-c
+ losing-night-at-fulton-street-collective/\nVenue site: https://fultonstr
+ eetcollective.com/
+URL:https://thevisualist.org/2026/02/swipe-left-closing-night-at-fulton-s
+ treet-collective/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

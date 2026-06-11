@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260617-bmrc-20th-anniversary-symposium-on-black-chicago@thevisualis
+ t.org
+DTSTAMP:20260617T000000Z
+DTSTART;VALUE=DATE:20260617
+SUMMARY:BMRC 20th Anniversary Symposium on Black Chicago
+LOCATION:The Regenstein Library\, The University of Chicago\, 1100 E 57th
+  St\, Chicago\, IL 60637
+DESCRIPTION:The Black Metropolis Research Consortium welcomes you to two 
+ days of deep learning and discussion about Black Chicago History Day One
+ : June 17\, 2026 The symposium will take place at Regenstein Library\, 1
+ 100 E. 57th Street\, Chicago IL 60637 in Room JRL 122 8:30am – 9:00am 
+ Breakfast and...\nMore info: https://thevisualist.org/?p=190927\nVenue s
+ ite: https://bmrc.lib.uchicago.edu/events/bmrc-20th-anniversary-symposiu
+ m-on-black-chicago-june-17-18-2026/
+URL:https://thevisualist.org/?p=190927
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260530-myth-of-the-organic-city-blue-moon-closing-celebration@thevi
+ sualist.org
+DTSTAMP:20260530T000000Z
+DTSTART;TZID=America/Chicago:20260530T130000
+DTEND;TZID=America/Chicago:20260530T170000
+SUMMARY:Myth of the Organic City: Blue Moon Closing Celebration
+LOCATION:6018North\, 6018 N Kenmore Ave\, Chicago\, IL 60660
+DESCRIPTION:Toast the artists and the closing of this well loved exhibiti
+ on with food and drink. This is the last time to see Myth of the Organic
+  City\, a historical and contemporary exhibition that explores Chicago
+ ’s design and land use\, from its indigenous roots to present-day deve
+ lopments. The...\nMore info: https://thevisualist.org/2026/05/myth-of-th
+ e-organic-city-blue-moon-closing-celebration/\nVenue site: https://www.6
+ 018north.org/current-upcoming-projects#/myth-of-the-organic-city
+URL:https://thevisualist.org/2026/05/myth-of-the-organic-city-blue-moon-c
+ losing-celebration/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

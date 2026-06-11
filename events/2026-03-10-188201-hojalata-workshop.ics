@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260310-hojalata-workshop@thevisualist.org
+DTSTAMP:20260310T000000Z
+DTSTART;TZID=America/Chicago:20260310T170000
+DTEND;TZID=America/Chicago:20260310T183000
+SUMMARY:Hojalata Workshop
+LOCATION:Gallery 400\, 400 S Peoria St\, 5th Fl Rm 5100\, Chicago\, IL 60
+ 607
+DESCRIPTION:Learn how to make your own hojalata that you get to keep! Hoj
+ alatas are colorful\, ornamented tin sheets fashioned into ornate frames
+ \, ornaments\, and works of art using cutting\, folding\, embossing\, an
+ d painting techniques. Pros Arts Studio members Elvia Rodriguez Ochoa an
+ d Rosalie...\nMore info: https://thevisualist.org/2026/03/hojalata-works
+ hop/\nVenue site: https://gallery400.uic.edu/event/hojalatas-workshop/
+URL:https://thevisualist.org/2026/03/hojalata-workshop/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

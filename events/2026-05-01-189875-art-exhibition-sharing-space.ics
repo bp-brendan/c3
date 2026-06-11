@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260501-art-exhibition-sharing-space@thevisualist.org
+DTSTAMP:20260501T000000Z
+DTSTART;TZID=America/Chicago:20260501T180000
+DTEND;TZID=America/Chicago:20260501T200000
+SUMMARY:Art Exhibition: Sharing Space
+LOCATION:The Palette & Chisel Academy of Fine Arts\, 1012 N Dearborn St\,
+  Chicago\, IL 60610
+DESCRIPTION:Eight artists invite you to an exhibition of refined and pers
+ onal work. Hosted in the historic gallery of the Palette & Chisel Academ
+ y of Fine Arts\, this show is a celebration of craftsmanship\, storytell
+ ing\, and the beauty of representational art. Stop by our Opening Recept
+ ion on May...\nMore info: https://thevisualist.org/2026/05/art-exhibitio
+ n-sharing-space/\nVenue site: https://paletteandchisel.org/
+URL:https://thevisualist.org/2026/05/art-exhibition-sharing-space/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

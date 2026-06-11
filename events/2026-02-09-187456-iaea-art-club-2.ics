@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260209-iaea-art-club@thevisualist.org
+DTSTAMP:20260209T000000Z
+DTSTART;TZID=America/Chicago:20260209T180000
+DTEND;TZID=America/Chicago:20260209T200000
+SUMMARY:IAEA Art Club
+LOCATION:Illinois Art Education Association\, Online
+DESCRIPTION:5 Dates of Creative Curiosity! A 2-hour hands-on workshop for
+  Illinois art teachers focused on creative exploration\, reflection\, an
+ d community-building. Participants engage in adaptable mixed-media proce
+ sses that model inquiry-based\, student-centered learning. Aligned with 
+ ISBE...\nMore info: https://thevisualist.org/2026/02/iaea-art-club-2/\nV
+ enue site: https://ilaea.org/
+URL:https://thevisualist.org/2026/02/iaea-art-club-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

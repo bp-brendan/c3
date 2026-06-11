@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260110-leah-ke-yi-zheng-change@thevisualist.org
+DTSTAMP:20260110T000000Z
+DTSTART;TZID=America/Chicago:20260110T140000
+DTEND;TZID=America/Chicago:20260110T160000
+SUMMARY:Leah Ke Yi Zheng: Change
+LOCATION:The Renaissance Society\, 5811 S Ellis Ave\, Cobb Hall\, 4th Fl\
+ , Chicago\, IL 60637
+DESCRIPTION:Leah Ke Yi Zheng’s upcoming exhibition presents a complete 
+ series of 64 paintings based on the hexagrams of the I Ching (Book of Ch
+ anges)\, a foundational text in Chinese philosophy that offers insights 
+ into the changing nature of existence. Each painting reflects on a hexag
+ ram not...\nMore info: https://thevisualist.org/2026/01/leah-ke-yi-zheng
+ -change/\nVenue site: https://renaissancesociety.org/events/1410/change-
+ i-ching-64-paintings/
+URL:https://thevisualist.org/2026/01/leah-ke-yi-zheng-change/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

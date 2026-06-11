@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260320-my-good-hoe-as-it-bites-the-ground-revenges-my-wrongs-and-i-
+ have-less-lust-to-bite-my-enemies@thevisualist.org
+DTSTAMP:20260320T000000Z
+DTSTART;TZID=America/Chicago:20260320T180000
+DTEND;TZID=America/Chicago:20260320T210000
+SUMMARY:My Good Hoe as It Bites the Ground Revenges My Wrongs\, and I Hav
+ e Less Lust to Bite My Enemies
+LOCATION:Point Blank\, 1541 W Chicago Ave\, Chicago\, IL 60642
+DESCRIPTION:We are excited to announce the first show at our new location
+ \, “My Good Hoe as It Bites the Ground Revenges My Wrongs\, and I Have
+  Less Lust to Bite My Enemies” Opening March 20th from 6-9 pm 1541 W C
+ hicago Ave Opening week will be gallery focused\, followed by a program 
+ of events and...\nMore info: https://thevisualist.org/2026/03/my-good-ho
+ e-as-it-bites-the-ground-revenges-my-wrongs-and-i-have-less-lust-to-bite
+ -my-enemies/\nVenue site: https://www.pointblankchicago.com/
+URL:https://thevisualist.org/2026/03/my-good-hoe-as-it-bites-the-ground-r
+ evenges-my-wrongs-and-i-have-less-lust-to-bite-my-enemies/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

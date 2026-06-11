@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260305-dutes-miller-for-a-darkend-room@thevisualist.org
+DTSTAMP:20260305T000000Z
+DTSTART;TZID=America/Chicago:20260305T170000
+DTEND;TZID=America/Chicago:20260305T200000
+SUMMARY:Dutes Miller: For a Darkend Room
+LOCATION:Lillstreet Art Center\, 4401 N Ravenswood Ave\, Chicago\, IL 606
+ 40
+DESCRIPTION:For a Darkend Room installation by Dutes Miller March 1 – M
+ ay 31\, 2026 Opening reception: Thursday\, March 5\, 5-8pm For a darkend
+  room is a small immersive installation exploiting the particular archit
+ ecture of the gallery. The space is part cave\, part temple\, and part b
+ athroom stall...\nMore info: https://thevisualist.org/2026/03/dutes-mill
+ er-for-a-darkend-room-2/\nVenue site: https://lillstreet.com/upcoming-ev
+ ents
+URL:https://thevisualist.org/2026/03/dutes-miller-for-a-darkend-room-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

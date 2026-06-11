@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260516-conflict-of-interests@thevisualist.org
+DTSTAMP:20260516T000000Z
+DTSTART;TZID=America/Chicago:20260516T170000
+DTEND;TZID=America/Chicago:20260516T210000
+SUMMARY:Conflict of Interests
+LOCATION:ShadowBoxX Gallery\, 116 Washington St\, Waukegan\, IL 60085
+DESCRIPTION:Conflict of Interests is about friction. It is about using th
+ e “wrong” material on purpose. It is about the disconnect between wh
+ at something looks like and what it says. The medium doesn’t match the
+  message. Harmony is often hard to achieve. But let’s be honest: Do we
+  always want...\nMore info: https://thevisualist.org/2026/05/conflict-of
+ -interests-opening-reception/\nVenue site: https://www.manvshadow.com/co
+ nflict-of-interests-exhibition-artists
+URL:https://thevisualist.org/2026/05/conflict-of-interests-opening-recept
+ ion/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

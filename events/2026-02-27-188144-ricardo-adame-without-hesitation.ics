@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260227-ricardo-adame-without-hesitation@thevisualist.org
+DTSTAMP:20260227T000000Z
+DTSTART;TZID=America/Chicago:20260227T190000
+DTEND;TZID=America/Chicago:20260227T210000
+SUMMARY:Ricardo Adame: Without Hesitation
+LOCATION:Elastic Arts\, 3429 W Diversey Ave\, #208\, Chicago\, IL 60647
+DESCRIPTION:Homeroom is excited to present an exhibition of work by proli
+ fic Chicago photographer Ricardo Adame. Without Hesitation runs from Feb
+  23 to Mar 20 and features Adame’s photography documenting various per
+ formances at Elastic Arts over the past several years\, including Homero
+ om’s...\nMore info: https://thevisualist.org/2026/02/ricardo-adame-wit
+ hout-hesitation/\nVenue site: https://elasticarts.org/events/ricardo-ada
+ me-without-hesitation-visual-gallery-exhibition-opening-party
+URL:https://thevisualist.org/2026/02/ricardo-adame-without-hesitation/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

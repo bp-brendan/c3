@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260613-be-seen-be-proud@thevisualist.org
+DTSTAMP:20260613T000000Z
+DTSTART;TZID=America/Chicago:20260613T120000
+DTEND;TZID=America/Chicago:20260613T180000
+SUMMARY:Be Seen\, Be Proud
+LOCATION:6311arts\, 6311 N Clark St\, Chicago IL 60660
+DESCRIPTION:Edgewater’s community arts center 6311arts will present Be 
+ Seen\, Be Proud\, a group exhibition celebrating Chicago Pride through t
+ he work of local artists across a range of media and perspectives. Openi
+ ng Saturday\, June 13\, with a reception and drag show from 12–6 p.m.\
+ , the exhibition...\nMore info: https://thevisualist.org/?p=190967\nVenu
+ e site: https://www.6311arts.com/
+URL:https://thevisualist.org/?p=190967
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

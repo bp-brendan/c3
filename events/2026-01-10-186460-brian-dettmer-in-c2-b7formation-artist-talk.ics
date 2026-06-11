@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260110-brian-dettmer-in-formation-artist-talk@thevisualist.org
+DTSTAMP:20260110T000000Z
+DTSTART;TZID=America/Chicago:20260110T140000
+DTEND;TZID=America/Chicago:20260110T170000
+SUMMARY:Brian Dettmer: In·Formation: Artist Talk
+LOCATION:Riverside Arts Center\, 32 East Quincy Street\, Riverside\, Illi
+ nois 60546
+DESCRIPTION:BRIAN DETTMER | IN·FORMATION Artist Talk Saturday\, January 
+ 10\, 2026\, 2:00 PM The Riverside Arts Center’s Freeark Gallery is ple
+ ased to present In·Formation\, an exhibition of Brian Dettmer sculpture
+  curated by Jeremy Black. Please join us for an artist talk will be held
+  Saturday...\nMore info: https://thevisualist.org/2026/01/brian-dettmer-
+ in·formation-artist-talk/\nVenue site: https://www.riversideartscenter.
+ com/freearksculpturegarden/2025/12/brian/dettmer
+URL:https://thevisualist.org/2026/01/brian-dettmer-in·formation-artist-t
+ alk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

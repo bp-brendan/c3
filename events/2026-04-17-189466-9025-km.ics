@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260417-9025-km@thevisualist.org
+DTSTAMP:20260417T000000Z
+DTSTART;TZID=America/Chicago:20260417T190000
+DTEND;TZID=America/Chicago:20260417T220000
+SUMMARY:9025 km
+LOCATION:Ukrainian National Museum\, 2249 W Superior St\, Chicago\, IL 60
+ 612
+DESCRIPTION:This exhibition will feature 12 Ukrainian-American artists fr
+ om Chicago: Elena Diadenko\, Elena Pach\, Maria Plotnikova\, Kateryna Tk
+ achenko\, Marta Sofia Fraser\, Youlia Tkatchouk\, Luna Prysiazhniuk\, Na
+ talia Shutiak\, Walter Monastyretsky\, Andriy Antonenko\, Yulia Polyakov
+ a and Andre...\nMore info: https://thevisualist.org/2026/04/9025-km/\nVe
+ nue site: https://ukrainiannationalmuseum.org/9025-km-art-exhibition-04-
+ 17-2026/
+URL:https://thevisualist.org/2026/04/9025-km/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

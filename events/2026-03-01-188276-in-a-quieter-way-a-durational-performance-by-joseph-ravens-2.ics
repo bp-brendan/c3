@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260301-in-a-quieter-way-a-durational-performance-by-joseph-ravens@t
+ hevisualist.org
+DTSTAMP:20260301T000000Z
+DTSTART;TZID=America/Chicago:20260301T090000
+DTEND;TZID=America/Chicago:20260301T120000
+SUMMARY:in a quieter way: a durational performance by joseph ravens
+LOCATION:Evanston Art Center\, 1717 Central St\, Evanston\, IL 60201
+DESCRIPTION:in a quieter way: refusing acceleration a durational performa
+ nce by joseph ravens The installation is a living archive and the body s
+ erves as a temporary index. A figure moves slowly. Marking and unmarking
+ . Making and unmaking. Negotiating negative space. Extending and fragmen
+ ting...\nMore info: https://thevisualist.org/2026/03/in-a-quieter-way-a-
+ durational-performance-by-joseph-ravens-2/\nVenue site: https://www.evan
+ stonartcenter.org/exhibitions/choreographic-place-david-sundry-michael-w
+ orkman-michelle-kranicke
+URL:https://thevisualist.org/2026/03/in-a-quieter-way-a-durational-perfor
+ mance-by-joseph-ravens-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

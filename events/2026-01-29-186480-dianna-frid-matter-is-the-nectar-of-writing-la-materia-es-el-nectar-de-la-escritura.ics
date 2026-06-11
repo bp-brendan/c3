@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260129-dianna-frid-matter-is-the-nectar-of-writing-la-materia-es-el
+ -nectar-de-la-escritura@thevisualist.org
+DTSTAMP:20260129T000000Z
+DTSTART;TZID=America/Chicago:20260129T160000
+DTEND;TZID=America/Chicago:20260129T180000
+SUMMARY:Dianna Frid: Matter Is the Nectar of Writing / La materia es el n
+ éctar de la escritura
+LOCATION:University Galleries\, University Galleries 11 Uptown Circle\, S
+ uite 103\, Normal\, IL 61761
+DESCRIPTION:University Galleries of Illinois State University is pleased 
+ to present Dianna Frid: Matter Is the Nectar of Writing / La materia es 
+ el néctar de la escritura from January 12 through March 1\, 2026. Featu
+ ring new and recent tapestries\, artist’s books\, embroideries\, photo
+ graphs...\nMore info: https://thevisualist.org/2026/01/dianna-frid-matte
+ r-is-the-nectar-of-writing-la-materia-es-el-nectar-de-la-escritura/\nVen
+ ue site: https://galleries.illinoisstate.edu/exhibitions/2026/dianna-fri
+ d/
+URL:https://thevisualist.org/2026/01/dianna-frid-matter-is-the-nectar-of-
+ writing-la-materia-es-el-nectar-de-la-escritura/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

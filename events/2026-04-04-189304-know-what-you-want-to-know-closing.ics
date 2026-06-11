@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260404-know-what-you-want-to-know-closing@thevisualist.org
+DTSTAMP:20260404T000000Z
+DTSTART;TZID=America/Chicago:20260404T160000
+DTEND;TZID=America/Chicago:20260404T180000
+SUMMARY:Know What You Want to Know: Closing
+LOCATION:Compound Yellow\, 244 Lake St\, Oak Park\, IL 60302
+DESCRIPTION:Dear Friends\, We would like to warmly invite you to the offi
+ cial closing of the exhibition Know What You Want to Know\, this Saturda
+ y April 4\, 4-6pm at Compound Yellow. Two very special guests will be jo
+ ining us: Kat Bawden and Maya Nguyen\, who will perform their new pieces
+ : Maya...\nMore info: https://thevisualist.org/2026/04/know-what-you-wan
+ t-to-know-closing/\nVenue site: https://compoundyellow.com/know-what-you
+ -want-to-know-aleksandra-waaszek-samuel-stevens-closing-reception/
+URL:https://thevisualist.org/2026/04/know-what-you-want-to-know-closing/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

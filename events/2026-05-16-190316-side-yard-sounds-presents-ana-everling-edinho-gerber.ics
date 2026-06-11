@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260516-side-yard-sounds-presents-ana-everling-edinho-gerber@thevisu
+ alist.org
+DTSTAMP:20260516T000000Z
+DTSTART;TZID=America/Chicago:20260516T190000
+DTEND;TZID=America/Chicago:20260516T210000
+SUMMARY:Side Yard Sounds presents: Ana Everling & Edinho Gerber
+LOCATION:compound yellow\, 244 Lake St\, Oak Park\, IL 60302
+DESCRIPTION:Side Yard Sounds presents: Ana Everling & Edinho Gerber Satur
+ day\, May 16\, 2026 7:00 PM 9:00 PM Compound Yellow #244 Lake Street Oak
+  Park\, IL Purchase tickets https://events.ticketleap.com/tickets/compou
+ nd-yellow/side-yard-sounds-ana-everling-and-edinho-gerber Ana Everling 
+ – vocals...\nMore info: https://thevisualist.org/2026/05/side-yard-sou
+ nds-presents-ana-everling-edinho-gerber/\nVenue site: https://compoundye
+ llow.com/side-yard-sounds-ana-everling-and-edinho-gerber/
+URL:https://thevisualist.org/2026/05/side-yard-sounds-presents-ana-everli
+ ng-edinho-gerber/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

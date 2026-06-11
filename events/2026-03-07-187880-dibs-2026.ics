@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260307-dibs@thevisualist.org
+DTSTAMP:20260307T000000Z
+DTSTART;TZID=America/Chicago:20260307T180000
+DTEND;TZID=America/Chicago:20260307T200000
+SUMMARY:DIBS
+LOCATION:ROTOFUGI\, 2780 N Lincoln Ave\, Chicago\, IL 60614
+DESCRIPTION:The Seventh Corner Gallery’s popular DIBS show returns for 
+ 2026! Our 4th annual Dibs event is coming to a new venue- Rotofugi! Swin
+ g by Chicago’s best designer toy store and buy original art from the c
+ ity’s hottest artists for cheap. Contributors include Penny Pinch\, Ge
+ ne Ha\, Jonski...\nMore info: https://thevisualist.org/2026/03/dibs-2026
+ /\nVenue site: https://www.theseventhcornergallery.com/?itemId=1wb4hl69q
+ rpp8c2b6ru5bqq1PMl510
+URL:https://thevisualist.org/2026/03/dibs-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260515-allen-moore-chasing-what-the-water-kept-and-wendy-robles-mic
+ hael-zhang-atmospheres-of-possibility@thevisualist.org
+DTSTAMP:20260515T000000Z
+DTSTART;TZID=America/Chicago:20260515T180000
+DTEND;TZID=America/Chicago:20260515T210000
+SUMMARY:Allen Moore: Chasing what the Water Kept and Wendy Robles & Micha
+ el Zhang: Atmospheres of Possibility
+LOCATION:Roots & Culture\, 1034 N Milwaukee Ave\, Chicago\, IL 60642
+DESCRIPTION:Chasing What the Water Kept explores the sonic and visual dim
+ ensions of Black death and grief through improvisation and experimentati
+ on. The work examines the signifiers of Blackness as shifting cultural a
+ nd emotional conditions\, using sound and image to investigate memory\, 
+ loss\, and...\nMore info: https://thevisualist.org/2026/05/allen-moore-a
+ nd-wendy-robles-michael-zhang/\nVenue site: https://www.rootsandculturec
+ ac.org/show/allen-moore-and-wendy-robles-michael-zhang/
+URL:https://thevisualist.org/2026/05/allen-moore-and-wendy-robles-michael
+ -zhang/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

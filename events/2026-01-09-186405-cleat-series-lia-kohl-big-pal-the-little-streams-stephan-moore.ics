@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260109-cleat-series-lia-kohl-big-pal-the-little-streams-stephan-moo
+ re@thevisualist.org
+DTSTAMP:20260109T000000Z
+DTSTART;TZID=America/Chicago:20260109T200000
+DTEND;TZID=America/Chicago:20260109T220000
+SUMMARY:CLEAT Series: Lia Kohl\, Big Pal / The Little Streams / Stephan M
+ oore
+LOCATION:Elastic Arts\, 3429 W Diversey Ave\, #208\, Chicago\, IL 60647
+DESCRIPTION:At our first CLEAT Series of 2026 welcome solo cello/electron
+ ics artist Lia Kohl to the system for the first time\, along with the re
+ turn of Big Pal in collaboration with The Little Streams and series cura
+ tor Stephan Moore. We’re excited for this first time collaboration bet
+ ween the...\nMore info: https://thevisualist.org/2026/01/cleat-series-li
+ a-kohl-big-pal-the-little-streams-stephan-moore/\nVenue site: https://el
+ asticarts.org/events/cleat-series-lia-kohl-big-pal-the-little-streams-st
+ ephan-moore
+URL:https://thevisualist.org/2026/01/cleat-series-lia-kohl-big-pal-the-li
+ ttle-streams-stephan-moore/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

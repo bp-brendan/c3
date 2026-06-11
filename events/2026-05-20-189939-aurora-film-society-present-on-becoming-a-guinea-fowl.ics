@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260520-aurora-film-society-presents-on-becoming-a-guinea-fowl@thevi
+ sualist.org
+DTSTAMP:20260520T000000Z
+DTSTART;TZID=America/Chicago:20260520T183000
+DTEND;TZID=America/Chicago:20260520T220000
+SUMMARY:Aurora Film Society presents: On Becoming A Guinea Fowl
+LOCATION:The Venue\, 21 S Broadway Ave\, Aurora\, IL 60505
+DESCRIPTION:On Becoming a Guinea Fowl [2024 / Rungano Nyoni] This black c
+ omedy drama opens with a Zambian woman\, Shula\, finding her Uncle Fred
+ ’s body on an empty road in the middle of the night. As funeral procee
+ dings begin around them\, she and her cousins bring to light the buried 
+ secrets of...\nMore info: https://thevisualist.org/2026/05/aurora-film-s
+ ociety-present-on-becoming-a-guinea-fowl/\nVenue site: https://www.auror
+ afilmsociety.org/afs-on-our-screen-presents-on-becoming-a-guinea-fowl-20
+ 24-rungano-nyoni-99-min-may-20th/
+URL:https://thevisualist.org/2026/05/aurora-film-society-present-on-becom
+ ing-a-guinea-fowl/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

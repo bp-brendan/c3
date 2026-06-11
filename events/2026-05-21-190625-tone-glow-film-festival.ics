@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260521-tone-glow-film-festival@thevisualist.org
+DTSTAMP:20260521T000000Z
+DTSTART;TZID=America/Chicago:20260521T180000
+DTEND;TZID=America/Chicago:20260521T200000
+SUMMARY:Tone Glow Film Festival
+LOCATION:Chicago Filmmakers\, 1326 W Hollywood Ave\, Chicago\, IL 60660
+DESCRIPTION:Tone Glow Film Festival (TGFF) is a festival committed to sho
+ wcasing the best in experimental film. The screenings will take place on
+  Thursday\, May 21st to Sunday\, May 24th at three venues in Chicagoland
+ . 45 films will be shown across 14 programs\, and 26 of these films will
+  be shown...\nMore info: https://thevisualist.org/2026/05/tone-glow-film
+ -festival/\nVenue site: https://toneglow.substack.com/p/tone-glow-film-f
+ estival-2026
+URL:https://thevisualist.org/2026/05/tone-glow-film-festival/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

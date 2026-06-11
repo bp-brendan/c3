@@ -1,0 +1,53 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260108-barnacles-i-love-art-and-art-loves-me-today-we-rob-peter-tom
+ orrow-we-pay-paul@thevisualist.org
+DTSTAMP:20260108T000000Z
+DTSTART;TZID=America/Chicago:20260108T180000
+DTEND;TZID=America/Chicago:20260108T220000
+SUMMARY:Barnacles (I love art and art loves me [today we rob Peter\, tomo
+ rrow we pay Paul])
+LOCATION:Weatherproof\, 3336 W Lawrence Ave\, #303\, Chicago\, IL 60625
+DESCRIPTION:𝐁𝐚𝐫𝐧𝐚𝐜𝐥𝐞𝐬 (𝐈 𝐥𝐨𝐯𝐞 
+ 𝐚𝐫𝐭 𝐚𝐧𝐝 𝐚𝐫𝐭 𝐥𝐨𝐯𝐞𝐬 𝐦𝐞 [
+ 𝐭𝐨𝐝𝐚𝐲 𝐰𝐞 𝐫𝐨𝐛 𝐏𝐞𝐭𝐞𝐫\, 𝐭
+ 𝐨𝐦𝐨𝐫𝐫𝐨𝐰 𝐰𝐞 𝐩𝐚𝐲 𝐏𝐚𝐮𝐥]) JA
+ NUARY 8TH – FEBRUARY 22ND Madeline Gallucci Jacob Jackmauh Travis More
+ head Gozié Ojini Cj Shaw Naoki Sutter Shudo OPENS THURSDAY 6-10PM WEATH
+ ERPROOF 3336 W LAWRENCE #303 CHICAGO IL\, 60625 ‘… writing...\nMore 
+ info: https://thevisualist.org/2026/01/barnacles-i-love-art-and-art-love
+ s-me-today-we-rob-peter-tomorrow-we-pay-paul/\nVenue site: https://weath
+ erproof.zone
+URL:https://thevisualist.org/2026/01/barnacles-i-love-art-and-art-loves-m
+ e-today-we-rob-peter-tomorrow-we-pay-paul/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

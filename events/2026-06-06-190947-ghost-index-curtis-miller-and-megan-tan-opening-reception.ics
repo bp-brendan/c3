@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260606-ghost-index-curtis-miller-and-megan-tan@thevisualist.org
+DTSTAMP:20260606T000000Z
+DTSTART;TZID=America/Chicago:20260606T160000
+DTEND;TZID=America/Chicago:20260606T190000
+SUMMARY:Ghost Index: Curtis Miller and Megan Tan
+LOCATION:Comfort Station\, 2579 N. Milwaukee Ave. Chicago\, IL 60647
+DESCRIPTION:You look and see nothing at first\, which is to say that you 
+ see what you expected. Later\, someone points out a detail\, “right th
+ ere\,” and something begins to form\, or perhaps it was already there 
+ and now that there becomes available to you. In the nineteenth century\,
+  famed “spirit...\nMore info: https://thevisualist.org/2026/06/ghost-i
+ ndex-curtis-miller-and-megan-tan-opening-reception/\nVenue site: https:/
+ /comfortstationlogansquare.org/june-2026-curtis-miller-and-megan-tan
+URL:https://thevisualist.org/2026/06/ghost-index-curtis-miller-and-megan-
+ tan-opening-reception/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260412-six-words@thevisualist.org
+DTSTAMP:20260412T000000Z
+DTSTART;VALUE=DATE:20260412
+SUMMARY:six words ( )
+LOCATION:Locker Room\, 2320 N Kenmore Ave\, Chicago\, IL\, 60614
+DESCRIPTION:Our next show ~ six words ( ) featuring work by Abisola Clay\
+ , Alexa Bakos Peters\, and Grace Bradley on view Sunday 4/12 until 4/21 
+ Keep your eyes on the spectacle @abisola.clay @bankrupt_on_selling @bad_
+ case_of_the_stripes\nMore info: https://thevisualist.org/2026/04/six-wor
+ ds-2/\nVenue site: https://www.instagram.com/p/DW9Qq5kDQC7/
+URL:https://thevisualist.org/2026/04/six-words-2/
+END:VEVENT
+END:VCALENDAR

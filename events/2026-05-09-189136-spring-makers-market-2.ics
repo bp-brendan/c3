@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-spring-makers-market@thevisualist.org
+DTSTAMP:20260509T000000Z
+DTSTART;TZID=America/Chicago:20260509T110000
+DTEND;TZID=America/Chicago:20260509T160000
+SUMMARY:Spring Makers’ Market
+LOCATION:Robert's Westside\, Table & Lain\, Brown Cow\, and 7410 Madison\
+ , Madison Street\, Forest Park\, IL 60130
+DESCRIPTION:Arts Alliance Forest Park is pleased to bring you the Spring 
+ Makers’ Market on Saturday\, May 9th\, 11 – 4 pm. The Maker’s Mark
+ et is free\, located inside businesses\, and hosts a variety of locally 
+ made creative arts and crafts. Vendors are juried artists\, producing pa
+ intings\, drawings...\nMore info: https://thevisualist.org/2026/05/sprin
+ g-makers-market-2/\nVenue site: https://forestparkarts.org/
+URL:https://thevisualist.org/2026/05/spring-makers-market-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260226-platica-con-marisa-hicks-alcaraz-archiving-muxerista-moviema
+ king@thevisualist.org
+DTSTAMP:20260226T000000Z
+DTSTART;TZID=America/Chicago:20260226T190000
+DTEND;TZID=America/Chicago:20260226T200000
+SUMMARY:Plática con Marisa Hicks-Alcaraz: Archiving Muxerista Moviemakin
+ g
+LOCATION:Sin Cinta Previa\, Online
+DESCRIPTION:Join Sin Cinta Previa in a Zoom conversation with scholar\, e
+ ducator\, curator\, and memory worker Dr. Marisa Hicks-Alcaraz. Speciali
+ zing in Latina moving image production\, community and personal archivin
+ g\, and relational feminist practices\, she’ll share about her commitm
+ ent to building...\nMore info: https://thevisualist.org/2026/02/platica-
+ con-marisa-hicks-alcaraz-archiving-muxerista-moviemaking-2/\nVenue site:
+  https://sincintaprevia.com/
+URL:https://thevisualist.org/2026/02/platica-con-marisa-hicks-alcaraz-arc
+ hiving-muxerista-moviemaking-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

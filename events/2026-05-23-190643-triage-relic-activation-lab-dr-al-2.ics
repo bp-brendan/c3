@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260523-triage-relic-activation-lab-dr-al@thevisualist.org
+DTSTAMP:20260523T000000Z
+DTSTART;TZID=America/Chicago:20260523T180000
+DTEND;TZID=America/Chicago:20260523T210000
+SUMMARY:TRIAGE: Relic Activation Lab (Dr AL)
+LOCATION:Mana Contemporary\, 2233 S Throop St\, Chicago\, IL 60608
+DESCRIPTION:DFBRL8R presents TRIAGE\, a public event closing the inaugura
+ l Dr AL intensive at Mana Contemporary. Nine artists\, archivists\, and 
+ researchers have lived inside the DFBRL8R archive while making urgent de
+ cisions about what to save\, what to stabilize\, and what to release. TR
+ IAGE is the...\nMore info: https://thevisualist.org/2026/05/triage-relic
+ -activation-lab-dr-al-2/\nVenue site: https://ruddy-lifeboat-0b1.notion.
+ site/Dr-AL-DFBRL8R-Relic-Activation-Lab-9194664fb5e0410da11ec855923a74ed
+URL:https://thevisualist.org/2026/05/triage-relic-activation-lab-dr-al-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

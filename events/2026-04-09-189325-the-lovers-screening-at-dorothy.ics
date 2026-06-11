@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260409-the-lovers-screening-at-dorothy@thevisualist.org
+DTSTAMP:20260409T000000Z
+DTSTART;TZID=America/Chicago:20260409T190000
+DTEND;TZID=America/Chicago:20260409T203000
+SUMMARY:The Lovers Screening at Dorothy
+LOCATION:Dorothy\, 2500 W Chicago Ave\, Chicago\, IL 60622
+DESCRIPTION:Synopsis: When a laid-off sex worker falls for a fitness witc
+ h in 2020 Los Angeles\, it will take the help of an internet astrologer\
+ , cinema guru\, cam model\, retired dungeon owner\, porn star and host o
+ f the supernatural\, to craft a new way of loving. Come watch episode 1 
+ & 2 of THE...\nMore info: https://thevisualist.org/2026/04/the-lovers-sc
+ reening-at-dorothy/\nVenue site: https://www.dorothydownstairs.com/event
+ s/the-lovers-screening-at-dorothy
+URL:https://thevisualist.org/2026/04/the-lovers-screening-at-dorothy/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-side-yard-sounds-presents-official-claire-with-bill-harris-a
+ nd-leroy-bach@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;TZID=America/Chicago:20260214T190000
+DTEND;TZID=America/Chicago:20260214T210000
+SUMMARY:Side Yard Sounds presents: Official Claire with Bill Harris and L
+ eRoy Bach
+LOCATION:compound yellow\, 244 Lake Street\, Oak Park\, IL 60302
+DESCRIPTION:Side Yard Sounds presents: Offical Claire w/LeRoy Bach and Sp
+ ecial Guest Bill Harris BYOB $15. Tickets available here. Please RSVP ea
+ rly for a guaranteed seat\, as space is limited in the studio Official C
+ laire is one of her generation’s finest songwriters. The Chicago Reade
+ r praised...\nMore info: https://thevisualist.org/2026/02/side-yard-soun
+ ds-presents-official-claire-with-bill-harris-and-leroy-bach/\nVenue site
+ : https://thevisualist.org/www.compoundyellow.com
+URL:https://thevisualist.org/2026/02/side-yard-sounds-presents-official-c
+ laire-with-bill-harris-and-leroy-bach/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

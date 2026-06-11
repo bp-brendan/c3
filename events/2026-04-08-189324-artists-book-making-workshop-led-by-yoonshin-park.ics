@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260408-artists-book-making-workshop-led-by-yoonshin-park@thevisuali
+ st.org
+DTSTAMP:20260408T000000Z
+DTSTART;TZID=America/Chicago:20260408T130000
+DTEND;TZID=America/Chicago:20260408T140000
+SUMMARY:Artists Book-Making Workshop led by Yoonshin Park
+LOCATION:Hyde Park Art Center\, 5020 S Cornell Ave\, Chicago\, IL 60615
+DESCRIPTION:Join artist Yoonshin Park for an artists book-making workshop
+  organized in conjunction with the exhibition Prompt and Prompted. Each 
+ session will address a different artists book-making subject\, such as m
+ ark-making\, using found objects\, simple binding\, and more. Workshops 
+ will take...\nMore info: https://thevisualist.org/2026/04/artists-book-m
+ aking-workshop-led-by-yoonshin-park/\nVenue site: https://www.hydeparkar
+ t.org/event/artists-book-making-workshop-led-by-yoonshin-park-4/
+URL:https://thevisualist.org/2026/04/artists-book-making-workshop-led-by-
+ yoonshin-park/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

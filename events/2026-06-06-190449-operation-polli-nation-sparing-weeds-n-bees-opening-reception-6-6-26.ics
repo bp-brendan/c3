@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260606-operation-polli-nation-sparing-weeds-n-bees-opening-receptio
+ n-6-6-26@thevisualist.org
+DTSTAMP:20260606T000000Z
+DTSTART;TZID=America/Chicago:20260606T180000
+DTEND;TZID=America/Chicago:20260606T210000
+SUMMARY:OPERATION Polli-Nation : Sparing “WEEDS” ‘n Bees | OPENING 
+ RECEPTION 6/6/26
+LOCATION:Timeless Arts Gallery & Studio\, 3040 N Ashland Ave\, Chicago\, 
+ IL\, 60657
+DESCRIPTION:Every Spring it seems the first thing on every homeowner’s 
+ mind is to WIPE OUT Dandelions\, the Bumble Bee’s very first REAL MEAL
+  after a long\, dark\, cold Winter’s nap. Don’t do it. Save the “w
+ eeds” and we save the bees. Our June Multi-Artist Exhibition\, OPERATI
+ ON: Polli-Nation...\nMore info: https://thevisualist.org/2026/06/operati
+ on-polli-nation-sparing-weeds-n-bees-opening-reception-6-6-26/\nVenue si
+ te: https://www.facebook.com/events/967761999565074
+URL:https://thevisualist.org/2026/06/operation-polli-nation-sparing-weeds
+ -n-bees-opening-reception-6-6-26/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

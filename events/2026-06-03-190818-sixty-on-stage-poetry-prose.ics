@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260603-sixty-on-stage-poetry-prose@thevisualist.org
+DTSTAMP:20260603T000000Z
+DTSTART;TZID=America/Chicago:20260603T183000
+DTEND;TZID=America/Chicago:20260603T203000
+SUMMARY:Sixty on Stage: Poetry & Prose!
+LOCATION:Elastic Arts\, 3429 W Diversey Ave\, #208\, Chicago\, IL 60647
+DESCRIPTION:Join Sixty Inches From Center at Elastic Arts to hear the lat
+ est from poets and creative writers recently published by Sixty Lit\, in
+ cluding Vera Blossom\, e’mon lauren\, Diego Báez\, Temperance Aghamoh
+ ammadi\, and Riley Yaxley. This reading is presented as part of Sixty Li
+ t\, an effort...\nMore info: https://thevisualist.org/2026/06/sixty-on-s
+ tage-poetry-prose/\nVenue site: https://sixtyinchesfromcenter.org/join-u
+ s-for-sixty-on-stage-poetry-prose/
+URL:https://thevisualist.org/2026/06/sixty-on-stage-poetry-prose/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

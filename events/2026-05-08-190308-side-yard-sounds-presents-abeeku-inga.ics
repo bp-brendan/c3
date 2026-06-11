@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260508-side-yard-sounds-presents-abeeku-inga@thevisualist.org
+DTSTAMP:20260508T000000Z
+DTSTART;TZID=America/Chicago:20260508T190000
+DTEND;TZID=America/Chicago:20260508T210000
+SUMMARY:Side Yard Sounds presents: ABEEKU + inga
+LOCATION:compound yellow\, 244 Lake St\, Oak Park\, IL 60302
+DESCRIPTION:Tickets $15 https://events.ticketleap.com/…/side-yard-sound
+ s… BYOB. ABEEKU is the latest facet of the vast artistic expression of
+  composer and performer David Boykin. Its a combination of electro soul\
+ , golden era hip hop production\, and spiritual jazz into a sensuous ble
+ nd of...\nMore info: https://thevisualist.org/2026/05/side-yard-sounds-p
+ resents-abeeku-inga/\nVenue site: https://compoundyellow.com/side-yard-s
+ ounds-abeeku-inga/
+URL:https://thevisualist.org/2026/05/side-yard-sounds-presents-abeeku-ing
+ a/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

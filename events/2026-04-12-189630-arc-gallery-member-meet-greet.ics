@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260412-arc-gallery-member-meet-greet@thevisualist.org
+DTSTAMP:20260412T000000Z
+DTSTART;TZID=America/Chicago:20260412T120000
+DTEND;TZID=America/Chicago:20260412T140000
+SUMMARY:ARC Gallery Member Meet & Greet
+LOCATION:ARC Gallery\, 1463 W Chicago Ave\, Chicago\, IL 60642
+DESCRIPTION:ARC Gallery proudly presents a special Member Meet & Greet on
+  Sunday\, April 12\, 12–2 PM—timed with EXPO Chicago as the internat
+ ional art world gathers in the city. Experience The Given Distance\, cur
+ ated by Chicago gallerist William Lieberman\, and connect directly with 
+ ARC’s...\nMore info: https://thevisualist.org/2026/04/arc-gallery-memb
+ er-meet-greet/\nVenue site: https://www.arcgallery.org/
+URL:https://thevisualist.org/2026/04/arc-gallery-member-meet-greet/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

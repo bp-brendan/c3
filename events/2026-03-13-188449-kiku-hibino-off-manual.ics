@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260313-kiku-hibino-off-manual@thevisualist.org
+DTSTAMP:20260313T000000Z
+DTSTART;TZID=America/Chicago:20260313T190000
+DTEND;TZID=America/Chicago:20260313T210000
+SUMMARY:Kikù Hibino: OFF.Manual
+LOCATION:Co-Prosperity\, 3219 S Morgan St\, Chicago\, 60608
+DESCRIPTION:OFF.Manual Kikù Hibino Duration: 30 minutes OFF. Manual is a
+  high-volume noise performance that responds to Gregory Bae’s interest
+  in “leftover margins” and “disassociated symbols”—elements th
+ at disappear when systems prioritize clarity\, order\, and rule-followin
+ g. The performance...\nMore info: https://thevisualist.org/2026/03/kiku-
+ hibino-off-manual/\nVenue site: https://coprosperity.org/chicago/2026/1/
+ 12/carrier
+URL:https://thevisualist.org/2026/03/kiku-hibino-off-manual/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260306-araceli-zuniga-fair-play@thevisualist.org
+DTSTAMP:20260306T000000Z
+DTSTART;TZID=America/Chicago:20260306T180000
+DTEND;TZID=America/Chicago:20260306T210000
+SUMMARY:Araceli Zuniga: Fair Play
+LOCATION:crosswalk\, 1856 N Richmond St\, Chicago\, IL 60647
+DESCRIPTION:Fair Play opening reception 3/6/36 6-9pm. Fair Play is a solo
+  by Araceli Zuniga. Araceli Zuniga is a Mexican-American artist based in
+  the midwest whose work is defined by intimacy and play. Through expansi
+ ve materiality\, Zuniga uses child-like qualities to encourage a reflect
+ ive...\nMore info: https://thevisualist.org/2026/03/araceli-zuniga-fair-
+ play/\nVenue site: https://crosswalk-gallery.us/home.html
+URL:https://thevisualist.org/2026/03/araceli-zuniga-fair-play/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

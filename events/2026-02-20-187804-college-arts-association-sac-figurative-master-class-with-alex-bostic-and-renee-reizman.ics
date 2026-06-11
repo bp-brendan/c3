@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260220-college-arts-association-sac-figurative-master-class-with-al
+ ex-bostic-and-renee-reizman@thevisualist.org
+DTSTAMP:20260220T000000Z
+DTSTART;TZID=America/Chicago:20260220T143000
+DTEND;TZID=America/Chicago:20260220T160000
+SUMMARY:College Arts Association: SAC Figurative Master Class with Alex B
+ ostic and Renée Reizman
+LOCATION:Hilton Chicago - 2nd Floor - Boulevard\, 720 South Michigan Aven
+ ue\, Chicago\, IL 60605\, USA
+DESCRIPTION:Click Here to Register: https://docs.google.com/forms/d/e/1FA
+ IpQLSfTIpRCWp4JdGS89zw3mDCNw6I8vpo0JiUh_ts5Hyqdk_eDVw/viewform In this h
+ ands-on masterclass\, Alex Bostic (Figurative artist and illustrator ) a
+ nd Renée Reizman ( Artist and founder of Disability Drawing Club) will 
+ guide you...\nMore info: https://thevisualist.org/2026/02/college-arts-a
+ ssociation-sac-figurative-master-class-with-alex-bostic-and-renee-reizma
+ n/\nVenue site: https://docs.google.com/forms/d/e/1FAIpQLSfTIpRCWp4JdGS8
+ 9zw3mDCNw6I8vpo0JiUh_ts5Hyqdk_eDVw/viewform
+URL:https://thevisualist.org/2026/02/college-arts-association-sac-figurat
+ ive-master-class-with-alex-bostic-and-renee-reizman/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

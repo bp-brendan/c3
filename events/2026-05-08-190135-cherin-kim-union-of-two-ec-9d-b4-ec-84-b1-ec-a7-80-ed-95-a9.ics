@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260508-cherin-kim-union-of-two@thevisualist.org
+DTSTAMP:20260508T000000Z
+DTSTART;TZID=America/Chicago:20260508T170000
+DTEND;TZID=America/Chicago:20260508T210000
+SUMMARY:Cherin Kim: Union of Two [이성지합]
+LOCATION:Art City\, 1400 N Halsted Street Chicago\, IL 60642
+DESCRIPTION:Join Art City for the opening reception of Cherin Kim’s Uni
+ on of Two [이성지합] solo show. Cherin Kim’s body of work examines
+  images of marriage and migration within personal family archives and ex
+ plores how the compounded expectations of gender conformity and cultural
+  assimilation shape...\nMore info: https://thevisualist.org/2026/05/cher
+ in-kim-union-of-two-이성지합/\nVenue site: https://newgallery.online
+ /cherin-kim-union-of-two
+URL:https://thevisualist.org/2026/05/cherin-kim-union-of-two-이성지합
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

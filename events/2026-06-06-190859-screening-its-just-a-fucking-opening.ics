@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260606-screening-it-s-just-a-fucking-opening@thevisualist.org
+DTSTAMP:20260606T000000Z
+DTSTART;TZID=America/Chicago:20260606T170000
+DTEND;TZID=America/Chicago:20260606T190000
+SUMMARY:Screening: It’s Just a Fucking Opening
+LOCATION:Tala\, 1644 W Chicago Ave\, Chicago\, IL 60622
+DESCRIPTION:Join us for the closing program of 𝐑𝐢𝐭𝐮𝐚𝐥
+ 𝐬 𝐟𝐨𝐫 𝐅𝐢𝐞𝐥𝐝 𝐓𝐫𝐚𝐧𝐬𝐦𝐢𝐬
+ 𝐬𝐢𝐨𝐧𝐬 on Saturday\, June 6\, 5-7PM To celebrate the closi
+ ng\, we are thrilled to host an exclusive screening of “Its Just a Fuc
+ king Opening” a short film by josh brainin\, Camille Bacon\, Youssef B
+ oucetta which was filmed...\nMore info: https://thevisualist.org/2026/06
+ /screening-its-just-a-fucking-opening/\nVenue site: https://talachicago.
+ com/
+URL:https://thevisualist.org/2026/06/screening-its-just-a-fucking-opening
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

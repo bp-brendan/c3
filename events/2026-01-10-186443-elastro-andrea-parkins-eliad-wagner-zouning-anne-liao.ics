@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260110-elastro-andrea-parkins-eliad-wagner-zouning-anne-liao@thevis
+ ualist.org
+DTSTAMP:20260110T000000Z
+DTSTART;TZID=America/Chicago:20260110T200000
+DTEND;TZID=America/Chicago:20260110T220000
+SUMMARY:Elastro: Andrea Parkins/ Eliad Wagner\, Zouning Anne Liao
+LOCATION:Elastic Arts\, 3429 W Diversey Ave\, #208\, Chicago\, IL 60647
+DESCRIPTION:Our first Elastro series of the year features the visiting du
+ o of Andrea Parkins + Eliad Wagner\, and a solo presentation from Zounin
+ g Anne Liao. Andrea Parkins’ and Eliad Wagner’s electroacoustic duo 
+ tumbles through a thicket of sonic densities\, fusing sounding objects 
+ — a sliver of...\nMore info: https://thevisualist.org/2026/01/elastro-
+ andrea-parkins-eliad-wagner-zouning-anne-liao/\nVenue site: https://elas
+ ticarts.org/events/elastro-andrea-parkins-eliad-wagner-anne-liao
+URL:https://thevisualist.org/2026/01/elastro-andrea-parkins-eliad-wagner-
+ zouning-anne-liao/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

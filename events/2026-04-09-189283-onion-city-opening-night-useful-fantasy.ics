@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260409-onion-city-opening-night-useful-fantasy@thevisualist.org
+DTSTAMP:20260409T000000Z
+DTSTART;TZID=America/Chicago:20260409T200000
+DTEND;TZID=America/Chicago:20260409T220000
+SUMMARY:Onion City: Opening Night – Useful Fantasy
+LOCATION:Gene Siskel Film Center\, 164 N. State St\, Chicago\, IL 60601
+DESCRIPTION:The 36th Onion City Experimental Film Festival opens with USE
+ FUL FANTASY\, a special shorts program at the Gene Siskel Film Center cu
+ rated by artist Peter Burr and presented in partnership with 150 Media S
+ tream. The program features a 35mm print of Suzan Pitt’s iconic ASPARA
+ GUS (1979)...\nMore info: https://thevisualist.org/2026/04/onion-city-op
+ ening-night-useful-fantasy/\nVenue site: https://chicagofilmmakers.org/u
+ pcoming-screenings-and-events/onion-city-opening-night-useful-fantasy
+URL:https://thevisualist.org/2026/04/onion-city-opening-night-useful-fant
+ asy/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

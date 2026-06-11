@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260306-duality@thevisualist.org
+DTSTAMP:20260306T000000Z
+DTSTART;TZID=America/Chicago:20260306T180000
+DTEND;TZID=America/Chicago:20260306T220000
+SUMMARY:DUALITY
+LOCATION:Jackson Junge Gallery\, 1389 N Milwaukee Ave\, Chicago\, IL 6062
+ 2
+DESCRIPTION:Jackson Junge Gallery is proud to present their first group e
+ xhibition of the year\, DUALITY. This exhibition features the work of 24
+  artists who have set to create two pieces of art intended to be viewed 
+ as one piece\, better known as a diptych. These diptychs in DUALITY each
+  highlight...\nMore info: https://thevisualist.org/2026/03/duality/\nVen
+ ue site: https://j2gallery.com/
+URL:https://thevisualist.org/2026/03/duality/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

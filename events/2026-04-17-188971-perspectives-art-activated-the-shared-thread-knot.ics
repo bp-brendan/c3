@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260417-perspective-s-art-activated-the-shared-thread-knot@thevisual
+ ist.org
+DTSTAMP:20260417T000000Z
+DTSTART;TZID=America/Chicago:20260417T180000
+DTEND;TZID=America/Chicago:20260417T193000
+SUMMARY:Perspective(s) Art Activated: The Shared Thread Knot
+LOCATION:Chicago Arts Partnerships in Education\, 1010 W 35th street\, su
+ ite 697\, Chicago\, IL 60609
+DESCRIPTION:Art Activated: The Shared Thread Knot Join us as CAPE teachin
+ g artists Fiorella Gomez and Amelia Cintula discuss and reflect on their
+  community art project at Currier Elementary in the suburb of West Chica
+ go which draws inspiration from the 1970s arpillera workshops run by Chi
+ lean...\nMore info: https://thevisualist.org/2026/04/perspectives-art-ac
+ tivated-the-shared-thread-knot/\nVenue site: https://capechicago.org/
+URL:https://thevisualist.org/2026/04/perspectives-art-activated-the-share
+ d-thread-knot/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

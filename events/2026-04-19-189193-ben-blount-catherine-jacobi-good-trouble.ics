@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260419-ben-blount-catherine-jacobi-good-trouble@thevisualist.org
+DTSTAMP:20260419T000000Z
+DTSTART;TZID=America/Chicago:20260419T150000
+DTEND;TZID=America/Chicago:20260419T180000
+SUMMARY:Ben Blount & Catherine Jacobi: Good Trouble
+LOCATION:Riverside Arts Center\, 32 E Quincy St\, Riverside\, IL 60546
+DESCRIPTION:“Go out there\, speak up\, speak out. Get in the way. Get i
+ n good trouble\, necessary trouble\, and help redeem the soul of America
+ .”1 U.S. Congressman and civil rights leader John Lewis spoke these wo
+ rds as he stood on the Edmund Pettus Bridge in Selma\, Alabama in 2020 t
+ o commemorate the...\nMore info: https://thevisualist.org/2026/04/ben-bl
+ ount-catherine-jacobi-good-trouble/\nVenue site: https://www.riversidear
+ tscenter.com/freearksculpturegarden/2026/04/ben/blount/catherine/jacobi/
+ good/trouble
+URL:https://thevisualist.org/2026/04/ben-blount-catherine-jacobi-good-tro
+ uble/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260217-stories-sewn@thevisualist.org
+DTSTAMP:20260217T000000Z
+DTSTART;TZID=America/Chicago:20260217T153000
+DTEND;TZID=America/Chicago:20260217T183000
+SUMMARY:Stories Sewn
+LOCATION:Chicago Arts Partnership in Education\, 1010 W 35th St\, Suit 69
+ 7\, Chicago\, IL 60609
+DESCRIPTION:We invite you to join Stories Sewn\, an innovative\, collabor
+ ative exhibition led by teaching artists Jessica Mueller and SHENEQUA th
+ at transforms the CAPE gallery into an interactive sewing and textile wo
+ rkshop. This evolving exhibition blurs the line between artist and audie
+ nce...\nMore info: https://thevisualist.org/2026/02/stories-sewn/\nVenue
+  site: https://capechicago.org/events/list/
+URL:https://thevisualist.org/2026/02/stories-sewn/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

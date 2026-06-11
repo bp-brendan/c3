@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260530-closing-reception-girl-talk-by-lindsey-kircher@thevisualist.
+ org
+DTSTAMP:20260530T000000Z
+DTSTART;TZID=America/Chicago:20260530T130000
+DTEND;TZID=America/Chicago:20260530T150000
+SUMMARY:Closing Reception: Girl Talk by Lindsey Kircher
+LOCATION:Oliva Gallery\, 3816 W Armitage Ave\, Chicago\, IL 60647
+DESCRIPTION:Closing reception for Girl Talk\, a solo exhibition of painti
+ ngs by Lindsey Kircher at Oliva Gallery in Chicago. Join Oliva Gallery f
+ or the closing reception of Girl Talk\, a solo exhibition of paintings b
+ y Chicago-based artist Lindsey Kircher. The exhibition brings together a
+  group of...\nMore info: https://thevisualist.org/2026/05/closing-recept
+ ion-girl-talk-by-lindsey-kircher/\nVenue site: https://www.eventbrite.co
+ m/e/closing-reception-girl-talk-by-lindsey-kircher-at-oliva-gallery-tick
+ ets-1987847912618?aff=oddtdtcreator
+URL:https://thevisualist.org/2026/05/closing-reception-girl-talk-by-linds
+ ey-kircher/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

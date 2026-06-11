@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260603-harlem-masimba-west-artist-talk@thevisualist.org
+DTSTAMP:20260603T000000Z
+DTSTART;TZID=America/Chicago:20260603T180000
+DTEND;TZID=America/Chicago:20260603T200000
+SUMMARY:Harlem Masimba West Artist Talk
+LOCATION:Spudnik Press\, 1821 W Hubbard St\, Suite 302 Chicago\, IL 60622
+DESCRIPTION:Join us at Spudnik Press for an artist talk with Harlem Masim
+ ba West on June 3 at 6 PM. During the talk\, West will speak about their
+  residency work exploring memory\, archival image-making\, and movement 
+ throughout Chicago through cyanotype and mixed-media collage. Centering 
+ an evolving...\nMore info: https://thevisualist.org/2026/06/harlem-masim
+ ba-west-artist-talk/\nVenue site: https://www.spudnikpress.org/event/har
+ lem-masimba-west-artist-talk/
+URL:https://thevisualist.org/2026/06/harlem-masimba-west-artist-talk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

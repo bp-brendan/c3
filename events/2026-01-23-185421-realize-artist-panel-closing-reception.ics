@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260123-re-alize-artist-panel-closing-reception-postponed@thevisuali
+ st.org
+DTSTAMP:20260123T000000Z
+DTSTART;TZID=America/Chicago:20260123T140000
+DTEND;TZID=America/Chicago:20260123T170000
+SUMMARY:RE:ALIZE Artist Panel & Closing Reception: POSTPONED
+LOCATION:Chicago Arts Partnerships in Education\, 1010 W 35th Street\, Su
+ ite 697 Chicago\, IL 60609-1401 United States
+DESCRIPTION:THIS EVENT HAS BEEN POSTPONED TO JANUARY 30TH FROM 2-4:30PM A
+ ND WILL BE HELD VIRTUALLY As the Becoming Infinite exhibition comes to a
+  close\, join us for an intimate conversation with the young artists beh
+ ind the work. During this reflective panel\, RE:ALIZE students will shar
+ e insights...\nMore info: https://thevisualist.org/2026/01/realize-artis
+ t-panel-closing-reception/\nVenue site: https://capechicago.org/event/re
+ alize-artist-panel-closing-program/
+URL:https://thevisualist.org/2026/01/realize-artist-panel-closing-recepti
+ on/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

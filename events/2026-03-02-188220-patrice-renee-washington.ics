@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260302-patrice-renee-washington@thevisualist.org
+DTSTAMP:20260302T000000Z
+DTSTART;TZID=America/Chicago:20260302T180000
+DTEND;TZID=America/Chicago:20260302T200000
+SUMMARY:Patrice Renee Washington
+LOCATION:Logan Center for the Arts\,\, 915 E 60th St\, Chicago\, IL 60637
+DESCRIPTION:In this artist lecture\, Patrice Washington will speak in dep
+ th about her recent exhibition at the Institute of Contemporary Art at V
+ irginia Commonwealth University\, an exhibition which brings together wo
+ rk spanning 10 years. All of these works share a common concern in under
+ standing...\nMore info: https://thevisualist.org/2026/03/patrice-renee-w
+ ashington/\nVenue site: https://dova.uchicago.edu/events/patrice-renee-w
+ ashington
+URL:https://thevisualist.org/2026/03/patrice-renee-washington/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

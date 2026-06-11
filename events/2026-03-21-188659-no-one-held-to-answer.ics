@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260321-no-one-held-to-answer@thevisualist.org
+DTSTAMP:20260321T000000Z
+DTSTART;TZID=America/Chicago:20260321T180000
+DTEND;TZID=America/Chicago:20260321T220000
+SUMMARY:No One Held To Answer
+LOCATION:SPACE 01\, 4850 W Bloomingdale Ave\, Chicago\, IL 60639
+DESCRIPTION:RSVP here: https://luma.com/9sfykh55 Who do we hold accountab
+ le for war\, genocide\, and government-enacted violence? ​No One Held 
+ To Answer is a group exhibition and fundraiser curated with the support 
+ of Chicago Torture Justice Memorials Foundation. ​Attendees are encour
+ aged to bring...\nMore info: https://thevisualist.org/2026/03/no-one-hel
+ d-to-answer/\nVenue site: https://s01.world/
+URL:https://thevisualist.org/2026/03/no-one-held-to-answer/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260124-yoonshin-park-prompt-and-prompted@thevisualist.org
+DTSTAMP:20260124T000000Z
+DTSTART;VALUE=DATE:20260124
+SUMMARY:Yoonshin Park: Prompt and Prompted
+LOCATION:Hyde Park Art Center\, 5020 S Cornell Ave\, Chicago\, IL 60615
+DESCRIPTION:Hyde Park Art Center\, the renowned non-profit hub for contem
+ porary art located on Chicago’s vibrant South Side\, is proud to annou
+ nce Yoonshin Park: Prompt and Prompted\, an exhibition highlighting the 
+ artist’s\, as well as her students’\, experimental ways of creating 
+ artist books that...\nMore info: https://thevisualist.org/2026/01/yoonsh
+ in-park-prompt-and-prompted/\nVenue site: https://www.hydeparkart.org/ex
+ hibition-archive/yoonshin-park-prompt-and-prompted/
+URL:https://thevisualist.org/2026/01/yoonshin-park-prompt-and-prompted/
+END:VEVENT
+END:VCALENDAR

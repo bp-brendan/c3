@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260516-planting-seeds-an-indigenous-zine-fest@thevisualist.org
+DTSTAMP:20260516T000000Z
+DTSTART;TZID=America/Chicago:20260516T110000
+DTEND;TZID=America/Chicago:20260516T150000
+SUMMARY:Planting Seeds: An Indigenous Zine Fest
+LOCATION:Newberry Library\, 60 W Walton St\, Chicago\, IL 60610
+DESCRIPTION:Join ZINEmercado and the Newberry for the second year of Plan
+ ting Seeds: An Indigenous Zine Fest! The fest will feature zines and pri
+ nts by Indigenous creators from across the globe. The event will include
+  hands-on art activities led by artists\, and a display of zines and com
+ ics by...\nMore info: https://thevisualist.org/2026/05/planting-seeds-an
+ -indigenous-zine-fest-2/\nVenue site: https://www.newberry.org/calendar/
+ zine-fest-2026?utm_source=ig&utm_medium=social&utm_content=link_in_bio&f
+ bclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn1DzNXExQ3h45
+ 5Am08d7z75VC1bc-88S_tu_wYfLoYFShr8BHnlBIJJnKeFE_aem_lY2tPMN0w60dm47TrF5P
+ 4g
+URL:https://thevisualist.org/2026/05/planting-seeds-an-indigenous-zine-fe
+ st-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

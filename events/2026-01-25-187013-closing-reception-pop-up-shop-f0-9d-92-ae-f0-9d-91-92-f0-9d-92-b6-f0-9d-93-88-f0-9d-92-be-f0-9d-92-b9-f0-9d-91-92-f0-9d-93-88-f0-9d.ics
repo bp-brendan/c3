@@ -1,0 +1,57 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260125-closing-reception-pop-up-shop-seasides-decides-an-exhibition
+ -by-jesse-malmed-at-compound-yellow@thevisualist.org
+DTSTAMP:20260125T000000Z
+DTSTART;TZID=America/Chicago:20260125T150000
+DTEND;TZID=America/Chicago:20260125T180000
+SUMMARY:Closing reception + Pop up shop: 𝒮𝑒𝒶𝓈𝒾𝒹𝑒𝓈
+ \, 𝒟𝑒𝒸𝒾𝒹𝑒𝓈 𝒶𝓃 𝑒𝓍𝒽𝒾𝒷𝒾𝓉
+ 𝒾𝑜𝓃 𝒷𝓎 𝒥𝑒𝓈𝓈𝑒 𝑀𝒶𝓁𝓂𝑒𝒹 𝒶
+ 𝓉 𝒞𝑜𝓂𝓅𝑜𝓊𝓃𝒹 𝒴𝑒𝓁𝓁𝑜𝓌
+LOCATION:compound yellow\, 244 Lake Street\, Oak Park\, Il 60302
+DESCRIPTION:𝒮𝑒𝒶𝓈𝒾𝒹𝑒𝓈\, 𝒟𝑒𝒸𝒾𝒹𝑒
+ 𝓈 𝒶𝓃 𝑒𝓍𝒽𝒾𝒷𝒾𝓉𝒾𝑜𝓃 𝒷𝓎 𝒥𝑒
+ 𝓈𝓈𝑒 𝑀𝒶𝓁𝓂𝑒𝒹 𝒶𝓉 𝒞𝑜𝓂𝓅𝑜𝓊
+ 𝓃𝒹 𝒴𝑒𝓁𝓁𝑜𝓌 ~ ~ ~ ~ ~ ~ ~ WԀ 9-Ɛ ގᄅ ⅋ 8⇂ 
+ ⅄ᴚ∀∩N∀ſ ~ ~ ~ ~ ~ ~ ~ 𝔍𝔈𝔗𝔖𝔜 𝔐𝔈ℜℭℌ
+ 𝔅𝔏𝔄𝔗𝔗 𝔓𝔒𝔓 𝔘𝔓 𝔖ℌ𝔒𝔓 + 𝔇ℜ𝔒
+ 𝔓 ℭ𝔒𝔐𝔓𝔒𝔘𝔑𝔇 𝔜𝔒𝔏𝔒 JANUARY 18 & 25 3-
+ 6 PM If Asides\, Besides embraced a certain kind of maximalism (more tha
+ n a hundred drawings\, 110...\nMore info: https://thevisualist.org/2026/
+ 01/closing-reception-pop-up-shop-𝒮𝑒𝒶𝓈𝒾𝒹𝑒𝓈-𝒟
+ 𝑒𝒸𝒾𝒹/\nVenue site: https://compoundyellow.com/seasides-decid
+ es-jesse-malmed-2/
+URL:https://thevisualist.org/2026/01/closing-reception-pop-up-shop-𝒮
+ 𝑒𝒶𝓈𝒾𝒹𝑒𝓈-𝒟𝑒𝒸𝒾𝒹/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

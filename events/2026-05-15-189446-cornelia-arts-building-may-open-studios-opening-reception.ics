@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260515-cornelia-arts-building-may-open-studios-opening-reception@th
+ evisualist.org
+DTSTAMP:20260515T000000Z
+DTSTART;TZID=America/Chicago:20260515T170000
+DTEND;TZID=America/Chicago:20260515T210000
+SUMMARY:Cornelia Arts Building May Open Studios – Opening Reception
+LOCATION:cornelia arts building\, 1800 W Cornelia Ave\, Chicago\, IL 6065
+ 7
+DESCRIPTION:Cornelia Arts Building May Open Studios Opening Reception cel
+ ebrates 40 years The Cornelia Arts Building art center celebrates their 
+ 40 year anniversary as an artist studio building. Originally an Ice-hous
+ e\, the building has fostered Chicago artist creativity continually sinc
+ e its...\nMore info: https://thevisualist.org/2026/05/cornelia-arts-buil
+ ding-may-open-studios-opening-reception/\nVenue site: https://corneliaar
+ tsbuilding.com/events/may-open-studios-40-years-in-the-arts/
+URL:https://thevisualist.org/2026/05/cornelia-arts-building-may-open-stud
+ ios-opening-reception/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

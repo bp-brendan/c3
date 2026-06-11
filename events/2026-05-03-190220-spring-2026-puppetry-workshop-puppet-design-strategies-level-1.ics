@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260503-spring-2026-puppetry-workshop-puppet-design-strategies-level
+ -1@thevisualist.org
+DTSTAMP:20260503T000000Z
+DTSTART;TZID=America/Chicago:20260503T100000
+DTEND;TZID=America/Chicago:20260503T130000
+SUMMARY:Spring 2026 Puppetry Workshop: Puppet Design Strategies (Level 1)
+LOCATION:Fine Arts Building\, Studio 433\, 410 S Michigan Ave\, Suite 560
+ \, Chicago\, IL 60605
+DESCRIPTION:Puppet Design Strategies (Level 1) with Tom Lee This in-perso
+ n workshop taught by Chicago Puppet Studio Co-Director Tom Lee focuses o
+ n bringing puppet and theater designs into workable reality. Tom will sh
+ owcase examples from his professional practice including designs\, proce
+ sses...\nMore info: https://thevisualist.org/2026/05/spring-2026-puppetr
+ y-workshop-puppet-design-strategies-level-1/\nVenue site: https://chicag
+ opuppetfest.org/event/spring-2026-workshop-puppet-design-strategies/
+URL:https://thevisualist.org/2026/05/spring-2026-puppetry-workshop-puppet
+ -design-strategies-level-1/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

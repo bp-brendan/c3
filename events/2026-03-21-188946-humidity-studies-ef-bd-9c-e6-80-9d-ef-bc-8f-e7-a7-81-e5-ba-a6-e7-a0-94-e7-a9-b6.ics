@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260321-humidity-studies@thevisualist.org
+DTSTAMP:20260321T000000Z
+DTSTART;TZID=America/Chicago:20260321T180000
+DTEND;TZID=America/Chicago:20260321T200000
+SUMMARY:Humidity Studies｜思／私度研究
+LOCATION:M House\, 800 W 27th St\, Floors 2–3\, Chicago\, IL 60608
+DESCRIPTION:Humidity Studies｜思／私度研究 is a group show curated
+  by Tzu Ying (Cara) Cheng\, featuring 11 Taiwanese artists. The exhibiti
+ on brings together immersive and interactive installations\, digital gam
+ es\, video\, textile\, ceramic\, and mixed-media works. By focusing on t
+ he body and emotion\, the...\nMore info: https://thevisualist.org/2026/0
+ 3/humidity-studies｜思／私度研究/\nVenue site: https://mhouseschi
+ cago.com/events
+URL:https://thevisualist.org/2026/03/humidity-studies｜思／私度研
+ 究/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

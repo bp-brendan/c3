@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260417-airmw-presents-k-a-a-solo-taiko-concert-by-kioto-aoki@thevis
+ ualist.org
+DTSTAMP:20260417T000000Z
+DTSTART;TZID=America/Chicago:20260417T190000
+DTEND;TZID=America/Chicago:20260417T203000
+SUMMARY:AIRMW Presents: K.A – a solo taiko concert by Kioto Aoki
+LOCATION:The Edge Theater\, 5451 N Broadway\, Chicago\, IL 60640\, USA
+DESCRIPTION:AIRMW artist\, staff & Tsukasa Taiko leader Kioto Aoki presen
+ ts two evenings of a solo taiko performance at the Edge Theater. Accentu
+ ating the elongated nuances of sonic and physical duration\, Aoki will p
+ lay a continuous\, concert length set building the momentum of movement 
+ and sound...\nMore info: https://thevisualist.org/2026/04/airmw-presents
+ -k-a-a-solo-taiko-concert-by-kioto-aoki-2/\nVenue site: https://www.airm
+ w.org/event-details/041726-airmw-presents-kioto-aoki-solotaiko-day1
+URL:https://thevisualist.org/2026/04/airmw-presents-k-a-a-solo-taiko-conc
+ ert-by-kioto-aoki-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

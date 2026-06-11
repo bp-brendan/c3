@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260515-ink-outrage-18th-century-satirical-prints-in-london-dublin@t
+ hevisualist.org
+DTSTAMP:20260515T000000Z
+DTSTART;VALUE=DATE:20260515
+SUMMARY:Ink & Outrage: 18th-Century Satirical Prints in London & Dublin
+LOCATION:Driehaus Museum\, 50 East Erie St\, Chicago\, IL 60611
+DESCRIPTION:Ink & Outrage: 18th-Century Satirical Prints in London & Dubl
+ in is a lively and revelatory exhibition that explores the golden age of
+  caricature and the networks of art\, politics\, and piracy that connect
+ ed Britain and Ireland. The exhibition examines how artists such as Jame
+ s Gillray...\nMore info: https://thevisualist.org/2026/05/ink-outrage-18
+ th-century-satirical-prints-in-london-dublin/\nVenue site: https://drieh
+ ausmuseum.org/
+URL:https://thevisualist.org/2026/05/ink-outrage-18th-century-satirical-p
+ rints-in-london-dublin/
+END:VEVENT
+END:VCALENDAR

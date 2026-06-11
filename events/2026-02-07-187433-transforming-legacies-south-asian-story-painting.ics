@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260207-transforming-legacies-south-asian-story-painting@thevisualis
+ t.org
+DTSTAMP:20260207T000000Z
+DTSTART;VALUE=DATE:20260207
+SUMMARY:Transforming Legacies: South Asian Story Painting
+LOCATION:South Asia Institute\, 1925 S Michigan Ave\, Chicago\, IL 60616
+DESCRIPTION:“When we express our thoughts in words\, the medium is not 
+ found easily. There must be a process of translation\, which is often in
+ exact…” ― Rabindranath Tagore\, Stories from Tagore All stories ha
+ ve their origins in the oral tradition. We gather in community and regal
+ e audiences with...\nMore info: https://thevisualist.org/2026/02/transfo
+ rming-legacies-south-asian-story-painting/\nVenue site: https://www.saic
+ hicago.org/exhibition/transforming-legacies
+URL:https://thevisualist.org/2026/02/transforming-legacies-south-asian-st
+ ory-painting/
+END:VEVENT
+END:VCALENDAR

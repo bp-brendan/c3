@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260515-hazel-katz-who-gets-to-fly@thevisualist.org
+DTSTAMP:20260515T000000Z
+DTSTART;TZID=America/Chicago:20260515T180000
+DTEND;TZID=America/Chicago:20260515T210000
+SUMMARY:Hazel Katz: WHO GETS TO FLY
+LOCATION:ACRE Projects\, 2921 N Clark St\, Chicago\, IL 60657
+DESCRIPTION:ACRE Projects is pleased to present Hazel Katz’s solo exhib
+ ition WHO GETS TO FLY\, a multichannel video installation meandering thr
+ ough a cultural history of birds. The project examines the primary human
+ -avian contradiction that birds are deployed as both symbols of settler 
+ empire and...\nMore info: https://thevisualist.org/2026/05/hazel-katz-wh
+ o-gets-to-fly/\nVenue site: https://www.acreresidency.org/exhibition/who
+ -gets-fly
+URL:https://thevisualist.org/2026/05/hazel-katz-who-gets-to-fly/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

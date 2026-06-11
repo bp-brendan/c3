@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260220-soheila-kayoud-when-the-div-came-home@thevisualist.org
+DTSTAMP:20260220T000000Z
+DTSTART;TZID=America/Chicago:20260220T170000
+DTEND;TZID=America/Chicago:20260220T200000
+SUMMARY:Soheila Kayoud: When the Div Came Home
+LOCATION:ANDREW RAFACZ\, 1749 W Chicago Ave\, Chicago\, IL 60622
+DESCRIPTION:ANDREW RAFACZ is delighted to announce When the Div Came Home
+ \, a solo exhibition of embroidered paintings from Soheila Kayoud\, in G
+ allery Two. The exhibition opens Friday\, February 20th and continues th
+ rough Saturday\, April 4th\, 2026. This is the artist’s first solo exh
+ ibition with...\nMore info: https://thevisualist.org/2026/02/soheila-kay
+ oud-when-the-div-came-home/\nVenue site: https://andrewrafacz.com/exhibi
+ tions/soheila-kayoud/
+URL:https://thevisualist.org/2026/02/soheila-kayoud-when-the-div-came-hom
+ e/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

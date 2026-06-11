@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260612-carol-schrader-rising-waters-mythical-ships@thevisualist.org
+DTSTAMP:20260612T000000Z
+DTSTART;TZID=America/Chicago:20260612T170000
+DTEND;TZID=America/Chicago:20260612T210000
+SUMMARY:Carol Schrader: Rising Waters\, Mythical Ships
+LOCATION:Art City\, 1400 N Halsted St\, Chicago\, IL 60642
+DESCRIPTION:Join us for the opening reception of Carol Schrader: Rising W
+ aters\, Mythical Ships on June 12\, 2026 at 5-9pm. Carol Schrader’s Ri
+ sing Waters\, Mythical Ships invites viewers into a lush\, layered world
+  where mythology\, memory\, and contemporary life drift together on vibr
+ ant seas...\nMore info: https://thevisualist.org/?p=190639\nVenue site: 
+ https://newgallery.online/carol-schrader-rising-waters-mythical-ships
+URL:https://thevisualist.org/?p=190639
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-isaac-couch-the-blue-works@thevisualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T140000
+DTEND;TZID=America/Chicago:20260411T180000
+SUMMARY:Isaac Couch: The Blue Works
+LOCATION:compound yellow\, 244 Lake Street\, Oak Park\, Il 60302
+DESCRIPTION:Originally from Western Kentucky\, I have carried the texture
+ s\, tensions\, and rhythms of the South to Chicago. My work\, that is ro
+ oted in fashion\, but never confined by it\, has earned fellowships with
+  Luminarts (2021)\, the Arts Club of Chicago (2023-24)\, Chicago Artist 
+ Coalition...\nMore info: https://thevisualist.org/2026/04/isaac-couch-th
+ e-blue-works/\nVenue site: https://compoundyellow.com/opening-reception-
+ the-blue-works-by-isaac-couch/
+URL:https://thevisualist.org/2026/04/isaac-couch-the-blue-works/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

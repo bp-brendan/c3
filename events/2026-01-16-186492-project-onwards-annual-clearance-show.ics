@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260116-project-onward-s-annual-clearance-show@thevisualist.org
+DTSTAMP:20260116T000000Z
+DTSTART;TZID=America/Chicago:20260116T183000
+DTEND;TZID=America/Chicago:20260116T213000
+SUMMARY:Project Onward’s Annual Clearance Show
+LOCATION:Project Onward\, 1200 W 35th St\, 4th Floor\, Chicago\, IL 60609
+DESCRIPTION:Join us for our annual Clearance Sale on January 16 at our st
+ udio. Discover original artwork from over 65 artists on our roster\, wit
+ h pieces discounted up to 95% off. This once-a-year event is a celebrati
+ on of creativity\, access\, and incredible value—don’t miss it.\nMor
+ e info: https://thevisualist.org/2026/01/project-onwards-annual-clearanc
+ e-show/\nVenue site: https://www.projectonward.org/events-1/2026-clearan
+ ce-sale-show
+URL:https://thevisualist.org/2026/01/project-onwards-annual-clearance-sho
+ w/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260321-reggie-mcfly-everyday-people@thevisualist.org
+DTSTAMP:20260321T000000Z
+DTSTART;TZID=America/Chicago:20260321T170000
+DTEND;TZID=America/Chicago:20260321T220000
+SUMMARY:Reggie McFly: Everyday People
+LOCATION:Parlour and Ramp Gallery\, 2130 W 21st St\, Chicago\, IL 60608
+DESCRIPTION:Everyday People is a solo exhibition by Chicago based mixed m
+ edia artist Reggie McFly\, reflecting on the lives we pass each day but 
+ rarely stop to truly see. Through layered textures\, vibrant color\, and
+  tactile elements\, McFly captures the presence\, individuality\, and co
+ mplexity of...\nMore info: https://thevisualist.org/2026/03/reggie-mcfly
+ -everyday-people/\nVenue site: https://posh.vip/e/everyday-people-a-solo
+ -exhibition-by-reggie-mcfly
+URL:https://thevisualist.org/2026/03/reggie-mcfly-everyday-people/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260118-sunday-reading-series-mary-ardery-donna-vorreyer-snezana-zab
+ ic@thevisualist.org
+DTSTAMP:20260118T000000Z
+DTSTART;TZID=America/Chicago:20260118T183000
+DTEND;TZID=America/Chicago:20260118T203000
+SUMMARY:Sunday Reading Series: Mary Ardery\, Donna Vorreyer\, & Snežana 
+ Zabić
+LOCATION:Hungry Brain\, 2319 W Belmont Ave\, Chicago\, IL 60618
+DESCRIPTION:Sunday Reading Series: Mary Ardery\, Donna Vorreyer\, & Snež
+ ana Zabić RSVP\nMore info: https://thevisualist.org/2026/01/sunday-read
+ ing-series-mary-ardery-donna-vorreyer-snezana-zabic/\nVenue site: https:
+ //www.sundayreadingseries.com/events/sunday-reading-series-mary-ardery-d
+ onna-vorreyer-snezana-zabic
+URL:https://thevisualist.org/2026/01/sunday-reading-series-mary-ardery-do
+ nna-vorreyer-snezana-zabic/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

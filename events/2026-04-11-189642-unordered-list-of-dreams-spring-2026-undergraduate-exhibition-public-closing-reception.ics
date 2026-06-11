@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-unordered-list-of-dreams-spring-2026-undergraduate-exhibitio
+ n-public-closing-reception@thevisualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T120000
+DTEND;TZID=America/Chicago:20260411T170000
+SUMMARY:Unordered List of Dreams — Spring 2026 Undergraduate Exhibition
+  Public Closing Reception
+LOCATION:SAIC Galleries\, 33 E Washington St\, Chicago\, IL 60602
+DESCRIPTION:Come celebrate the culmination of years of hard work by 15 un
+ dergraduate artists at the closing reception of our student-organized ex
+ hibition! Unordered List of Dreams\, is located in the SAIC Spring Under
+ graduate Exhibition. Students with a variety of practices have crafted w
+ orks...\nMore info: https://thevisualist.org/2026/04/unordered-list-of-d
+ reams-spring-2026-undergraduate-exhibition-public-closing-reception/\nVe
+ nue site: https://web.saic.edu/shows/
+URL:https://thevisualist.org/2026/04/unordered-list-of-dreams-spring-2026
+ -undergraduate-exhibition-public-closing-reception/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

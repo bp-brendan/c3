@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-noah-kashini-garden-of-earthly-delights@thevisualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T120000
+DTEND;TZID=America/Chicago:20260411T170000
+SUMMARY:Noah Kashini: Garden of Earthly Delights
+LOCATION:Green Garnet Press\, 2233 S Throop St\, Studio 421\, Chicago\, I
+ L 60608
+DESCRIPTION:In “Garden of Earthly Delights\,” Noah Kashiani recontext
+ ualises the chaotic excess of Hieronymus Bosch’s masterwork through a 
+ lens of modern cynicism. Hosted at Green Garnet Press\, this exhibition 
+ curated by Christine Forni offers a sardonic commentary on contemporary 
+ indulgence...\nMore info: https://thevisualist.org/2026/04/noah-kashini-
+ garden-of-earthly-delights/\nVenue site: https://www.christineforni.com/
+ green-garnet-press-1
+URL:https://thevisualist.org/2026/04/noah-kashini-garden-of-earthly-delig
+ hts/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

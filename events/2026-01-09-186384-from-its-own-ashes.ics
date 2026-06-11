@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260109-from-its-own-ashes@thevisualist.org
+DTSTAMP:20260109T000000Z
+DTSTART;TZID=America/Chicago:20260109T170000
+DTEND;TZID=America/Chicago:20260109T200000
+SUMMARY:From Its Own Ashes
+LOCATION:Chicago Artists Coalition\, 1431 W Hubbard St\, Suite 201 Chicag
+ o\, IL 60642
+DESCRIPTION:Chicago Artists Coalition presents From Its Own Ashes\, a two
+ -person exhibition by 2024-26 Artist Residents Isaac Couch and Sangwoo Y
+ oo\, curated by 2024-26 Curatorial Resident Francine Almeda. “Last nig
+ ht\, when I escaped from the neighborhood\, it was burning. The houses\,
+  the trees\, the...\nMore info: https://thevisualist.org/2026/01/from-it
+ s-own-ashes/\nVenue site: https://chicagoartistscoalition.org/events/fro
+ m-its-own-ashes
+URL:https://thevisualist.org/2026/01/from-its-own-ashes/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

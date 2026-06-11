@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260322-the-future-of-the-visualist@thevisualist.org
+DTSTAMP:20260322T000000Z
+DTSTART;TZID=America/Chicago:20260322T113000
+DTEND;TZID=America/Chicago:20260322T130000
+SUMMARY:The Future of the Visualist
+LOCATION:Spudnik Press\, 1821 W Hubbard St\, Suite 302 Chicago\, IL 60622
+DESCRIPTION:We are taking time to reassess what is required to continue T
+ he Visualist as a platform. For years\, much of the work of finding and 
+ listing events across Chicago has happened through ongoing research by o
+ ur team—work that often makes up the majority of the events on the sit
+ e\, while...\nMore info: https://thevisualist.org/2026/03/the-future-of-
+ the-visualist/\nVenue site: https://thevisualist.org/
+URL:https://thevisualist.org/2026/03/the-future-of-the-visualist/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

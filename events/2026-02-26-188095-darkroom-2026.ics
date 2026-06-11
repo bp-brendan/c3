@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260226-darkroom-2026@thevisualist.org
+DTSTAMP:20260226T000000Z
+DTSTART;TZID=America/Chicago:20260226T173000
+DTEND;TZID=America/Chicago:20260226T213000
+SUMMARY:DARKROOM 2026
+LOCATION:Columbia College Student Center\, 754 S Wabash Ave\, Chicago\, I
+ L 60605
+DESCRIPTION:Celebrating MoCP at 50! DARKROOM is MoCP’s renowned benefit
+  auction party featuring premier artworks and one-of-a-kind arts experie
+ nces by emerging and established contemporary artists from around the wo
+ rld. Silver Camera Award Joel Sternfeld Photography Activation Marzena A
+ brahamik...\nMore info: https://thevisualist.org/2026/02/darkroom-2026/\
+ nVenue site: https://www.mocp.org/events/darkroom2026/
+URL:https://thevisualist.org/2026/02/darkroom-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

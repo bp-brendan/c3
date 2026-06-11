@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260502-haya-zaidi-up-against@thevisualist.org
+DTSTAMP:20260502T000000Z
+DTSTART;TZID=America/Chicago:20260502T170000
+DTEND;TZID=America/Chicago:20260502T190000
+SUMMARY:Haya Zaidi: Up Against
+LOCATION:Kavi Gupta | Washington Blvd. Fl.2\, 835 W Washington Blvd. Chic
+ ago\, IL 60607
+DESCRIPTION:Join us to celebrate the official opening of Haya Zaidi’s U
+ p Against\, the artist’s first solo exhibition in the United States\, 
+ marking a significant milestone in her practice. Karachi-based multidisc
+ iplinary artist Haya Zaidi works at the convergence of Indo-Persian mini
+ ature...\nMore info: https://thevisualist.org/2026/05/haya-zaidi-up-agai
+ nst-2/\nVenue site: https://kavigupta.com/events/233/overview/
+URL:https://thevisualist.org/2026/05/haya-zaidi-up-against-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

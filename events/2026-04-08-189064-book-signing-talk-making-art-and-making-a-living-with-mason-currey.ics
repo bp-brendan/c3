@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260408-book-signing-talk-making-art-and-making-a-living-with-mason-
+ currey@thevisualist.org
+DTSTAMP:20260408T000000Z
+DTSTART;TZID=America/Chicago:20260408T173000
+DTEND;TZID=America/Chicago:20260408T190000
+SUMMARY:Book Signing & Talk: ‘Making Art and Making a Living’ with Ma
+ son Currey
+LOCATION:Chicago Athletic Association\, 12 S Michigan Ave\, Chicago\, IL 
+ 60603
+DESCRIPTION:​In partnership with EXPO Chicago and the Chicago Athletic 
+ Association\, we’re thrilled to celebrate the launch of Mason Currey
+ ’s new book\, Making Art and Making a Living: Adventures in Funding a 
+ Creative Life. Join us on April 8 for a book launch and discussion. The 
+ ticket price...\nMore info: https://thevisualist.org/2026/04/book-signin
+ g-talk-making-art-and-making-a-living-with-mason-currey/\nVenue site: ht
+ tps://luma.com/op11m7uo
+URL:https://thevisualist.org/2026/04/book-signing-talk-making-art-and-mak
+ ing-a-living-with-mason-currey/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

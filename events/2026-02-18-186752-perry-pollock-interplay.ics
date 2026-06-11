@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260218-perry-pollock-interplay@thevisualist.org
+DTSTAMP:20260218T000000Z
+DTSTART;TZID=America/Chicago:20260218T153000
+DTEND;TZID=America/Chicago:20260218T163000
+SUMMARY:Perry Pollock: Interplay
+LOCATION:McHenry County College | Galleries One & Two\, 8900 U.S. Highway
+  14\, Crystal Lake\, IL 60012
+DESCRIPTION:McHenry County College is thrilled to host Perry Pollock’s 
+ solo exhibition\, “Interplay.” Artist Reception: Wednesday\, Februar
+ y 18 3:30-4:30 p.m. — Gallery One\, A212 January 20 – February 20\, 
+ 2026 McHenry County College | Galleries One & Two 8900 U.S. Highway 14\,
+  Crystal Lake\, IL 60012...\nMore info: https://thevisualist.org/2026/02
+ /perry-pollock-interplay/\nVenue site: https://www.mchenry.edu/artgaller
+ y/current.html
+URL:https://thevisualist.org/2026/02/perry-pollock-interplay/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

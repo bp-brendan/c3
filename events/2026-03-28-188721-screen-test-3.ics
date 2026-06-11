@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260328-screen-test@thevisualist.org
+DTSTAMP:20260328T000000Z
+DTSTART;TZID=America/Chicago:20260328T190000
+DTEND;TZID=America/Chicago:20260328T210000
+SUMMARY:Screen Test
+LOCATION:Roman Susan at PO Box Collective\, 6900 N Glenwood Ave\, Chicago
+  IL 60626
+DESCRIPTION:This series operates as an open mic for moving image. Share a
+  video that has never screened in public before\, and we will debut the 
+ work together! Artists must be in attendance at the screening. Partial e
+ dits and work-in-progress are welcome. All artists whose work is screene
+ d are...\nMore info: https://thevisualist.org/2026/03/screen-test-3/\nVe
+ nue site: https://romansusan.org/Screen-Test
+URL:https://thevisualist.org/2026/03/screen-test-3/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

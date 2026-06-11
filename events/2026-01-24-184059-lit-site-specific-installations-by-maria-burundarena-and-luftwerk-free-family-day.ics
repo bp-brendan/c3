@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260124-lit-site-specific-installations-by-maria-burundarena-and-luf
+ twerk-free-family-day@thevisualist.org
+DTSTAMP:20260124T000000Z
+DTSTART;TZID=America/Chicago:20260124T130000
+DTEND;TZID=America/Chicago:20260124T150000
+SUMMARY:LIT! Site-Specific Installations by Maria Burundarena and Luftwer
+ k: Free Family Day
+LOCATION:Lubeznik Center for the Arts\, 101 W 2nd St\, Michigan City\, IN
+  46360
+DESCRIPTION:Kids\, bring your favorite grown-ups for a day of art at LCA!
+  Enjoy a scavenger hunt through our galleries inspired by the LIT! exhib
+ it. Snacks and artmaking are provided in our classroom spaces for visito
+ rs to enjoy. All are welcome! ¡Hablamos español! ¡Todos son bienvenid
+ os!\nMore info: https://thevisualist.org/2026/01/lit-site-specific-insta
+ llations-by-maria-burundarena-and-luftwerk-free-family-day/\nVenue site:
+  https://lubeznikcenter.org/
+URL:https://thevisualist.org/2026/01/lit-site-specific-installations-by-m
+ aria-burundarena-and-luftwerk-free-family-day/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260320-janny-baek-life-forms@thevisualist.org
+DTSTAMP:20260320T000000Z
+DTSTART;TZID=America/Chicago:20260320T180000
+DTEND;TZID=America/Chicago:20260320T200000
+SUMMARY:Janny Baek: Life Forms
+LOCATION:joymachine\, 4148 N Elston Ave\, Chicago\, IL 60618
+DESCRIPTION:Joy Machine is pleased to present Life Forms\, a solo exhibit
+ ion by Janny Baek\, on view from March 20 to May 9\, 2026. How do we con
+ ceive of change? With fear\, excitement\, or uncertainty? As Janny Baek 
+ builds sculptural ceramics of speculative beings and imagined landscapes
+ \, she...\nMore info: https://thevisualist.org/2026/03/janny-baek-life-f
+ orms/\nVenue site: https://joymachine.art/pages/exhibitions
+URL:https://thevisualist.org/2026/03/janny-baek-life-forms/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

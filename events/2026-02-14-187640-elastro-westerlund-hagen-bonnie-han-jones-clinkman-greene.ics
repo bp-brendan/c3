@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-elastro-westerlund-hagen-bonnie-han-jones-clinkman-greene@th
+ evisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;TZID=America/Chicago:20260214T200000
+DTEND;TZID=America/Chicago:20260214T220000
+SUMMARY:Elastro: Westerlund/Hagen\, Bonnie Han Jones\, Clinkman/Greene
+LOCATION:Elastic Arts\, 3429 W Diversey Ave\, #208\, Chicago IL\, 60647
+DESCRIPTION:Our February Elastro team welcomes a traveling trumpet/percus
+ sion duo and two sets from Chicago mainstays. A duo ensemble born from a
+  childhood friendship in the midwest\, Joe Westerlund and Trever Hagen h
+ ave merged their solo work on drums and trumpet into a distinct sound wo
+ rld of...\nMore info: https://thevisualist.org/2026/02/elastro-westerlun
+ d-hagen-bonnie-han-jones-clinkman-greene/\nVenue site: https://elasticar
+ ts.org/events/westerlandhagen-bonnie-han-jones-clinkmangreene
+URL:https://thevisualist.org/2026/02/elastro-westerlund-hagen-bonnie-han-
+ jones-clinkman-greene/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

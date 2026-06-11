@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260213-love-hurts@thevisualist.org
+DTSTAMP:20260213T000000Z
+DTSTART;TZID=America/Chicago:20260213T170000
+DTEND;TZID=America/Chicago:20260213T210000
+SUMMARY:Love Hurts
+LOCATION:Art City\, 1400 N Halsted St\, Chicago\, IL 60642
+DESCRIPTION:For those the wronged and the heartbroken\, Love Hurts will f
+ eature artwork embracing themes of longing\, despair\, and the realities
+  of love beyond a Valentine’s day greeting card. On view at Art City F
+ ebruary 13 – March 13\, 2026. Opening reception 5-9pm on February 13\,
+  2026.\nMore info: https://thevisualist.org/2026/02/love-hurts/\nVenue s
+ ite: https://newgallery.online/love-hurts
+URL:https://thevisualist.org/2026/02/love-hurts/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

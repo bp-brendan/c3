@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260124-fall-winter-air-artists-talk@thevisualist.org
+DTSTAMP:20260124T000000Z
+DTSTART;TZID=America/Chicago:20260124T150000
+DTEND;TZID=America/Chicago:20260124T170000
+SUMMARY:Fall/Winter AIR Artists Talk
+LOCATION:Kimball Arts Center\, 1757 N Kimball Ave\, Chicago\, IL 60647
+DESCRIPTION:Join us for an artists talk with our current residents\, Ashl
+ ey Chappell\, Andrea Coleman and Clay Mills. All working across photogra
+ phic mediums\, we will gain special insight into their process and exper
+ ience at KAC and beyond. All are welcome\, free and open to the public!\
+ nMore info: https://thevisualist.org/2026/01/fall-winter-air-artists-tal
+ k/\nVenue site: https://kimballartschicago.com/events
+URL:https://thevisualist.org/2026/01/fall-winter-air-artists-talk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

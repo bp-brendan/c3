@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260204-artist-talk-soledad-fatima-munoz@thevisualist.org
+DTSTAMP:20260204T000000Z
+DTSTART;TZID=America/Chicago:20260204T180000
+DTEND;TZID=America/Chicago:20260204T200000
+SUMMARY:Artist Talk: Soledad Fátima Muñoz
+LOCATION:Chicago Justice Gallery\, 1344 S Halsted St\, Chicago\, IL 60607
+DESCRIPTION:Join the Social Justice Initiative for an intimate conversati
+ on with artist Soledad Fátima Muñoz as she discusses her solo exhibiti
+ on\, We’re Not All Here / No Estamos Todes\, confronting the violence 
+ of state-sponsored disappearance and abandonment. Through sound\, instal
+ lation\, and...\nMore info: https://thevisualist.org/2026/02/artist-talk
+ -soledad-fatima-munoz/\nVenue site: https://sji.uic.edu/events/artist-ta
+ lk-soledad-fatima-munoz/
+URL:https://thevisualist.org/2026/02/artist-talk-soledad-fatima-munoz/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

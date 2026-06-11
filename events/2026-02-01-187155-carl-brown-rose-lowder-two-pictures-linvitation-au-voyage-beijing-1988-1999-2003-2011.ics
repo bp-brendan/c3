@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260201-carl-brown-rose-lowder-two-pictures-l-invitation-au-voyage-b
+ eijing-1988-1999-2003-2011@thevisualist.org
+DTSTAMP:20260201T000000Z
+DTSTART;TZID=America/Chicago:20260201T190000
+DTEND;TZID=America/Chicago:20260201T210000
+SUMMARY:Carl Brown\, Rose Lowder: Two Pictures / L’Invitation au Voyage
+  / Beijing 1988 (1999 / 2003 / 2011)
+LOCATION:Doc Films at the University of Chicago\, 1212 E 59th St\, Chicag
+ o\, IL 60637
+DESCRIPTION:Carl Brown\, Rose Lowder / Carl Brown\, Rose Lowder / Rose Lo
+ wder: Two Pictures / L’Invitation au Voyage / Beijing 1988 (1999 / 200
+ 3 / 2011) · 12m / 33m / 12m · 16mm Two Pictures and L’Invitation au 
+ Voyage were made in collaboration with artist Carl Brown\, who endlessly
+  explored the...\nMore info: https://thevisualist.org/2026/02/carl-brown
+ -rose-lowder-two-pictures-linvitation-au-voyage-beijing-1988-1999-2003-2
+ 011/\nVenue site: https://docfilms.org/calendar/2026winter/lowder
+URL:https://thevisualist.org/2026/02/carl-brown-rose-lowder-two-pictures-
+ linvitation-au-voyage-beijing-1988-1999-2003-2011/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

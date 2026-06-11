@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260319-art-after-work-iam-crafting@thevisualist.org
+DTSTAMP:20260319T000000Z
+DTSTART;TZID=America/Chicago:20260319T173000
+DTEND;TZID=America/Chicago:20260319T193000
+SUMMARY:Art After Work: IAM crafting
+LOCATION:Intuit Art Museum\, 756 N Milwaukee Ave\, Chicago\, IL 60642
+DESCRIPTION:Join visual artists Daia and Walt for a night of collaging an
+ d zine making. Inspired by the work of Della Wells and Thomas Kong\, the
+  workshop will explore collage as a form of world building and storytell
+ ing. When paired with the one-page zine\, collage can be an accessible w
+ ay of...\nMore info: https://thevisualist.org/2026/03/art-after-work-iam
+ -crafting-3/\nVenue site: https://art.org/events/iam-crafting-march-2026
+URL:https://thevisualist.org/2026/03/art-after-work-iam-crafting-3/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260407-mike-cloud-nyeema-morgan-story-structure-pt-2@thevisualist.o
+ rg
+DTSTAMP:20260407T000000Z
+DTSTART;TZID=America/Chicago:20260407T170000
+DTEND;TZID=America/Chicago:20260407T190000
+SUMMARY:Mike Cloud & Nyeema Morgan: Story Structure\, Pt. 2
+LOCATION:Neubauer Collegium\, 5701 S Woodlawn Ave\, Chicago\, IL 60637
+DESCRIPTION:Artist couple Mike Cloud and Nyeema Morgan deploy starkly div
+ ergent aesthetics. Cloud’s work is steeped in effusive symbolism\, whi
+ le Morgan’s tends toward minimalism. Indeed\, it may seem hard to imag
+ ine their work being made in adjoining studios. Yet underneath these eye
+ -catching...\nMore info: https://thevisualist.org/2026/04/mike-cloud-nye
+ ema-morgan-story-structure-pt-2/\nVenue site: https://neubauercollegium.
+ uchicago.edu/exhibitions/mike-cloud-nyeema-morgan-story-structure-pt-2#
+URL:https://thevisualist.org/2026/04/mike-cloud-nyeema-morgan-story-struc
+ ture-pt-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260307-jesus-monsivais-scott-mossman-dimensions@thevisualist.org
+DTSTAMP:20260307T000000Z
+DTSTART;TZID=America/Chicago:20260307T170000
+DTEND;TZID=America/Chicago:20260307T200000
+SUMMARY:Jesus Monsivais & Scott Mossman: Dimensions
+LOCATION:The Saw Room at The Alley Gallery\, 1712 Sherman Ave\, Evanston\
+ , IL 60201
+DESCRIPTION:Space and lines influenced by music and architecture\, mathem
+ atical equations and natural forms give us reason to examine the works o
+ f artists Jesus Monsivais & Scott Mossman. The intricate drawings of Mon
+ sivais chronicles a journey of a lost friend through a constructed parac
+ osm...\nMore info: https://thevisualist.org/2026/03/jesus-monsivais-scot
+ t-mossman-dimensions/\nVenue site: https://www.thesawroom.com/dimensions
+ -jesus-monsivais-scott-mossman-mar-7-apr-25/
+URL:https://thevisualist.org/2026/03/jesus-monsivais-scott-mossman-dimens
+ ions/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

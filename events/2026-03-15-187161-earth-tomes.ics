@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260315-earth-tomes@thevisualist.org
+DTSTAMP:20260315T000000Z
+DTSTART;TZID=America/Chicago:20260315T190000
+DTEND;TZID=America/Chicago:20260315T210000
+SUMMARY:Earth Tomes
+LOCATION:Hairpin Arts Center\, 2810 N Milwaukee Ave\, 2nd floor\, Chicago
+ \, IL 60618
+DESCRIPTION:Earth Tomes 7pm Sunday\, March 15\, 2026 One Night Only Perfo
+ rmance Hairpin Arts Center\, 2810 N Milwaukee Ave\, 2nd floor Co-directe
+ d by Joan/Kogut & Sharkey Zalek Live sound by Norman W. Long A birth\, i
+ n which she enters as a tree and emerges as a body turned to earth. Feat
+ uring...\nMore info: https://thevisualist.org/2026/03/earth-tomes/\nVenu
+ e site: https://butohchicago.com/
+URL:https://thevisualist.org/2026/03/earth-tomes/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

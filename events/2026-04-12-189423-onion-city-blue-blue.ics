@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260412-onion-city-blue-blue@thevisualist.org
+DTSTAMP:20260412T000000Z
+DTSTART;TZID=America/Chicago:20260412T140000
+DTEND;TZID=America/Chicago:20260412T160000
+SUMMARY:Onion City: Blue\, Blue
+LOCATION:Chicago Filmmakers Firehouse Cinema\, 1326 W Hollywood Ave\, Chi
+ cago\, IL 60660
+DESCRIPTION:The color blue. The color Maggie Nelson fell in love with for
+  us to have the Bluets. In response\, this program presents a set of mov
+ ing bluets. Some films are literally blue\, drenched in cyan\; others ex
+ plore grief\, desire\, the loss of innocence\, the ache of sehnsucht. Bl
+ ue is what we...\nMore info: https://thevisualist.org/2026/04/onion-city
+ -blue-blue/\nVenue site: https://chicagofilmmakers.org/upcoming-screenin
+ gs-and-events/blue-blue
+URL:https://thevisualist.org/2026/04/onion-city-blue-blue/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

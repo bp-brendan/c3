@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260314-sentrock-print-release-closing-reception@thevisualist.org
+DTSTAMP:20260314T000000Z
+DTSTART;TZID=America/Chicago:20260314T170000
+DTEND;TZID=America/Chicago:20260314T190000
+SUMMARY:Sentrock Print Release + Closing Reception
+LOCATION:Joy Machine\, 4148 N Elston Ave\, Chicago\, IL 60618
+DESCRIPTION:Stop by Joy Machine for our limited-edition print release wit
+ h Sentrock. ‘Better Days Ahead’ is a 12-color screen print available
+  in two variants with a number of hand-finished monoprints. There are a 
+ total of 50 prints in the edition. Doors open at 5 p.m.\, and prints wil
+ l be...\nMore info: https://thevisualist.org/2026/03/sentrock-print-rele
+ ase-closing-reception/\nVenue site: https://joymachine.art/
+URL:https://thevisualist.org/2026/03/sentrock-print-release-closing-recep
+ tion/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

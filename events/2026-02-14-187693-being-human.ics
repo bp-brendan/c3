@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-being-human@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;TZID=America/Chicago:20260214T130000
+DTEND;TZID=America/Chicago:20260214T150000
+SUMMARY:BEING HUMAN
+LOCATION:Oak Park Art League\, 720 Chicago Ave.\, Oak Park\, IL 60302
+DESCRIPTION:Join us for the opening reception for our annual Figure & Por
+ trait Show. Exhibition Judge Lenin DelSol will announce selections. In a
+ n age of digital connection and physical distance\, how do we capture an
+ d portray what makes us most human? What does it mean to be human in thi
+ s moment...\nMore info: https://thevisualist.org/2026/02/being-human/\nV
+ enue site: https://www.oakparkartleague.org/exhibits-all/2026/2/13/being
+ -human-figure-portrait-show
+URL:https://thevisualist.org/2026/02/being-human/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260228-black-history-month-closeout-celebration@thevisualist.org
+DTSTAMP:20260228T000000Z
+DTSTART;TZID=America/Chicago:20260228T100000
+DTEND;TZID=America/Chicago:20260228T193000
+SUMMARY:Black History Month Closeout Celebration
+LOCATION:DuSable Museum of African American History\, 740 E 56th Pl\, Chi
+ cago\, IL 60637
+DESCRIPTION:Black History Month Closeout Celebration To conclude The DuSa
+ ble’s 2026 Black History Month programming\, we will be hosting severa
+ l performances at the theater on the final day of February. From musical
+  productions and film screenings to community discussions and choir perf
+ ormances...\nMore info: https://thevisualist.org/2026/02/black-history-m
+ onth-closeout-celebration/\nVenue site: https://dusablemuseum.org/event/
+ black-history-month-closeout-celebration/
+URL:https://thevisualist.org/2026/02/black-history-month-closeout-celebra
+ tion/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

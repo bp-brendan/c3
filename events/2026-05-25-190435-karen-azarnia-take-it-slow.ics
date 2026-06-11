@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260525-karen-azarnia-take-it-slow@thevisualist.org
+DTSTAMP:20260525T000000Z
+DTSTART;TZID=America/Chicago:20260525T140000
+DTEND;TZID=America/Chicago:20260525T170000
+SUMMARY:Karen Azarnia: Take It Slow
+LOCATION:Cultivator\, Bray Grove Farm
+DESCRIPTION:Karen Azarnia Take It Slow Solo Exhibition – Cultivator at 
+ Bray Grove Farm Memorial Day\, Monday\, May 25\, 2026\, 2-5pm Cultivator
+  is pleased to present Karen Azarnia’s exhibition\, Take It Slow\, dur
+ ing Bray Grove Farm’s Spring Farm Day. This exhibition coincides with 
+ Regin Igloria’s...\nMore info: https://thevisualist.org/2026/05/karen-
+ azarnia-take-it-slow/\nVenue site: https://www.cultivatorarts.com/Karen-
+ Azarnia.php
+URL:https://thevisualist.org/2026/05/karen-azarnia-take-it-slow/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

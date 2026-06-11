@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260521-hallucinating-hieroglyphs-the-visual-languages-of-martin-won
+ g@thevisualist.org
+DTSTAMP:20260521T000000Z
+DTSTART;TZID=America/Chicago:20260521T180000
+DTEND;TZID=America/Chicago:20260521T200000
+SUMMARY:Hallucinating Hieroglyphs: The Visual Languages of Martin Wong
+LOCATION:Chinese American Museum of Chicago\, 238 W 23rd St\, Chicago\, I
+ L 60616
+DESCRIPTION:Language was a central component of the Chinese American pain
+ ter and poet Martin Wong from his first self-published book in 1968 unti
+ l his death from HIV/AIDS in 1999. Across his poetry scripts\, ASL scrol
+ ls\, sky-poetry\, and graffiti collections\, Wong’s use of language wa
+ s shaped by...\nMore info: https://thevisualist.org/2026/05/hallucinatin
+ g-hieroglyphs-the-visual-languages-of-martin-wong/\nVenue site: https://
+ wrightwood659.org/programs/hallucinating-hieroglyphs-the-visual-language
+ s-of-martin-wong/
+URL:https://thevisualist.org/2026/05/hallucinating-hieroglyphs-the-visual
+ -languages-of-martin-wong/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

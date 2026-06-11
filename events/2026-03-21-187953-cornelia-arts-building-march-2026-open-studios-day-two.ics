@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260321-cornelia-arts-building-march-2026-open-studios-day-two@thevi
+ sualist.org
+DTSTAMP:20260321T000000Z
+DTSTART;VALUE=DATE:20260321
+SUMMARY:Cornelia Arts Building March 2026 Open Studios – Day Two
+LOCATION:Cornelia Arts Building\, 1800 W Cornelia\, Chicago\, IL 60657
+DESCRIPTION:New Artists & Familiar Favorites at the Cornelia Arts Buildin
+ g March Open Studios Day Two of Event Discover new artists and visit fam
+ iliar favorites at the Cornelia Arts Building March Open Studios. Locate
+ d at 1800 West Cornelia Avenue\, Chicago\, Illinois\, the all-artist stu
+ dio...\nMore info: https://thevisualist.org/2026/03/cornelia-arts-buildi
+ ng-march-2026-open-studios-day-two/\nVenue site: https://corneliaartsbui
+ lding.com/events/march-open-studios-at-cornelia-arts/
+URL:https://thevisualist.org/2026/03/cornelia-arts-building-march-2026-op
+ en-studios-day-two/
+END:VEVENT
+END:VCALENDAR

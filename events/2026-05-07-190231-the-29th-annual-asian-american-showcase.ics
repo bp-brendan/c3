@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260507-the-29th-annual-asian-american-showcase@thevisualist.org
+DTSTAMP:20260507T000000Z
+DTSTART;VALUE=DATE:20260507
+SUMMARY:The 29th Annual Asian American Showcase
+LOCATION:Gene Siskel Film Center\, 164 N State St\, Chicago\, IL 60601
+DESCRIPTION:Presented as an annual collaboration with the Foundation for 
+ Asian American Independent Media and now celebrating its 29th year\, the
+  Asian American Showcase (AAS) provides a platform for new work by estab
+ lished and emerging Asian American\, Native Hawaiian and Pacific Islande
+ r...\nMore info: https://thevisualist.org/2026/05/the-29th-annual-asian-
+ american-showcase/\nVenue site: https://www.siskelfilmcenter.org/asianam
+ ericanshowcase
+URL:https://thevisualist.org/2026/05/the-29th-annual-asian-american-showc
+ ase/
+END:VEVENT
+END:VCALENDAR

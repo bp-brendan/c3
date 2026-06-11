@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260324-jjjjjerome-ellis-performance-lecture@thevisualist.org
+DTSTAMP:20260324T000000Z
+DTSTART;TZID=America/Chicago:20260324T180000
+DTEND;TZID=America/Chicago:20260324T193000
+SUMMARY:JJJJJerome Ellis Performance Lecture
+LOCATION:The Art Institute of Chicago\, Fullerton Hall\, 111 S Michigan A
+ ve\, Chicago\, IL 60603
+DESCRIPTION:Join us for a lecture by artist JJJJJerome Ellis followed by 
+ an audience Q&A. JJJJJerome Ellis (any pronoun) is a disabled Grenadian 
+ Jamaican American artist\, surfer\, and person who stutters. Through mus
+ ic\, performance\, writing\, video\, and photography\, Ellis asks what s
+ tuttering can...\nMore info: https://thevisualist.org/2026/03/jjjjjerome
+ -ellis-performance-lecture/\nVenue site: https://www.saic.edu/events/jjj
+ jjerome-ellis-lecture
+URL:https://thevisualist.org/2026/03/jjjjjerome-ellis-performance-lecture
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

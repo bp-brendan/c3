@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260131-lucas-samaras-sitting-standing-walking-looking@thevisualist.
+ org
+DTSTAMP:20260131T000000Z
+DTSTART;VALUE=DATE:20260131
+SUMMARY:Lucas Samaras: Sitting\, Standing\, Walking\, Looking
+LOCATION:The Art Institute of Chicago\, 111 S Michigan Ave\, Chicago\, IL
+  60603
+DESCRIPTION:Over seven decades\, Lucas Samaras developed an utterly uniqu
+ e approach to art making. While he experimented with a wide range of mat
+ erials\, his own body and belongings were the primary subject of his pho
+ tographs\, sculptures\, and drawings. Samaras was born in Greece and as 
+ a boy he...\nMore info: https://thevisualist.org/2026/01/lucas-samaras-s
+ itting-standing-walking-looking-2/\nVenue site: https://www.artic.edu/ex
+ hibitions/10584/lucas-samaras-sitting-standing-walking-looking
+URL:https://thevisualist.org/2026/01/lucas-samaras-sitting-standing-walki
+ ng-looking-2/
+END:VEVENT
+END:VCALENDAR

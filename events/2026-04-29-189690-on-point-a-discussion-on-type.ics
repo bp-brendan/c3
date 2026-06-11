@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260429-on-point-a-discussion-on-type@thevisualist.org
+DTSTAMP:20260429T000000Z
+DTSTART;TZID=America/Chicago:20260429T180000
+DTEND;TZID=America/Chicago:20260429T210000
+SUMMARY:On Point: A Discussion on Type
+LOCATION:Public Works Gallery\, 2141 W North Ave\, Chicago\, IL 60647
+DESCRIPTION:Join us for On Point\, a casual evening dedicated to the craf
+ t\, theory\, and practice of type design in Chicago. We will be at Publi
+ c Works Gallery for an intimate night of conversation and community\, fe
+ aturing designers who will share their process and work. This is the fou
+ rth edition...\nMore info: https://thevisualist.org/2026/04/on-point-a-d
+ iscussion-on-type/\nVenue site: https://chicagographicdesign.club/progra
+ mming/on-point-4/
+URL:https://thevisualist.org/2026/04/on-point-a-discussion-on-type/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

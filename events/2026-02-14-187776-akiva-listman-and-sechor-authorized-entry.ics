@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-akiva-listman-and-sechor-authorized-entry@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;TZID=America/Chicago:20260214T130000
+DTEND;TZID=America/Chicago:20260214T170000
+SUMMARY:Akiva Listman and Sechor: Authorized Entry
+LOCATION:VSG Contemporary\, 673 N Milwaukee Ave Chicago IL 60642
+DESCRIPTION:VSG Contemporary is pleased to present Authorized Entry\, a t
+ wo-person exhibition featuring Akiva Listman and Sechor. The show brings
+  together two distinct but complementary practices\, exploring street cu
+ lture and everyday urban objects in new ways\, bending the rules of fine
+  art while...\nMore info: https://thevisualist.org/2026/02/akiva-listman
+ -and-sechor-authorized-entry/\nVenue site: https://vsgcontemporary.com/e
+ xhibitions/23-authorized-entry-akiva-listman-and-sechor/
+URL:https://thevisualist.org/2026/02/akiva-listman-and-sechor-authorized-
+ entry/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

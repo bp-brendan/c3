@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260321-instructions-for-care@thevisualist.org
+DTSTAMP:20260321T000000Z
+DTSTART;TZID=America/Chicago:20260321T180000
+DTEND;TZID=America/Chicago:20260321T220000
+SUMMARY:Instructions for Care
+LOCATION:Gallery Wrightwood Logan Square\, 3325 W Wrightwood Ave\, Chicag
+ o\, IL 60647
+DESCRIPTION:You are enthusiastically invited to join us for our next Gall
+ ery Wrightwood art show\, “Instructions For Care” opening in our san
+ ctuary on March 21 from 6-10pm\, featuring 2 years worth of Quilt Church
+  projects (a Chicago based hand quilting project run by artist Eve Emric
+ h )alongside...\nMore info: https://thevisualist.org/2026/03/instruction
+ s-for-care/\nVenue site: https://www.instagram.com/p/DVIFcaDjNEr
+URL:https://thevisualist.org/2026/03/instructions-for-care/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260423-garry-noland-loot-box@thevisualist.org
+DTSTAMP:20260423T000000Z
+DTSTART;TZID=America/Chicago:20260423T160000
+DTEND;TZID=America/Chicago:20260423T200000
+SUMMARY:Garry Noland: Loot Box
+LOCATION:Material\, 2025 West Belmont Ave\, storefront. Chicago\, IL 6061
+ 8.
+DESCRIPTION:Garry Noland\, Loot Box Opening Reception April 23\, 4-8 pm R
+ emarks and Artist walk thru at 6:30pm Material is pleased to present Loo
+ t Box: New/Recent Works On/Of Paper\, a solo exhibition by the Kansas Ci
+ ty-based artist Garry Noland. The exhibition centers on the Plan-O-Gram 
+ series...\nMore info: https://thevisualist.org/2026/04/garry-noland-loot
+ -box/\nVenue site: https://materialexhibitions.com/home.html
+URL:https://thevisualist.org/2026/04/garry-noland-loot-box/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

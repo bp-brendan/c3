@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-mindy-rose-schwartz-countersealed@thevisualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T180000
+DTEND;TZID=America/Chicago:20260411T220000
+SUMMARY:Mindy Rose Schwartz: Countersealed
+LOCATION:M. LeBlanc\, 3514 W Fullerton Ave\, Chicago\, IL 60647
+DESCRIPTION:M. LeBlanc is proud to present ‘Countersealed’\, a solo e
+ xhibition by Chicago artist Mindy Rose Schwartz. The exhibition marks Sc
+ hwartz’s first solo exhibition in Chicago in over a decade and present
+ s significant recent works from the artist’s practice. Working as a sc
+ ulptor and...\nMore info: https://thevisualist.org/2026/04/mindy-rose-sc
+ hwartz-countersealed/\nVenue site: http://www.mleblancchicago.com
+URL:https://thevisualist.org/2026/04/mindy-rose-schwartz-countersealed/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

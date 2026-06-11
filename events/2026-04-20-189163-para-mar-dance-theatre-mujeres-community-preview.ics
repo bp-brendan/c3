@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260420-para-mar-dance-theatre-mujeres-community-preview@thevisualis
+ t.org
+DTSTAMP:20260420T000000Z
+DTSTART;TZID=America/Chicago:20260420T190000
+DTEND;TZID=America/Chicago:20260420T210000
+SUMMARY:PARA.MAR Dance Theatre – “MUJERES” – Community Preview
+LOCATION:Reva and David Logan Center\, 915 E. 60th St.\, Chicago IL 60637
+DESCRIPTION:The Chicago-based contemporary ballet company PARA.MAR Dance 
+ Theatre presents a community preview of the company’s first ever balle
+ t\, “MUJERES” choreographed by company founder and artistic director
+  Stephany Martinez“ A shifting terrain of myth\, memory\, and reflecti
+ on\, ‘MUJERES’...\nMore info: https://thevisualist.org/2026/04/para-
+ mar-dance-theatre-mujeres-community-preview/\nVenue site: https://www.pa
+ ramardance.com/up-next
+URL:https://thevisualist.org/2026/04/para-mar-dance-theatre-mujeres-commu
+ nity-preview/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

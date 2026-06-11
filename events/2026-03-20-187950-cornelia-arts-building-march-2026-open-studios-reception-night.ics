@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260320-cornelia-arts-building-march-2026-open-studios-reception-nig
+ ht@thevisualist.org
+DTSTAMP:20260320T000000Z
+DTSTART;TZID=America/Chicago:20260320T170000
+DTEND;TZID=America/Chicago:20260320T210000
+SUMMARY:Cornelia Arts Building March 2026 Open Studios – Reception Nigh
+ t
+LOCATION:Cornelia Arts Building\, 1800 W Cornelia\, Chicago\, IL 60657
+DESCRIPTION:New Artists & Familiar Favorites at the Cornelia Arts Buildin
+ g March Open Studios Reception Night Discover new artists and visit fami
+ liar favorites at the Cornelia Arts Building March Open Studios. Located
+  at 1800 West Cornelia Avenue\, Chicago\, Illinois\, the all-artist stud
+ io building...\nMore info: https://thevisualist.org/2026/03/cornelia-art
+ s-building-march-2026-open-studios-reception-night/\nVenue site: https:/
+ /corneliaartsbuilding.com/events/march-open-studios-at-cornelia-arts/
+URL:https://thevisualist.org/2026/03/cornelia-arts-building-march-2026-op
+ en-studios-reception-night/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

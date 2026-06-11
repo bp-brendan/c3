@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260226-viva-la-vida-linocuts@thevisualist.org
+DTSTAMP:20260226T000000Z
+DTSTART;TZID=America/Chicago:20260226T100000
+DTEND;TZID=America/Chicago:20260226T120000
+SUMMARY:Viva la Vida: Linocuts
+LOCATION:National Museum of Mexican Art\, 1852 W 19th St\, Chicago\, IL 6
+ 0608
+DESCRIPTION:Adults ages 55+ are invited to join us for an immersive exper
+ ience in the galleries\, followed by an art-making activity. This month\
+ , we will highlight our Xicágo Gallery exhibition Rieles y Raíces: Tra
+ queros in Chicago and the Midwest. In this workshop\, we will delve into
+  a...\nMore info: https://thevisualist.org/2026/02/viva-la-vida-linocuts
+ /\nVenue site: https://nationalmuseumofmexicanart.org/events/viva-la-vid
+ a-linocuts
+URL:https://thevisualist.org/2026/02/viva-la-vida-linocuts/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260328-occult-chemistry@thevisualist.org
+DTSTAMP:20260328T000000Z
+DTSTART;TZID=America/Chicago:20260328T100000
+DTEND;TZID=America/Chicago:20260328T130000
+SUMMARY:Occult Chemistry
+LOCATION:Chicago Danztheatre\, 1650 W Foster Ave\, Chicago\, IL 60640
+DESCRIPTION:In OCCULT CHEMISTRY we will explore the performance of the sc
+ ore as an alchemical process. Performers become magicians\, and the spac
+ e becomes a laboratory in which we will transmute words and images into 
+ action\, much like turning lead into gold. This two day intensive will i
+ nclude...\nMore info: https://thevisualist.org/2026/03/occult-chemistry/
+ \nVenue site: https://events.humanitix.com/occult-chemistry
+URL:https://thevisualist.org/2026/03/occult-chemistry/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

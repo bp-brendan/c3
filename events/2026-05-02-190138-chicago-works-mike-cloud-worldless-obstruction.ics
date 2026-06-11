@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260502-chicago-works-mike-cloud-worldless-obstruction@thevisualist.
+ org
+DTSTAMP:20260502T000000Z
+DTSTART;TZID=America/Chicago:20260502T140000
+DTEND;TZID=America/Chicago:20260502T170000
+SUMMARY:Chicago Works | Mike Cloud: Worldless Obstruction
+LOCATION:Museum of Contemporary Art Chicago\, 220 E Chicago Ave\, Chicago
+ \, IL 60611
+DESCRIPTION:Please join us in celebrating the opening of Chicago Works | 
+ Mike Cloud: Worldless Obstruction with a conversation between Mike Cloud
+  and Nolan Jimbo\, Assistant Curator\, in the Edlis Neeson Theater. An o
+ pening reception will follow the talk in the museum’s fourth-floor lob
+ by. Both...\nMore info: https://thevisualist.org/2026/05/chicago-works-m
+ ike-cloud-worldless-obstruction/\nVenue site: https://visit.mcachicago.o
+ rg/events/talk-mike-cloud-nolan-jimbo/
+URL:https://thevisualist.org/2026/05/chicago-works-mike-cloud-worldless-o
+ bstruction/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

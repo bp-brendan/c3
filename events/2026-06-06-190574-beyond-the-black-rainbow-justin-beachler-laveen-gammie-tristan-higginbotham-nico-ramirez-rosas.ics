@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260606-beyond-the-black-rainbow-justin-beachler-laveen-gammie-trist
+ an-higginbotham-nico-ramirez-rosas@thevisualist.org
+DTSTAMP:20260606T000000Z
+DTSTART;TZID=America/Chicago:20260606T180000
+DTEND;TZID=America/Chicago:20260606T210000
+SUMMARY:Beyond the Black Rainbow: Justin Beachler\, Laveen Gammie\, Trist
+ an Higginbotham\, Nico Ramirez Rosas
+LOCATION:Twelve Ten Gallery\, 1104 West Thorndale Ave\, Chicago IL 60660
+DESCRIPTION:Twelve Ten Gallery is pleased to present “Beyond the Black 
+ Rainbow”\, a group exhibition titled after the 2010 film and featuring
+  Justin Beachler\, Laveen Gammie\, Tristan Higginbotham\, and Nico Ramir
+ ez Rosas. Italian-Canadian director Panos Cosmatos’ film unfolds as a 
+ hallucinatory...\nMore info: https://thevisualist.org/2026/06/beyond-the
+ -black-rainbow-justin-beachler-laveen-gammie-tristan-higginbotham-nico-r
+ amirez-rosas/\nVenue site: https://twelvetengallery.com/exhibitions/beyo
+ nd-the-black-rainbow
+URL:https://thevisualist.org/2026/06/beyond-the-black-rainbow-justin-beac
+ hler-laveen-gammie-tristan-higginbotham-nico-ramirez-rosas/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260503-hanging-bird-moving-castle@thevisualist.org
+DTSTAMP:20260503T000000Z
+DTSTART;TZID=America/Chicago:20260503T140000
+DTEND;TZID=America/Chicago:20260503T170000
+SUMMARY:HANGING BIRD\, MOVING CASTLE
+LOCATION:Chinese American Museum of Chicago\, FL4\, 238 W 23rd St\, Chica
+ go\, IL 60616
+DESCRIPTION:Hanging Bird\, Moving Castle opens this May at the Chinese Am
+ erican Museum of Chicago. This new body of paintings traces shifting sta
+ tes of memory\, migration\, and inner transformation: where fragile figu
+ res\, suspended forms\, and imagined architectures drift between stillne
+ ss and...\nMore info: https://thevisualist.org/2026/05/hanging-bird-movi
+ ng-castle/\nVenue site: https://ccamuseum.org/current-exhibits/
+URL:https://thevisualist.org/2026/05/hanging-bird-moving-castle/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

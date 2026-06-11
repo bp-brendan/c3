@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260320-reclaimed-works-in-clay@thevisualist.org
+DTSTAMP:20260320T000000Z
+DTSTART;TZID=America/Chicago:20260320T183000
+DTEND;TZID=America/Chicago:20260320T213000
+SUMMARY:Reclaimed: Works In Clay
+LOCATION:Project Onward\, 1200 W 35th St\, 4th Floor\, 60609
+DESCRIPTION:Project Onward’s ceramic studio fired its kiln for the firs
+ t time in the fall of 2022. Since then we’ve cleared a path for over t
+ wenty neurodiverse artists to develop unique sculptural practices. “Re
+ claim” collects highlights over the years\, from text-covered totems t
+ o functional...\nMore info: https://thevisualist.org/2026/03/reclaimed-w
+ orks-in-clay/\nVenue site: https://www.projectonward.org/events-1/reclai
+ med-open-house
+URL:https://thevisualist.org/2026/03/reclaimed-works-in-clay/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

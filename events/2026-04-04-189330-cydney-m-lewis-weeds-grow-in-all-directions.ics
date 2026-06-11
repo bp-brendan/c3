@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260404-cydney-m-lewis-weeds-grow-in-all-directions@thevisualist.org
+DTSTAMP:20260404T000000Z
+DTSTART;VALUE=DATE:20260404
+SUMMARY:Cydney M. Lewis: Weeds Grow in All Directions
+LOCATION:Hyde Park Art Center\, 5020 S Cornell Ave\, Chicago\, IL 60615
+DESCRIPTION:Weeds Grow in All Directions is an exhibition of Cydney Lewis
+ ’s collage works and large-scale assemblages. Using everyday materials
+  found in her daily life–plastic bags\, packing paper\, magazine cutou
+ ts\, as well as rhinestones and textiles–Lewis creates otherworldly la
+ ndscapes that...\nMore info: https://thevisualist.org/2026/04/cydney-m-l
+ ewis-weeds-grow-in-all-directions/\nVenue site: https://www.hydeparkart.
+ org/exhibition-archive/cydney-m-lewis-weeds-grow-in-all-directions/
+URL:https://thevisualist.org/2026/04/cydney-m-lewis-weeds-grow-in-all-dir
+ ections/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260116-lui-shtini-capo-testa@thevisualist.org
+DTSTAMP:20260116T000000Z
+DTSTART;TZID=America/Chicago:20260116T180000
+DTEND;TZID=America/Chicago:20260116T200000
+SUMMARY:Lui Shtini: Capo Testa
+LOCATION:Corbett vs. Dempsey\, 2156 W Fulton St\, Chicago\, IL 60612
+DESCRIPTION:With delight\, Corbett vs. Dempsey presents Capo Testa\, an e
+ xhibition of new sculptures and paintings by Lui Shtini. This is the art
+ ist’s fourth solo show at CvsD. Inspired by a cape in Sardinia facing 
+ the Strait of Bonifacio\, which Shtini has visited many times over the l
+ ast ten...\nMore info: https://thevisualist.org/2026/01/lui-shtini-capo-
+ testa/\nVenue site: https://www.corbettvsdempsey.com/exhibitions/lui-sht
+ ini/
+URL:https://thevisualist.org/2026/01/lui-shtini-capo-testa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

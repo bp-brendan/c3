@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260326-jess-atieno-sightlines-ghosts-and-other-stories-of-the-impos
+ sible@thevisualist.org
+DTSTAMP:20260326T000000Z
+DTSTART;TZID=America/Chicago:20260326T180000
+DTEND;TZID=America/Chicago:20260326T200000
+SUMMARY:Jess Atieno: Sightlines\, Ghosts\, and Other Stories of the Impos
+ sible
+LOCATION:Arts + Public Life\, 301 E Garfield Blvd\, Chicago\, IL\, 60637
+DESCRIPTION:This exhibition considers the shifting legacy of African mode
+ rnism through the afterlives of independence-era architecture. Once posi
+ tioned as markers of a newly imagined modern Africa\, many Brutalist and
+  modernist structures now exist in states of weathering and transformati
+ on...\nMore info: https://thevisualist.org/2026/03/jess-atieno-sightline
+ s-ghosts-and-other-stories-of-the-impossible/\nVenue site: https://artsa
+ ndpubliclife.org/exhibitions
+URL:https://thevisualist.org/2026/03/jess-atieno-sightlines-ghosts-and-ot
+ her-stories-of-the-impossible/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

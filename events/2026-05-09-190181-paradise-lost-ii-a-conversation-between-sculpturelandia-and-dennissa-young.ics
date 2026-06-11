@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-paradise-lost-ii-a-conversation-between-sculpturelandia-and-
+ dennissa-young@thevisualist.org
+DTSTAMP:20260509T000000Z
+DTSTART;TZID=America/Chicago:20260509T160000
+DTEND;TZID=America/Chicago:20260509T180000
+SUMMARY:Paradise Lost II: A Conversation between Sculpturelandia and Denn
+ issa Young
+LOCATION:Yes Project Space\, 3705 W Division Street
+DESCRIPTION:Join us for a conversation between Sculpturelandia (Olivia Ju
+ arez and Remy Bordas) and Dennissa Young where we talk all about the pro
+ cess in which it took to make Paradise Lost come to life\nMore info: htt
+ ps://thevisualist.org/2026/05/paradise-lost-ii-a-conversation-between-sc
+ ulpturelandia-and-dennissa-young/\nVenue site: https://www.dennissayoung
+ .com/yes-project-space-about
+URL:https://thevisualist.org/2026/05/paradise-lost-ii-a-conversation-betw
+ een-sculpturelandia-and-dennissa-young/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

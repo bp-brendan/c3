@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260306-year-13@thevisualist.org
+DTSTAMP:20260306T000000Z
+DTSTART;TZID=America/Chicago:20260306T180000
+DTEND;TZID=America/Chicago:20260306T210000
+SUMMARY:YEAR 13
+LOCATION:Side Street Studio Arts\, 15 Ziegler Ct\, Elgin\, IL 60120
+DESCRIPTION:YEAR 13 is our annual anniversary event\, celebrating bold ar
+ tistic experimentation and creative risk\, featuring work across a wide 
+ spectrum of forms\, disciplines\, and genres. YEAR 13 marks thirteen yea
+ rs of creativity\, collaboration\, and community at Side Street Studio A
+ rts. Join us...\nMore info: https://thevisualist.org/2026/03/year-13/\nV
+ enue site: https://www.sidestreetstudioarts.org/year13
+URL:https://thevisualist.org/2026/03/year-13/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

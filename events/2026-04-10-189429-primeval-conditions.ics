@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-primeval-conditions@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T180000
+DTEND;TZID=America/Chicago:20260410T210000
+SUMMARY:Primeval Conditions
+LOCATION:The Sunday Standard\, 2837 w Armitage Ave\, Chicago\, IL\, 60647
+DESCRIPTION:“Beauty is a primeval phenomenon. It never makes an appeara
+ nce itself\, but is a visible reflection in a thousand different utteran
+ ces of the creative mind. It is as various as nature herself.” Johann 
+ Wolfgang Goethe To celebrate the coming of spring and the flowering retu
+ rn of life...\nMore info: https://thevisualist.org/2026/04/primeval-cond
+ itions/\nVenue site: https://shopthesundaystandard.com/pages/in-store-ev
+ ents
+URL:https://thevisualist.org/2026/04/primeval-conditions/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

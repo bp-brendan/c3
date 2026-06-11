@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260125-smashpiece@thevisualist.org
+DTSTAMP:20260125T000000Z
+DTSTART;TZID=America/Chicago:20260125T180000
+DTEND;TZID=America/Chicago:20260125T220000
+SUMMARY:Smashpiece
+LOCATION:Recess Gallery at Schoolhouse\, 2247 N Maplewood Ave\, Chicago I
+ L 60647
+DESCRIPTION:Opening Next Sunday 1.25.25 ‘Smashpiece’ curated by Nick 
+ D’Alessandro Featuring work by Lev Sibilla @levsibilla (PORTLAND\, ORE
+ GON) Lucas Flanders @ls_rn_fs (CHICAGO\, ILLINOIS) Nate Millstein @natem
+ illstein (NEW YORK CITY\, NY) 6 – 10pm recess gallery @ Schoolhouse 22
+ 47 N. Maplewood...\nMore info: https://thevisualist.org/2026/01/smashpie
+ ce-2/\nVenue site: https://www.instagram.com/recess.gallery/
+URL:https://thevisualist.org/2026/01/smashpiece-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

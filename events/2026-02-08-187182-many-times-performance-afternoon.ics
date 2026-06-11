@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260208-many-times-performance-afternoon@thevisualist.org
+DTSTAMP:20260208T000000Z
+DTSTART;TZID=America/Chicago:20260208T150000
+DTEND;TZID=America/Chicago:20260208T170000
+SUMMARY:Many Times: Performance Afternoon
+LOCATION:Yes Project Space\, 3705 W Division St\, Chicago\, IL 60651
+DESCRIPTION:Join us for our first performance event of 2026. We will be f
+ eaturing 4 of our Many Times artists in performances based in sound\, vi
+ deo\, ritual and declarations. We will start promptly at 3p and end prom
+ ptly at 5p. We are excited to see you there! The afternoon features Denn
+ issa...\nMore info: https://thevisualist.org/2026/02/many-times-performa
+ nce-afternoon/\nVenue site: https://www.dennissayoung.com/yes-project-sp
+ ace-about
+URL:https://thevisualist.org/2026/02/many-times-performance-afternoon/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260305-barbara-nessim-my-compass-is-the-line@thevisualist.org
+DTSTAMP:20260305T000000Z
+DTSTART;TZID=America/Chicago:20260305T180000
+DTEND;TZID=America/Chicago:20260305T200000
+SUMMARY:Barbara Nessim: My Compass Is the Line
+LOCATION:DePaul Art Museum\, 935 W Fullerton Ave\, Chicago\, IL 60614
+DESCRIPTION:Since the 1960s\, Barbara Nessim (b. 1939) has developed a un
+ ique visual language in painting and drawing that challenges traditional
+  gender norms. As one of the first women to gain prominence in the male-
+ dominated world of commercial art and illustration\, Nessim’s work con
+ fronts...\nMore info: https://thevisualist.org/2026/03/barbara-nessim-my
+ -compass-is-the-line/\nVenue site: https://resources.depaul.edu/art-muse
+ um/exhibitions/Pages/barbara-nessim-my-compass-is-the-line.aspx
+URL:https://thevisualist.org/2026/03/barbara-nessim-my-compass-is-the-lin
+ e/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

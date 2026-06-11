@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-your-hiding-place-isn-t-water-tight@thevisualist.org
+DTSTAMP:20260509T000000Z
+DTSTART;TZID=America/Chicago:20260509T180000
+DTEND;TZID=America/Chicago:20260509T210000
+SUMMARY:your hiding place isn’t water-tight
+LOCATION:LVL3\, 1542 N Milwaukee Ave FL 3\, Chicago\, IL 60622
+DESCRIPTION:LVL3 presents your hiding place isn’t watertight…\, a thr
+ ee person group show featuring Brendan O’Shaughnessy (Chicago\, IL)\, 
+ Karmel Spanier (New York\, NY)\, and Lily Rand (New York\, NY). The open
+ ing reception for your hiding place isn’t watertight… will be on Sat
+ urday\, May 9th\, 2026...\nMore info: https://thevisualist.org/2026/05/y
+ our-hiding-place-isnt-water-tight/\nVenue site: https://lvl3official.com
+ /your-hiding-place-isnt-watertight/
+URL:https://thevisualist.org/2026/05/your-hiding-place-isnt-water-tight/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

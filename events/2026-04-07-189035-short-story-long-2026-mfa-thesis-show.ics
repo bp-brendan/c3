@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260407-short-story-long-2026-mfa-thesis-show@thevisualist.org
+DTSTAMP:20260407T000000Z
+DTSTART;VALUE=DATE:20260407
+SUMMARY:Short Story Long: 2026 MFA Thesis Show
+LOCATION:Gallery 400\, 400 S Peoria St\, Chicago\, IL 60607
+DESCRIPTION:We are pleased to present an exhibition by an international c
+ ohort of eight artists working with holes\, movement\, mourning\, time\,
+  excavation\, play and the possibility of communication. In this fragmen
+ ted world\, we found one another in a community brought together by chan
+ ce. We share...\nMore info: https://thevisualist.org/2026/04/short-story
+ -long-2026-mfa-thesis-show/\nVenue site: https://gallery400.uic.edu/exhi
+ bition/2026mfathesis/
+URL:https://thevisualist.org/2026/04/short-story-long-2026-mfa-thesis-sho
+ w/
+END:VEVENT
+END:VCALENDAR

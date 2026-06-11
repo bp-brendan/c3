@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260129-fredrik-v-rslev-the-joy-of-painting@thevisualist.org
+DTSTAMP:20260129T000000Z
+DTSTART;TZID=America/Chicago:20260129T170000
+DTEND;TZID=America/Chicago:20260129T190000
+SUMMARY:Fredrik Værslev: The Joy of Painting
+LOCATION:Neubauer Collegium for Culture and Society\, 5701 S Woodlawn Ave
+ \, Chicago\, IL 60637
+DESCRIPTION:In the winter of 2026\, the Neubauer Collegium will host The 
+ Joy of Painting\, the first institutional exhibition in the U.S. of Norw
+ egian artist Fredrik Værslev. The show will bring together eight large-
+ scale paintings\, each representing a distinct body of work and conceive
+ d as an...\nMore info: https://thevisualist.org/2026/01/fredrik-vaerslev
+ -the-joy-of-painting/\nVenue site: https://neubauercollegium.uchicago.ed
+ u/exhibitions/fredrik-vaerslev-the-joy-of-painting#
+URL:https://thevisualist.org/2026/01/fredrik-vaerslev-the-joy-of-painting
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

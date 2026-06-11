@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260306-mmm-celebrating-10-years-at-oliva-gallery@thevisualist.org
+DTSTAMP:20260306T000000Z
+DTSTART;TZID=America/Chicago:20260306T170000
+DTEND;TZID=America/Chicago:20260306T210000
+SUMMARY:MMM…. & Celebrating 10 years at Oliva Gallery!
+LOCATION:Oliva Gallery\, 3816 W Armitage Ave\, Chicago\, IL 60647
+DESCRIPTION:mmm…. Opening: March 6\, 5 – 9 pm Through March 28 MMM…
+ .marks Oliva Gallery’s ten-year anniversary with a group exhibition pr
+ esented in conjunction with International Women’s Day. Featuring work 
+ by Melanie P. Brown\, Mia Capodilupo\, and Michelle Stone\, the title re
+ ferences both the...\nMore info: https://thevisualist.org/2026/03/mmm-ce
+ lebrating-10-years-at-oliva-gallery/\nVenue site: https://www.olivagalle
+ ry.com/
+URL:https://thevisualist.org/2026/03/mmm-celebrating-10-years-at-oliva-ga
+ llery/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

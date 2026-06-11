@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260523-artist-talk-heather-mekkelson-snare@thevisualist.org
+DTSTAMP:20260523T000000Z
+DTSTART;TZID=America/Chicago:20260523T130000
+DTEND;TZID=America/Chicago:20260523T150000
+SUMMARY:Artist Talk: Heather Mekkelson: snare
+LOCATION:boundary\, 2334 W 111th Pl\, Chicago\, IL 60643
+DESCRIPTION:Please join us for an artist’s talk on Saturday\, May 23rd.
+  Mekkelson’s bass note snare emerges simultaneously from two galleries
+  on opposite ends of Chicago. 65GRAND in the North Side neighborhood of 
+ Humboldt Park\, features bass note. Sixteen miles away\, in the South Si
+ de Morgan Park...\nMore info: https://thevisualist.org/2026/05/artist-ta
+ lk-heather-mekkelson-snare/\nVenue site: https://www.boundarychicago.spa
+ ce/
+URL:https://thevisualist.org/2026/05/artist-talk-heather-mekkelson-snare/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260605-it-s-here-am-i@thevisualist.org
+DTSTAMP:20260605T000000Z
+DTSTART;TZID=America/Chicago:20260605T180000
+DTEND;TZID=America/Chicago:20260605T210000
+SUMMARY:It’s Here\, Am I
+LOCATION:Side Street Studio Arts\, 15 Ziegler Ct\, Elgin\, IL 60120
+DESCRIPTION:Side Street Studio Arts presents It’s Here\, Am I — an ex
+ hibition amplifying the voices and creative resilience of immigrant comm
+ unities targeted by systems of power. Featuring work that reflects lived
+  experiences of displacement\, resistance\, racialized violence\, and wo
+ rld-building...\nMore info: https://thevisualist.org/2026/06/its-here-am
+ -i/\nVenue site: https://www.sidestreetstudioarts.org/exhibitions
+URL:https://thevisualist.org/2026/06/its-here-am-i/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

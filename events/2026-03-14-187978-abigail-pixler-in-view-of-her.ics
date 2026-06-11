@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260314-abigail-pixler-in-view-of-her@thevisualist.org
+DTSTAMP:20260314T000000Z
+DTSTART;VALUE=DATE:20260314
+SUMMARY:Abigail Pixler: In View of Her
+LOCATION:Art City\, 1400 N Halsted St\, Chicago\, IL 60642
+DESCRIPTION:In View of Her presents Northern Illinois artist Abigail Pixl
+ er’s fascination with the feminine form. Through rich hues and tender 
+ transitions of light across skin\, she captures curves and contours and 
+ offers a perspective both reverent and introspective. Each composition b
+ egins as...\nMore info: https://thevisualist.org/2026/03/abigail-pixler-
+ in-view-of-her/\nVenue site: https://newgallery.online/abigail-pixler-in
+ -view-of-her
+URL:https://thevisualist.org/2026/03/abigail-pixler-in-view-of-her/
+END:VEVENT
+END:VCALENDAR

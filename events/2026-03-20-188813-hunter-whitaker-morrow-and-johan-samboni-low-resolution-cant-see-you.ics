@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260320-hunter-whitaker-morrow-and-johan-samboni-low-resolution-can-
+ t-see-you@thevisualist.org
+DTSTAMP:20260320T000000Z
+DTSTART;TZID=America/Chicago:20260320T180000
+DTEND;TZID=America/Chicago:20260320T210000
+SUMMARY:Hunter Whitaker-Morrow and Johan Samboní: Low Resolution: Can’
+ t See You
+LOCATION:ACRE Projects\, 2921 N Clark\, Chicago\, IL 60657
+DESCRIPTION:Low Resolution: Can’t See You is a two-person exhibition th
+ at proposes a dialogue between the recent works of Johan Samboní and Hu
+ nter Whitaker-Morrow. Both artists engage with mainstream media\, screen
+ s\, video\, and pixels through the filter of their particular cultural a
+ nd social...\nMore info: https://thevisualist.org/2026/03/hunter-whitake
+ r-morrow-and-johan-samboni-low-resolution-cant-see-you/\nVenue site: htt
+ ps://www.acreresidency.org/exhibition/low-resolution-cant-see-you
+URL:https://thevisualist.org/2026/03/hunter-whitaker-morrow-and-johan-sam
+ boni-low-resolution-cant-see-you/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

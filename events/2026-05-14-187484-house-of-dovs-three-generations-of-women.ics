@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260514-house-of-dov-s-three-generations-of-women@thevisualist.org
+DTSTAMP:20260514T000000Z
+DTSTART;TZID=America/Chicago:20260514T180000
+DTEND;TZID=America/Chicago:20260514T190000
+SUMMARY:House of Dov’s Three Generations of Women
+LOCATION:DePaul Art Museum\, 935 W Fullerton Ave\, Chicago\, IL 60614
+DESCRIPTION:DPAM invites you to an evening with the House of Dov. The Chi
+ cago-based dance company will be performing its new sketch\, Three Gener
+ ations of Women\, in conjunction with Barbara Nessim’s work on view in
+  our galleries. Choreographed by Drew Lewis\, this movement study\, made
+  in reverence...\nMore info: https://thevisualist.org/2026/05/house-of-d
+ ovs-three-generations-of-women/\nVenue site: https://events.humanitix.co
+ m/house-of-dov-s-three-generations-of-women
+URL:https://thevisualist.org/2026/05/house-of-dovs-three-generations-of-w
+ omen/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

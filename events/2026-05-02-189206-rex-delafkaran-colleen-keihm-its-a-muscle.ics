@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260502-rex-delafkaran-colleen-keihm-it-s-a-muscle@thevisualist.org
+DTSTAMP:20260502T000000Z
+DTSTART;TZID=America/Chicago:20260502T130000
+DTEND;TZID=America/Chicago:20260502T160000
+SUMMARY:Rex Delafkaran & Colleen Keihm: It’s a Muscle
+LOCATION:Tiger Strikes Asteroid Chicago\, 2233 S Throop\, 4th Floor\, #41
+ 9\, Chicago\, IL 60608
+DESCRIPTION:It’s a Muscle: Rex Delafkaran & Colleen Keihm Exhibition Da
+ tes: May 2 – June 13\, 2026 Opening Reception: Saturday\, May 2\, 1-4p
+ m Artists Conversation: Saturday\, May 23\, 2026\, 2pm Tiger Strikes Ast
+ eroid Chicago is excited to present the two-person exhibition\, It’s a
+  Muscle: Rex...\nMore info: https://thevisualist.org/2026/05/rex-delafka
+ ran-colleen-keihm-its-a-muscle/\nVenue site: https://www.tigerstrikesast
+ eroid.com/
+URL:https://thevisualist.org/2026/05/rex-delafkaran-colleen-keihm-its-a-m
+ uscle/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

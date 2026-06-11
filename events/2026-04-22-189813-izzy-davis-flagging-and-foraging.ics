@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260422-izzy-davis-flagging-and-foraging@thevisualist.org
+DTSTAMP:20260422T000000Z
+DTSTART;TZID=America/Chicago:20260422T160000
+DTEND;TZID=America/Chicago:20260422T180000
+SUMMARY:Izzy Davis: Flagging and Foraging
+LOCATION:SITE 280 Gallery\, 280 S Columbus Dr\, Chicago\, IL 60603
+DESCRIPTION:Do clearcutters dream of the sounds trees make as they are sa
+ wed down in forests\, the same way I dream about the sound a tree might 
+ make in a forest I’m not at all in? Flagging and Foraging explores mat
+ erial ancestry and synthesis. All material comes from somewhere… like 
+ old-growth...\nMore info: https://thevisualist.org/2026/04/izzy-davis-fl
+ agging-and-foraging/\nVenue site: https://sites.saic.edu/sitegalleries/
+URL:https://thevisualist.org/2026/04/izzy-davis-flagging-and-foraging/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260328-yvonne-doll-and-victoria-loeb-the-observed-the-imagined@thev
+ isualist.org
+DTSTAMP:20260328T000000Z
+DTSTART;TZID=America/Chicago:20260328T180000
+DTEND;TZID=America/Chicago:20260328T210000
+SUMMARY:Yvonne Doll and Victoria Loeb: The Observed & The Imagined
+LOCATION:6311arts\, 6311 N Clark St\, Chicago IL 60660
+DESCRIPTION:Edgewater’s newest art center\, 6311arts\, will present The
+  Observed & The Imagined\, a two-person exhibition featuring artists Yvo
+ nne Doll and Victoria Loeb\, opening Saturday\, March 28\, with a recept
+ ion from 6–9 p.m. The exhibition explores the dynamic space between th
+ e creative acts of...\nMore info: https://thevisualist.org/2026/03/yvonn
+ e-doll-and-victoria-loeb-the-observed-the-imagined/\nVenue site: https:/
+ /www.6311arts.com/
+URL:https://thevisualist.org/2026/03/yvonne-doll-and-victoria-loeb-the-ob
+ served-the-imagined/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

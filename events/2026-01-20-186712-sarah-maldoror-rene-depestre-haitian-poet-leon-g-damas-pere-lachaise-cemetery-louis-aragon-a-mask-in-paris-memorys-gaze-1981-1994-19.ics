@@ -1,0 +1,55 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260120-sarah-maldoror-rene-depestre-haitian-poet-leon-g-damas-pere-
+ lachaise-cemetery-louis-aragon-a-mask-in-paris-memory-s-gaze-1981-1994-1
+ 978-1980-2003@thevisualist.org
+DTSTAMP:20260120T000000Z
+DTSTART;TZID=America/Chicago:20260120T190000
+DTEND;TZID=America/Chicago:20260120T210000
+SUMMARY:Sarah Maldoror: René Depestre\, Haitian Poet / Léon G. Damas / 
+ Père Lachaise Cemetery / Louis Aragon: A Mask in Paris / Memory’s Gaz
+ e (1981 / 1994 / 1978 / 1980 / 2003)
+LOCATION:Doc Films at the University of Chicago\, 1212 E 59th St\, Chicag
+ o\, IL 60637
+DESCRIPTION:Sarah Maldoror: René Depestre\, Haitian Poet / Léon G. Dama
+ s / Père Lachaise Cemetery / Louis Aragon: A Mask in Paris / Memory’s
+  Gaze (1981 / 1994 / 1978 / 1980 / 2003) · 5m / 28m / 7m / 19m / 24m ·
+  DCP These films explore Maldoror’s enduring interest in poetry as a v
+ ehicle for...\nMore info: https://thevisualist.org/2026/01/sarah-maldoro
+ r-rene-depestre-haitian-poet-leon-g-damas-pere-lachaise-cemetery-louis-a
+ ragon-a-mask-in-paris-memorys-gaze-1981-1994-1978-1980-2003/\nVenue site
+ : https://docfilms.org/calendar/2026winter/maldoror
+URL:https://thevisualist.org/2026/01/sarah-maldoror-rene-depestre-haitian
+ -poet-leon-g-damas-pere-lachaise-cemetery-louis-aragon-a-mask-in-paris-m
+ emorys-gaze-1981-1994-1978-1980-2003/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

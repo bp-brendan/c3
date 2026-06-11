@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260217-norman-teague-lecture@thevisualist.org
+DTSTAMP:20260217T000000Z
+DTSTART;TZID=America/Chicago:20260217T180000
+DTEND;TZID=America/Chicago:20260217T193000
+SUMMARY:Norman Teague Lecture
+LOCATION:The Art Institute of Chicago\, Fullerton Hall\, 111 S Michigan A
+ ve\, Chicago\, IL 60603
+DESCRIPTION:Join us for a lecture by designer Norman Teague followed by a
+ n audience Q & A. Norman Teague’s (MFA 2016) overarching goal extends 
+ beyond the mere act of design\; it is a mission to rectify the narrative
+ s of design that falter with gaps\, omissions\, and oversights. His work
+  seeks to...\nMore info: https://thevisualist.org/2026/02/norman-teague-
+ lecture/\nVenue site: https://www.saic.edu/events/norman-teague-distingu
+ ished-alumni-lecture-series
+URL:https://thevisualist.org/2026/02/norman-teague-lecture/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

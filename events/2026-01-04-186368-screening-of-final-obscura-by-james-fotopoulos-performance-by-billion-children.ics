@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260104-screening-of-final-obscura-by-james-fotopoulos-performance-b
+ y-billion-children@thevisualist.org
+DTSTAMP:20260104T000000Z
+DTSTART;TZID=America/Chicago:20260104T193000
+DTEND;TZID=America/Chicago:20260104T223000
+SUMMARY:Screening of Final Obscura by James Fotopoulos & Performance by B
+ illion Children
+LOCATION:KIOSK\, 3054 N Sheffield Ave\, Chicago\, IL 60657
+DESCRIPTION:UNDA.M.93 is pleased to announce a screening of James Fotopou
+ los’ film Final Obscura (2024\, 71 min) as part of our STOP WORSHIPPIN
+ G CORPSES programming. The past\, present and future. Opening performanc
+ e by Billion Children. Doors at 7:30\, performance at 8\, and screening 
+ at 9 pm\nMore info: https://thevisualist.org/2026/01/screening-of-final-
+ obscura-by-james-fotopoulos-performance-by-billion-children/\nVenue site
+ : https://undam93.onl
+URL:https://thevisualist.org/2026/01/screening-of-final-obscura-by-james-
+ fotopoulos-performance-by-billion-children/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

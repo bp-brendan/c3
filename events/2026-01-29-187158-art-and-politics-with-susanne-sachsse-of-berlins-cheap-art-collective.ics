@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260129-art-and-politics-with-susanne-sachsse-of-berlin-s-cheap-art-
+ collective@thevisualist.org
+DTSTAMP:20260129T000000Z
+DTSTART;TZID=America/Chicago:20260129T190000
+DTEND;TZID=America/Chicago:20260129T210000
+SUMMARY:Art and Politics with Susanne Sachsse of Berlin’s CHEAP Art Col
+ lective
+LOCATION:Three Top Lounge\, 1357 N Elston Avenue\, Chicago\, IL 60642
+DESCRIPTION:Nightcap is a Thursday evening lecture series at Three Top Lo
+ unge featuring engaging talks and conversations with experts across disc
+ iplines. Presented in partnership with Chicago Humanities\, Sexpectation
+ s\, the Gray Center at the University of Chicago\, and the MCA\, each 40
+ -minute...\nMore info: https://thevisualist.org/2026/01/art-and-politics
+ -with-susanne-sachsse-of-berlins-cheap-art-collective/\nVenue site: http
+ s://www.threetoploungechicago.com/
+URL:https://thevisualist.org/2026/01/art-and-politics-with-susanne-sachss
+ e-of-berlins-cheap-art-collective/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

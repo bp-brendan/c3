@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260404-gaylen-gerber@thevisualist.org
+DTSTAMP:20260404T000000Z
+DTSTART;TZID=America/Chicago:20260404T110000
+DTEND;TZID=America/Chicago:20260404T170000
+SUMMARY:Gaylen Gerber
+LOCATION:Hans Goodrich\, 1843 S Halsted St\, Chicago\, IL 60608
+DESCRIPTION:Hans Goodrich is pleased to announce the opening of its secon
+ d exhibition space with an exhibition by the American artist Gaylen Gerb
+ er\, April 4 – May 17\, 2026 1843 S Halsted Street\, Chicago\, IL 6060
+ 8 / info@hansgoodrich.com / +1.312.599.1810 / @hansgoodrich Gallery hour
+ s Friday –...\nMore info: https://thevisualist.org/2026/04/gaylen-gerb
+ er-2/\nVenue site: https://www.hansgoodrich.com/
+URL:https://thevisualist.org/2026/04/gaylen-gerber-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

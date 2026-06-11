@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260424-out-of-office-co-working-event-with-the-cgdc@thevisualist.or
+ g
+DTSTAMP:20260424T000000Z
+DTSTART;TZID=America/Chicago:20260424T100000
+DTEND;TZID=America/Chicago:20260424T140000
+SUMMARY:Out of Office Co-working Event with the CGDC
+LOCATION:Two-Thirty\, 230 W Superior Ave\, 3rd Fl\, Chicago\, IL 60654
+DESCRIPTION:Come be OOO with us for our April coworking session at Two-Th
+ irty. Break out of your usual work routine and join fellow designers at 
+ Two-Thirty in River North for an afternoon of coworking. Bring your proj
+ ects\, settle in\, and enjoy the company of other creatives tackling the
+ ir own...\nMore info: https://thevisualist.org/2026/04/out-of-office-co-
+ working-event-with-the-cgdc-2/\nVenue site: https://chicagographicdesign
+ .club/programming/out-of-office-coworking-2/
+URL:https://thevisualist.org/2026/04/out-of-office-co-working-event-with-
+ the-cgdc-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

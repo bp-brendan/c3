@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260117-sturtevant-ecce-homo@thevisualist.org
+DTSTAMP:20260117T000000Z
+DTSTART;TZID=America/Chicago:20260117T150000
+DTEND;TZID=America/Chicago:20260117T200000
+SUMMARY:Sturtevant: Ecce Homo
+LOCATION:SHANGHAI SEMINARY\, 3262 S Morgan St\, Sto\, Chicago\, IL 60608
+DESCRIPTION:SHANGHAI SEMINARY presents Ecce Homo\, an exhibition of Sturt
+ evant\, featuring l’Abécédaire de Deleuze—a video installation by 
+ the artist premiered in late 2012 at Galerie Thaddaeus Ropac in Paris. A
+ ccording to the then press release by Sturtevant and her gallery\, this 
+ work “is derived...\nMore info: https://thevisualist.org/2026/01/sturt
+ evant-ecce-homo/\nVenue site: https://shanghaiseminary.com/011726/
+URL:https://thevisualist.org/2026/01/sturtevant-ecce-homo/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

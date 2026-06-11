@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260131-i-cut-my-nails-for-you@thevisualist.org
+DTSTAMP:20260131T000000Z
+DTSTART;TZID=America/Chicago:20260131T180000
+DTEND;TZID=America/Chicago:20260131T200000
+SUMMARY:I Cut My Nails for You
+LOCATION:The Whistler\, 2421 N Milwaukee Ave\, Chicago\, IL 60647
+DESCRIPTION:Join us for an evening with Chicago poets Temperance Aghamoha
+ mmadi\, Jessie McCarty\, and S. Yarberry featuring readings from KD Sims
+ ’ new book “I Cut My Nails for You” (Discount Guillotine\, 2026). 
+ “I Cut My Nails for You\, again\, proves that women invented poetry. S
+ ims is a triple sexed...\nMore info: https://thevisualist.org/2026/01/i-
+ cut-my-nails-for-you/\nVenue site: https://whistlerchicago.com/events/i-
+ cut-my-nails-for-you
+URL:https://thevisualist.org/2026/01/i-cut-my-nails-for-you/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

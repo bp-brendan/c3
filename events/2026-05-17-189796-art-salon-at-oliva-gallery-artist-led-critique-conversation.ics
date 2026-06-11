@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260517-art-salon-at-oliva-gallery-artist-led-critique-conversation@
+ thevisualist.org
+DTSTAMP:20260517T000000Z
+DTSTART;TZID=America/Chicago:20260517T140000
+DTEND;TZID=America/Chicago:20260517T160000
+SUMMARY:Art Salon at Oliva Gallery: Artist-Led Critique & Conversation
+LOCATION:Oliva Gallery\, 3816 W Armitage Ave\, Chicago\, IL 60647
+DESCRIPTION:Oliva Gallery invites artists to participate in an Art Salon\
+ , a format rooted in a long-standing European tradition dating back to t
+ he 18th and 19th centuries. Historically\, salons created space for arti
+ sts to engage directly with one another\, outside of formal institutiona
+ l...\nMore info: https://thevisualist.org/2026/05/art-salon-at-oliva-gal
+ lery-artist-led-critique-conversation/\nVenue site: https://www.eventbri
+ te.com/e/art-salon-at-oliva-gallery-artist-led-critique-conversation-tic
+ kets-1987160067254?aff=ebdsoporgprofile
+URL:https://thevisualist.org/2026/05/art-salon-at-oliva-gallery-artist-le
+ d-critique-conversation/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

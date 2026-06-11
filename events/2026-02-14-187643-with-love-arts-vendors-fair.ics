@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-with-love-arts-vendors-fair@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;TZID=America/Chicago:20260214T110000
+DTEND;TZID=America/Chicago:20260214T160000
+SUMMARY:With Love – Arts & Vendors Fair
+LOCATION:Kinowerks\, 5645 N Ravenswood Ave\, Chicago\, IL 60660
+DESCRIPTION:​Kinowerks unites the creative community for an immersive c
+ elebration of art\, craftsmanship\, and connection. Bringing together a 
+ diverse group of artists\, makers\, and visionaries\, this event spotlig
+ hts the vibrancy of Chicago’s creative industry through an art showcas
+ e and interactive...\nMore info: https://thevisualist.org/2026/02/with-l
+ ove-arts-vendors-fair/\nVenue site: https://kinowerks.studio/
+URL:https://thevisualist.org/2026/02/with-love-arts-vendors-fair/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

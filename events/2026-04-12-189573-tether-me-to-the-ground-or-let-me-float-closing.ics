@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260412-tether-me-to-the-ground-or-let-me-float-closing@thevisualist
+ .org
+DTSTAMP:20260412T000000Z
+DTSTART;TZID=America/Chicago:20260412T140000
+DTEND;TZID=America/Chicago:20260412T180000
+SUMMARY:tether me to the ground or let me float: Closing
+LOCATION:Epiphany Center for the Arts\, 201 S Ashland Ave\, Chicago\, IL\
+ , 60607
+DESCRIPTION:Attend the closing reception for tether me to the ground or l
+ et me float on Sunday\, April 12th\, from 2:00-6:00pm. Through the inves
+ tigation of personal histories\, familial ancestry\, and the weight of p
+ lace\, the six ACRE alumni artists in tether me to the ground or let me 
+ float...\nMore info: https://thevisualist.org/2026/04/tether-me-to-the-g
+ round-or-let-me-float-closing/\nVenue site: https://epiphanychi.com/the-
+ closing-reception-of-tether-me-to-the-ground-or-let-me-float/
+URL:https://thevisualist.org/2026/04/tether-me-to-the-ground-or-let-me-fl
+ oat-closing/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

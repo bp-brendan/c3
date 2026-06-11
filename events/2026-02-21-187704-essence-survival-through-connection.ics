@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260221-essence-survival-through-connection@thevisualist.org
+DTSTAMP:20260221T000000Z
+DTSTART;TZID=America/Chicago:20260221T170000
+DTEND;TZID=America/Chicago:20260221T210000
+SUMMARY:Essence – Survival Through Connection
+LOCATION:ShadowBoxX Gallery\, 116 Washington St.\, Waukegan\, IL 60085
+DESCRIPTION:Essence Exhibition Opens at ShadowBoxX Gallery Feb. 21 During
+  ArtWauk In celebration of Black History Month\, ShadowBoxX Gallery is p
+ roud to present Essence\, a group exhibition featuring eight contemporar
+ y black visual artists: Seven men\, one woman\, seven Nigerian\, one Ame
+ rican. The...\nMore info: https://thevisualist.org/2026/02/essence-survi
+ val-through-connection/\nVenue site: https://www.manvshadow.com/shadowbo
+ xx-exhibitions
+URL:https://thevisualist.org/2026/02/essence-survival-through-connection/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

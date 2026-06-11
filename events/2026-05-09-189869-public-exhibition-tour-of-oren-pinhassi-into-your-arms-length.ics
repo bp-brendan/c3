@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-public-exhibition-tour-of-oren-pinhassi-into-your-arm-s-leng
+ th@thevisualist.org
+DTSTAMP:20260509T000000Z
+DTSTART;TZID=America/Chicago:20260509T133000
+DTEND;TZID=America/Chicago:20260509T143000
+SUMMARY:Public Exhibition Tour of Oren Pinhassi: Into Your Arm’s Length
+LOCATION:The Arts Club of Chicago\, 201 E Ontario St\, Chicago\, IL 60611
+DESCRIPTION:Join for a tour of the exhibition Oren Pinhassi: Into Your Ar
+ m’s Length\, led by Janine Mileaf\, Executive Director and Chief Curat
+ or at The Arts Club of Chicago. Pinhassi has an important installation o
+ f new work at The Arts Club\, the artist’s first solo exhibition in Ch
+ icago...\nMore info: https://thevisualist.org/2026/05/public-exhibition-
+ tour-of-oren-pinhassi-into-your-arms-length/\nVenue site: https://www.ar
+ tsclubchicago.org/program/exhibition-tour-with-janine-mileaf/
+URL:https://thevisualist.org/2026/05/public-exhibition-tour-of-oren-pinha
+ ssi-into-your-arms-length/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

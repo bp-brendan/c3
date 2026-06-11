@@ -1,0 +1,54 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260222-art-talks-teresa-montoya-s-to-itso-yellow-water@thevisualist
+ .org
+DTSTAMP:20260222T000000Z
+DTSTART;TZID=America/Chicago:20260222T140000
+DTEND;TZID=America/Chicago:20260222T150000
+SUMMARY:Art Talks! Teresa Montoya’s Tó Łitso (Yellow Water)
+LOCATION:Block Museum of Art\, Northwestern University\, 40 Arts Circle D
+ r\, Evanston\, IL 60208
+DESCRIPTION:Join the Block Museum Student Associates in our galleries for
+  a close look at one or two works on view in Teresa Montoya’s Tó Łit
+ so (Yellow Water): Ten Years after the Gold King Mine Spill. The exhibit
+ ion explores the enduring consequences of the Gold King Mine spill throu
+ gh...\nMore info: https://thevisualist.org/2026/02/art-talks-teresa-mont
+ oyas-to-litso-yellow-water/\nVenue site: https://www.blockmuseum.northwe
+ stern.edu/events/2026/2-art-talks-teresa-montoya-t%C3%B3-%C5%82isto.html
+ conversation.htmlutm_source=Block+Museum+of+Art+Northwestern+University&
+ utm_campaign=9b74743135-EMAIL_CAMPAIGN_9_27_2021_COPY_01&utm_medium=emai
+ l&utm_term=0_a04c98ee9f-9b74743135-309161421&mc_cid=9b74743135&mc_eid=36
+ 9c0b783f
+URL:https://thevisualist.org/2026/02/art-talks-teresa-montoyas-to-litso-y
+ ellow-water/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

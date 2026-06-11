@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260320-material-inquiry@thevisualist.org
+DTSTAMP:20260320T000000Z
+DTSTART;TZID=America/Chicago:20260320T180000
+DTEND;TZID=America/Chicago:20260320T200000
+SUMMARY:Material Inquiry
+LOCATION:The Gallery of Contemporary Mosaics\, 1127 W Granville Ave\, Chi
+ cago\, IL 60660
+DESCRIPTION:Join us Friday\, March 20th 6pm-8pm\, for the opening of the 
+ collaborative exhibition of the Gallery of Contemporary Mosaics and the 
+ Loyola Division of Fine Arts\, “Material Inquiry”. On view March 20 
+ to May 9\, 2026 ​ The show features works that convey meaning through 
+ embodied art...\nMore info: https://thevisualist.org/2026/03/material-in
+ quiry/\nVenue site: https://www.gallerygocm.com/
+URL:https://thevisualist.org/2026/03/material-inquiry/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

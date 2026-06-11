@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260313-creativity-fest-community-art-exhibiton@thevisualist.org
+DTSTAMP:20260313T000000Z
+DTSTART;TZID=America/Chicago:20260313T170000
+DTEND;TZID=America/Chicago:20260313T190000
+SUMMARY:Creativity Fest Community Art Exhibiton
+LOCATION:Riverside Arts Center at the Town Hall\, 27 Riverside Rd\, River
+ side\, IL 60546
+DESCRIPTION:The Riverside Arts Center (RAC) is pleased to present our sec
+ ond annual Creativity Fest Community Art Exhibiton. During the month of 
+ February\, RAC invited the public to join in making art led by our teach
+ ing artists\, Shawn Vincent and Tariq Tamir. Participants of all ages we
+ re invited...\nMore info: https://thevisualist.org/2026/03/creativity-fe
+ st-community-art-exhibiton/\nVenue site: https://www.riversideartscenter
+ .com/riverside-town-hall/2026/03-creativity-fest-community-art-exhibiton
+URL:https://thevisualist.org/2026/03/creativity-fest-community-art-exhibi
+ ton/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

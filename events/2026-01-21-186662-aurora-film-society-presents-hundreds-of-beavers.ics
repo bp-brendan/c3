@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260121-aurora-film-society-presents-hundreds-of-beavers@thevisualis
+ t.org
+DTSTAMP:20260121T000000Z
+DTSTART;TZID=America/Chicago:20260121T190000
+DTEND;TZID=America/Chicago:20260121T220000
+SUMMARY:Aurora Film Society Presents: Hundreds Of Beavers
+LOCATION:The Venue\, 21 S Broadway Ave\, Route 25\, Aurora\, IL 60505
+DESCRIPTION:Hundreds Of Beavers [2022 / Mike Cheslik] A drunken doofus in
+  19th century Wisconsin becomes a fur trapper to get revenge on the colo
+ ny of beavers who destroyed his applejack distillery. “Hundreds of Bea
+ vers” combines the sensibilities of Harold Lloyd\, the physics of Loon
+ ey Tunes\, and...\nMore info: https://thevisualist.org/2026/01/aurora-fi
+ lm-society-presents-hundreds-of-beavers/\nVenue site: https://www.aurora
+ filmsociety.org/afs-on-our-screen-presents-hundreds-of-beavers-2022-mike
+ -cheslik-108-min-january-21st/
+URL:https://thevisualist.org/2026/01/aurora-film-society-presents-hundred
+ s-of-beavers/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

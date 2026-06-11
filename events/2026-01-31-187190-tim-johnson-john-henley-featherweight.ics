@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260131-tim-johnson-john-henley-featherweight@thevisualist.org
+DTSTAMP:20260131T000000Z
+DTSTART;TZID=America/Chicago:20260131T180000
+DTEND;TZID=America/Chicago:20260131T210000
+SUMMARY:Tim Johnson & John Henley: Featherweight
+LOCATION:Junior.\, 1905 S Troy St\, Chicago\, IL 60623
+DESCRIPTION:is pleased to present: 𝒇̲̅𝒆̲̅𝒂̲̅𝒕̲̅𝒉̅
+ ̲𝒆̲̅𝒓̲̅𝒘̲̅𝒆̲̅𝒊̲̅𝒈̲̅𝒉̲̅𝒕̲̅ Satur
+ day 1/31/26 6-9pm Featuring: Tim Johnson • John Henley Featherweight c
+ onsiders weight as something other than mass. A residue. A record. A pre
+ ssure that accumulates through use\, memory\, and care. Borrowing loosel
+ y...\nMore info: https://thevisualist.org/2026/01/tim-johnson-john-henle
+ y-featherweight/\nVenue site: https://www.jrjrjr.biz/
+URL:https://thevisualist.org/2026/01/tim-johnson-john-henley-featherweigh
+ t/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

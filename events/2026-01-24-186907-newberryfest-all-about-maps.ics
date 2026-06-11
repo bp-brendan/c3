@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260124-newberryfest-all-about-maps@thevisualist.org
+DTSTAMP:20260124T000000Z
+DTSTART;TZID=America/Chicago:20260124T120000
+DTEND;TZID=America/Chicago:20260124T150000
+SUMMARY:NewberryFest: All About Maps!
+LOCATION:Newberry Library\, 60 W Walton St\, Chicago\, IL 60610
+DESCRIPTION:Join us for our winter NewberryFest\, designed to help both n
+ ew and returning visitors learn more about the Newberry. This year’s c
+ artography-focused event will lean into our extensive collection of maps
+  from across time and place and take over the first floor of the library
+ \, providing...\nMore info: https://thevisualist.org/2026/01/newberryfes
+ t-all-about-maps/\nVenue site: https://www.newberry.org/calendar/newberr
+ yfest
+URL:https://thevisualist.org/2026/01/newberryfest-all-about-maps/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

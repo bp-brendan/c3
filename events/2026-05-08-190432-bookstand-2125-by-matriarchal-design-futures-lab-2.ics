@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260508-bookstand-2125-by-matriarchal-design-futures-lab@thevisualis
+ t.org
+DTSTAMP:20260508T000000Z
+DTSTART;TZID=America/Chicago:20260508T173000
+DTEND;TZID=America/Chicago:20260508T200000
+SUMMARY:Bookstand 2125 by Matriarchal Design Futures Lab
+LOCATION:Chicago Women's History Center\, Fine Arts Building\, 410 S. Mic
+ higan Ave\, Suite 403\, Chicago\, IL 60605
+DESCRIPTION:Bookstand 2125 by Matriarchal Design Futures is a collaborati
+ ve design fiction project that invites artists and designers to imagine 
+ and create books from the year 2125. In this speculative future\, knowle
+ dge and creativity flourish within systems centered on care\, nurturing\
+ , and...\nMore info: https://thevisualist.org/2026/05/bookstand-2125-by-
+ matriarchal-design-futures-lab-2/\nVenue site: https://www.chicagowomens
+ history.org/events/bookstand-2125
+URL:https://thevisualist.org/2026/05/bookstand-2125-by-matriarchal-design
+ -futures-lab-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-the-closing-reception-of-hope-is-the-last-thing-by-rebecca-k
+ eller@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;TZID=America/Chicago:20260214T170000
+DTEND;TZID=America/Chicago:20260214T200000
+SUMMARY:The Closing Reception of Hope Is the Last Thing by Rebecca Keller
+LOCATION:Epiphany Center for the Arts\, 201 S Ashland Ave\, Chicago\, IL 
+ 60607
+DESCRIPTION:The works in this exhibition are inspired by Epiphany Center 
+ for the Arts’ history as a church building\, especially the dedicatory
+  plaque hung around the corner in the hall. The grey and white text-base
+ d paintings are inspired by the plaque’s color and shape. But while th
+ ese paintings...\nMore info: https://thevisualist.org/2026/02/the-closin
+ g-reception-of-hope-is-the-last-thing-by-rebecca-ke/\nVenue site: https:
+ //epiphanychi.com/arts/
+URL:https://thevisualist.org/2026/02/the-closing-reception-of-hope-is-the
+ -last-thing-by-rebecca-ke/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

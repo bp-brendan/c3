@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260127-voices-aliza-nisenbaum@thevisualist.org
+DTSTAMP:20260127T000000Z
+DTSTART;TZID=America/Chicago:20260127T170000
+DTEND;TZID=America/Chicago:20260127T183000
+SUMMARY:VOICES: Aliza Nisenbaum
+LOCATION:Gallery 400\, 400 S Peoria St.\, 5th Floor Room 5100\, Chicago\,
+  IL 60607
+DESCRIPTION:Aliza Nisenbaum’s paintings capture tender moments between 
+ the artist and the sitter. In vibrant colors and bold lines\, moments of
+  contemplation\, leisure\, care\, and communal gathering are depicted in
+  intimate settings where the subjects’ personalities are uniquely repr
+ esented...\nMore info: https://thevisualist.org/2026/01/voices-aliza-nis
+ enbaum/\nVenue site: https://gallery400.uic.edu/event/alizanisenbaum/
+URL:https://thevisualist.org/2026/01/voices-aliza-nisenbaum/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

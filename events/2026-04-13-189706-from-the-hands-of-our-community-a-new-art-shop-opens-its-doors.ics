@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260413-from-the-hands-of-our-community-a-new-art-shop-opens-its-doo
+ rs@thevisualist.org
+DTSTAMP:20260413T000000Z
+DTSTART;TZID=America/Chicago:20260413T090000
+DTEND;TZID=America/Chicago:20260413T110000
+SUMMARY:From the Hands of Our Community: A New Art Shop Opens Its Doors
+LOCATION:6311arts\, 6311 N Clark St\, Chicago IL 60660
+DESCRIPTION:6311arts\, has unveiled a community art shop aimed at selling
+  one-of-a-kind and handcrafted goods from artists living and working in 
+ Chicago. The shop offers jewelry\, ceramics\, t-shirts\, prints\, and mo
+ re\, many of which are created by the artists whose work appears (or has
+  appeared) in...\nMore info: https://thevisualist.org/2026/04/from-the-h
+ ands-of-our-community-a-new-art-shop-opens-its-doors/\nVenue site: https
+ ://www.6311arts.com/
+URL:https://thevisualist.org/2026/04/from-the-hands-of-our-community-a-ne
+ w-art-shop-opens-its-doors/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

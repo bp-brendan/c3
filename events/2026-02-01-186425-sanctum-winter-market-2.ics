@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260201-sanctum-winter-market@thevisualist.org
+DTSTAMP:20260201T000000Z
+DTSTART;TZID=America/Chicago:20260201T120000
+DTEND;TZID=America/Chicago:20260201T170000
+SUMMARY:Sanctum Winter Market
+LOCATION:Hoste\, 1857 W 16th St\, Chicago\, IL 60608
+DESCRIPTION:Each edition of Sanctum will feature a refined selection of l
+ ocal artisans\, creators\, and brands who share a commitment to craft an
+ d story. Expect design-forward products\, sensory experiences\, and unex
+ pected moments of hospitality — all set within an atmosphere made for 
+ lingering. We...\nMore info: https://thevisualist.org/2026/02/sanctum-wi
+ nter-market-2/\nVenue site: https://irisedwardcandleco.com/pages/sanctum
+ -by-irisedward
+URL:https://thevisualist.org/2026/02/sanctum-winter-market-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

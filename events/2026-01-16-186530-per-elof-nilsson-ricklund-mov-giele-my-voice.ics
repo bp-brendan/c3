@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260116-per-elof-nilsson-ricklund-mov-giele-my-voice@thevisualist.or
+ g
+DTSTAMP:20260116T000000Z
+DTSTART;TZID=America/Chicago:20260116T180000
+DTEND;TZID=America/Chicago:20260116T200000
+SUMMARY:Per Elof Nilsson Ricklund: Mov Gïele | My Voice
+LOCATION:Swedish American Museum\, 5211 N Clark St\, Chicago\, IL 60640
+DESCRIPTION:This exhibit showcases the vibrant and dynamic work of Sámi 
+ artist Per Elof Nilsson Ricklund. With roots in the Sámi cultural lands
+ cape and a gaze turned toward philosophy\, archaeology\, and art history
+ \, he creates works that carry both memory and movement. His paintings e
+ merge at the...\nMore info: https://thevisualist.org/2026/01/per-elof-ni
+ lsson-ricklund-mov-giele-my-voice/\nVenue site: https://swedishamericanm
+ useum.org/special-exhibits
+URL:https://thevisualist.org/2026/01/per-elof-nilsson-ricklund-mov-giele-
+ my-voice/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

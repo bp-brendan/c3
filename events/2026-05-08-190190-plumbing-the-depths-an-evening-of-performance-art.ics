@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260508-plumbing-the-depths-an-evening-of-performance-art@thevisuali
+ st.org
+DTSTAMP:20260508T000000Z
+DTSTART;TZID=America/Chicago:20260508T193000
+DTEND;TZID=America/Chicago:20260508T213000
+SUMMARY:Plumbing the Depths: An Evening of Performance Art
+LOCATION:Hairpin Arts Center\, 2810 N Milwaukee Ave\, Chicago IL 60618
+DESCRIPTION:Plumbing the Depths: An Evening of Performance Art\nMore info
+ : https://thevisualist.org/2026/05/plumbing-the-depths-an-evening-of-per
+ formance-art/\nVenue site: https://www.hairpinartscenter.org/performing-
+ arts
+URL:https://thevisualist.org/2026/05/plumbing-the-depths-an-evening-of-pe
+ rformance-art/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260215-winter-torch-a-gathering-of-warmth-resilience@thevisualist.o
+ rg
+DTSTAMP:20260215T000000Z
+DTSTART;TZID=America/Chicago:20260215T160000
+DTEND;TZID=America/Chicago:20260215T173000
+SUMMARY:Winter Torch: A Gathering of Warmth & Resilience
+LOCATION:Epiphany Center For The Arts\, 201 S Ashland Ave\, Chicago\, IL 
+ 60607
+DESCRIPTION:Escape the cold and chaos outside and step into the warm embr
+ ace of Winter Torch! Presented by Woman Made Gallery\, this gathering ce
+ lebrating sisterhood blends the soulful acoustic guitar of Robinlee Garb
+ er\, along with the powerful storytelling of Maureen Muldoon and Jae Gre
+ en...\nMore info: https://thevisualist.org/2026/02/winter-torch-a-gather
+ ing-of-warmth-resilience-2/\nVenue site: https://womanmade.org/event/win
+ ter-torch-a-gathering-of-warmth-resilience/
+URL:https://thevisualist.org/2026/02/winter-torch-a-gathering-of-warmth-r
+ esilience-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

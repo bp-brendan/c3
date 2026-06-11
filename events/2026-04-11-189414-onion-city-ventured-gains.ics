@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-onion-city-ventured-gains@thevisualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T160000
+DTEND;TZID=America/Chicago:20260411T180000
+SUMMARY:Onion City: Ventured Gains
+LOCATION:Chicago Filmmakers Firehouse Cinema\, 1326 W Hollywood Ave\, Chi
+ cago\, IL 60660
+DESCRIPTION:Tally up your VENTURED GAINS to explore risk and reward with 
+ an abiding humor. Liability\, surveillance\, breaking\, entering\, inves
+ tment\, theft\, and gambling. The works of this program take on “vulga
+ r extravaganzas\,” “fears and veneers\,” and “social acerbities.
+ ” Lineup: Emergency Exits...\nMore info: https://thevisualist.org/2026
+ /04/onion-city-ventured-gains/\nVenue site: https://chicagofilmmakers.or
+ g/upcoming-screenings-and-events/ventured-gains
+URL:https://thevisualist.org/2026/04/onion-city-ventured-gains/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

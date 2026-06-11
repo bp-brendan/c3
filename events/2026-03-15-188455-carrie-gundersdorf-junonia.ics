@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260315-carrie-gundersdorf-junonia@thevisualist.org
+DTSTAMP:20260315T000000Z
+DTSTART;TZID=America/Chicago:20260315T160000
+DTEND;TZID=America/Chicago:20260315T190000
+SUMMARY:Carrie Gundersdorf: Junonia
+LOCATION:4th Ward Project Space\, 5338 S Kimbark Ave\, Chicago\, IL 60615
+DESCRIPTION:4th Ward Project Space is pleased to present Junonia\, an exh
+ ibition of new paintings by Carrie Gundersdorf. Collectively\, these wor
+ ks translate the patterns of seashells into expanded fields of color and
+  mark\, bringing together close observation and material process. Each p
+ iece begins...\nMore info: https://thevisualist.org/2026/03/carrie-gunde
+ rsdorf-junonia/\nVenue site: https://www.4wps.org/
+URL:https://thevisualist.org/2026/03/carrie-gundersdorf-junonia/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

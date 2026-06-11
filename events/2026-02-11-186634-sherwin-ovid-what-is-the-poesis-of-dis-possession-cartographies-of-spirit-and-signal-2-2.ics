@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260211-sherwin-ovid-what-is-the-poesis-of-dis-possession-cartograph
+ ies-of-spirit-and-signal-reception-and-talk@thevisualist.org
+DTSTAMP:20260211T000000Z
+DTSTART;TZID=America/Chicago:20260211T180000
+DTEND;TZID=America/Chicago:20260211T203000
+SUMMARY:Sherwin Ovid: What is the Poesis of Dis-Possession? Cartographies
+  of Spirit and Signal- Reception and talk
+LOCATION:UIS Visual Arts Gallery\, One University Plaza\, VPA 62\, Spring
+ field\, IL 62703-5407
+DESCRIPTION:What is the Poesis of Dis-Possession? Cartographies of Spirit
+  and Signal presents recent works by Sherwin Ovid that prompt the viewer
+  to reconsider how the Caribbean has been historically imagined and repr
+ esented as a region. Ovid layers forms and materials evocative of sea cr
+ eatures...\nMore info: https://thevisualist.org/2026/02/sherwin-ovid-wha
+ t-is-the-poesis-of-dis-possession-cartographies-of-spirit-and-signal-2-2
+ /\nVenue site: https://www.uis.edu/visual-arts/visual-arts-gallery/upcom
+ ing-exhibitions
+URL:https://thevisualist.org/2026/02/sherwin-ovid-what-is-the-poesis-of-d
+ is-possession-cartographies-of-spirit-and-signal-2-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

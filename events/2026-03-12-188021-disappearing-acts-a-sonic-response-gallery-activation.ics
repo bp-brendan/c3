@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260312-disappearing-acts-a-sonic-response-gallery-activation@thevis
+ ualist.org
+DTSTAMP:20260312T000000Z
+DTSTART;TZID=America/Chicago:20260312T190000
+DTEND;TZID=America/Chicago:20260312T213000
+SUMMARY:Disappearing Acts: A Sonic Response- Gallery activation
+LOCATION:Chicago Justice Gallery\, 1344 S Halsted St\, Chicago\, IL 60607
+DESCRIPTION:An evening of sound in response to absence. Join us for a pow
+ erful sound performance featuring a lineup of experimental sound artists
+  responding to Soledad Fátima Muñoz’s solo exhibition\, We’re Not 
+ All Here / No Estamos Todes. Through live sonic interventions\, sound ar
+ tists engage...\nMore info: https://thevisualist.org/2026/03/disappearin
+ g-acts-a-sonic-response-gallery-activation/\nVenue site: https://sji.uic
+ .edu/events/disappearing-acts-a-sonic-response/
+URL:https://thevisualist.org/2026/03/disappearing-acts-a-sonic-response-g
+ allery-activation/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

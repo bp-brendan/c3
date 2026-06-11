@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-bert-leveille-waterfall-portals@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;VALUE=DATE:20260410
+SUMMARY:bert leveille: WATERFALL PORTALS
+LOCATION:New Gallery\, 1400 N Halsted Street Chicago\, IL
+DESCRIPTION:Join nonprofit NEW Gallery for the opening reception of bert 
+ leveille’s WATERFALL PORTALS. WATERFALL PORTALS examines human connect
+ ion to the earth\, each other\, and consciousness. In this installation 
+ piece\, animated\, otherworldly “mindful beings” travel the waterfal
+ ls of the universe...\nMore info: https://thevisualist.org/2026/04/bert-
+ leveille-waterfall-portals/\nVenue site: https://newgallery.online/bert-
+ leveille-waterfall-portals
+URL:https://thevisualist.org/2026/04/bert-leveille-waterfall-portals/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260228-the-digital-archives-of-the-unseen-transmission-test-signal-
+ restored@thevisualist.org
+DTSTAMP:20260228T000000Z
+DTSTART;TZID=America/Chicago:20260228T190000
+DTEND;TZID=America/Chicago:20260228T210000
+SUMMARY:The Digital Archives of the Unseen: Transmission Test — Signal 
+ Restored
+LOCATION:Walls Turned Sideways\, 2717 W Madison St\, Chicago\, IL 60612
+DESCRIPTION:Interdisciplinary\, interdimensional artist\, writer\, and ri
+ tual maker Faylita Hicks joins Walls Turned Sideways Gallery\, a nationa
+ lly recognized space centering art\, justice\, and incarceration\, for T
+ ransmission Test: Signal Restored\, a multimedia live performance activa
+ ting Digital...\nMore info: https://thevisualist.org/2026/02/the-digital
+ -archives-of-the-unseen-transmission-test-signal-restored/\nVenue site: 
+ https://wallsturnedsideways.org/event/the-digital-archives-of-the-unseen
+ -transmission-test-signal-restored/
+URL:https://thevisualist.org/2026/02/the-digital-archives-of-the-unseen-t
+ ransmission-test-signal-restored/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

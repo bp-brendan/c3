@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260415-creating-scala@thevisualist.org
+DTSTAMP:20260415T000000Z
+DTSTART;TZID=America/Chicago:20260415T190000
+DTEND;TZID=America/Chicago:20260415T210000
+SUMMARY:Creating Scala
+LOCATION:Three Top Lounge\, 1357 N Elston Ave\, Chicago\, IL 60642
+DESCRIPTION:Join us for a screening of Scala: The story behind Edra Soto 
+ and Dan Sullivan’s monumental public art piece at University of Illino
+ is Chicago A film by DHPixels\, Produced by Builder Growth Screening fol
+ lowed by a conversation with the artists\, moderated by Lorelei Stewart 
+ director and...\nMore info: https://thevisualist.org/2026/04/creating-sc
+ ala/\nVenue site: https://www.ticketweb.com/event/creating-scala-three-t
+ op-lounge-tickets/14782353
+URL:https://thevisualist.org/2026/04/creating-scala/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

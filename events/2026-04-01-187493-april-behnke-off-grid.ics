@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260401-april-behnke-off-grid@thevisualist.org
+DTSTAMP:20260401T000000Z
+DTSTART;TZID=America/Chicago:20260401T143000
+DTEND;TZID=America/Chicago:20260401T163000
+SUMMARY:April Behnke: Off/Grid
+LOCATION:McHenry County College | Galleries One & Two\, 8900 U.S. Highway
+  14\, Crystal Lake\, IL 60012
+DESCRIPTION:McHenry County College is thrilled to host April Behnke’s s
+ olo exhibition\, “Off/Grid\,” featuring an artist talk on Wednesday\
+ , April 1\, followed immediately by a reception. March 9 – April 17\, 
+ 2026 McHenry County College | Galleries One & Two 8900 U.S. Highway 14\,
+  Crystal Lake\, IL...\nMore info: https://thevisualist.org/2026/04/april
+ -behnke-off-grid/\nVenue site: https://www.mchenry.edu/artgallery/curren
+ t.html
+URL:https://thevisualist.org/2026/04/april-behnke-off-grid/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

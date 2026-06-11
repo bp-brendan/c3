@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260503-larissa-borteh-in-the-wind@thevisualist.org
+DTSTAMP:20260503T000000Z
+DTSTART;TZID=America/Chicago:20260503T150000
+DTEND;TZID=America/Chicago:20260503T170000
+SUMMARY:Larissa Borteh: In the Wind
+LOCATION:Devening Projects\, 3039 W Carroll Ave\, Chicago\, IL 60612
+DESCRIPTION:There is a kind of energy that doesn’t announce itself\, it
+  simply arrives\, exerting its presence on anything that moves near\, ag
+ ainst\, or through it. This force — physical\, restless\, and uncontai
+ nable — animates In the Wind\, the debut solo exhibition of new painti
+ ngs by Chicago artist...\nMore info: https://thevisualist.org/2026/05/la
+ rissa-borteh-in-the-wind/\nVenue site: http://www.deveningprojects.com
+URL:https://thevisualist.org/2026/05/larissa-borteh-in-the-wind/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

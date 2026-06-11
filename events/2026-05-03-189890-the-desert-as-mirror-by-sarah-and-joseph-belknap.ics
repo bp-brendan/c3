@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260503-the-desert-as-mirror-by-sarah-and-joseph-belknap@thevisualis
+ t.org
+DTSTAMP:20260503T000000Z
+DTSTART;TZID=America/Chicago:20260503T140000
+DTEND;TZID=America/Chicago:20260503T170000
+SUMMARY:The Desert as Mirror by Sarah and Joseph Belknap
+LOCATION:Epiphany Center for the Arts\, 201 S Ashland Ave\, Chicago\, IL 
+ 60607
+DESCRIPTION:We went to the desert for the eclipse. If we squinted\, we co
+ uld pretend we were on Mars. We hadn’t been out of the city for a whil
+ e and saw the biggest sky – it made us feel so incredibly tiny. We sle
+ pt outside and ate outside and hiked outside. We tried to look at every 
+ rock we...\nMore info: https://thevisualist.org/2026/05/the-desert-as-mi
+ rror-by-sarah-and-joseph-belknap/\nVenue site: https://epiphanychi.com/a
+ rts/
+URL:https://thevisualist.org/2026/05/the-desert-as-mirror-by-sarah-and-jo
+ seph-belknap/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

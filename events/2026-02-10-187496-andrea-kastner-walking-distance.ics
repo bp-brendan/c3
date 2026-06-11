@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260210-andrea-kastner-walking-distance@thevisualist.org
+DTSTAMP:20260210T000000Z
+DTSTART;VALUE=DATE:20260210
+SUMMARY:Andrea Kastner “Walking Distance”
+LOCATION:Western Illinois University Art Gallery\, Western Illinois Unive
+ rsity\, 1 University Circle\, Macomb\, IL 61455
+DESCRIPTION:Andrea Kastner is a Canadian painter living and working in Bi
+ nghamton\, New York. Her work focuses on the overlooked corners of urban
+  spaces and the sacred nature of rejected things. She has participated i
+ n residencies at the Banff Centre for the Arts\, the Vermont Studio Cent
+ er...\nMore info: https://thevisualist.org/2026/02/andrea-kastner-walkin
+ g-distance/\nVenue site: https://www.wiu.edu/cofac/artgallery/
+URL:https://thevisualist.org/2026/02/andrea-kastner-walking-distance/
+END:VEVENT
+END:VCALENDAR

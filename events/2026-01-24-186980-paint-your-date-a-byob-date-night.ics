@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260124-paint-your-date-a-byob-date-night@thevisualist.org
+DTSTAMP:20260124T000000Z
+DTSTART;TZID=America/Chicago:20260124T180000
+DTEND;TZID=America/Chicago:20260124T200000
+SUMMARY:Paint Your Date: A BYOB date night
+LOCATION:Art City\, 1400 N Halsted St\, Chicago\, IL 60642
+DESCRIPTION:Looking for something fun and unique to do for date night? Jo
+ in Art City for a playful and intimate evening of drinks and painting ea
+ ch other’s portraits. All materials are provided and no experience nee
+ ded. BYOB and take your one-of-a-kind painting home at the end of the ni
+ ght.\nMore info: https://thevisualist.org/2026/01/paint-your-date-a-byob
+ -date-night/\nVenue site: https://www.eventbrite.com/e/paint-your-date-b
+ yob-paint-sip-tickets-1980328717503?aff=ebdsoporgprofile
+URL:https://thevisualist.org/2026/01/paint-your-date-a-byob-date-night/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

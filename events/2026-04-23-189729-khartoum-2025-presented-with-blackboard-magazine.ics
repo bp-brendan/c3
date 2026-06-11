@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260423-khartoum-2025@thevisualist.org
+DTSTAMP:20260423T000000Z
+DTSTART;TZID=America/Chicago:20260423T183000
+DTEND;TZID=America/Chicago:20260423T210000
+SUMMARY:KHARTOUM (2025)
+LOCATION:The Block Cinema\, 40 Arts Cir Dr\, Evanston\, IL 60208
+DESCRIPTION:KHARTOUM (Dir. Anas Saeed\, Rawia Alhag\, Ibrahim Snoopy Ahma
+ d\, Timeea Mohamed Ahmed\, Phil Cox\, 2025\, Sudan/United Kingdom/German
+ y/Qatar\, 78 min\, DCP) KHARTOUM (2025) is a documentary that follows fi
+ ve individuals in their journeys of displacement and resistance after th
+ e outbreak of...\nMore info: https://thevisualist.org/2026/04/khartoum-2
+ 025-presented-with-blackboard-magazine/\nVenue site: https://www.blockmu
+ seum.northwestern.edu/cinema/2026/khartoum-2025-presented-with-blackboar
+ d-magazine.html
+URL:https://thevisualist.org/2026/04/khartoum-2025-presented-with-blackbo
+ ard-magazine/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

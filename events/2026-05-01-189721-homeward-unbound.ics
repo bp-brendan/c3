@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260501-homeward-un-bound@thevisualist.org
+DTSTAMP:20260501T000000Z
+DTSTART;TZID=America/Chicago:20260501T170000
+DTEND;TZID=America/Chicago:20260501T200000
+SUMMARY:homeward (un)bound
+LOCATION:Chicago Artists Coalition\, 1431 W Hubbard St\, Ste 201\, Chicag
+ o\, IL 60642
+DESCRIPTION:homeward (un)bound Exhibition Date: May 1\, 2026 – June 18\
+ , 2026 Opening: Friday\, May 1\, 2026 from 5–8pm Exhibiting Artists: M
+ aryam Faridani\, Jairo Granados-Cardenas\, and Martha Osornio Ruiz Curat
+ ed by: Gordon Dic-Lun Fung Home presumably houses a space of rest\, comf
+ ort\, and security...\nMore info: https://thevisualist.org/2026/05/homew
+ ard-unbound/\nVenue site: https://www.chicagoartistscoalition.org/event/
+ homeward-unbound/
+URL:https://thevisualist.org/2026/05/homeward-unbound/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

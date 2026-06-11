@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-a-hair-never-dissolves@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T180000
+DTEND;TZID=America/Chicago:20260410T220000
+SUMMARY:A Hair Never Dissolves
+LOCATION:The Plan\, 610 N Albany Ave\, Chicago\, IL 60612
+DESCRIPTION:The PLAN is pleased to announce the opening of “A Hair Neve
+ r Dissolves”\, a two person exhibition by Danny Floyd and Jeff Prokash
+ . Through the site-specific installation of three-dimensional text and l
+ arge-scale photography\, Danny and Jeff both create work that is centere
+ d around the...\nMore info: https://thevisualist.org/2026/04/a-hair-neve
+ r-dissolves/\nVenue site: https://www.theplan.space/
+URL:https://thevisualist.org/2026/04/a-hair-never-dissolves/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

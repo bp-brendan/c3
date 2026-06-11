@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260131-separations@thevisualist.org
+DTSTAMP:20260131T000000Z
+DTSTART;TZID=America/Chicago:20260131T180000
+DTEND;TZID=America/Chicago:20260131T220000
+SUMMARY:SEPARATIONS
+LOCATION:Co-Prosperity\, 3219-21 S Morgan St\, Chicago\, IL 6060
+DESCRIPTION:In SEPARATIONS\, artists Eli Show and Angela Zonunpari explor
+ e the arbitrary boundaries between art and life\, and how they intertwin
+ e if given space and time. As “incidental collaborators\,” they navi
+ gate the mysticisms of creation and the everyday utility of objects. By 
+ easily...\nMore info: https://thevisualist.org/2026/01/separations/\nVen
+ ue site: https://coprosperity.org/
+URL:https://thevisualist.org/2026/01/separations/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

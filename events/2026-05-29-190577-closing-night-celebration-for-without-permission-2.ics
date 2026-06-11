@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260529-closing-night-celebration-for-without-permission@thevisualis
+ t.org
+DTSTAMP:20260529T000000Z
+DTSTART;TZID=America/Chicago:20260529T180000
+DTEND;TZID=America/Chicago:20260529T220000
+SUMMARY:Closing Night Celebration for Without Permission
+LOCATION:Chicago Grand Gallery\, 2842 W Chicago Ave\, Chicago\, IL 60622
+DESCRIPTION:Closing Night Celebration for Without Permission Join us for 
+ the closing night of Without Permission\, featuring works by Paul Sierra
+ \, Kevin C. Lawler\, and David Hauptschein\, on Friday\, May 29\, from 6
+ –10 PM. The evening will include a special live performance by legenda
+ ry actor Charles...\nMore info: https://thevisualist.org/2026/05/closing
+ -night-celebration-for-without-permission-2/\nVenue site: https://www.ch
+ icagograndgallery.com/
+URL:https://thevisualist.org/2026/05/closing-night-celebration-for-withou
+ t-permission-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260513-school-of-the-art-institute-of-chicago-graduate-exhibition-t
+ wo-2026@thevisualist.org
+DTSTAMP:20260513T000000Z
+DTSTART;VALUE=DATE:20260513
+SUMMARY:School of the Art Institute of Chicago Graduate Exhibition Two 20
+ 26
+LOCATION:SAIC Galleries\, 33 E Washington St\, Chicago\, IL 60602
+DESCRIPTION:Graduate Exhibition Two is the the culminating presentation o
+ f 98 MFA\, MDDO\, MArch\, MArch-IA\, and MSHP candidates in SAIC’s cla
+ ss of 2026\, and an opportunity for them to present new and ambitious wo
+ rk to the public in the SAIC Galleries. Graduate Exhibition Two is the s
+ econd of two...\nMore info: https://thevisualist.org/2026/05/school-of-t
+ he-art-institute-of-chicago-graduate-exhibition-two-2026/\nVenue site: h
+ ttps://web.saic.edu/gradshow2026/grad2/
+URL:https://thevisualist.org/2026/05/school-of-the-art-institute-of-chica
+ go-graduate-exhibition-two-2026/
+END:VEVENT
+END:VCALENDAR

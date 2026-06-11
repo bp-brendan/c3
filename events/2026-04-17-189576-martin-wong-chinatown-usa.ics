@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260417-martin-wong-chinatown-usa@thevisualist.org
+DTSTAMP:20260417T000000Z
+DTSTART;VALUE=DATE:20260417
+SUMMARY:Martin Wong: Chinatown USA
+LOCATION:Wrightwood 659\, 659 Wrightwood Ave\, Chicago\, IL 60614
+DESCRIPTION:Martin Wong: Chinatown USA is the first US monographic museum
+  exhibition since 2017 of Chinese American artist Martin Wong (1946–19
+ 99). The exhibition features over 100 paintings\, sculptures\, drawings\
+ , and photographs illustrating Wong’s idiosyncratic urban realism\, hi
+ s innovative...\nMore info: https://thevisualist.org/2026/04/martin-wong
+ -chinatown-usa/\nVenue site: https://wrightwood659.org/exhibitions/marti
+ n-wong-chinatown-usa/
+URL:https://thevisualist.org/2026/04/martin-wong-chinatown-usa/
+END:VEVENT
+END:VCALENDAR

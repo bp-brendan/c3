@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260501-chicago-leather-pride-weekend-2026@thevisualist.org
+DTSTAMP:20260501T000000Z
+DTSTART;VALUE=DATE:20260501
+SUMMARY:Chicago Leather Pride Weekend 2026
+LOCATION:Leather Archives & Museum\, 6418 N Greenview Ave\, Chicago\, Ill
+ inois 60626
+DESCRIPTION:A Celebration of Leather Culture\, Benefiting the LA&M. A Wee
+ kend created to kick off Leather Pride Month in Chicago\, raise awarenes
+ s of our Community\, and fundraiser for the Leather Archives & Museum. C
+ hicago Leather Pride welcomes all gender identities\, and all expression
+ s of kink &...\nMore info: https://thevisualist.org/2026/05/chicago-leat
+ her-pride-weekend-2026/\nVenue site: https://leatherarchives.libcal.com/
+ event/15565521
+URL:https://thevisualist.org/2026/05/chicago-leather-pride-weekend-2026/
+END:VEVENT
+END:VCALENDAR

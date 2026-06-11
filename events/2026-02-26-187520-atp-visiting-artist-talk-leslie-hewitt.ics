@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260226-atp-visiting-artist-talk-leslie-hewitt@thevisualist.org
+DTSTAMP:20260226T000000Z
+DTSTART;TZID=America/Chicago:20260226T163000
+DTEND;TZID=America/Chicago:20260226T173000
+SUMMARY:ATP Visiting Artist Talk: Leslie Hewitt
+LOCATION:Northwestern University Department of Art\, Theory\, and Practic
+ e\, Kresge Hall\, 1880 Campus Dr\, Room 1515\, Evanston\, IL 60208
+DESCRIPTION:The Department of Art Theory and Practice at Northwestern Uni
+ versity welcomes Leslie Hewitt for an artist talk as part of the 2025-26
+  Visiting Artist series. Hewitt\, born in 1977 in New York\, New York\, 
+ lives and works between New York\, NY and Houston\, TX. Working with pho
+ tography...\nMore info: https://thevisualist.org/2026/02/atp-visiting-ar
+ tist-talk-leslie-hewitt/\nVenue site: https://art.northwestern.edu/event
+ s/visiting-artist-talk-leslie-hewitt
+URL:https://thevisualist.org/2026/02/atp-visiting-artist-talk-leslie-hewi
+ tt/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

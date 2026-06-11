@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260307-debra-kayes-i-seem-to-be-a-verb@thevisualist.org
+DTSTAMP:20260307T000000Z
+DTSTART;TZID=America/Chicago:20260307T130000
+DTEND;TZID=America/Chicago:20260307T160000
+SUMMARY:Debra Kayes: I seem to be a verb.
+LOCATION:Tiger Strikes Asteroid\, 2233 S. Throop St.\, Unit 419
+DESCRIPTION:Debra Kayes: I seem to be a verb. Mar 7 – Apr 18\, 2026 Ope
+ ning Reception: Sat\, Mar 7\, 1 – 4 pm Exhibition Walk-Through / Cardb
+ oard Painting Workshop: Apr 18\, 2 – 3 pm Tiger Strikes Asteroid\, Chi
+ cago is pleased to present I seem to be a verb.\, a solo exhibition by D
+ ebra Kayes that...\nMore info: https://thevisualist.org/2026/03/debra-ka
+ yes-i-seem-to-be-a-verb/\nVenue site: https://www.tigerstrikesasteroid.c
+ om/chi/debra-kayes-i-seem-to-be-a-verb
+URL:https://thevisualist.org/2026/03/debra-kayes-i-seem-to-be-a-verb/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

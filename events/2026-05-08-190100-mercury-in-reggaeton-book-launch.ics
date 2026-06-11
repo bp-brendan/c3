@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260508-mercury-in-reggaeton-book-launch@thevisualist.org
+DTSTAMP:20260508T000000Z
+DTSTART;TZID=America/Chicago:20260508T190000
+DTEND;TZID=America/Chicago:20260508T210000
+SUMMARY:Mercury in Reggaeton book launch
+LOCATION:18th Street Casa de Cultura\, 2057 W 18th St\, Chicago\, IL 6060
+ 8
+DESCRIPTION:We are hosting a book launch of Willy Palomo’s latest colle
+ ction of poems MERCURY IN REGGAETÓN. Find us in the 18th Street Casa de
+  Cultura (2057 W 18th St\, Chicago) at 7:00PM on Friday\, May 8th. The e
+ vent will feature poetry and music by Willy Palomo\, Meredith Nnoka\, Ju
+ das Babyyy...\nMore info: https://thevisualist.org/2026/05/mercury-in-re
+ ggaeton-book-launch/\nVenue site: https://instagram.com/almadeizote
+URL:https://thevisualist.org/2026/05/mercury-in-reggaeton-book-launch/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

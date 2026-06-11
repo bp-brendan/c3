@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260207-hilarity-ensues-an-immersive-toaster-s-experience-from-the-m
+ ind-of-louis-demarco@thevisualist.org
+DTSTAMP:20260207T000000Z
+DTSTART;VALUE=DATE:20260207
+SUMMARY:Hilarity Ensues: An Immersive Toaster’s Experience from the Min
+ d of Louis Demarco
+LOCATION:Open Studio Project\, 901/903 Sherman Ave\, Evanston IL 60202
+DESCRIPTION:Hilarity Ensues is an immersive trip into the singular sitcom
+  universe of artist Louis DeMarco\, opening February 7. The exhibition b
+ rings together over one hundred original drawings\, paintings\, animated
+  videos\, comics\, and a special live performance from DeMarco’s long-
+ running...\nMore info: https://thevisualist.org/2026/02/hilarity-ensues-
+ an-immersive-toasters-experience-from-the-mind-of-louis-demarco/\nVenue 
+ site: https://www.projectonward.org/events-1/hilary-ensues-an-immersive-
+ toasters-experience
+URL:https://thevisualist.org/2026/02/hilarity-ensues-an-immersive-toaster
+ s-experience-from-the-mind-of-louis-demarco/
+END:VEVENT
+END:VCALENDAR

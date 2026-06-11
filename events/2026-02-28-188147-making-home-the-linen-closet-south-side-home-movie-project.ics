@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260228-making-home-the-linen-closet-south-side-home-movie-project@t
+ hevisualist.org
+DTSTAMP:20260228T000000Z
+DTSTART;TZID=America/Chicago:20260228T130000
+DTEND;TZID=America/Chicago:20260228T163000
+SUMMARY:Making Home The Linen Closet + South Side Home Movie Project
+LOCATION:Chicago Cultural Center\, 78 E. Washington St\, Chicago\, IL 606
+ 02
+DESCRIPTION:As part of South Side Home Movie Project’s 20th Anniversary
+  celebration\, this compilation of vintage home movies drawn from the So
+ uth Side Home Movie Project archives celebrates the materiality of home.
+  Showcasing images of fabric\, blankets and bedding at use in domestic s
+ paces...\nMore info: https://thevisualist.org/2026/02/making-home-the-li
+ nen-closet-south-side-home-movie-project/\nVenue site: https://artsandpu
+ bliclife.org/apl-events-calendar/making-home-the-linen-closet-south-side
+ -home-movie-project?mc_cid=3f3a3e9f7c&mc_eid=4fb1f30fb5
+URL:https://thevisualist.org/2026/02/making-home-the-linen-closet-south-s
+ ide-home-movie-project/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

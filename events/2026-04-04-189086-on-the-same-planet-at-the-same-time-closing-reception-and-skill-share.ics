@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260404-on-the-same-planet-at-the-same-time-closing-reception-and-sk
+ ill-share@thevisualist.org
+DTSTAMP:20260404T000000Z
+DTSTART;TZID=America/Chicago:20260404T180000
+DTEND;TZID=America/Chicago:20260404T210000
+SUMMARY:On The Same Planet at the Same Time: Closing Reception and Skill 
+ Share
+LOCATION:The Beautiful Cat Gallery & The World Music Foundation\, 1066 W 
+ Granville Ave (next door to window gallery)\, Chicago\, IL 60660
+DESCRIPTION:Closing reception for On The Same Planet at The Same Time\, o
+ ur queer quilting collective exhibition at The Beautiful Cat Gallery! Ap
+ ril 4\, 6-9pm\, with a skill share 6-7\, artist tour at 7 and party till
+  9 – Skill share will be multiple stations with hands-on activities le
+ d by the six...\nMore info: https://thevisualist.org/2026/04/on-the-same
+ -planet-at-the-same-time-closing-reception-and-skill-share/\nVenue site:
+  https://www.thebcat.gallery/2026-exhibitions/on-the-same-planet-at-the-
+ same-time/
+URL:https://thevisualist.org/2026/04/on-the-same-planet-at-the-same-time-
+ closing-reception-and-skill-share/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

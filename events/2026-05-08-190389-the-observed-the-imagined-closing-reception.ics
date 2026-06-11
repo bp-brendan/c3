@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260508-the-observed-the-imagined-closing-reception@thevisualist.org
+DTSTAMP:20260508T000000Z
+DTSTART;TZID=America/Chicago:20260508T180000
+DTEND;TZID=America/Chicago:20260508T200000
+SUMMARY:The Observed & The Imagined: Closing Reception
+LOCATION:6311arts\, 6311 N Clark St\, Chicago IL 60660
+DESCRIPTION:CHICAGO — 6311Arts invites the public to a closing receptio
+ n for The Observed & The Imagined on Friday\, May 8\, 2026\, from 6–9 
+ p.m.\, offering visitors a final opportunity to experience the exhibitio
+ n and meet featured artists Yvonne Doll and Victoria Loeb. Presented in 
+ the gallery’s...\nMore info: https://thevisualist.org/2026/05/the-obse
+ rved-the-imagined-closing-reception/\nVenue site: https://www.6311arts.c
+ om/
+URL:https://thevisualist.org/2026/05/the-observed-the-imagined-closing-re
+ ception/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260430-china-america-reel-ecology-care-student-film-showcase@thevis
+ ualist.org
+DTSTAMP:20260430T000000Z
+DTSTART;TZID=America/Chicago:20260430T170000
+DTEND;TZID=America/Chicago:20260430T213000
+SUMMARY:China-America Reel Ecology (CARE) Student Film Showcase
+LOCATION:The Block Cinema\, 40 Arts Cir Dr\, Evanston\, IL 60208
+DESCRIPTION:Please note that the CARE Showcase includes two programs\, st
+ arting at 5:00 and 7:30 PM\, presenting different work — stay tuned fo
+ r an update on the run of show for each screening soon! RSVP Screening 1
+  – 5:00 PM RSVP Screening 2 – 7:30 PM Generously funded by the Cyrus
+  Tang...\nMore info: https://thevisualist.org/2026/04/china-america-reel
+ -ecology-care-student-film-showcase/\nVenue site: https://www.blockmuseu
+ m.northwestern.edu/cinema/2026/china-america-reel-ecology-care-student-f
+ ilm-showcase.html
+URL:https://thevisualist.org/2026/04/china-america-reel-ecology-care-stud
+ ent-film-showcase/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

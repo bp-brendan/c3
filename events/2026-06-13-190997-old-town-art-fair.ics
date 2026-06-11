@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260613-old-town-art-fair@thevisualist.org
+DTSTAMP:20260613T000000Z
+DTSTART;TZID=America/Chicago:20260613T100000
+DTEND;TZID=America/Chicago:20260613T180000
+SUMMARY:Old Town Art Fair
+LOCATION:Old Town Art Fair\, The Old Town Art Fair main gate is located a
+ t the intersection of Lincoln and Wisconsin streets
+DESCRIPTION:Chicago’s legendary Old Town Art Fair returns featuring the
+  popular Garden Walk\, a selection of live music\, and interactive enter
+ tainment for the entire family to enjoy. There will be 200+ nationally a
+ cclaimed artists and an estimated 30\,000 art lovers strolling through t
+ he Fair...\nMore info: https://thevisualist.org/?p=190997\nVenue site: h
+ ttps://www.oldtownartfair.org/
+URL:https://thevisualist.org/?p=190997
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

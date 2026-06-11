@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260605-not-normal-challenging-societal-norms@thevisualist.org
+DTSTAMP:20260605T000000Z
+DTSTART;TZID=America/Chicago:20260605T180000
+DTEND;TZID=America/Chicago:20260605T210000
+SUMMARY:Not Normal: Challenging Societal Norms
+LOCATION:Forum 301\, 301 W Ohio St\, Chicago\, IL 60654
+DESCRIPTION:An exhibition allowing for many possibilities. “Not normal
+ ” refers to anything that goes against established norms\, represents 
+ an unexpected change\, or deviates from accepted collective reality. Chi
+ cago Sculpture International Group Juried Show for CSI Artists Featured 
+ Artists...\nMore info: https://thevisualist.org/2026/06/not-normal-chall
+ enging-societal-norms-2/\nVenue site: https://www.forum301.org/
+URL:https://thevisualist.org/2026/06/not-normal-challenging-societal-norm
+ s-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

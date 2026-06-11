@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260204-teresa-montoya-s-to-itso-yellow-water-ten-years-after-the-go
+ ld-king-mine-spill@thevisualist.org
+DTSTAMP:20260204T000000Z
+DTSTART;VALUE=DATE:20260204
+SUMMARY:Teresa Montoya’s Tó Łitso (Yellow Water): Ten Years after the
+  Gold King Mine Spill
+LOCATION:Block Museum of Art\, Northwestern University\, 40 Arts Circle D
+ r\, Evanston\, IL 60208
+DESCRIPTION:On August 5\, 2015\, the rupture of the abandoned Gold King M
+ ine near Silverton\, Colorado\, released more than three million gallons
+  of toxic wastewater into the Animas River\, turning its waters a shocki
+ ng shade of yellow. In the following year\, artist and anthropologist Te
+ resa Montoya...\nMore info: https://thevisualist.org/2026/02/teresa-mont
+ oyas-to-litso-yellow-water-ten-years-after-the-gold-king-mine-spill/\nVe
+ nue site: https://www.blockmuseum.northwestern.edu/exhibitions/2026/tere
+ sa-montoya.html
+URL:https://thevisualist.org/2026/02/teresa-montoyas-to-litso-yellow-wate
+ r-ten-years-after-the-gold-king-mine-spill/
+END:VEVENT
+END:VCALENDAR

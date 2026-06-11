@@ -1,0 +1,55 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260118-rose-lowder-rue-des-teinturiers-champ-provencal-les-tourneso
+ ls-les-tournesols-colores-impromptu-quiproquo-loops-1979-1979-1982-1983-
+ 1989-1992-1976-1997@thevisualist.org
+DTSTAMP:20260118T000000Z
+DTSTART;TZID=America/Chicago:20260118T190000
+DTEND;TZID=America/Chicago:20260118T210000
+SUMMARY:Rose Lowder: Rue des Teinturiers / Champ provençal / Les tournes
+ ols / Les tournesols colorés / Impromptu / Quiproquo / Loops (1979 / 19
+ 79 / 1982 / 1983 / 1989 / 1992 / 1976-1997)
+LOCATION:Doc Films at the University of Chicago\, 1212 E 59th St\, Chicag
+ o\, IL 60637
+DESCRIPTION:Cinema’s Garden: The Films of Rose Lowder Programmed by: Ol
+ ivia Hunter-Willke The practice of French-Peruvian avant-garde filmmaker
+  Rose Lowder (born 1941) concentrates on radical ways to refine photogra
+ phic and temporal features of the image. Equipped with a 16mm Bolex and 
+ filming...\nMore info: https://thevisualist.org/2026/01/rose-lowder-rue-
+ des-teinturiers-champ-provencal-les-tournesols-les-tournesols-colores-im
+ promptu-quiproquo-loops-1979-1979-1982-1983-1989-1992-1976-1997/\nVenue 
+ site: https://docfilms.org/calendar/2026winter/lowder
+URL:https://thevisualist.org/2026/01/rose-lowder-rue-des-teinturiers-cham
+ p-provencal-les-tournesols-les-tournesols-colores-impromptu-quiproquo-lo
+ ops-1979-1979-1982-1983-1989-1992-1976-1997/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

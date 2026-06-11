@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260226-lecture-in-photography-joel-sternfeld@thevisualist.org
+DTSTAMP:20260226T000000Z
+DTSTART;TZID=America/Chicago:20260226T120000
+DTEND;TZID=America/Chicago:20260226T140000
+SUMMARY:Lecture in Photography: Joel Sternfeld
+LOCATION:Museum of Contemporary Photography\, 600 S Michigan Ave\, Chicag
+ o\, IL 60605
+DESCRIPTION:Please join MoCP and Columbia College Chicago School of Visua
+ l Art for a Lecture in Photography with artist Joel Sternfeld. Known for
+  his large-format color photography of contemporary American life\, Joel
+  Sternfeld (American\, b. 1944) has described his work as being “conce
+ rned with...\nMore info: https://thevisualist.org/2026/02/lecture-in-pho
+ tography-joel-sternfeld/\nVenue site: https://www.mocp.org/events/lectur
+ e-in-photography-joel-sternfeld/
+URL:https://thevisualist.org/2026/02/lecture-in-photography-joel-sternfel
+ d/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

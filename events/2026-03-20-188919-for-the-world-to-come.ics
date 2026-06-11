@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260320-for-the-world-to-come@thevisualist.org
+DTSTAMP:20260320T000000Z
+DTSTART;TZID=America/Chicago:20260320T180000
+DTEND;TZID=America/Chicago:20260320T220000
+SUMMARY:For the World to Come
+LOCATION:Patient Info\, 902 N Western Ave\, Chicago\, IL 60622
+DESCRIPTION:In For the World to Come\, artist Emma Bergman uses the frame
+  of a semi-fictional institution\, the Department of Eschatology\, to in
+ vestigate contemporary views of potential apocalypse. The motivating que
+ stion behind the work is a deceptively simple one: What will become of u
+ s? In a...\nMore info: https://thevisualist.org/2026/03/for-the-world-to
+ -come/\nVenue site: http://patientinfo.club
+URL:https://thevisualist.org/2026/03/for-the-world-to-come/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

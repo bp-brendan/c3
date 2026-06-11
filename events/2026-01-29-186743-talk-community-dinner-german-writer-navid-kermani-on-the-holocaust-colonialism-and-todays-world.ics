@@ -1,0 +1,54 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260129-talk-community-dinner-german-writer-navid-kermani-on-the-hol
+ ocaust-colonialism-and-today-s-world@thevisualist.org
+DTSTAMP:20260129T000000Z
+DTSTART;TZID=America/Chicago:20260129T180000
+DTEND;TZID=America/Chicago:20260129T210000
+SUMMARY:Talk + Community Dinner | German Writer Navid Kermani on the Holo
+ caust\, Colonialism\, and Today’s World
+LOCATION:Goethe-Institut Chicago\, 150 N Michigan Ave\, Suite 420\, Chica
+ go\, IL 60601
+DESCRIPTION:A public talk by Navid Kermani\, one of Germany’s most accl
+ aimed writers In this lecture in honor of International Holocaust Rememb
+ rance Day\, Navid Kermani\, in conversation with German Studies scholar 
+ Anna Parkinson\, will discuss the status of memory culture in contempora
+ ry Germany and...\nMore info: https://thevisualist.org/2026/01/talk-comm
+ unity-dinner-german-writer-navid-kermani-on-the-holocaust-colonialism-an
+ d-todays-world/\nVenue site: https://www.eventbrite.com/e/the-burden-of-
+ the-past-the-holocaust-colonialism-and-todays-world-tickets-197829249811
+ 6?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm
+ -term=listing&utm-source=cp&aff=ebdsshcopyurl
+URL:https://thevisualist.org/2026/01/talk-community-dinner-german-writer-
+ navid-kermani-on-the-holocaust-colonialism-and-todays-world/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

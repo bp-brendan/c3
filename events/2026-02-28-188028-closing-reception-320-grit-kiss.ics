@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260228-closing-reception-320-grit-kiss@thevisualist.org
+DTSTAMP:20260228T000000Z
+DTSTART;TZID=America/Chicago:20260228T140000
+DTEND;TZID=America/Chicago:20260228T180000
+SUMMARY:Closing Reception: 320 Grit Kiss
+LOCATION:Compound Yellow\, 244 Lake Street\, Oak Park\, IL 60302
+DESCRIPTION:Saturday\, January 31\, 2026 2:00 PM 6:00 PM New works by: Pe
+ gah Bahador Hyeseul Song Yue Xu On display through February 28th In 320-
+ grit Kiss Pegah Bahador\, Hyeseul Song\, and Yue Xu\, have organized the
+  space to reflect on desire\, tactility and surface. Including drawings\
+ , photographs...\nMore info: https://thevisualist.org/2026/02/closing-re
+ ception-320-grit-kiss/\nVenue site: https://compoundyellow.com/
+URL:https://thevisualist.org/2026/02/closing-reception-320-grit-kiss/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

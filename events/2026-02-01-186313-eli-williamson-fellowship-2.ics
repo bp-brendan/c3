@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260201-eli-williamson-fellowship@thevisualist.org
+DTSTAMP:20260201T000000Z
+DTSTART;TZID=America/Chicago:20260201T130000
+DTEND;TZID=America/Chicago:20260201T160000
+SUMMARY:Eli Williamson: Fellowship
+LOCATION:Evanston Art Center\, 1717 Central St\, Evanston\, IL\, 60201
+DESCRIPTION:The Evanston Art Center (EAC) is excited to welcome the publi
+ c to our upcoming exhibition by Eli Williamson\, Fellowship. The exhibit
+ ion will be on display from January 24 – March 1\, 2026\, in our Lobby
+  Gallery and will be free and open to the public. In Fellowship\, South 
+ Side Chicago...\nMore info: https://thevisualist.org/2026/02/eli-william
+ son-fellowship-2/\nVenue site: https://www.evanstonartcenter.org/exhibit
+ ions/eli-williamson-fellowship
+URL:https://thevisualist.org/2026/02/eli-williamson-fellowship-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

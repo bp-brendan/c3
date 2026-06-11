@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-an-evening-with-the-curators-reception-at-kavi-gupta-with-na
+ rimon-safavi@thevisualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T170000
+DTEND;TZID=America/Chicago:20260411T190000
+SUMMARY:AN EVENING WITH THE CURATORS: RECEPTION AT KAVI GUPTA WITH NARIMO
+ N SAFAVI
+LOCATION:Kavi Gupta | Washington Blvd.\, 835 W Washington Blvd\, Chicago\
+ , IL 60607
+DESCRIPTION:Celebrate the exhibition’s on view at Kavi Gupta with an ev
+ ening reception bringing together artists\, collectors\, curators and th
+ e broader community. The night will unfold with conversations\, drinks\,
+  curator led tours\, and a lively atmosphere\, inviting guests to experi
+ ence the work in...\nMore info: https://thevisualist.org/2026/04/an-even
+ ing-with-the-curators-reception-at-kavi-gupta-with-narimon-safavi/\nVenu
+ e site: https://kavigupta.com/events/232/
+URL:https://thevisualist.org/2026/04/an-evening-with-the-curators-recepti
+ on-at-kavi-gupta-with-narimon-safavi/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

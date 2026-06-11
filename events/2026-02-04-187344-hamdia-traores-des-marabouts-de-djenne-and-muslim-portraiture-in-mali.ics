@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260204-hamdia-traore-s-des-marabouts-de-djenne-and-muslim-portraitu
+ re-in-mali@thevisualist.org
+DTSTAMP:20260204T000000Z
+DTSTART;VALUE=DATE:20260204
+SUMMARY:Hamdia Traoré’s “Des marabouts de Djenné” and Muslim Port
+ raiture in Mali
+LOCATION:Block Museum of Art\, Northwestern University\, 40 Arts Circle D
+ r\, Evanston\, IL 60208
+DESCRIPTION:The storied city of Djenné\, a center of Islamic learning\, 
+ study\, and scholarship since the twelfth century\, is the hometown of B
+ amako-based photographer Hamdia Traoré (b. 1992\, Mali). The thirty por
+ traits in Traore’s series Des marabouts de Djenné (Marabouts of Jenne
+ ) reflect his...\nMore info: https://thevisualist.org/2026/02/hamdia-tra
+ ores-des-marabouts-de-djenne-and-muslim-portraiture-in-mali/\nVenue site
+ : https://www.blockmuseum.northwestern.edu/exhibitions/2026/hamdia-traor
+ .html
+URL:https://thevisualist.org/2026/02/hamdia-traores-des-marabouts-de-djen
+ ne-and-muslim-portraiture-in-mali/
+END:VEVENT
+END:VCALENDAR

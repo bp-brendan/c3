@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260131-orchid-rain-virtuoso-solo-violin-performance-timelessartschi
+ cago@thevisualist.org
+DTSTAMP:20260131T000000Z
+DTSTART;TZID=America/Chicago:20260131T180000
+DTEND;TZID=America/Chicago:20260131T220000
+SUMMARY:Orchid Rain\, Virtuoso : Solo Violin Performance @TimelessArtsChi
+ cago
+LOCATION:Timeless Arts Gallery & Studio\, 3040 N. Ashland Avenue\, Chicag
+ o\, IL 60657
+DESCRIPTION:I was at an outdoor performance this past Fall\, and I heard 
+ someone in the crowd saying Natalie’s the “Real Deal!”. I thought\
+ , “Yeah\, she is the real deal.” Amazing talent. When I hear Natalie
+  playing\, my heart sings\, and I really get swept up in the moment\, in
+ to a world of wonder...\nMore info: https://thevisualist.org/2026/01/orc
+ hid-rain-virtuoso-solo-violin-performance-timelessartschicago-2/\nVenue 
+ site: https://www.facebook.com/events/1305849851294362
+URL:https://thevisualist.org/2026/01/orchid-rain-virtuoso-solo-violin-per
+ formance-timelessartschicago-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260418-aurora-film-society-meowtel-present-25-cats-from-qatar@thevi
+ sualist.org
+DTSTAMP:20260418T000000Z
+DTSTART;TZID=America/Chicago:20260418T113000
+DTEND;TZID=America/Chicago:20260418T133000
+SUMMARY:Aurora Film Society & Meowtel present: 25 Cats From Qatar
+LOCATION:The Venue\, 21 S Broadway Ave\, Aurora\, IL 60505
+DESCRIPTION:25 Cats From Qatar [2025 / Mye Hoang] When Katy McHugh\, owne
+ r of Milwaukee’s Sip and Purr Cat Café\, learns of the feral cat cris
+ is in Doha\, Qatar\, she creates a brave and unsanctioned plan to fly 25
+  cats from Doha back to Wisconsin for adoption. From Mye Hoang the direc
+ tor of “Cat...\nMore info: https://thevisualist.org/2026/04/aurora-fil
+ m-society-meowtel-present-25-cats-from-qatar/\nVenue site: https://www.2
+ 5catsfromqatar.com/event-details/aurora-il-the-venue-aurora-film-society
+ -presents-25-cats-from-qatar
+URL:https://thevisualist.org/2026/04/aurora-film-society-meowtel-present-
+ 25-cats-from-qatar/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

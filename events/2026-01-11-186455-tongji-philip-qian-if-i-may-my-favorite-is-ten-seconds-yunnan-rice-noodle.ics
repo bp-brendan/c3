@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260111-tongji-philip-qian-if-i-may-my-favorite-is-ten-seconds-yunna
+ n-rice-noodle@thevisualist.org
+DTSTAMP:20260111T000000Z
+DTSTART;TZID=America/Chicago:20260111T140000
+DTEND;TZID=America/Chicago:20260111T170000
+SUMMARY:Tongji Philip Qian: if i may (my favorite is TEN SECONDS YUNNAN R
+ ICE NOODLE)
+LOCATION:Chinese American Museum of Chicago\, 238 W 23rd St\, Chicago\, I
+ L 60616
+DESCRIPTION:New works by Tongji Philip Qian rooted in images and words th
+ at investigates knowledge production in contemporary art with a scholarl
+ y focus on movements such as Minimalism\, Post-Minimalism\, and Conceptu
+ al art for the Spotlight Series at the Chinese American Museum of Chicag
+ o.\nMore info: https://thevisualist.org/2026/01/tongji-philip-qian-if-i-
+ may-my-favorite-is-ten-seconds-yunnan-rice-noodle/\nVenue site: http://c
+ amochicago.org
+URL:https://thevisualist.org/2026/01/tongji-philip-qian-if-i-may-my-favor
+ ite-is-ten-seconds-yunnan-rice-noodle/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260129-austin-watson-o-p-lab@thevisualist.org
+DTSTAMP:20260129T000000Z
+DTSTART;TZID=America/Chicago:20260129T180000
+DTEND;TZID=America/Chicago:20260129T190000
+SUMMARY:Austin Watson: O.P. Lab
+LOCATION:Seerveld Gallery\, 6601 W College Dr\, Palos Heights\, IL 60463
+DESCRIPTION:The Seerveld Gallery 25′-26′ Lecture Series welcomes Chic
+ ago graphic designer Austin Watson on January 29 from 6-7 pm\, followed 
+ by the reception of his exhibition O.P. Lab at Trinity’s Seerveld Gall
+ ery. Austin Watson is a multidisciplinary designer and educator whose wo
+ rk pays special...\nMore info: https://thevisualist.org/2026/01/austin-w
+ atson-o-p-lab/\nVenue site: https://austinwatson.xyz/
+URL:https://thevisualist.org/2026/01/austin-watson-o-p-lab/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

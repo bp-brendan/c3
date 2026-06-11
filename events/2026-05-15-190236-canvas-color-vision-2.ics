@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260515-canvas-color-vision@thevisualist.org
+DTSTAMP:20260515T000000Z
+DTSTART;VALUE=DATE:20260515
+SUMMARY:Canvas\, Color\, & Vision
+LOCATION:Bridgeport Art Center\, 1200 W 35th St Chicago\, IL 60609
+DESCRIPTION:Presented by: Ron Jerak & Michael Preski What happens when yo
+ u bring an Abstract painter and a Surrealist together in one exhibition?
+  The audience gets to take a journey through the artists’ story laid o
+ ut on canvas\, doused in color and covered in a vision. Ron Jerak create
+ s the...\nMore info: https://thevisualist.org/2026/05/canvas-color-visio
+ n-2/\nVenue site: https://www.bridgeportart.com/canvas-color-vision/
+URL:https://thevisualist.org/2026/05/canvas-color-vision-2/
+END:VEVENT
+END:VCALENDAR

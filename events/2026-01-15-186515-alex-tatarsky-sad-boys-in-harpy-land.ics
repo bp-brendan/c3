@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260115-alex-tatarsky-sad-boys-in-harpy-land@thevisualist.org
+DTSTAMP:20260115T000000Z
+DTSTART;TZID=America/Chicago:20260115T193000
+DTEND;TZID=America/Chicago:20260115T213000
+SUMMARY:Alex Tatarsky: Sad Boys in Harpy Land
+LOCATION:Museum of Contemporary Art Chicago\, 220 E Chicago Ave\, Chicago
+ \, IL 60611
+DESCRIPTION:Confronting anguish through humor\, Sad Boys in Harpy Land is
+  a semi-autobiographical clown show about self-doubt and the artist’s 
+ journey. Through a series of existential vignettes\, self-proclaimed “
+ experimental clown artist” Alex Tatarsky fuses together fragments of t
+ heir own story...\nMore info: https://thevisualist.org/2026/01/alex-tata
+ rsky-sad-boys-in-harpy-land/\nVenue site: https://visit.mcachicago.org/e
+ vents/alex-tatarsky-sad-boys-in-harpy-land/
+URL:https://thevisualist.org/2026/01/alex-tatarsky-sad-boys-in-harpy-land
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

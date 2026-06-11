@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260502-artist-talk-with-misa-yo@thevisualist.org
+DTSTAMP:20260502T000000Z
+DTSTART;TZID=America/Chicago:20260502T140000
+DTEND;TZID=America/Chicago:20260502T160000
+SUMMARY:Artist Talk with Misa Yo
+LOCATION:ARC Gallery\, 1463 W Chicago Ave\, Chicago\, IL 60642
+DESCRIPTION:The artist will be present to discuss and answer questions ab
+ out THE SHAPE OF MANY\, a solo exhibition which brings together small\, 
+ repeated gestures that build into larger sculptural installation. About 
+ the Exhbition: The Shape of Many explores how repetition transforms into
+  form...\nMore info: https://thevisualist.org/2026/05/artist-talk-with-m
+ isa-yo/\nVenue site: https://www.arcgallery.org/exhibitions-archive/misa
+ -yo
+URL:https://thevisualist.org/2026/05/artist-talk-with-misa-yo/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

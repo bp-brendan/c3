@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260502-artist-talk-with-vivian-lu-rose-tianyu-qi@thevisualist.org
+DTSTAMP:20260502T000000Z
+DTSTART;TZID=America/Chicago:20260502T120000
+DTEND;TZID=America/Chicago:20260502T140000
+SUMMARY:Artist Talk with Vivian Lu & Rose Tianyu Qi
+LOCATION:ARC Gallery\, 1463 W Chicago Ave\, Chicago\, IL 60642
+DESCRIPTION:The artists will be on-site to present their interactive solo
+  exhibition\, DON’T LOOK AT ME\, in which a life-cast wax sculpture is
+  progressively destroyed by the attention of its viewer. About the Exhib
+ ition: Don’t Look At Me is an interactive installation in which a life
+ -cast wax...\nMore info: https://thevisualist.org/2026/05/artist-talk-wi
+ th-vivian-lu-rose-tianyu-qi-at-arc-gallery/\nVenue site: https://www.arc
+ gallery.org/exhibitions-archive/vivian-lu-rose-qi
+URL:https://thevisualist.org/2026/05/artist-talk-with-vivian-lu-rose-tian
+ yu-qi-at-arc-gallery/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

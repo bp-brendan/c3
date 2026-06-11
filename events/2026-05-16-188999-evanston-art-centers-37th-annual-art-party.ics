@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260516-evanston-art-center-s-37th-annual-art-party@thevisualist.org
+DTSTAMP:20260516T000000Z
+DTSTART;TZID=America/Chicago:20260516T180000
+DTEND;TZID=America/Chicago:20260516T220000
+SUMMARY:Evanston Art Center’s 37th Annual Art Party
+LOCATION:Evanston Art Center\, 1717 Central St.\, Evanston\, IL 60201
+DESCRIPTION:The Evanston Art Center (EAC)\, a non-profit arts organizatio
+ n\, proudly presents its 37th Annual The Art Party\, taking place on Sat
+ urday\, May 16\, 2026\, at 6:00 pm at 1717 Central Street. This yearly t
+ radition includes silent and live auctions that raise money to support E
+ AC’s mission...\nMore info: https://thevisualist.org/2026/05/evanston-
+ art-centers-37th-annual-art-party/\nVenue site: https://www.evanstonartc
+ enter.org/events/art-party-2026
+URL:https://thevisualist.org/2026/05/evanston-art-centers-37th-annual-art
+ -party/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

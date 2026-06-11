@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-conditions-of-encounter@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T170000
+DTEND;TZID=America/Chicago:20260410T210000
+SUMMARY:Conditions of Encounter
+LOCATION:Forum301\, 301 W Ohio St\, Chicago\, IL 60654
+DESCRIPTION:Exhibition: Conditions of Encounter Artists: Daniel Miller\, 
+ Hillary Irene Johnson\, Tuan Jones Opening Reception: April 10\, 5pm –
+  9pm April 10- April 25 Conditions of Encounter includes three artists e
+ xploring the notions of environment and atmosphere. Hillary Irene Johnso
+ n\, Daniel...\nMore info: https://thevisualist.org/2026/04/conditions-of
+ -encounter/\nVenue site: https://www.forum301.org/exhibits
+URL:https://thevisualist.org/2026/04/conditions-of-encounter/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

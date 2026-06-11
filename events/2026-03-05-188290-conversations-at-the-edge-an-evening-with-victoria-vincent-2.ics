@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260305-conversations-at-the-edge-an-evening-with-victoria-vincent@t
+ hevisualist.org
+DTSTAMP:20260305T000000Z
+DTSTART;TZID=America/Chicago:20260305T180000
+DTEND;TZID=America/Chicago:20260305T200000
+SUMMARY:Conversations at the Edge | An Evening with Victoria Vincent
+LOCATION:Siskel Film Center\, 164 N State St\, Chicago\, IL 60601
+DESCRIPTION:Los Angeles–based artist Victoria Vincent\, who posts onlin
+ e as “vewn\,” presents a survey of her zeitgeist-defining animations
+ —from early viral hits to recent projects like Dirt Girls (2021) and S
+ nooze Quest (2025)—acid-colored and blackly comic works that map the p
+ sychic fallout of...\nMore info: https://thevisualist.org/2026/03/conver
+ sations-at-the-edge-an-evening-with-victoria-vincent-2/\nVenue site: htt
+ ps://www.siskelfilmcenter.org/victoria-vincent
+URL:https://thevisualist.org/2026/03/conversations-at-the-edge-an-evening
+ -with-victoria-vincent-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

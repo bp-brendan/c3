@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260507-we-can-make-any-two-stories-touch-2026-mfa-thesis-exhibition
+ -at-northwestern-university@thevisualist.org
+DTSTAMP:20260507T000000Z
+DTSTART;TZID=America/Chicago:20260507T170000
+DTEND;TZID=America/Chicago:20260507T200000
+SUMMARY:We can make any two stories touch: 2026 MFA Thesis Exhibition at 
+ Northwestern University
+LOCATION:Block Museum of Art\, 40 Arts Circle Dr\, Evanston\, IL 60208
+DESCRIPTION:Each spring the Block Museum is pleased to present the work o
+ f the Masters of Fine Arts candidates in the Department of Art Theory & 
+ Practice. This year’s exhibition\, We can make any two stories touch\,
+  showcases the diverse accomplishments of five international artists: La
+ mia...\nMore info: https://thevisualist.org/2026/05/we-can-make-any-two-
+ stories-touch-2026-mfa-thesis-exhibition-at-northwestern-university/\nVe
+ nue site: https://art.northwestern.edu/2026-mfa-thesis-exhibition-we-can
+ -make-any-two-stories-touch
+URL:https://thevisualist.org/2026/05/we-can-make-any-two-stories-touch-20
+ 26-mfa-thesis-exhibition-at-northwestern-university/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

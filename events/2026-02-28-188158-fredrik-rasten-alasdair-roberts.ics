@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260228-fredrik-rasten-alasdair-roberts@thevisualist.org
+DTSTAMP:20260228T000000Z
+DTSTART;TZID=America/Chicago:20260228T210000
+DTEND;TZID=America/Chicago:20260228T230000
+SUMMARY:Fredrik Rasten\, Alasdair Roberts
+LOCATION:BOND CHAPEL\, 1025 E 58th St\, Chicago\, IL 60637
+DESCRIPTION:This is a two-part program. First\, Fredrik Rasten will prese
+ nt a solo set from 6–7pm. After an intermission\, Roberts and Rasten w
+ ill present a duo set from 8–9pm. Each set requires a separate RSVP\; 
+ those wishing to attend both should register for both. Fredrik Rasten is
+  a guitarist...\nMore info: https://thevisualist.org/2026/02/fredrik-ras
+ ten-alasdair-roberts/\nVenue site: https://renaissancesociety.org/events
+ /1414/fredrik-rasten-alasdair-roberts/
+URL:https://thevisualist.org/2026/02/fredrik-rasten-alasdair-roberts/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

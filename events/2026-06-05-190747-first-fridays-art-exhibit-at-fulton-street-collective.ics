@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260605-first-fridays-art-exhibit-at-fulton-street-collective@thevis
+ ualist.org
+DTSTAMP:20260605T000000Z
+DTSTART;TZID=America/Chicago:20260605T180000
+DTEND;TZID=America/Chicago:20260605T220000
+SUMMARY:FIRST FRIDAYS ART EXHIBIT at Fulton Street Collective
+LOCATION:Fulton Street Collective\, 1821 W Hubbard St\, Chicago\, IL 6062
+ 2
+DESCRIPTION:Fulton Street Collective\, in collaboration with West Town Ch
+ amber of Commerce\, presents FIRST FRIDAYS ART EXHIBIT on Friday\, June 
+ 5th from 6-10pm. Curated by Ryan Miller What is it that makes Chicago un
+ ique? To some\, it’s tall buildings and old memories of mobsters. To o
+ thers\, it’s...\nMore info: https://thevisualist.org/2026/06/first-fri
+ days-art-exhibit-at-fulton-street-collective/\nVenue site: https://fulto
+ nstreetcollective.com/
+URL:https://thevisualist.org/2026/06/first-fridays-art-exhibit-at-fulton-
+ street-collective/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-floating-monuments-for-mecca@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;TZID=America/Chicago:20260214T100000
+DTEND;TZID=America/Chicago:20260214T170000
+SUMMARY:Floating Monuments: for Mecca
+LOCATION:DuSable Museum of African American History\, 740 E 56th Pl\, Chi
+ cago\, IL 60637
+DESCRIPTION:Chicago Architecture Biennial participant Floating Museum pre
+ sents Floating Monuments: for Mecca\, installed inside the historic Dani
+ el Burnham Roundhouse at The DuSable Black History Museum and Education 
+ Center. Within this setting\, the work brings the memory of the Mecca Fl
+ ats into...\nMore info: https://thevisualist.org/2026/02/floating-monume
+ nts-for-mecca/\nVenue site: https://chicagoarchitecturebiennial.org/prog
+ ram/floating-monuments-for-mecca/
+URL:https://thevisualist.org/2026/02/floating-monuments-for-mecca/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

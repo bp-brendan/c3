@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260221-ava-peterson-artist-talk@thevisualist.org
+DTSTAMP:20260221T000000Z
+DTSTART;TZID=America/Chicago:20260221T140000
+DTEND;TZID=America/Chicago:20260221T160000
+SUMMARY:Ava Peterson Artist Talk
+LOCATION:Elise Seigenthaler Gallery\, 1709 W Chicago Ave\, Chicago\, IL 6
+ 0622
+DESCRIPTION:Ava L. Peterson (B. 2002\, Columbus\, OH) is an interdiscipli
+ nary artist based in Chicago\, IL\, who investigates the consequences of
+  opulence and excess. Through the lens of painting\, Peterson re-examine
+ s imagery sourced from contemporary interior design magazines and histor
+ ic...\nMore info: https://thevisualist.org/2026/02/ava-peterson-artist-t
+ alk/\nVenue site: https://eliseseigenthaler.com/
+URL:https://thevisualist.org/2026/02/ava-peterson-artist-talk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

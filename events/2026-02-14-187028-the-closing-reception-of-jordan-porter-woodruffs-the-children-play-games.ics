@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-the-closing-reception-of-jordan-porter-woodruff-s-the-childr
+ en-play-games@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;TZID=America/Chicago:20260214T170000
+DTEND;TZID=America/Chicago:20260214T200000
+SUMMARY:The Closing Reception of Jordan Porter-Woodruff’s The Children 
+ Play Games
+LOCATION:Epiphany Center for the Arts\, 201 S Ashland Ave\, Chicago\, IL 
+ 60607
+DESCRIPTION:In The Children Play Games\, the artist explores the fragile 
+ relationship between play\, perception\, and imagination through a lens 
+ that intertwines past memories\, present realities\, and future possibil
+ ities. The show invites viewers to reflect on how children engage with t
+ heir world in...\nMore info: https://thevisualist.org/2026/02/the-closin
+ g-reception-of-jordan-porter-woodruffs-the-children-play-games/\nVenue s
+ ite: https://epiphanychi.com/jordan-porter-woodruff-the-children-play-ga
+ mes/
+URL:https://thevisualist.org/2026/02/the-closing-reception-of-jordan-port
+ er-woodruffs-the-children-play-games/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

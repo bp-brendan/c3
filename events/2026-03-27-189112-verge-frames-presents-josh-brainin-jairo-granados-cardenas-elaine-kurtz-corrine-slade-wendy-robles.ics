@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260327-verge-frames-presents-josh-brainin-jairo-granados-cardenas-e
+ laine-kurtz-corrine-slade-wendy-robles@thevisualist.org
+DTSTAMP:20260327T000000Z
+DTSTART;TZID=America/Chicago:20260327T170000
+DTEND;TZID=America/Chicago:20260327T200000
+SUMMARY:Verge Frames Presents\; Josh Brainin\, Jairo Granados-Cardenas\, 
+ Elaine Kurtz\, Corrine Slade\, Wendy Robles
+LOCATION:Verge Frames\, 1709 W Chicago Ave. Unit 2A\, Chicago\, IL\, 6062
+ 2
+DESCRIPTION:Verge Frames Presents\; Josh Brainin\, Jairo Granados-Cardena
+ s\, Elaine Kurtz\, Corrine Slade\, Wendy Robles\nMore info: https://thev
+ isualist.org/2026/03/verge-frames-presents-josh-brainin-jairo-granados-c
+ ardenas-elaine-kurtz-corrine-slade-wendy-robles/\nVenue site: https://ve
+ rgeframes.com/
+URL:https://thevisualist.org/2026/03/verge-frames-presents-josh-brainin-j
+ airo-granados-cardenas-elaine-kurtz-corrine-slade-wendy-robles/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

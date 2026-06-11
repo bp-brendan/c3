@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260404-noelle-africh-signal@thevisualist.org
+DTSTAMP:20260404T000000Z
+DTSTART;TZID=America/Chicago:20260404T180000
+DTEND;TZID=America/Chicago:20260404T210000
+SUMMARY:Noelle Africh: Signal
+LOCATION:Twelve Ten Gallery\, 1104 W Thorndale Ave\, Chicago IL 60660
+DESCRIPTION:Twelve Ten Gallery is thrilled to present Signal\, an exhibit
+ ion by Noelle Africh. For their solo presentation\, Africh explores the 
+ mutability of distemper\, a medium historically associated with decorati
+ ve painting\, but here transformed into an opaque surface through which 
+ the artist...\nMore info: https://thevisualist.org/2026/04/noelle-africh
+ -signal/\nVenue site: https://twelvetengallery.com/exhibitions/africh-si
+ gnal
+URL:https://thevisualist.org/2026/04/noelle-africh-signal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

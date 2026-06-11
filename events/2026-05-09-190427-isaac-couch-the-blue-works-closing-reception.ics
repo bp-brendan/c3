@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-isaac-couch-the-blue-works-closing-reception@thevisualist.or
+ g
+DTSTAMP:20260509T000000Z
+DTSTART;TZID=America/Chicago:20260509T130000
+DTEND;TZID=America/Chicago:20260509T170000
+SUMMARY:Isaac Couch: The Blue Works\, closing reception
+LOCATION:compound yellow\, 244 Lake Street\, Oak Park\, Il 60302
+DESCRIPTION:Closing Reception: May 9\, 1:00–5:00 PM Originally from Wes
+ tern Kentucky\, I have carried the textures\, tensions\, and rhythms of 
+ the South to Chicago. My work\, that is rooted in fashion\, but never co
+ nfined by it\, has earned fellowships with Luminarts (2021)\, the Arts C
+ lub of Chicago...\nMore info: https://thevisualist.org/2026/05/isaac-cou
+ ch-the-blue-works-closing-reception/\nVenue site: https://compoundyellow
+ .com/opening-reception-the-blue-works-by-isaac-couch/
+URL:https://thevisualist.org/2026/05/isaac-couch-the-blue-works-closing-r
+ eception/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

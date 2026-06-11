@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260425-roots-20-spring-benefit@thevisualist.org
+DTSTAMP:20260425T000000Z
+DTSTART;TZID=America/Chicago:20260425T183000
+DTEND;TZID=America/Chicago:20260425T220000
+SUMMARY:Roots 20 Spring Benefit
+LOCATION:Roots & Culture\, 1034 N Milwaukee Ave\, Chicago\, IL 60642
+DESCRIPTION:Roots & Culture turns 20 this year! We’d love to invite you
+  to toast this milestone at our annual spring benefit! We’re throwing 
+ ourselves the birthday party we want to have! Going back to our roots (s
+ ee what we did there)\, kicking it old school\, Chicago-style. Hotdogs\,
+  Italian beef...\nMore info: https://thevisualist.org/2026/04/roots-20-s
+ pring-benefit/\nVenue site: https://www.rootsandculturecac.org/event/roo
+ ts-20-spring-benefit/
+URL:https://thevisualist.org/2026/04/roots-20-spring-benefit/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

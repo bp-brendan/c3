@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260417-new-perspectives-in-photography-two-day-photography-panel-se
+ ries@thevisualist.org
+DTSTAMP:20260417T000000Z
+DTSTART;TZID=America/Chicago:20260417T180000
+DTEND;TZID=America/Chicago:20260417T200000
+SUMMARY:New Perspectives in Photography: Two-day Photography Panel Series
+LOCATION:Chicago Art Department\, 1926 S Halsted St\, Chicago\, IL 60608
+DESCRIPTION:Co-organized and moderated by photographer Diana Solís and p
+ hoto historian Deanna Ledezma\, the panel will bring together BIPOC and 
+ LGBTQ+ photographers for a public conversation about their creative prac
+ tices\, experiences in the field\, and the perspectives they bring to co
+ ntemporary...\nMore info: https://thevisualist.org/2026/04/new-perspecti
+ ves-in-photography-two-day-photography-panel-series/\nVenue site: https:
+ //www.chicagoartdepartment.org
+URL:https://thevisualist.org/2026/04/new-perspectives-in-photography-two-
+ day-photography-panel-series/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

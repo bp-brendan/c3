@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260207-silhouette-of-a-king@thevisualist.org
+DTSTAMP:20260207T000000Z
+DTSTART;TZID=America/Chicago:20260207T130000
+DTEND;TZID=America/Chicago:20260207T160000
+SUMMARY:Silhouette Of A King
+LOCATION:ELECTRIQSOUL HIDEOUT STUDIOS\, 216 S Jefferson St. Chicago\, IL 
+ 60661
+DESCRIPTION:Silhouettes Of A King :Heavy is the Head\, Unseen is the Hear
+ t Step into the shadows and light of Silhouettes of A King\, an immersiv
+ e exploration of modern black masculinity . This collection of works by 
+ Obisoulstar strips away the noise to reveal the raw\, honest profiles of
+  kings in...\nMore info: https://thevisualist.org/2026/02/silhouette-of-
+ a-king/\nVenue site: https://www.electriqsoulhideoutstudios.com/events/s
+ ilhouette-of-a-king-exhibit
+URL:https://thevisualist.org/2026/02/silhouette-of-a-king/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

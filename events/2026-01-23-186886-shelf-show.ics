@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260123-shelf-show@thevisualist.org
+DTSTAMP:20260123T000000Z
+DTSTART;TZID=America/Chicago:20260123T180000
+DTEND;TZID=America/Chicago:20260123T220000
+SUMMARY:Shelf Show
+LOCATION:SAWHORSE\, 4222 W Fullerton Ave\, Chicago\, IL 60639
+DESCRIPTION:For Sawhorse’s 1 year anniversary\, we have covered our wal
+ ls in shelves. There will be objects by 121 artists on the shelves. Plea
+ se join us for SHELF SHOW. . We’re doing two opening receptions becaus
+ e our space is small: come look at the shelves Friday\, January 23\, 6-1
+ 0pm and/or...\nMore info: https://thevisualist.org/2026/01/shelf-show/\n
+ Venue site: https://www.sawhorsespace.net/
+URL:https://thevisualist.org/2026/01/shelf-show/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

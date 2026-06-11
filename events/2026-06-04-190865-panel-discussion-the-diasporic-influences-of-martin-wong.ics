@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260604-panel-discussion-the-diasporic-influences-of-martin-wong@the
+ visualist.org
+DTSTAMP:20260604T000000Z
+DTSTART;TZID=America/Chicago:20260604T180000
+DTEND;TZID=America/Chicago:20260604T190000
+SUMMARY:PANEL DISCUSSION: The Diasporic Influences of Martin Wong
+LOCATION:Wrightwood 659\, 659 W Wrightwood Ave\, Chicago\, IL 60614
+DESCRIPTION:The prolific Chinese American painter and poet Martin Wong gr
+ ew up just outside San Francisco’s Chinatown. Though he never visited 
+ mainland China or learned Chinese languages\, his work remained deeply i
+ nformed by the cultural legacies of the Chinese diaspora—drawing on my
+ thic figures...\nMore info: https://thevisualist.org/2026/06/panel-discu
+ ssion-the-diasporic-influences-of-martin-wong/\nVenue site: https://wrig
+ htwood659.org/programs/the-diasporic-influences-of-martin-wong/
+URL:https://thevisualist.org/2026/06/panel-discussion-the-diasporic-influ
+ ences-of-martin-wong/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

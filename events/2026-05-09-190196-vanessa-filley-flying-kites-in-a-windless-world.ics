@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-vanessa-filley-flying-kites-in-a-windless-world@thevisualist
+ .org
+DTSTAMP:20260509T000000Z
+DTSTART;TZID=America/Chicago:20260509T130000
+DTEND;TZID=America/Chicago:20260509T150000
+SUMMARY:Vanessa Filley: Flying Kites in a Windless World
+LOCATION:OS Projects\, 601 Sixth St\, Racine\, WI 53403
+DESCRIPTION:“Flying Kites in a Windless World\,” an exhibition of wat
+ ercolor\, pinprick\, pencil and thread drawings by Vanessa Filley\, open
+ s at OS Projects on May 9\, 2026. The exhibition continues through July 
+ 11\, 2026. On May 9\, the public is invited to meet the artist during an
+  opening reception...\nMore info: https://thevisualist.org/2026/05/vanes
+ sa-filley-flying-kites-in-a-windless-world/\nVenue site: https://www.osp
+ rojects.art/flying-kites-in-a-windless-world
+URL:https://thevisualist.org/2026/05/vanessa-filley-flying-kites-in-a-win
+ dless-world/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260228-elle-aiche-dancing-light@thevisualist.org
+DTSTAMP:20260228T000000Z
+DTSTART;TZID=America/Chicago:20260228T160000
+DTEND;TZID=America/Chicago:20260228T200000
+SUMMARY:Elle Aiche: Dancing Light
+LOCATION:Celestial Art Curation\, 9 E 1st St\, #2\, Hinsdale\, IL 60521
+DESCRIPTION:Dancing Light An Art Exhibition of New Works by Elle Aiche Hi
+ nsdale\, Illinois — February 2026 — Celestial Art Curation Gallery p
+ resents Dancing Light\, a solo exhibition featuring Elle Aiche’s newes
+ t body of work\, on view beginning February 28\, 2026\, at the gallery
+ ’s Hinsdale location...\nMore info: https://thevisualist.org/2026/02/e
+ lle-aiche-dancing-light/\nVenue site: https://www.celestialartcuration.c
+ om
+URL:https://thevisualist.org/2026/02/elle-aiche-dancing-light/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

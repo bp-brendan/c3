@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260213-k8-hardy-outfitumentary-2016@thevisualist.org
+DTSTAMP:20260213T000000Z
+DTSTART;TZID=America/Chicago:20260213T190000
+DTEND;TZID=America/Chicago:20260213T210000
+SUMMARY:K8 Hardy: Outfitumentary (2016)
+LOCATION:Hans Goodrich\, 1747 S Halsted St\, Chicago\, IL 60608
+DESCRIPTION:K8 Hardy\, Outfitumentary\, 2016 Friday\, February 13\, 7 –
+  9 pm Join us this Friday for a free screening of K8 Hardy’s feature l
+ ength film Outfitumentary (2016) In 2001\, artist and filmmaker K8 Hardy
+  set out to document her daily outfits on video. Over an eleven year per
+ iod\, until the...\nMore info: https://thevisualist.org/2026/02/k8-hardy
+ -outfitumentary-2016/\nVenue site: https://thevisualist.org/www.hansgood
+ rich.com
+URL:https://thevisualist.org/2026/02/k8-hardy-outfitumentary-2016/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

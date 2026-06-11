@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260213-on-the-same-planet-at-the-same-time@thevisualist.org
+DTSTAMP:20260213T000000Z
+DTSTART;TZID=America/Chicago:20260213T180000
+DTEND;TZID=America/Chicago:20260213T210000
+SUMMARY:On The Same Planet at The Same Time
+LOCATION:The Beautiful Cat Gallery\, 1070 W Granville Ave\, Chicago\, IL 
+ 60660
+DESCRIPTION:On the Same Planet at the Same Time: a queer quilting exhibit
+ ion with Beni Batiste\, Tiffany M. Favers du Shine\, Eleanor Mulshine\, 
+ Diego Rancel\, Mariel Rancel\, and Philip Smith Taking up space\, being 
+ bold\, coming home\, being cozy\, knowing family\, knowing yourself\, co
+ nvening for shared...\nMore info: https://thevisualist.org/2026/02/on-th
+ e-same-planet-at-the-same-time/\nVenue site: https://www.thebcat.gallery
+ /
+URL:https://thevisualist.org/2026/02/on-the-same-planet-at-the-same-time/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

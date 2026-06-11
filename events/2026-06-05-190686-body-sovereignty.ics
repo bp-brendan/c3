@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260605-body-sovereignty@thevisualist.org
+DTSTAMP:20260605T000000Z
+DTSTART;TZID=America/Chicago:20260605T170000
+DTEND;TZID=America/Chicago:20260605T200000
+SUMMARY:Body Sovereignty
+LOCATION:ARC Gallery\, 1463 W Chicago Ave\, Chicago\, IL 60642
+DESCRIPTION:Body Sovereignty Curator: Danni O’Brien The body has always
+  been contested territory. Legislated\, pathologized\, fetishized\, disc
+ iplined—the body and its desires have rarely been left in peace\, let 
+ alone in the control of the people who inhabit them. With this perennial
+  conflict in...\nMore info: https://thevisualist.org/2026/06/body-sovere
+ ignty/\nVenue site: https://www.arcgallery.org/exhibitions-archive/body-
+ sovereignty-g5kly-8km2d
+URL:https://thevisualist.org/2026/06/body-sovereignty/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

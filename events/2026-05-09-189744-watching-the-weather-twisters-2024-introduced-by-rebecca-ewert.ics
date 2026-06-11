@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-watching-the-weather-twisters-2024-introduced-by-rebecca-ewe
+ rt@thevisualist.org
+DTSTAMP:20260509T000000Z
+DTSTART;TZID=America/Chicago:20260509T123000
+DTEND;TZID=America/Chicago:20260509T140000
+SUMMARY:Watching the Weather: TWISTERS (2024) introduced by Rebecca Ewert
+LOCATION:The Block Cinema\, 40 Arts Cir Dr\, Evanston\, IL 60208
+DESCRIPTION:TWISTERS (Lee Isaac Chung\, 2024\, 122 min\, Digital) “This
+  theater wasn’t built to withstand what’s coming!” -Javi\, TWISTER
+ S In TWISTERS\, director Lee Isaac Chung takes on Hollywood’s timeless
+  fascination with the disaster genre to craft a thrilling sequel to the 
+ 1996 cult classic...\nMore info: https://thevisualist.org/2026/05/watchi
+ ng-the-weather-twisters-2024-introduced-by-rebecca-ewert/\nVenue site: h
+ ttps://www.blockmuseum.northwestern.edu/cinema/2026/watching-the-weather
+ -twisters-2024-introduced-by-rebecca-ewert.html
+URL:https://thevisualist.org/2026/05/watching-the-weather-twisters-2024-i
+ ntroduced-by-rebecca-ewert/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

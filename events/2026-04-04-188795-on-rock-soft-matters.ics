@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260404-on-rock-soft-matters@thevisualist.org
+DTSTAMP:20260404T000000Z
+DTSTART;TZID=America/Chicago:20260404T180000
+DTEND;TZID=America/Chicago:20260404T210000
+SUMMARY:On Rock-Soft Matters
+LOCATION:Seldon Institute of Chicago\, 5659 S Woodlawn Ave\, Chicago\, IL
+  60637
+DESCRIPTION:An immersive exhibition by Italian visual artist and curator 
+ Chiara Bastoni featuring her photography and 2026 film A Sun In The Palm
+ \, alongside a selection of over one hundred visual works by Egyptian ar
+ tists: Hazem El Mestikawy\, Huda Lutfi\, Marwan Fayed\, and Nour El Sher
+ if. This...\nMore info: https://thevisualist.org/2026/04/on-rock-soft-ma
+ tters/\nVenue site: https://www.seldoninstitute.org/bastoni?utm_source=i
+ g&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J
+ 0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnqk9XLFW6KnYWPO4pXtSmGO3aKqYfIAbH3K508U3
+ ERJMtgyN8EVZ4GDrn_Os_aem_d9jmuUo1EG65tu3Ygs48Cg
+URL:https://thevisualist.org/2026/04/on-rock-soft-matters/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,774 @@
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,hr {margin:0; padding:0;}
+h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,em,strong,th {font-size:1em; font-weight:normal; font-style:normal;}
+ul,ol {list-style:none;}
+fieldset,img,hr {border:none;}
+caption,th {text-align:left;}
+table {border-collapse:collapse; border-spacing:0;}
+td {vertical-align:top;}
+
+
+
+body {
+    font-family: fenwick, sans-serif;
+    min-width: 960px;
+    margin: 0px auto;
+    font-size: 18px;
+    color: #FFF;
+    letter-spacing: .1em;
+    background-color: #FFF;
+    background-position: top right;
+    background-repeat: repeat;
+
+}
+
+h1 {
+    font-family: fenwick, sans-serif;
+    display: block;
+    font-size: 1.9em;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+h2 {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    letter-spacing: .15em;
+}
+
+h3 {
+    display: block;
+    font-size: .6em;
+    font-weight: normal;
+    font-style:italic;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    letter-spacing: .1em;
+}
+
+h4 {
+    display: block;
+    font-size: .9em;
+    font-weight: normal;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    letter-spacing: .1em;
+}
+
+h5 {
+    font-family: "Georgia", Serif;
+    font-style: italic;
+    font-size: .7em;
+    font-weight: normal;
+    margin: 0 0 10px 0;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    letter-spacing: .1em;
+}
+
+p {
+    font-family: "Georgia", Serif;
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    color: #EFEFEF;
+}
+
+.rss {
+    opacity: .3;
+    margin-left: 9px; 
+    margin-bottom: -2px;
+}
+
+.rss:hover {
+    opacity: 1;
+}
+
+input, textarea {
+    height: 24px;
+    width: 192px;
+    margin: 0px;
+    padding: 1px 5px;
+    border: 1px solid #999;
+    font-style: italic;
+    color: #999;
+    border: 1px solid #FFF;
+    font-family: "Georgia", Serif;
+    font-size: .7em;
+}
+
+input:focus, textarea:focus {
+    border-top: 1px solid #CCC;
+    border-left: 1px solid #CCC;
+    background-color: #DDD;
+    color: #333;
+    outline: none;
+    text-shadow: 0px 1px #EEE;
+}
+
+label {
+    font-size: .8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px 0px;
+}
+
+#wrapper {
+    margin: 0 auto;
+    padding: 0px;
+    width: 100%;
+    background-image: url('leftbar.png'), url('rightbar.png');
+    background-position:  left, right;
+    background-repeat: repeat-y, repeat-y;
+}
+
+.wide-arrow {
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    z-index: -1;
+    margin-top: 265px;
+    width: 30%;
+    min-width: 285px;
+}
+
+.wide-arrow-head {
+    position: inherit;
+    top: -5px;
+    right: -6px;
+    border-color: transparent transparent transparent #000;
+    border-style: solid;
+    border-width: 6px;
+    height: 0px;
+    width: 0px; 
+}
+
+.clearfix:after, #wrapper:after, #main-space:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix, #wrapper, #main-space {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .contain, * html #wrapper, * html #main-space {height: 1%;}
+.contain, #wrapper #main-space {display: block;}
+/* End hide from IE-mac */
+
+/* Ads */
+#adwrap {
+    position: absolute;
+    width: 100%;
+    min-width: 960px;
+    left: 0;
+    top: 0;
+}
+
+#like {
+    position: inherit;
+    width: auto;
+    right: 46px;
+    top: 40px;
+    font-size: .5em;
+    text-align: left;
+    color: #555;
+    text-shadow: -1px -1px 1px #EEE;
+    overflow:hidden;
+}
+
+#ad {
+    position: inherit;
+    width: 135px;
+    right: 0px;
+    top: 85px;
+    font-size: .5em;
+    text-align: left;
+    color: #555;
+    text-shadow: -1px -1px 1px #EEE;
+}
+
+    #ad img, #ad img a {
+        outline: none;
+}
+
+#auction {
+    
+    position: inherit;
+    width: 135px;
+    right: 0px;
+    top: 200px;
+    font-size: .5em;
+    text-align: left;
+    color: #555;
+    text-shadow: -1px -1px 1px #EEE;
+
+}
+
+
+/* BEGIN THE DIVS FOR THE HEADER
+ ----------------------------------------------------------------------*/
+
+#sidebar {
+    float: left;
+    width: 264px;
+    margin: 0 0 100px 0;
+    color: #FFF;
+    min-height: 960px;
+    background-repeat: repeat;
+}
+
+/* 
+top head 
+*/
+
+.head {
+    width: 100%;
+    padding: 65px 0 15px 0;
+    margin: 0 auto;
+    text-align: center;
+    height: 185px;
+    border-bottom: 2px solid #FFF;
+}
+
+#sidebar, #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4,  #sidebar h5 {
+    text-shadow: -1px -1px 1px #000, 1px 1px 1px #555, 0 0 3px #000;
+}
+
+
+    /* 
+    links at the top 
+    */
+
+    .head-links {
+        margin-top: 45px;
+    }
+
+    .head-links a {
+        margin: 0px 9px;
+        font-size: .8em;
+        font-weight: normal;
+    }
+
+/* 
+searcher 
+*/
+
+#searchbox {
+    margin: 30px;
+}
+
+/* 
+recent events 
+*/
+
+#recent {
+    margin: 24px 32px;
+}
+
+.recent-type {
+    margin-bottom: 0px;
+    font-size: .9em;
+}
+
+.old-event {
+    float:left;
+    margin: 16px 0 0 0;
+    min-width: 150px;
+}
+
+.old-event-day {
+    font-size: 1.1em;
+    font-style: normal;
+    font-weight: normal;
+    margin: 10px 0 5px 0;
+}
+
+.daytext {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.old-event-date {
+    margin: 0 0 10px 0;
+}
+
+.old-event img {
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+}
+
+.old-event-more {
+    clear:both;
+    margin-top: 16px;
+    text-align: right;
+}
+
+
+.sidebar-title {
+    float: left;
+    margin: 0 0;
+    padding: 32px 32px 16px 32px;
+    width: 100%;
+}
+
+.sidebar-archives {
+    float: left;
+    margin: 24px 32px;
+    width: 200px;
+}
+
+.sidebar-archives-link {
+    float: left;
+    width: 200px;
+    margin: 9px 32px;
+    font-family: "Georgia", Serif;
+    font-style: italic;
+    font-size: .7em;
+}
+
+.sidebar-copy {
+    float: left;
+    width: 200px;
+    color: #888;
+    font-family: fenwick, sans-serif;
+    font-size: .6em;
+}
+
+/* BEGIN THE DIVS FOR THE MAIN CONTENT
+ ----------------------------------------------------------------------*/
+
+#main-space {
+    padding: 215px 16px 0 16px;
+    min-width: 640px;
+    margin: 0 30% 0 30%;
+    color: #000;
+    background-color: #FFF;
+}
+
+#main-space, #main-space h3, #main-space h4,  #main-space h5 {
+    text-shadow: 0 0 2px #EEE;
+    color: #000;
+}
+
+#main-space h2 {
+    text-shadow: 0 0 1px #EEE;
+    color: #000;
+}
+
+#main-space h1 {
+    font-size: 4em;
+    text-shadow: 0 0 2px #AAA;
+}
+
+#main-space h5 {
+}
+
+
+/* SECTION TITLES
+ ---------------------------------------------------------------------*/
+
+#section-title {
+    margin: 0 0 0 0;
+    float:left;
+}
+
+.day-main {
+    float:left;
+    width: 606px;
+    margin-top: 4px;
+    display: inline;
+    text-transform: uppercase;
+}
+
+.archive-title {
+    margin-top: 10px;
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 0 0 2px #AAA;
+}
+
+.tip {
+    float:left;
+    margin: -47px 0 0 320px ;
+    height: 18px;
+    padding-bottom: 10px;
+    font-size: .7em;
+    color: #5577FF;
+}
+
+
+.tip :hover {
+    color: #FF3355;
+    text-decoration: underline;
+}
+
+/* EACH EVENT ON THE INDEX
+ ---------------------------------------------------------------------*/
+
+#event-index {
+ float: left;
+ width: 620px;
+ margin: 16px 0;
+ background-color: #FFF;
+ }
+
+#event-index h1 {
+    font-family: "Georgia", Serif;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: normal;
+    margin-bottom: 9px;
+    letter-spacing: 0;
+ }
+
+#event-index h2 {
+    font-family: "Georgia", Serif;
+    font-size: .9em;
+    font-weight: normal;
+    letter-spacing: 0;
+    margin-bottom: 9px;
+
+ }
+
+#event-index h3 {
+    font-family: "Georgia", Serif;
+    font-style: italic;
+    font-size: .9em;
+    font-weight: normal;
+    letter-spacing: .1em;
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+#event-index-date p {
+    margin: 10px 0px;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+#event-index-date span {
+    text-align: left;
+    text-transform: uppercase;
+}
+
+#event-index-date h2 {
+    padding-top: 4px;
+    display: inline;
+    float: left;
+    text-align: left;
+    margin-left: 9px;
+    font-family: "Georgia", Serif;
+    font-style: italic;
+    font-size: .7em;
+    font-weight: normal;
+    letter-spacing: .1em;
+}
+
+
+
+#event-index-date {
+    float: left;
+    margin: 16px 0px 5px 0px;
+    width: 620px;
+    font-weight: bold;
+    color: #000;
+ }
+
+ #event-index-date a {
+    float: left;
+    display: inline;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+ }
+
+.upper {
+    float: left;
+    display: inline;
+    text-transform: uppercase;
+}
+
+#event-index-date h4 {  
+    font-family: "Georgia", Serif;
+    font-style: italic;
+    font-size: .7em;
+    font-weight: normal;
+    margin: 0 0 10px 0;
+    display: inline;
+}
+ 
+#event-index a, #event-index a:active, #event-index a:visited, #event-index a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.event-index-thumbnail img, .event-index-thumbnail img a {
+    margin-top: 5px;
+    outline: none;
+    border: none;
+}
+
+.event-index-thumbnail {
+    float: left;
+    width: 150px;
+    height: 185px;
+    margin: 0;
+    overflow: hidden;
+}
+
+.event-index-info {
+    float: right;
+    width: 454px;
+    display: inline;
+    text-align: left;
+}
+
+#event-index-empty {
+ float: left;
+ margin: 9px 0 9px 124px;
+ width: 454px;
+ height: 20px;
+ }
+
+ .line {
+    float: right;
+    width: 100%;
+    height: 10px;
+    border-bottom: 1px solid #CCC;
+ }
+
+  .liner {
+    float: right;
+    width: 100%;
+    height: 10px;
+ }
+
+ .venuelink {
+
+ }
+
+
+
+/* EACH EVENT ON THE SINGLE PAGE
+ ---------------------------------------------------------------------*/
+
+#event-single {
+width: 620px;
+ float: left;
+ margin: 16px 0;
+  background-color: #FFF;
+ }
+
+ .thumbwrapper {
+ float: left;
+ width: 620px;
+ }
+
+#event-single h1 {
+ }
+
+#event-single h2 {
+    float: left;
+    display: inline;
+ }
+
+#event-single h3 {
+    margin-bottom: 5px;
+}
+
+#event-single h4 {
+}
+
+#event-single h5, #event-single h5 a {
+    font-size: 1em;
+    border: none;
+}
+
+.event-single-thumbnail img, .event-single-thumbnail img a {
+    margin-top: 5px;
+    outline: none;
+    border: none;
+}
+
+.event-single-thumbnail {
+    float: left;
+    width: 150px;
+    height: 215px;
+    margin: 0;
+    overflow: hidden;
+}
+
+.event-single-image {
+    float: left;
+    min-width: 620px;
+    max-width: 620px;
+    margin: 0;
+    text-align: center;
+}
+
+.event-single-info {
+    float: right;
+    width: 454px;
+    display: inline;
+    text-align: left;
+    background-color: #FFF;
+    padding-left: 18px;
+}
+
+.fb {
+    float: left;
+    height: 20px;   
+}
+
+.event-single-body {
+    display: block;
+    width: 620px;
+    float: left;
+    margin: 32px 0px;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+    min-height: 100px;
+}
+
+.event-single-body a {
+    color: #000;
+    border-bottom: 1px dotted #999;
+}
+
+.event-single-body p {
+    margin: 24px 0;
+}
+
+.event-single-body a:hover {
+    color: #555;
+    border-bottom: 1px dotted #999;
+}
+
+    .prev {
+        width: 200px;
+        float: left;
+        text-align: left;
+        margin-bottom: 32px;
+    }
+
+    .next {
+        width: 200px;
+        float: right;
+        text-align: right;
+        margin-bottom: 32px;
+    }
+
+    .nav-top {
+        position: relative;
+        float:right;
+        top: -9px;
+        right: 16px;
+        background-color: #FFF;
+        font-style: regular;
+    }
+
+    .nav-top a {
+        border: none;
+    }
+
+.event-single-comments {
+    display: block;
+    width: 620px;
+    float:left;
+    border-top: 1px solid #000;
+    margin: 32px 0;
+    padding: 32px 0px;
+}
+
+/* THE SUBMIT PAGE
+------------------------------------------------------ */
+
+form, fieldset {
+    border: none;
+    padding: none;
+    margin-bottom: 16px;
+}
+
+#wpcf7 {
+    width: 620px;
+}
+
+#wpcf7-new_post input, #wpcf7-new_post textarea {
+    float: right;
+    width: 350px;
+    margin-right: 32px;
+    color: #333;
+    border: 1px solid #CCC;
+} 
+
+#wpcf7-new_post textarea {
+    height: 350px;
+}
+
+#wpcf7-new_post textarea:focus {
+    background-color: #FFF;
+
+}
+ 
+input#submit {
+    float: right;
+    width: 364px;
+    height: 25px;
+    background-color: #999;
+    color: #555;
+    cursor: pointer;
+}
+
+input#submit:hover {
+    background-color: #555;
+    color: #999;
+}
+
+
+input#submit:active {
+    background-color: #333;
+    color: #CCC;
+}
+
+
+.wpcf7-form p .wpcf7-form-control {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    height: 30px;
+    float: right;
+    /* position: relative; */
+}
+

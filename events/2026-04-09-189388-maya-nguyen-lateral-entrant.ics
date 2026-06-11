@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260409-maya-nguyen-lateral-entrant@thevisualist.org
+DTSTAMP:20260409T000000Z
+DTSTART;TZID=America/Chicago:20260409T170000
+DTEND;TZID=America/Chicago:20260409T200000
+SUMMARY:Maya Nguyen: Lateral Entrant
+LOCATION:Goethe-Institut Chicago\, 150 N Michigan Ave\, #420 Chicago\, IL
+  60601
+DESCRIPTION:A site-specific exhibition by Chicago-based artist Maya Nguye
+ n connecting Germany\, Vietnam\, and the US exploring migration and camo
+ uflage. Join us for the opening of LATERAL ENTRANT\, a site-specific exh
+ ibition by Maya Nguyen that explores migrant strategies of camouflage an
+ d...\nMore info: https://thevisualist.org/2026/04/maya-nguyen-lateral-en
+ trant/\nVenue site: https://www.goethe.de/ins/us/en/sta/chi/ver.cfm?even
+ t_id=27250755
+URL:https://thevisualist.org/2026/04/maya-nguyen-lateral-entrant/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

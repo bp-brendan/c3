@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260111-e-launch-party-a-book-release-celebration@thevisualist.org
+DTSTAMP:20260111T000000Z
+DTSTART;TZID=America/Chicago:20260111T190000
+DTEND;TZID=America/Chicago:20260111T210000
+SUMMARY:‘E’ LAUNCH PARTY – A Book Release Celebration!
+LOCATION:Elastic Arts\, 3429 W Diversey Ave\, #208\, Chicago IL\, 60647
+DESCRIPTION:Like an ecstatic game of telephone gone haywire\, Noa Micaela
+  Fields’ debut book E (Nightboat Books) practices mishearing as a glit
+ chy hormonal transition of language. Join us for the book launch ritual 
+ of enjambment as embodiment as escape art: an evening of ethereal remixe
+ s...\nMore info: https://thevisualist.org/2026/01/e-launch-party-a-book-
+ release-celebration/\nVenue site: https://elasticarts.org/events/e-launc
+ h-party-a-book-release-celebration
+URL:https://thevisualist.org/2026/01/e-launch-party-a-book-release-celebr
+ ation/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

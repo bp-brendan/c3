@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260110-family-day-in-with-the-old@thevisualist.org
+DTSTAMP:20260110T000000Z
+DTSTART;TZID=America/Chicago:20260110T100000
+DTEND;TZID=America/Chicago:20260110T130000
+SUMMARY:Family Day: In with the Old
+LOCATION:Smart Museum of Art\, The University of Chicago\, 5550 S Greenwo
+ od Ave\, Chicago\, IL 60637
+DESCRIPTION:Theaster Gates investigates the value of things and their pot
+ ential to hold layered meanings. Inspired by Gates’s practice & in col
+ laboration with the UChicago student-run nonprofit reSOURCE\, families w
+ ill be invited to reclaim\, repurpose\, and reimagine seemingly unusable
+  objects from...\nMore info: https://thevisualist.org/2026/01/family-day
+ -in-with-the-old/\nVenue site: https://smartmuseum.uchicago.edu/events/2
+ 338/family-day-in-with-the-old/
+URL:https://thevisualist.org/2026/01/family-day-in-with-the-old/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

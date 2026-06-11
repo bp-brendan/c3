@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260117-the-puppet-zoo@thevisualist.org
+DTSTAMP:20260117T000000Z
+DTSTART;TZID=America/Chicago:20260117T130000
+DTEND;TZID=America/Chicago:20260117T160000
+SUMMARY:The Puppet Zoo!
+LOCATION:Roman Susan at Berger Park Cultural Center\, 6205 N Sheridan Rd\
+ , Chicago IL 60660
+DESCRIPTION:The Puppet Zoo! Berger Park Cultural Center 6205 N Sheridan R
+ oad\, Chicago IL Saturday\, January 17 from 1-4 PM This is a zoo like no
+  other! Explore life-sized and whimsical puppets up close\, while learni
+ ng about real animals. Step into a world where every creature is made of
+  strings...\nMore info: https://thevisualist.org/2026/01/the-puppet-zoo/
+ \nVenue site: https://romansusan.org/Puppet-Zoo
+URL:https://thevisualist.org/2026/01/the-puppet-zoo/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260305-shaping-vision@thevisualist.org
+DTSTAMP:20260305T000000Z
+DTSTART;TZID=America/Chicago:20260305T170000
+DTEND;TZID=America/Chicago:20260305T200000
+SUMMARY:Shaping Vision
+LOCATION:Lillstreet Art Center\, 4401 N Ravenswood Ave\, Chicago\, IL 606
+ 40
+DESCRIPTION:An exhibition of work by the Drawing and Painting Faculty at 
+ Lillstreet Sarah Bastress\, Erik Brown\, Melanie Brown\, Lydia Cash\, He
+ ather Charley\, Karen Dana\, Caitlyn Doran\, John Fleck\, Shanti Grandhi
+ \, True Markham\, Susan Marx\, Patrick Miceli\, Ken Minami\, Amanda Mulc
+ ahy\, Blue Brooks...\nMore info: https://thevisualist.org/2026/03/shapin
+ g-vision/\nVenue site: https://lillstreet.com/upcoming-events
+URL:https://thevisualist.org/2026/03/shaping-vision/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

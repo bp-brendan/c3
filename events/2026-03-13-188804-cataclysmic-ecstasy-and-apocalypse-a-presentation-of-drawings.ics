@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260313-cataclysmic-ecstasy-and-apocalypse-a-presentation-of-drawing
+ s@thevisualist.org
+DTSTAMP:20260313T000000Z
+DTSTART;TZID=America/Chicago:20260313T190000
+DTEND;TZID=America/Chicago:20260313T220000
+SUMMARY:Cataclysmic Ecstasy and Apocalypse: a Presentation of Drawings
+LOCATION:UIC 5th Floor Gallery\, 400 S Peoria St\, 5th Fl\, Chicago\, IL 
+ 60607
+DESCRIPTION:A show of over 80 drawings by 27 international artists\, cura
+ ted by Mary Amelia. Features a screening of a film by James Deusing and 
+ works by Vitamin C Wig. The medium of drawing unveiled→ an innate meth
+ od of processing new worlds. This is an immediate and direct imprint of 
+ real living...\nMore info: https://thevisualist.org/2026/03/cataclysmic-
+ ecstasy-and-apocalypse-a-presentation-of-drawings/\nVenue site: https://
+ artandarthistory.uic.edu/fifth-floor-gallery
+URL:https://thevisualist.org/2026/03/cataclysmic-ecstasy-and-apocalypse-a
+ -presentation-of-drawings/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

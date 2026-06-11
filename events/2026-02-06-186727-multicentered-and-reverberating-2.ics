@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260206-multicentered-and-reverberating@thevisualist.org
+DTSTAMP:20260206T000000Z
+DTSTART;TZID=America/Chicago:20260206T170000
+DTEND;TZID=America/Chicago:20260206T200000
+SUMMARY:Multicentered and Reverberating
+LOCATION:Circle Contemporary\, 2010 W Carroll Ave\, Chicago IL 60612
+DESCRIPTION:Multicentered and Reverberating Sonya Bogdanova – Kacie Lee
+ s – Melissa McClung – Susan Pasowicz – John Phelan – Carol Peyes
+  – Tim Stone – Kevin Stuart – Amy Vogel In the late 1970s\, Canadi
+ an media theorist Marshall McLuhan posited two types of sensory-cultural
+  paradigms: visual and...\nMore info: https://thevisualist.org/2026/02/m
+ ulticentered-and-reverberating-2/\nVenue site: https://artsoflife.org/ev
+ ent/multicentered-reverberating/
+URL:https://thevisualist.org/2026/02/multicentered-and-reverberating-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

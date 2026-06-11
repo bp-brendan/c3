@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260211-artist-salon-how-to-buy-live-work-space@thevisualist.org
+DTSTAMP:20260211T000000Z
+DTSTART;TZID=America/Chicago:20260211T180000
+DTEND;TZID=America/Chicago:20260211T200000
+SUMMARY:Artist Salon: How to Buy Live Work Space
+LOCATION:ArtHouse Chicago\, 3317 W Fullerton #\, Chicago\, Il 60647
+DESCRIPTION:Please join us for the next Artist Salon on February 11th at 
+ 6:00 PM. The event will be held at my new listing located at 3317 W. Ful
+ lerton\, 2nd Floor. This impressive space is currently used as a gallery
+  and is ideal for creative office use. 3317 W. Fullerton for Rent Our di
+ scussion...\nMore info: https://thevisualist.org/2026/02/artist-salon-ho
+ w-to-buy-live-work-space/\nVenue site: https://www.arthousechicago.com/
+URL:https://thevisualist.org/2026/02/artist-salon-how-to-buy-live-work-sp
+ ace/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

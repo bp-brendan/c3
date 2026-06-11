@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260613-concrete-age@thevisualist.org
+DTSTAMP:20260613T000000Z
+DTSTART;TZID=America/Chicago:20260613T180000
+DTEND;TZID=America/Chicago:20260613T210000
+SUMMARY:Concrete Age
+LOCATION:Parlour and Ramp\, 2130 W 21st St\, Chicago\, IL 60608
+DESCRIPTION:Concrete Age A solo show exhibiting the work of Richard Marks
+ . OPENING: Saturday | June 13th\, 2026 | 6-9 pm Artist Biography Richard
+  Marks is an Industrial Designer and Artist as well as a 1976 graduate o
+ f University of Illinois Chicago (UIC) College of Architecture and Art w
+ ith a...\nMore info: https://thevisualist.org/?p=191006\nVenue site: htt
+ ps://parlourandramp.com/
+URL:https://thevisualist.org/?p=191006
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260204-augmenting-the-senses-in-art-and-medicine@thevisualist.org
+DTSTAMP:20260204T000000Z
+DTSTART;TZID=America/Chicago:20260204T180000
+DTEND;TZID=America/Chicago:20260204T200000
+SUMMARY:Augmenting the Senses in Art and Medicine
+LOCATION:Gray Center for Arts and Inquiry\, 915 E 60th St\, Chicago\, IL 
+ 60637
+DESCRIPTION:This panel discussion explores the tensions between sensory s
+ ubstitution and sensory augmentation\, and the traditional hierarchy of 
+ the senses. Looking at different technologies meant to replace or enhanc
+ e our senses\, e.g.\, insulin pumps or bionic breast implants engineered
+  to...\nMore info: https://thevisualist.org/2026/02/augmenting-the-sense
+ s-in-art-and-medicine/\nVenue site: https://events.uchicago.edu/event/25
+ 9078-augmenting-the-senses-in-art-and-medicine
+URL:https://thevisualist.org/2026/02/augmenting-the-senses-in-art-and-med
+ icine/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

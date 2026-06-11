@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260116-jesse-ly-maven-kennedy-permeable-images@thevisualist.org
+DTSTAMP:20260116T000000Z
+DTSTART;TZID=America/Chicago:20260116T180000
+DTEND;TZID=America/Chicago:20260116T210000
+SUMMARY:Jesse Ly & Maven Kennedy: Permeable Images
+LOCATION:ACRE Projects\, 2921 N Clark St\, Chicago\, IL 60657
+DESCRIPTION:ACRE Projects is pleased to present Permeable Images\, a two-
+ person exhibition with work by Jesse Ly and Maven Kennedy. This exhibiti
+ on captures the interconnection between the artists’ respective practi
+ ces\, which both situate similar concerns in the relationships between m
+ aterial and...\nMore info: https://thevisualist.org/2026/01/jesse-ly-mav
+ en-kennedy-permeable-images/\nVenue site: https://www.acreresidency.org/
+ exhibition/permeable-images
+URL:https://thevisualist.org/2026/01/jesse-ly-maven-kennedy-permeable-ima
+ ges/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

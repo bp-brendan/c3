@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260312-hands-on-a-hardbody-the-documentary-1997-in-16mm@thevisualis
+ t.org
+DTSTAMP:20260312T000000Z
+DTSTART;TZID=America/Chicago:20260312T190000
+DTEND;TZID=America/Chicago:20260312T210000
+SUMMARY:HANDS ON A HARDBODY: THE DOCUMENTARY (1997) in 16mm
+LOCATION:The Block Cinema\, 40 Arts Cir Dr\, Evanston\, IL 60208
+DESCRIPTION:Two dozen contestants gather around a hardbody pickup truck a
+ t a Nissan dealership in East Texas in 1997\; seventy-seven hours later\
+ , the last person with his or her hand on the truck wins it free and cle
+ ar. It’s a simple enough premise\, but one that S.R. Bindler’s deft 
+ low-budget...\nMore info: https://thevisualist.org/2026/03/hands-on-a-ha
+ rdbody-the-documentary-1997-in-16mm/\nVenue site: https://www.blockmuseu
+ m.northwestern.edu/cinema/2026/hands-on-a-hardbody-the-documentary-1997-
+ in-16mm.html
+URL:https://thevisualist.org/2026/03/hands-on-a-hardbody-the-documentary-
+ 1997-in-16mm/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

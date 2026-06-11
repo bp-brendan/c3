@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260404-spring-cleaning-sale-original-artwork-for-400-or-less@thevis
+ ualist.org
+DTSTAMP:20260404T000000Z
+DTSTART;TZID=America/Chicago:20260404T110000
+DTEND;TZID=America/Chicago:20260404T160000
+SUMMARY:Spring Cleaning Sale: Original Artwork for $400 or Less!
+LOCATION:The Palette & Chisel Academy of Fine Arts\, 1012 N Dearborn St\,
+  Chicago\, IL 60610
+DESCRIPTION:The Spring Cleaning fundraiser is an opportunity for artists 
+ to clear their closets of artwork. It’s also a great opportunity for a
+ rtists to purchase fellow artists’ work. And the public loves it! At o
+ ur last sale\, we sold more than $41\,000 worth of art.\nMore info: http
+ s://thevisualist.org/2026/04/spring-cleaning-sale-original-artwork-for-4
+ 00-or-less-2/\nVenue site: https://paletteandchisel.org/
+URL:https://thevisualist.org/2026/04/spring-cleaning-sale-original-artwor
+ k-for-400-or-less-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

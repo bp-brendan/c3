@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260124-traces-of-devotion@thevisualist.org
+DTSTAMP:20260124T000000Z
+DTSTART;TZID=America/Chicago:20260124T180000
+DTEND;TZID=America/Chicago:20260124T210000
+SUMMARY:Traces of Devotion
+LOCATION:Julius Caesar\, 3808 S Ashland Ave\, Chicago\, IL 60609
+DESCRIPTION:Julius Caesar presents Traces of Devotion\, a group exhibitio
+ n of paintings and drawings by David Onri Anderson\, Josiah Ellner\, Lea
+ sho Johnson\, Karen Seapker\, Kyle Staver\, Margaret R. Thompson and co-
+ curated by MJ Lounsberry and Ro Miller. Please join us Saturday\, Januar
+ y 24th from...\nMore info: https://thevisualist.org/2026/01/traces-of-de
+ votion/\nVenue site: https://www.juliuscaesarchicago.net/tracesofdevotio
+ n
+URL:https://thevisualist.org/2026/01/traces-of-devotion/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

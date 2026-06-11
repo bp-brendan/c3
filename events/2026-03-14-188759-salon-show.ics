@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260314-salon-show@thevisualist.org
+DTSTAMP:20260314T000000Z
+DTSTART;TZID=America/Chicago:20260314T170000
+DTEND;TZID=America/Chicago:20260314T200000
+SUMMARY:Salon Show
+LOCATION:Purple Window Gallery\, 2233 S Throop St. #845\, Chicago\, IL 60
+ 608
+DESCRIPTION:Salon Show March 14 – 31\, 2026 Works by Nora Benjamin\, Ch
+ ris Cosnowski\, Alli Davis\, Annika Ingrid\, Jose Jimenez\, Samantha Jon
+ es\, Kai Offett\, Sadie Racky\, Kimberly Rodey\, Gretchen Schreiber\, Br
+ ian Selke\, Anna Showers-Cruser (ASC)\, Reina Sundara\, Kayla Williams\,
+  Curated by Lauren...\nMore info: https://thevisualist.org/2026/03/salon
+ -show/\nVenue site: https://www.purplewindowgallery.com
+URL:https://thevisualist.org/2026/03/salon-show/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

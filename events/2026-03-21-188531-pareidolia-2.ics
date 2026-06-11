@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260321-pareidolia@thevisualist.org
+DTSTAMP:20260321T000000Z
+DTSTART;TZID=America/Chicago:20260321T170000
+DTEND;TZID=America/Chicago:20260321T210000
+SUMMARY:Pareidolia
+LOCATION:ShadowBoxX Gallery\, 116 Washington St. Waukegan\, IL 60085
+DESCRIPTION:Have you ever been just minding your own business…when sudd
+ enly you notice the dishwasher looking back at you\, or that weird mark 
+ on the ceiling watching you? That’s PAREIDOLIA – Perceiving patterns
+ \, faces\, or forms in otherwise unremarkable\, unrelated objects. Parei
+ dolia can be...\nMore info: https://thevisualist.org/2026/03/pareidolia-
+ 2/\nVenue site: https://www.manvshadow.com/shadowboxx-exhibitions
+URL:https://thevisualist.org/2026/03/pareidolia-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260212-life-imitates-art@thevisualist.org
+DTSTAMP:20260212T000000Z
+DTSTART;TZID=America/Chicago:20260212T170000
+DTEND;TZID=America/Chicago:20260212T200000
+SUMMARY:Life Imitates Art
+LOCATION:Anthony Gallery\, 1360 West Lake Street Chicago\, IL 60607
+DESCRIPTION:We are pleased to present Life Imitates Art a group exhibitio
+ n curated by artist\, activist\, and cultural organizer Hank Willis Thom
+ as. Life Imitates Art is anchored by eight works by Hank Willis Thomas\,
+  comprising lenticular works and new and recent retroreflectives. Presen
+ ted...\nMore info: https://thevisualist.org/2026/02/life-imitates-art/\n
+ Venue site: https://anthonygallery.com/
+URL:https://thevisualist.org/2026/02/life-imitates-art/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

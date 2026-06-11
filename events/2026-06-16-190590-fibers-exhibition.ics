@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260616-fibers-exhibition@thevisualist.org
+DTSTAMP:20260616T000000Z
+DTSTART;TZID=America/Chicago:20260616T173000
+DTEND;TZID=America/Chicago:20260616T200000
+SUMMARY:Fibers Exhibition
+LOCATION:Side Practice Coffee\, 5139 N Damen Ave\, Chicago\, IL 60625
+DESCRIPTION:You are invited to the Fibers Exhibition\, held at Side Pract
+ ice Coffee. Fibers is an eight-portrait series that explores cultures on
+ ce left behind\, and how fabrics and garments preserve the memory of mig
+ ration\, survival\, and beauty through photography. Each portrait weaves
+  together...\nMore info: https://thevisualist.org/?p=190590\nVenue site:
+  https://partiful.com/e/px012h4RKueiMlGmfhg5?
+URL:https://thevisualist.org/?p=190590
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

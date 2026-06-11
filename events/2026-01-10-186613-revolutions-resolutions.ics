@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260110-revolutions-resolutions@thevisualist.org
+DTSTAMP:20260110T000000Z
+DTSTART;TZID=America/Chicago:20260110T130000
+DTEND;TZID=America/Chicago:20260110T160000
+SUMMARY:Revolutions/Resolutions
+LOCATION:The Oak Park Art League\, 720 Chicago Ave\, Oak Park\, IL 60302
+DESCRIPTION:Join us for the reception for the Oak Park Art League’s fir
+ st exhibition of 2026 Revolutions/Resolutions Exhibition in the Carriage
+  House Gallery Art has always been a compass for navigating uncertainty.
+  Help us map the territory between renewal and resolution. As we complet
+ e another...\nMore info: https://thevisualist.org/2026/01/revolutions-re
+ solutions/\nVenue site: https://www.oakparkartleague.org/exhibits-all/20
+ 26/1/9/revolutionsresolutions
+URL:https://thevisualist.org/2026/01/revolutions-resolutions/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

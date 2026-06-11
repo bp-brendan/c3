@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260529-exhibition-closing-artist-talk-with-miya-hannan-at-arc-galle
+ ry@thevisualist.org
+DTSTAMP:20260529T000000Z
+DTSTART;TZID=America/Chicago:20260529T160000
+DTEND;TZID=America/Chicago:20260529T180000
+SUMMARY:Exhibition Closing & Artist Talk with Miya Hannan at ARC Gallery
+LOCATION:ARC Gallery\, 1463 W Chicago Ave\, Chicago\, IL 60642
+DESCRIPTION:Join Athena Fund-awarded artist Miya Hannan for an artist tal
+ k at the closing of her exhibition\, Resonance\, which presents a series
+  of soot drawings and sculptures that explore the presence of human life
+  embedded within the landscape. Using soot—a fluid\, fragile residue o
+ f...\nMore info: https://thevisualist.org/2026/05/exhibition-closing-art
+ ist-talk-with-miya-hannan-at-arc-gallery/\nVenue site: https://www.event
+ brite.com/e/exhibition-closing-artist-talk-with-miya-hannan-tickets-1990
+ 019784746?aff=oddtdtcreator&keep_tld=true
+URL:https://thevisualist.org/2026/05/exhibition-closing-artist-talk-with-
+ miya-hannan-at-arc-gallery/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

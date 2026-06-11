@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260519-chicago-s-german-jewish-labor-history-with-ben-schacht-and-m
+ atthew-schlerf@thevisualist.org
+DTSTAMP:20260519T000000Z
+DTSTART;TZID=America/Chicago:20260519T180000
+DTEND;TZID=America/Chicago:20260519T200000
+SUMMARY:Chicago’s German-Jewish Labor History with Ben Schacht and Matt
+ hew Schlerf
+LOCATION:Goethe-Institut Chicago\, 150 N Michigan Ave\, Suite 420\, Chica
+ go\, IL 60601
+DESCRIPTION:Celebrate Labor History Month with us this May with this pres
+ entation by Ben Schacht and Matthew Schlerf on their research into Germa
+ n-Jewish labor relations in Chicago at the turn of the twentieth century
+ . REGISTER HERE...\nMore info: https://thevisualist.org/2026/05/chicagos
+ -german-jewish-labor-history-with-ben-schacht-and-matthew-schlerf/\nVenu
+ e site: https://www.goethe.de/ins/us/en/ver.cfm?event_id=27267715
+URL:https://thevisualist.org/2026/05/chicagos-german-jewish-labor-history
+ -with-ben-schacht-and-matthew-schlerf/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

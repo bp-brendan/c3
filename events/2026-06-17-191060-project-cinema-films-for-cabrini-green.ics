@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260617-project-cinema-films-for-cabrini-green@thevisualist.org
+DTSTAMP:20260617T000000Z
+DTSTART;TZID=America/Chicago:20260617T190000
+DTEND;TZID=America/Chicago:20260617T213000
+SUMMARY:Project Cinema: Films for Cabrini-Green
+LOCATION:National Public Housing Museum\, 919 South Ada St\, Chicago\, IL
+  60607
+DESCRIPTION:Bring your friends and family out for a screening of We Grown
+  Now\, preceded by short documentaries about the Cabrini-Green Homes. Li
+ ke many public housing sites prized for their architectural innovation\,
+  Cabrini-Green is beloved by filmmakers. From the Candyman coming throug
+ h the...\nMore info: https://thevisualist.org/?p=191060\nVenue site: htt
+ ps://nphm.org/event/project-cinema-films-for-cabrini-green/
+URL:https://thevisualist.org/?p=191060
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260310-robin-wall-kimmerer-virtual-talk@thevisualist.org
+DTSTAMP:20260310T000000Z
+DTSTART;TZID=America/Chicago:20260310T180000
+DTEND;TZID=America/Chicago:20260310T191500
+SUMMARY:Robin Wall Kimmerer Virtual Talk
+LOCATION:School of the Art Institute of Chicago\, online
+DESCRIPTION:Join us for a virtual conversation between author Robin Wall 
+ Kimmerer and Sekile Nzinga followed by an audience Q&A. Link to join via
+  Zoom: https://saic-edu.zoom.us/j/86115343048 Robin Wall Kimmerer is a m
+ other\, scientist\, decorated professor\, and enrolled member of the Cit
+ izen...\nMore info: https://thevisualist.org/2026/03/robin-wall-kimmerer
+ -virtual-talk/\nVenue site: https://www.saic.edu/events/robin-wall-kimme
+ rer
+URL:https://thevisualist.org/2026/03/robin-wall-kimmerer-virtual-talk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

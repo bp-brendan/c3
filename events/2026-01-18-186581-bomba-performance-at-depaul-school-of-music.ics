@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260118-bomba-performance-at-depaul-school-of-music@thevisualist.org
+DTSTAMP:20260118T000000Z
+DTSTART;TZID=America/Chicago:20260118T150000
+DTEND;TZID=America/Chicago:20260118T160000
+SUMMARY:Bomba Performance at DePaul School of Music
+LOCATION:Murray and Michele Allen Recital Hall\, Holtschneider Performanc
+ e Center\, 2330 N Halsted St\, Chicago\, IL 60614
+DESCRIPTION:In conjunction with the exhibition Tengo Lincoln Park en mi C
+ orazón: Young Lords in Chicago\, DPAM invites you to an afternoon of Bo
+ mba\, the oldest Afro-Puerto Rican musical form\, rooted in resistance a
+ nd collective expression. Artist and educator Arif Smith\, Program Manag
+ er at the Old...\nMore info: https://thevisualist.org/2026/01/bomba-perf
+ ormance-at-depaul-school-of-music/\nVenue site: https://musicbooking.dep
+ aul.edu/EventAvailability?WebEventId=20260118bomba
+URL:https://thevisualist.org/2026/01/bomba-performance-at-depaul-school-o
+ f-music/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

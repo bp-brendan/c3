@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260403-lindsey-kircher-girl-talk@thevisualist.org
+DTSTAMP:20260403T000000Z
+DTSTART;TZID=America/Chicago:20260403T180000
+DTEND;TZID=America/Chicago:20260403T200000
+SUMMARY:Lindsey Kircher: Girl Talk
+LOCATION:Oliva Gallery\, 3816 W Armitage Ave\, Chicago\, IL 60647
+DESCRIPTION:A solo exhibition of paintings by Lindsey Kircher. The exhibi
+ tion gathers a group of recent figurative works that stage psychological
+ ly charged scenes populated by women\, animals\, and symbolic objects. T
+ hrough dense compositions and saturated color\, Kircher constructs theat
+ rical...\nMore info: https://thevisualist.org/2026/04/lindsey-kircher-gi
+ rl-talk/\nVenue site: https://www.olivagallery.com/
+URL:https://thevisualist.org/2026/04/lindsey-kircher-girl-talk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260228-jesse-ly-millicent-kennedy-permeable-images-closing-receptio
+ n@thevisualist.org
+DTSTAMP:20260228T000000Z
+DTSTART;TZID=America/Chicago:20260228T140000
+DTEND;TZID=America/Chicago:20260228T160000
+SUMMARY:Jesse Ly & Millicent Kennedy: Permeable Images Closing Reception
+LOCATION:ACRE Projects\, 2921 N Clark St\, Chicago\, IL 60657
+DESCRIPTION:Don’t miss out on your final chance to experience Jesse Ly 
+ and Maven Kennedy: Permeable Images\, closing this weekend! This Saturda
+ y\, February 28 from 2 – 4pm\, meet the artists and spend time with th
+ eir work. This event will take place at ACRE Projects\, 2921 N. Clark St
+ reet. It is free...\nMore info: https://thevisualist.org/2026/02/jesse-l
+ y-millicent-kennedy-permeable-images-closing-reception/\nVenue site: htt
+ ps://www.acreresidency.org/event/jesse-ly-maven-kennedy-permeable-images
+ -closing-reception
+URL:https://thevisualist.org/2026/02/jesse-ly-millicent-kennedy-permeable
+ -images-closing-reception/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

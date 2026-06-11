@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260516-hearth-artist-talk@thevisualist.org
+DTSTAMP:20260516T000000Z
+DTSTART;TZID=America/Chicago:20260516T150000
+DTEND;TZID=America/Chicago:20260516T170000
+SUMMARY:Hearth Artist Talk
+LOCATION:Riverside Arts Center's FlexSpace\, 32 E Quincy St\, Riverside\,
+  IL 60546
+DESCRIPTION:Hearth: Kai Boone\, Carmen Casillas\, Fatimah Farooqi\, Beck 
+ Lech\, and Maddalena Piazza Artist Talk: Saturday\, May 16\, 2026\, 3:00
+  pm Exhibition Dates: April 19\, 2026 – June 6\, 2026 Gallery Hours: T
+ hursdays\, Fridays\, and Saturdays 1:00 – 5:00 pm The Riverside Arts C
+ enter’s FlexSpace is...\nMore info: https://thevisualist.org/2026/05/h
+ earth-artist-talk/\nVenue site: https://www.riversideartscenter.com/flex
+ space/2026/04/hearth/group/exhibition
+URL:https://thevisualist.org/2026/05/hearth-artist-talk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

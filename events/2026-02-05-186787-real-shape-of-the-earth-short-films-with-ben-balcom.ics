@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260205-real-shape-of-the-earth-short-films-with-ben-balcom@thevisua
+ list.org
+DTSTAMP:20260205T000000Z
+DTSTART;TZID=America/Chicago:20260205T190000
+DTEND;TZID=America/Chicago:20260205T213000
+SUMMARY:“Real shape of the earth”: Short Films with Ben Balcom
+LOCATION:The Block Cinema\, 40 Arts Cir Dr\, Evanston\, IL 60208
+DESCRIPTION:RSVP Join us for a program that spotlights the work of Milwau
+ kee-based filmmaker Ben Balcom whose films turn a lens to progressive so
+ cial projects of the past with a playful visual language adept in analog
+ ue techniques of experimental cinema. Across these films\, rural landsca
+ pes...\nMore info: https://thevisualist.org/2026/02/real-shape-of-the-ea
+ rth-short-films-with-ben-balcom/\nVenue site: https://www.blockmuseum.no
+ rthwestern.edu/cinema/
+URL:https://thevisualist.org/2026/02/real-shape-of-the-earth-short-films-
+ with-ben-balcom/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

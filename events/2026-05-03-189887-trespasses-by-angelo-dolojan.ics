@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260503-trespasses-by-angelo-dolojan@thevisualist.org
+DTSTAMP:20260503T000000Z
+DTSTART;TZID=America/Chicago:20260503T140000
+DTEND;TZID=America/Chicago:20260503T170000
+SUMMARY:Trespasses by Angelo Dolojan
+LOCATION:Epiphany Center for the Arts\, 201 S Ashland Ave\, Chicago\, IL 
+ 60607
+DESCRIPTION:Trespasses is a series of graphite drawings concerned with pr
+ oximity and how bodies\, histories\, and interior lives intersect. The w
+ orks examine moments when boundaries blur and strangers cross into one a
+ nother’s emotional terrain. The title suggests both entry and overreac
+ h. To...\nMore info: https://thevisualist.org/2026/05/trespasses-by-ange
+ lo-dolojan/\nVenue site: https://epiphanychi.com/arts/
+URL:https://thevisualist.org/2026/05/trespasses-by-angelo-dolojan/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

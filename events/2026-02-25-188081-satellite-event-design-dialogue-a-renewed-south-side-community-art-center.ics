@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260225-satellite-event-design-dialogue-a-renewed-south-side-communi
+ ty-art-center@thevisualist.org
+DTSTAMP:20260225T000000Z
+DTSTART;TZID=America/Chicago:20260225T180000
+DTEND;TZID=America/Chicago:20260225T200000
+SUMMARY:SATELLITE EVENT | DESIGN DIALOGUE: A RENEWED SOUTH SIDE COMMUNITY
+  ART CENTER
+LOCATION:The Chicago Architecture Center\, 111 E Wacker Dr\, Chicago\, IL
+  60601
+DESCRIPTION:Join us for a captivating look at the South Side Community Ar
+ t Center as we embark on the biggest transformation in our storied 85-ye
+ ar history. _____ Presented by the Chicago Architecture Center\, in conv
+ ersation with the South Side Community Art Center February 25\, 2026 6:0
+ 0–7:15 PM...\nMore info: https://thevisualist.org/2026/02/satellite-ev
+ ent-design-dialogue-a-renewed-south-side-community-art-center/\nVenue si
+ te: https://sscartcenter.org/event/satellite-event-design-dialogue-a-ren
+ ewed-south-side-community-art-center/
+URL:https://thevisualist.org/2026/02/satellite-event-design-dialogue-a-re
+ newed-south-side-community-art-center/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

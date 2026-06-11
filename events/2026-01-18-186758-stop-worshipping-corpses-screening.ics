@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260118-stop-worshipping-corpses-screening@thevisualist.org
+DTSTAMP:20260118T000000Z
+DTSTART;TZID=America/Chicago:20260118T193000
+DTEND;TZID=America/Chicago:20260118T223000
+SUMMARY:Stop Worshipping Corpses Screening
+LOCATION:UNDA.M.93 @ Kiosk\, 3054 N Sheffield Ave\, Chicago\, IL 60657
+DESCRIPTION:Join us for a screening and film work this Sunday\, January 1
+ 8th. Doors at 7:30 and show at 8. Featuring work by Joshua Boulos Andy H
+ eck Boyd Peter Burr Jacob Ciocci Garrett Davis Anna Eisenman Gabe McGee 
+ & Darius Shaoul Charlie Thall 93\nMore info: https://thevisualist.org/20
+ 26/01/stop-worshipping-corpses-screening/\nVenue site: https://tdhr.io/k
+ -i-o-s-k.html
+URL:https://thevisualist.org/2026/01/stop-worshipping-corpses-screening/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

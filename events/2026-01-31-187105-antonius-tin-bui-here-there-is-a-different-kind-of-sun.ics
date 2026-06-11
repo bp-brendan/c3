@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260131-antonius-tin-bui-here-there-is-a-different-kind-of-sun@thevi
+ sualist.org
+DTSTAMP:20260131T000000Z
+DTSTART;TZID=America/Chicago:20260131T160000
+DTEND;TZID=America/Chicago:20260131T190000
+SUMMARY:Antonius-Tín Bui: here\, there is a different kind of sun
+LOCATION:moniquemeloche\, 451 N Paulina St\, Chicago\, IL 60622
+DESCRIPTION:moniquemeloche is pleased to present here\, there is a differ
+ ent kind of sun\, a solo exhibition by Antonius-Tín Bui. Bui’s poly-d
+ isciplinary practice traces a lineage of hand-cut paper\, community enga
+ gement\, and spiritual inquiry rooted in queerness and diaspora to carve
+  space for...\nMore info: https://thevisualist.org/2026/01/antonius-tin-
+ bui-here-there-is-a-different-kind-of-sun/\nVenue site: https://www.moni
+ quemeloche.com/exhibitions/232-antonius-tin-bui-here-there-is-a-differen
+ t-kind/press_release_text/
+URL:https://thevisualist.org/2026/01/antonius-tin-bui-here-there-is-a-dif
+ ferent-kind-of-sun/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

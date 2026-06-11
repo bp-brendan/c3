@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260222-choreographic-place@thevisualist.org
+DTSTAMP:20260222T000000Z
+DTSTART;TZID=America/Chicago:20260222T130000
+DTEND;TZID=America/Chicago:20260222T160000
+SUMMARY:Choreographic Place
+LOCATION:Evanston Art Center\, 1717 Central St.\, Evanston\, IL\, 60201
+DESCRIPTION:On View February 21 – March 15\, 2026 Opening Reception Sun
+ day\, February 22nd\, 1-4 pm Choreographic Place is an exhibition progra
+ m presented by Bridge\, premiering at the Evanston Art Center\, that exp
+ lores the evolving relationships between dance\, sculpture\, movement\, 
+ written...\nMore info: https://thevisualist.org/2026/02/choreographic-pl
+ ace/\nVenue site: https://www.evanstonartcenter.org/exhibitions/choreogr
+ aphic-place-david-sundry-michael-workman-michelle-kranicke
+URL:https://thevisualist.org/2026/02/choreographic-place/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

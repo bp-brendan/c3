@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260206-hai-wen-lin-ivan-david-ng-mountain-call@thevisualist.org
+DTSTAMP:20260206T000000Z
+DTSTART;TZID=America/Chicago:20260206T180000
+DTEND;TZID=America/Chicago:20260206T210000
+SUMMARY:Hai-Wen Lin & Ivan David Ng: Mountain Call
+LOCATION:Roots & Culture\, 1034 N Milwaukee Ave. Chicago\, IL 60642
+DESCRIPTION:Mountain Call is an exhibition of new works by Hai-Wen Lin an
+ d Ivan David Ng. Both artists are Hakka\, a group of people who disperse
+ d from the central plains of China a thousand years ago. Due to their co
+ nstant migrations\, they were referred to as “Guest Families.” Over 
+ many...\nMore info: https://thevisualist.org/2026/02/hai-wen-lin-ivan-da
+ vid-ng-mountain-call/\nVenue site: https://www.rootsandculturecac.org/sh
+ ow/mountain-call-hai-wen-lin-ivan-ng/
+URL:https://thevisualist.org/2026/02/hai-wen-lin-ivan-david-ng-mountain-c
+ all/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

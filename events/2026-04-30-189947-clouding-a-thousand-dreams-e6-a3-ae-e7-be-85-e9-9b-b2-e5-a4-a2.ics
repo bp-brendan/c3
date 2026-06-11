@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260430-clouding-a-thousand-dreams@thevisualist.org
+DTSTAMP:20260430T000000Z
+DTSTART;TZID=America/Chicago:20260430T173000
+DTEND;TZID=America/Chicago:20260430T203000
+SUMMARY:Clouding a Thousand Dreams 森羅雲夢
+LOCATION:neomediapolis\, Studio 473\, 2233 S Throop St\, Chicago\, IL 606
+ 08
+DESCRIPTION:Join us for the opening of Che Pai’s solo exhibition “Clo
+ uding a Thousand Dreams 森羅雲夢” on April 30th\, 2026\, 5:30–8:
+ 30pm. Featuring video sculptures\, projections\, found objects\, and par
+ ticipatory interactions\, Pai recreates the artistic strolling experienc
+ e from Taiwan\, his hometown...\nMore info: https://thevisualist.org/202
+ 6/04/clouding-a-thousand-dreams-森羅雲夢/
+URL:https://thevisualist.org/2026/04/clouding-a-thousand-dreams-森羅雲
+ 夢/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

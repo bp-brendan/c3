@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260201-ross-sawyers-the-future-still-isn-t-what-it-used-to-be@thevi
+ sualist.org
+DTSTAMP:20260201T000000Z
+DTSTART;TZID=America/Chicago:20260201T150000
+DTEND;TZID=America/Chicago:20260201T180000
+SUMMARY:Ross Sawyers: The Future Still Isn’t What It Used to Be
+LOCATION:Riverside Arts Center\, 32 E Quincy St\, Riverside\, IL 60546
+DESCRIPTION:ROSS SAWYERS | THE FUTURE STILL ISN’T WHAT IT USED TO BE | 
+ FEBRUARY 1 – MARCH 7\, 2026 The Riverside Arts Center is pleased to pr
+ esent Ross Sawyer’s solo exhibiton\, The Future Still Isn’t What It 
+ Used to Be curated by Kristin Taylor in the Freeark Gallery and Sculptur
+ e Garden. Please...\nMore info: https://thevisualist.org/2026/02/ross-sa
+ wyers-the-future-still-isnt-what-it-used-to-be-2/\nVenue site: https://w
+ ww.riversideartscenter.com/freearksculpturegarden/202602/ross/sawyers
+URL:https://thevisualist.org/2026/02/ross-sawyers-the-future-still-isnt-w
+ hat-it-used-to-be-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

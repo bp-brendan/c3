@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260331-lauren-lee-mccarthy-lecture@thevisualist.org
+DTSTAMP:20260331T000000Z
+DTSTART;TZID=America/Chicago:20260331T180000
+DTEND;TZID=America/Chicago:20260331T193000
+SUMMARY:Lauren Lee McCarthy Lecture
+LOCATION:The Art Institute of Chicago\, Fullerton Hall\, 111 S Michigan A
+ ve\, Chicago\, IL 60603
+DESCRIPTION:Join us for a lecture by artist Lauren Lee McCarthy followed 
+ by an audience Q&A. Lauren Lee McCarthy is an artist examining social re
+ lationships in the midst of surveillance\, automation\, and algorithmic 
+ living. She creates performances inviting viewers to engage. To remote-c
+ ontrol her...\nMore info: https://thevisualist.org/2026/03/lauren-lee-mc
+ carthy-lecture/\nVenue site: https://www.saic.edu/events/lauren-lee-mcca
+ rthy-lecture
+URL:https://thevisualist.org/2026/03/lauren-lee-mccarthy-lecture/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260529-gamma-trace-photosensitive-sites-latent-trauma-images-of-rad
+ iation@thevisualist.org
+DTSTAMP:20260529T000000Z
+DTSTART;TZID=America/Chicago:20260529T170000
+DTEND;TZID=America/Chicago:20260529T200000
+SUMMARY:GAMMA TRACE: Photosensitive Sites. Latent Trauma. Images of Radia
+ tion.
+LOCATION:Hard Return\, 410 S Michigan Ave\, # 306\, Chicago\, IL 60605
+DESCRIPTION:GAMMA TRACE: Photosensitive Sites. Latent Trauma. Images of R
+ adiation. Gamma Trace investigates relationships between photography\, r
+ adiation\, material trace\, and disappearance through radiographic expos
+ ures\, unstable photographic emulsions\, photo-intaglio prints\, and...\
+ nMore info: https://thevisualist.org/2026/05/gamma-trace-photosensitive-
+ sites-latent-trauma-images-of-radiation/\nVenue site: https://hardreturn
+ .art/monika-niwelinska-1\, http://www.niwelinska.com
+URL:https://thevisualist.org/2026/05/gamma-trace-photosensitive-sites-lat
+ ent-trauma-images-of-radiation/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260213-nehir-uslu-holding-space@thevisualist.org
+DTSTAMP:20260213T000000Z
+DTSTART;TZID=America/Chicago:20260213T170000
+DTEND;TZID=America/Chicago:20260213T210000
+SUMMARY:Nehir Uslu: Holding Space
+LOCATION:Art City\, 1400 N Halsted St\, Chicago\, IL 60642
+DESCRIPTION:Nehir Uslu’s Holding Space features interactive fiber works
+ \, soft objects\, and weavings that invite visitors to engage in reflect
+ ion\, intentional rest\, and care. Informed by Uslu’s experience in me
+ ntal health advocacy and working in clinical settings\, the works center
+  softness as an...\nMore info: https://thevisualist.org/2026/02/nehir-us
+ lu-holding-space/\nVenue site: https://newgallery.online/nehir-uslu-hold
+ ing-space
+URL:https://thevisualist.org/2026/02/nehir-uslu-holding-space/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

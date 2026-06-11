@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260502-karla-santana-loteria@thevisualist.org
+DTSTAMP:20260502T000000Z
+DTSTART;TZID=America/Chicago:20260502T180000
+DTEND;TZID=America/Chicago:20260502T200000
+SUMMARY:Karla Santana: Lotería
+LOCATION:Spudnik Press\, 1821 W Hubbard St\, Suite 302 Chicago\, IL 60622
+DESCRIPTION:Lotería takes its name and structure from the iconic Mexican
+  card game\, repurposing its symbolic imagery as a framework for deeply 
+ personal storytelling. Each piece in the series functions like a card dr
+ awn from the deck — a moment\, a symbol\, a feeling — mapping Santan
+ a’s relationship...\nMore info: https://thevisualist.org/2026/05/karla
+ -santana-loteria/\nVenue site: https://www.spudnikpress.org/karla-santan
+ a-loteria/
+URL:https://thevisualist.org/2026/05/karla-santana-loteria/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260221-artist-walkthrough-with-luftwerk-and-kate-joyce@thevisualist
+ .org
+DTSTAMP:20260221T000000Z
+DTSTART;TZID=America/Chicago:20260221T150000
+DTEND;TZID=America/Chicago:20260221T170000
+SUMMARY:Artist Walkthrough with Luftwerk and Kate Joyce
+LOCATION:SECRIST | BEACH\, 1801 W Hubbard St\, Chicago\, IL 60622
+DESCRIPTION:Join art historian Giovanni Aloi and exhibiting artists Luftw
+ erk and Kate Joyce in a conversational walkthrough of Luftwerk: The Sun 
+ Standing Still and concurrent survey exhibition Luminous Matter. Through
+  exploration of the works\, the conversation will interrogate the artist
+ ’s...\nMore info: https://thevisualist.org/2026/02/artist-walkthrough-
+ with-luftwerk-and-kate-joyce/\nVenue site: http://secristbeach.com/
+URL:https://thevisualist.org/2026/02/artist-walkthrough-with-luftwerk-and
+ -kate-joyce/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260508-chiarts-senior-showcase-2026@thevisualist.org
+DTSTAMP:20260508T000000Z
+DTSTART;TZID=America/Chicago:20260508T180000
+DTEND;TZID=America/Chicago:20260508T200000
+SUMMARY:ChiArts Senior Showcase 2026
+LOCATION:Patient Info + El Schomburg\, 902 N Western Ave and 2538 W Divis
+ ion St Chicago IL 60622
+DESCRIPTION:One half of this year’s ChiArts Senior Showcase will be at 
+ Patient Info! Join us this Friday 5/8 from 6:00 – 8:00 PM for the open
+ ing reception. The other half of the showcase will be on view at El Scho
+ mburg (2538 W Division St) @elschomburg so be sure to check that out as 
+ well. The...\nMore info: https://thevisualist.org/2026/05/chiarts-senior
+ -showcase-2026/\nVenue site: http://patientinfo.club
+URL:https://thevisualist.org/2026/05/chiarts-senior-showcase-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

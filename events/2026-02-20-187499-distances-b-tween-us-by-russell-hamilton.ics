@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260220-russell-hamilton-distances-b-tween-us@thevisualist.org
+DTSTAMP:20260220T000000Z
+DTSTART;TZID=America/Chicago:20260220T180000
+DTEND;TZID=America/Chicago:20260220T210000
+SUMMARY:Russell Hamilton: Distances B-Tween Us
+LOCATION:Elephant Room Gallery\, 704 S Wabash Ave.\, Chicago\, Il 60605
+DESCRIPTION:“Distances B-tween Us” by Russell Hamilton explores how p
+ hysical movement\, memory\, and shifting environments shape the ways we 
+ relate to one another and to ourselves. The work thoughtfully considers 
+ the spaces between us – physical\, emotional and cultural – and the 
+ influence that has...\nMore info: https://thevisualist.org/2026/02/dista
+ nces-b-tween-us-by-russell-hamilton/\nVenue site: http://www.elephantroo
+ mgallery.com/
+URL:https://thevisualist.org/2026/02/distances-b-tween-us-by-russell-hami
+ lton/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

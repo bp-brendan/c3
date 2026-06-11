@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260501-between-voice-and-silence-in-memory-of-ukrainian-poet-maksym
+ -kryvtsov@thevisualist.org
+DTSTAMP:20260501T000000Z
+DTSTART;TZID=America/Chicago:20260501T180000
+DTEND;TZID=America/Chicago:20260501T220000
+SUMMARY:Between Voice and Silence In memory of Ukrainian poet Maksym Kryv
+ tsov
+LOCATION:Ukrainian Institute of Modern Art\, 2320 W Chicago Ave\, Chicago
+ \, IL 60622
+DESCRIPTION:The exhibition ‘Between Voice and Silence’ explores the r
+ ole of empathy and humanity in times of crisis. Through their works\, Uk
+ rainian and American artists Katya Lisova (textiles)\, Matvii Vaisberg (
+ prints)\, and Ira Bondarenko (ceramics) reflect on the limits and power 
+ of human agency...\nMore info: https://thevisualist.org/2026/05/between-
+ voice-and-silence-in-memory-of-ukrainian-poet-maksym-kryvtsov/\nVenue si
+ te: https://uima-chicago.org/new-page
+URL:https://thevisualist.org/2026/05/between-voice-and-silence-in-memory-
+ of-ukrainian-poet-maksym-kryvtsov/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260130-naeemeh-naeemaei-unexpected-return-s@thevisualist.org
+DTSTAMP:20260130T000000Z
+DTSTART;TZID=America/Chicago:20260130T180000
+DTEND;TZID=America/Chicago:20260130T210000
+SUMMARY:Naeemeh Naeemaei: Unexpected Return/s
+LOCATION:T. Mari Art Gallery\, 1023 N Western Ave\, Chicago\, IL 60622
+DESCRIPTION:Unexpected Return/s\, an exhibition by artist Naeemeh Naeemae
+ i. Opening Reception January 30th\, 6-9pm\nMore info: https://thevisuali
+ st.org/2026/01/naeemeh-naeemaei-unexpected-return-s/\nVenue site: https:
+ //www.tmarigallery.com/?ss_source=sscampaigns&ss_campaign_id=696e88cfde2
+ d543280cc24b7&ss_email_id=696f45211e446059ed1c1b00&ss_campaign_name=Unex
+ pected+Returns&ss_campaign_sent_date=2026-01-20T090458Z
+URL:https://thevisualist.org/2026/01/naeemeh-naeemaei-unexpected-return-s
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

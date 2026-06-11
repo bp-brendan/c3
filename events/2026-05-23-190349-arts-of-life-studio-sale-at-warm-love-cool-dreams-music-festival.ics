@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260523-arts-of-life-studio-sale-at-warm-love-cool-dreams-music-fest
+ ival@thevisualist.org
+DTSTAMP:20260523T000000Z
+DTSTART;VALUE=DATE:20260523
+SUMMARY:Arts of Life Studio Sale at Warm Love Cool Dreams Music Festival
+LOCATION:Salt Shed\, 1357 N Elston Ave\, Chicago\, IL 60642
+DESCRIPTION:The wide-ranging\, multi-genre festival takes place across th
+ e entirety of the Salt Shed facility: indoors\, outside on the Fairgroun
+ ds\, as well as the cocktail bar Three Top Lounge and arcade Elston Elec
+ tric. Warm Love Cool Dreams proudly features the inclusion of Oddball Ma
+ rket and...\nMore info: https://thevisualist.org/2026/05/arts-of-life-st
+ udio-sale-at-warm-love-cool-dreams-music-festival/\nVenue site: https://
+ artsoflife.org/event/2026-studio-sale/
+URL:https://thevisualist.org/2026/05/arts-of-life-studio-sale-at-warm-lov
+ e-cool-dreams-music-festival/
+END:VEVENT
+END:VCALENDAR

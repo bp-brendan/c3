@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260223-mosaic-series@thevisualist.org
+DTSTAMP:20260223T000000Z
+DTSTART;TZID=America/Chicago:20260223T180000
+DTEND;TZID=America/Chicago:20260223T200000
+SUMMARY:Mosaic Series
+LOCATION:Gerber/Hart Library & Archives\, 6500 N Clark St\, Chicago\, IL 
+ 60626
+DESCRIPTION:On Monday\, February 23rd\, at 6 PM Gerber/Hart will host (X)
+  Collective’s Mosaic Series. For their February gathering\, they will 
+ be hosting LGBTQ+ theatre artists who work in or around the Chicago area
+  for connection\, relationship-building\, and peer resource-sharing. The
+  Mosaic Series...\nMore info: https://thevisualist.org/2026/02/mosaic-se
+ ries/\nVenue site: https://www.gerberhart.org/events/mosaic-series-for-l
+ gbtq-theatre-artists/
+URL:https://thevisualist.org/2026/02/mosaic-series/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

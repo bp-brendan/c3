@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-glimmers-performance-by-sebastian-hernandez-ale-celeste-camp
+ os@thevisualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T200000
+DTEND;TZID=America/Chicago:20260411T220000
+SUMMARY:Glimmers: Performance by Sebastian Hernandez & Ále ‘Celeste’
+  Campos
+LOCATION:The California Clipper\, 1002 N. California Ave\, Chicago\, IL 6
+ 0622
+DESCRIPTION:Performances 8pm – Ále ‘Celeste’ Campos 11pm – Sebas
+ tian Hernandez Followed by DJ Sets by BROWNSKINHAZEL\, J. Córdova\, & J
+ enny Fox Suggested donation till 11pm to support Glimmers program $5 ent
+ ry post-11pm to support DJs — Join us at The California Clipper on Sat
+ urday\, April 11 for a...\nMore info: https://thevisualist.org/2026/04/g
+ limmers-performance-by-sebastian-hernandez-ale-celeste-campos/\nVenue si
+ te: https://chuquimarca.com/glimmers-chicago/
+URL:https://thevisualist.org/2026/04/glimmers-performance-by-sebastian-he
+ rnandez-ale-celeste-campos/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

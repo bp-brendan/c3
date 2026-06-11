@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260401-greatest-hits@thevisualist.org
+DTSTAMP:20260401T000000Z
+DTSTART;TZID=America/Chicago:20260401T170000
+DTEND;TZID=America/Chicago:20260401T180000
+SUMMARY:Greatest Hits
+LOCATION:Locker Room\, 2320 N Kenmore Ave\, Chicago\, IL\, 60614
+DESCRIPTION:We are very pleased to present our next show – Greatest Hit
+ s an installation by Lucy Scales featuring a live performance by Gabelif
+ e100 on 4/1 Come and feel the release! Lucy Scales (b. 2005) is a multi-
+ disciplinary artist who works primarily with mannequins\, print media\, 
+ and objects...\nMore info: https://thevisualist.org/2026/04/greatest-hit
+ s/\nVenue site: https://www.instagram.com/p/DWRmiRvjboD/?utm_source=ig_w
+ eb_copy_link&igsh=MzRlODBiNWFlZA==
+URL:https://thevisualist.org/2026/04/greatest-hits/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

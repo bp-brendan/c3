@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260220-michelle-wasson-songs-of-the-marauder@thevisualist.org
+DTSTAMP:20260220T000000Z
+DTSTART;TZID=America/Chicago:20260220T170000
+DTEND;TZID=America/Chicago:20260220T200000
+SUMMARY:Michelle Wasson: Songs of the Marauder
+LOCATION:ANDREW RAFACZ\, 1749 W Chicago Ave\, Chicago\, IL 60622
+DESCRIPTION:ANDREW RAFACZ is delighted to announce Songs of the Marauder\
+ , a solo exhibition of new paintings from Michelle Wasson\, in Gallery O
+ ne. The exhibition opens Friday\, February 20th and continues through Sa
+ turday\, April 4th\, 2026. This is the artist’s first solo exhibition 
+ with the...\nMore info: https://thevisualist.org/2026/02/michelle-wasson
+ -songs-of-the-marauder/\nVenue site: https://andrewrafacz.com/exhibition
+ s/michelle-wasson/
+URL:https://thevisualist.org/2026/02/michelle-wasson-songs-of-the-maraude
+ r/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

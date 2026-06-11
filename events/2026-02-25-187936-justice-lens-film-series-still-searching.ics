@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260225-justice-lens-film-series-still-searching@thevisualist.org
+DTSTAMP:20260225T000000Z
+DTSTART;TZID=America/Chicago:20260225T180000
+DTEND;TZID=America/Chicago:20260225T203000
+SUMMARY:Justice Lens Film Series: Still Searching
+LOCATION:Chicago Justice Gallery\, 1344 S Halsted St\, Chicago\, IL 60607
+DESCRIPTION:Join the UIC Social Justice Initiative\, A Long Walk Home\, U
+ IC Black Studies\, and the Black Midwest Initiative for a special direct
+ or’s cut screening of the film Still Searching (2018)\, a powerful exp
+ loration of Black women’s lives\, loss\, and resilience in the face of
+  disappearance in...\nMore info: https://thevisualist.org/2026/02/justic
+ e-lens-film-series-still-searching/\nVenue site: https://sji.uic.edu/pro
+ grams/sji-justice-lens-film-series/
+URL:https://thevisualist.org/2026/02/justice-lens-film-series-still-searc
+ hing/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

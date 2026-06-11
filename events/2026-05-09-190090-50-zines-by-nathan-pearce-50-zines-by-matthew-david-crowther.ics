@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-50-zines-by-nathan-pearce-50-zines-by-matthew-david-crowther
+ @thevisualist.org
+DTSTAMP:20260509T000000Z
+DTSTART;TZID=America/Chicago:20260509T160000
+DTEND;TZID=America/Chicago:20260509T220000
+SUMMARY:50 Zines By Nathan Pearce 50 Zines By Matthew David Crowther
+LOCATION:See You Soon at Kimball Arts Center\, 1757 N Kimball Ave\, Studi
+ o 203C\, Chicago\, IL 60647
+DESCRIPTION:an interactive exhibition & artist talk FREE Light snacks and
+  drinks provided Saturday\, May 9th 4pm til 10pm See You Soon at Kimball
+  Arts Center 1757 N Kimball Ave\, upstairs in 203C\nMore info: https://t
+ hevisualist.org/2026/05/50-zines-by-nathan-pearce-50-zines-by-matthew-da
+ vid-crowther/\nVenue site: https://www.seeyousoon.space/calendar/50-zine
+ s
+URL:https://thevisualist.org/2026/05/50-zines-by-nathan-pearce-50-zines-b
+ y-matthew-david-crowther/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260331-spring-fling@thevisualist.org
+DTSTAMP:20260331T000000Z
+DTSTART;VALUE=DATE:20260331
+SUMMARY:Spring Fling
+LOCATION:NEW Gallery\, 1400 N Halsted St\, Chicago\, IL
+DESCRIPTION:Join nonprofit NEW Gallery for the opening reception of Sprin
+ g Fling. Spring Fling brings together a vibrant selection of artworks in
+ spired by the energy and renewal of the season. Curated from an open cal
+ l inviting artists to explore themes of rebirth\, color\, light\, and mo
+ vement\, the...\nMore info: https://thevisualist.org/2026/03/spring-flin
+ g-2/\nVenue site: https://newgallery.online/spring-fling
+URL:https://thevisualist.org/2026/03/spring-fling-2/
+END:VEVENT
+END:VCALENDAR

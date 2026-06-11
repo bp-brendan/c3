@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260206-ancestral-futures@thevisualist.org
+DTSTAMP:20260206T000000Z
+DTSTART;TZID=America/Chicago:20260206T170000
+DTEND;TZID=America/Chicago:20260206T200000
+SUMMARY:Ancestral Futures
+LOCATION:ARC Gallery\, 1463 W Chicago Ave
+DESCRIPTION:Ancestral Futures Curator: Donté K. Hayes Opening Reception:
+  Friday\, February 6th\, 5-8pm What does it mean to be a good future anc
+ estor? How might today’s personal\, cultural\, social\, and or environ
+ mental actions become legacies for those who come after us? This juried 
+ exhibition...\nMore info: https://thevisualist.org/2026/02/ancestral-fut
+ ures/\nVenue site: https://www.arcgallery.org/exhibitions-archive/ancest
+ ral-futures
+URL:https://thevisualist.org/2026/02/ancestral-futures/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

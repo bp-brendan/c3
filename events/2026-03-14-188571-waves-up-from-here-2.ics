@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260314-waves-up-from-here@thevisualist.org
+DTSTAMP:20260314T000000Z
+DTSTART;TZID=America/Chicago:20260314T120000
+DTEND;TZID=America/Chicago:20260314T150000
+SUMMARY:Waves: Up From Here
+LOCATION:Beverly Phono Mart\, 1802 W 103rd St\, Chicago\, IL 60643
+DESCRIPTION:Waves: Up From Here is an art exhibition inspired by the accl
+ aimed Los Angeles trio\, Moonchild’s latest emotionally raw album\, Wa
+ ves\, released in collaboration with ONErpm. Delving into themes on rela
+ tionships\, fear\, grief\, resilience\, healing and self-worth\, the alb
+ um evokes an...\nMore info: https://thevisualist.org/2026/03/waves-up-fr
+ om-here-2/\nVenue site: https://www.beverlyphonomart.com/?srsltid=AfmBOo
+ osup_oBW-XtnRHdD1WChQoillb_ORmHcA8kj0xJ6hNeusC8efg
+URL:https://thevisualist.org/2026/03/waves-up-from-here-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

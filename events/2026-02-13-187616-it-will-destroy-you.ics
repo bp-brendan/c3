@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260213-it-will-destroy-you@thevisualist.org
+DTSTAMP:20260213T000000Z
+DTSTART;TZID=America/Chicago:20260213T180000
+DTEND;TZID=America/Chicago:20260213T210000
+SUMMARY:It Will Destroy You
+LOCATION:Ukrainian Institute of Modern Art\, 2320 W Chicago Ave\, Chicago
+ \, IL 60622
+DESCRIPTION:The Ukrainian Institute of Modern Art (UIMA) is pleased to pr
+ esent It Will Destroy You\, a powerful group exhibition curated by Isaia
+ h Lee and Samiah Fulcher. The exhibition opens February 13\, 2026\, and 
+ will run through April 19\, 2026\, with an artist talk scheduled for Fri
+ day\, March 6...\nMore info: https://thevisualist.org/2026/02/it-will-de
+ stroy-you/\nVenue site: https://uima-chicago.org/
+URL:https://thevisualist.org/2026/02/it-will-destroy-you/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260412-ben-foch-something-old-something-new-something-borrowed-some
+ thing-blue@thevisualist.org
+DTSTAMP:20260412T000000Z
+DTSTART;TZID=America/Chicago:20260412T140000
+DTEND;TZID=America/Chicago:20260412T180000
+SUMMARY:Ben Foch: Something Old\, Something New\, Something Borrowed\, So
+ mething Blue
+LOCATION:Epiphany Center for the Arts\, 201 S Ashland Ave\, Chicago\, IL 
+ 60607
+DESCRIPTION:Attend the EXPO reception\, April 12th\, from 2:00-6:00 pm. 
+ “Something Old\, Something New\, Something Borrowed\, Something Blue
+ ” is an exhibition of select works from Chicago artist Ben Foch that s
+ pan the past 20 + years of his making. Some works are from the early 200
+ 0’s\, never before...\nMore info: https://thevisualist.org/2026/04/the
+ -opening-reception-of-something-old-something-new-something-borrowed-som
+ ething-blue-by-ben-foch-2/\nVenue site: https://epiphanychi.com/arts/
+URL:https://thevisualist.org/2026/04/the-opening-reception-of-something-o
+ ld-something-new-something-borrowed-something-blue-by-ben-foch-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

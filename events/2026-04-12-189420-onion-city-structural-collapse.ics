@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260412-onion-city-structural-collapse@thevisualist.org
+DTSTAMP:20260412T000000Z
+DTSTART;TZID=America/Chicago:20260412T120000
+DTEND;TZID=America/Chicago:20260412T140000
+SUMMARY:Onion City: Structural Collapse
+LOCATION:Chicago Filmmakers Firehouse Cinema\, 1326 W Hollywood Ave\, Chi
+ cago\, IL\, 60660
+DESCRIPTION:Break down with STRUCTURAL COLLAPSE\, a lineup of works that 
+ burst apart\, topple\, freak out\, undo\, disintegrate\, and at times so
+ w chaos. Pixels explode\, the internet hemorrhages\, institutions shut d
+ own\, and language fails to cohere. We walk through the funhouse\, mess 
+ up our ABCs\, learn...\nMore info: https://thevisualist.org/2026/04/onio
+ n-city-structural-collapse/\nVenue site: https://chicagofilmmakers.org/u
+ pcoming-screenings-and-events/structural-collapse
+URL:https://thevisualist.org/2026/04/onion-city-structural-collapse/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

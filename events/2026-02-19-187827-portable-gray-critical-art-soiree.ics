@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260219-portable-gray-critical-art-soiree@thevisualist.org
+DTSTAMP:20260219T000000Z
+DTSTART;TZID=America/Chicago:20260219T180000
+DTEND;TZID=America/Chicago:20260219T210000
+SUMMARY:Portable Gray Critical Art Soirée
+LOCATION:Gray Center for Arts and Inquiry\, 915 E 60th St\, Chicago\, IL 
+ 60637
+DESCRIPTION:On the occasion of the 2026 College Art Association’s annua
+ l conference held in Chicago\, The University of Chicago’s Richard and
+  Mary L. Gray Center for Arts and Inquiry invite you\, Thursday\, Februa
+ ry 19th\, 6pm\, to join us for our Portable Gray Critical Art Soirée\, 
+ at 929 E 60th...\nMore info: https://thevisualist.org/2026/02/portable-g
+ ray-critical-art-soiree/\nVenue site: https://events.uchicago.edu/event/
+ 259085-portable-gray-critical-art-soire
+URL:https://thevisualist.org/2026/02/portable-gray-critical-art-soiree/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

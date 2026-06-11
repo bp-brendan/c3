@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260206-won-t-you-celebrate-with-me@thevisualist.org
+DTSTAMP:20260206T000000Z
+DTSTART;TZID=America/Chicago:20260206T170000
+DTEND;TZID=America/Chicago:20260206T200000
+SUMMARY:Won’t You Celebrate With Me?
+LOCATION:Chicago Artists Coalition\, 1431 W Hubbard St\, Ste 201\, Chicag
+ o\, IL 60642
+DESCRIPTION:Chicago Artists Coalition presents “Won’t You Celebrate W
+ ith Me?”\, a three-person exhibition by 2024-26 Artist Residents Reeva
+ h Agarwaal\, Cay B. Mims\, and Nekita Thomas\, curated by 2024-26 Curato
+ rial Resident Sidney Mori Garrett. Chicago Artists Coalition presents a 
+ three-person...\nMore info: https://thevisualist.org/2026/02/wont-you-ce
+ lebrate-with-me-2/\nVenue site: https://chicagoartistscoalition.org/even
+ ts/wont-you-celebrate-with-me
+URL:https://thevisualist.org/2026/02/wont-you-celebrate-with-me-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

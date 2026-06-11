@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260311-the-power-of-her-voice-native-matriarchs-leading-change@thev
+ isualist.org
+DTSTAMP:20260311T000000Z
+DTSTART;TZID=America/Chicago:20260311T110000
+DTEND;TZID=America/Chicago:20260311T130000
+SUMMARY:The Power of Her Voice: Native Matriarchs Leading Change
+LOCATION:Elgin Community College Jobe Lounge\, 1700 Spartan Dr\, Elgin\, 
+ IL 60123
+DESCRIPTION:Join us in welcoming three incredible Native Shoshone leaders
+ : Randy’L Teton: Shoshone-Bannock author and model of the US Sacagawea
+  dollar coin Tanaya Winder: Duckwater Shoshone poet and storyteller Tric
+ ia Renée Kucinski: Eastern Shoshone author and activist The Great Liste
+ ning is...\nMore info: https://thevisualist.org/2026/03/the-power-of-her
+ -voice-native-matriarchs-leading-change/\nVenue site: https://www.thegre
+ atlistening.co/events/the-power-of-her-voice-native-matriarchs-leading-c
+ hange
+URL:https://thevisualist.org/2026/03/the-power-of-her-voice-native-matria
+ rchs-leading-change/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

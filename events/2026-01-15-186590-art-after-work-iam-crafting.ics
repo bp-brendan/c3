@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260115-art-after-work-iam-crafting@thevisualist.org
+DTSTAMP:20260115T000000Z
+DTSTART;TZID=America/Chicago:20260115T173000
+DTEND;TZID=America/Chicago:20260115T193000
+SUMMARY:Art After Work: IAM crafting
+LOCATION:Intuit Art Museum\, 756 N Milwaukee Ave\, Chicago\, IL 60642
+DESCRIPTION:Mold and decorate ceramics that tell a story with IAM educato
+ r Nyah\, inspired by Catalyst artist Marva Lee Pitchford-Jolly. No exper
+ ience needed. Join us to make something personal and learn more about Ca
+ talyst: Im/migration and Self-taught Art in Chicago. Free with museum ad
+ mission...\nMore info: https://thevisualist.org/2026/01/art-after-work-i
+ am-crafting/\nVenue site: https://art.org/events/iam-crafting-january-20
+ 26
+URL:https://thevisualist.org/2026/01/art-after-work-iam-crafting/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260306-iris-goldstein-a-new-way-of-seeing@thevisualist.org
+DTSTAMP:20260306T000000Z
+DTSTART;TZID=America/Chicago:20260306T170000
+DTEND;TZID=America/Chicago:20260306T200000
+SUMMARY:Iris Goldstein: A New Way of Seeing
+LOCATION:ARC Gallery\, 1463 W Chicago Ave\, Chicago\, IL 60622
+DESCRIPTION:Iris Goldstein\, a long-time member of ARC Gallery is exhibit
+ ing colored-pencil drawings at the gallery in March 2026 Goldstein is al
+ ways interested in the unusual and offbeat. Though she has been committe
+ d to nonobjective art\, she tries to find visual images that are suggest
+ ive and...\nMore info: https://thevisualist.org/2026/03/iris-goldstein-a
+ -new-way-of-seeing/\nVenue site: https://www.arcgallery.org/exhibitions-
+ archive/iris-goldstein-16
+URL:https://thevisualist.org/2026/03/iris-goldstein-a-new-way-of-seeing/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

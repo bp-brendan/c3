@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260526-dovewhether-live-show-female-trouble@thevisualist.org
+DTSTAMP:20260526T000000Z
+DTSTART;TZID=America/Chicago:20260526T183000
+DTEND;TZID=America/Chicago:20260526T203000
+SUMMARY:Dovewhether Live Show | Female Trouble
+LOCATION:Elastic Arts\, 3429 W Diversey Ave\, #208\, Chicago\, IL 60647
+DESCRIPTION:Marcy and AP of Dovewhether are having a live show on May 26t
+ h!!! They have hosted Dovewhether\, a gay socialist podcast about media 
+ and art\, for 2.5 years. Last time they tried to host a live show someon
+ e almost [REDACTED] one of our co-hosts. After surviving a near-death ex
+ perience...\nMore info: https://thevisualist.org/2026/05/dovewhether-liv
+ e-show-female-trouble/\nVenue site: https://www.getpie.app/plans/8fa5922
+ 2-d979-4376-90b2-18650ab217f5
+URL:https://thevisualist.org/2026/05/dovewhether-live-show-female-trouble
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

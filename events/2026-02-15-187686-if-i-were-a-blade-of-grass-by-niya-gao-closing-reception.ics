@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260215-if-i-were-a-blade-of-grass-by-niya-gao-closing-reception@the
+ visualist.org
+DTSTAMP:20260215T000000Z
+DTSTART;TZID=America/Chicago:20260215T170000
+DTEND;TZID=America/Chicago:20260215T200000
+SUMMARY:if i were a blade of grass by Niya Gao – Closing Reception
+LOCATION:SPACE 01\, 4850 W Bloomingdale Ave\, Chicago\, IL 60639
+DESCRIPTION:come in to view niya gao’s transient body of sculptures at 
+ SPACE 01 before they leave! her book ‘The Grass Between Words’ is av
+ ailable in the form of hardcover\, softcover\, and digital copies. pleas
+ e reach out to purchase! closing reception 02.15.2026 from 5-8p 4850 w b
+ loomingdale free...\nMore info: https://thevisualist.org/2026/02/if-i-we
+ re-a-blade-of-grass-by-niya-gao-closing-reception/\nVenue site: https://
+ s01.world/
+URL:https://thevisualist.org/2026/02/if-i-were-a-blade-of-grass-by-niya-g
+ ao-closing-reception/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

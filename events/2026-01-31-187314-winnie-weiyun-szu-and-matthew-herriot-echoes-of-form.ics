@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260131-winnie-weiyun-szu-and-matthew-herriot-echoes-of-form@thevisu
+ alist.org
+DTSTAMP:20260131T000000Z
+DTSTART;TZID=America/Chicago:20260131T140000
+DTEND;TZID=America/Chicago:20260131T180000
+SUMMARY:Winnie Weiyun Szu and Matthew Herriot: Echoes of Form
+LOCATION:Mayfield\, 505 Marengo Ave\, Forest Park\, IL 60130
+DESCRIPTION:Echoes of Form Featuring works by Winnie Weiyun Szu and Matth
+ ew Herriot Curated by Héloïse Paillard Mayfield – 505 Marengo Ave\, 
+ Forest Park\, IL 60130 January 31st – April 6th 2026 Mayfield is pleas
+ ed to present ‘Echoes of Form’\, an exhibition foregrounding visual 
+ perception and...\nMore info: https://thevisualist.org/2026/01/winnie-we
+ iyun-szu-and-matthew-herriot-echoes-of-form/\nVenue site: https://www.in
+ stagram.com/mayfieldartspace
+URL:https://thevisualist.org/2026/01/winnie-weiyun-szu-and-matthew-herrio
+ t-echoes-of-form/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

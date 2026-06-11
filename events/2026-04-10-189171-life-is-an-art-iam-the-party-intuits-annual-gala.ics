@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-life-is-an-art-iam-the-party-intuit-s-annual-gala@thevisuali
+ st.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T173000
+DTEND;TZID=America/Chicago:20260410T193000
+SUMMARY:Life is an Art: IAM the party Intuit’s annual gala
+LOCATION:City Hall Events\, 838 W Kinzie St\, East Entrance\, Chicago\, I
+ L 60642
+DESCRIPTION:Discover the unexpected with the hottest connectors\, artists
+  and community builders from Chicago and around the world. Enjoy an open
+  bar with signature cocktails\, inspiring stories during a brief award c
+ eremony which includes a cameo from rock-n-roll hall-of-famer singer Non
+ a Hendryx...\nMore info: https://thevisualist.org/2026/04/life-is-an-art
+ -iam-the-party-intuits-annual-gala/\nVenue site: https://art.org/events/
+ life-is-an-art
+URL:https://thevisualist.org/2026/04/life-is-an-art-iam-the-party-intuits
+ -annual-gala/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

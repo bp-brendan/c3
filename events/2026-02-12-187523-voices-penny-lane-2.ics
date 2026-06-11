@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260212-voices-penny-lane@thevisualist.org
+DTSTAMP:20260212T000000Z
+DTSTART;TZID=America/Chicago:20260212T170000
+DTEND;TZID=America/Chicago:20260212T183000
+SUMMARY:VOICES: Penny Lane
+LOCATION:Gallery 400\, 400 S Peoria St.\, 5th Floor Room 5100\, Chicago\,
+  IL 60607
+DESCRIPTION:ABOUT THE EVENT Guggenheim fellow and award-winning filmmaker
+  Penny Lane is known for her experimental feature-length documentaries a
+ nd short films that capture aspects of human experience to examine our i
+ nnermost feelings\, such as innocence and guilt\, suffering and longing\
+ , and joy...\nMore info: https://thevisualist.org/2026/02/voices-penny-l
+ ane-2/\nVenue site: https://gallery400.uic.edu/event/pennylane/
+URL:https://thevisualist.org/2026/02/voices-penny-lane-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

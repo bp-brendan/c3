@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260228-ann-toebbe-cooler-by-the-lake@thevisualist.org
+DTSTAMP:20260228T000000Z
+DTSTART;VALUE=DATE:20260228
+SUMMARY:Ann Toebbe: Cooler by the Lake
+LOCATION:Hyde Park Art Center\, 5020 S Cornell Ave\, Chicago\, IL 60615
+DESCRIPTION:Ann Toebbe’s ongoing series\, Cooler by the Lake\, is set i
+ n Hyde Park. For nearly two decades\, Toebbe has lived in this Southside
+  Chicago neighborhood with her husband\, working and raising her two dau
+ ghters and stepson. Toebbe’s domestic paintings explore the people\, p
+ laces\, culture...\nMore info: https://thevisualist.org/2026/02/ann-toeb
+ be-cooler-by-the-lake/\nVenue site: https://www.hydeparkart.org/exhibiti
+ on-archive/ann-toebbe-cooler-by-the-lake/
+URL:https://thevisualist.org/2026/02/ann-toebbe-cooler-by-the-lake/
+END:VEVENT
+END:VCALENDAR

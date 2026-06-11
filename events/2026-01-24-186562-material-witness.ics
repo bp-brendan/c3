@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260124-material-witness@thevisualist.org
+DTSTAMP:20260124T000000Z
+DTSTART;TZID=America/Chicago:20260124T170000
+DTEND;TZID=America/Chicago:20260124T210000
+SUMMARY:Material Witness
+LOCATION:TQ Exerience\, 1545 N Western Ave\, Chicago\, IL 60622
+DESCRIPTION:Material Witness A one-night art exhibition featuring three p
+ ractitioners of intriguing art working in three distinct mediums. Saturd
+ ay\, January 24\, 2026 This exhibition explores the interesting ways hum
+ ble materials are used to redefi ne their value and create new meaning. 
+ TQ...\nMore info: https://thevisualist.org/2026/01/material-witness/\nVe
+ nue site: https://www.tq-experience.com
+URL:https://thevisualist.org/2026/01/material-witness/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260124-a-person-chosen-named-or-honored@thevisualist.org
+DTSTAMP:20260124T000000Z
+DTSTART;VALUE=DATE:20260124
+SUMMARY:a person chosen\, named\, or honored…
+LOCATION:PATRON\, 1612 W Chicago Ave\, Chicago\, IL 60622
+DESCRIPTION:In commemoration of PATRON’s 10th anniversary\, the gallery
+  is proud to announce a group exhibition\, a person chosen\, named\, or 
+ honored..titled after the Webster’s Dictionary definition of a “patr
+ on.” Scheduled from January 24\, 2026 – March 7\, 2026 at our Chicag
+ o Avenue location\, the...\nMore info: https://thevisualist.org/2026/01/
+ a-person-chosen-named-or-honored/\nVenue site: https://patrongallery.com
+ /exhibition/627/a-person-chosen-named-or-honored
+URL:https://thevisualist.org/2026/01/a-person-chosen-named-or-honored/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260317-hungry-hill-a-film-by-mieke-vannechelen-and-michael-holly@th
+ evisualist.org
+DTSTAMP:20260317T000000Z
+DTSTART;TZID=America/Chicago:20260317T173000
+DTEND;TZID=America/Chicago:20260317T210000
+SUMMARY:Hungry Hill: A Film by Mieke Vannechelen and Michael Holly
+LOCATION:John David Mooney Foundation\, 114 W Kinzie St\, Chicago IL 6065
+ 4
+DESCRIPTION:Come celebrate St. Patricks Day with Irish filmmaker Mieke Va
+ nmechelen. Her film ‘Hungry Hill’ documents the daily struggle of a 
+ community of sheep farmers in a mountainous region of Ireland\, against 
+ the backgrop of a historical warning of ecological catastrophe from anot
+ her part of...\nMore info: https://thevisualist.org/2026/03/hungry-hill-
+ a-film-by-mieke-vannechelen-and-michael-holly/\nVenue site: https://www.
+ mooneyfoundation.org
+URL:https://thevisualist.org/2026/03/hungry-hill-a-film-by-mieke-vanneche
+ len-and-michael-holly/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

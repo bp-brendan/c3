@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-seeds-of-resilience-closing-reception-walkthrough@thevisuali
+ st.org
+DTSTAMP:20260509T000000Z
+DTSTART;TZID=America/Chicago:20260509T140000
+DTEND;TZID=America/Chicago:20260509T160000
+SUMMARY:Seeds of Resilience – Closing Reception & Walkthrough
+LOCATION:Woman Made Gallery\, 1332 S Halsted St\, Chicago\, IL 60607
+DESCRIPTION:Closing Reception & Walkthrough: Saturday\, May 9\, 2–4 PM 
+ CST Woman Made Gallery (WMG) is pleased to announce the opening of Seeds
+  of Resilience\, a multidisciplinary art exhibition featuring work by 41
+  artists. The exhibition opens Saturday\, April 11\, 2026\, with a publi
+ c artist...\nMore info: https://thevisualist.org/2026/05/seeds-of-resili
+ ence-closing-reception-walkthrough/\nVenue site: https://womanmade.org/s
+ eeds-of-resilience/
+URL:https://thevisualist.org/2026/05/seeds-of-resilience-closing-receptio
+ n-walkthrough/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

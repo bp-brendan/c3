@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260522-midwestern-biennial-2026@thevisualist.org
+DTSTAMP:20260522T000000Z
+DTSTART;TZID=America/Chicago:20260522T170000
+DTEND;TZID=America/Chicago:20260522T190000
+SUMMARY:Midwestern Biennial 2026
+LOCATION:Rockford Art Museum\, 711 N Main St\, Rockford\, IL 61103
+DESCRIPTION:Juried by Laurie Hogin\, acclaimed artist and Professor at th
+ e University of Illinois Urbana-Champaign\, the 2026 Rockford Midwestern
+  is the 78th presentation of the museum’s survey exhibition of new wor
+ k by contemporary artists from across the Midwest. Hogin selected 98 pi
+ eces by 98...\nMore info: https://thevisualist.org/2026/05/midwestern-bi
+ ennial-2026/\nVenue site: https://rockfordartmuseum.org/
+URL:https://thevisualist.org/2026/05/midwestern-biennial-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

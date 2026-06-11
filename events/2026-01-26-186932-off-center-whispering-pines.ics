@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260126-off-center-whispering-pines@thevisualist.org
+DTSTAMP:20260126T000000Z
+DTSTART;TZID=America/Chicago:20260126T180000
+DTEND;TZID=America/Chicago:20260126T200000
+SUMMARY:OFF CENTER: WHISPERING PINES
+LOCATION:Gene Siskel Film Center\, 164 N State St\, Chicago\, IL 60601
+DESCRIPTION:Come get lost in the world of WHISPERING PINES\, Shana Moulto
+ n’s cult video art series in which her alter ego Cynthia seeks meaning
+  and spirituality through various medical devices\, self care products\,
+  and new age home decor. Program includes: WHISPERING PINES 5 (2005)\, W
+ HISPERING...\nMore info: https://thevisualist.org/2026/01/off-center-whi
+ spering-pines/\nVenue site: https://www.siskelfilmcenter.org/whispering-
+ pines
+URL:https://thevisualist.org/2026/01/off-center-whispering-pines/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

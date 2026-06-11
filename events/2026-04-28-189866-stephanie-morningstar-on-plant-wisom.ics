@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260428-stephanie-morningstar-on-plant-wisom@thevisualist.org
+DTSTAMP:20260428T000000Z
+DTSTART;TZID=America/Chicago:20260428T180000
+DTEND;TZID=America/Chicago:20260428T193000
+SUMMARY:Stephanie Morningstar on Plant Wisom
+LOCATION:The Arts Club of Chicago\, 201 E Ontario St\, Chicago\, IL 60611
+DESCRIPTION:Morningstar’s lecture moves between Indigenous food and pla
+ nt knowledge\, stories of resistance\, and the strange genius of the mor
+ e‑than‑human world to ask what it means to stop waiting for a singul
+ ar savior and start acting like we are responsible for one another.\nMor
+ e info: https://thevisualist.org/2026/04/stephanie-morningstar-on-plant-
+ wisom/\nVenue site: https://www.artsclubchicago.org/program/stephanie-mo
+ rningstar-on-indigenous-plant-knowledge/
+URL:https://thevisualist.org/2026/04/stephanie-morningstar-on-plant-wisom
+ /
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

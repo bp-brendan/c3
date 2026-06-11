@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260223-heartbreak-show@thevisualist.org
+DTSTAMP:20260223T000000Z
+DTSTART;TZID=America/Chicago:20260223T190000
+DTEND;TZID=America/Chicago:20260223T210000
+SUMMARY:Heartbreak Show
+LOCATION:Studio on Kedzie
+DESCRIPTION:Monday\, February 23rd 2026 Starting at 7 pm\, please join me
+  in experiencing Heartbreak. Heartbreak is a breaking of time\; it is no
+ ntime. It holds every previous Heartbreak\, and every future Heartbreak.
+  A Heartbreak is rupture\, and revelation. All Heartbreaks are when a gi
+ ven future is...\nMore info: https://thevisualist.org/2026/02/heartbreak
+ -show/\nVenue site: https://www.instagram.com/p/DUv3xo2gU76/
+URL:https://thevisualist.org/2026/02/heartbreak-show/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-the-closing-reception-of-how-could-we-forget-about-you-by-no
+ el-mercado@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;TZID=America/Chicago:20260214T170000
+DTEND;TZID=America/Chicago:20260214T200000
+SUMMARY:The Closing Reception of How Could We Forget About You by Noel Me
+ rcado
+LOCATION:Epiphany Center for the Arts\, 201 S Ashland Ave\, Chicago\, IL 
+ 60607
+DESCRIPTION:What have you forgotten? When you found it or rediscovered it
+  were you happy\, sad\, annoyed\, delighted\, regretful? It was once imp
+ ortant and then it became forgotten. What is new to you was once forgott
+ en by me. The work on display is a representation of compartmentalizing 
+ ideas and...\nMore info: https://thevisualist.org/2026/02/the-closing-re
+ ception-of-how-could-we-forget-about-you-by-noel-mercado/\nVenue site: h
+ ttps://epiphanychi.com/arts/
+URL:https://thevisualist.org/2026/02/the-closing-reception-of-how-could-w
+ e-forget-about-you-by-noel-mercado/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

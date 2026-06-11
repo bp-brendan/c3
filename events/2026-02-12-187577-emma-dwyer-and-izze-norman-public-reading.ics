@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260212-emma-dwyer-and-izze-norman-public-reading@thevisualist.org
+DTSTAMP:20260212T000000Z
+DTSTART;TZID=America/Chicago:20260212T180000
+DTEND;TZID=America/Chicago:20260212T190000
+SUMMARY:Emma Dwyer and Izze Norman: Public Reading
+LOCATION:Seerveld Gallery\, 6601 W College Dr\, Palos Heights\, IL 60463
+DESCRIPTION:The Seerveld Gallery ‘25-‘26 Lecture Series welcomes grap
+ hic designers and publishers Emma Dwyer and Izze Norman on the evening o
+ f February 12\, followed by the opening reception of their exhibition Pu
+ blic Reading at Trinity’s Seerveld Gallery. Join us for a conversation
+  between Dwyer...\nMore info: https://thevisualist.org/2026/02/emma-dwye
+ r-and-izze-norman-public-reading/\nVenue site: https://tomatotomatotomat
+ o.info/
+URL:https://thevisualist.org/2026/02/emma-dwyer-and-izze-norman-public-re
+ ading/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

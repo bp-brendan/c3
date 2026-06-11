@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260605-lawrence-schiller-motion-pictures@thevisualist.org
+DTSTAMP:20260605T000000Z
+DTSTART;TZID=America/Chicago:20260605T170000
+DTEND;TZID=America/Chicago:20260605T200000
+SUMMARY:Lawrence Schiller: Motion Pictures
+LOCATION:Hilton Contemporary | River North\, 716 N Wells St\, Chicago\, I
+ L 60654
+DESCRIPTION:Hilton Contemporary is pleased to announce Lawrence Schiller:
+  Motion Pictures\, a dynamic exhibition exploring the intersection of ph
+ otography and cinematic storytelling through the lens of Lawrence Schill
+ er who will turn 90 this December. Bringing together a selection of Schi
+ ller’s...\nMore info: https://thevisualist.org/2026/06/lawrence-schill
+ er-motion-pictures/\nVenue site: https://hiltoncontemporary.com/
+URL:https://thevisualist.org/2026/06/lawrence-schiller-motion-pictures/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

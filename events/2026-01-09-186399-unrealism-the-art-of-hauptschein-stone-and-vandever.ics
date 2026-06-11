@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260109-unrealism-the-art-of-hauptschein-stone-and-vandever@thevisua
+ list.org
+DTSTAMP:20260109T000000Z
+DTSTART;TZID=America/Chicago:20260109T180000
+DTEND;TZID=America/Chicago:20260109T210000
+SUMMARY:Unrealism: The Art of Hauptschein\, Stone\, and Vandever
+LOCATION:Water Street Studios\, 160 S Water Street\, Batavia\, IL 60510
+DESCRIPTION:Water Street Studios is starting off the new year with a bang
+ ! Unrealism: The Art of Hauptschein\, Stone\, and Vandever\, is opening 
+ Friday\, January 9! David Hauptschein\, Michelle Stone\, and Allen Vande
+ ver are three of Chicago’s most fearless artists. They are not bound b
+ y other people’s...\nMore info: https://thevisualist.org/2026/01/unrea
+ lism-the-art-of-hauptschein-stone-and-vandever/\nVenue site: https://wat
+ erstreetstudios.org/hauptscheinstonevandever-2026
+URL:https://thevisualist.org/2026/01/unrealism-the-art-of-hauptschein-sto
+ ne-and-vandever/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

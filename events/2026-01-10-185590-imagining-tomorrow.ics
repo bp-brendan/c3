@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260110-imagining-tomorrow@thevisualist.org
+DTSTAMP:20260110T000000Z
+DTSTART;TZID=America/Chicago:20260110T170000
+DTEND;TZID=America/Chicago:20260110T210000
+SUMMARY:Imagining Tomorrow
+LOCATION:Forum 301\, 301 W Ohio St\, Chicago\, IL 60654
+DESCRIPTION:This exhibit will showcase the work of local Chicago artist. 
+ These artist have used everyday objects to recreate wheat they see art a
+ s. Exhibition: January 8th\, 2026 – February 14th\, 2026 ​​ Forum 
+ 301\, located at 301 W. Ohio\, invites artists from the Chicagoland area
+  to submit work...\nMore info: https://thevisualist.org/2026/01/imaginin
+ g-tomorrow/\nVenue site: https://www.eventbrite.com/e/imagining-tomorrow
+ -tickets-1975044483216?aff=oddtdtcreator
+URL:https://thevisualist.org/2026/01/imagining-tomorrow/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

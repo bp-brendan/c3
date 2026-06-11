@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260613-ensemble-espanol-50th-anniversary-celebration@thevisualist.o
+ rg
+DTSTAMP:20260613T000000Z
+DTSTART;TZID=America/Chicago:20260613T193000
+DTEND;TZID=America/Chicago:20260613T213000
+SUMMARY:Ensemble Espanol: 50th Anniversary Celebration
+LOCATION:North Shore Center for the Performing Arts in Skokie\, 9501 Skok
+ ie Blvd\, Skokie\, IL 60076
+DESCRIPTION:The world renowned Ensemble Español Spanish Dance Theater br
+ ings the passionate\, expressive rhythms of Spain to life in honor of th
+ eir 50th Anniversary Celebration for one performance only. Works include
+  the world premiere of “Escenas Villanescas” by Ruiz\, Dame Libby Ko
+ maiko Legacy...\nMore info: https://thevisualist.org/?p=190496\nVenue si
+ te: https://www.northshorecenter.org
+URL:https://thevisualist.org/?p=190496
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

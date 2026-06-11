@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260327-penny-pinch-dutch-auction-the-4th-and-final-edition@thevisua
+ list.org
+DTSTAMP:20260327T000000Z
+DTSTART;TZID=America/Chicago:20260327T170000
+DTEND;TZID=America/Chicago:20260327T220000
+SUMMARY:PENNY PINCH DUTCH AUCTION… The 4th (and final) EDITION
+LOCATION:VSG Contemporary\, 673 N Milwaukee Ave\, Chicago IL 60642
+DESCRIPTION:Join us on Friday from 5pm-10pm for the 4th edition of the Pe
+ nny Pinch Dutch Auction VSG is thrilled to announce the return of the Pe
+ nny Pinch Dutch Auction\, with Chicago-based street artist Penny Pinch. 
+ Featured in The New York Times & The Economist…. The exhibition will u
+ tilize a...\nMore info: https://thevisualist.org/2026/03/penny-pinch-dut
+ ch-auction-the-4th-and-final-edition/\nVenue site: https://vsgcontempora
+ ry.com/
+URL:https://thevisualist.org/2026/03/penny-pinch-dutch-auction-the-4th-an
+ d-final-edition/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

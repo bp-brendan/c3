@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260223-lucy-dolan-thirty-two@thevisualist.org
+DTSTAMP:20260223T000000Z
+DTSTART;VALUE=DATE:20260223
+SUMMARY:Lucy Dolan: THIRTY-TWO
+LOCATION:McHenry County College | Epping Gallery\, 8900 U.S. Highway 14\,
+  Crystal Lake\, IL 60012
+DESCRIPTION:McHenry County College is excited to present Lucy Dolan’s s
+ olo exhibition of photography\, “THIRTY-TWO.” February 23 – March 
+ 27\, 2026 McHenry County College | Epping Gallery 8900 U.S. Highway 14\,
+  Crystal Lake\, IL 60012 ───────────────
+ ─────── ARTIST STATEMENT This exhibit is a...\nMore info: 
+ https://thevisualist.org/2026/02/lucy-dolan-thirty-two/\nVenue site: htt
+ ps://www.mchenry.edu/artgallery/current.html
+URL:https://thevisualist.org/2026/02/lucy-dolan-thirty-two/
+END:VEVENT
+END:VCALENDAR

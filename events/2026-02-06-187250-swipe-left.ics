@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260206-swipe-left@thevisualist.org
+DTSTAMP:20260206T000000Z
+DTSTART;TZID=America/Chicago:20260206T180000
+DTEND;TZID=America/Chicago:20260206T220000
+SUMMARY:SWIPE LEFT
+LOCATION:Fulton Street Collective\, 1821 W Hubbard St\, Chicago\, IL 6062
+ 2
+DESCRIPTION:Fulton Street Collective\, in collaboration with West Town Ch
+ amber of Commerce\, presents SWIPE LEFT Art Opening on Friday February 6
+ th\, from 6-10pm. In an era of infinite choice\, how do we process the f
+ inite sting of a broken heart? “Swipe Left” explores the intersectio
+ n of traditional...\nMore info: https://thevisualist.org/2026/02/swipe-l
+ eft/\nVenue site: https://fultonstreetcollective.com/
+URL:https://thevisualist.org/2026/02/swipe-left/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

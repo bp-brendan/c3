@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260123-living-with-modernism-kelli-connell-s-pictures-for-charis-an
+ d-double-life@thevisualist.org
+DTSTAMP:20260123T000000Z
+DTSTART;TZID=America/Chicago:20260123T180000
+DTEND;TZID=America/Chicago:20260123T210000
+SUMMARY:Living with Modernism: Kelli Connell’s Pictures for Charis and 
+ Double Life
+LOCATION:Elmhurst Art Museum\, 150 S Cottage Hill Ave\, Elmhurst\, IL 601
+ 26
+DESCRIPTION:Photographer Kelli Connell explores the psyche of human relat
+ ionships and our connection to nature and architecture in this two-part 
+ exhibition. The title of the exhibition reflects the artist’s commitme
+ nt to spending time with the people and places she photographs. Together
+ \, the...\nMore info: https://thevisualist.org/2026/01/living-with-moder
+ nism-kelli-connells-pictures-for-charis-and-double-life/\nVenue site: ht
+ tps://elmhurstartmuseum.org/events/livingwithmodernismopeningreception
+URL:https://thevisualist.org/2026/01/living-with-modernism-kelli-connells
+ -pictures-for-charis-and-double-life/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

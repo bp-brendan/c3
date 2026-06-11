@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260412-onion-city-mutable-records@thevisualist.org
+DTSTAMP:20260412T000000Z
+DTSTART;TZID=America/Chicago:20260412T160000
+DTEND;TZID=America/Chicago:20260412T180000
+SUMMARY:Onion City: Mutable Records
+LOCATION:Chicago Filmmakers Firehouse Cinema\, 1326 W Hollywood Avenue\, 
+ Chicago\, IL\, 60660
+DESCRIPTION:Parse the past as MUTABLE RECORDS\, a program of works that d
+ econstruct oppressive histories through montage\, testimony\, surrealism
+ \, and reverie. Memories and archival footage are arranged with insight\
+ , dignity\, and curiosity. Lineup: Green Grey Black Brown | Yuyan Wang |
+  South...\nMore info: https://thevisualist.org/2026/04/onion-city-mutabl
+ e-records/\nVenue site: https://chicagofilmmakers.org/upcoming-screening
+ s-and-events/mutable-records
+URL:https://thevisualist.org/2026/04/onion-city-mutable-records/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260508-after-we-let-go@thevisualist.org
+DTSTAMP:20260508T000000Z
+DTSTART;TZID=America/Chicago:20260508T180000
+DTEND;TZID=America/Chicago:20260508T210000
+SUMMARY:After we let go
+LOCATION:crosswalk\, 1856 N Richmond St\, Chicago\, IL 60622
+DESCRIPTION:crosswalk proudly presents\, “After we let go”\, a two pe
+ rson show with Adehle Daley & Tatiana Sky. “After we let go”\, opens
+  with a reception on 5.8.26 from 6-9pm at 1856 N Richmond St\, Chicago\,
+  IL 60647. The exhibition will run through 5.29.26 with a closing recept
+ ion from 6-9pm...\nMore info: https://thevisualist.org/2026/05/after-we-
+ let-go-2/\nVenue site: https://crosswalk-gallery.us/home.html
+URL:https://thevisualist.org/2026/05/after-we-let-go-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

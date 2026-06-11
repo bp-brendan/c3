@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260417-rust@thevisualist.org
+DTSTAMP:20260417T000000Z
+DTSTART;TZID=America/Chicago:20260417T183000
+DTEND;TZID=America/Chicago:20260417T213000
+SUMMARY:Rust
+LOCATION:Project Onward\, 1200 W 35th St\, 4th Floor\, Chicago\, IL 60609
+DESCRIPTION:Curated by T Chang\, ”Rust” explores deterioration as bot
+ h an ending and a transformation. Works by several Project Onward artist
+ s reflect on the decline of social\, spiritual\, organic\, and personal 
+ structures and the uncertainty of what follows. Rather than resisting co
+ llapse\, the...\nMore info: https://thevisualist.org/2026/04/rust-2/\nVe
+ nue site: https://www.projectonward.org/events-1/rust
+URL:https://thevisualist.org/2026/04/rust-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

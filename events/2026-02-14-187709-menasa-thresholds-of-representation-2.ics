@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260214-menasa-thresholds-of-representation@thevisualist.org
+DTSTAMP:20260214T000000Z
+DTSTART;VALUE=DATE:20260214
+SUMMARY:MENASA+: THRESHOLDS OF REPRESENTATION
+LOCATION:Kavi Gupta | Washington Blvd. Chicago\, IL\, 835 W Washington Bl
+ vd. Chicago\, IL 60607
+DESCRIPTION:This exhibition brings together artists from across the Middl
+ e East\, North Africa\, South Asia\, Southeast Asia\, and the AAPI diasp
+ ora— artists whose lived experiences of migration\, hybridity\, gender
+ \, and belonging redefine what global contemporary art can be. This cura
+ torial framework...\nMore info: https://thevisualist.org/2026/02/menasa-
+ thresholds-of-representation-2/\nVenue site: https://kavigupta.com/viewi
+ ng-room/243-menasa-thresholds-of-representation/
+URL:https://thevisualist.org/2026/02/menasa-thresholds-of-representation-
+ 2/
+END:VEVENT
+END:VCALENDAR

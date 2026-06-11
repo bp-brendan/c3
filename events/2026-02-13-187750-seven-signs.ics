@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260213-seven-signs@thevisualist.org
+DTSTAMP:20260213T000000Z
+DTSTART;TZID=America/Chicago:20260213T170000
+DTEND;TZID=America/Chicago:20260213T220000
+SUMMARY:Seven Signs
+LOCATION:See You Soon\, Kimball Arts Center\, 1757 N Kimball Ave Unit 203
+ C\, Chicago\, IL
+DESCRIPTION:a one-night-only photography show by Henry Archer\, Jack Fox\
+ , Jack Garland\, and Nika McKagen. Realm Books will be doing a pop up\, 
+ and we will have negronis and zines (: all proceeds donated to Chicago m
+ utual aid funds\nMore info: https://thevisualist.org/2026/02/seven-signs
+ /\nVenue site: https://www.instagram.com/seeyousoon.chicago/?hl=en
+URL:https://thevisualist.org/2026/02/seven-signs/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

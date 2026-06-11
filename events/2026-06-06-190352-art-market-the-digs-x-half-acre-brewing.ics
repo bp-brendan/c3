@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260606-art-market-the-digs-x-half-acre-brewing@thevisualist.org
+DTSTAMP:20260606T000000Z
+DTSTART;TZID=America/Chicago:20260606T110000
+DTEND;TZID=America/Chicago:20260606T170000
+SUMMARY:Art Market: The Digs x Half Acre Brewing
+LOCATION:Half Acre Brewing\, 2050 W Balmoral Ave\, Chicago\, IL 60625
+DESCRIPTION:DIGS x HALF ACRE! Plan to kick off summer with us at Half Acr
+ e Beer for an artisan market featuring our members + select vendors (: P
+ ay us a visit\, drink a beer\, have a snack\, and check out our wares!\n
+ More info: https://thevisualist.org/2026/06/art-market-the-digs-x-half-a
+ cre-brewing/\nVenue site: https://www.thedigschicago.com/calendar
+URL:https://thevisualist.org/2026/06/art-market-the-digs-x-half-acre-brew
+ ing/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

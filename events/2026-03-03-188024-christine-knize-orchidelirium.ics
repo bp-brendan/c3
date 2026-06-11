@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260303-christine-knize-orchidelirium@thevisualist.org
+DTSTAMP:20260303T000000Z
+DTSTART;VALUE=DATE:20260303
+SUMMARY:Christine Knize: Orchidelirium
+LOCATION:Western Illinois University Art Gallery\, Western Illinois Unive
+ rsity\, 1 University Circle\, Macomb\, IL 61455
+DESCRIPTION:Christine Knize\, alumna of Tyler School of Art\, BFA and Rho
+ de Island School of Design\, MFA\, born in NYC\, inherited her artistic 
+ talent from two generations of women artists. Her academic journey led h
+ er to spend three years in Italy and France\, specializing in the Renais
+ sance...\nMore info: https://thevisualist.org/2026/03/christine-knize-or
+ chidelirium/\nVenue site: https://www.wiu.edu/cofac/artgallery/
+URL:https://thevisualist.org/2026/03/christine-knize-orchidelirium/
+END:VEVENT
+END:VCALENDAR

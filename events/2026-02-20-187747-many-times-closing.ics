@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260220-many-times-closing@thevisualist.org
+DTSTAMP:20260220T000000Z
+DTSTART;TZID=America/Chicago:20260220T180000
+DTEND;TZID=America/Chicago:20260220T200000
+SUMMARY:Many Times: Closing
+LOCATION:Yes Project Space\, 3705 W Division St\, Chicago\, IL 60651
+DESCRIPTION:Join us for the closing of Many Times! The last time to see t
+ his incredible show. Featuring works by: Maya Nguyen David Vosburg Liz F
+ lood Dylan Bissonette Avin HannahSmith Beck Corrigan Marcela Okeke olivi
+ er (x) Phoebe Chen James Hosking Emilka Wolniewicz Johnny Doley Madison 
+ Mae...\nMore info: https://thevisualist.org/2026/02/many-times-closing/\
+ nVenue site: https://www.dennissayoung.com/yes-project-space-about
+URL:https://thevisualist.org/2026/02/many-times-closing/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

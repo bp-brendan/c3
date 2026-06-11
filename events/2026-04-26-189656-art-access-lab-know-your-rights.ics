@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260426-art-access-lab-know-your-rights@thevisualist.org
+DTSTAMP:20260426T000000Z
+DTSTART;TZID=America/Chicago:20260426T140000
+DTEND;TZID=America/Chicago:20260426T160000
+SUMMARY:Art/Access Lab: Know Your Rights
+LOCATION:Experimental Station\, 6100 S Blackstone Ave\, Chicago\, IL 6063
+ 7
+DESCRIPTION:Presented in Partnership with Access Living & Cuerpos Justifi
+ cados Art/Access Labs foster a vibrant disabled artist ecosystem through
+  cross-discipline and cross-impairment professional development activiti
+ es. Guest Presenter: Chris Ramos\, Community Development Organizer\, Lat
+ inx and...\nMore info: https://thevisualist.org/2026/04/art-access-lab-k
+ now-your-rights/\nVenue site: https://highconceptlabs.org/events/art-acc
+ ess-lab-april-2026
+URL:https://thevisualist.org/2026/04/art-access-lab-know-your-rights/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260130-pay-what-you-want-art-show@thevisualist.org
+DTSTAMP:20260130T000000Z
+DTSTART;TZID=America/Chicago:20260130T180000
+DTEND;TZID=America/Chicago:20260130T230000
+SUMMARY:Pay What You Want Art Show
+LOCATION:Childhood Fractureds Phygital Art Gallery\, 1432 W Irving Park R
+ d\, Chicago\, IL 60613
+DESCRIPTION:I believe everyone deserves to have art on their walls. That
+ ’s why I’m hosting a pay-what-you-can-afford art show. If you’ve e
+ ver wanted to own one of my pieces\, this is the easiest way to do it. C
+ ome through\, find something that speaks to you\, and pay what feels pos
+ sible. I’m hoping...\nMore info: https://thevisualist.org/2026/01/pay-
+ what-you-want-art-show-2/\nVenue site: https://www.childhoodfractured.co
+ m/home
+URL:https://thevisualist.org/2026/01/pay-what-you-want-art-show-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

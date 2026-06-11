@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-onion-city@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T180000
+DTEND;TZID=America/Chicago:20260410T200000
+SUMMARY:Onion City:
+LOCATION:Chicago Filmmakers Firehouse Cinema\, 1326 W Hollywood Ave\, Chi
+ cago\, IL 60660
+DESCRIPTION:ECSTATIC DEVOTIONS are rites\, relics\, and remains. The prog
+ ram comprises acts that corrupt the surface\, acts of transmutation and 
+ metamorphosis\, and gestures burned into the body’s muscle memory—mo
+ vements of a spiritual spiral. Lineup: XTENDED RELEASE (version 2.5) | J
+ oshua Gen...\nMore info: https://thevisualist.org/2026/04/onion-city-ecs
+ tatic-devotions/\nVenue site: https://chicagofilmmakers.org/upcoming-scr
+ eenings-and-events/ecstatic-devotions
+URL:https://thevisualist.org/2026/04/onion-city-ecstatic-devotions/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260411-onion-city-afterimage@thevisualist.org
+DTSTAMP:20260411T000000Z
+DTSTART;TZID=America/Chicago:20260411T140000
+DTEND;TZID=America/Chicago:20260411T160000
+SUMMARY:Onion City: Afterimage
+LOCATION:Chicago Filmmakers Firehouse Cinema\, 1326 W Hollywood Ave\, Chi
+ cago\, IL\, 60660
+DESCRIPTION:This program is a collage of diaries and fragments. The films
+  drift and return like an afterthought\, like reflections or memories th
+ at lingered. Fleeting\, hazy\, at times hypnotic\, AFTERIMAGE moves like
+  a flâneur\, walking across space and time. Lineup: Guarita | Lua Borge
+ s | Brazil |...\nMore info: https://thevisualist.org/2026/04/onion-city-
+ afterimage/\nVenue site: https://chicagofilmmakers.org/upcoming-screenin
+ gs-and-events/afterimage
+URL:https://thevisualist.org/2026/04/onion-city-afterimage/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

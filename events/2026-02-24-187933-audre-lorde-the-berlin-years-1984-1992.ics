@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260224-audre-lorde-the-berlin-years-1984-1992@thevisualist.org
+DTSTAMP:20260224T000000Z
+DTSTART;TZID=America/Chicago:20260224T180000
+DTEND;TZID=America/Chicago:20260224T200000
+SUMMARY:Audre Lorde: The Berlin Years 1984-1992
+LOCATION:Goethe-Institut Chicago\, 150 N Michigan Ave\, Suite 420\, Chica
+ go\, IL 60601
+DESCRIPTION:Dir. Dagmar Schultz Germany\, 2012\, 79 min. Digital Format T
+ he poet\, writer\, and activist Audre Lorde was born February 18th\, 193
+ 4\, to Caribbean immigrant parents in New York City. This February\, to 
+ celebrate the birthday of the self-described “Black\, lesbian\, femini
+ st\, socialist...\nMore info: https://thevisualist.org/2026/02/audre-lor
+ de-the-berlin-years-1984-1992/\nVenue site: https://www.goethe.de/ins/us
+ /en/sta/chi/ver.cfm?event_id=27206691
+URL:https://thevisualist.org/2026/02/audre-lorde-the-berlin-years-1984-19
+ 92/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

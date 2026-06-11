@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260328-amy-pearl-lang-castle@thevisualist.org
+DTSTAMP:20260328T000000Z
+DTSTART;TZID=America/Chicago:20260328T180000
+DTEND;TZID=America/Chicago:20260328T210000
+SUMMARY:Amy Pearl Lang: CASTLE
+LOCATION:SAWHORSE\, 4222 W Fullerton Ave\, Chicago\, IL 60639
+DESCRIPTION:Sawhorse is thrilled to present Castle\, a solo exhibition of
+  paintings by Amy Pearl Lang. Please join us for the opening reception o
+ n Saturday\, March 28\, 6-9pm🏰 . We meet abroad on neutral ground. Fo
+ rget he of plain food and soft looking shoes\, and all that which is com
+ mon among...\nMore info: https://thevisualist.org/2026/03/amy-pearl-lang
+ -castle/\nVenue site: https://www.sawhorsespace.net/
+URL:https://thevisualist.org/2026/03/amy-pearl-lang-castle/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

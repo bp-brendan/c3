@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260419-the-future-of-the-visualist-stabilizing-the-website-working-
+ meeting@thevisualist.org
+DTSTAMP:20260419T000000Z
+DTSTART;TZID=America/Chicago:20260419T100000
+DTEND;TZID=America/Chicago:20260419T120000
+SUMMARY:The Future of the Visualist: Stabilizing the Website — Working 
+ Meeting
+LOCATION:culture/Math\, Online
+DESCRIPTION:(April 19\, 10am\, Virtual) We are continuing a conversation 
+ about what it will take to sustain The Visualist. This meeting will focu
+ s on stabilizing the website. The meeting will begin with a walkthrough 
+ of the back-end process for inputting and approving events. We will work
+  toward...\nMore info: https://thevisualist.org/2026/04/the-future-of-th
+ e-visualist-stabilizing-the-website-working-meeting/\nVenue site: https:
+ //thevisualist.org/
+URL:https://thevisualist.org/2026/04/the-future-of-the-visualist-stabiliz
+ ing-the-website-working-meeting/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

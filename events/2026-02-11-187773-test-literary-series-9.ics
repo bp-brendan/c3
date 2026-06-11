@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260211-test-literary-series@thevisualist.org
+DTSTAMP:20260211T000000Z
+DTSTART;TZID=America/Chicago:20260211T180000
+DTEND;TZID=America/Chicago:20260211T200000
+SUMMARY:Test Literary Series
+LOCATION:The Whistler\, 2421 N Milwaukee Ave\, Chicago\, IL 60647
+DESCRIPTION:Hey y’all! Our next Test event is one week away\, Wednesday
+ \, February 11th! Please join us to hear from our featured readers: Ruby
+  Ann Adam Kaz Nora Blake Doors open at @whistlerchicago at 6\, readings 
+ will be at 6:30. Jazz follows at 9. See ya there!\nMore info: https://th
+ evisualist.org/2026/02/test-literary-series-9/\nVenue site: https://whis
+ tlerchicago.com/events/test-literary-series-feb-2026
+URL:https://thevisualist.org/2026/02/test-literary-series-9/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

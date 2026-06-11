@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260425-evanston-woods-ii@thevisualist.org
+DTSTAMP:20260425T000000Z
+DTSTART;TZID=America/Chicago:20260425T170000
+DTEND;TZID=America/Chicago:20260425T200000
+SUMMARY:Evanston Woods II
+LOCATION:Space 900 Gallery\, 816 Dempster Ave\, Evanston\, IL 60202
+DESCRIPTION:View the work of six local designer/makers: Paul Segedin\, Ma
+ deline Usher\, Len Koroski\, David Rubman\, Ron Cramer\, and Mui Baltrun
+ as. Find unique handmade furniture\, sculpture\, and accessories. Evanst
+ on Woods will be open Friday\, April 24 from 2 to 7\; Saturday\, April 2
+ 5 from 11am to...\nMore info: https://thevisualist.org/2026/04/evanston-
+ woods-ii/\nVenue site: https://www.facebook.com/events/768886642676710
+URL:https://thevisualist.org/2026/04/evanston-woods-ii/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

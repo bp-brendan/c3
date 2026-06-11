@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260417-paths-for-the-study-of-contingent-dimensions@thevisualist.or
+ g
+DTSTAMP:20260417T000000Z
+DTSTART;TZID=America/Chicago:20260417T180000
+DTEND;TZID=America/Chicago:20260417T210000
+SUMMARY:Paths for the Study of Contingent Dimensions
+LOCATION:Flatline Gallery\, 1925 N Milwaukee Ave\, Chicago\, IL 60647
+DESCRIPTION:Soft Systems in collaboration with Flatline Gallery present 
+ “Paths for the Study of Contingent Dimensions\,” a group exhibition 
+ of five artists exploring the diagram as narrative. Here\, the diagram o
+ perates as a vector for world-building\, constructing a new type of real
+ ity according to...\nMore info: https://thevisualist.org/2026/04/paths-f
+ or-the-study-of-contingent-dimensions/\nVenue site: https://www.flatline
+ gallery.com
+URL:https://thevisualist.org/2026/04/paths-for-the-study-of-contingent-di
+ mensions/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

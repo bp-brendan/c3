@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260219-parallel-worlds-caa-services-to-artists-committee-exhibition
+ @thevisualist.org
+DTSTAMP:20260219T000000Z
+DTSTART;TZID=America/Chicago:20260219T183000
+DTEND;TZID=America/Chicago:20260219T203000
+SUMMARY:Parallel Worlds: CAA Services to Artists Committee Exhibition
+LOCATION:Heritage Auctions\, 222 W Hubbard St\, Chicago\, IL 60654
+DESCRIPTION:The CAA Services to Artists Committee(SAC) is excited to invi
+ te you to Parallel Worlds\, an exhibition imagining parallel worlds\, te
+ mporal shifts\, and alternative futures. Join us for a CAA-organized spe
+ cial offsite exhibition presented by SAC at Heritage Auctions’ gallery
+ . A free...\nMore info: https://thevisualist.org/2026/02/parallel-worlds
+ -caa-services-to-artists-committee-exhibition/\nVenue site: https://caa.
+ confex.com/caa/2026/meetingapp.cgi/Session/17429
+URL:https://thevisualist.org/2026/02/parallel-worlds-caa-services-to-arti
+ sts-committee-exhibition/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260516-bringing-together-established-chicago-artists-emerging-stude
+ nt-voices-and-inclusive-community-programming@thevisualist.org
+DTSTAMP:20260516T000000Z
+DTSTART;TZID=America/Chicago:20260516T180000
+DTEND;TZID=America/Chicago:20260516T200000
+SUMMARY:Bringing Together Established Chicago Artists\, Emerging Student 
+ Voices\, and Inclusive Community Programming
+LOCATION:6311arts\, 6311 N Clark St\, Chicago IL 60660
+DESCRIPTION:6311arts Presents May Exhibition\, Bringing Together Establis
+ hed Chicago Artists\, Emerging Student Voices\, and Inclusive Community 
+ Programming CHICAGO — This spring\, Edgewater community center 6311art
+ s will present its May Exhibition\, a multi-faceted showcase running May
+  16 through...\nMore info: https://thevisualist.org/2026/05/bringing-tog
+ ether-established-chicago-artists-emerging-student-voices-and-inclusive-
+ community-programming/\nVenue site: https://www.6311arts.com/
+URL:https://thevisualist.org/2026/05/bringing-together-established-chicag
+ o-artists-emerging-student-voices-and-inclusive-community-programming/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

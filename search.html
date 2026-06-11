@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search | The Visualist</title>
+  <link rel="icon" href="visualist-favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="taglines.js"></script>
+  <script src="components.js"></script>
+</head>
+<body data-page="search" data-active-nav="archive">
+
+  <header class="site-header" data-visualist-header></header>
+
+  <main class="site-main tag-page">
+    <div data-visualist-nav></div>
+    <h1 class="tag-title"><span id="search-term"></span><span class="tag-count" id="search-count"></span></h1>
+    <div class="archive-listing" id="search-results"></div>
+    <p class="view-empty" id="search-empty" hidden>No 2026 events match this search.</p>
+  </main>
+
+  <footer class="site-footer" data-visualist-footer></footer>
+
+  <script src="tags2026.js"></script>
+  <script src="archiveevents2026.js"></script>
+  <script>
+    Visualist.renderChrome();
+    Visualist.initHeaderAccordion();
+
+    const q = (new URLSearchParams(location.search).get('q') || '').trim();
+    const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    document.getElementById('search-term').textContent = q ? `“${q}”` : 'Search';
+    document.title = q ? `Search: ${q} | The Visualist` : 'Search | The Visualist';
+
+    Visualist.trackEventLinks(() => ({
+      label: `Search “${q}”`,
+      nav: 'archive',
+      href: `search.html?q=${encodeURIComponent(q)}`
+    }));
+
+    const norm = q.toLowerCase();
+    const hits = !norm ? [] : ARCHIVE_EVENTS_2026
+      .filter(e => `${e.t || ''} ${e.v || ''} ${(e.g || []).join(' ')}`.toLowerCase().includes(norm))
+      .sort((a, b) => b.d.localeCompare(a.d) || (a.t || '').localeCompare(b.t || ''));
+    document.getElementById('search-count').textContent = `(${hits.length})`;
+
+    if (hits.length) {
+      const ordinalDay = n => {
+        const teen = n % 100;
+        if (teen >= 11 && teen <= 13) return `${n}th`;
+        return `${n}${['th', 'st', 'nd', 'rd'][n % 10] || 'th'}`;
+      };
+      const openingLine = event => {
+        const date = new Date(`${event.d}T12:00:00`);
+        const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
+        const month = date.toLocaleDateString('en-US', { month: 'long' });
+        let line = `Opening ${weekday}, ${month} ${ordinalDay(date.getDate())}`;
+        if (event.w) line += event.w.includes('–') ? `, from ${event.w}` : `, at ${event.w}`;
+        return line;
+      };
+      const slugForTag = label => {
+        const normalized = label.trim().toLowerCase();
+        const tag = TAGS_2026.find(item =>
+          item.n.toLowerCase() === normalized || item.s.toLowerCase() === normalized
+        );
+        return tag ? tag.s : '';
+      };
+      const renderTags = tags => {
+        const linked = (tags || [])
+          .map(tag => ({ label: tag, slug: slugForTag(tag) }))
+          .filter(tag => tag.slug)
+          .slice(0, 4);
+        if (!linked.length) return '';
+        return `<span class="listing-tags">${linked.map(tag =>
+          `<a href="tag.html?tag=${encodeURIComponent(tag.slug)}">${escapeHtml(tag.label)}</a>`
+        ).join('')}</span>`;
+      };
+      document.getElementById('search-results').innerHTML = hits.map(event => `
+        <article class="event-card">
+          ${event.i
+            ? `<a class="event-thumb" href="${escapeHtml(event.p || event.u)}"><img src="${escapeHtml(event.i)}" alt="" loading="lazy"></a>`
+            : '<span class="event-thumb event-thumb-empty"></span>'}
+          <div class="event-info">
+            <h3 class="event-title"><a href="${escapeHtml(event.p || event.u)}">${escapeHtml(event.t || 'Untitled')}</a>${event.k ? ' <a class="top-pick" href="tag.html?tag=top-pick">Top Pick</a>' : ''}</h3>
+            ${(event.v || event.a || event.d || event.o) ? `<div class="event-meta-grid">
+              ${(event.v || event.a) ? `<div class="event-location">
+                ${event.v ? `<p class="event-venue">${event.vu ? `<a href="${escapeHtml(event.vu)}" target="_blank" rel="noopener">${escapeHtml(event.v)}</a>` : escapeHtml(event.v)}</p>` : ''}
+                ${event.a ? `<p class="event-address">${event.m ? `<a href="${escapeHtml(event.m)}" target="_blank" rel="noopener">${escapeHtml(event.a)}</a>` : escapeHtml(event.a)}</p>` : ''}
+              </div>` : ''}
+              <div class="event-schedule">
+                <p class="event-when">${Visualist.scheduleLineHtml(openingLine(event))}</p>
+                ${Visualist.onViewHtml(event)}
+              </div>
+            </div>` : ''}
+            ${Visualist.excerptHtml(event.x, event.p || event.u)}
+            ${renderTags(event.g)}
+            <div class="event-liner"></div>
+          </div>
+        </article>
+      `).join('');
+    } else {
+      document.getElementById('search-empty').hidden = false;
+    }
+  </script>
+
+</body>
+</html>

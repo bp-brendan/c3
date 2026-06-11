@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260424-florence-days-of-destruction-1966-w-melina-avery-and-jayme-c
+ ollins@thevisualist.org
+DTSTAMP:20260424T000000Z
+DTSTART;TZID=America/Chicago:20260424T190000
+DTEND;TZID=America/Chicago:20260424T213000
+SUMMARY:FLORENCE: DAYS OF DESTRUCTION (1966) w/ Melina Avery and Jayme Co
+ llins
+LOCATION:The Block Cinema\, 40 Arts Cir Dr\, Evanston\, IL 60208
+DESCRIPTION:FLORENCE: DAYS OF DESTRUCTION (Franco Zeffirelli\, 1966\, 50 
+ min\, 35mm) Renowned Italian director Franco Zeffirelli’s only documen
+ tary\, FLORENCE: DAYS OF DESTRUCTION captures the catastrophic flood tha
+ t damaged his home city’s most precious cultural collections–and gav
+ e birth to the...\nMore info: https://thevisualist.org/2026/04/florence-
+ days-of-destruction-1966-w-melina-avery-and-jayme-collins/\nVenue site: 
+ https://www.blockmuseum.northwestern.edu/cinema/2026/florence-days-of-de
+ struction-with-conservationist-melina-avery-and-climate-scholar-jayme-co
+ llins.html
+URL:https://thevisualist.org/2026/04/florence-days-of-destruction-1966-w-
+ melina-avery-and-jayme-collins/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

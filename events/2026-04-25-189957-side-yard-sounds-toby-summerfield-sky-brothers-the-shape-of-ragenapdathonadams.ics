@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260425-side-yard-sounds-toby-summerfield-sky-brothers-the-shape-of-
+ ragenap-dathon-adams@thevisualist.org
+DTSTAMP:20260425T000000Z
+DTSTART;TZID=America/Chicago:20260425T190000
+DTEND;TZID=America/Chicago:20260425T210000
+SUMMARY:Side Yard Sounds: Toby Summerfield/Sky Brothers/The Shape Of/rage
+ nap+dathon+adams
+LOCATION:Compound Yellow\, 244 Lake St\, Oak Park\, IL 60302
+DESCRIPTION:Announcing the next Side Yard Sounds: Toby Summerfield / Sky 
+ Brothers / The Shape Of / ragenap + dathon + adams Saturday\, April 25\,
+  7–9 PM Tickets $15\, available here. ___ Toby Summerfield: Bassist\, 
+ Guitarist\, Pedal Steeler\, Composer\, Collaborator\, Improviser playing
+  in such past...\nMore info: https://thevisualist.org/2026/04/side-yard-
+ sounds-toby-summerfield-sky-brothers-the-shape-of-ragenapdathonadams/\nV
+ enue site: https://compoundyellow.com/side-yard-sounds-toby-summerfields
+ ky-brothersthe-shape-ofragenapdathonadams/
+URL:https://thevisualist.org/2026/04/side-yard-sounds-toby-summerfield-sk
+ y-brothers-the-shape-of-ragenapdathonadams/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

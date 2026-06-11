@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260505-haegue-yang-lecture@thevisualist.org
+DTSTAMP:20260505T000000Z
+DTSTART;TZID=America/Chicago:20260505T180000
+DTEND;TZID=America/Chicago:20260505T193000
+SUMMARY:Haegue Yang Lecture
+LOCATION:Fullerton Hall\, The Art Institute of Chicago\, 111 S Michigan A
+ ve\, Chicago\, IL 60603
+DESCRIPTION:Join us for a free public lecture by artist Haegue Yang follo
+ wed by an audience Q&A. Since the mid-1990s\, Haegue Yang (b. 1971 in Se
+ oul\, South Korea) has lived and worked in Seoul and Berlin and currentl
+ y teaches at her alma mater\, the Städelschule in Frankfurt am Main\, G
+ ermany...\nMore info: https://thevisualist.org/2026/05/haegue-yang-lectu
+ re/\nVenue site: https://www.saic.edu/events/haegue-yang-lecture
+URL:https://thevisualist.org/2026/05/haegue-yang-lecture/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

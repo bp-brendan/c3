@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260516-columbia-college-2026-art-history-symposium-when-words-meet-
+ images@thevisualist.org
+DTSTAMP:20260516T000000Z
+DTSTART;TZID=America/Chicago:20260516T130000
+DTEND;TZID=America/Chicago:20260516T173000
+SUMMARY:Columbia College 2026 Art History Symposium: When Words Meet Imag
+ es
+LOCATION:Hokin Lecture Hall\, 623 S Wabash Ave\, 1st Floor\, Chicago\, IL
+  60605
+DESCRIPTION:You are cordially invited to Columbia College Chicago’s 202
+ 6 Art History Symposium: When Words Meet Images! Hosting over 14 incredi
+ ble student presenters\, join us on Saturday\, May 16th\, in the Hokin L
+ ecture Hall for an afternoon of discussion and art. This event is open t
+ o the public...\nMore info: https://thevisualist.org/2026/05/columbia-co
+ llege-2026-art-history-symposium-when-words-meet-images/\nVenue site: ht
+ tps://www.eventbrite.com/e/manifest-2026-kaleidoscope-tickets-1982892339
+ 365
+URL:https://thevisualist.org/2026/05/columbia-college-2026-art-history-sy
+ mposium-when-words-meet-images/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

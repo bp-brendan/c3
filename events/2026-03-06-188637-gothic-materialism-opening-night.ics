@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260306-gothic-materialism-opening-night@thevisualist.org
+DTSTAMP:20260306T000000Z
+DTSTART;TZID=America/Chicago:20260306T180000
+DTEND;TZID=America/Chicago:20260306T200000
+SUMMARY:Gothic Materialism Opening Night
+LOCATION:FLATLINE GALLERY\, 1925 N Milwaukee Ave\, Chicago\, IL 60647
+DESCRIPTION:Flatline Gallery is pleased to present its inaugural show: Go
+ thic Materialism\, a group exhibition featuring the artists Henry Adams\
+ , Ruby Bailey\, Arna Beth\, Ben Glass\, Brian Oakes\, and Chris Velez. T
+ he gallery’s first show develops out of ongoing conversations with art
+ ists around...\nMore info: https://thevisualist.org/2026/03/gothic-mater
+ ialism-opening-night/\nVenue site: http://flatlinegallery.com
+URL:https://thevisualist.org/2026/03/gothic-materialism-opening-night/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

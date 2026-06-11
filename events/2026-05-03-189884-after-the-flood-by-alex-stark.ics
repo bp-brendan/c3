@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260503-after-the-flood-by-alex-stark@thevisualist.org
+DTSTAMP:20260503T000000Z
+DTSTART;TZID=America/Chicago:20260503T140000
+DTEND;TZID=America/Chicago:20260503T170000
+SUMMARY:After the Flood by Alex Stark
+LOCATION:Epiphany Center for the Arts\, 201 S Ashland Ave\, Chicago\, IL 
+ 60607
+DESCRIPTION:After the Flood is a collection of works made both before and
+  after a flood in the artist’s studio. Stark began making a new body o
+ f collages in which he began covering parts of his previous salvaged pai
+ ntings. Collaging on Stark’s former damaged works becomes an act of re
+ vival...\nMore info: https://thevisualist.org/2026/05/after-the-flood-by
+ -alex-stark/\nVenue site: https://epiphanychi.com/arts/
+URL:https://thevisualist.org/2026/05/after-the-flood-by-alex-stark/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

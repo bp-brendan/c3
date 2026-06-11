@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260219-werkz-in-the-archive@thevisualist.org
+DTSTAMP:20260219T000000Z
+DTSTART;TZID=America/Chicago:20260219T173000
+DTEND;TZID=America/Chicago:20260219T200000
+SUMMARY:Werkz in the Archive
+LOCATION:National Public Housing Museum\, 919 South Ada St\, Chicago\, IL
+  60607
+DESCRIPTION:This participatory evening of film and movement honors the hi
+ storically black practice of Chicago Footwork. Join us for a screening\,
+  dance cypher\, and reflections\, featuring films inspired by the work o
+ f Dr. ShaDawn “Boobie” Battle\, the National Public Housing Museum
+ ’s 2023 Artist as...\nMore info: https://thevisualist.org/2026/02/werk
+ z-in-the-archive/\nVenue site: https://nphm.org/event/werkz-in-the-archi
+ ve-film-screening-and-dance-cypher/
+URL:https://thevisualist.org/2026/02/werkz-in-the-archive/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

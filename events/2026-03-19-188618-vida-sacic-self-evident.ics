@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260319-vida-sacic-self-evident@thevisualist.org
+DTSTAMP:20260319T000000Z
+DTSTART;TZID=America/Chicago:20260319T190000
+DTEND;TZID=America/Chicago:20260319T203000
+SUMMARY:Vida Sačić: Self-Evident
+LOCATION:Chicago History Museum\, 1601 N Clark St\, Chicago\, IL 60614
+DESCRIPTION:Join us for a talk by Chicago-based artist Vida Sačić on he
+ r work as a visual artist\, educator\, and the ways she grounds her work
+  in lived experience. Hear about her installation\, Self-Evident: A Lett
+ erpress Exploration of the Declaration of Independence\, currently on vi
+ ew at the...\nMore info: https://thevisualist.org/2026/03/vida-sacic-sel
+ f-evident/\nVenue site: https://www.chicagohistory.org/event/artist-talk
+ -vida-sacic/
+URL:https://thevisualist.org/2026/03/vida-sacic-self-evident/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,51 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260515-maya-nguyen-i-hear-you-can-make-a-helicopter-sound-with-a-fl
+ ower@thevisualist.org
+DTSTAMP:20260515T000000Z
+DTSTART;TZID=America/Chicago:20260515T180000
+DTEND;TZID=America/Chicago:20260515T193000
+SUMMARY:Maya Nguyen: I Hear You Can Make A Helicopter Sound With A Flower
+LOCATION:Goethe-Institut Chicago\, 150 N Michigan Ave\, Suite 420\, Chica
+ go\, IL 60601
+DESCRIPTION:A sound performance related to the exhibition LATERAL ENTRANT
+ \, currently on view at the Goethe-Institut Chicago REGISTER HERE: https
+ ://www.eventbrite.com/e/maya-nguyen-i-hear-you-can-make-a-helicopter-sou
+ nd-with-a-flower-tickets-1987938879703 Join us for a performance by Maya
+  Nguyen...\nMore info: https://thevisualist.org/2026/05/maya-nguyen-i-he
+ ar-you-can-make-a-helicopter-sound-with-a-flower/\nVenue site: https://w
+ ww.eventbrite.com/e/maya-nguyen-i-hear-you-can-make-a-helicopter-sound-w
+ ith-a-flower-tickets-1987938879703
+URL:https://thevisualist.org/2026/05/maya-nguyen-i-hear-you-can-make-a-he
+ licopter-sound-with-a-flower/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

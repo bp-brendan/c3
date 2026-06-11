@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260206-faylita-hicks-the-digital-archives-of-the-unseen-poetry-and-
+ portraits-from-the-age-of-censorship@thevisualist.org
+DTSTAMP:20260206T000000Z
+DTSTART;TZID=America/Chicago:20260206T180000
+DTEND;TZID=America/Chicago:20260206T210000
+SUMMARY:Faylita Hicks : The Digital Archives of the Unseen: Poetry and Po
+ rtraits from the Age of Censorship
+LOCATION:Walls Turned Sideways\, 2717 W Madison St\, Chicago\, IL 60612
+DESCRIPTION:Through deconstructed VHS tapes inscribed with poetry and col
+ lage portraits of directly impacted people\, Faylita Hicks transforms di
+ scarded media into testimony. This installation resists erasure\, confro
+ nting censorship\, migrant detention\, and mass incarceration while insi
+ sting on the...\nMore info: https://thevisualist.org/2026/02/faylita-hic
+ ks-the-digital-archives-of-the-unseen-poetry-and-portraits-from-the-age-
+ of-censorship/\nVenue site: https://wallsturnedsideways.org/event/the-di
+ gital-archives-of-the-unseen-poetry-and-portraits-from-the-age-of-censor
+ ship-and-detention-exhibition-opening/
+URL:https://thevisualist.org/2026/02/faylita-hicks-the-digital-archives-o
+ f-the-unseen-poetry-and-portraits-from-the-age-of-censorship/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

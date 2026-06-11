@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260128-artists-prints-from-studio-to-press-to-market@thevisualist.o
+ rg
+DTSTAMP:20260128T000000Z
+DTSTART;TZID=America/Chicago:20260128T180000
+DTEND;TZID=America/Chicago:20260128T200000
+SUMMARY:Artists & Prints: From Studio to Press to Market
+LOCATION:Chicago Artists Coalition\, 1431 W Hubbard St\, Suite 201 Chicag
+ o\, IL 60642
+DESCRIPTION:Process/Process is pleased to lead a workshop as part of the 
+ Chicago Artists Coalition’s Professional Development series. Artists &
+  Prints: From Studio to Press to Market Wednesday\, January 28\, 6-8PM A
+  primer on the possibilities of print-based artworks\, in this session 
+ “Artists &...\nMore info: https://thevisualist.org/2026/01/artists-pri
+ nts-from-studio-to-press-to-market/\nVenue site: https://chicagoartistsc
+ oalition.org/events/prof-dev-artists-prints
+URL:https://thevisualist.org/2026/01/artists-prints-from-studio-to-press-
+ to-market/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

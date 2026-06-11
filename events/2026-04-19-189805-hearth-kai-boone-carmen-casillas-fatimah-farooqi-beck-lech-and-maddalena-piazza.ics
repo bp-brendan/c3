@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260419-hearth-kai-boone-carmen-casillas-fatimah-farooqi-beck-lech-a
+ nd-maddalena-piazza@thevisualist.org
+DTSTAMP:20260419T000000Z
+DTSTART;TZID=America/Chicago:20260419T150000
+DTEND;TZID=America/Chicago:20260419T180000
+SUMMARY:Hearth: Kai Boone\, Carmen Casillas\, Fatimah Farooqi\, Beck Lech
+ \, and Maddalena Piazza
+LOCATION:Riverside Arts Center FlexSpace\, 32 East Quincy St\, Riverside\
+ , IL 60546
+DESCRIPTION:Hearth Kai Boone\, Carmen Casillas\, Fatimah Farooqi\, Beck L
+ ech\, and Maddalena Piazza Opening Reception Sunday\, April 19\, 2026\, 
+ 3:00 – 6:00 pm Join us afterwards for a Private Cocktail Hour at the Q
+ uincy Street Distillery Artist Talk: Saturday\, May 16\, 2026\, 3:00 pm 
+ Exhibition Dates...\nMore info: https://thevisualist.org/2026/04/hearth-
+ kai-boone-carmen-casillas-fatimah-farooqi-beck-lech-and-maddalena-piazza
+ /\nVenue site: https://www.riversideartscenter.com/flexspace/2026/04/hea
+ rth/group/exhibition
+URL:https://thevisualist.org/2026/04/hearth-kai-boone-carmen-casillas-fat
+ imah-farooqi-beck-lech-and-maddalena-piazza/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

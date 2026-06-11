@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260222-sarah-nguyen-in-paper-shadow@thevisualist.org
+DTSTAMP:20260222T000000Z
+DTSTART;TZID=America/Chicago:20260222T130000
+DTEND;TZID=America/Chicago:20260222T160000
+SUMMARY:Sarah Nguyen: In Paper & Shadow
+LOCATION:Evanston Art Center\, 1717 Central St\, Evanston\, IL 60201
+DESCRIPTION:On View February 21 – March 15\, 2026 Opening Reception Sun
+ day\, February 22nd\, 1-4 pm Sarah Nguyen is a mixed media artist\, work
+ ing primarily with paper. Storytelling is central to her hand-cut fiber 
+ panels and paintings. Her work has appeared in numerous national and int
+ ernational...\nMore info: https://thevisualist.org/2026/02/sarah-nguyen-
+ in-paper-shadow/\nVenue site: https://www.evanstonartcenter.org/exhibiti
+ ons/paper-shadow-sarah-nguyen
+URL:https://thevisualist.org/2026/02/sarah-nguyen-in-paper-shadow/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

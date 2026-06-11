@@ -1,0 +1,58 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260301-mansfield-k-un-vent-leger-dans-le-feuillage-study-for-three-
+ streams-bleared-eyes-of-blue-glass-tendril-and-spray-wasserspiel-i-ausbl
+ icke-i-ii-klinik-1988-1994-2024-2023-2023-1997-1990-2001@thevisualist.or
+ g
+DTSTAMP:20260301T000000Z
+DTSTART;TZID=America/Chicago:20260301T201500
+DTEND;TZID=America/Chicago:20260301T221500
+SUMMARY:Mansfield K. / Un vent léger dans le feuillage / Study for Three
+  Streams / bleared eyes of blue glass / tendril and spray / Wasserspiel 
+ I / Ausblicke I + II / Klinik (1988 / 1994 / 2024 / 2023 / 2023 / 1997 /
+  1990 / 2001)
+LOCATION:Doc Films at the University of Chicago\, 1212 E 59th St\, Chicag
+ o\, IL 60637
+DESCRIPTION:Martine Rousset / Martine Rousset / Park Kyujae / Park Kyujae
+  / Park Kyujae / Milena Gierke / Milena Gierke / Milena Gierke · 20m / 
+ 3m / 5m / 9m / 2m / 3m / 3m / 6m · 16mm / 16mm / 16mm / rest digital A 
+ collection of films from French filmmaker Martine Rousset\, Korean filmm
+ aker Park...\nMore info: https://thevisualist.org/2026/03/mansfield-k-un
+ -vent-leger-dans-le-feuillage-study-for-three-streams-bleared-eyes-of-bl
+ ue-glass-tendril-and-spray-wasserspiel-i-ausblicke-i-ii-klinik-1988-1994
+ -2024-2023-2023/\nVenue site: https://docfilms.org/calendar/2026winter/s
+ pecial-screenings
+URL:https://thevisualist.org/2026/03/mansfield-k-un-vent-leger-dans-le-fe
+ uillage-study-for-three-streams-bleared-eyes-of-blue-glass-tendril-and-s
+ pray-wasserspiel-i-ausblicke-i-ii-klinik-1988-1994-2024-2023-2023/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

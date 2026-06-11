@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260418-chicago-performance-community-gathering@thevisualist.org
+DTSTAMP:20260418T000000Z
+DTSTART;TZID=America/Chicago:20260418T110000
+DTEND;TZID=America/Chicago:20260418T150000
+SUMMARY:Chicago Performance Community Gathering
+LOCATION:Constellation + Comrade\, 3111 N Western Ave\, Chicago\, IL 6061
+ 8
+DESCRIPTION:The Chicago Performance Community Convening invites artists a
+ nd performance makers to participate in a facilitated discussion to see 
+ how we can develop better\, stronger\, and more sustainable opportunitie
+ s for performing artists together. With the guidance of Alysha Monique\,
+  Nora...\nMore info: https://thevisualist.org/2026/04/chicago-performanc
+ e-community-gathering/\nVenue site: https://highconceptlabs.org/events/p
+ erformance-community-convening
+URL:https://thevisualist.org/2026/04/chicago-performance-community-gather
+ ing/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

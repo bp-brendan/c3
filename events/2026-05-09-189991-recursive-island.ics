@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260509-recursive-island@thevisualist.org
+DTSTAMP:20260509T000000Z
+DTSTART;TZID=America/Chicago:20260509T180000
+DTEND;TZID=America/Chicago:20260509T200000
+SUMMARY:Recursive Island
+LOCATION:SPACE 01\, 4850 W Bloomingdale Ave\, Chicago\, IL 60639
+DESCRIPTION:Hosted by: Taiwan Graduate Student Association\, School of th
+ e Art Institute of Chicago Taiwan’s geographic scale closely mirrors t
+ hat of Lake Michigan\, a parallel that produces a distinct mode of spati
+ al and psychological projection for those living abroad. The island’s 
+ outline is...\nMore info: https://thevisualist.org/2026/05/recursive-isl
+ and/\nVenue site: https://s01.world/
+URL:https://thevisualist.org/2026/05/recursive-island/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

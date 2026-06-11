@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260109-housewarming@thevisualist.org
+DTSTAMP:20260109T000000Z
+DTSTART;TZID=America/Chicago:20260109T170000
+DTEND;TZID=America/Chicago:20260109T200000
+SUMMARY:Housewarming
+LOCATION:Elise Seigenthaler Gallery\, 1709 W Chicago Ave\, Chicago\, IL 6
+ 0622
+DESCRIPTION:GRAND OPENING “Housewarming” marks the inaugural exhibiti
+ on at Elise Seigenthaler Gallery Opening January 9\, 2026\, with works b
+ y Amira Diaw\, Rebekka Federle\, Ava Peterson\, and Olivia Porter\nMore 
+ info: https://thevisualist.org/2026/01/housewarming-3/\nVenue site: http
+ s://eliseseigenthaler.com/
+URL:https://thevisualist.org/2026/01/housewarming-3/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260306-abstractions-seeing-with-the-mind-s-eye@thevisualist.org
+DTSTAMP:20260306T000000Z
+DTSTART;TZID=America/Chicago:20260306T180000
+DTEND;TZID=America/Chicago:20260306T220000
+SUMMARY:ABSTRACTIONS Seeing With The Mind’s Eye
+LOCATION:Fulton Street Collective\, 1821 W Hubbard St\, Chicago\, IL 6062
+ 2
+DESCRIPTION:Fulton Street Collective\, in collaboration with West Town Ch
+ amber of Commerce\, presents ABSTRACTIONS Seeing With The Mind’s Eye A
+ rt Opening on Friday March 6th\, from 6-10pm. Curated by Ryan Miller How
+  does an artist draw an emotion\, or paint a sound? Join us on Friday\, 
+ March 6 as The...\nMore info: https://thevisualist.org/2026/03/abstracti
+ ons-seeing-with-the-minds-eye/\nVenue site: https://fultonstreetcollecti
+ ve.com/
+URL:https://thevisualist.org/2026/03/abstractions-seeing-with-the-minds-e
+ ye/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

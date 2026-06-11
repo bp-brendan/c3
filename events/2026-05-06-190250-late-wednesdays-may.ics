@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260506-late-wednesdays-may@thevisualist.org
+DTSTAMP:20260506T000000Z
+DTSTART;TZID=America/Chicago:20260506T170000
+DTEND;TZID=America/Chicago:20260506T200000
+SUMMARY:Late Wednesdays: May
+LOCATION:National Museum of Mexican Art\, 1852 W 19th St\, Chicago\, IL 6
+ 0608
+DESCRIPTION:Join us for Late Wednesdays on May 6th\, when we’ll be open
+  until 8:00 pm. Enjoy the Museum after hours with extended access to the
+  galleries and gift shop. Stroll through current exhibitions\, pick up a
+  unique gift\, and take in the art in a more relaxed setting. In honor o
+ f...\nMore info: https://thevisualist.org/2026/05/late-wednesdays-may/\n
+ Venue site: https://nationalmuseumofmexicanart.org/events/late-wednesday
+ s-may
+URL:https://thevisualist.org/2026/05/late-wednesdays-may/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

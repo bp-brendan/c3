@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260110-collin-leitch-the-darling-maneuver@thevisualist.org
+DTSTAMP:20260110T000000Z
+DTSTART;TZID=America/Chicago:20260110T180000
+DTEND;TZID=America/Chicago:20260110T210000
+SUMMARY:Collin Leitch: The Darling Maneuver
+LOCATION:Twelve Ten Gallery\, 1104 West Thorndale Ave.\, Chicago IL 60660
+DESCRIPTION:Twelve Ten Gallery is pleased to present “The Darling Maneu
+ ver\,” an exhibition by Collin Leitch. For his solo presentation at th
+ e gallery\, Leitch has produced two parallel series of sculptures that e
+ xplore the material and structural conditions of contemporary three-dime
+ nsional...\nMore info: https://thevisualist.org/2026/01/collin-leitch-th
+ e-darling-maneuver/\nVenue site: https://www.twelvetengallery.com/exhibi
+ tions/leitch-darling-maneuver
+URL:https://thevisualist.org/2026/01/collin-leitch-the-darling-maneuver/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

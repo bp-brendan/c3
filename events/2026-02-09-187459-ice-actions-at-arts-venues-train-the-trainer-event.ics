@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260209-ice-actions-at-arts-venues-train-the-trainer-event@thevisual
+ ist.org
+DTSTAMP:20260209T000000Z
+DTSTART;TZID=America/Chicago:20260209T183000
+DTEND;TZID=America/Chicago:20260209T200000
+SUMMARY:ICE Actions at Arts Venues: Train the Trainer Event
+LOCATION:Lawyers for the Creative Arts\, Online
+DESCRIPTION:In this program\, we will provide specific best practices adv
+ ice in responding to visits from ICE at your venue\, including: Rights y
+ ou\, your staff\, and your patrons have when confronted by ICE agents\; 
+ how to effectively assert those rights\, and most importantly how to avo
+ id threats to...\nMore info: https://thevisualist.org/2026/02/ice-action
+ s-at-arts-venues-train-the-trainer-event/\nVenue site: https://law-arts.
+ org/event/ice-actions-at-arts-venues-train-the-trainer-event
+URL:https://thevisualist.org/2026/02/ice-actions-at-arts-venues-train-the
+ -trainer-event/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

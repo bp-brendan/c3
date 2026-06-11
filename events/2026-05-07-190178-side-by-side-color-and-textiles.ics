@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260507-side-by-side-color-and-textiles@thevisualist.org
+DTSTAMP:20260507T000000Z
+DTSTART;TZID=America/Chicago:20260507T163000
+DTEND;TZID=America/Chicago:20260507T183000
+SUMMARY:Side by Side: Color and Textiles
+LOCATION:CWAC Exhibitions\, 5540 S Greenwood Ave\, Chicago\, IL 60637
+DESCRIPTION:Drawing together the works of Chicago-based Ukrainian America
+ n artists\, Anna Kuczma (1910-2002) and her daughter Lialia Kuchma (b. 1
+ 943)\, Side by Side: Color and Textiles situates modern artists’ exper
+ iments with color in textile histories\, practices\, and technologies. T
+ o further...\nMore info: https://thevisualist.org/2026/05/side-by-side-c
+ olor-and-textiles/\nVenue site: https://vrc.uchicago.edu/side-side-color
+ -and-textiles
+URL:https://thevisualist.org/2026/05/side-by-side-color-and-textiles/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

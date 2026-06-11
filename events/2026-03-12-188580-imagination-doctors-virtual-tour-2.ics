@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260312-imagination-doctors-virtual-tour@thevisualist.org
+DTSTAMP:20260312T000000Z
+DTSTART;TZID=America/Chicago:20260312T150000
+DTEND;TZID=America/Chicago:20260312T160000
+SUMMARY:Imagination Doctors Virtual Tour
+LOCATION:Gallery 400\, Online
+DESCRIPTION:This virtual tour of Imagination Doctors is co-led by UIC Dis
+ ability Cultural Center Director Margaret Fink\, co-curator Denny Mwaura
+ \, and exhibiting artist William Estrada. Together\, they take you throu
+ gh a range of newly commissioned artworks that evoke longevity\, memory.
+ ..\nMore info: https://thevisualist.org/2026/03/imagination-doctors-virt
+ ual-tour-2/\nVenue site: https://gallery400.uic.edu/event/idvirtualtour/
+URL:https://thevisualist.org/2026/03/imagination-doctors-virtual-tour-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

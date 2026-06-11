@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260228-from-porch-to-patio@thevisualist.org
+DTSTAMP:20260228T000000Z
+DTSTART;TZID=America/Chicago:20260228T180000
+DTEND;TZID=America/Chicago:20260228T200000
+SUMMARY:from porch to patio
+LOCATION:Bodock\, 3216 W Augusta Blvd\, Chicago\, IL 60651
+DESCRIPTION:In the early 20th century\, the American home was built aroun
+ d the front porch. The porch\, not fully public or private\, acted as a 
+ medial space\, a space to get to know your neighbor. It invited people i
+ n for conversation and prompted communal care of one another. As Richard
+  Thomas...\nMore info: https://thevisualist.org/2026/02/from-porch-to-pa
+ tio/\nVenue site: https://www.instagram.com/p/DVEe0rGDvo9/
+URL:https://thevisualist.org/2026/02/from-porch-to-patio/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

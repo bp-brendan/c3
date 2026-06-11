@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-i-used-to-live-in-chicago@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T170000
+DTEND;TZID=America/Chicago:20260410T210000
+SUMMARY:I Used to Live in Chicago
+LOCATION:Blanc Gallery\, 4445 S Martin Luther King Dr\, Chicago\, IL 6065
+ 3
+DESCRIPTION:Opening during one of the city’s most celebrated moments fo
+ r contemporary art\, EXPO Chicago week\, I Used to Live in Chicago is a 
+ multidisciplinary exhibition exploring memory\, displacement\, and cultu
+ ral resilience across Chicago’s historically black neighborhoods. Cura
+ ted by...\nMore info: https://thevisualist.org/2026/04/i-used-to-live-in
+ -chicago/\nVenue site: https://blancchicago.com/
+URL:https://thevisualist.org/2026/04/i-used-to-live-in-chicago/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

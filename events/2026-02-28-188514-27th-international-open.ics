@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260228-27th-international-open@thevisualist.org
+DTSTAMP:20260228T000000Z
+DTSTART;TZID=America/Chicago:20260228T160000
+DTEND;TZID=America/Chicago:20260228T190000
+SUMMARY:27th International Open
+LOCATION:Woman Made Gallery\, 1332 S Halsted St\, Chicago\, IL 60607
+DESCRIPTION:CHICAGO—Woman Made Gallery (WMG) proudly presents its 27th 
+ International Open\, a juried exhibition showcasing work in all media by
+  women and non-binary artists from around the world. Juror Nirmal Raja i
+ nvited works that explore and push conceptual and material boundaries. F
+ eaturing 41...\nMore info: https://thevisualist.org/2026/02/27th-interna
+ tional-open/\nVenue site: https://womanmade.org/27th-international-open/
+URL:https://thevisualist.org/2026/02/27th-international-open/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

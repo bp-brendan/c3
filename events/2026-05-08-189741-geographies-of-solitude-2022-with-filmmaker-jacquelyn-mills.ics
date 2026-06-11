@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260508-geographies-of-solitude-2022-with-filmmaker-jacquelyn-mills@
+ thevisualist.org
+DTSTAMP:20260508T000000Z
+DTSTART;TZID=America/Chicago:20260508T190000
+DTEND;TZID=America/Chicago:20260508T213000
+SUMMARY:GEOGRAPHIES OF SOLITUDE (2022) with filmmaker Jacquelyn Mills
+LOCATION:The Block Cinema\, 1920 Campus Dr\, Evanston\, IL 60201
+DESCRIPTION:GEOGRAPHIES OF SOLITUDE (Jacquelyn Mills\, 2022\, 103 min\, D
+ CP) For the better part of 50 years\, naturalist and environmental resea
+ rcher Zoe Lucas has lived alone on Sable Island\, an isolated Nova Scoti
+ a sandbar of a mere 12 square miles. As custodian of the island’s seal
+ s and wild...\nMore info: https://thevisualist.org/2026/05/geographies-o
+ f-solitude-2022-with-filmmaker-jacquelyn-mills/\nVenue site: https://www
+ .blockmuseum.northwestern.edu/cinema/2026/geographies-of-solitude-2022-w
+ ith-filmmaker-jacquelyn-mills.html
+URL:https://thevisualist.org/2026/05/geographies-of-solitude-2022-with-fi
+ lmmaker-jacquelyn-mills/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

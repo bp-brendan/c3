@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260424-benjye-troob-forms-horizons@thevisualist.org
+DTSTAMP:20260424T000000Z
+DTSTART;TZID=America/Chicago:20260424T180000
+DTEND;TZID=America/Chicago:20260424T210000
+SUMMARY:Benjye Troob: Forms & Horizons
+LOCATION:Jackson Junge Gallery\, 1389 N Milwaukee Ave\, Chicago\, IL 6062
+ 2
+DESCRIPTION:Join Jackson Junge Gallery in celebrating the past\, present\
+ , and future of Benjye Troob’s remarkable career in FORMS & HORIZONS: 
+ A Retrospective. Spanning more than four decades of drawing and painting
+ \, this retrospective highlights Benjye Troob’s lifelong dedication to
+  art. The...\nMore info: https://thevisualist.org/2026/04/benjye-troob-f
+ orms-horizons/\nVenue site: https://j2gallery.com/
+URL:https://thevisualist.org/2026/04/benjye-troob-forms-horizons/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

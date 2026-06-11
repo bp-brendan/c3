@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260219-marina-ross-countdown@thevisualist.org
+DTSTAMP:20260219T000000Z
+DTSTART;TZID=America/Chicago:20260219T180000
+DTEND;TZID=America/Chicago:20260219T200000
+SUMMARY:Marina Ross: COUNTDOWN
+LOCATION:Chicago Athletic Association\, 12 S Michigan Ave\, Chicago\, IL 
+ 60603
+DESCRIPTION:Celebrate the opening of Marina Ross’s new art exhibition\,
+  Countdown\, which will be on view in our 2nd floor display cases throug
+ h March 29th. Join us for an opportunity to meet the artist and curator 
+ while enjoying complimentary refreshments at the North Fireplace in the 
+ Drawing...\nMore info: https://thevisualist.org/2026/02/marina-ross-coun
+ tdown/\nVenue site: https://www.hyattexperiences.com/unbound-collection/
+ chiub#!/e/countdown-by-marina-ross-opening-reception-5bef801f
+URL:https://thevisualist.org/2026/02/marina-ross-countdown/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

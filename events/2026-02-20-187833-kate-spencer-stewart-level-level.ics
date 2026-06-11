@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260220-kate-spencer-stewart-level-level@thevisualist.org
+DTSTAMP:20260220T000000Z
+DTSTART;TZID=America/Chicago:20260220T200000
+DTEND;TZID=America/Chicago:20260220T230000
+SUMMARY:Kate Spencer Stewart: Level Level
+LOCATION:Soccer Club Club\, 2923 N Cicero Ave\, Chicago\, IL 60641
+DESCRIPTION:Soccer Club Club is pleased to announce Los Angeles-based art
+ ist Kate Spencer Stewart’s solo exhibition “Level Level”\, organiz
+ ed in collaboration with Paul Soto\, New York. OPENING NIGHT will be Feb
+ ruary 20th from 8-11 PM\, featuring music by @desertliminal. The exhibit
+ ion comprises a...\nMore info: https://thevisualist.org/2026/02/kate-spe
+ ncer-stewart-level-level/\nVenue site: https://www.soccerclub.club/
+URL:https://thevisualist.org/2026/02/kate-spencer-stewart-level-level/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

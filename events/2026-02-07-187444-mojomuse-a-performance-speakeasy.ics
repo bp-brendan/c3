@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260207-mojo-muse-a-performance-speakeasy@thevisualist.org
+DTSTAMP:20260207T000000Z
+DTSTART;TZID=America/Chicago:20260207T180000
+DTEND;TZID=America/Chicago:20260207T210000
+SUMMARY:MOJO&MUSE: A Performance Speakeasy
+LOCATION:Watershed Art and Ecology\, 1821 S Racine Ave\, Chicago\, IL 606
+ 47
+DESCRIPTION:Get ready to experience a night of magic and creativity at MO
+ JO&MUSE – where art comes to life! A special speakeasy of art and comm
+ unity. Join us for an exciting night of community and art in the beautif
+ ul space of Watershed Art & Ecology. The MOJO&MUSE speakeasy will presen
+ t an...\nMore info: https://thevisualist.org/2026/02/mojomuse-a-performa
+ nce-speakeasy/\nVenue site: https://guildcomplex.org/event/mojomuse/
+URL:https://thevisualist.org/2026/02/mojomuse-a-performance-speakeasy/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

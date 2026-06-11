@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260211-valentine-s-portrait-slam@thevisualist.org
+DTSTAMP:20260211T000000Z
+DTSTART;TZID=America/Chicago:20260211T170000
+DTEND;TZID=America/Chicago:20260211T200000
+SUMMARY:Valentine’s Portrait Slam!
+LOCATION:Off Hours Beer Co.\, 3520 S Halsted St\, Chicago\, IL 60609
+DESCRIPTION:Join Project Onward (a non-profit studio and gallery for arti
+ sts with mental and developmental disabilities) for a special Portrait S
+ lam at Off Hours Beer Co. inside the historic Ramova Theater. From 5:00
+ –8:00 PM\, five Project Onward artists will be creating one-of-a-kind\
+ , hand-drawn...\nMore info: https://thevisualist.org/2026/02/valentines-
+ portrait-slam-3/\nVenue site: https://www.projectonward.org/events-1/val
+ entines-portrait-slam-at-off-hours
+URL:https://thevisualist.org/2026/02/valentines-portrait-slam-3/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

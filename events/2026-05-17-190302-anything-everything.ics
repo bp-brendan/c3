@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260517-anything-everything@thevisualist.org
+DTSTAMP:20260517T000000Z
+DTSTART;TZID=America/Chicago:20260517T180000
+DTEND;TZID=America/Chicago:20260517T230000
+SUMMARY:Anything\, Everything
+LOCATION:California Clipper\, 1002 N California Ave\, Chicago\, IL 60622
+DESCRIPTION:Cherry Knot is a Chicago based artist-run curation group\, co
+ nsisting of full time artist-laborers Rain Shanks\, Peach\, and Amanda T
+ homas. Cherry Knot is committed to dismantling the notions of the white 
+ walled gallery-artist hierarchy by fostering art accessibility through c
+ ommunity...\nMore info: https://thevisualist.org/2026/05/anything-everyt
+ hing/\nVenue site: https://www.instagram.com/cherryknot.chi
+URL:https://thevisualist.org/2026/05/anything-everything/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

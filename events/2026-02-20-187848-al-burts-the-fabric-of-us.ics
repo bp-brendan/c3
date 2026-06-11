@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260220-al-burts-the-fabric-of-us@thevisualist.org
+DTSTAMP:20260220T000000Z
+DTSTART;TZID=America/Chicago:20260220T180000
+DTEND;TZID=America/Chicago:20260220T220000
+SUMMARY:Al Burts: The Fabric of Us
+LOCATION:Gallery Guichard\, 436 E 47th St\, Chicago\, IL 60653
+DESCRIPTION:The Fabric of Us\, solo exhibition of Al Burt’s February 20
+ \, 2025 6 pm to 9 pm at Gallery Guichard! Join us FEBRUARY 20\, 2026 6 p
+ m to 9 pm at GALLERY GUICHARD for The Fabric of Us featuring the solo sh
+ ow of East Coast of Al Burt’s.\nMore info: https://thevisualist.org/20
+ 26/02/al-burts-the-fabric-of-us/\nVenue site: https://www.eventbrite.com
+ /e/the-solo-exhibit-of-al-burts-the-fabric-of-us-tickets-1978952533299?a
+ ff=
+URL:https://thevisualist.org/2026/02/al-burts-the-fabric-of-us/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

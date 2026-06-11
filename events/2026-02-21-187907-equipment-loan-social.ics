@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260221-equipment-loan-social@thevisualist.org
+DTSTAMP:20260221T000000Z
+DTSTART;TZID=America/Chicago:20260221T153000
+DTEND;TZID=America/Chicago:20260221T170000
+SUMMARY:Equipment Loan Social
+LOCATION:Access Living\, 115 W Chicago Ave\, Chicago\, IL 60654
+DESCRIPTION:The Collab Social is back! Cultural Access Collaborative is d
+ edicated to providing spaces where members of the community can meet\, s
+ hare\, and learn together about improving accessibility in cultural spac
+ es. For our 2026 Social\, you will have the opportunity to check out Acc
+ ess...\nMore info: https://thevisualist.org/2026/02/equipment-loan-socia
+ l/\nVenue site: https://culturalaccesscollaborative.org/collab-events/eq
+ uiPMent-loan-social/
+URL:https://thevisualist.org/2026/02/equipment-loan-social/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

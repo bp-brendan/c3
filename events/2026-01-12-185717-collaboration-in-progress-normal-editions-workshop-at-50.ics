@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260112-collaboration-in-progress-normal-editions-workshop-at-50@the
+ visualist.org
+DTSTAMP:20260112T000000Z
+DTSTART;VALUE=DATE:20260112
+SUMMARY:Collaboration in Progress: Normal Editions Workshop at 50
+LOCATION:University Galleries\, University Galleries 11 Uptown Circle\, S
+ uite 103\, Normal\, IL 61761
+DESCRIPTION:University Galleries of Illinois State University is pleased 
+ to present Collaboration in Progress: Normal Editions Workshop at 50 fro
+ m January 12 through March 25\, 2026. Collaboration in Progress: Normal 
+ Editions Workshop at 50 is an exhibition that celebrates the 50th annive
+ rsary of...\nMore info: https://thevisualist.org/2026/01/collaboration-i
+ n-progress-normal-editions-workshop-at-50/\nVenue site: https://gallerie
+ s.illinoisstate.edu/exhibitions/2026/normal-editions-50th/
+URL:https://thevisualist.org/2026/01/collaboration-in-progress-normal-edi
+ tions-workshop-at-50/
+END:VEVENT
+END:VCALENDAR

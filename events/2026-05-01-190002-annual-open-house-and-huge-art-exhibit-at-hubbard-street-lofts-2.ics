@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260501-annual-open-house-and-huge-art-exhibit-at-hubbard-street-lof
+ ts@thevisualist.org
+DTSTAMP:20260501T000000Z
+DTSTART;TZID=America/Chicago:20260501T180000
+DTEND;TZID=America/Chicago:20260501T220000
+SUMMARY:Annual Open House and Huge Art Exhibit at Hubbard Street Lofts
+LOCATION:Fulton Street Collective\, 1821 W Hubbard St\, Chicago\, IL 6062
+ 2
+DESCRIPTION:It’s the annual Open House and Huge Art Exhibit at Hubbard 
+ Street Lofts on Friday\, May 1st. Get a behind-the-scenes look at a coll
+ ection of some of Chicago’s most talented artists\, designers\, organi
+ zations and galleries — all under the 1821 roof. Each tenant will be o
+ pening their...\nMore info: https://thevisualist.org/2026/05/annual-open
+ -house-and-huge-art-exhibit-at-hubbard-street-lofts-2/\nVenue site: http
+ s://fultonstreetcollective.com/
+URL:https://thevisualist.org/2026/05/annual-open-house-and-huge-art-exhib
+ it-at-hubbard-street-lofts-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

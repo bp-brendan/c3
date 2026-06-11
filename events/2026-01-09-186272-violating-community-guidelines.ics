@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260109-violating-community-guidelines@thevisualist.org
+DTSTAMP:20260109T000000Z
+DTSTART;TZID=America/Chicago:20260109T180000
+DTEND;TZID=America/Chicago:20260109T210000
+SUMMARY:Violating Community Guidelines
+LOCATION:Purple Window Gallery\, 2233 S Throop St Unit 845\, Chicago\, IL
+  60608
+DESCRIPTION:Join us in celebrating the opening of “Violating Community 
+ Guidlelines”\, curated by Spenser Bower @spenser.bower Friday\, Januar
+ y 9\, 2026 6-9 PM. Mana Contemporary Chicago @manacontemporary_chicago 2
+ 233 S. Throop St. Chicago\, IL 60608 Purple Window Gallery #845 Gallery 
+ Hours | Jan. 17...\nMore info: https://thevisualist.org/2026/01/violatin
+ g-community-guidelines/\nVenue site: https://www.purplewindowgallery.com
+ /
+URL:https://thevisualist.org/2026/01/violating-community-guidelines/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260410-liliana-porter-the-strange-task@thevisualist.org
+DTSTAMP:20260410T000000Z
+DTSTART;TZID=America/Chicago:20260410T170000
+DTEND;TZID=America/Chicago:20260410T200000
+SUMMARY:Liliana Porter: The Strange Task
+LOCATION:SECRIST | BEACH\, 1801 W Hubbard St\, Chicago\, IL 60622
+DESCRIPTION:Born in Argentina in 1941 and based in New York since 1964\, 
+ Liliana Porter has developed a enigmatic multidisciplinary practice span
+ ning more than six decades. Working across video\, photography\, paintin
+ g\, printmaking\, drawing\, collage\, small-scale installations\, and th
+ eatre\, her work...\nMore info: https://thevisualist.org/2026/04/liliana
+ -porter-the-strange-task/\nVenue site: https://secristbeach.com/exhibiti
+ ons/57-liliana-porter-the-strange-task/
+URL:https://thevisualist.org/2026/04/liliana-porter-the-strange-task/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260530-chicago-arts-census-town-hall-comfort-station@thevisualist.o
+ rg
+DTSTAMP:20260530T000000Z
+DTSTART;TZID=America/Chicago:20260530T140000
+DTEND;TZID=America/Chicago:20260530T160000
+SUMMARY:Chicago Arts Census Town Hall – Comfort Station
+LOCATION:Comfort Station Logan Square\, 2579 N Milwaukee Ave\, Chicago\, 
+ IL 60647
+DESCRIPTION:Explore the Chicago Arts Census data with us in person! Join 
+ organizers from the Chicago Arts Census for a presentation on Our Work O
+ ur Worth: The Lives and Labor of Chicago’s Arts Workers\, a recently p
+ ublished report based on survey responses from 1\,200+ arts workers in C
+ hicagoland...\nMore info: https://thevisualist.org/2026/05/chicago-arts-
+ census-town-hall-comfort-station/\nVenue site: https://comfortstationlog
+ ansquare.org/calendar/2026/5/30/chicago-arts-census-town-hall
+URL:https://thevisualist.org/2026/05/chicago-arts-census-town-hall-comfor
+ t-station/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

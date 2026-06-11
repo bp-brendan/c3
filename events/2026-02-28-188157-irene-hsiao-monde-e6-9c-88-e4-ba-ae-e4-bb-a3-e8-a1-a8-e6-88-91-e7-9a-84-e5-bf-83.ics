@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260228-irene-hsiao-mond-e@thevisualist.org
+DTSTAMP:20260228T000000Z
+DTSTART;TZID=America/Chicago:20260228T140000
+DTEND;TZID=America/Chicago:20260228T160000
+SUMMARY:Irene Hsiao: Mond(e): 月亮代表我的心
+LOCATION:The Graham Foundation for Advanced Studies in the Fine Arts\, 4 
+ W Burton Pl\, Chicago\, IL 60610
+DESCRIPTION:Free\; RSVP required CLICK HERE Chicago-based artist Irene Hs
+ iao presents 氣\, a piece developed for performances across the Chicago
+  Architecture Biennial and part of Hsiao’s project Mond(e): 月亮代
+ 表我的心\, named for the Taiwanese love song “The moon represents 
+ my heart.” In 氣\, Hsiao performs...\nMore info: https://thevisualist
+ .org/2026/02/irene-hsiao-monde-月亮代表我的心/\nVenue site: http:
+ //www.grahamfoundation.org/public_events/6771-
+URL:https://thevisualist.org/2026/02/irene-hsiao-monde-月亮代表我的
+ 心/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

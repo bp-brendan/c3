@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260304-atp-visiting-artist-talk-rush-baker-iv@thevisualist.org
+DTSTAMP:20260304T000000Z
+DTSTART;TZID=America/Chicago:20260304T163000
+DTEND;TZID=America/Chicago:20260304T173000
+SUMMARY:ATP Visiting Artist Talk: Rush Baker IV
+LOCATION:Northwestern University Department of Art Theory and Practice\, 
+ Kresge Hall\, 1880 Campus Dr\, Room 1515\, Evanston\, IL 60208
+DESCRIPTION:The Department of Art Theory and Practice at Northwestern Uni
+ versity welcomes Rush Baker IV as part of the ongoing visiting artist se
+ ries. Rush Baker IV (American\, b. 1987\, Washington\, DC\; he/him) is a
+  painter whose work explores landscapes as vessels of cultural memory...
+ \nMore info: https://thevisualist.org/2026/03/atp-visiting-artist-talk-r
+ ush-baker-iv/\nVenue site: https://art.northwestern.edu/events/visiting-
+ artist-talk-rush-baker-iv
+URL:https://thevisualist.org/2026/03/atp-visiting-artist-talk-rush-baker-
+ iv/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

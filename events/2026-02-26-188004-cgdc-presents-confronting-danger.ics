@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260226-cgdc-presents-confronting-danger@thevisualist.org
+DTSTAMP:20260226T000000Z
+DTSTART;TZID=America/Chicago:20260226T180000
+DTEND;TZID=America/Chicago:20260226T210000
+SUMMARY:CGDC presents Confronting Danger
+LOCATION:Two-Thirty\, 230 W Superior Ave\, 3rd Fl\, Chicago\, IL 60654
+DESCRIPTION:The Chicago Graphic Design Club and One Design invite you to 
+ attend the third installment of our series\, Confronting Design. In unce
+ rtain times\, designers have a unique role to play. This year’s Confro
+ nting Design explores how we use “Danger”—risk-taking\, experiment
+ ation\, subversive...\nMore info: https://thevisualist.org/2026/02/cgdc-
+ presents-confronting-danger/\nVenue site: https://chicagographicdesign.c
+ lub/programming/confronting-danger/
+URL:https://thevisualist.org/2026/02/cgdc-presents-confronting-danger/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

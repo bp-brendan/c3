@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260327-jonas-leriche-the-art-of-becoming@thevisualist.org
+DTSTAMP:20260327T000000Z
+DTSTART;TZID=America/Chicago:20260327T170000
+DTEND;TZID=America/Chicago:20260327T200000
+SUMMARY:Jonas LeRiche: The Art of Becoming
+LOCATION:Hilton Contemporary | River North\, 716 N. Wells St\, Chicago\, 
+ IL 60654
+DESCRIPTION:Hilton Contemporary is pleased to present The Art of Becoming
+ \, an exhibition by Belgian artist Jonas LeRiche\, opening Friday\, Marc
+ h 27\, 2026 at Hilton Contemporary’s River North location. This marks 
+ the artist’s debut exhibition in Chicago. Born in Belgium\, Jonas LeRi
+ che spent a...\nMore info: https://thevisualist.org/2026/03/the-art-of-b
+ ecoming-jonas-leriche-at-hilton-contemporary/\nVenue site: https://hilto
+ ncontemporary.com/
+URL:https://thevisualist.org/2026/03/the-art-of-becoming-jonas-leriche-at
+ -hilton-contemporary/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

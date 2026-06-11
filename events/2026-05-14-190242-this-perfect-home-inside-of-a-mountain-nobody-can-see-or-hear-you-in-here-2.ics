@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260514-this-perfect-home-inside-of-a-mountain-nobody-can-see-or-hea
+ r-you-in-here@thevisualist.org
+DTSTAMP:20260514T000000Z
+DTSTART;TZID=America/Chicago:20260514T190000
+DTEND;TZID=America/Chicago:20260514T220000
+SUMMARY:This Perfect Home Inside of a Mountain Nobody Can See Or Hear You
+  in Here
+LOCATION:Comfort Station Logan Square\, 2579 N Milwaukee Ave\, Chicago\, 
+ IL 60647
+DESCRIPTION:Performance 1: Ppppaaarrrkkkk 公 園 pppaaarrrquuuE (Sage Li
+ n and Alejandra Ramos) Screening part 1: COBWEBS (Zekkeraya El-Magharbel
+ ) Smrt Piece (Charlotte Hong) Family (Genesis Yamat) Sit Still (Gren Bee
+ ) My Very Worst Nightmare (Syd Wrigley) The Sun (Veronica Timble) Sculpt
+ ure Video...\nMore info: https://thevisualist.org/2026/05/this-perfect-h
+ ome-inside-of-a-mountain-nobody-can-see-or-hear-you-in-here-2/\nVenue si
+ te: https://comfortstationlogansquare.org/calendar/2025/5/14/d1iokozslep
+ 9lwe1c3i2ummqka171d
+URL:https://thevisualist.org/2026/05/this-perfect-home-inside-of-a-mounta
+ in-nobody-can-see-or-hear-you-in-here-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

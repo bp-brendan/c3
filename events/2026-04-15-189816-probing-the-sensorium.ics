@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Visualist//EN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20260415-probing-the-sensorium@thevisualist.org
+DTSTAMP:20260415T000000Z
+DTSTART;TZID=America/Chicago:20260415T170000
+DTEND;TZID=America/Chicago:20260415T180000
+SUMMARY:Probing the Sensorium
+LOCATION:Midway Studio\, 6016 S Ingleside Ave\, Chicago\, IL 60637
+DESCRIPTION:Join UChicago students Jef Biesinger\, MFA ‘26 and Frances 
+ Millar\, MAPH ‘26 in conversation Wednesday\, April 15th\, to discuss 
+ their collaborative practice and master’s thesis projects revolving ar
+ ound concepts of performance\, installation\, sensation\, and visitor en
+ gagement. Jef\, a...\nMore info: https://thevisualist.org/2026/04/probin
+ g-the-sensorium/\nVenue site: https://uchicago.app.box.com/s/mc0pledh8b9
+ kkxjp5sv6kkndy5d9kze8
+URL:https://thevisualist.org/2026/04/probing-the-sensorium/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR
