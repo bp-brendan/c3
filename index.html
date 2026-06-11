@@ -1722,7 +1722,7 @@
       });
       return `
         <ul class="archive-month-list">
-          ${[...months.keys()].sort().map(key => {
+          ${[...months.keys()].sort((a, b) => b.localeCompare(a)).map(key => {
             const month = months.get(key);
             const name = new Date(`${key}-15T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
             return `
