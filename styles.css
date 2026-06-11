@@ -228,6 +228,12 @@ body {
   height: 1.05em;
 }
 
+@media (max-width: 480px) {
+  .tag-invoke > span {
+    display: none;
+  }
+}
+
 .tag-invoke-count {
   background: var(--content-ink);
   color: var(--content-paper);
