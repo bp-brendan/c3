@@ -1124,10 +1124,13 @@ body {
   overflow-x: auto;
   padding-left: var(--river-left-edge);
   padding-right: var(--edge);
-  padding-bottom: 4px; /* keeps the thin scrollbar off the images */
-  scrollbar-width: thin;
+  scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
+}
+
+.thumb-river::-webkit-scrollbar {
+  display: none;
 }
 
 #view-archive .thumb-river-frame {
