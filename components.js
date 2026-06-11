@@ -84,7 +84,7 @@ Brunswick Building fire of 1989.`;
                 ? `<a href="${localHref(item.page)}" class="${active === item.key ? 'active' : ''}">${item.label}</a>`
                 : `<a href="${navHref(item.key)}" data-view="${item.key}" class="${active === item.key ? 'active' : ''}">${item.label}</a>
               `).join('')}
-              <a href="${localHref('submit.html')}" class="nav-button ${page === 'submit' ? 'active' : ''}" ${page === 'submit' ? 'aria-current="page"' : 'target="_blank" rel="noopener"'}>Add Event</a>
+              <a href="${localHref('submit.html')}" class="nav-button ${page === 'submit' ? 'active' : ''}" ${page === 'submit' ? 'aria-current="page"' : ''}>Add Event</a>
             </nav>
           </div>
         </div>`;

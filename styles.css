@@ -46,6 +46,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ---- Header / logotype ------------------------------------------- */
@@ -589,8 +590,12 @@ body {
 
 /* once pinned, slim down: just the row, vertically centered, modest margin */
 .nav-band.pinned {
-  padding-top: clamp(0.5rem, 1vw, 0.85rem);
-  padding-bottom: clamp(0.5rem, 1vw, 0.85rem);
+  height: 48px;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .band-label {
