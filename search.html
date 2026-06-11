@@ -23,12 +23,14 @@
 
   <footer class="site-footer" data-visualist-footer></footer>
 
-  <script src="tags2026.js"></script>
-  <script src="archiveevents2026.js"></script>
+  <!-- chrome renders before the heavy data scripts so the header doesn't flash in late -->
   <script>
     Visualist.renderChrome();
     Visualist.initHeaderAccordion();
-
+  </script>
+  <script src="tags2026.js"></script>
+  <script src="archiveevents2026.js"></script>
+  <script>
     const q = (new URLSearchParams(location.search).get('q') || '').trim();
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 

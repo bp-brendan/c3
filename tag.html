@@ -23,13 +23,15 @@
 
   <footer class="site-footer" data-visualist-footer></footer>
 
+  <!-- chrome renders before the heavy data scripts so the header doesn't flash in late -->
+  <script>
+    Visualist.renderChrome();
+    Visualist.initHeaderAccordion();
+  </script>
   <script src="tags2026.js"></script>
   <script src="tagevents2026.js"></script>
   <script src="archiveevents2026.js"></script>
   <script>
-    Visualist.renderChrome();
-    Visualist.initHeaderAccordion();
-
     const slug = new URLSearchParams(location.search).get('tag') || '';
     // "today" and "tomorrow" are virtual tags: everything opening or on view then, always current
     const isTodayPage = slug === 'today';
