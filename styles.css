@@ -1019,6 +1019,56 @@ body {
   height: 1px;
 }
 
+/* the archive's default face: month links grouped under year separators */
+.archive-year {
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+.archive-year-label {
+  margin: 0 0 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: var(--hairline-light);
+  color: var(--content-ink-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.archive-month-list {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.archive-month-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75em;
+}
+
+.archive-month-list a {
+  color: var(--content-ink);
+  font-family: Georgia, serif;
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  text-decoration: none;
+}
+
+.archive-month-list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.archive-month-count {
+  color: var(--content-ink-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .archive-listing {
   margin-bottom: clamp(2rem, 4vw, 3rem);
   /* scroll position is compensated manually when earlier events are prepended */

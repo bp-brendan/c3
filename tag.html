@@ -36,24 +36,36 @@
   <script src="tagevents2026.js"></script>
   <script src="archiveevents2026.js"></script>
   <script>
-    const slug = new URLSearchParams(location.search).get('tag') || '';
+    const pageParams = new URLSearchParams(location.search);
+    const slug = pageParams.get('tag') || '';
     // "today" and "tomorrow" are virtual tags: everything opening or on view then, always current
     const isTodayPage = slug === 'today';
     const isTomorrowPage = slug === 'tomorrow';
+    // a month page (?month=2026-06) lists that month's events, archive-style
+    const monthParam = pageParams.get('month') || '';
+    const isMonthPage = /^\d{4}-\d{2}$/.test(monthParam);
+    const monthLabel = isMonthPage
+      ? new Date(`${monthParam}-15T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+      : '';
     const tag = TAGS_2026.find(t => t.s === slug);
-    const label = isTodayPage ? 'Today' : (isTomorrowPage ? 'Tomorrow' : (tag ? tag.n : slug || 'unknown'));
+    const label = isTodayPage ? 'Today'
+      : (isTomorrowPage ? 'Tomorrow'
+        : (isMonthPage ? monthLabel : (tag ? tag.n : slug || 'unknown')));
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
     document.getElementById('tag-name').textContent = label;
-    document.title = isTodayPage ? 'Today | The Visualist' : `Tagged: ${label} | The Visualist`;
+    document.title = isTodayPage ? 'Today | The Visualist'
+      : (isMonthPage ? `${monthLabel} | The Visualist` : `Tagged: ${label} | The Visualist`);
     // the Today listing is the landing page: it opens straight onto the
     // day-and-date heading, like a This Week day group
     if (isTodayPage) document.querySelector('.tag-title').remove();
 
     Visualist.trackEventLinks(() => ({
-      label: (isTodayPage || isTomorrowPage) ? label : `Tagged “${label}”`,
+      label: (isTodayPage || isTomorrowPage || isMonthPage) ? label : `Tagged “${label}”`,
       nav: 'archive',
-      href: `tag.html?tag=${encodeURIComponent(slug)}`
+      href: isMonthPage
+        ? `tag.html?month=${encodeURIComponent(monthParam)}`
+        : `tag.html?tag=${encodeURIComponent(slug)}`
     }));
 
     const today = Visualist.todayIso();
@@ -64,11 +76,15 @@
     // that day's openings first, then the ongoing runs
     const dayIso = isTodayPage ? today : (isTomorrowPage ? tomorrow : '');
     const hits = TAG_EVENTS_2026
-      .filter(e => isTodayPage ? runsToday(e) : (isTomorrowPage ? runsTomorrow(e) : e.g.includes(slug)))
+      .filter(e => isTodayPage ? runsToday(e)
+        : (isTomorrowPage ? runsTomorrow(e)
+          : (isMonthPage ? e.d.startsWith(monthParam) : e.g.includes(slug))))
       .sort((a, b) => dayIso
         ? (Number(b.d === dayIso) - Number(a.d === dayIso)) ||
           a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '')
-        : b.d.localeCompare(a.d));
+        : (isMonthPage
+          ? a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '') // months read chronologically
+          : b.d.localeCompare(a.d)));
     const tagCount = document.getElementById('tag-count');
     if (tagCount) tagCount.textContent = `(${hits.length})`;
 

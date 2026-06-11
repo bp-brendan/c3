@@ -1581,6 +1581,31 @@
     };
     const archiveRangeHtml = (start, end) =>
       archiveFiltered.slice(start, end).map((event, i) => archiveEventHtml(event, start + i)).join('');
+    // the archive's default face: months grouped under year separators,
+    // each linking to its month page; filtering swaps in the event list
+    const archiveMonthIndexHtml = () => {
+      const counts = new Map();
+      archiveEvents.forEach(event => {
+        const month = event.d.slice(0, 7);
+        counts.set(month, (counts.get(month) || 0) + 1);
+      });
+      const byYear = new Map();
+      [...counts.keys()].sort().forEach(month => {
+        const year = month.slice(0, 4);
+        if (!byYear.has(year)) byYear.set(year, []);
+        byYear.get(year).push(month);
+      });
+      return [...byYear].map(([year, months]) => `
+        <section class="archive-year">
+          <h2 class="archive-year-label">${year}</h2>
+          <ul class="archive-month-list">
+            ${months.map(month => {
+              const name = new Date(`${month}-15T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+              return `<li><a href="tag.html?month=${month}">${name}</a><span class="archive-month-count">${counts.get(month)} events</span></li>`;
+            }).join('')}
+          </ul>
+        </section>`).join('');
+    };
     const updateArchiveSentinels = () => {
       archiveTopSentinel.hidden = archiveRenderStart <= 0;
       archiveBottomSentinel.hidden = archiveRenderEnd >= archiveFiltered.length;
@@ -1623,6 +1648,18 @@
       // date range matches when the run overlaps it, not just the opening day
       const eventEnd = event =>
         event._end || (event._end = Visualist.onViewEndIso(event) || event.d);
+      const filtersActive = Boolean(q) || activeTags.size > 0 ||
+        (from && from !== minDate) || (to && to !== maxDate);
+      if (!filtersActive) {
+        archiveFiltered = [];
+        archiveRenderStart = 0;
+        archiveRenderEnd = 0;
+        archiveSummary.textContent = `${archiveEvents.length.toLocaleString()} events`;
+        archiveEmpty.hidden = true;
+        archiveResults.innerHTML = archiveMonthIndexHtml();
+        updateArchiveSentinels();
+        return;
+      }
       archiveFiltered = archiveEvents.filter(event => {
         const text = `${event.t || ''} ${event.v || ''} ${(event.g || []).join(' ')}`.toLowerCase();
         return (!q || text.includes(q)) &&
