@@ -1593,11 +1593,13 @@
         if (event.i) month.images.push(event.i);
         months.set(key, month);
       });
-      // four images sampled evenly across the month, so the collage spans
-      // its whole run rather than just the first week
+      // images sampled evenly across the month, enough to fill a full-width
+      // strip on any viewport (extras hide via the strip's single-row grid)
       const sampleImages = images => {
-        if (images.length <= 4) return images;
-        return [0, 1, 2, 3].map(k => images[Math.floor(k * (images.length - 1) / 3)]);
+        const want = 24;
+        if (images.length <= want) return images;
+        return Array.from({ length: want }, (_, k) =>
+          images[Math.floor(k * (images.length - 1) / (want - 1))]);
       };
       return `
         <ul class="archive-month-list">
@@ -1607,8 +1609,10 @@
             return `
             <li class="archive-month-item">
               <a href="tag.html?month=${key}">
-                <span class="month-name">${name}</span>
-                <span class="month-count">${month.count} events</span>
+                <span class="month-head">
+                  <span class="month-name">${name}</span>
+                  <span class="month-count">${month.count} events</span>
+                </span>
                 <span class="month-thumbs" aria-hidden="true">
                   ${sampleImages(month.images).map(src =>
                     `<img src="${escapeHtml(src)}" alt="" loading="lazy">`).join('')}

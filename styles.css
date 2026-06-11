@@ -1070,15 +1070,19 @@ body {
   padding: 0;
 }
 
-/* month rows lead with the name; a small strip of that month's event
-   images rides along as an accent */
+/* month rows: "Month Year - n events", then a full-width single row of
+   square images sampled from across the month */
 .archive-month-item a {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem 1rem;
-  padding: 0.4rem 0;
+  display: block;
+  padding: 0.5rem 0 0.9rem;
   text-decoration: none;
+}
+
+.month-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .month-name {
@@ -1100,16 +1104,23 @@ body {
   text-transform: uppercase;
 }
 
+/* fluid tracks stretch the row to the full column width at any viewport;
+   images beyond the first row fall into zero-height rows and vanish */
 .month-thumbs {
-  display: flex;
-  gap: 3px;
-  margin-left: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(2.6rem, 1fr));
+  grid-template-rows: auto; /* the one visible row */
+  grid-auto-rows: 0;
+  column-gap: 3px;
+  row-gap: 0;
+  overflow: hidden;
 }
 
 .month-thumbs img {
   display: block;
-  width: clamp(1.9rem, 5vw, 2.4rem);
-  height: clamp(1.9rem, 5vw, 2.4rem);
+  width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 2px;
   opacity: 0.85;
