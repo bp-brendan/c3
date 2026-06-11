@@ -636,8 +636,8 @@ body {
 }
 
 @keyframes chicago-flag-blue {
-  0%, 18.36%, 25.38%, 77.29%, 84.31%, 100% { color: var(--content-ink-muted); }
-  18.37%, 25.37%, 77.3%, 84.3% { color: var(--flag-blue); }
+  0%, 18.36%, 21.88%, 77.29%, 80.81%, 100% { color: var(--content-ink-muted); }
+  18.37%, 21.87%, 77.3%, 80.8% { color: var(--flag-blue); }
 }
 
 /* the red star is centered over the O's own measured box, so the replacement
@@ -672,18 +672,18 @@ body {
 
 @keyframes chicago-o-out {
   0%, 18.36%,
-  25.38%, 77.29%,
-  84.31%, 100% { opacity: 1; }
-  18.37%, 25.37%,
-  77.3%, 84.3% { opacity: 0; }
+  21.88%, 77.29%,
+  80.81%, 100% { opacity: 1; }
+  18.37%, 21.87%,
+  77.3%, 80.8% { opacity: 0; }
 }
 
 @keyframes chicago-star-in {
   0%, 18.36%,
-  25.38%, 77.29%,
-  84.31%, 100% { opacity: 0; }
-  18.37%, 25.37%,
-  77.3%, 84.3% { opacity: 1; }
+  21.88%, 77.29%,
+  80.81%, 100% { opacity: 0; }
+  18.37%, 21.87%,
+  77.3%, 80.8% { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
