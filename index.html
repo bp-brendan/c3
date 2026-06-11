@@ -1241,6 +1241,7 @@
       setControlsTop();
       requestAnimationFrame(() => {
         setControlsTop();
+        initThumbRivers(document.getElementById(`view-${viewName}`));
         if (scrollToTop && scrollY > minPinnedScrollTop()) {
           scrollToViewTop(viewName);
         } else {
@@ -1260,15 +1261,92 @@
 
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+    const blankThumbSrc = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+
     // a horizontally scrolling river of square event images, one per event,
-    // each square linking to its detail page; loads the small thumbs with a
-    // runtime fallback to the original upload
+    // each square linking to its detail page; real sources are assigned only
+    // when their row and position are close enough to matter
     const thumbRiverHtml = items => `
-      <div class="thumb-river">
-        ${items.map(item =>
-          `<a href="${escapeHtml(item.href)}" aria-label="${escapeHtml(item.title)}"><img src="${escapeHtml(Visualist.thumbSrc(item.src))}" onerror="this.onerror=null;this.src='${escapeHtml(item.src)}'" alt="" loading="lazy" decoding="async"></a>`
-        ).join('')}
+      <div class="thumb-river-frame">
+        <div class="thumb-river" tabindex="0" aria-label="Event image links">
+          ${items.map(item =>
+            `<a href="${escapeHtml(item.href)}" aria-label="${escapeHtml(item.title)}"><img src="${blankThumbSrc}" data-src="${escapeHtml(Visualist.thumbSrc(item.src))}" data-fallback-src="${escapeHtml(item.src)}" alt="" loading="lazy" decoding="async"></a>`
+          ).join('')}
+        </div>
       </div>`;
+
+    const loadThumbImage = img => {
+      const src = img.dataset.src;
+      if (!src) return;
+      const fallback = img.dataset.fallbackSrc;
+      img.onerror = () => {
+        img.onerror = null;
+        if (fallback) img.src = fallback;
+      };
+      img.src = src;
+      img.removeAttribute('data-src');
+    };
+
+    let thumbFrameObserver = null;
+
+    const initThumbRiverImages = frame => {
+      const river = frame.querySelector('.thumb-river');
+      if (!river) return;
+      const images = river.querySelectorAll('img[data-src]');
+      if (!images.length) return;
+      if (!river.clientWidth) return;
+      if (!('IntersectionObserver' in window)) {
+        images.forEach(loadThumbImage);
+        return;
+      }
+      const preload = 560;
+      const left = river.scrollLeft - preload;
+      const right = river.scrollLeft + river.clientWidth + preload;
+      images.forEach(img => {
+        const imgLeft = img.offsetLeft;
+        const imgRight = imgLeft + img.offsetWidth;
+        if (imgRight >= left && imgLeft <= right) loadThumbImage(img);
+      });
+    };
+
+    const updateThumbRiverFade = frame => {
+      const river = frame.querySelector('.thumb-river');
+      if (!river) return;
+      const maxScroll = Math.max(0, river.scrollWidth - river.clientWidth);
+      frame.classList.toggle('has-left-overflow', river.scrollLeft > 1);
+      frame.classList.toggle('has-right-overflow', river.scrollLeft < maxScroll - 1);
+    };
+
+    const initThumbRivers = root => {
+      const frames = (root || document).querySelectorAll('.thumb-river-frame');
+      if (!('IntersectionObserver' in window)) {
+        frames.forEach(initThumbRiverImages);
+      } else if (!thumbFrameObserver) {
+        thumbFrameObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            initThumbRiverImages(entry.target);
+            thumbFrameObserver.unobserve(entry.target);
+          });
+        }, { rootMargin: '700px 0px' });
+      }
+      frames.forEach(frame => {
+        if (!frame.dataset.fadeReady) {
+          frame.dataset.fadeReady = '1';
+          const river = frame.querySelector('.thumb-river');
+          if (river) {
+            river.addEventListener('scroll', () => {
+              updateThumbRiverFade(frame);
+              initThumbRiverImages(frame);
+            }, { passive: true });
+          }
+        }
+        updateThumbRiverFade(frame);
+        if (thumbFrameObserver) thumbFrameObserver.observe(frame);
+      });
+    };
+
+    window.addEventListener('resize', () => initThumbRivers(), { passive: true });
 
     // tease next week at the bottom of This Week: a scrolling river of its
     // event images, each linking through to its event page
@@ -1285,9 +1363,10 @@
       if (!items.length) return;
       document.getElementById('view-this-week').insertAdjacentHTML('beforeend', `
         <div class="week-peek">
-          <h2 class="week-peek-title">Next Week</h2>
+          <h2 class="week-peek-title">Next week</h2>
           ${thumbRiverHtml(items)}
         </div>`);
+      initThumbRivers(document.getElementById('view-this-week'));
     })();
     const dateToggle = document.querySelector('.date-toggle');
     const datePanel = document.querySelector('.date-panel');
@@ -1490,14 +1569,14 @@
       const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
       const month = date.toLocaleDateString('en-US', { month: 'long' });
       let line = `Opening ${weekday}, ${month} ${ordinalDay(date.getDate())}`;
-      // parseable times become their own Start/End rows instead of a tail
+      // parseable times become their own Start/End row instead of a tail
       if (event.w && !Visualist.timeBounds(event.w)) {
         line += event.w.includes('–') ? `, from ${event.w}` : `, at ${event.w}`;
       }
       return line;
     };
     const archiveEvents = [...ARCHIVE_EVENTS_2026].sort((a, b) =>
-      a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '')
+      b.d.localeCompare(a.d) || (a.t || '').localeCompare(b.t || '')
     );
     const matchingTag = value => {
       const normalized = value.trim().toLowerCase();
@@ -1608,15 +1687,13 @@
           <div class="event-info">
             <h3 class="event-title"><a href="${escapeHtml(event.p || event.u)}">${escapeHtml(event.t || 'Untitled')}</a>${event.k ? ' <a class="top-pick" href="tag.html?tag=top-pick">Top Pick</a>' : ''}</h3>
             ${(event.v || event.a || event.d || event.o) ? `<div class="event-meta-grid">
-              ${(event.v || event.a) ? `<div class="event-location">
-                ${event.v ? `<p class="event-venue">${event.vu ? `<a href="${escapeHtml(event.vu)}" target="_blank" rel="noopener">${escapeHtml(event.v)}</a>` : escapeHtml(event.v)}</p>` : ''}
-                ${event.a ? `<p class="event-address">${event.m ? `<a href="${escapeHtml(event.m)}" target="_blank" rel="noopener">${escapeHtml(event.a)}</a>` : escapeHtml(event.a)}</p>` : ''}
-              </div>` : ''}
+              ${event.v ? `<p class="event-venue">@ ${event.vu ? `<a href="${escapeHtml(event.vu)}" target="_blank" rel="noopener">${escapeHtml(event.v)}</a>` : escapeHtml(event.v)}</p>` : ''}
               <div class="event-schedule">
-                <p class="event-when">${Visualist.scheduleLineHtml(openingLine(event))}</p>
                 ${Visualist.startEndWhenHtml(Visualist.timeBounds(event.w))}
+                <p class="event-when">${Visualist.scheduleLineHtml(openingLine(event))}</p>
                 ${Visualist.onViewHtml(event)}
               </div>
+              ${event.a ? `<p class="event-address">${event.m ? `<a href="${escapeHtml(event.m)}" target="_blank" rel="noopener">${escapeHtml(event.a)}</a>` : escapeHtml(event.a)}</p>` : ''}
             </div>` : ''}
             ${Visualist.excerptHtml(event.x, event.p || event.u)}
             ${renderEventTags(event.g)}
@@ -1710,6 +1787,7 @@
         archiveSummary.hidden = true; // the month rows carry their own counts
         archiveEmpty.hidden = true;
         archiveResults.innerHTML = archiveMonthIndexHtml();
+        initThumbRivers(archiveResults);
         updateArchiveSentinels();
         return;
       }

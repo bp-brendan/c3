@@ -75,7 +75,7 @@ Brunswick Building fire of 1989.`;
     document.querySelectorAll('[data-visualist-nav]').forEach(slot => {
       slot.innerHTML = `
         <div class="tab-band">
-          <p class="band-label">${chicagoFlagLetters} Visual Arts Calendar</p>
+          <p class="band-label"><span class="flag-word">${chicagoFlagLetters}</span> Visual Arts Calendar</p>
         </div>
         <div class="nav-band">
           <div class="nav-block">
@@ -592,7 +592,7 @@ Brunswick Building fire of 1989.`;
   };
 
   // "Opening Friday, June 12th, from 6PM – 9PM" → the bare opening line
-  // plus its parsed times, so Start/End can stand as their own rows
+  // plus its parsed times, so Start/End can lead the schedule block
   const detachOpeningTimes = text => {
     const match = String(text).match(/^(Opening .*?),\s*(?:from|at)\s+(.+)$/i);
     const bounds = match && timeBounds(match[2]);
@@ -600,8 +600,9 @@ Brunswick Building fire of 1989.`;
   };
 
   const startEndWhenHtml = bounds => !bounds ? '' :
-    `<p class="event-when"><strong>Start</strong> ${escapeHtml(bounds.start)}</p>` +
-    (bounds.end ? `<p class="event-when"><strong>End</strong> ${escapeHtml(bounds.end)}</p>` : '');
+    `<span class="event-when event-time-bounds"><strong>Start</strong> ${escapeHtml(bounds.start)}` +
+    (bounds.end ? `<strong class="event-time-end">End</strong> ${escapeHtml(bounds.end)}` : '') +
+    '</span>';
 
   // image strips load ~10KB thumbnails (scripts/build_image_thumbs.py)
   // instead of full uploads; markup falls back to the original via onerror
@@ -709,16 +710,17 @@ Brunswick Building fire of 1989.`;
     // when-lines lead with a bold "Opening"/"On view", like the listing cards
     liveSpans.filter(s => /^(opening|on view)/i.test(s.textContent.trim()))
       .forEach(emphasizeScheduleLine);
-    // parseable opening times become their own Start/End rows
+    // parseable opening times become their own Start/End row
     const openingSpan = liveSpans.find(s => /^opening/i.test(s.textContent.trim()));
     const openingSplit = openingSpan && detachOpeningTimes(openingSpan.textContent.trim());
     if (openingSplit) {
       openingSpan.innerHTML = scheduleLineHtml(openingSplit.line);
-      openingSpan.insertAdjacentHTML('afterend',
-        `<span><strong>Start</strong> ${escapeHtml(openingSplit.bounds.start)}</span>` +
+      openingSpan.insertAdjacentHTML('beforebegin',
+        `<span class="event-time-bounds"><strong>Start</strong> ${escapeHtml(openingSplit.bounds.start)}` +
         (openingSplit.bounds.end
-          ? `<span><strong>End</strong> ${escapeHtml(openingSplit.bounds.end)}</span>`
-          : ''));
+          ? ` <span class="event-time-end"><strong>End</strong> ${escapeHtml(openingSplit.bounds.end)}</span>`
+          : '') +
+        '</span>');
     }
     const onViewSpan = spans.find(s => /^on view/i.test(s.textContent.trim()));
     if (!onViewSpan) return;
@@ -747,7 +749,7 @@ Brunswick Building fire of 1989.`;
     const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
     const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);
     let line = `Opening ${weekday}, ${month} ${ordinal(date.getDate())}`;
-    // parseable times become their own Start/End rows instead of a tail
+    // parseable times become their own Start/End row instead of a tail
     if (match.w && !timeBounds(match.w)) {
       line += match.w.includes('–') ? `, from ${match.w}` : `, at ${match.w}`;
     }
@@ -784,11 +786,9 @@ Brunswick Building fire of 1989.`;
               ? `<a href="${escapeHtml(match.m)}">${escapeHtml(match.a)}</a>`
               : escapeHtml(match.a)}</p>` : ''}
           </div>` : ''}
-          ${(opening || match.o) ? `<div class="event-schedule">
-            ${opening ? `<p class="event-when">${scheduleLineHtml(opening)}</p>` : ''}
-            ${startEndWhenHtml(timeBounds(match.w))}
+          <div class="event-schedule">
             ${onViewHtml({ ...match, o: match.o || meta.textContent.trim() })}
-          </div>` : ''}
+          </div>
         </div>` : ''}
         ${excerptMarkup(match.x, local)}
         ${tagLinks(match.g)}
@@ -820,13 +820,24 @@ Brunswick Building fire of 1989.`;
     if (whens.length) {
       const schedule = document.createElement('div');
       schedule.className = 'event-schedule';
+      const hasOnView = whens.some(when => /^on view/i.test(when.textContent.trim()));
       whens.forEach(when => {
+        const text = when.textContent.trim();
+        // in the week flow a passed opening reads as noise once the show
+        // is on view; the archive and detail pages keep both lines
+        if (hasOnView && /^opening/i.test(text)) {
+          const iso = isoFromTextDate(text);
+          if (iso && iso < todayIso()) {
+            when.remove();
+            return;
+          }
+        }
         emphasizeScheduleLine(when);
         schedule.append(when);
-        const split = detachOpeningTimes(when.textContent.trim());
+        const split = detachOpeningTimes(text);
         if (split) {
           when.innerHTML = scheduleLineHtml(split.line);
-          schedule.insertAdjacentHTML('beforeend', startEndWhenHtml(split.bounds));
+          when.insertAdjacentHTML('beforebegin', startEndWhenHtml(split.bounds));
         }
       });
       meta.append(schedule);

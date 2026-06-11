@@ -602,6 +602,13 @@ body {
    312 area code; the two on-windows nod to the flag's blue stripes. The first
    begins around 18.37% for the city's 1837 incorporation, the second around
    77.3% for the 773 area code. */
+.band-label .flag-word {
+  --flag-cycle: 31.2s;
+  display: inline-block;
+  transform-origin: center;
+  animation: chicago-word-grow var(--flag-cycle) infinite;
+}
+
 .band-label .flag-letter {
   --flag-cycle: 31.2s;
   --flag-blue: #41b6e6;
@@ -612,6 +619,11 @@ body {
 @keyframes chicago-flag-blue {
   0%, 18.36%, 21.88%, 77.29%, 80.81%, 100% { color: var(--content-ink-muted); }
   18.37%, 21.87%, 77.3%, 80.8% { color: var(--flag-blue); }
+}
+
+@keyframes chicago-word-grow {
+  0%, 18.36%, 21.88%, 77.29%, 80.81%, 100% { transform: scale(1); }
+  18.37%, 21.87%, 77.3%, 80.8% { transform: scale(1.08); }
 }
 
 /* the red star is centered over the O's own measured box, so the replacement
@@ -661,6 +673,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .band-label .flag-word,
   .band-label .flag-letter,
   .flag-letter-o .flag-o,
   .flag-letter-o .flag-star {
@@ -1070,13 +1083,53 @@ body {
 
 /* a horizontally scrolling river of square images, one per event,
    each linking to its detail page */
+.thumb-river-frame {
+  --river-left-edge: max(var(--edge), calc((100vw - var(--measure)) / 2));
+  --river-fade: clamp(1.5rem, 5vw, 4rem);
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-1 * var(--river-left-edge));
+}
+
+.thumb-river-frame::before,
+.thumb-river-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 4px;
+  z-index: 1;
+  width: var(--river-fade);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.16s ease;
+}
+
+.thumb-river-frame::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--content-paper) 0%, transparent 100%);
+}
+
+.thumb-river-frame::after {
+  right: 0;
+  background: linear-gradient(90deg, transparent 0%, var(--content-paper) 100%);
+}
+
+.thumb-river-frame.has-left-overflow::before,
+.thumb-river-frame.has-right-overflow::after {
+  opacity: 1;
+}
+
 .thumb-river {
   display: flex;
   gap: 3px;
   overflow-x: auto;
+  padding-left: var(--river-left-edge);
+  padding-right: var(--edge);
   padding-bottom: 4px; /* keeps the thin scrollbar off the images */
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 .thumb-river a {
@@ -1329,6 +1382,11 @@ a.top-pick:hover,
   text-transform: uppercase;
 }
 
+.event-time-end {
+  display: inline-block;
+  margin-left: 0.85rem;
+}
+
 .event-info p a {
   color: inherit;
   text-decoration: none;
@@ -1350,14 +1408,25 @@ a.top-pick:hover,
   overflow-wrap: anywhere;
 }
 
+.event-description.clamp-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: relative;
+}
+
 /* shortened excerpts dissolve at the end: the tail's glyphs fade out via a
    text-clipped gradient; it doubles as the link to the detail page */
 .event-description .excerpt-fade {
-  background: linear-gradient(90deg, var(--content-ink) 0%, transparent 97%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  height: calc(1.5 * 0.94rem);
+  background: linear-gradient(90deg, transparent, var(--content-paper) 60%);
   color: transparent;
-  text-decoration: none;
+  pointer-events: auto;
 }
 
 /* clear air between the description and the tag chips — same 1.5rem gap the
