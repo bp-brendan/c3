@@ -1687,13 +1687,15 @@
           <div class="event-info">
             <h3 class="event-title"><a href="${escapeHtml(event.p || event.u)}">${escapeHtml(event.t || 'Untitled')}</a>${event.k ? ' <a class="top-pick" href="tag.html?tag=top-pick">Top Pick</a>' : ''}</h3>
             ${(event.v || event.a || event.d || event.o) ? `<div class="event-meta-grid">
-              ${event.v ? `<p class="event-venue">@ ${event.vu ? `<a href="${escapeHtml(event.vu)}" target="_blank" rel="noopener">${escapeHtml(event.v)}</a>` : escapeHtml(event.v)}</p>` : ''}
+              ${(event.v || event.a) ? `<div class="event-location">
+                ${event.v ? `<p class="event-venue">${event.vu ? `<a href="${escapeHtml(event.vu)}" target="_blank" rel="noopener">${escapeHtml(event.v)}</a>` : escapeHtml(event.v)}</p>` : ''}
+                ${event.a ? `<p class="event-address">${event.m ? `<a href="${escapeHtml(event.m)}" target="_blank" rel="noopener">${escapeHtml(event.a)}</a>` : escapeHtml(event.a)}</p>` : ''}
+              </div>` : ''}
               <div class="event-schedule">
                 ${Visualist.startEndWhenHtml(Visualist.timeBounds(event.w))}
                 <p class="event-when">${Visualist.scheduleLineHtml(openingLine(event))}</p>
                 ${Visualist.onViewHtml(event)}
               </div>
-              ${event.a ? `<p class="event-address">${event.m ? `<a href="${escapeHtml(event.m)}" target="_blank" rel="noopener">${escapeHtml(event.a)}</a>` : escapeHtml(event.a)}</p>` : ''}
             </div>` : ''}
             ${Visualist.excerptHtml(event.x, event.p || event.u)}
             ${renderEventTags(event.g)}
