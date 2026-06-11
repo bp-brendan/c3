@@ -1727,10 +1727,10 @@
             const name = new Date(`${key}-15T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
             return `
             <li class="archive-month-item">
-              <a class="month-head" href="tag.html?month=${key}">
-                <span class="event-date-day">${name}</span>
+              <div class="month-head">
+                <a class="event-date-day" href="tag.html?month=${key}">${name}</a>
                 <em class="event-date-num">${month.count} events</em>
-              </a>
+              </div>
               ${thumbRiverHtml(month.items)}
             </li>`;
           }).join('')}

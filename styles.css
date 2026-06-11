@@ -1060,6 +1060,11 @@ body {
   text-decoration: none;
 }
 
+.month-head a.event-date-day {
+  color: inherit;
+  text-decoration: none;
+}
+
 .month-head:hover .event-date-day {
   text-decoration: underline;
   text-underline-offset: 0.2em;
