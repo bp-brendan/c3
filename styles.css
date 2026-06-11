@@ -992,53 +992,14 @@ body {
   margin-bottom: 0.75rem;
 }
 
-.archive-pager {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem;
-  margin: 0 0 1.25rem;
-}
-
-.archive-pager-label {
-  color: var(--content-ink-muted);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  line-height: 1.2;
-  margin-right: 0.25rem;
-  text-transform: uppercase;
-}
-
-.archive-page-button {
-  min-width: 2rem;
-  border: 1px solid #d4d4d4;
-  border-radius: 2px;
-  padding: 0.35rem 0.5rem;
-  background: var(--content-paper);
-  color: var(--content-ink-muted);
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1.1;
-}
-
-.archive-page-button:hover,
-.archive-page-button.active {
-  border-color: var(--content-ink);
-  color: var(--content-ink);
-}
-
-.archive-page-anchor {
-  display: block;
-  height: 0;
-  scroll-margin-top: calc(var(--nav-stack-bottom, calc(46px + var(--nav-band-h, 48px))) + 4.5rem);
+.archive-sentinel {
+  height: 1px;
 }
 
 .archive-listing {
   margin-bottom: clamp(2rem, 4vw, 3rem);
+  /* scroll position is compensated manually when earlier events are prepended */
+  overflow-anchor: none;
 }
 
 /* events featured in badatsports.com TOP V. WEEKEND PICKS columns;
@@ -1233,14 +1194,6 @@ a.top-pick:hover,
 
 .event-location .event-address {
   font-size: 0.8rem;
-}
-
-.event-location .event-venue + .event-address::before {
-  content: " \00b7 ";
-  color: var(--content-ink-muted);
-  font-family: Georgia, serif;
-  font-weight: 400;
-  letter-spacing: 0;
 }
 
 .event-schedule .event-when {

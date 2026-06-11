@@ -1148,8 +1148,9 @@
 
     <section class="view" id="view-archive" hidden>
       <p class="archive-summary" id="archive-summary"></p>
-      <nav class="archive-pager" id="archive-pager" aria-label="Archive pagination" hidden></nav>
+      <div class="archive-sentinel" id="archive-top-sentinel" aria-hidden="true" hidden></div>
       <div class="archive-listing" id="archive-results"></div>
+      <div class="archive-sentinel" id="archive-bottom-sentinel" aria-hidden="true" hidden></div>
       <p class="view-empty" id="archive-empty" hidden>No events match those filters.</p>
     </section>
 
@@ -1157,12 +1158,15 @@
 
   <footer class="site-footer" data-visualist-footer></footer>
 
+  <!-- chrome renders before the heavy data scripts so the header doesn't flash in late -->
+  <script>
+    Visualist.renderChrome();
+    Visualist.initHeaderAccordion();
+  </script>
   <script src="tags2026.js"></script>
   <script src="archiveevents2026.js"></script>
   <script src="eventdescriptions2026.js"></script>
   <script>
-    Visualist.renderChrome();
-    Visualist.initHeaderAccordion();
     Visualist.initDatePickers();
     Visualist.mergeOngoingIntoDatedFlow();
 
@@ -1375,10 +1379,11 @@
 
     const archiveResults = document.getElementById('archive-results');
     const archiveSummary = document.getElementById('archive-summary');
-    const archivePager = document.getElementById('archive-pager');
+    const archiveTopSentinel = document.getElementById('archive-top-sentinel');
+    const archiveBottomSentinel = document.getElementById('archive-bottom-sentinel');
     const archiveEmpty = document.getElementById('archive-empty');
     const archiveSearch = document.querySelector('.archive-controls input[type="search"]');
-    const ARCHIVE_PAGE_SIZE = 77; // Chicago's 77 community areas.
+    const ARCHIVE_CHUNK_SIZE = 77; // events per lazy-loaded batch: Chicago's 77 community areas.
 
     // keep view + archive filters in the URL so back/breadcrumb restores them
     // pickers default to the full span of the archive
@@ -1522,81 +1527,29 @@
         `<a href="tag.html?tag=${encodeURIComponent(tag.slug)}">${escapeHtml(tag.label)}</a>`
       ).join('')}</span>`;
     };
-    const setArchivePagerActive = page => {
-      archivePager.querySelectorAll('button[data-page]').forEach(button => {
-        const active = Number(button.dataset.page) === page;
-        button.classList.toggle('active', active);
-        if (active) button.setAttribute('aria-current', 'page');
-        else button.removeAttribute('aria-current');
-      });
+    // the archive renders a window of events starting at today and grows it
+    // lazily in both directions as the reader scrolls; no pagination
+    let archiveFiltered = [];
+    let archiveRenderStart = 0;
+    let archiveRenderEnd = 0;
+    let archiveCurrentStartDate = '';
+    const snapToDateStart = index => {
+      while (index > 0 && archiveFiltered[index - 1].d === archiveFiltered[index].d) index--;
+      return index;
     };
-    const scrollToArchivePage = page => {
-      const anchor = document.getElementById(`archive-page-${page}`);
-      setArchivePagerActive(page);
-      scrollElementToListTop(anchor, 'archive', 'smooth');
-    };
-    const renderArchivePager = (total, currentPage) => {
-      const totalPages = Math.ceil(total / ARCHIVE_PAGE_SIZE);
-      archivePager.hidden = totalPages < 2;
-      if (totalPages < 2) {
-        archivePager.innerHTML = '';
-        return;
-      }
-      archivePager.innerHTML =
-        `<span class="archive-pager-label">${ARCHIVE_PAGE_SIZE} per page</span>` +
-        Array.from({ length: totalPages }, (_, i) => {
-          const page = i + 1;
-          return `<button type="button" class="archive-page-button${page === currentPage ? ' active' : ''}" data-page="${page}" aria-label="Jump to archive page ${page}"${page === currentPage ? ' aria-current="page"' : ''}>${page}</button>`;
-        }).join('');
-      archivePager.querySelectorAll('button[data-page]').forEach(button => {
-        button.addEventListener('click', () => scrollToArchivePage(Number(button.dataset.page)));
-      });
-    };
-    const renderArchive = () => {
-      const q = archiveSearch.value.trim().toLowerCase();
-      const from = dateFrom.value;
-      const to = dateTo.value;
-      const today = Visualist.todayIso();
-      const eventTagSlugs = event =>
-        event._slugs || (event._slugs = new Set((event.g || []).map(slugForTag)));
-      // an event occupies its whole run (opening through on-view close), so a
-      // date range matches when the run overlaps it, not just the opening day
-      const eventEnd = event =>
-        event._end || (event._end = Visualist.onViewEndIso(event) || event.d);
-      const filtered = archiveEvents.filter(event => {
-        const text = `${event.t || ''} ${event.v || ''} ${(event.g || []).join(' ')}`.toLowerCase();
-        return (!q || text.includes(q)) &&
-          (!from || eventEnd(event) >= from) &&
-          (!to || event.d <= to) &&
-          (!activeTags.size || [...activeTags].every(slug => eventTagSlugs(event).has(slug)));
-      });
-
-      const currentStartIndex = filtered.findIndex(event => event.d >= today);
-      const landingIndex = currentStartIndex >= 0 ? currentStartIndex : Math.max(0, filtered.length - 1);
-      const currentStartDate = filtered[landingIndex]?.d || '';
-      const currentPage = filtered.length ? Math.floor(landingIndex / ARCHIVE_PAGE_SIZE) + 1 : 1;
-
-      archiveSummary.textContent = `${filtered.length.toLocaleString()} events`;
-      renderArchivePager(filtered.length, currentPage);
-      archiveEmpty.hidden = filtered.length > 0;
-      let lastDate = '';
-      archiveResults.innerHTML = filtered.map((event, index) => {
-        const page = Math.floor(index / ARCHIVE_PAGE_SIZE) + 1;
-        const pageAnchor = index % ARCHIVE_PAGE_SIZE === 0
-          ? `<span class="archive-page-anchor" id="archive-page-${page}" aria-hidden="true"></span>`
-          : '';
-        let dateHeading = '';
-        if (event.d !== lastDate) {
-          dateHeading = Visualist.dayHeadingHtml(lastDate = event.d);
-          if (event.d === currentStartDate) {
-            dateHeading = dateHeading.replace(
-              'class="event-date',
-              'id="archive-current-start" class="event-date archive-current-start'
-            );
-          }
+    const archiveEventHtml = (event, index) => {
+      let dateHeading = '';
+      if (index === 0 || archiveFiltered[index - 1].d !== event.d) {
+        dateHeading = Visualist.dayHeadingHtml(event.d);
+        if (event.d === archiveCurrentStartDate) {
+          dateHeading = dateHeading.replace(
+            'class="event-date',
+            'id="archive-current-start" class="event-date archive-current-start'
+          );
         }
-        return `
-        ${pageAnchor}${dateHeading}
+      }
+      return `
+        ${dateHeading}
         <article class="event-card">
           ${event.i
             ? `<a class="event-thumb" href="${escapeHtml(event.p || event.u)}"><img src="${escapeHtml(event.i)}" alt="" loading="lazy"></a>`
@@ -1619,7 +1572,69 @@
           </div>
         </article>
       `;
-      }).join('');
+    };
+    const archiveRangeHtml = (start, end) =>
+      archiveFiltered.slice(start, end).map((event, i) => archiveEventHtml(event, start + i)).join('');
+    const updateArchiveSentinels = () => {
+      archiveTopSentinel.hidden = archiveRenderStart <= 0;
+      archiveBottomSentinel.hidden = archiveRenderEnd >= archiveFiltered.length;
+    };
+    const loadEarlierArchiveEvents = () => {
+      if (archiveRenderStart <= 0) return;
+      const newStart = snapToDateStart(Math.max(0, archiveRenderStart - ARCHIVE_CHUNK_SIZE));
+      // keep what's on screen pinned in place while earlier events stack above it
+      const anchorNode = archiveResults.firstElementChild;
+      const anchorTop = anchorNode ? anchorNode.getBoundingClientRect().top : 0;
+      archiveResults.insertAdjacentHTML('afterbegin', archiveRangeHtml(newStart, archiveRenderStart));
+      archiveRenderStart = newStart;
+      if (anchorNode) window.scrollBy(0, anchorNode.getBoundingClientRect().top - anchorTop);
+      updateArchiveSentinels();
+    };
+    const loadLaterArchiveEvents = () => {
+      if (archiveRenderEnd >= archiveFiltered.length) return;
+      const newEnd = Math.min(archiveFiltered.length, archiveRenderEnd + ARCHIVE_CHUNK_SIZE);
+      archiveResults.insertAdjacentHTML('beforeend', archiveRangeHtml(archiveRenderEnd, newEnd));
+      archiveRenderEnd = newEnd;
+      updateArchiveSentinels();
+    };
+    const archiveSentinelObserver = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        if (entry.target === archiveTopSentinel) loadEarlierArchiveEvents();
+        else loadLaterArchiveEvents();
+      }
+    }, { rootMargin: '800px 0px' });
+    archiveSentinelObserver.observe(archiveTopSentinel);
+    archiveSentinelObserver.observe(archiveBottomSentinel);
+    const renderArchive = () => {
+      const q = archiveSearch.value.trim().toLowerCase();
+      const from = dateFrom.value;
+      const to = dateTo.value;
+      const today = Visualist.todayIso();
+      const eventTagSlugs = event =>
+        event._slugs || (event._slugs = new Set((event.g || []).map(slugForTag)));
+      // an event occupies its whole run (opening through on-view close), so a
+      // date range matches when the run overlaps it, not just the opening day
+      const eventEnd = event =>
+        event._end || (event._end = Visualist.onViewEndIso(event) || event.d);
+      archiveFiltered = archiveEvents.filter(event => {
+        const text = `${event.t || ''} ${event.v || ''} ${(event.g || []).join(' ')}`.toLowerCase();
+        return (!q || text.includes(q)) &&
+          (!from || eventEnd(event) >= from) &&
+          (!to || event.d <= to) &&
+          (!activeTags.size || [...activeTags].every(slug => eventTagSlugs(event).has(slug)));
+      });
+
+      const currentStartIndex = archiveFiltered.findIndex(event => event.d >= today);
+      const landingIndex = currentStartIndex >= 0 ? currentStartIndex : Math.max(0, archiveFiltered.length - 1);
+      archiveCurrentStartDate = archiveFiltered[landingIndex]?.d || '';
+
+      archiveSummary.textContent = `${archiveFiltered.length.toLocaleString()} events`;
+      archiveEmpty.hidden = archiveFiltered.length > 0;
+      archiveRenderStart = snapToDateStart(landingIndex);
+      archiveRenderEnd = Math.min(archiveFiltered.length, archiveRenderStart + ARCHIVE_CHUNK_SIZE);
+      archiveResults.innerHTML = archiveRangeHtml(archiveRenderStart, archiveRenderEnd);
+      updateArchiveSentinels();
     };
     archiveSearch.addEventListener('input', () => { renderArchive(); syncHash(); renderSuggest(); });
     archiveSearch.addEventListener('focus', renderSuggest);
