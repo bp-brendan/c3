@@ -1613,15 +1613,13 @@
               const month = months.get(key);
               const name = new Date(`${key}-15T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
               return `
-              <li class="archive-month-card">
-                <a href="tag.html?month=${key}" aria-label="${name}, ${month.count} events">
-                  <span class="month-collage" aria-hidden="true">
+              <li class="archive-month-item">
+                <a href="tag.html?month=${key}">
+                  <span class="month-name">${name}</span>
+                  <span class="month-count">${month.count} events</span>
+                  <span class="month-thumbs" aria-hidden="true">
                     ${sampleImages(month.images).map(src =>
                       `<img src="${escapeHtml(src)}" alt="" loading="lazy">`).join('')}
-                  </span>
-                  <span class="month-card-label">
-                    <span class="month-card-name">${name}</span>
-                    <span class="month-card-count">${month.count} events</span>
                   </span>
                 </a>
               </li>`;

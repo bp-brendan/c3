@@ -1019,6 +1019,48 @@ body {
   height: 1px;
 }
 
+/* today with no openings: a gentle detour to the week or the archive */
+.day-empty {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  padding: clamp(2.5rem, 7vw, 5rem) 1rem;
+  text-align: center;
+}
+
+.day-empty-lede {
+  margin: 0;
+  color: var(--content-ink);
+  font-family: Georgia, serif;
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+  font-style: italic;
+}
+
+.day-empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.day-empty-actions a {
+  display: inline-block;
+  padding: 0.7em 1.4em;
+  border: 1px solid var(--content-ink);
+  border-radius: 2px;
+  color: var(--content-ink);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.day-empty-actions a:hover {
+  background: var(--content-ink);
+  color: var(--content-paper);
+}
+
 /* the archive's default face: month links grouped under year separators */
 .archive-year {
   margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
@@ -1038,84 +1080,59 @@ body {
 .archive-month-list {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
-  gap: 1rem;
+  gap: 0.35rem;
   margin: 0;
   padding: 0;
 }
 
-/* each month is a collage card: a 2x2 of that month's event images under
-   a masthead-style label */
-.archive-month-card a {
-  position: relative;
-  display: block;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  border-radius: 3px;
-  background: var(--paper);
+/* month rows lead with the name; a small strip of that month's event
+   images rides along as an accent */
+.archive-month-item a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1rem;
+  padding: 0.4rem 0;
   text-decoration: none;
 }
 
-.month-collage {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 2px;
+.month-name {
+  color: var(--content-ink);
+  font-family: Georgia, serif;
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
 }
 
-.month-collage img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.35s ease;
+.archive-month-item a:hover .month-name {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
-.archive-month-card a:hover .month-collage img {
-  transform: scale(1.04);
+.month-count {
+  color: var(--content-ink-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-/* readable label over any imagery: bottom scrim plus logotype shadow */
-.archive-month-card a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.18) 38%, rgba(0, 0, 0, 0) 62%);
-}
-
-.month-card-label {
-  position: absolute;
-  left: 0.9rem;
-  right: 0.9rem;
-  bottom: 0.75rem;
-  z-index: 1;
+.month-thumbs {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.75em;
-  color: #ffffff;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6); /* matches the logotype */
+  gap: 3px;
+  margin-left: auto;
 }
 
-.month-card-name {
-  font-family: fenwick, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  line-height: 1;
-  text-transform: uppercase;
-  white-space: nowrap;
+.month-thumbs img {
+  display: block;
+  width: clamp(1.9rem, 5vw, 2.4rem);
+  height: clamp(1.9rem, 5vw, 2.4rem);
+  object-fit: cover;
+  border-radius: 2px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
 }
 
-.month-card-count {
-  flex: none;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
+.archive-month-item a:hover .month-thumbs img {
+  opacity: 1;
 }
 
 .archive-listing {

@@ -70,13 +70,12 @@
 
     const today = Visualist.todayIso();
     const tomorrow = Visualist.tomorrowIso();
-    const runsToday = e => e.d <= today && (Visualist.onViewEndIso(e) || e.d) >= today;
     const runsTomorrow = e => e.d <= tomorrow && (Visualist.onViewEndIso(e) || e.d) >= tomorrow;
     // a virtual day page reads like a This Week day group: one heading,
     // that day's openings first, then the ongoing runs
     const dayIso = isTodayPage ? today : (isTomorrowPage ? tomorrow : '');
     const hits = TAG_EVENTS_2026
-      .filter(e => isTodayPage ? runsToday(e)
+      .filter(e => isTodayPage ? e.d === today // only what opens today
         : (isTomorrowPage ? runsTomorrow(e)
           : (isMonthPage ? e.d.startsWith(monthParam) : e.g.includes(slug))))
       .sort((a, b) => dayIso
@@ -135,6 +134,17 @@
             <div class="event-liner"></div>
           </div>
         </article>`).join('');
+    } else if (isTodayPage) {
+      // a quiet day: invite the reader onward instead of a bare empty note
+      document.getElementById('tag-results').innerHTML = `
+        ${Visualist.dayHeadingHtml(today)}
+        <div class="day-empty">
+          <p class="day-empty-lede">Nothing opening today.</p>
+          <div class="day-empty-actions">
+            <a href="index.html#this-week">See what&rsquo;s happening this week</a>
+            <a href="index.html#archive">Explore the archive</a>
+          </div>
+        </div>`;
     } else {
       document.getElementById('tag-empty').hidden = false;
     }
