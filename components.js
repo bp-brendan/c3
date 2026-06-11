@@ -268,11 +268,23 @@ Brunswick Building fire of 1989.`;
     const taglineSpan = tagline.querySelector('span');
     let taglineSpent = false; // fully faded once; next reveal gets a fresh line
 
+    // the carried-over scroll must reach the nav band's pin point, not just
+    // the logotype's shrink point, or a pinned nav lands ~50px unpinned
+    // after a page change and the bands visibly jump
+    const carryScroll = () => {
+      const tabBand = document.querySelector('.tab-band');
+      const navStickyTop = parseFloat(getComputedStyle(navBand).top) || 46;
+      const pinAt = tabBand
+        ? tabBand.offsetTop + tabBand.offsetHeight - navStickyTop + 1
+        : 0;
+      return Math.max(headerState.shrink, pinAt);
+    };
+
     const update = () => {
       ticking = false;
       const p = Math.max(0, Math.min(1, window.scrollY / headerState.shrink));
       try {
-        localStorage.setItem('visualistHeaderScroll', Math.min(window.scrollY, headerState.shrink));
+        localStorage.setItem('visualistHeaderScroll', Math.min(window.scrollY, carryScroll()));
       } catch {}
       logotype.style.transform =
         `translateY(${(glide * p).toFixed(2)}px) scale(${(1 - (1 - scaleTo) * p).toFixed(4)})`;
