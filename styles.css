@@ -1061,22 +1061,7 @@ body {
   color: var(--content-paper);
 }
 
-/* the archive's default face: month links grouped under year separators */
-.archive-year {
-  margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
-}
-
-.archive-year-label {
-  margin: 0 0 1rem;
-  padding-bottom: 0.35rem;
-  border-bottom: var(--hairline-light);
-  color: var(--content-ink-muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
+/* the archive's default face: a list of month links */
 .archive-month-list {
   list-style: none;
   display: grid;

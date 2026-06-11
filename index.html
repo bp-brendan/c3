@@ -1599,33 +1599,24 @@
         if (images.length <= 4) return images;
         return [0, 1, 2, 3].map(k => images[Math.floor(k * (images.length - 1) / 3)]);
       };
-      const byYear = new Map();
-      [...months.keys()].sort().forEach(month => {
-        const year = month.slice(0, 4);
-        if (!byYear.has(year)) byYear.set(year, []);
-        byYear.get(year).push(month);
-      });
-      return [...byYear].map(([year, keys]) => `
-        <section class="archive-year">
-          <h2 class="archive-year-label">${year}</h2>
-          <ul class="archive-month-list">
-            ${keys.map(key => {
-              const month = months.get(key);
-              const name = new Date(`${key}-15T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-              return `
-              <li class="archive-month-item">
-                <a href="tag.html?month=${key}">
-                  <span class="month-name">${name}</span>
-                  <span class="month-count">${month.count} events</span>
-                  <span class="month-thumbs" aria-hidden="true">
-                    ${sampleImages(month.images).map(src =>
-                      `<img src="${escapeHtml(src)}" alt="" loading="lazy">`).join('')}
-                  </span>
-                </a>
-              </li>`;
-            }).join('')}
-          </ul>
-        </section>`).join('');
+      return `
+        <ul class="archive-month-list">
+          ${[...months.keys()].sort().map(key => {
+            const month = months.get(key);
+            const name = new Date(`${key}-15T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+            return `
+            <li class="archive-month-item">
+              <a href="tag.html?month=${key}">
+                <span class="month-name">${name}</span>
+                <span class="month-count">${month.count} events</span>
+                <span class="month-thumbs" aria-hidden="true">
+                  ${sampleImages(month.images).map(src =>
+                    `<img src="${escapeHtml(src)}" alt="" loading="lazy">`).join('')}
+                </span>
+              </a>
+            </li>`;
+          }).join('')}
+        </ul>`;
     };
     const updateArchiveSentinels = () => {
       archiveTopSentinel.hidden = archiveRenderStart <= 0;
@@ -1675,7 +1666,7 @@
         archiveFiltered = [];
         archiveRenderStart = 0;
         archiveRenderEnd = 0;
-        archiveSummary.textContent = `${archiveEvents.length.toLocaleString()} events`;
+        archiveSummary.hidden = true; // the month rows carry their own counts
         archiveEmpty.hidden = true;
         archiveResults.innerHTML = archiveMonthIndexHtml();
         updateArchiveSentinels();
@@ -1693,6 +1684,7 @@
       const landingIndex = currentStartIndex >= 0 ? currentStartIndex : Math.max(0, archiveFiltered.length - 1);
       archiveCurrentStartDate = archiveFiltered[landingIndex]?.d || '';
 
+      archiveSummary.hidden = false;
       archiveSummary.textContent = `${archiveFiltered.length.toLocaleString()} events`;
       archiveEmpty.hidden = archiveFiltered.length > 0;
       archiveRenderStart = snapToDateStart(landingIndex);
