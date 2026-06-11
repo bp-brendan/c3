@@ -25,6 +25,10 @@
 
   <!-- chrome renders before the heavy data scripts so the header doesn't flash in late -->
   <script>
+    // the virtual today page is the nav's TODAY destination
+    if (new URLSearchParams(location.search).get('tag') === 'today') {
+      document.body.dataset.activeNav = 'today';
+    }
     Visualist.renderChrome();
     Visualist.initHeaderAccordion();
   </script>

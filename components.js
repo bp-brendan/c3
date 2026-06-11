@@ -19,9 +19,10 @@ Brunswick Building fire of 1989.`;
   ];
 
   const navItems = [
+    // Today is the always-current virtual tag page, not an index view
+    { key: 'today', label: 'Today', page: 'tag.html?tag=today' },
     { key: 'this-week', label: 'This Week' },
-    { key: 'next-week', label: 'Next Week' },
-    { key: 'archive', label: 'All Events' }
+    { key: 'archive', label: 'Archive' }
   ];
 
   const pageName = () => document.body.dataset.page || 'home';
@@ -79,8 +80,9 @@ Brunswick Building fire of 1989.`;
         <div class="nav-band">
           <div class="nav-block">
             <nav class="site-nav" aria-label="Primary">
-              ${navItems.map(item => `
-                <a href="${navHref(item.key)}" data-view="${item.key}" class="${active === item.key ? 'active' : ''}">${item.label}</a>
+              ${navItems.map(item => item.page
+                ? `<a href="${localHref(item.page)}" class="${active === item.key ? 'active' : ''}">${item.label}</a>`
+                : `<a href="${navHref(item.key)}" data-view="${item.key}" class="${active === item.key ? 'active' : ''}">${item.label}</a>
               `).join('')}
               <a href="${localHref('submit.html')}" class="nav-button ${page === 'submit' ? 'active' : ''}" ${page === 'submit' ? 'aria-current="page"' : 'target="_blank" rel="noopener"'}>Add Event</a>
             </nav>
@@ -145,7 +147,7 @@ Brunswick Building fire of 1989.`;
   };
 
   const CRUMB_KEY = 'visualistCrumb';
-  const defaultCrumb = { label: 'All Events', href: 'index.html#archive', nav: 'archive' };
+  const defaultCrumb = { label: 'Archive', href: 'index.html#archive', nav: 'archive' };
 
   const readCrumb = () => {
     try {
@@ -384,9 +386,10 @@ Brunswick Building fire of 1989.`;
   const todayIso = () => isoForOffset(0);
   const tomorrowIso = () => isoForOffset(1);
 
-  const relativeDateMarker = iso => {
+  const relativeDateMarker = (iso, { skipToday = false } = {}) => {
     const markers = [
-      { iso: todayIso(), label: 'Today', slug: 'today' },
+      // This Week's big TODAY masthead already labels the current day
+      ...(skipToday ? [] : [{ iso: todayIso(), label: 'Today', slug: 'today' }]),
       { iso: tomorrowIso(), label: 'Tomorrow', slug: 'tomorrow' }
     ];
     const marker = markers.find(item => item.iso === iso);
@@ -395,11 +398,11 @@ Brunswick Building fire of 1989.`;
       : '';
   };
 
-  const dateHeading = iso => {
+  const dateHeading = (iso, options) => {
     const date = new Date(`${iso}T12:00:00`);
     const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
     const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);
-    const marker = relativeDateMarker(iso);
+    const marker = relativeDateMarker(iso, options);
     return Object.assign(document.createElement('div'), {
       className: `event-date${marker ? ' event-date-is-relative' : ''}`,
       innerHTML: `${marker}` +
@@ -411,7 +414,8 @@ Brunswick Building fire of 1989.`;
   const markRelativeDateHeadings = () => {
     document.querySelectorAll('.event-date').forEach(heading => {
       if (heading.querySelector('.event-date-marker')) return;
-      const marker = relativeDateMarker(isoFromTextDate(heading.textContent));
+      const marker = relativeDateMarker(isoFromTextDate(heading.textContent),
+        { skipToday: Boolean(heading.closest('#view-this-week')) });
       if (!marker) return;
       heading.classList.add('event-date-is-relative');
       heading.insertAdjacentHTML('afterbegin', marker);
@@ -852,7 +856,7 @@ Brunswick Building fire of 1989.`;
       view.replaceChildren(...(masthead ? [masthead] : []));
       const dates = [...new Set(items.map(item => item.date))].sort();
       dates.forEach(date => {
-        view.append(dateHeading(date));
+        view.append(dateHeading(date, { skipToday: view.id === 'view-this-week' }));
         items
           .filter(item => item.date === date)
           .sort((a, b) => Number(a.ongoing) - Number(b.ongoing) || a.order - b.order)
