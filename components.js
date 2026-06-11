@@ -580,6 +580,35 @@ Brunswick Building fire of 1989.`;
     target.innerHTML = scheduleLineHtml(target.textContent.trim());
   };
 
+  // "6PM – 9PM" → {start, end}; "7PM" → {start}; anything else → null
+  const timeBounds = value => {
+    const text = String(value || '').trim();
+    const time = /^\d{1,2}(?::\d{2})?\s*(?:AM|PM)$/i;
+    const parts = text.split(/\s+to\s+|\s*[–—-]\s*/i).map(part => part.trim());
+    if (parts.length === 2 && time.test(parts[0]) && time.test(parts[1])) {
+      return { start: parts[0], end: parts[1] };
+    }
+    return time.test(text) ? { start: text } : null;
+  };
+
+  // "Opening Friday, June 12th, from 6PM – 9PM" → the bare opening line
+  // plus its parsed times, so Start/End can stand as their own rows
+  const detachOpeningTimes = text => {
+    const match = String(text).match(/^(Opening .*?),\s*(?:from|at)\s+(.+)$/i);
+    const bounds = match && timeBounds(match[2]);
+    return bounds ? { line: match[1], bounds } : null;
+  };
+
+  const startEndWhenHtml = bounds => !bounds ? '' :
+    `<p class="event-when"><strong>Start</strong> ${escapeHtml(bounds.start)}</p>` +
+    (bounds.end ? `<p class="event-when"><strong>End</strong> ${escapeHtml(bounds.end)}</p>` : '');
+
+  // image strips load ~10KB thumbnails (scripts/build_image_thumbs.py)
+  // instead of full uploads; markup falls back to the original via onerror
+  const thumbSrc = src => /^media\//.test(String(src || ''))
+    ? String(src).replace(/^media\//, 'media/thumbs/').replace(/\.(png|jpe?g|gif|webp)$/i, '.jpg')
+    : String(src || '');
+
   // compact on-view line, linked to the exhibition's tag page when one exists
   const onViewHtml = ev => {
     if (!ev) return '';
@@ -680,6 +709,17 @@ Brunswick Building fire of 1989.`;
     // when-lines lead with a bold "Opening"/"On view", like the listing cards
     liveSpans.filter(s => /^(opening|on view)/i.test(s.textContent.trim()))
       .forEach(emphasizeScheduleLine);
+    // parseable opening times become their own Start/End rows
+    const openingSpan = liveSpans.find(s => /^opening/i.test(s.textContent.trim()));
+    const openingSplit = openingSpan && detachOpeningTimes(openingSpan.textContent.trim());
+    if (openingSplit) {
+      openingSpan.innerHTML = scheduleLineHtml(openingSplit.line);
+      openingSpan.insertAdjacentHTML('afterend',
+        `<span><strong>Start</strong> ${escapeHtml(openingSplit.bounds.start)}</span>` +
+        (openingSplit.bounds.end
+          ? `<span><strong>End</strong> ${escapeHtml(openingSplit.bounds.end)}</span>`
+          : ''));
+    }
     const onViewSpan = spans.find(s => /^on view/i.test(s.textContent.trim()));
     if (!onViewSpan) return;
     const date = onViewDate(onViewSpan.textContent, baseYear, baseMonth);
@@ -707,7 +747,10 @@ Brunswick Building fire of 1989.`;
     const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
     const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);
     let line = `Opening ${weekday}, ${month} ${ordinal(date.getDate())}`;
-    if (match.w) line += match.w.includes('–') ? `, from ${match.w}` : `, at ${match.w}`;
+    // parseable times become their own Start/End rows instead of a tail
+    if (match.w && !timeBounds(match.w)) {
+      line += match.w.includes('–') ? `, from ${match.w}` : `, at ${match.w}`;
+    }
     return line;
   };
 
@@ -743,6 +786,7 @@ Brunswick Building fire of 1989.`;
           </div>` : ''}
           ${(opening || match.o) ? `<div class="event-schedule">
             ${opening ? `<p class="event-when">${scheduleLineHtml(opening)}</p>` : ''}
+            ${startEndWhenHtml(timeBounds(match.w))}
             ${onViewHtml({ ...match, o: match.o || meta.textContent.trim() })}
           </div>` : ''}
         </div>` : ''}
@@ -779,6 +823,11 @@ Brunswick Building fire of 1989.`;
       whens.forEach(when => {
         emphasizeScheduleLine(when);
         schedule.append(when);
+        const split = detachOpeningTimes(when.textContent.trim());
+        if (split) {
+          when.innerHTML = scheduleLineHtml(split.line);
+          schedule.insertAdjacentHTML('beforeend', startEndWhenHtml(split.bounds));
+        }
       });
       meta.append(schedule);
     }
@@ -890,6 +939,9 @@ Brunswick Building fire of 1989.`;
     onViewHtml,
     onViewEndIso,
     scheduleLineHtml,
+    timeBounds,
+    startEndWhenHtml,
+    thumbSrc,
     todayIso,
     dayHeadingHtml: iso => dateHeading(iso).outerHTML,
     mergeOngoingIntoDatedFlow,

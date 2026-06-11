@@ -33,9 +33,15 @@
             <input type="search" name="q" placeholder="Search" aria-label="Search events and tags" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="tag-suggest">
             <div class="search-suggest" id="tag-suggest" role="listbox" aria-label="Matching tags" hidden></div>
           </form>
-          <div class="date-filter">
-            <button type="button" class="date-toggle" aria-expanded="false">Dates <span class="date-caret" aria-hidden="true">&#9662;</span></button>
-          </div>
+          <button type="button" class="tag-invoke date-toggle" aria-expanded="false">
+            <svg class="tag-invoke-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+              <line x1="8" y1="3" x2="8" y2="7"></line>
+              <line x1="16" y1="3" x2="16" y2="7"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Dates</span>
+          </button>
           <button type="button" class="tag-invoke tag-toggle" aria-expanded="false">
             <svg class="tag-invoke-icon" viewBox="0 0 20 20" aria-hidden="true">
               <path d="M2.5 2.5h7.2l7.8 7.8-7.2 7.2-7.8-7.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
@@ -1252,9 +1258,19 @@
     const [initialView, initialParams] = location.hash.slice(1).split('?');
     if (['this-week', 'next-week', 'archive'].includes(initialView)) showView(initialView);
 
-    const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-    // tease next week at the bottom of This Week: a full-width strip of its
+    // a horizontally scrolling river of square event images, one per event,
+    // each square linking to its detail page; loads the small thumbs with a
+    // runtime fallback to the original upload
+    const thumbRiverHtml = items => `
+      <div class="thumb-river">
+        ${items.map(item =>
+          `<a href="${escapeHtml(item.href)}" aria-label="${escapeHtml(item.title)}"><img src="${escapeHtml(Visualist.thumbSrc(item.src))}" onerror="this.onerror=null;this.src='${escapeHtml(item.src)}'" alt="" loading="lazy" decoding="async"></a>`
+        ).join('')}
+      </div>`;
+
+    // tease next week at the bottom of This Week: a scrolling river of its
     // event images, each linking through to its event page
     (() => {
       const items = [...document.querySelectorAll('#view-next-week .event-card')].map(card => {
@@ -1267,16 +1283,10 @@
         } : null;
       }).filter(Boolean);
       if (!items.length) return;
-      const want = 24;
-      const sampled = items.length <= want ? items
-        : Array.from({ length: want }, (_, k) => items[Math.floor(k * (items.length - 1) / (want - 1))]);
       document.getElementById('view-this-week').insertAdjacentHTML('beforeend', `
         <div class="week-peek">
           <h2 class="week-peek-title">Next Week</h2>
-          <div class="week-peek-thumbs">
-            ${sampled.map(item =>
-              `<a href="${escapeHtml(item.href)}" aria-label="${escapeHtml(item.title)}"><img src="${escapeHtml(item.src)}" alt="" loading="lazy"></a>`).join('')}
-          </div>
+          ${thumbRiverHtml(items)}
         </div>`);
     })();
     const dateToggle = document.querySelector('.date-toggle');
@@ -1294,6 +1304,12 @@
       const open = datePanel.hidden;
       setPanel(datePanel, dateToggle, open);
       if (open) setPanel(tagPanel, tagToggle, false);
+    });
+    // clicking anywhere outside a panel (or its toggle) closes it
+    document.addEventListener('click', event => {
+      if (event.target.closest('.filter-panel, .date-toggle, .tag-toggle')) return;
+      if (!datePanel.hidden) setPanel(datePanel, dateToggle, false);
+      if (!tagPanel.hidden) setPanel(tagPanel, tagToggle, false);
     });
 
     // quick ranges + free-form from/to
@@ -1474,7 +1490,10 @@
       const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
       const month = date.toLocaleDateString('en-US', { month: 'long' });
       let line = `Opening ${weekday}, ${month} ${ordinalDay(date.getDate())}`;
-      if (event.w) line += event.w.includes('–') ? `, from ${event.w}` : `, at ${event.w}`;
+      // parseable times become their own Start/End rows instead of a tail
+      if (event.w && !Visualist.timeBounds(event.w)) {
+        line += event.w.includes('–') ? `, from ${event.w}` : `, at ${event.w}`;
+      }
       return line;
     };
     const archiveEvents = [...ARCHIVE_EVENTS_2026].sort((a, b) =>
@@ -1595,6 +1614,7 @@
               </div>` : ''}
               <div class="event-schedule">
                 <p class="event-when">${Visualist.scheduleLineHtml(openingLine(event))}</p>
+                ${Visualist.startEndWhenHtml(Visualist.timeBounds(event.w))}
                 ${Visualist.onViewHtml(event)}
               </div>
             </div>` : ''}
@@ -1607,26 +1627,22 @@
     };
     const archiveRangeHtml = (start, end) =>
       archiveFiltered.slice(start, end).map((event, i) => archiveEventHtml(event, start + i)).join('');
-    // the archive's default face: a collage card per month, grouped under
-    // year separators, each linking to its month page; filtering swaps in
-    // the event list
+    // the archive's default face: each month heads a horizontally scrolling
+    // river of every event image that month, each square linking to its
+    // event; filtering swaps in the event list
     const archiveMonthIndexHtml = () => {
-      const months = new Map(); // '2026-06' -> { count, images[] }
+      const months = new Map(); // '2026-06' -> { count, items[] }
       archiveEvents.forEach(event => {
         const key = event.d.slice(0, 7);
-        const month = months.get(key) || { count: 0, images: [] };
+        const month = months.get(key) || { count: 0, items: [] };
         month.count += 1;
-        if (event.i) month.images.push(event.i);
+        if (event.i) month.items.push({
+          src: event.i,
+          href: event.p || event.u,
+          title: event.t || 'Untitled'
+        });
         months.set(key, month);
       });
-      // images sampled evenly across the month, enough to fill a full-width
-      // strip on any viewport (extras hide via the strip's single-row grid)
-      const sampleImages = images => {
-        const want = 24;
-        if (images.length <= want) return images;
-        return Array.from({ length: want }, (_, k) =>
-          images[Math.floor(k * (images.length - 1) / (want - 1))]);
-      };
       return `
         <ul class="archive-month-list">
           ${[...months.keys()].sort().map(key => {
@@ -1634,16 +1650,11 @@
             const name = new Date(`${key}-15T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
             return `
             <li class="archive-month-item">
-              <a href="tag.html?month=${key}">
-                <span class="month-head">
-                  <span class="month-name">${name}</span>
-                  <span class="month-count">${month.count} events</span>
-                </span>
-                <span class="month-thumbs" aria-hidden="true">
-                  ${sampleImages(month.images).map(src =>
-                    `<img src="${escapeHtml(src)}" alt="" loading="lazy">`).join('')}
-                </span>
+              <a class="month-head" href="tag.html?month=${key}">
+                <span class="month-name">${name}</span>
+                <span class="month-count">${month.count} events</span>
               </a>
+              ${thumbRiverHtml(month.items)}
             </li>`;
           }).join('')}
         </ul>`;

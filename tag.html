@@ -98,7 +98,10 @@
         const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
         const month = date.toLocaleDateString('en-US', { month: 'long' });
         let line = `Opening ${weekday}, ${month} ${ordinalDay(date.getDate())}`;
-        if (e.w) line += e.w.includes('–') ? `, from ${e.w}` : `, at ${e.w}`;
+        // parseable times become their own Start/End rows instead of a tail
+        if (e.w && !Visualist.timeBounds(e.w)) {
+          line += e.w.includes('–') ? `, from ${e.w}` : `, at ${e.w}`;
+        }
         return line;
       };
       const tagLabel = tagSlug => (TAGS_2026.find(t => t.s === tagSlug) || {}).n || tagSlug;
@@ -126,6 +129,7 @@
               </div>` : ''}
               <div class="event-schedule">
                 <p class="event-when">${Visualist.scheduleLineHtml(openingLine(e))}</p>
+                ${Visualist.startEndWhenHtml(Visualist.timeBounds(e.w))}
                 ${Visualist.onViewHtml(e)}
               </div>
             </div>` : ''}

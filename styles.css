@@ -293,22 +293,20 @@ body {
   text-underline-offset: 0.2em;
 }
 
-/* panels hang off the bottom of the sticky utility bar, so they stay in
-   view (and usable) however deep the page is scrolled */
+/* panels hang off the bottom of the sticky utility bar, full bleed, so
+   they stay in view (and usable) however deep the page is scrolled */
 .filter-panel {
   position: absolute;
   top: 100%;
-  left: var(--edge);
-  right: var(--edge);
+  left: 0;
+  right: 0;
   z-index: 19;
   display: grid;
   gap: 1rem;
-  max-width: var(--measure);
-  margin: 0 auto;
-  padding: 1rem;
-  border: 1px solid #d4d4d4;
-  border-top: 0;
-  border-radius: 0 0 3px 3px;
+  margin: 0;
+  padding: 1rem var(--edge);
+  border: 0;
+  border-bottom: 1px solid #d4d4d4;
   background: var(--content-paper);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
 }
@@ -523,39 +521,6 @@ body {
 
 .site-search input::placeholder {
   color: var(--content-ink-muted);
-}
-
-.date-filter {
-  display: flex;
-  align-items: center;
-  gap: 0.6em;
-  padding: 0.7em 0.95em;
-  border: 1px solid #d4d4d4;
-  border-radius: 3px;
-  background: var(--content-paper);
-  color: var(--content-ink-muted);
-}
-
-.date-filter:focus-within {
-  border-color: var(--content-ink);
-  color: var(--content-ink);
-}
-
-.date-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.4em;
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  font-size: 0.9rem;
-  color: inherit;
-  cursor: pointer;
-}
-
-.date-caret {
-  font-size: 0.7em;
 }
 
 .date-input {
@@ -1070,12 +1035,10 @@ body {
   padding: 0;
 }
 
-/* month rows: "Month Year - n events", then a full-width single row of
-   square images sampled from across the month */
-.archive-month-item a {
-  display: block;
+/* month rows: "Month Year - n events" over a scrolling river of images */
+.archive-month-item {
+  min-width: 0; /* let the river scroll instead of widening the grid item */
   padding: 0.5rem 0 0.9rem;
-  text-decoration: none;
 }
 
 .month-head {
@@ -1083,6 +1046,7 @@ body {
   align-items: baseline;
   gap: 1rem;
   margin-bottom: 0.5rem;
+  text-decoration: none;
 }
 
 .month-name {
@@ -1091,7 +1055,7 @@ body {
   font-size: clamp(1.35rem, 2.6vw, 1.75rem);
 }
 
-.archive-month-item a:hover .month-name {
+.month-head:hover .month-name {
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
@@ -1104,35 +1068,36 @@ body {
   text-transform: uppercase;
 }
 
-/* fluid tracks stretch the row to the full column width at any viewport;
-   images beyond the first row fall into zero-height rows and vanish */
-.month-thumbs {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(2.6rem, 1fr));
-  grid-template-rows: auto; /* the one visible row */
-  grid-auto-rows: 0;
-  column-gap: 3px;
-  row-gap: 0;
-  overflow: hidden;
+/* a horizontally scrolling river of square images, one per event,
+   each linking to its detail page */
+.thumb-river {
+  display: flex;
+  gap: 3px;
+  overflow-x: auto;
+  padding-bottom: 4px; /* keeps the thin scrollbar off the images */
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
-.month-thumbs img {
+.thumb-river a {
+  flex: none;
+}
+
+.thumb-river img {
   display: block;
-  width: 100%;
-  max-height: 100%;
-  aspect-ratio: 1 / 1;
+  width: clamp(3.4rem, 8vw, 4.6rem);
+  height: clamp(3.4rem, 8vw, 4.6rem);
   object-fit: cover;
   border-radius: 2px;
   opacity: 0.85;
   transition: opacity 0.2s ease;
 }
 
-.archive-month-item a:hover .month-thumbs img {
+.thumb-river a:hover img {
   opacity: 1;
 }
 
-/* a peek at next week under the This Week stream: same strip treatment
-   as the archive months, but each square links to its own event */
+/* a peek at next week under the This Week stream */
 .week-peek {
   margin-top: clamp(2.5rem, 5vw, 4rem);
 }
@@ -1143,37 +1108,6 @@ body {
   font-family: Georgia, serif;
   font-size: clamp(1.35rem, 2.6vw, 1.75rem);
   font-weight: 400;
-}
-
-.week-peek-thumbs {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(2.6rem, 1fr));
-  grid-template-rows: auto; /* the one visible row */
-  grid-auto-rows: 0;
-  column-gap: 3px;
-  row-gap: 0;
-  overflow: hidden;
-}
-
-.week-peek-thumbs a {
-  display: block;
-  max-height: 100%;
-  overflow: hidden;
-}
-
-.week-peek-thumbs img {
-  display: block;
-  width: 100%;
-  max-height: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 2px;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
-}
-
-.week-peek-thumbs a:hover img {
-  opacity: 1;
 }
 
 .archive-listing {
