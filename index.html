@@ -1581,27 +1581,50 @@
     };
     const archiveRangeHtml = (start, end) =>
       archiveFiltered.slice(start, end).map((event, i) => archiveEventHtml(event, start + i)).join('');
-    // the archive's default face: months grouped under year separators,
-    // each linking to its month page; filtering swaps in the event list
+    // the archive's default face: a collage card per month, grouped under
+    // year separators, each linking to its month page; filtering swaps in
+    // the event list
     const archiveMonthIndexHtml = () => {
-      const counts = new Map();
+      const months = new Map(); // '2026-06' -> { count, images[] }
       archiveEvents.forEach(event => {
-        const month = event.d.slice(0, 7);
-        counts.set(month, (counts.get(month) || 0) + 1);
+        const key = event.d.slice(0, 7);
+        const month = months.get(key) || { count: 0, images: [] };
+        month.count += 1;
+        if (event.i) month.images.push(event.i);
+        months.set(key, month);
       });
+      // four images sampled evenly across the month, so the collage spans
+      // its whole run rather than just the first week
+      const sampleImages = images => {
+        if (images.length <= 4) return images;
+        return [0, 1, 2, 3].map(k => images[Math.floor(k * (images.length - 1) / 3)]);
+      };
       const byYear = new Map();
-      [...counts.keys()].sort().forEach(month => {
+      [...months.keys()].sort().forEach(month => {
         const year = month.slice(0, 4);
         if (!byYear.has(year)) byYear.set(year, []);
         byYear.get(year).push(month);
       });
-      return [...byYear].map(([year, months]) => `
+      return [...byYear].map(([year, keys]) => `
         <section class="archive-year">
           <h2 class="archive-year-label">${year}</h2>
           <ul class="archive-month-list">
-            ${months.map(month => {
-              const name = new Date(`${month}-15T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-              return `<li><a href="tag.html?month=${month}">${name}</a><span class="archive-month-count">${counts.get(month)} events</span></li>`;
+            ${keys.map(key => {
+              const month = months.get(key);
+              const name = new Date(`${key}-15T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+              return `
+              <li class="archive-month-card">
+                <a href="tag.html?month=${key}" aria-label="${name}, ${month.count} events">
+                  <span class="month-collage" aria-hidden="true">
+                    ${sampleImages(month.images).map(src =>
+                      `<img src="${escapeHtml(src)}" alt="" loading="lazy">`).join('')}
+                  </span>
+                  <span class="month-card-label">
+                    <span class="month-card-name">${name}</span>
+                    <span class="month-card-count">${month.count} events</span>
+                  </span>
+                </a>
+              </li>`;
             }).join('')}
           </ul>
         </section>`).join('');

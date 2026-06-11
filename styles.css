@@ -1038,35 +1038,84 @@ body {
 .archive-month-list {
   list-style: none;
   display: grid;
-  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
 
-.archive-month-list li {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75em;
-}
-
-.archive-month-list a {
-  color: var(--content-ink);
-  font-family: Georgia, serif;
-  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+/* each month is a collage card: a 2x2 of that month's event images under
+   a masthead-style label */
+.archive-month-card a {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--paper);
   text-decoration: none;
 }
 
-.archive-month-list a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+.month-collage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
 }
 
-.archive-month-count {
-  color: var(--content-ink-muted);
-  font-size: 0.72rem;
+.month-collage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.archive-month-card a:hover .month-collage img {
+  transform: scale(1.04);
+}
+
+/* readable label over any imagery: bottom scrim plus logotype shadow */
+.archive-month-card a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.18) 38%, rgba(0, 0, 0, 0) 62%);
+}
+
+.month-card-label {
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0.75rem;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75em;
+  color: #ffffff;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6); /* matches the logotype */
+}
+
+.month-card-name {
+  font-family: fenwick, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
+  line-height: 1;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.month-card-count {
+  flex: none;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .archive-listing {
