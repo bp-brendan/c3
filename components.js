@@ -847,7 +847,9 @@ Brunswick Building fire of 1989.`;
 
       if (!items.some(item => item.ongoing)) return;
 
-      view.replaceChildren();
+      // the rebuilt flow keeps the view's masthead (e.g. the TODAY banner)
+      const masthead = view.querySelector(':scope > .view-masthead');
+      view.replaceChildren(...(masthead ? [masthead] : []));
       const dates = [...new Set(items.map(item => item.date))].sort();
       dates.forEach(date => {
         view.append(dateHeading(date));
