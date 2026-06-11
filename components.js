@@ -405,31 +405,13 @@ Brunswick Building fire of 1989.`;
   const todayIso = () => isoForOffset(0);
   const tomorrowIso = () => isoForOffset(1);
 
-  // only Tomorrow gets a marker: Today has its own landing page and nav tab
-  const relativeDateMarker = iso => iso === tomorrowIso()
-    ? `<a class="event-date-marker" href="${localHref('tag.html?tag=tomorrow')}">Tomorrow</a>`
-    : '';
-
   const dateHeading = iso => {
     const date = new Date(`${iso}T12:00:00`);
     const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
     const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);
-    const marker = relativeDateMarker(iso);
     return Object.assign(document.createElement('div'), {
-      className: `event-date${marker ? ' event-date-is-relative' : ''}`,
-      innerHTML: `${marker}` +
-        `<span class="event-date-day">${weekday}</span><em class="event-date-num">${month} ${ordinal(date.getDate())}</em>`
-    });
-  };
-
-  // static week-view headers get their relative-day marker after the fact
-  const markRelativeDateHeadings = () => {
-    document.querySelectorAll('.event-date').forEach(heading => {
-      if (heading.querySelector('.event-date-marker')) return;
-      const marker = relativeDateMarker(isoFromTextDate(heading.textContent));
-      if (!marker) return;
-      heading.classList.add('event-date-is-relative');
-      heading.insertAdjacentHTML('afterbegin', marker);
+      className: 'event-date',
+      innerHTML: `<span class="event-date-day">${weekday}</span><em class="event-date-num">${month} ${ordinal(date.getDate())}</em>`
     });
   };
 
@@ -933,7 +915,6 @@ Brunswick Building fire of 1989.`;
       });
     });
     addEventDescriptions();
-    markRelativeDateHeadings();
   };
 
   window.Visualist = {
