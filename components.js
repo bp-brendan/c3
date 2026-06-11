@@ -606,8 +606,8 @@ Brunswick Building fire of 1989.`;
         </button>
         <span class="calendar-menu" hidden>
           <span class="calendar-menu-label">Add to calendar</span>
-          <a href="${escapeHtml(icsFile)}">This event</a>
-          <a href="${localHref('visualist.ics')}" title="Subscribe to every Visualist event">All Visualist events</a>
+          <a href="${escapeHtml(icsFile)}" download>This event</a>
+          <a href="${localHref('visualist.ics')}" download title="Subscribe to every Visualist event">All Visualist events</a>
         </span>
       </span>`;
   };
@@ -621,6 +621,9 @@ Brunswick Building fire of 1989.`;
       toggle.setAttribute('aria-expanded', String(open));
     };
     toggle.addEventListener('click', () => setOpen(menu.hidden));
+    // picking an option hands the .ics to the browser and closes the menu
+    menu.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => setOpen(false)));
     document.addEventListener('click', event => {
       if (!menu.hidden && !event.target.closest('.breadcrumb-calendar')) setOpen(false);
     });
@@ -659,9 +662,9 @@ Brunswick Building fire of 1989.`;
           /^(opening|on view)/i.test(text)) return;
       span.innerHTML = `<a href="http://maps.google.com/maps?q=${encodeURIComponent(text)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`;
     });
-    // hairline between the venue/address block and the opening/on-view lines
-    const firstWhen = liveSpans.find(s => /^(opening|on view)/i.test(s.textContent.trim()));
-    if (firstWhen && firstWhen !== liveSpans[0]) firstWhen.classList.add('meta-when-divider');
+    // when-lines lead with a bold "Opening"/"On view", like the listing cards
+    liveSpans.filter(s => /^(opening|on view)/i.test(s.textContent.trim()))
+      .forEach(emphasizeScheduleLine);
     const onViewSpan = spans.find(s => /^on view/i.test(s.textContent.trim()));
     if (!onViewSpan) return;
     const date = onViewDate(onViewSpan.textContent, baseYear, baseMonth);
@@ -678,8 +681,8 @@ Brunswick Building fire of 1989.`;
     const best = pickExhibitionSlug(titleSlug, [...bySlug.keys()]);
     const text = `On view through ${date}`;
     onViewSpan.innerHTML = best
-      ? `<a href="${bySlug.get(best).getAttribute('href')}" target="_blank" rel="noopener">${text}</a>`
-      : text;
+      ? `<a href="${bySlug.get(best).getAttribute('href')}" target="_blank" rel="noopener">${scheduleLineHtml(text)}</a>`
+      : scheduleLineHtml(text);
   };
 
   // "Opening Friday, June 12th, from 6PM – 9PM" from archive date + time fields

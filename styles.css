@@ -751,20 +751,25 @@ body {
     grid-column: 1;
     grid-row: 1;
   }
+  /* donate sits under the text in the left column; the links form the
+     right column, top-aligned with the paragraph */
   .site-footer .footer-actions {
-    grid-column: 2;
-    grid-row: 1;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
+    display: contents;
+  }
+  .site-footer .footer-donate {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
   }
   .site-footer .footer-links {
+    grid-column: 2;
+    grid-row: 1 / span 2;
     flex-direction: column;
     gap: 0.9rem;
   }
   .site-footer .footer-copyright {
     grid-column: 1 / -1;
-    grid-row: 2;
+    grid-row: 3;
   }
 }
 
@@ -1390,11 +1395,28 @@ a.top-pick:hover,
   text-transform: none;
 }
 
-/* rule between the venue/address block and the opening/on-view lines */
-.event-detail-meta .meta-when-divider {
-  border-top: var(--hairline-light);
-  padding-top: 0.65rem;
-  margin-top: 0.65rem;
+/* opening/on-view lines: bold lead-in, lighter serif rest — the same
+   two-font treatment the listing cards use for their schedule block */
+.event-detail-meta > span:nth-child(n + 3) {
+  font-family: Georgia, serif;
+  font-size: 0.86rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.event-detail-meta > span:nth-child(n + 4) {
+  margin-top: 0.1rem; /* consecutive when-lines read as one tight block */
+}
+
+.event-detail-meta > span:nth-child(n + 3) strong {
+  color: var(--content-ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .event-detail-meta a {
@@ -1464,6 +1486,9 @@ a.top-pick:hover,
   display: block;
   width: 1.25em;
   height: 1.25em;
+  /* optical centering against the all-caps date: the text box reserves
+     descender room the capitals never use, so dead center reads low */
+  transform: translateY(-0.1em);
 }
 
 .calendar-menu {
