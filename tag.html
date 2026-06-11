@@ -45,7 +45,9 @@
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
     document.getElementById('tag-name').textContent = label;
-    document.title = `Tagged: ${label} | The Visualist`;
+    document.title = isTodayPage ? 'Today | The Visualist' : `Tagged: ${label} | The Visualist`;
+    // the Today listing is the landing page: the nav tab already names it
+    if (isTodayPage) document.querySelector('.tag-title').hidden = true;
 
     Visualist.trackEventLinks(() => ({
       label: (isTodayPage || isTomorrowPage) ? label : `Tagged “${label}”`,

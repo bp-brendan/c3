@@ -851,40 +851,6 @@ body {
   margin-inline: auto;
 }
 
-/* TODAY masthead over the This Week stream, set in the logotype face */
-.view-masthead {
-  display: flex;
-  align-items: center;
-  gap: 0.4em;
-  margin: 0 0 1.5rem;
-}
-
-.view-masthead-title {
-  margin: 0;
-  color: var(--content-ink);
-  font-family: fenwick, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(2.75rem, 9vw, 7rem);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.view-masthead-feed {
-  flex: none;
-  color: var(--content-ink-muted);
-}
-
-.view-masthead-feed:hover {
-  color: var(--content-ink);
-}
-
-.view-masthead-feed svg {
-  display: block;
-  width: clamp(1.3rem, 2.6vw, 2rem);
-  height: clamp(1.3rem, 2.6vw, 2rem);
-}
-
 .tag-page > :not([data-visualist-nav]) {
   max-width: var(--measure);
   margin-inline: auto;

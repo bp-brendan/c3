@@ -218,6 +218,8 @@ Brunswick Building fire of 1989.`;
       title.insertAdjacentElement('beforebegin', nav);
       initBreadcrumbCalendar(nav);
     } else if (page === 'tag') {
+      // the Today listing is the landing page: no crumb back to a view
+      if (new URLSearchParams(location.search).get('tag') === 'today') return;
       const title = document.querySelector('.tag-title');
       if (!title) return;
       // no trailing label: the arrow points at the tag title right below
@@ -386,23 +388,16 @@ Brunswick Building fire of 1989.`;
   const todayIso = () => isoForOffset(0);
   const tomorrowIso = () => isoForOffset(1);
 
-  const relativeDateMarker = (iso, { skipToday = false } = {}) => {
-    const markers = [
-      // This Week's big TODAY masthead already labels the current day
-      ...(skipToday ? [] : [{ iso: todayIso(), label: 'Today', slug: 'today' }]),
-      { iso: tomorrowIso(), label: 'Tomorrow', slug: 'tomorrow' }
-    ];
-    const marker = markers.find(item => item.iso === iso);
-    return marker
-      ? `<a class="event-date-marker" href="${localHref(`tag.html?tag=${marker.slug}`)}">${marker.label}</a>`
-      : '';
-  };
+  // only Tomorrow gets a marker: Today has its own landing page and nav tab
+  const relativeDateMarker = iso => iso === tomorrowIso()
+    ? `<a class="event-date-marker" href="${localHref('tag.html?tag=tomorrow')}">Tomorrow</a>`
+    : '';
 
-  const dateHeading = (iso, options) => {
+  const dateHeading = iso => {
     const date = new Date(`${iso}T12:00:00`);
     const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
     const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);
-    const marker = relativeDateMarker(iso, options);
+    const marker = relativeDateMarker(iso);
     return Object.assign(document.createElement('div'), {
       className: `event-date${marker ? ' event-date-is-relative' : ''}`,
       innerHTML: `${marker}` +
@@ -414,8 +409,7 @@ Brunswick Building fire of 1989.`;
   const markRelativeDateHeadings = () => {
     document.querySelectorAll('.event-date').forEach(heading => {
       if (heading.querySelector('.event-date-marker')) return;
-      const marker = relativeDateMarker(isoFromTextDate(heading.textContent),
-        { skipToday: Boolean(heading.closest('#view-this-week')) });
+      const marker = relativeDateMarker(isoFromTextDate(heading.textContent));
       if (!marker) return;
       heading.classList.add('event-date-is-relative');
       heading.insertAdjacentHTML('afterbegin', marker);
@@ -851,12 +845,10 @@ Brunswick Building fire of 1989.`;
 
       if (!items.some(item => item.ongoing)) return;
 
-      // the rebuilt flow keeps the view's masthead (e.g. the TODAY banner)
-      const masthead = view.querySelector(':scope > .view-masthead');
-      view.replaceChildren(...(masthead ? [masthead] : []));
+      view.replaceChildren();
       const dates = [...new Set(items.map(item => item.date))].sort();
       dates.forEach(date => {
-        view.append(dateHeading(date, { skipToday: view.id === 'view-this-week' }));
+        view.append(dateHeading(date));
         items
           .filter(item => item.date === date)
           .sort((a, b) => Number(a.ongoing) - Number(b.ongoing) || a.order - b.order)
