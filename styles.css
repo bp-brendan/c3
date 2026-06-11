@@ -1783,48 +1783,6 @@ a.top-pick:hover,
   }
 }
 
-.metadata-preview[hidden] {
-  display: none;
-}
-
-.metadata-preview {
-  display: grid;
-  grid-template-columns: 9rem minmax(0, 1fr);
-  gap: 1rem;
-  align-items: start;
-  padding: 0.8rem 0;
-  border-top: var(--hairline-light);
-  border-bottom: var(--hairline-light);
-}
-
-.metadata-preview img {
-  display: block;
-  width: 9rem;
-  height: auto;
-}
-
-.metadata-preview strong {
-  display: block;
-  margin: 0.15rem 0 0.2rem;
-  font-family: Georgia, serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.25;
-}
-
-.metadata-preview p {
-  color: var(--content-ink-muted);
-  font-size: 0.9rem;
-}
-
-.metadata-preview-no-image {
-  grid-template-columns: 1fr;
-}
-
-.metadata-preview-no-image img {
-  display: none;
-}
-
 .submit-actions {
   display: flex;
   gap: 1rem;

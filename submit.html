@@ -26,14 +26,6 @@
             <span>URL <i class="metadata-spinner" data-metadata-spinner hidden aria-hidden="true"></i></span>
             <input id="event-url" name="post-website" type="url" placeholder="https://example.org/event" autocomplete="url" required>
           </label>
-          <div class="metadata-preview" data-metadata-preview hidden>
-            <img data-preview-image alt="">
-            <div>
-              <span>Detected</span>
-              <strong data-preview-title></strong>
-              <p data-preview-description></p>
-            </div>
-          </div>
           <label class="submit-field" for="post-title">
             <span>Title</span>
             <input id="post-title" name="post-title" type="text" placeholder="Title of the show or event" required>
@@ -349,11 +341,7 @@
     });
     venueInput.addEventListener('change', () => mirrorVenue(venueInput.value.trim()));
 
-    const previewEl = document.querySelector('[data-metadata-preview]');
     const imageUrlField = document.querySelector('[data-image-url-field]');
-    const previewImage = document.querySelector('[data-preview-image]');
-    const previewTitle = document.querySelector('[data-preview-title]');
-    const previewDescription = document.querySelector('[data-preview-description]');
     const spinner = document.querySelector('[data-metadata-spinner]');
     const fields = {
       url: document.querySelector('#event-url'),
@@ -401,10 +389,7 @@
     };
 
     const applyMetadata = metadata => {
-      if (!metadata.title && !metadata.description && !metadata.image) {
-        previewEl.hidden = true;
-        return;
-      }
+      if (!metadata.title && !metadata.description && !metadata.image) return;
 
       setIfEmpty(fields.title, metadata.title);
       setIfEmpty(fields.content, metadata.description);
@@ -430,13 +415,6 @@
       imageUrlField.hidden = !metadata.image; // only surface the detected URL when there is one
       // a detected image satisfies the requirement; otherwise an upload is required
       document.getElementById('post-featured-image').required = !metadata.image;
-
-      previewTitle.textContent = metadata.title || 'Untitled';
-      previewDescription.textContent = metadata.description || 'No description found.';
-      previewImage.src = metadata.image || '';
-      previewImage.alt = metadata.title ? `${metadata.title} preview image` : 'Detected preview image';
-      previewEl.hidden = false;
-      previewEl.classList.toggle('metadata-preview-no-image', !metadata.image);
     };
 
     let metadataTimer;
@@ -454,7 +432,6 @@
 
       if (!rawUrl || !fields.url.validity.valid) {
         setLoading(false);
-        previewEl.hidden = true;
         imageUrlField.hidden = true;
         return;
       }
@@ -472,12 +449,11 @@
 
         const requestId = ++metadataRequestId;
         setLoading(true);
-        previewEl.hidden = true;
         try {
           const metadata = await fetchMetadata(sourceUrl);
           if (requestId === metadataRequestId) applyMetadata(metadata);
         } catch {
-          if (requestId === metadataRequestId) previewEl.hidden = true;
+          // metadata fetch failed; leave the form for manual entry
         } finally {
           if (requestId === metadataRequestId) setLoading(false);
         }
