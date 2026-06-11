@@ -293,15 +293,24 @@ body {
   text-underline-offset: 0.2em;
 }
 
+/* panels hang off the bottom of the sticky utility bar, so they stay in
+   view (and usable) however deep the page is scrolled */
 .filter-panel {
+  position: absolute;
+  top: 100%;
+  left: var(--edge);
+  right: var(--edge);
+  z-index: 19;
   display: grid;
   gap: 1rem;
   max-width: var(--measure);
-  margin: 0 auto 1rem;
+  margin: 0 auto;
   padding: 1rem;
   border: 1px solid #d4d4d4;
-  border-radius: 3px;
+  border-top: 0;
+  border-radius: 0 0 3px 3px;
   background: var(--content-paper);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
 }
 
 .date-presets {

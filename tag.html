@@ -46,8 +46,9 @@
 
     document.getElementById('tag-name').textContent = label;
     document.title = isTodayPage ? 'Today | The Visualist' : `Tagged: ${label} | The Visualist`;
-    // the Today listing is the landing page: the nav tab already names it
-    if (isTodayPage) document.querySelector('.tag-title').hidden = true;
+    // the Today listing is the landing page: it opens straight onto the
+    // day-and-date heading, like a This Week day group
+    if (isTodayPage) document.querySelector('.tag-title').remove();
 
     Visualist.trackEventLinks(() => ({
       label: (isTodayPage || isTomorrowPage) ? label : `Tagged “${label}”`,
@@ -59,10 +60,17 @@
     const tomorrow = Visualist.tomorrowIso();
     const runsToday = e => e.d <= today && (Visualist.onViewEndIso(e) || e.d) >= today;
     const runsTomorrow = e => e.d <= tomorrow && (Visualist.onViewEndIso(e) || e.d) >= tomorrow;
+    // a virtual day page reads like a This Week day group: one heading,
+    // that day's openings first, then the ongoing runs
+    const dayIso = isTodayPage ? today : (isTomorrowPage ? tomorrow : '');
     const hits = TAG_EVENTS_2026
       .filter(e => isTodayPage ? runsToday(e) : (isTomorrowPage ? runsTomorrow(e) : e.g.includes(slug)))
-      .sort((a, b) => b.d.localeCompare(a.d));
-    document.getElementById('tag-count').textContent = `(${hits.length})`;
+      .sort((a, b) => dayIso
+        ? (Number(b.d === dayIso) - Number(a.d === dayIso)) ||
+          a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '')
+        : b.d.localeCompare(a.d));
+    const tagCount = document.getElementById('tag-count');
+    if (tagCount) tagCount.textContent = `(${hits.length})`;
 
     if (hits.length) {
       const ordinalDay = n => {
@@ -87,8 +95,9 @@
         ).join('')}</span>`;
       };
       let lastDate = '';
-      document.getElementById('tag-results').innerHTML = hits.map(e => `
-        ${e.d !== lastDate ? Visualist.dayHeadingHtml(lastDate = e.d) : ''}
+      document.getElementById('tag-results').innerHTML =
+        (dayIso ? Visualist.dayHeadingHtml(dayIso) : '') + hits.map(e => `
+        ${!dayIso && e.d !== lastDate ? Visualist.dayHeadingHtml(lastDate = e.d) : ''}
         <article class="event-card">
           ${e.i
             ? `<a class="event-thumb" href="${escapeHtml(e.p || e.u)}"><img src="${escapeHtml(e.i)}" alt="" loading="lazy"></a>`

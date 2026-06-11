@@ -45,33 +45,34 @@
             <em class="tag-invoke-count" hidden></em>
           </button>
         </div>
+        <!-- open panels hang off the sticky band so they stay in view at any scroll depth -->
+        <div class="filter-panel date-panel" hidden>
+          <div class="date-presets">
+            <button type="button" class="preset-chip" data-range="today">Today</button>
+            <button type="button" class="preset-chip" data-range="weekend">This Weekend</button>
+            <button type="button" class="preset-chip" data-range="week">Next 7 Days</button>
+            <button type="button" class="preset-chip" data-range="month">This Month</button>
+            <button type="button" class="preset-chip" data-range="clear">Clear</button>
+          </div>
+          <div class="date-range-inputs">
+            <label class="date-range-field">From
+              <input type="date" class="date-input date-from" aria-label="From date">
+            </label>
+            <span class="date-range-sep" aria-hidden="true">&ndash;</span>
+            <label class="date-range-field">To
+              <input type="date" class="date-input date-to" aria-label="To date">
+            </label>
+          </div>
+        </div>
+        <div class="filter-panel tag-panel" hidden>
+          <div class="tag-panel-head">
+            <input type="search" class="tag-panel-filter" placeholder="Filter tags" aria-label="Filter tags">
+            <button type="button" class="tag-clear" hidden>Clear selected</button>
+          </div>
+          <div class="tag-panel-list"></div>
+        </div>
       </div>
     <div id="archive-chrome" hidden>
-      <div class="filter-panel date-panel" hidden>
-        <div class="date-presets">
-          <button type="button" class="preset-chip" data-range="today">Today</button>
-          <button type="button" class="preset-chip" data-range="weekend">This Weekend</button>
-          <button type="button" class="preset-chip" data-range="week">Next 7 Days</button>
-          <button type="button" class="preset-chip" data-range="month">This Month</button>
-          <button type="button" class="preset-chip" data-range="clear">Clear</button>
-        </div>
-        <div class="date-range-inputs">
-          <label class="date-range-field">From
-            <input type="date" class="date-input date-from" aria-label="From date">
-          </label>
-          <span class="date-range-sep" aria-hidden="true">&ndash;</span>
-          <label class="date-range-field">To
-            <input type="date" class="date-input date-to" aria-label="To date">
-          </label>
-        </div>
-      </div>
-      <div class="filter-panel tag-panel" hidden>
-        <div class="tag-panel-head">
-          <input type="search" class="tag-panel-filter" placeholder="Filter tags" aria-label="Filter tags">
-          <button type="button" class="tag-clear" hidden>Clear selected</button>
-        </div>
-        <div class="tag-panel-list"></div>
-      </div>
       <div class="active-tags" id="active-tags" hidden></div>
     </div>
 
