@@ -1060,23 +1060,9 @@ body {
   text-decoration: none;
 }
 
-.month-name {
-  color: var(--content-ink);
-  font-family: Georgia, serif;
-  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
-}
-
-.month-head:hover .month-name {
+.month-head:hover .event-date-day {
   text-decoration: underline;
   text-underline-offset: 0.2em;
-}
-
-.month-count {
-  color: var(--content-ink-muted);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 /* a horizontally scrolling river of square images, one per event,

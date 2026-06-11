@@ -1,9 +1,9 @@
 (function () {
-  const footerText = `The Visualist is more than just a list of dates and events on the
+  const footerText = `<strong>The Visualist</strong> is more than just a list of dates and events on the
 internet. It's a really long list of dates and events for exhibitions,
 artist talks, receptions, festivals, panels, performances, readings,
-fairs, workshops, and curated content all kinds. At its heart the
-Visualist is really a cursory archive of actions and engagements
+fairs, workshops, and curated content all kinds. At its heart <strong>the
+Visualist</strong> is really a cursory archive of actions and engagements
 throughout Chicagoland. In time, this archive will reach back to the
 Brunswick Building fire of 1989.`;
 

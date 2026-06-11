@@ -1728,8 +1728,8 @@
             return `
             <li class="archive-month-item">
               <a class="month-head" href="tag.html?month=${key}">
-                <span class="month-name">${name}</span>
-                <span class="month-count">${month.count} events</span>
+                <span class="event-date-day">${name}</span>
+                <em class="event-date-num">${month.count} events</em>
               </a>
               ${thumbRiverHtml(month.items)}
             </li>`;
