@@ -1130,6 +1130,17 @@ body {
   overscroll-behavior-x: contain;
 }
 
+#view-archive .thumb-river-frame {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+}
+
+#view-archive .thumb-river {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .thumb-river a {
   flex: none;
 }
