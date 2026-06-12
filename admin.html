@@ -998,7 +998,10 @@
       const loginMessage = document.getElementById('login-message');
       message(loginMessage, 'Sending magic link...');
       const email = event.target.email.value.trim();
-      const redirect = `${location.origin}${location.pathname}#pending`;
+      // no #fragment here: supabase returns the session as a URL fragment on
+      // this redirect, and a preexisting hash corrupts it (the login screen
+      // would just reappear); the queue default is #pending anyway
+      const redirect = `${location.origin}${location.pathname}`;
       const { error } = await window.supabaseClient.auth.signInWithOtp({
         email,
         options: { emailRedirectTo: redirect, shouldCreateUser: false }

@@ -2192,17 +2192,25 @@
   <script>
   const [bootViewName, bootParams] = location.hash.slice(1).split('?');
   const initialViewName = ['this-week', 'next-week', 'archive'].includes(bootViewName) ? bootViewName : 'today';
-  // Today's listing only needs today's rows, so start that fetch right away;
-  // queueing it behind loadData's settings/taglines round trip doubles the
-  // wait before the landing view paints. The 2026 clamp is redundant here —
-  // the query already pins event_date to today.
-  const todayCacheKey = `cached_today_v1:${Visualist.todayIso()}`;
+  // The landing view needs today's rows plus the rest of the week for the
+  // This Week peek, so start that one fetch right away; queueing it behind
+  // loadData's settings/taglines round trip doubles the wait before the
+  // landing view paints. The 2026 clamp is redundant here — the query
+  // already pins event_date to this week.
+  const bootWeekEndIso = (() => {
+    const date = new Date(`${Visualist.todayIso()}T12:00:00`);
+    date.setDate(date.getDate() + 7);
+    return date.toISOString().slice(0, 10);
+  })();
+  const todayCacheKey = `cached_today_week_v1:${Visualist.todayIso()}`;
   const todayDayQuery = table => window.supabaseClient
     .from(table)
     .select('*')
-    .eq('event_date', Visualist.todayIso())
+    .gte('event_date', Visualist.todayIso())
+    .lte('event_date', bootWeekEndIso)
+    .order('event_date', { ascending: true })
     .order('title', { ascending: true })
-    .limit(100);
+    .limit(400);
   const todayFetchPromise = initialViewName === 'today'
     ? todayDayQuery('events_list').then(res => (res.error || !res.data) ? todayDayQuery('events') : res)
     : null;
@@ -2480,39 +2488,13 @@
     };
 
     // tease This Week at the bottom of Today: the heading jumps to the tab,
-    // each image links through to its event page; reads whatever cards This
-    // Week holds (static bake on landing, live render after the archive
-    // data loads), skipping days the bake has that are already past
-    const headingMonths = { january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
-      july: 6, august: 7, september: 8, october: 9, november: 10, december: 11 };
-    const isoFromHeadingText = text => {
-      const match = text.match(/(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})/i);
-      if (!match) return '';
-      const year = new Date().getFullYear();
-      return `${year}-${String(headingMonths[match[1].toLowerCase()] + 1).padStart(2, '0')}-${String(match[2]).padStart(2, '0')}`;
-    };
-    const buildTodayPeek = () => {
+    // each image links through to its detail page on this site (the boot
+    // fetch's live rows carry local paths; the static bake's cards only
+    // know old-site permalinks)
+    const buildTodayPeek = weekEvents => {
       const view = document.getElementById('view-today');
       view.querySelector('.week-peek')?.remove();
-      const todayIso = Visualist.todayIso();
-      const weekEndIso = isoPlusDays(todayIso, 7);
-      let cardDate = '';
-      const items = [...document.getElementById('view-this-week').children].map(child => {
-        if (child.classList.contains('event-date')) {
-          cardDate = isoFromHeadingText(child.textContent);
-          return null;
-        }
-        // the static bake runs weeks deep; keep only this week's days
-        if (!child.classList.contains('event-card')) return null;
-        if (cardDate && (cardDate < todayIso || cardDate > weekEndIso)) return null;
-        const img = child.querySelector('.event-thumb img');
-        const link = child.querySelector('.event-title a');
-        return img && link ? {
-          src: img.getAttribute('src'),
-          href: link.getAttribute('href'),
-          title: link.textContent.trim()
-        } : null;
-      }).filter(Boolean);
+      const items = eventThumbItems([...weekEvents].sort(Visualist.sortAsc));
       if (!items.length) return;
       view.insertAdjacentHTML('beforeend', `
         <div class="week-peek">
@@ -3106,7 +3088,10 @@ monthIndexShowing = false;
       }
     };
     const paintToday = (todayIso, rows) => {
-      const hits = Visualist.publicEvents((rows || []).map(mapEventRow)).sort(Visualist.sortAsc);
+      // the boot fetch spans the whole week: today's date feeds the listing,
+      // the full set feeds the This Week peek below it
+      const weekEvents = Visualist.publicEvents((rows || []).map(mapEventRow));
+      const hits = weekEvents.filter(event => event.d === todayIso).sort(Visualist.sortAsc);
       const todayView = document.getElementById('view-today');
       if (hits.length) {
         todayView.innerHTML = Visualist.dayHeadingHtml(todayIso) + hits.map(eventCardHtml).join('');
@@ -3122,7 +3107,7 @@ monthIndexShowing = false;
           </div>`;
       }
       Visualist.openExternalLinks(todayView);
-      buildTodayPeek();
+      buildTodayPeek(weekEvents);
     };
     const renderToday = async () => {
       const todayIso = Visualist.todayIso();
