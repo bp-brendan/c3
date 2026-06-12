@@ -19,12 +19,6 @@
 
     <section class="view admin-view" id="view-queue" aria-labelledby="admin-title">
       <h1 class="submit-title" id="admin-title">Admin Queue</h1>
-      <div class="admin-queue-filters" data-admin-filters>
-        <a href="#queue-pending" data-admin-filter="pending">Pending</a>
-        <a href="#queue-approved" data-admin-filter="approved">Approved</a>
-        <a href="#queue-passed" data-admin-filter="passed">Passed</a>
-        <a href="#queue-all" data-admin-filter="all">All</a>
-      </div>
       <div class="admin-summary" data-admin-summary></div>
       <div class="admin-queue" data-admin-queue></div>
       <p class="view-empty" data-admin-empty hidden>No submissions in this queue.</p>
@@ -79,6 +73,7 @@
   <script src="archiveevents2026.js"></script>
   <script>
     Visualist.renderChrome();
+    Visualist.initHeaderAccordion();
 
     const queue = document.querySelector('[data-admin-queue]');
     const summary = document.querySelector('[data-admin-summary]');
@@ -415,47 +410,36 @@
     };
 
     const paintAdminNav = () => {
-      // Primary tabs
-      const primary = (location.hash || '#queue').replace(/^#/, '').split('-')[0];
+      const primary = (location.hash || '#pending').replace(/^#/, '');
+      
       document.querySelectorAll('[data-admin-tab]').forEach(item => {
         const active = item.dataset.adminTab === primary;
         item.classList.toggle('active', active);
         item.toggleAttribute('aria-current', active);
       });
       
-      // View visibility
       Object.entries(views).forEach(([key, el]) => {
-        if (el) el.hidden = key !== primary;
-      });
-
-      // Sub-filters for Queue
-      filters.forEach(item => {
-        const active = item.dataset.adminFilter === activeFilter;
-        item.classList.toggle('active', active);
-        item.toggleAttribute('aria-current', active);
+        if (!el) return;
+        if (key === 'queue') {
+          el.hidden = !validFilters.has(primary);
+        } else {
+          el.hidden = key !== primary;
+        }
       });
     };
 
     const setQueueFilter = (value, updateHash = true) => {
       if (!validFilters.has(value)) value = 'pending';
       activeFilter = value;
-      if (updateHash) history.replaceState(null, '', `#queue-${value}`);
+      if (updateHash) history.replaceState(null, '', `#${value}`);
       paintAdminNav();
       render();
     };
 
-    filters.forEach(link => {
-      link.addEventListener('click', event => {
-        event.preventDefault();
-        setQueueFilter(link.dataset.adminFilter);
-      });
-    });
-
     window.addEventListener('hashchange', () => {
       const target = location.hash.replace(/^#/, '');
-      const [primary, sub] = target.split('-');
-      if (primary === 'queue' && sub) {
-        setQueueFilter(sub, false);
+      if (validFilters.has(target)) {
+        setQueueFilter(target, false);
       } else {
         paintAdminNav();
       }
@@ -524,10 +508,9 @@
     });
 
     const initialHash = location.hash.replace(/^#/, '');
-    const [initialPrimary, initialSub] = initialHash.split('-');
-    if (initialPrimary === 'queue' && initialSub) {
-      setQueueFilter(initialSub, false);
-    } else if (initialPrimary === 'create' || initialPrimary === 'events') {
+    if (validFilters.has(initialHash)) {
+      setQueueFilter(initialHash, false);
+    } else if (initialHash === 'create' || initialHash === 'events') {
       paintAdminNav();
       setQueueFilter(activeFilter, false);
     } else {

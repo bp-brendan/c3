@@ -273,10 +273,13 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     document.querySelectorAll('[data-visualist-nav]').forEach(slot => {
       const isAdmin = page === 'admin';
       const adminActive = isAdmin
-        ? (location.hash || '#queue').replace(/^#/, '').split('-')[0] // 'queue' or 'events' or 'create'
+        ? (location.hash || '#pending').replace(/^#/, '')
         : '';
       const adminItems = [
-        { key: 'queue', label: 'Queue' },
+        { key: 'pending', label: 'Pending' },
+        { key: 'approved', label: 'Approved' },
+        { key: 'passed', label: 'Passed' },
+        { key: 'all', label: 'All' },
         { key: 'events', label: 'All Events' }
       ];
       slot.innerHTML = `
