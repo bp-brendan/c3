@@ -1984,6 +1984,94 @@ if (tagline) {
     return mapUrlForAddress(fallbackAddress);
   };
 
+  // neighborhood inputs get the same suggest dropdown the venue and tag
+  // fields use, fed from the static neighborhood list — no network involved
+  const initNeighborhoodTypeahead = (root = document) => {
+    const inputs = [...root.querySelectorAll('input[data-neighborhood-typeahead]')]
+      .filter(input => !input.dataset.neighborhoodTypeaheadReady);
+    inputs.forEach(input => {
+      input.dataset.neighborhoodTypeaheadReady = '1';
+      const field = input.closest('.submit-field') || input.parentElement;
+      if (field) field.classList.add('has-address-autocomplete');
+      const suggest = document.createElement('div');
+      suggest.className = 'search-suggest neighborhood-suggest';
+      suggest.setAttribute('role', 'listbox');
+      suggest.setAttribute('aria-label', 'Matching neighborhoods');
+      suggest.hidden = true;
+      input.insertAdjacentElement('afterend', suggest);
+
+      let options = [];
+      let index = -1;
+      const hide = () => {
+        options = [];
+        index = -1;
+        suggest.hidden = true;
+        suggest.innerHTML = '';
+        input.setAttribute('aria-expanded', 'false');
+      };
+      const paint = () => {
+        [...suggest.querySelectorAll('.search-suggest-item')].forEach((item, i) => {
+          item.classList.toggle('active', i === index);
+          item.setAttribute('aria-selected', String(i === index));
+        });
+      };
+      const pick = i => {
+        if (!options[i]) return;
+        input.value = options[i];
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+        hide();
+      };
+      const render = () => {
+        const q = input.value.trim().toLowerCase();
+        if (!q) return hide();
+        const starts = [];
+        const contains = [];
+        for (const name of chicagoNeighborhoods()) {
+          const lower = name.toLowerCase();
+          if (lower.startsWith(q)) starts.push(name);
+          else if (lower.includes(q)) contains.push(name);
+        }
+        options = [...starts, ...contains].slice(0, 7);
+        // an exact lone match needs no dropdown
+        if (!options.length || (options.length === 1 && options[0].toLowerCase() === q)) return hide();
+        index = 0;
+        suggest.innerHTML = options.map(name =>
+          `<button type="button" class="search-suggest-item" role="option" aria-selected="false"><span>${escapeHtml(name)}</span></button>`
+        ).join('');
+        suggest.hidden = false;
+        input.setAttribute('aria-expanded', 'true');
+        paint();
+        [...suggest.querySelectorAll('.search-suggest-item')].forEach((item, i) => {
+          item.addEventListener('mousedown', event => event.preventDefault());
+          item.addEventListener('click', () => pick(i));
+          item.addEventListener('mousemove', () => {
+            if (index !== i) { index = i; paint(); }
+          });
+        });
+      };
+      input.setAttribute('autocomplete', 'off');
+      input.setAttribute('role', 'combobox');
+      input.setAttribute('aria-expanded', 'false');
+      input.addEventListener('input', render);
+      input.addEventListener('blur', () => window.setTimeout(hide, 120));
+      input.addEventListener('keydown', event => {
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          if (suggest.hidden || !options.length) return;
+          event.preventDefault();
+          const step = event.key === 'ArrowDown' ? 1 : -1;
+          index = (index + step + options.length) % options.length;
+          paint();
+        } else if (event.key === 'Enter' && !suggest.hidden && options[index]) {
+          event.preventDefault();
+          pick(index);
+        } else if (event.key === 'Escape') {
+          hide();
+        }
+      });
+    });
+  };
+
   const initAddressAutocomplete = (root = document) => {
     const inputs = [...root.querySelectorAll('input[data-address-autocomplete]')]
       .filter(input => !input.dataset.addressAutocompleteReady);
@@ -2182,6 +2270,7 @@ if (tagline) {
     thumbSrc,
     todayIso,
     initAddressAutocomplete,
+    initNeighborhoodTypeahead,
     dayHeadingHtml: iso => dateHeading(iso).outerHTML,
     mergeOngoingIntoDatedFlow,
     showDatePicker,

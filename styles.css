@@ -2797,3 +2797,15 @@ body.logged-out .admin-main {
   background: #fff;
   color: #000;
 }
+
+.submit-rich-text {
+  min-height: 200px;
+  background: #fff;
+  color: #000;
+}
+
+.submit-rich-text .ql-editor {
+  min-height: 200px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}

@@ -377,7 +377,7 @@
         </label>
         <label class="submit-field" for="neighborhood-${id}">
           <span>Neighborhood</span>
-          <input id="neighborhood-${id}" name="neighborhood" type="text" value="${valueAttr(submission.neighborhood)}">
+          <input id="neighborhood-${id}" name="neighborhood" type="text" value="${valueAttr(submission.neighborhood)}" data-neighborhood-typeahead autocomplete="off">
         </label>
         <div class="submit-field admin-wide">
           <span>Listing type</span>
@@ -561,6 +561,7 @@
       queue.innerHTML = visible.map(submissionCard).join('');
       queueEmpty.hidden = visible.length > 0;
       Visualist.initAddressAutocomplete(queue);
+      Visualist.initNeighborhoodTypeahead(queue);
       Visualist.openExternalLinks(queue);
       window.initRichText(queue);
     };
@@ -893,6 +894,7 @@
 
     createFields.innerHTML = submissionRows(blankSubmission());
     Visualist.initAddressAutocomplete(createForm);
+    Visualist.initNeighborhoodTypeahead(createForm);
     createForm.querySelector('[data-create-preview]').addEventListener('click', () => renderFormPreview(createForm, createPreview));
     createForm.addEventListener('submit', async event => {
       event.preventDefault();
@@ -921,6 +923,7 @@
         createForm.reset();
         createFields.innerHTML = submissionRows(blankSubmission());
         Visualist.initAddressAutocomplete(createForm);
+        Visualist.initNeighborhoodTypeahead(createForm);
         createPreview.hidden = true;
         createPreview.innerHTML = '';
       } catch (error) {

@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preload" href="components.js" as="script">
   <link rel="preload" href="supabaseClient.js" as="script">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 <body data-page="submit">
 
@@ -62,8 +63,7 @@
           </label>
           <label class="submit-field" for="post-neighborhood">
             <span>Neighborhood <em class="submit-optional">optional</em></span>
-            <input id="post-neighborhood" name="post-neighborhood" type="text" list="neighborhood-options" placeholder="e.g. Pilsen" autocomplete="off">
-            <datalist id="neighborhood-options"></datalist>
+            <input id="post-neighborhood" name="post-neighborhood" type="text" placeholder="e.g. Pilsen" autocomplete="off" data-neighborhood-typeahead>
             <small class="submit-hint">Fills in from the venue &mdash; edit if needed. Added to the tags for you.</small>
           </label>
           <div class="submit-field">
@@ -150,12 +150,42 @@
   <script src="components.js"></script>
   <script src="tags2026.js"></script>
   <script src="venueNeighborhoods.js"></script>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
   <script>
   Visualist.loadData(() => {
     Visualist.renderChrome();
     Visualist.initHeaderAccordion();
     Visualist.initDatePickers();
     Visualist.initAddressAutocomplete();
+    Visualist.initNeighborhoodTypeahead();
+
+    // simple rich description: the hidden textarea stays the submitted value,
+    // mirrored from the editor on every change. `required` moves to a manual
+    // check in the submit handler — the browser can't focus a hidden control.
+    const descArea = document.getElementById('post-content');
+    let descQuill = null;
+    if (window.Quill && descArea) {
+      descArea.style.display = 'none';
+      descArea.required = false;
+      const editor = document.createElement('div');
+      editor.className = 'submit-rich-text';
+      descArea.parentNode.insertBefore(editor, descArea.nextSibling);
+      descQuill = new Quill(editor, {
+        theme: 'snow',
+        modules: {
+          toolbar: [
+            ['bold', 'italic', 'underline'],
+            [{ header: 2 }, { header: 3 }],
+            ['link', 'image'],
+            [{ list: 'bullet' }]
+          ]
+        }
+      });
+      descQuill.on('text-change', () => {
+        descArea.value = descQuill.getText().trim() ? descQuill.root.innerHTML : '';
+        descArea.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+    }
 
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -185,6 +215,11 @@
     document.querySelector('.submit-form').addEventListener('submit', async event => {
       event.preventDefault();
       const form = event.currentTarget;
+      if (descQuill && !descQuill.getText().trim()) {
+        descQuill.focus();
+        alert('Please add a description for the event.');
+        return;
+      }
       const submitButton = form.querySelector('button[type="submit"]');
       submitButton.disabled = true;
       try {
@@ -382,12 +417,6 @@
     // neighborhood: auto-filled from the venue, editable, mirrored into the tags
     // (admins ask for the neighborhood as a tag — see thevisualist.org/info)
     const neighborhoodInput = document.getElementById('post-neighborhood');
-    const neighborhoodList = document.getElementById('neighborhood-options');
-    (Visualist.chicagoNeighborhoods() || []).forEach(name => {
-      const option = document.createElement('option');
-      option.value = name;
-      neighborhoodList.appendChild(option);
-    });
     let neighborhoodTag = '';
     const mirrorNeighborhood = value => {
       if (neighborhoodTag && neighborhoodTag.toLowerCase() !== value.toLowerCase()) tagField.remove(neighborhoodTag);
@@ -472,6 +501,10 @@
 
       setIfEmpty(fields.title, metadata.title);
       setIfEmpty(fields.content, metadata.description);
+      // mirror scraped descriptions into the editor (plain text in, so setText)
+      if (descQuill && metadata.description && !descQuill.getText().trim()) {
+        descQuill.setText(metadata.description);
+      }
       setIfEmpty(fields.venue, metadata.locationName);
       setIfEmpty(fields.address, metadata.locationAddress);
       if (metadata.locationName && !venueTag) {
