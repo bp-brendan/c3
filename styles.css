@@ -1601,7 +1601,7 @@ a.top-pick:hover,
   justify-content: center;
 }
 .image-lightbox button::before {
-  content: "\\00d7"; /* multiplication sign for close */
+  content: "\00d7"; /* multiplication sign for close */
   line-height: 1;
 }
 
