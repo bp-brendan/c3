@@ -216,7 +216,7 @@ body {
   gap: 0.5em;
   padding: 0 0.95em;
   border: none;
-  border-right: var(--hairline-light);
+  border-left: var(--hairline-light);
   background: transparent;
   color: var(--content-ink-muted);
   cursor: pointer;
@@ -224,8 +224,9 @@ body {
   font-size: 0.9rem;
 }
 
-.tag-invoke:last-child {
-  border-right: none;
+/* ensure the last item has a right border when active, to form a complete tab */
+.tag-invoke:last-child[aria-expanded="true"] {
+  border-right: var(--hairline-light);
 }
 
 .tag-invoke[aria-expanded="true"]::after {
@@ -233,7 +234,7 @@ body {
   position: absolute;
   bottom: -1px;
   left: 0;
-  right: 0;
+  right: -1px; /* cover the potential right border */
   height: 2px;
   background: var(--content-paper);
   z-index: 20;
@@ -245,6 +246,10 @@ body {
   color: var(--content-ink);
 }
 
+.tag-invoke[aria-expanded="true"] {
+  background: var(--content-paper);
+}
+
 .tag-invoke-icon {
   width: 1.05em;
   height: 1.05em;
@@ -252,8 +257,9 @@ body {
 
 @media (max-width: 600px) {
   .tag-invoke {
-    width: 48px;
-    padding: 0;
+    width: auto;
+    padding: 0 12px;
+    justify-content: flex-end;
   }
   .tag-invoke > span {
     display: none;
@@ -338,7 +344,7 @@ body {
   margin: 0;
   padding: 1rem var(--edge);
   border: 0;
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: var(--hairline-light);
   background: var(--content-paper);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
 }
@@ -1512,11 +1518,18 @@ a.top-pick:hover,
   margin-right: 0.25em; /* visual space before next item */
 }
 
+/* Expose underline on the link to the right of the arrow */
+.breadcrumb-arrow + a,
+.breadcrumb-arrow + * > a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .breadcrumb-arrow::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -0.1em; /* position like an underline */
+  bottom: -0.2em; /* position like an underline (matches offset 0.2em) */
   width: 100%;
   height: 1px;
   background-color: currentColor; /* the line itself */
@@ -1526,7 +1539,7 @@ a.top-pick:hover,
   content: "";
   position: absolute;
   right: 0;
-  bottom: -0.1em;
+  bottom: -0.2em;
   width: 5px;
   height: 5px;
   border-top: 1px solid currentColor;
