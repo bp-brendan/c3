@@ -281,6 +281,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const compact = 48;
     const logoCompact = 30;
     let glide = 0;
+    let taglineGlide = 0;
     let scaleTo = 1;
     let ticking = false;
     const taglineSpan = tagline.querySelector('span');
@@ -314,9 +315,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
         if (taglineSpan) taglineSpan.textContent = randomLine();
       }
       tagline.style.opacity = fade.toFixed(3);
-      // user requested tagline to stay vertically centered between logotype and bottom.
-      // translating it down along with logotype prevents it from getting crushed.
-      tagline.style.transform = `translateY(${(glide * p).toFixed(2)}px)`;
+      tagline.style.transform = `translateY(${(taglineGlide * p).toFixed(2)}px)`;
       navBand.classList.toggle('pinned', navBand.getBoundingClientRect().top <= compact + 0.5);
     };
 
@@ -328,6 +327,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       const logoHeight = logotype.offsetHeight;
       scaleTo = logoCompact / logoHeight;
       glide = (headerHeight - compact / 2) - (logotype.offsetTop + logoHeight / 2);
+      taglineGlide = (glide - (logoHeight / 2) * (1 - scaleTo)) / 2;
       update();
     };
 
