@@ -133,7 +133,7 @@ body {
 /* ---- Navigation ---------------------------------------------------- */
 
 .nav-block {
-  max-width: var(--content-max);
+  max-width: var(--measure);
   margin-inline: auto;
 }
 
@@ -203,6 +203,8 @@ body {
   align-items: stretch;
   gap: 0;
   width: 100%;
+  max-width: var(--measure);
+  margin-inline: auto;
   height: 100%;
 }
 
@@ -1361,8 +1363,7 @@ a.top-pick:hover,
 }
 
 .event-schedule {
-  display: grid;
-  gap: 0.08rem;
+  display: block;
   margin: 0;
 }
 
@@ -1405,6 +1406,8 @@ a.top-pick:hover,
 }
 
 .event-schedule .event-when {
+  display: inline;
+  margin-right: 0.5em;
   color: var(--content-ink-muted);
   font-family: Georgia, serif;
   font-size: 0.86rem;
