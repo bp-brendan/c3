@@ -54,18 +54,35 @@ window.Visualist.loadData = async function(callback) {
       localStorage.setItem(SETTINGS_CACHE_KEY, JSON.stringify(window.SITE_SETTINGS));
     } catch {}
 
-    let query = window.supabaseClient
-      .from('events')
-      .select('*')
-      .order('event_date', { ascending: false })
-      .limit(1000);
+    // Admin edits full descriptions, so it reads the events table whole.
+    // Public pages read the events_list view (500-char plain-text excerpts,
+    // ~10x lighter) over a recent window that still covers long on-view
+    // runs; the view not existing yet falls back to the full table.
+    const isAdmin = document.body && document.body.dataset.page === 'admin';
+    const windowStart = new Date(Date.now() - 180 * 86400 * 1000).toISOString().slice(0, 10);
 
-    if (window.SITE_SETTINGS.limit_to_2026) {
-      query = query.gte('event_date', '2026-01-01').lte('event_date', '2026-12-31');
+    const buildQuery = (table, columns, windowed) => {
+      let q = window.supabaseClient
+        .from(table)
+        .select(columns)
+        .order('event_date', { ascending: false })
+        .limit(1000);
+      if (windowed && !window.SITE_SETTINGS.limit_to_2026) q = q.gte('event_date', windowStart);
+      if (window.SITE_SETTINGS.limit_to_2026) {
+        q = q.gte('event_date', '2026-01-01').lte('event_date', '2026-12-31');
+      }
+      return q;
+    };
+
+    let events = null;
+    let eventsError = null;
+    if (!isAdmin) {
+      ({ data: events, error: eventsError } = await buildQuery('events_list', '*', true));
     }
-
-    const { data: events, error: eventsError } = await query;
-    if (eventsError) console.error('Error fetching events:', eventsError);
+    if (isAdmin || eventsError || !events) {
+      ({ data: events, error: eventsError } = await buildQuery('events', '*', false));
+      if (eventsError) console.error('Error fetching events:', eventsError);
+    }
 
     // Map Supabase schema back to the short keys expected by the frontend
     window.ARCHIVE_EVENTS_2026 = (events || []).map(e => ({
@@ -76,7 +93,7 @@ window.Visualist.loadData = async function(callback) {
       v: e.venue,
       d: e.event_date,
       i: e.image_url,
-      x: e.description,
+      x: e.excerpt !== undefined ? e.excerpt : e.description,
       g: e.tags,
       w: e.time_window,
       vu: e.venue_url,

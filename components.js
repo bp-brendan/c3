@@ -883,6 +883,33 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     return [...byKey.values()];
   };
 
+  // an exhibition posted once per session (opening, artist talk, closing)
+  // repeats the same on-view run on every row, so each row matches every day
+  // of the run in date-scoped views. Only the earliest row keeps the run;
+  // later rows match their own date alone — display-level until occurrences
+  // hang off parent_event_id.
+  const scopeSeriesRuns = events => {
+    const groups = new Map();
+    events.forEach(event => {
+      const key = `${String(event.t || '').toLowerCase()}|${String(event.v || '').toLowerCase()}`;
+      const group = groups.get(key) || [];
+      group.push(event);
+      groups.set(key, group);
+    });
+    groups.forEach(rows => {
+      if (new Set(rows.map(event => event.d)).size < 2) return;
+      const first = rows.reduce((a, b) => (b.d < a.d ? b : a));
+      rows.forEach(event => {
+        const scoped = event !== first;
+        if (event._runScoped !== scoped) {
+          event._runScoped = scoped;
+          delete event._end; // archive caches the run end per row
+        }
+      });
+    });
+    return events;
+  };
+
   const publicEvents = events => {
     const editedEvents = applyEventEdits(dedupeEvents(events));
     const existing = new Set(editedEvents.map(event =>
@@ -894,7 +921,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       existing.add(key);
       return true;
     });
-    return applyEventEdits([...editedEvents, ...approved]);
+    return scopeSeriesRuns(applyEventEdits([...editedEvents, ...approved]));
   };
 
   const tagLabel = value => {
@@ -949,7 +976,12 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     if (!match || !baseYear) return null;
     const month = monthIndex[match[1].toLowerCase()];
     if (month === undefined) return null;
-    const year = baseMonth && month + 1 < baseMonth ? baseYear + 1 : baseYear;
+    // the year rolls over for a plausible span (a winter opening closing in
+    // spring); a close 7+ months "later" is a scrape artifact — an on-view
+    // date from before the opening — not a real run
+    const rolled = baseMonth && month + 1 < baseMonth;
+    if (rolled && 12 - baseMonth + month + 1 > 6) return null;
+    const year = rolled ? baseYear + 1 : baseYear;
     return { year, month: month + 1, day: Number(match[2]) };
   };
 
@@ -966,6 +998,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
   // ISO end of an event's run (its on-view close), '' when it has no run
   const onViewEndIso = ev => {
     if (!ev) return '';
+    if (ev._runScoped) return ''; // a series row matches its own date only
     if (!ev.o) {
       // tag data lacks o on the homepage-merged entries; the archive has them
       const match = archiveMatch(ev.t || '', ev.p || ev.u || '');
@@ -976,7 +1009,8 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const end = onViewEnd(ev.o, baseYear, baseMonth);
     if (!end) return '';
     const pad = n => String(n).padStart(2, '0');
-    return `${end.year}-${pad(end.month)}-${pad(end.day)}`;
+    const iso = `${end.year}-${pad(end.month)}-${pad(end.day)}`;
+    return iso >= (ev.d || '') ? iso : ''; // a run can't close before it opens
   };
 
   // among candidate tag slugs, the exhibition's own tag is the one matching the

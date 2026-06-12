@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Daily 6am database backup. Install with:
+       cp scripts/org.thevisualist.backup.plist ~/Library/LaunchAgents/
+       launchctl load ~/Library/LaunchAgents/org.thevisualist.backup.plist
+     Logs to /tmp/visualist-backup.log; keeps the newest 14 days in backups/. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>org.thevisualist.backup</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/Users/brendan/Documents/GitHub/c3/scripts/backup_db.py</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>6</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/tmp/visualist-backup.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/visualist-backup.log</string>
+</dict>
+</plist>

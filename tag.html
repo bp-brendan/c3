@@ -10,6 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabaseClient.js"></script>
   <script src="components.js"></script>
+  <script src="cardthumbs.js"></script>
 </head>
 <body data-page="tag">
 
@@ -18,7 +19,7 @@
   <main class="site-main tag-page">
     <div data-visualist-nav></div>
     <h1 class="tag-title"><span id="tag-name"></span><span class="tag-count" id="tag-count"></span></h1>
-    <div class="archive-listing" id="tag-results"></div>
+    <div class="archive-listing" id="tag-results"><p style="text-align:center; padding: 20px;">Loading&hellip;</p></div>
     <p class="view-empty" id="tag-empty" hidden>No 2026 events carry this tag.</p>
   </main>
 
@@ -87,8 +88,13 @@
     if (isTodayPage || isTomorrowPage) {
       // Today and Tomorrow only need recent events, local filtering is fine
       const tagEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
-      hits = tagEvents
-        .filter(e => isTodayPage ? runsToday(e) : runsTomorrow(e))
+      hits = tagEvents.filter(e => isTodayPage ? runsToday(e) : runsTomorrow(e));
+      // on a session day an exhibition matches twice — as the day's own row
+      // and as the ongoing run — so the run row yields to the day's row
+      const seriesKey = e => `${String(e.t || '').toLowerCase()}|${String(e.v || '').toLowerCase()}`;
+      const daySeries = new Set(hits.filter(e => e.d === dayIso).map(seriesKey));
+      hits = hits
+        .filter(e => e.d === dayIso || !daySeries.has(seriesKey(e)))
         .sort((a, b) => dayIso
           ? (Number(b.d === dayIso) - Number(a.d === dayIso)) ||
             a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '')
@@ -98,7 +104,11 @@
       let query = window.supabaseClient.from('events').select('*').limit(1000);
       
       if (isMonthPage) {
-        query = query.gte('event_date', `${monthParam}-01`).lte('event_date', `${monthParam}-31`).order('event_date', { ascending: true });
+        // exclusive next-month bound: a literal "-31" is an invalid date for
+        // short months and errors the whole query (blank Feb/Apr/Jun/Sep/Nov)
+        const [year, month] = monthParam.split('-').map(Number);
+        const nextMonth = `${month === 12 ? year + 1 : year}-${String(month === 12 ? 1 : month + 1).padStart(2, '0')}-01`;
+        query = query.gte('event_date', `${monthParam}-01`).lt('event_date', nextMonth).order('event_date', { ascending: true });
       } else if (isTopVPage) {
         query = query.eq('top_pick', true).order('event_date', { ascending: false });
       } else {

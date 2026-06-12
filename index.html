@@ -21,6 +21,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabaseClient.js"></script>
   <script src="components.js"></script>
+  <script src="cardthumbs.js"></script>
 </head>
 <body data-page="home">
 
@@ -2266,14 +2267,26 @@
       const key = frame.dataset.month;
       const count = Number(frame.dataset.count || 0);
       delete frame.dataset.month;
+      // exclusive next-month bound: a literal "-31" is an invalid date for
+      // short months and errors the whole query (blank Feb/Apr/Jun/Sep/Nov)
+      const [year, month] = key.split('-').map(Number);
+      const nextMonth = `${month === 12 ? year + 1 : year}-${String(month === 12 ? 1 : month + 1).padStart(2, '0')}-01`;
       const { data } = await window.supabaseClient
         .from('events')
-        .select('image_url,path,permalink,title')
-        .gte('event_date', `${key}-01`).lte('event_date', `${key}-31`)
+        .select('image_url,path,permalink,title,event_date')
+        .gte('event_date', `${key}-01`).lt('event_date', nextMonth)
         .not('image_url', 'is', null)
         .order('event_date', { ascending: true })
         .limit(MONTH_RIVER_LIMIT);
-      const items = (data || []).filter(e => e.image_url).map(e => ({
+      // migration dupes share (permalink, title, date); show one tile each,
+      // preferring the row with a local detail page (as publicEvents does)
+      const byKey = new Map();
+      (data || []).forEach(e => {
+        const k = `${(e.permalink || '').toLowerCase()}|${(e.title || '').toLowerCase()}|${e.event_date}`;
+        const held = byKey.get(k);
+        if (!held || ((e.path || '').startsWith('events/') && !(held.path || '').startsWith('events/'))) byKey.set(k, e);
+      });
+      const items = [...byKey.values()].filter(e => e.image_url).map(e => ({
         src: e.image_url,
         href: e.path || e.permalink,
         title: e.title || 'Untitled'
@@ -2888,7 +2901,9 @@
             o: e.on_view_through,
             k: e.top_pick ? 1 : 0
           }));
-          archiveEvents = archiveEvents.concat(mapped);
+          // re-run the public pipeline over the merged list: dedupes
+          // migration twins in the fetched batch and rescopes series runs
+          archiveEvents = Visualist.publicEvents(archiveEvents.concat(mapped));
           renderArchive();
         } else {
           btn.textContent = 'No more archives';

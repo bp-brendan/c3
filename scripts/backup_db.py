@@ -58,3 +58,13 @@ for table in TABLES:
         print(f'{table}: SKIPPED ({err})')
         continue
     print(f'{table}: {total} rows -> {os.path.relpath(path, ROOT)}')
+
+# retention: keep the newest 14 dated folders
+KEEP = 14
+import re as _re
+import shutil
+dated = sorted(d for d in os.listdir(out_root)
+               if _re.fullmatch(r'\d{4}-\d{2}-\d{2}', d))
+for stale in dated[:-KEEP]:
+    shutil.rmtree(os.path.join(out_root, stale))
+    print(f'pruned {stale}')

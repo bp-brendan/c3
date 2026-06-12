@@ -1,46 +1,56 @@
 #!/usr/bin/env python3
-"""Generate small JPEG thumbnails for the event-image strips.
+"""Generate thumbnail tiers for every image under media/.
 
-Reads image paths from archiveevents2026.js (the `i` fields) and writes
-200px-long-side JPEGs to media/thumbs/, mirroring the media/ layout. The
-image strips on the archive default view and the This Week footer load
-these (~8KB) instead of the full-size uploads (~260KB), falling back to
-the original at runtime if a thumb is missing. Requires macOS `sips`.
+Two tiers, mirroring the media/ layout as JPEGs:
+  media/thumbs/     200px long side, q65 (~10KB)  — image rivers
+  media/thumbs480/  480px long side, q72 (~25KB)  — event-card thumbs
+                     (cardthumbs.js swaps card images to these at runtime,
+                     falling back to the original if a thumb is missing)
+
+Walks media/ itself rather than any data file, so coverage includes images
+that postdate archiveevents2026.js. Requires macOS `sips`.
 
 Usage: python3 scripts/build_image_thumbs.py
 """
-import json
 import os
 import re
 import subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-src = open(os.path.join(ROOT, 'archiveevents2026.js')).read()
-events = json.loads(src[src.index('['):src.rindex(']') + 1])
-paths = sorted({e['i'] for e in events if e.get('i', '').startswith('media/')})
+MEDIA = os.path.join(ROOT, 'media')
+TIERS = [
+    ('thumbs', 200, 65),
+    ('thumbs480', 480, 72),
+]
+IMAGE_RE = re.compile(r'\.(png|jpe?g|gif|webp)$', re.I)
 
-made = current = missing = failed = 0
-for rel in paths:
-    src_path = os.path.join(ROOT, rel)
-    if not os.path.exists(src_path):
-        missing += 1
+paths = []
+for dirpath, dirnames, filenames in os.walk(MEDIA):
+    rel_dir = os.path.relpath(dirpath, MEDIA)
+    if rel_dir.split(os.sep)[0] in {t[0] for t in TIERS}:
+        dirnames[:] = []
         continue
-    out_rel = re.sub(r'^media/', 'media/thumbs/', rel)
-    out_rel = re.sub(r'\.(png|jpe?g|gif|webp)$', '.jpg', out_rel, flags=re.I)
-    out_path = os.path.join(ROOT, out_rel)
-    if os.path.exists(out_path) and os.path.getmtime(out_path) >= os.path.getmtime(src_path):
-        current += 1
-        continue
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
-    result = subprocess.run(
-        ['sips', '-s', 'format', 'jpeg', '-s', 'formatOptions', '65',
-         '-Z', '200', src_path, '--out', out_path],
-        capture_output=True)
-    if result.returncode:
-        failed += 1
-        print('FAIL', rel, result.stderr.decode()[:120])
-        continue
-    made += 1
+    for name in filenames:
+        if IMAGE_RE.search(name):
+            paths.append(os.path.relpath(os.path.join(dirpath, name), MEDIA))
 
-print(f'thumbs: {made} written, {current} already current, '
-      f'{missing} sources missing, {failed} failed')
+for tier, size, quality in TIERS:
+    made = current = failed = 0
+    for rel in sorted(paths):
+        src_path = os.path.join(MEDIA, rel)
+        out_path = os.path.join(MEDIA, tier, IMAGE_RE.sub('.jpg', rel))
+        if os.path.exists(out_path) and os.path.getmtime(out_path) >= os.path.getmtime(src_path):
+            current += 1
+            continue
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        result = subprocess.run(
+            ['sips', '-s', 'format', 'jpeg', '-s', 'formatOptions', str(quality),
+             '-Z', str(size), src_path, '--out', out_path],
+            capture_output=True)
+        if result.returncode:
+            failed += 1
+            print('FAIL', tier, rel, result.stderr.decode()[:120])
+            continue
+        made += 1
+    print(f'{tier}: {made} written, {current} already current, {failed} failed '
+          f'of {len(paths)} sources')
