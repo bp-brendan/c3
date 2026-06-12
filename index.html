@@ -2664,10 +2664,10 @@
             ? `<a class="event-thumb" href="${escapeHtml(event.p || event.u)}"><img src="${escapeHtml(event.i)}" alt="" loading="lazy"></a>`
             : '<span class="event-thumb event-thumb-empty"></span>'}
           <div class="event-info">
-            <h3 class="event-title"><a href="${escapeHtml(event.p || event.u)}">${escapeHtml(event.t || 'Untitled')}</a>${event.k ? ' <a class="top-pick" href="tag.html?tag=top-v">Top V</a>' : ''}</h3>
+            <h3 class="event-title"><a href="${escapeHtml(event.p || event.u)}">${escapeHtml(event.t || 'Untitled')}</a>${event.k ? ' <a class="top-pick" href="tag.html?tag=top-v">Top V</a>' : ''}${event.sf ? ' <span class="series-pill">First in series</span>' : ''}${event.sl ? ' <span class="series-pill">Last in series</span>' : ''}</h3>
             ${(event.v || event.a || event.d || event.o) ? `<div class="event-meta-grid">
               ${(event.v || event.a) ? `<div class="event-location">
-                ${event.v ? `<p class="event-venue"><a href="${escapeHtml(event.p || event.u)}">${escapeHtml(event.v)}</a></p>` : ''}
+                ${event.v ? `<p class="event-venue"><a href="${escapeHtml(event.vu || event.p || event.u)}"${event.vu ? ' target="_blank" rel="noopener"' : ''}>${escapeHtml(event.v)}</a></p>` : ''}
                 ${event.a ? `<p class="event-address">${event.m ? `<a href="${escapeHtml(event.m)}" target="_blank" rel="noopener">${escapeHtml(event.a)}</a>` : escapeHtml(event.a)}</p>` : ''}
               </div>` : ''}
               <div class="event-schedule">
@@ -2926,7 +2926,9 @@
             i: e.image_url,
             vu: e.venue_url,
             o: e.on_view_through,
-            k: e.top_pick ? 1 : 0
+            k: e.top_pick ? 1 : 0,
+            sf: e.series_first == null ? undefined : (e.series_first ? 1 : 0),
+            sl: e.series_last == null ? undefined : (e.series_last ? 1 : 0)
           }));
           // re-run the public pipeline over the merged list: dedupes
           // migration twins in the fetched batch and rescopes series runs

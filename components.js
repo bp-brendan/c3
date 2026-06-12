@@ -956,7 +956,11 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     return text
     .replace(/&#(\d+);/g, (m, n) => (Number(n) <= 0x10ffff ? String.fromCodePoint(Number(n)) : m))
     .replace(/&#x([0-9a-f]+);/gi, (m, n) => (parseInt(n, 16) <= 0x10ffff ? String.fromCodePoint(parseInt(n, 16)) : m))
-    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '');
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '')
+    // migrated descriptions end in auxiliary link labels, not prose
+    // (case-sensitive: leaves "visit the official website" sentences alone)
+    .replace(/\s*(?:Official Website|Original Listing)\s*/g, ' ')
+    .trim();
   };
 
   const excerptMarkup = (text, href) => {
@@ -1282,7 +1286,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
         <h3 class="event-title"><a href="${escapeHtml(local)}">${escapeHtml(title)}</a>${pick}</h3>
         ${(venue || match.a || opening || match.o) ? `<div class="event-meta-grid">
           ${(venue || match.a) ? `<div class="event-location">
-            ${venue ? `<p class="event-venue"><a href="${escapeHtml(match.u || local)}" target="_blank" rel="noopener">${escapeHtml(venue.textContent.trim())}</a></p>` : ''}
+            ${venue ? `<p class="event-venue"><a href="${escapeHtml(match.vu || match.u || local)}" target="_blank" rel="noopener">${escapeHtml(venue.textContent.trim())}</a></p>` : ''}
             ${match.a ? `<p class="event-address">${match.m
               ? `<a href="${escapeHtml(match.m)}">${escapeHtml(match.a)}</a>`
               : escapeHtml(match.a)}</p>` : ''}
@@ -1307,8 +1311,9 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     if (details) {
       if (venue) {
         const venueLink = venue.querySelector('a');
-        if (venueLink && (details.u || details.p)) {
-          venueLink.setAttribute('href', details.u || details.p);
+        if (venueLink && (details.vu || details.u || details.p)) {
+          // the venue name reaches the venue's own site when we know it
+          venueLink.setAttribute('href', details.vu || details.u || details.p);
           venueLink.setAttribute('target', '_blank');
           venueLink.setAttribute('rel', 'noopener');
         }

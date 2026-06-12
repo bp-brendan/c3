@@ -145,7 +145,8 @@ body {
 
 .site-nav {
   display: flex;
-  gap: 2rem;
+  /* the row must fit a 320px phone on one line: the gap gives way first */
+  gap: clamp(0.7rem, 3.5vw, 2rem);
   align-items: baseline; /* tab and button text share one baseline */
 }
 
@@ -156,8 +157,33 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  padding-bottom: 0.35em;
+  white-space: nowrap; /* labels never two-line inside the 48px band */
+  padding-bottom: 0.25em;
   border-bottom: 2px solid transparent; /* reserve space so .active doesn't shift the row */
+}
+
+/* tighter type before the row would overflow; the band keeps its 48px */
+@media (max-width: 480px) {
+  .site-nav a {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+  .site-nav .nav-button {
+    padding: 0.4em 0.85em;
+  }
+}
+
+@media (max-width: 374px) {
+  .site-nav a {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+/* the admin nav runs seven items deep; let it scroll rather than wrap */
+[data-page="admin"] .site-nav {
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .site-nav a:hover {
@@ -241,10 +267,21 @@ body {
 }
 
 .tag-invoke[aria-expanded="true"] {
+  /* a grey tab: stroked top and sides, open at the bottom */
   background: #eeeeee;
   border-left-color: #d4d4d4;
   border-right-color: #d4d4d4;
-  box-shadow: inset 0 -1px #eeeeee;
+  box-shadow: inset 0 1px #d4d4d4;
+}
+
+.tag-invoke[aria-expanded="true"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: #eeeeee; /* opens the band's bottom hairline under the tab */
 }
 
 .tag-invoke-icon {
@@ -1278,6 +1315,25 @@ body {
   color: var(--content-paper);
 }
 
+/* first/last night of a multi-date series: a quiet chip beside the title */
+.series-pill {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5em;
+  padding: 0.25em 0.55em;
+  background: transparent;
+  border: 1px solid var(--content-ink-muted);
+  color: var(--content-ink-muted);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.55rem;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
 a.top-pick:hover,
 .event-title a.top-pick:hover {
   background: #b50023;
@@ -1566,7 +1622,7 @@ a.top-pick:hover,
   align-items: baseline;
   gap: 0.45rem;
   margin: 0 0 1rem;
-  color: var(--content-ink-muted);
+  color: var(--content-ink);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1578,10 +1634,9 @@ a.top-pick:hover,
   text-decoration: none;
 }
 
+/* every label/arrow pair hovers the same way: a color dim, never an underline */
 .breadcrumb a:hover {
-  color: var(--content-ink);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  color: var(--content-ink-muted);
 }
 
 .breadcrumb-arrow {
@@ -1620,8 +1675,7 @@ a.top-pick:hover,
 }
 
 .breadcrumb a.breadcrumb-arrow:hover {
-  text-decoration: none; /* override the default hover underline */
-  color: var(--content-ink);
+  color: var(--content-ink-muted);
 }
 
 .event-detail {
@@ -1741,11 +1795,14 @@ a.top-pick:hover,
   padding: 0.15em;
   border: 0;
   background: none;
-  color: var(--content-ink-muted);
+  color: var(--content-ink);
   cursor: pointer;
 }
 
-.calendar-toggle:hover,
+.calendar-toggle:hover {
+  color: var(--content-ink-muted);
+}
+
 .calendar-toggle[aria-expanded="true"] {
   color: var(--content-ink);
 }
@@ -1787,9 +1844,7 @@ a.top-pick:hover,
 }
 
 .breadcrumb .calendar-menu a:hover {
-  color: var(--content-ink);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  color: var(--content-ink-muted);
 }
 
 /* ---- Submit form --------------------------------------------------- */

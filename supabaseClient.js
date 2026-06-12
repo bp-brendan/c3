@@ -100,7 +100,11 @@ window.Visualist.loadData = async function(callback) {
       a: e.address,
       m: e.map_url,
       o: e.on_view_through,
-      k: e.top_pick ? 1 : 0
+      k: e.top_pick ? 1 : 0,
+      // series flags stay undefined until the columns exist; the client
+      // then derives them from the loaded window (scopeSeriesRuns)
+      sf: e.series_first == null ? undefined : (e.series_first ? 1 : 0),
+      sl: e.series_last == null ? undefined : (e.series_last ? 1 : 0)
     }));
 
     if (callback) callback();

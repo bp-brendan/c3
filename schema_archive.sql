@@ -34,16 +34,42 @@ create or replace view archive_months as
 
 grant select on archive_months to anon;
 
--- 4) Light list rows for the public pages: everything an event card shows,
+-- 4) Series flags: an event posted once per session (every Friday, opening +
+--    closing, etc.) shares a title and venue across dates. Mark the first and
+--    last dated rows so listings can badge them. Re-runnable; re-run after
+--    bulk imports to refresh the flags.
+alter table events add column if not exists series_first boolean;
+alter table events add column if not exists series_last boolean;
+
+with series as (
+  select lower(title) as t, lower(coalesce(venue, '')) as v,
+         count(distinct event_date) as dates,
+         min(event_date) as first_date,
+         max(event_date) as last_date
+  from events
+  group by 1, 2
+)
+update events e set
+  series_first = case when s.dates >= 2 then e.event_date = s.first_date end,
+  series_last  = case when s.dates >= 2 then e.event_date = s.last_date end
+from series s
+where lower(e.title) = s.t and lower(coalesce(e.venue, '')) = s.v;
+
+-- 5) Light list rows for the public pages: everything an event card shows,
 --    with the (often multi-KB, often raw-HTML) description reduced to a
---    300-character plain-text excerpt (cards clamp to ~3 lines anyway).
+--    300-character plain-text excerpt (cards clamp to ~3 lines anyway), the
+--    auxiliary link labels ("Official Website", "Original Listing") dropped.
 --    Cuts the homepage data payload dramatically; admin keeps reading the
 --    full events table.
 create or replace view events_list as
   select
     id, title, permalink, path, venue, venue_url, address, map_url,
     event_date, image_url, tags, time_window, on_view_through, top_pick,
-    left(regexp_replace(coalesce(description, ''), '<[^>]+>', ' ', 'g'), 300) as excerpt
+    series_first, series_last,
+    left(regexp_replace(
+      regexp_replace(coalesce(description, ''), '<[^>]+>', ' ', 'g'),
+      '\s*(Official Website|Original Listing)\s*', ' ', 'g'
+    ), 300) as excerpt
   from events;
 
 grant select on events_list to anon;

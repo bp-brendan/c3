@@ -76,30 +76,19 @@
 
     const today = Visualist.todayIso();
     const tomorrow = Visualist.tomorrowIso();
-    const runsOn = (e, iso) => e.d <= iso && (Visualist.onViewEndIso(e) || e.d) >= iso;
-    // a virtual day page reads like a This Week day group: one heading,
-    // that day's own events first, then everything on view that day as
-    // regular cards
+    // a day page lists only what is happening that day: an event that is
+    // merely running through the day belongs to its own dates and to the
+    // series' tag page, not to Today
     const dayIso = isTodayPage ? today : (isTomorrowPage ? tomorrow : '');
-    
+
     let hits = [];
     document.getElementById('tag-results').innerHTML = '<p style="text-align:center; padding: 20px;">Loading archive...</p>';
-    
-    let onViewToday = [];
+
     if (isTodayPage || isTomorrowPage) {
-      // the day's own events get full cards; everything else on view that
-      // day follows as a compact On View listing
       const tagEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
       hits = tagEvents
         .filter(e => e.d === dayIso)
         .sort((a, b) => (a.t || '').localeCompare(b.t || ''));
-      const seriesKey = e => `${String(e.t || '').toLowerCase()}|${String(e.v || '').toLowerCase()}`;
-      const daySeries = new Set(hits.map(seriesKey));
-      onViewToday = tagEvents
-        .filter(e => e.d < dayIso && runsOn(e, dayIso) && !daySeries.has(seriesKey(e)))
-        .sort((a, b) =>
-          (Visualist.onViewEndIso(a) || '').localeCompare(Visualist.onViewEndIso(b) || '') ||
-          (a.t || '').localeCompare(b.t || ''));
     } else {
       // Month or Tag: query the deep archive directly, via the light
       // events_list view (plain-text excerpts); the full table is the
@@ -141,7 +130,9 @@
             a: e.address,
             m: e.map_url,
             o: e.on_view_through,
-            k: e.top_pick ? 1 : 0
+            k: e.top_pick ? 1 : 0,
+            sf: e.series_first == null ? undefined : (e.series_first ? 1 : 0),
+            sl: e.series_last == null ? undefined : (e.series_last ? 1 : 0)
           }));
 
           hits = Visualist.publicEvents(hits).sort((a, b) => isMonthPage
@@ -186,10 +177,10 @@
             ? `<a class="event-thumb" href="${escapeHtml(e.p || e.u)}"><img src="${escapeHtml(e.i)}" alt="" loading="lazy"></a>`
             : '<span class="event-thumb event-thumb-empty"></span>'}
           <div class="event-info">
-            <h3 class="event-title"><a href="${escapeHtml(e.p || e.u)}">${escapeHtml(e.t || 'Untitled')}</a>${e.k ? ' <a class="top-pick" href="tag.html?tag=top-v">Top V</a>' : ''}</h3>
+            <h3 class="event-title"><a href="${escapeHtml(e.p || e.u)}">${escapeHtml(e.t || 'Untitled')}</a>${e.k ? ' <a class="top-pick" href="tag.html?tag=top-v">Top V</a>' : ''}${e.sf ? ' <span class="series-pill">First in series</span>' : ''}${e.sl ? ' <span class="series-pill">Last in series</span>' : ''}</h3>
             ${(e.v || e.a || e.d || e.o) ? `<div class="event-meta-grid">
               ${(e.v || e.a) ? `<div class="event-location">
-                ${e.v ? `<p class="event-venue"><a href="${escapeHtml(e.p || e.u)}">${escapeHtml(e.v)}</a></p>` : ''}
+                ${e.v ? `<p class="event-venue"><a href="${escapeHtml(e.vu || e.p || e.u)}"${e.vu ? ' target="_blank" rel="noopener"' : ''}>${escapeHtml(e.v)}</a></p>` : ''}
                 ${e.a ? `<p class="event-address">${e.m ? `<a href="${escapeHtml(e.m)}" target="_blank" rel="noopener">${escapeHtml(e.a)}</a>` : escapeHtml(e.a)}</p>` : ''}
               </div>` : ''}
               <div class="event-schedule">
@@ -218,21 +209,6 @@
       document.getElementById('tag-empty').hidden = false;
     }
 
-    // everything else on view that day, compact: title, venue, closing
-    if (onViewToday.length) {
-      document.getElementById('tag-results').insertAdjacentHTML('beforeend', `
-        <section class="onview-section">
-          <h2 class="view-heading">On view</h2>
-          <ul class="listing">
-            ${onViewToday.map(e => `
-            <li class="listing-item">
-              <a class="listing-title" href="${escapeHtml(e.p || e.u)}">${escapeHtml(e.t || 'Untitled')}</a>${e.k ? ' <a class="top-pick" href="tag.html?tag=top-v">Top V</a>' : ''}
-              <span class="listing-venue">${escapeHtml(e.v || '')}</span>
-              ${Visualist.onViewHtml(e)}
-            </li>`).join('')}
-          </ul>
-        </section>`);
-    }
   });
   </script>
 
