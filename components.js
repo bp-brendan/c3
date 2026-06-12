@@ -533,6 +533,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
         if (taglineSpan) taglineSpan.textContent = randomLine();
       }
       tagline.style.opacity = fade.toFixed(3);
+      const scale = 1 - (1 - scaleTo) * p;
       tagline.style.transform = `translateY(${(taglineGlide * p).toFixed(2)}px) scale(${scale.toFixed(3)})`;
       tagline.style.transformOrigin = 'top center';
       navBand.classList.toggle('pinned', navBand.getBoundingClientRect().top <= compact + 0.5);
