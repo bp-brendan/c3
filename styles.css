@@ -1733,10 +1733,13 @@ a.top-pick:hover,
 .event-source-link {
   display: inline-block;
   color: var(--content-ink);
-  font-size: 0.72rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 /* "+calendar" beside the breadcrumb date: icon button opening a small menu */
