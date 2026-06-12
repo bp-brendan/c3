@@ -2366,7 +2366,7 @@ a.top-pick:hover,
   }
 }
 
+
 [data-page="admin"] .logotype-name {
-  letter-spacing: 0.15em;
-  margin-right: -0.15em;
+  font-size: clamp(2.5rem, 13vw, 15.5rem);
 }

@@ -248,8 +248,8 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       const logo = `<span class="logotype-the">the</span>
         <span class="logotype-name">${isAdmin ? 'BACKROOM' : 'VISUALIST'}</span>`;
       header.innerHTML = `
-        <a class="header-home-hit" href="${localHref('index.html')}" aria-hidden="true" tabindex="-1"></a>
-        <a class="logotype" href="${localHref('index.html')}" aria-label="The Visualist home">${logo}</a>
+        <a class="header-home-hit" href="${localHref(isAdmin ? 'admin.html' : 'index.html')}" aria-hidden="true" tabindex="-1"></a>
+        <a class="logotype" href="${localHref(isAdmin ? 'admin.html' : 'index.html')}" aria-label="${isAdmin ? 'Admin Home' : 'The Visualist home'}">${logo}</a>
         <p class="tagline"><span>${randomLine()}</span></p>`;
     });
   };
