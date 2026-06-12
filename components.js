@@ -1392,7 +1392,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     addEventDescriptions();
   };
 
-  window.Visualist = {
+  window.Visualist = Object.assign(window.Visualist || {}, {
     renderChrome,
     trackEventLinks,
     renderHeader,
@@ -1433,5 +1433,5 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     showDatePicker,
     getHeaderShrink: () => headerState.shrink,
     tomorrowIso
-  };
+  });
 })();
