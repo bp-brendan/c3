@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://use.typekit.net">
   <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="components.js" as="script">
+  <link rel="preload" href="supabaseClient.js" as="script">
 
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
@@ -139,7 +141,43 @@
 
   <footer class="site-footer" data-visualist-footer></footer>
 
+  <!-- scripts live at the end of the body so the static page paints first -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.108.1/dist/umd/supabase.min.js"></script>
+  <script src="supabaseClient.js"></script>
+  <script src="components.js"></script>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
   <script>
+  window.initRichText = container => {
+    if (!container || typeof Quill === 'undefined') return;
+    container.querySelectorAll('textarea[name="description"], textarea[name="x"]').forEach(ta => {
+      if (ta.dataset.quillInitialized) return;
+      ta.dataset.quillInitialized = 'true';
+      ta.style.display = 'none';
+
+      const editorContainer = document.createElement('div');
+      editorContainer.className = 'admin-rich-text';
+      ta.parentNode.insertBefore(editorContainer, ta.nextSibling);
+
+      const quill = new Quill(editorContainer, {
+        theme: 'snow',
+        modules: {
+          toolbar: [
+            ['bold', 'italic', 'underline', 'strike'],
+            ['link'],
+            [{ list: 'bullet' }]
+          ]
+        }
+      });
+
+      quill.root.innerHTML = ta.value;
+      quill.on('text-change', () => {
+        ta.value = quill.root.innerHTML;
+        ta.dispatchEvent(new Event('input', { bubbles: true }));
+        ta.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+    });
+  };
+
   Visualist.loadData(() => {
     window.addEventListener('hashchange', () => {
       if (location.hash === '#logout') {
