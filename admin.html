@@ -166,7 +166,7 @@
     // View sections
     const views = {
       queue: document.getElementById('view-queue'),
-      'all-events': document.getElementById('view-events'),
+      all: document.getElementById('view-events'),
       submit: document.getElementById('view-create'),
       funlines: document.getElementById('view-funlines')
     };
@@ -179,7 +179,7 @@
     const eventSource = document.getElementById('admin-event-source');
     const filters = [...document.querySelectorAll('[data-admin-filter]')];
     const createLink = document.querySelector('[data-admin-create-link]');
-    const validFilters = new Set(['pending', 'approved', 'passed', 'all']);
+    const validFilters = new Set(['pending', 'approved', 'passed']);
     let activeFilter = validFilters.has(location.hash.replace(/^#/, ''))
       ? location.hash.replace(/^#/, '')
       : 'pending';
@@ -593,7 +593,7 @@
     const initialHash = location.hash.replace(/^#/, '');
     if (validFilters.has(initialHash)) {
       setQueueFilter(initialHash, false);
-    } else if (initialHash === 'create' || initialHash === 'events') {
+    } else if (['submit', 'all', 'funlines'].includes(initialHash)) {
       paintAdminNav();
       setQueueFilter(activeFilter, false);
     } else {

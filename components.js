@@ -263,7 +263,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       header.innerHTML = `
         <a class="header-home-hit" href="${localHref(isAdmin ? 'admin.html' : 'index.html')}" aria-hidden="true" tabindex="-1"></a>
         <a class="logotype" href="${localHref(isAdmin ? 'admin.html' : 'index.html')}" aria-label="${isAdmin ? 'Admin Home' : 'The Visualist home'}">${logo}</a>
-        <p class="tagline"><span>${randomLine()}</span></p>`;
+        ${isAdmin ? '' : `<p class="tagline"><span>${randomLine()}</span></p>`}`;
     });
   };
 
@@ -294,14 +294,13 @@ calendar's beginnings in 2011. Help us keep it growing.`;
         { key: 'passed', label: 'Passed' },
         { key: 'all', label: 'All' },
         { key: 'funlines', label: 'Fun Lines' },
-        { key: 'all-events', label: 'All Events' },
         { key: 'submit', label: 'Create Event' },
         { key: 'home', label: 'Exit Admin' }
       ];
       slot.innerHTML = `
-        <div class="tab-band">
+        ${isAdmin ? '' : `<div class="tab-band">
           <p class="band-label"><span class="flag-word">${chicagoFlagLetters}</span> Visual Arts Calendar</p>
-        </div>
+        </div>`}
         <div class="nav-band">
           <div class="nav-block">
             <nav class="site-nav" aria-label="Primary">
