@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Not Found | The Visualist</title>
+  <link rel="icon" href="/visualist-favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/supabaseClient.js"></script>
+  <script src="/components.js"></script>
+</head>
+<body data-page="404">
+
+  <header class="site-header" data-visualist-header></header>
+
+  <main class="site-main tag-page">
+    <div data-visualist-nav></div>
+    
+    <div class="archive-listing" style="text-align: center; padding: 100px 20px;">
+      <h1 style="font-size: 3rem; margin-bottom: 20px;">OOPS</h1>
+      <h2 style="font-size: 1.5rem; font-weight: normal;">You lost me! Try the search bar.</h2>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-visualist-footer></footer>
+
+  <script src="/tags2026.js"></script>
+  <script>
+    Visualist.loadData(() => {
+      Visualist.renderChrome();
+      Visualist.initHeaderAccordion();
+    });
+  </script>
+
+</body>
+</html>
