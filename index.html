@@ -1574,7 +1574,10 @@
       const date = new Date(`${event.d}T12:00:00`);
       const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
       const month = date.toLocaleDateString('en-US', { month: 'long' });
-      let line = `Opening ${weekday}, ${month} ${ordinalDay(date.getDate())}`;
+      let line = `${weekday}, ${month} ${ordinalDay(date.getDate())}`;
+      if (event.o) {
+        line = `Opening ${line}`;
+      }
       // parseable times become their own Start/End row instead of a tail
       if (event.w && !Visualist.timeBounds(event.w)) {
         line += event.w.includes('–') ? `, from ${event.w}` : `, at ${event.w}`;

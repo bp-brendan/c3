@@ -1381,10 +1381,8 @@ a.top-pick:hover,
 }
 
 .event-location .event-venue,
-.event-detail-meta .event-venue,
-.event-location .event-address,
-.event-detail-meta .event-address {
-  display: inline;
+.event-detail-meta .event-venue {
+  display: block;
 }
 
 .event-location .event-address,
@@ -1427,7 +1425,7 @@ a.top-pick:hover,
 
 .event-location .event-address:not(:first-child),
 .event-detail-meta .event-address:not(:first-child) {
-  margin-left: 0.55rem;
+  margin-left: 0;
 }
 
 .event-schedule .event-when {
@@ -1436,8 +1434,8 @@ a.top-pick:hover,
 }
 
 .event-detail-meta .event-when {
-  display: inline;
-  margin-right: 0.5em;
+  display: block;
+  margin-right: 0;
 }
 
 .event-schedule .event-time-bounds,
@@ -2360,4 +2358,15 @@ a.top-pick:hover,
   .admin-event-source {
     justify-self: start;
   }
+}
+
+@media (max-width: 40rem) {
+  .admin-event-filters {
+    grid-template-columns: 1fr;
+  }
+}
+
+[data-page="admin"] .logotype-name {
+  letter-spacing: 0.15em;
+  margin-right: -0.15em;
 }
