@@ -201,7 +201,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       const dayDate = breadcrumbDayDate();
       const nav = breadcrumbNav(`
       ${origin}
-      ${dayDate ? `<span class="breadcrumb-arrow" style="opacity: 0.6;">${detailDate
+      ${dayDate ? `<span class="breadcrumb-arrow breadcrumb-arrow-date" style="opacity: 0.6;">${detailDate
         ? `<a href="${escapeHtml(localHref(`index.html#archive?date=${detailDate.iso}`))}" style="color:inherit;">${escapeHtml(dayDate)}</a>`
         : escapeHtml(dayDate)}${breadcrumbCalendarHtml()}</span>` : ''}`);
       title.insertAdjacentElement('beforebegin', nav);
@@ -238,35 +238,6 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     renderFooter();
     renderBreadcrumb();
     initExternalLinkObserver();
-    
-    // Lightbox for event details
-    if (!document.getElementById('image-lightbox')) {
-      document.body.insertAdjacentHTML('beforeend', `
-        <dialog id="image-lightbox" class="image-lightbox">
-          <form method="dialog"><button aria-label="Close lightbox"></button></form>
-          <img src="" alt="">
-        </dialog>
-      `);
-      
-      document.addEventListener('click', e => {
-        const btn = e.target.closest('.event-detail-image');
-        if (btn && btn.tagName === 'BUTTON') {
-          const img = btn.querySelector('img');
-          const dialog = document.getElementById('image-lightbox');
-          if (img && dialog) {
-            const dialogImg = dialog.querySelector('img');
-            dialogImg.src = img.src;
-            dialogImg.alt = img.alt;
-            dialog.showModal();
-          }
-        }
-        // Close on backdrop click
-        const dialog = e.target.closest('#image-lightbox');
-        if (dialog && e.target === dialog) {
-          dialog.close();
-        }
-      });
-    }
   };
 
   let headerState = { shrink: 1 };
@@ -754,12 +725,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const openingSplit = openingSpan && detachOpeningTimes(openingSpan.textContent.trim());
     if (openingSplit) {
       openingSpan.innerHTML = scheduleLineHtml(openingSplit.line);
-      openingSpan.insertAdjacentHTML('beforebegin',
-        `<span class="event-time-bounds"><strong>Start</strong> ${escapeHtml(openingSplit.bounds.start)}` +
-        (openingSplit.bounds.end
-          ? ` <span class="event-time-end"><strong>End</strong> ${escapeHtml(openingSplit.bounds.end)}</span>`
-          : '') +
-        '</span>');
+      openingSpan.insertAdjacentHTML('beforebegin', startEndWhenHtml(openingSplit.bounds));
     }
     onViewSpan = [...scheduleDiv.querySelectorAll('.event-when')].find(s => /^on view/i.test(s.textContent.trim()));
     if (!onViewSpan) return;

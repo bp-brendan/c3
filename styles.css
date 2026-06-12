@@ -217,28 +217,12 @@ body {
   gap: 0.5em;
   padding: 0 0.95em;
   border: none;
-  
+  border-radius: 999px;
   background: transparent;
   color: var(--content-ink-muted);
   cursor: pointer;
   font: inherit;
   font-size: 0.9rem;
-}
-
-/* ensure the last item has a right border when active, to form a complete tab */
-.tag-invoke:last-child[aria-expanded="true"] {
-  border-right: var(--hairline-light);
-}
-
-.tag-invoke[aria-expanded="true"]::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: -1px; /* cover the potential right border */
-  height: 2px;
-  background: var(--content-paper);
-  z-index: 20;
 }
 
 .tag-invoke:hover,
@@ -248,9 +232,7 @@ body {
 }
 
 .tag-invoke[aria-expanded="true"] {
-  background: var(--content-paper);
-  border-left: var(--hairline-light);
-  border-right: var(--hairline-light);
+  background: #f2f2f2;
 }
 
 .tag-invoke-icon {
@@ -357,6 +339,20 @@ body {
   border-bottom: var(--hairline-light);
   background: var(--content-paper);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+}
+
+.filter-panel::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: var(--panel-pointer-x, 50%);
+  width: 72px;
+  height: 18px;
+  transform: translateX(-50%);
+  background: var(--content-paper);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  filter: drop-shadow(0 -4px 8px rgba(0, 0, 0, 0.08));
+  pointer-events: none;
 }
 
 .date-presets {
@@ -480,7 +476,6 @@ body {
   flex: 1;
   padding: 0 0.95em 0 0;
   border: none;
-  border-right: var(--hairline-light);
   background: transparent;
   color: var(--content-ink-muted);
 }
@@ -1111,6 +1106,11 @@ body {
   text-underline-offset: 0.2em;
 }
 
+.month-head a.month-count {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* a horizontally scrolling river of square images, one per event,
    each linking to its detail page */
 .thumb-river-frame {
@@ -1395,29 +1395,11 @@ a.top-pick:hover,
 }
 
 .event-location .event-venue,
-.event-detail-meta .event-venue {
-  color: var(--content-ink);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  line-height: 1.35;
-  text-transform: uppercase;
-}
-
-.event-location .event-address {
-  font-size: 0.8rem;
-  color: var(--content-ink-muted);
-}
-
-.event-location .event-address a {
-  color: inherit;
-}
-
+.event-detail-meta .event-venue,
+.event-location .event-address,
+.event-detail-meta .event-address,
 .event-schedule .event-when,
 .event-detail-meta .event-when {
-  display: inline;
-  margin-right: 0.5em;
   color: var(--content-ink-muted);
   font-family: Georgia, serif;
   font-size: 0.86rem;
@@ -1427,12 +1409,10 @@ a.top-pick:hover,
   text-transform: none;
 }
 
-.event-schedule .event-time-bounds,
-.event-detail-meta .event-time-bounds {
-  display: block;
-  margin-bottom: 0.08rem;
-}
-
+.event-location .event-venue::before,
+.event-detail-meta .event-venue::before,
+.event-location .event-address::before,
+.event-detail-meta .event-address::before,
 .event-schedule .event-when strong,
 .event-detail-meta .event-when strong {
   color: var(--content-ink);
@@ -1440,7 +1420,47 @@ a.top-pick:hover,
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.1em;
+  line-height: 1.35;
+  margin-right: 0.45em;
   text-transform: uppercase;
+}
+
+.event-location .event-venue::before,
+.event-detail-meta .event-venue::before {
+  content: "Venue";
+}
+
+.event-location .event-address::before,
+.event-detail-meta .event-address::before {
+  content: "Address";
+}
+
+.event-location .event-venue a,
+.event-detail-meta .event-venue a,
+.event-location .event-address a,
+.event-detail-meta .event-address a {
+  color: inherit;
+}
+
+.event-location .event-address:not(:first-child),
+.event-detail-meta .event-address:not(:first-child) {
+  margin-left: 0.85rem;
+}
+
+.event-schedule .event-when {
+  display: block;
+  margin-right: 0;
+}
+
+.event-detail-meta .event-when {
+  display: inline;
+  margin-right: 0.5em;
+}
+
+.event-schedule .event-time-bounds,
+.event-detail-meta .event-time-bounds {
+  display: block;
+  margin-bottom: 0.08rem;
 }
 
 .event-time-end {
@@ -1561,48 +1581,13 @@ a.top-pick:hover,
   transform: translateY(calc(50% - 0.5px)) rotate(45deg); /* forms the > arrowhead, optically centered on 1px line */
 }
 
+.breadcrumb-arrow-date {
+  padding-right: 4.45em;
+}
+
 .breadcrumb a.breadcrumb-arrow:hover {
   text-decoration: none; /* override the default hover underline */
   color: var(--content-ink);
-}
-
-.image-lightbox {
-  padding: 0;
-  border: none;
-  background: transparent;
-  max-width: 90vw;
-  max-height: 90vh;
-  margin: auto;
-  overflow: visible;
-}
-.image-lightbox::backdrop {
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
-}
-.image-lightbox img {
-  display: block;
-  max-width: 100%;
-  max-height: 90vh;
-  object-fit: contain;
-}
-.image-lightbox button {
-  position: absolute;
-  top: -2rem;
-  right: -2rem;
-  width: 2rem;
-  height: 2rem;
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.image-lightbox button::before {
-  content: "\00d7"; /* multiplication sign for close */
-  line-height: 1;
 }
 
 .event-detail {
@@ -1620,7 +1605,6 @@ a.top-pick:hover,
   padding: 0;
   border: none;
   background: none;
-  cursor: pointer;
 }
 
 .event-detail-image img {
@@ -1657,14 +1641,12 @@ a.top-pick:hover,
 .event-detail-meta {
   margin-bottom: 1.5rem;
   color: var(--content-ink-muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
-  text-transform: uppercase;
+  font-family: Georgia, serif;
+  font-size: 0.86rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
 }
 
 .event-detail-meta a {
@@ -1714,7 +1696,7 @@ a.top-pick:hover,
 /* "+calendar" beside the breadcrumb date: icon button opening a small menu */
 .breadcrumb-calendar {
   position: absolute;
-  right: 0.35em; /* to the left of the 5px arrowhead */
+  right: 2.2em; /* leave a full arrow-length run after the calendar icon */
   bottom: 0; /* sitting directly on top of the arrow line */
   flex: none;
   display: inline-flex;

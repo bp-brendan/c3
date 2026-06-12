@@ -1375,20 +1375,36 @@
     const dateFrom = document.querySelector('.date-from');
     const dateTo = document.querySelector('.date-to');
 
-    const setPanel = (panel, toggle, open) => {
+    const positionPanelPointer = toggle => {
+      if (!controlsBand || !toggle) return;
+      const rect = toggle.getBoundingClientRect();
+      const bandRect = controlsBand.getBoundingClientRect();
+      controlsBand.style.setProperty('--panel-pointer-x', `${rect.left + rect.width / 2 - bandRect.left}px`);
+    };
+    const setPanel = (panel, toggle, open, name = '') => {
       panel.hidden = !open;
       toggle.setAttribute('aria-expanded', String(open));
+      if (open) {
+        controlsBand.dataset.panel = name;
+        positionPanelPointer(toggle);
+      } else if (controlsBand.dataset.panel === name) {
+        delete controlsBand.dataset.panel;
+      }
     };
     dateToggle.addEventListener('click', () => {
       const open = datePanel.hidden;
-      setPanel(datePanel, dateToggle, open);
-      if (open) setPanel(tagPanel, tagToggle, false);
+      setPanel(datePanel, dateToggle, open, 'date');
+      if (open) setPanel(tagPanel, tagToggle, false, 'tag');
     });
     // clicking anywhere outside a panel (or its toggle) closes it
     document.addEventListener('click', event => {
       if (event.target.closest('.filter-panel, .date-toggle, .tag-toggle')) return;
-      if (!datePanel.hidden) setPanel(datePanel, dateToggle, false);
-      if (!tagPanel.hidden) setPanel(tagPanel, tagToggle, false);
+      if (!datePanel.hidden) setPanel(datePanel, dateToggle, false, 'date');
+      if (!tagPanel.hidden) setPanel(tagPanel, tagToggle, false, 'tag');
+    });
+    window.addEventListener('resize', () => {
+      if (!datePanel.hidden) positionPanelPointer(dateToggle);
+      else if (!tagPanel.hidden) positionPanelPointer(tagToggle);
     });
 
     // quick ranges + free-form from/to
@@ -1490,8 +1506,8 @@
     tagToggle.addEventListener('click', () => {
       const open = tagPanel.hidden;
       if (open) buildTagChips();
-      setPanel(tagPanel, tagToggle, open);
-      if (open) setPanel(datePanel, dateToggle, false);
+      setPanel(tagPanel, tagToggle, open, 'tag');
+      if (open) setPanel(datePanel, dateToggle, false, 'date');
     });
     tagClear.addEventListener('click', () => {
       activeTags.clear();
@@ -1545,7 +1561,7 @@
       dateTo.value = clampDate(restored.get('to') || restored.get('date') || maxDate);
       endTouched = Boolean(restored.get('to') || restored.get('date'));
       if (dateFrom.value !== minDate || dateTo.value !== maxDate) {
-        setPanel(datePanel, dateToggle, true);
+        setPanel(datePanel, dateToggle, true, 'date');
       }
       (restored.get('tags') || '').split(',').filter(Boolean).forEach(slug => activeTags.add(slug));
       renderActiveTags();
@@ -1731,7 +1747,7 @@
             <li class="archive-month-item">
               <div class="month-head">
                 <a class="event-date-day" href="tag.html?month=${key}">${name}</a>
-                <em class="event-date-num">${month.count} events</em>
+                <a class="event-date-num month-count" href="tag.html?month=${key}">${month.count} events</a>
               </div>
               ${thumbRiverHtml(month.items)}
             </li>`;
