@@ -203,7 +203,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       ${origin}
       ${dayDate ? `<span class="breadcrumb-arrow" style="opacity: 0.6;">${detailDate
         ? `<a href="${escapeHtml(localHref(`index.html#archive?date=${detailDate.iso}`))}" style="color:inherit;">${escapeHtml(dayDate)}</a>`
-        : escapeHtml(dayDate)}</span>` : ''}${breadcrumbCalendarHtml()}`);
+        : escapeHtml(dayDate)}${breadcrumbCalendarHtml()}</span>` : ''}`);
       title.insertAdjacentElement('beforebegin', nav);
       initBreadcrumbCalendar(nav);
     } else if (page === 'tag') {

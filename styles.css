@@ -1533,7 +1533,7 @@ a.top-pick:hover,
 .breadcrumb-arrow {
   position: relative;
   display: inline-block;
-  padding-right: 1.5em; /* reserve space for the arrow line */
+  padding-right: 2.2em; /* reserve space for the arrow line and calendar icon */
   margin-right: 0.25em; /* visual space before next item */
 }
 
@@ -1558,7 +1558,7 @@ a.top-pick:hover,
   height: 5px;
   border-top: 1px solid currentColor;
   border-right: 1px solid currentColor;
-  transform: translateY(50%) rotate(45deg); /* forms the > arrowhead */
+  transform: translateY(calc(50% - 0.5px)) rotate(45deg); /* forms the > arrowhead, optically centered on 1px line */
 }
 
 .breadcrumb a.breadcrumb-arrow:hover {
@@ -1713,9 +1713,10 @@ a.top-pick:hover,
 
 /* "+calendar" beside the breadcrumb date: icon button opening a small menu */
 .breadcrumb-calendar {
-  position: relative;
+  position: absolute;
+  right: 0.35em; /* to the left of the 5px arrowhead */
+  bottom: 0; /* sitting directly on top of the arrow line */
   flex: none;
-  align-self: center;
   display: inline-flex;
 }
 
