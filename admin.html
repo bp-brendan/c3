@@ -221,6 +221,57 @@
       return Number.isNaN(date.getTime()) ? '' : date.toISOString();
     };
 
+
+    window.addOccurrence = (id) => {
+      const container = document.getElementById(`occurrences-${id}`);
+      const occId = Math.random().toString(36).slice(2, 8);
+      const html = `
+        <div class="occurrence-row" id="occ-${occId}" style="display: flex; gap: 10px; align-items: end; margin-bottom: 10px;">
+          <label class="submit-field" style="flex: 1;">
+            <span>Date</span>
+            <input type="date" name="occDate" required>
+          </label>
+          <label class="submit-field" style="flex: 1;">
+            <span>Start</span>
+            <input type="time" name="occStart">
+          </label>
+          <label class="submit-field" style="flex: 1;">
+            <span>End</span>
+            <input type="time" name="occEnd">
+          </label>
+          <button type="button" class="form-button" onclick="document.getElementById('occ-${occId}').remove()" style="margin-bottom: 5px;">X</button>
+        </div>
+      `;
+      container.insertAdjacentHTML('beforeend', html);
+    };
+
+    window.renderOccurrences = (id, occurrences) => {
+      const container = document.getElementById(`occurrences-${id}`);
+      if (!container) return;
+      container.innerHTML = '';
+      (occurrences || []).forEach(occ => {
+        const occId = Math.random().toString(36).slice(2, 8);
+        const html = `
+          <div class="occurrence-row" id="occ-${occId}" style="display: flex; gap: 10px; align-items: end; margin-bottom: 10px;">
+            <label class="submit-field" style="flex: 1;">
+              <span>Date</span>
+              <input type="date" name="occDate" value="${escapeHtml(occ.date)}" required>
+            </label>
+            <label class="submit-field" style="flex: 1;">
+              <span>Start</span>
+              <input type="time" name="occStart" value="${escapeHtml(occ.start)}">
+            </label>
+            <label class="submit-field" style="flex: 1;">
+              <span>End</span>
+              <input type="time" name="occEnd" value="${escapeHtml(occ.end)}">
+            </label>
+            <button type="button" class="form-button" onclick="document.getElementById('occ-${occId}').remove()" style="margin-bottom: 5px;">X</button>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', html);
+      });
+    };
+
     const blankSubmission = () => ({
       id: 'new',
       status: 'draft',
@@ -300,14 +351,14 @@
           <span>End</span>
           <input id="event-end-${id}" name="eventEnd" type="text" value="${valueAttr(submission.eventEnd)}" placeholder="9PM">
         </label>
-        <label class="submit-field" for="exhibition-start-${id}">
-          <span>Exhibition Start</span>
-          <input id="exhibition-start-${id}" name="exhibitionStart" type="date" value="${valueAttr(submission.exhibitionStart)}">
-        </label>
-        <label class="submit-field" for="exhibition-end-${id}">
-          <span>Exhibition End</span>
-          <input id="exhibition-end-${id}" name="exhibitionEnd" type="date" value="${valueAttr(submission.exhibitionEnd)}">
-        </label>
+        
+        <div class="submit-field admin-wide">
+          <div class="occurrences-list" id="occurrences-${id}">
+            <!-- Occurrences will be injected here -->
+          </div>
+          <button type="button" class="form-button" onclick="addOccurrence('${id}')" style="margin-top: 10px;">+ Add Date/Time</button>
+        </div>
+
         <label class="submit-field" for="on-view-${id}">
           <span>On View Text</span>
           <input id="on-view-${id}" name="onViewText" type="text" value="${valueAttr(submission.onViewText)}" placeholder="On view through Friday, July 24th">
@@ -338,9 +389,20 @@
         </label>`;
     };
 
+    
     const formPatch = form => {
       const data = new FormData(form);
       const address = String(data.get('address') || '').trim();
+      
+      const occDates = data.getAll('occDate');
+      const occStarts = data.getAll('occStart');
+      const occEnds = data.getAll('occEnd');
+      const occurrences = occDates.map((d, i) => ({
+        date: d,
+        start: occStarts[i] || '',
+        end: occEnds[i] || ''
+      }));
+
       return {
         sourceUrl: data.get('sourceUrl'),
         title: data.get('title'),
@@ -353,8 +415,7 @@
         eventDate: data.get('eventDate'),
         eventStart: data.get('eventStart'),
         eventEnd: data.get('eventEnd'),
-        exhibitionStart: data.get('exhibitionStart'),
-        exhibitionEnd: data.get('exhibitionEnd'),
+        occurrences: occurrences,
         onViewText: data.get('onViewText'),
         imageUrl: data.get('imageUrl'),
         detailUrl: data.get('detailUrl'),

@@ -957,7 +957,8 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     image_url: event.i || '',
     description: event.x || '',
     tags: Array.isArray(event.g) ? event.g : splitList(event.g),
-    top_pick: event.k === 1
+    top_pick: event.k === 1,
+    parent_event_id: event.parent_event_id || null
   });
 
   const eventFromRow = row => ({
@@ -1079,11 +1080,24 @@ calendar's beginnings in 2011. Help us keep it growing.`;
           .from('submissions')
           .update(submissionToRow(next))
           .eq('id', id);
+        
+        
         // the first time a submission flips to approved, publish it to events
         if (next.status === 'approved' && previousStatus !== 'approved') {
-          await publishEvent(submissionToEvent(next));
+          const eventsToPublish = submissionToEvents(next);
+          let parentEventId = null;
+          for (let i = 0; i < eventsToPublish.length; i++) {
+            let ev = eventsToPublish[i];
+            if (parentEventId) {
+                ev.parent_event_id = parentEventId;
+            }
+            const published = await publishEvent(ev);
+            if (i === 0 && eventsToPublish.length > 1) {
+                parentEventId = published.id;
+            }
+          }
         }
-      } catch (e) {
+} catch (e) {
         console.error(e);
       }
     }
@@ -1091,6 +1105,57 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     events[index] = next;
     window.SUBMISSIONS = events;
     return next;
+  };
+
+
+  const submissionToEvents = submission => {
+    const clean = cleanSubmission(submission);
+    
+    // Create a base event factory
+    const createBaseEvent = (start, timeStr) => {
+      const end = clean.exhibitionEnd;
+      const tagValues = [
+        ...clean.tags,
+        ...clean.artists,
+        clean.venue,
+        clean.neighborhood,
+        clean.title
+      ].map(tagSlug).filter(Boolean);
+      const event = {
+        t: clean.title || 'Untitled',
+        u: clean.sourceUrl || `admin.html#${clean.id}`,
+        p: clean.detailUrl || '',
+        v: clean.venue,
+        vu: clean.venueUrl,
+        d: start,
+        g: [...new Set(tagValues)],
+        i: clean.imageUrl,
+        x: clean.description,
+        w: timeStr,
+        a: clean.address,
+        m: clean.mapUrl || mapUrlForAddress(clean.address),
+        _submitted: true,
+        _submittedId: clean.id
+      };
+      if (clean.onViewText) event.o = clean.onViewText;
+      else if (end) event.o = `On view through ${dateLabel(end)}`;
+      return event;
+    };
+
+    if (clean.occurrences && clean.occurrences.length > 0) {
+      return clean.occurrences.map(occ => {
+        const timeStr = occ.start && occ.end ? `${occ.start} – ${occ.end}` : (occ.start || '');
+        return createBaseEvent(occ.date, timeStr);
+      });
+    }
+
+    // the listed date is the opening reception when there is one, otherwise the
+    // first day of the run (an exhibition with no opening reads as "no opening")
+    const start = clean.eventDate || clean.exhibitionStart;
+    const time = clean.eventStart && clean.eventEnd
+      ? `${clean.eventStart} – ${clean.eventEnd}`
+      : (clean.eventStart || '');
+    return [createBaseEvent(start, time)];
   };
 
   const submissionToEvent = submission => {
