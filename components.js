@@ -11,7 +11,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     { label: 'About', href: 'about.html', local: true },
     { label: 'Instagram', href: 'https://www.instagram.com/visualistgo/' },
     { label: 'Facebook', href: 'https://www.facebook.com/visualistchicago/' },
-    { label: 'Bad at Sports', href: 'https://badatsports.com/author/visualist/' },
+    { label: 'Top V on Bad at Sports', href: 'https://badatsports.com/author/visualist/' },
     { label: 'events@thevisualist.org', href: 'mailto:events@thevisualist.org', local: true }
   ];
 
@@ -37,6 +37,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
 
   const SUBMISSIONS_KEY = 'visualist.submittedEvents.v1';
   const EVENT_EDITS_KEY = 'visualist.eventEdits.v1';
+  const TAGLINES_KEY = 'visualist.taglines.v1';
   const SUBMISSION_IMAGE_LIMIT = 900 * 1024;
 
   const readJson = (key, fallback) => {
@@ -79,6 +80,17 @@ calendar's beginnings in 2011. Help us keep it growing.`;
   const eventEdits = () => {
     const edits = readJson(EVENT_EDITS_KEY, {});
     return edits && typeof edits === 'object' && !Array.isArray(edits) ? edits : {};
+  };
+
+  const taglines = () => {
+    const custom = readJson(TAGLINES_KEY, null);
+    if (Array.isArray(custom)) return custom;
+    // window.TAGLINES exposed by taglines.js
+    return window.TAGLINES || ['Chicago Visual Arts Calendar'];
+  };
+
+  const saveTaglines = lines => {
+    writeJson(TAGLINES_KEY, lines);
   };
 
   const saveEventEdit = (key, patch) => {
@@ -237,7 +249,8 @@ calendar's beginnings in 2011. Help us keep it growing.`;
   ];
 
   const randomLine = () => {
-    if (typeof window.randomTagline === 'function') return stripPeriods(window.randomTagline());
+    const lines = taglines();
+    if (lines.length > 0) return stripPeriods(lines[Math.floor(Math.random() * lines.length)]);
     return 'Chicago Visual Arts Calendar';
   };
 
@@ -280,7 +293,10 @@ calendar's beginnings in 2011. Help us keep it growing.`;
         { key: 'approved', label: 'Approved' },
         { key: 'passed', label: 'Passed' },
         { key: 'all', label: 'All' },
-        { key: 'events', label: 'All Events' }
+        { key: 'funlines', label: 'Fun Lines' },
+        { key: 'all-events', label: 'All Events' },
+        { key: 'submit', label: 'Create Event' },
+        { key: 'home', label: 'Exit Admin' }
       ];
       slot.innerHTML = `
         <div class="tab-band">
@@ -1367,6 +1383,9 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     eventEdits,
     saveEventEdit,
     clearEventEdit,
+    taglines,
+    saveTaglines,
+    randomLine,
     applyEventEdits,
     publicEvents,
     tagLabel,

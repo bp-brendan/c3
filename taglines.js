@@ -146,3 +146,5 @@ const TAGLINES = [
 function randomTagline() {
   return TAGLINES[Math.floor(Math.random() * TAGLINES.length)];
 }
+
+window.TAGLINES = TAGLINES;

@@ -7,8 +7,44 @@
   <link rel="icon" href="visualist-favicon.png" type="image/png">
   <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="taglines.js"></script>
-  <script src="components.js"></script>
+    const funlinesForm = document.getElementById('funlines-form');
+    const funlinesText = document.getElementById('admin-funlines-text');
+
+    funlinesForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const lines = funlinesText.value.split('\n').map(l => l.trim()).filter(Boolean);
+      Visualist.saveTaglines(lines);
+      alert('Taglines saved!');
+    });
+
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#funlines') {
+        funlinesText.value = Visualist.taglines().join('\n');
+      }
+    });
+    // Initialize funlines if it's the active tab on load
+    if (location.hash === '#funlines') {
+      funlinesText.value = Visualist.taglines().join('\n');
+    }
+    const funlinesForm = document.getElementById('funlines-form');
+    const funlinesText = document.getElementById('admin-funlines-text');
+
+    funlinesForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const lines = funlinesText.value.split('\n').map(l => l.trim()).filter(Boolean);
+      Visualist.saveTaglines(lines);
+      alert('Taglines saved!');
+    });
+
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#funlines') {
+        funlinesText.value = Visualist.taglines().join('\n');
+      }
+    });
+    // Initialize funlines if it's the active tab on load
+    if (location.hash === '#funlines') {
+      funlinesText.value = Visualist.taglines().join('\n');
+    }
 </head>
 <body data-page="admin" data-active-nav="archive">
 
@@ -65,12 +101,58 @@
         <div class="admin-event-list" data-admin-events></div>
       </section>
     </section>
+    <section class="view admin-view" id="view-funlines" aria-labelledby="admin-funlines-title" hidden>
+      <h2 class="submit-title" id="admin-funlines-title">Fun Lines</h2>
+      <p class="submit-prompt">Edit the taglines that appear randomly in the header. One tagline per line.</p>
+      <form id="funlines-form">
+        <label class="submit-field" for="admin-funlines-text">
+          <textarea id="admin-funlines-text" rows="20" required></textarea>
+        </label>
+        <button type="submit">Save Changes</button>
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer" data-visualist-footer></footer>
 
-  <script src="tags2026.js"></script>
-  <script src="archiveevents2026.js"></script>
+    const funlinesForm = document.getElementById('funlines-form');
+    const funlinesText = document.getElementById('admin-funlines-text');
+
+    funlinesForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const lines = funlinesText.value.split('\n').map(l => l.trim()).filter(Boolean);
+      Visualist.saveTaglines(lines);
+      alert('Taglines saved!');
+    });
+
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#funlines') {
+        funlinesText.value = Visualist.taglines().join('\n');
+      }
+    });
+    // Initialize funlines if it's the active tab on load
+    if (location.hash === '#funlines') {
+      funlinesText.value = Visualist.taglines().join('\n');
+    }
+    const funlinesForm = document.getElementById('funlines-form');
+    const funlinesText = document.getElementById('admin-funlines-text');
+
+    funlinesForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const lines = funlinesText.value.split('\n').map(l => l.trim()).filter(Boolean);
+      Visualist.saveTaglines(lines);
+      alert('Taglines saved!');
+    });
+
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#funlines') {
+        funlinesText.value = Visualist.taglines().join('\n');
+      }
+    });
+    // Initialize funlines if it's the active tab on load
+    if (location.hash === '#funlines') {
+      funlinesText.value = Visualist.taglines().join('\n');
+    }
   <script>
     Visualist.renderChrome();
     Visualist.initHeaderAccordion();
@@ -84,8 +166,9 @@
     // View sections
     const views = {
       queue: document.getElementById('view-queue'),
-      events: document.getElementById('view-events'),
-      create: document.getElementById('view-create')
+      'all-events': document.getElementById('view-events'),
+      submit: document.getElementById('view-create'),
+      funlines: document.getElementById('view-funlines')
     };
 
     const eventList = document.querySelector('[data-admin-events]');
@@ -517,7 +600,26 @@
       setQueueFilter(activeFilter, !location.hash);
     }
     renderEvents();
-  </script>
+    const funlinesForm = document.getElementById('funlines-form');
+    const funlinesText = document.getElementById('admin-funlines-text');
+
+    funlinesForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const lines = funlinesText.value.split('\n').map(l => l.trim()).filter(Boolean);
+      Visualist.saveTaglines(lines);
+      alert('Taglines saved!');
+    });
+
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#funlines') {
+        funlinesText.value = Visualist.taglines().join('\n');
+      }
+    });
+    // Initialize funlines if it's the active tab on load
+    if (location.hash === '#funlines') {
+      funlinesText.value = Visualist.taglines().join('\n');
+    }
 
 </body>
 </html>
+</script>
