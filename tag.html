@@ -72,6 +72,7 @@
 
     const today = Visualist.todayIso();
     const tomorrow = Visualist.tomorrowIso();
+    const runsToday = e => e.d <= today && (Visualist.onViewEndIso(e) || e.d) >= today;
     const runsTomorrow = e => e.d <= tomorrow && (Visualist.onViewEndIso(e) || e.d) >= tomorrow;
     // a virtual day page reads like a This Week day group: one heading,
     // that day's openings first, then the ongoing runs
@@ -84,7 +85,7 @@
       // Today and Tomorrow only need recent events, local filtering is fine
       const tagEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
       hits = tagEvents
-        .filter(e => isTodayPage ? e.d === today : runsTomorrow(e))
+        .filter(e => isTodayPage ? runsToday(e) : runsTomorrow(e))
         .sort((a, b) => dayIso
           ? (Number(b.d === dayIso) - Number(a.d === dayIso)) ||
             a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '')
