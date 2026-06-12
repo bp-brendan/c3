@@ -4,3 +4,4 @@ node_modules/
 recovery/data/processed/events.ndjson
 recovery/data/processed/events.csv
 recovery/
+backups/
