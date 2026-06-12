@@ -2271,7 +2271,10 @@
       scrollElementToListTop(target, viewName);
     };
     const showView = async (viewName, { scrollToTop = false } = {}) => {
-      if (viewName !== 'today') await loadArchiveData();
+      // fire-and-forget: the static bake (or skeletons) paint immediately and
+      // loadArchiveData re-renders when the live rows land — awaiting it here
+      // froze the old view for the whole fetch
+      if (viewName !== 'today') loadArchiveData();
       const scrollY = window.scrollY;
       currentView = viewName;
       viewLinks.forEach(l => l.classList.toggle('active', l.dataset.view === viewName));
@@ -2876,8 +2879,10 @@
       while (index > 0 && archiveFiltered[index - 1].d === archiveFiltered[index].d) index--;
       return index;
     };
-    const eventCardHtml = event => `
-        <article class="event-card">
+    // onViewOnly renders the closing-day variant: same card minus the
+    // opening/time lines, listed under the day the run ends
+    const eventCardHtml = (event, { onViewOnly = false } = {}) => `
+        <article class="event-card${onViewOnly ? ' event-card-on-view' : ''}">
           ${event.i
             ? `<a class="event-thumb" href="${escapeHtml(Visualist.eventHref(event))}"><img src="${escapeHtml(event.i)}" alt="" loading="lazy" decoding="async" fetchpriority="low"></a>`
             : ''}
@@ -2889,8 +2894,8 @@
                 ${event.a ? `<p class="event-address">${event.m ? `<a href="${escapeHtml(event.m)}" target="_blank" rel="noopener">${escapeHtml(event.a)}</a>` : escapeHtml(event.a)}</p>` : ''}
               </div>` : ''}
               <div class="event-schedule">
-                ${Visualist.startEndWhenHtml(Visualist.timeBounds(event.w))}
-                <p class="event-when">${Visualist.scheduleLineHtml(openingLine(event))}</p>
+                ${onViewOnly ? '' : `${Visualist.startEndWhenHtml(Visualist.timeBounds(event.w))}
+                <p class="event-when">${Visualist.scheduleLineHtml(openingLine(event))}</p>`}
                 ${Visualist.onViewHtml(event)}
               </div>
             </div>` : ''}
@@ -2926,12 +2931,23 @@
       return date.toISOString().slice(0, 10);
     };
     const weekRangeHtml = (fromIso, toIso) => {
-      const inRange = publicArchiveEvents
+      const openings = publicArchiveEvents
         .filter(e => e.d >= fromIso && e.d <= toIso)
-        .sort(Visualist.sortAsc);
+        .sort(Visualist.sortAsc)
+        .map(e => ({ event: e, date: e.d, onView: false }));
+      // runs that close during the window appear under their closing day
+      // (openers within the window already show; no double cards)
+      const closings = publicArchiveEvents
+        .filter(e => e.d < fromIso)
+        .map(e => ({ event: e, date: Visualist.onViewEndIso(e), onView: true }))
+        .filter(c => c.date && c.date >= fromIso && c.date <= toIso)
+        .sort((a, b) => a.date.localeCompare(b.date) || (a.event.t || '').localeCompare(b.event.t || ''));
+      const entries = [...openings, ...closings]
+        // stable sort: same-day openings keep sortAsc order, closings trail them
+        .sort((a, b) => a.date.localeCompare(b.date) || Number(a.onView) - Number(b.onView));
       let lastDate = '';
-      return inRange.map(e =>
-        `${e.d !== lastDate ? Visualist.dayHeadingHtml(lastDate = e.d) : ''}${eventCardHtml(e)}`
+      return entries.map(({ event, date, onView }) =>
+        `${date !== lastDate ? Visualist.dayHeadingHtml(lastDate = date) : ''}${eventCardHtml(event, { onViewOnly: onView })}`
       ).join('');
     };
     const renderWeeks = () => {
@@ -3136,6 +3152,13 @@ monthIndexShowing = false;
       archiveDataPromise = (async () => {
         let events = null;
         let eventsError = null;
+        // session cache mirrors loadData's convention so tab switches after
+        // the first fetch of a session paint immediately
+        const cacheKey = 'cached_archive_2026_v1';
+        try {
+          const cached = sessionStorage.getItem(cacheKey);
+          if (cached) events = JSON.parse(cached);
+        } catch {}
         const buildQuery = (table, columns) => {
           let query = window.supabaseClient
             .from(table)
@@ -3147,10 +3170,15 @@ monthIndexShowing = false;
           }
           return query;
         };
-        ({ data: events, error: eventsError } = await Visualist.fetchPagedRows(() => buildQuery('events_list', '*')));
-        if (eventsError || !events) {
-          ({ data: events, error: eventsError } = await Visualist.fetchPagedRows(() => buildQuery('events', '*')));
-          if (eventsError) console.error('Error fetching events:', eventsError);
+        if (!events) {
+          ({ data: events, error: eventsError } = await Visualist.fetchPagedRows(() => buildQuery('events_list', '*')));
+          if (eventsError || !events) {
+            ({ data: events, error: eventsError } = await Visualist.fetchPagedRows(() => buildQuery('events', '*')));
+            if (eventsError) console.error('Error fetching events:', eventsError);
+          }
+          if (events && !eventsError) {
+            try { sessionStorage.setItem(cacheKey, JSON.stringify(events)); } catch {}
+          }
         }
         window.ARCHIVE_EVENTS_2026 = (events || []).map(mapEventRow);
         archiveDataReady = true;
