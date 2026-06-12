@@ -727,8 +727,8 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     });
 
     const whenSpans = [...scheduleDiv.querySelectorAll('.event-when')];
-    const openingSpan = whenSpans.find(s => /^opening/i.test(s.textContent.trim()));
-    const onViewSpan = whenSpans.find(s => /^on view/i.test(s.textContent.trim()));
+    let openingSpan = whenSpans.find(s => /^opening/i.test(s.textContent.trim()));
+    let onViewSpan = whenSpans.find(s => /^on view/i.test(s.textContent.trim()));
     
     if (openingSpan && onViewSpan) {
       const extractDateStr = text => {
@@ -750,7 +750,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     [...scheduleDiv.querySelectorAll('.event-when')]
       .forEach(emphasizeScheduleLine);
     // parseable opening times become their own Start/End row
-    const openingSpan = [...scheduleDiv.querySelectorAll('.event-when')].find(s => /^opening/i.test(s.textContent.trim()));
+    openingSpan = [...scheduleDiv.querySelectorAll('.event-when')].find(s => /^opening/i.test(s.textContent.trim()));
     const openingSplit = openingSpan && detachOpeningTimes(openingSpan.textContent.trim());
     if (openingSplit) {
       openingSpan.innerHTML = scheduleLineHtml(openingSplit.line);
@@ -761,7 +761,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
           : '') +
         '</span>');
     }
-    const onViewSpan = [...scheduleDiv.querySelectorAll('.event-when')].find(s => /^on view/i.test(s.textContent.trim()));
+    onViewSpan = [...scheduleDiv.querySelectorAll('.event-when')].find(s => /^on view/i.test(s.textContent.trim()));
     if (!onViewSpan) return;
     const date = onViewDate(onViewSpan.textContent, baseYear, baseMonth);
     if (!date) return;
