@@ -1,0 +1,2 @@
+/wp-admin/* /admin.html 301
+/wp-login.php /admin.html 301
