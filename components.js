@@ -1,11 +1,8 @@
 (function () {
-  const footerText = `<strong>The Visualist</strong> is more than just a list of dates and events on the
-internet. It's a really long list of dates and events for exhibitions,
-artist talks, receptions, festivals, panels, performances, readings,
-fairs, workshops, and curated content all kinds. At its heart <strong>the
-Visualist</strong> is really a cursory archive of actions and engagements
-throughout Chicagoland. In time, this archive will reach back to the
-Brunswick Building fire of 1989.`;
+  const footerText = `<strong>The Visualist</strong> is an all-volunteer effort to document the
+working life of visual artists and amplify the independent arts scenes
+throughout Chicagoland. In time, <a href="index.html#archive" style="font-weight: 700; text-decoration: underline; color: inherit;">this archive</a> will reach back to the
+calendar's beginnings in 2011. Help us keep it growing.`;
 
   // hosted_button_id from the PayPal form on thevisualist.org/about/
   const DONATE_URL = 'https://www.paypal.com/donate?hosted_button_id=947PHJMCQD9Q4';
@@ -185,14 +182,6 @@ Brunswick Building fire of 1989.`;
     return `${match[1]}, ${match[2]} ${ordinal(Number(match[3]))}`;
   };
 
-  const BREADCRUMB_SEP = `
-      <span class="breadcrumb-sep" aria-hidden="true">
-        <svg viewBox="0 0 30 10" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="1" y1="5" x2="28" y2="5"></line>
-          <path d="M22 1.5 28 5l-6 3.5"></path>
-        </svg>
-      </span>`;
-
   const breadcrumbNav = innerHtml => {
     const nav = document.createElement('nav');
     nav.className = 'breadcrumb';
@@ -205,13 +194,13 @@ Brunswick Building fire of 1989.`;
     const page = pageName();
     if (document.querySelector('.breadcrumb')) return;
     const crumb = readCrumb();
-    const origin = `<a href="${escapeHtml(localHref(crumb.href))}">${escapeHtml(crumb.label)}</a>`;
+    const origin = `<a href="${escapeHtml(localHref(crumb.href))}" class="breadcrumb-arrow">${escapeHtml(crumb.label)}</a>`;
     if (page === 'event') {
       const title = document.querySelector('.event-detail-body .event-detail-title');
       if (!title) return;
       const dayDate = breadcrumbDayDate();
       const nav = breadcrumbNav(`
-      ${origin}${BREADCRUMB_SEP}
+      ${origin}
       ${dayDate ? `<span class="breadcrumb-date">${detailDate
         ? `<a href="${escapeHtml(localHref(`index.html#archive?date=${detailDate.iso}`))}">${escapeHtml(dayDate)}</a>`
         : escapeHtml(dayDate)}</span>` : ''}${breadcrumbCalendarHtml()}`);
@@ -224,7 +213,7 @@ Brunswick Building fire of 1989.`;
       if (!title) return;
       // no trailing label: the arrow points at the tag title right below
       title.insertAdjacentElement('beforebegin', breadcrumbNav(`
-      ${origin}${BREADCRUMB_SEP}`));
+      ${origin}`));
     }
   };
 
@@ -249,6 +238,35 @@ Brunswick Building fire of 1989.`;
     renderFooter();
     renderBreadcrumb();
     initExternalLinkObserver();
+    
+    // Lightbox for event details
+    if (!document.getElementById('image-lightbox')) {
+      document.body.insertAdjacentHTML('beforeend', `
+        <dialog id="image-lightbox" class="image-lightbox">
+          <form method="dialog"><button aria-label="Close lightbox"></button></form>
+          <img src="" alt="">
+        </dialog>
+      `);
+      
+      document.addEventListener('click', e => {
+        const btn = e.target.closest('.event-detail-image');
+        if (btn && btn.tagName === 'BUTTON') {
+          const img = btn.querySelector('img');
+          const dialog = document.getElementById('image-lightbox');
+          if (img && dialog) {
+            const dialogImg = dialog.querySelector('img');
+            dialogImg.src = img.src;
+            dialogImg.alt = img.alt;
+            dialog.showModal();
+          }
+        }
+        // Close on backdrop click
+        const dialog = e.target.closest('#image-lightbox');
+        if (dialog && e.target === dialog) {
+          dialog.close();
+        }
+      });
+    }
   };
 
   let headerState = { shrink: 1 };
@@ -296,6 +314,9 @@ Brunswick Building fire of 1989.`;
         if (taglineSpan) taglineSpan.textContent = randomLine();
       }
       tagline.style.opacity = fade.toFixed(3);
+      // user requested tagline to stay vertically centered between logotype and bottom.
+      // translating it down along with logotype prevents it from getting crushed.
+      tagline.style.transform = `translateY(${(glide * p).toFixed(2)}px)`;
       navBand.classList.toggle('pinned', navBand.getBoundingClientRect().top <= compact + 0.5);
     };
 
@@ -504,7 +525,10 @@ Brunswick Building fire of 1989.`;
     const end = onViewEnd(text, baseYear, baseMonth);
     if (!end) return '';
     const pad = n => String(n).padStart(2, '0');
-    return `${pad(end.month)}/${pad(end.day)}/${end.year}`;
+    const date = new Date(`${end.year}-${pad(end.month)}-${pad(end.day)}T12:00:00`);
+    const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
+    const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);
+    return `${weekday}, ${month} ${ordinal(end.day)}`;
   };
 
   // ISO end of an event's run (its on-view close), '' when it has no run
@@ -551,7 +575,7 @@ Brunswick Building fire of 1989.`;
 
   const scheduleLineHtml = text => {
     const value = String(text || '');
-    const match = value.match(/^(Opening|On view)\b/i);
+    const match = value.match(/^(Opening|On view through|On view)\b/i);
     if (!match) return escapeHtml(value);
     return `<strong>${escapeHtml(match[1])}</strong>${escapeHtml(value.slice(match[1].length))}`;
   };
@@ -603,7 +627,10 @@ Brunswick Building fire of 1989.`;
     }
     const [baseYear, baseMonth] = (ev.d || '').split('-').map(Number);
     const date = onViewDate(ev.o, baseYear, baseMonth);
-    if (!date) return `<p class="event-when">${escapeHtml(ev.o)}</p>`;
+    if (!date) {
+      const fallback = ev.o.replace(/^On view\b/i, 'On view through');
+      return `<p class="event-when">${escapeHtml(fallback)}</p>`;
+    }
     const slug = exhibitionTagSlug(ev);
     const text = `On view through ${date}`;
     return `<p class="event-when">${slug
@@ -663,9 +690,17 @@ Brunswick Building fire of 1989.`;
     // the address line links to a Google Maps search, like the listing cards
     liveSpans.forEach(span => {
       const text = span.textContent.trim();
-      if (span.querySelector('a') || !text.includes(',') || !/\d/.test(text) ||
-          /^(opening|on view)/i.test(text)) return;
-      span.innerHTML = `<a href="http://maps.google.com/maps?q=${encodeURIComponent(text)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`;
+      if (/^(opening|on view)/i.test(text)) return;
+      if (span.querySelector('.event-source-link')) return; // ignore official link
+
+      // If it looks like an address, link it and mark as address
+      if (!span.querySelector('a') && text.includes(',') && /\d/.test(text)) {
+        span.innerHTML = `<a href="http://maps.google.com/maps?q=${encodeURIComponent(text)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`;
+        span.classList.add('event-address');
+      } else {
+        // Otherwise, it's the venue name
+        span.classList.add('event-venue');
+      }
     });
     // when-lines lead with a bold "Opening"/"On view", like the listing cards
     liveSpans.filter(s => /^(opening|on view)/i.test(s.textContent.trim()))
@@ -708,7 +743,10 @@ Brunswick Building fire of 1989.`;
     const date = new Date(`${match.d}T12:00:00`);
     const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
     const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);
-    let line = `Opening ${weekday}, ${month} ${ordinal(date.getDate())}`;
+    let line = `${weekday}, ${month} ${ordinal(date.getDate())}`;
+    if (match.o) {
+      line = `Opening ${line}`;
+    }
     // parseable times become their own Start/End row instead of a tail
     if (match.w && !timeBounds(match.w)) {
       line += match.w.includes('–') ? `, from ${match.w}` : `, at ${match.w}`;

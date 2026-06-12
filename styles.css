@@ -71,7 +71,7 @@ body {
 }
 
 .tagline {
-  margin-top: clamp(0.25rem, 0.5vw, 0.5rem); /* tucked close to the logotype */
+  margin: auto 0; /* vertically centered between logotype and bottom */
   /* scales gently with the viewport so it keeps proportion with the logotype */
   font-size: clamp(0.8rem, 1.1vw, 1.05rem);
   font-style: italic;
@@ -133,16 +133,15 @@ body {
 /* ---- Navigation ---------------------------------------------------- */
 
 .nav-block {
-  /* sized by the nav row; the search bar stretches to match it */
-  width: fit-content;
+  /* stretches full width within nav-band */
+  width: 100%;
   margin-inline: auto;
 }
 
 .site-nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: baseline; /* tab and button text share one baseline */
-  gap: clamp(1.25rem, 3vw, 3rem);
 }
 
 .site-nav a {
@@ -1374,11 +1373,14 @@ a.top-pick:hover,
 }
 
 .event-location .event-venue,
-.event-location .event-address {
+.event-detail-meta .event-venue,
+.event-location .event-address,
+.event-detail-meta .event-address {
   display: inline;
 }
 
-.event-location .event-venue {
+.event-location .event-venue,
+.event-detail-meta .event-venue {
   color: var(--content-ink);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.74rem;
@@ -1503,16 +1505,77 @@ a.top-pick:hover,
   text-underline-offset: 0.2em;
 }
 
-.breadcrumb-sep {
-  flex: none;
-  align-self: center;
+.breadcrumb-arrow {
+  position: relative;
+  display: inline-block;
+  padding-right: 1.5em; /* reserve space for the arrow line */
+  margin-right: 0.25em; /* visual space before next item */
 }
 
-/* long thin arrow, after the as-is site's "→ TODAY" motif */
-.breadcrumb-sep svg {
+.breadcrumb-arrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.1em; /* position like an underline */
+  width: 100%;
+  height: 1px;
+  background-color: currentColor; /* the line itself */
+}
+
+.breadcrumb-arrow::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -0.1em;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: translateY(50%) rotate(45deg); /* forms the > arrowhead */
+}
+
+.breadcrumb a.breadcrumb-arrow:hover {
+  text-decoration: none; /* override the default hover underline */
+  color: var(--content-ink);
+}
+
+.image-lightbox {
+  padding: 0;
+  border: none;
+  background: transparent;
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: auto;
+  overflow: visible;
+}
+.image-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+.image-lightbox img {
   display: block;
-  width: 1.85em; /* ~2/3 of the original 2.75em run */
-  height: 0.72em;
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+.image-lightbox button {
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-lightbox button::before {
+  content: "\\00d7"; /* multiplication sign for close */
+  line-height: 1;
 }
 
 .event-detail {
