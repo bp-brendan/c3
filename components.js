@@ -869,8 +869,22 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     .map(submissionToEvent)
     .filter(event => event.d);
 
+  // a double-run migration left near-identical rows behind; until the data
+  // is deduped, one (permalink, title, date) shows once, preferring the row
+  // with a local detail page (distinct legacy posts keep distinct permalinks)
+  const dedupeEvents = events => {
+    const byKey = new Map();
+    (events || []).forEach(event => {
+      const key = `${String(event.u || '').toLowerCase()}|${String(event.t || '').toLowerCase()}|${event.d || ''}`;
+      const held = byKey.get(key);
+      const local = e => String(e.p || '').startsWith('events/');
+      if (!held || (local(event) && !local(held))) byKey.set(key, event);
+    });
+    return [...byKey.values()];
+  };
+
   const publicEvents = events => {
-    const editedEvents = applyEventEdits(events || []);
+    const editedEvents = applyEventEdits(dedupeEvents(events));
     const existing = new Set(editedEvents.map(event =>
       `${String(event.u || '').toLowerCase()}|${String(event.t || '').toLowerCase()}|${event.d || ''}`
     ));
@@ -899,12 +913,24 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     return eventDetails(title, href).x || '';
   };
 
+  // migrated descriptions can be whole detail-page bodies; an excerpt wants
+  // the prose only, not the markup or the auxiliary link headings
+  const excerptProse = html => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    doc.body.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(h => h.remove());
+    return doc.body.textContent.replace(/\s+/g, ' ').trim();
+  };
+
   // scraped excerpts occasionally carry literal character references
   // (&#8216;) or stray control characters; normalize them before escaping
-  const cleanExcerptText = text => String(text)
+  const cleanExcerptText = text => {
+    text = String(text);
+    if (/<[a-z][^>]*>/i.test(text)) text = excerptProse(text);
+    return text
     .replace(/&#(\d+);/g, (m, n) => (Number(n) <= 0x10ffff ? String.fromCodePoint(Number(n)) : m))
     .replace(/&#x([0-9a-f]+);/gi, (m, n) => (parseInt(n, 16) <= 0x10ffff ? String.fromCodePoint(parseInt(n, 16)) : m))
     .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '');
+  };
 
   const excerptMarkup = (text, href) => {
     if (!text) return '';
@@ -1210,7 +1236,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const match = archiveMatch(title, href);
     const local = match.p || href;
     const pick = (item.querySelector('.top-pick') || match.k)
-      ? ' <a class="top-pick" href="tag.html?tag=top-pick">Top Pick</a>' : '';
+      ? ' <a class="top-pick" href="tag.html?tag=top-v">Top V</a>' : '';
     const opening = openingLineFor(match);
     const article = document.createElement('article');
     article.className = 'event-card event-card-on-view';

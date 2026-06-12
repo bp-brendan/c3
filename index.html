@@ -179,7 +179,7 @@
       <article class="event-card">
         <a class="event-thumb" href="https://thevisualist.org/?p=190758"><img src="media/2026/05/Creature-Reverie-Instagram-1-1.jpg" alt="" loading="lazy"></a>
         <div class="event-info">
-          <h3 class="event-title"><a href="https://thevisualist.org/?p=190758">Creature Reverie</a> <a class="top-pick" href="tag.html?tag=top-pick">Top V</a></h3>
+          <h3 class="event-title"><a href="https://thevisualist.org/?p=190758">Creature Reverie</a> <a class="top-pick" href="tag.html?tag=top-v">Top V</a></h3>
           <p class="event-venue"><a href="https://www.heavengallery.com/" target="_blank" rel="noopener">Heaven Gallery</a></p>
           <p class="event-when">Opening Friday, June 12th, from 6PM - 11PM</p>
           <p class="event-when">On view through Sunday, July 26th</p>
@@ -201,7 +201,7 @@
       <article class="event-card">
         <a class="event-thumb" href="https://thevisualist.org/?p=190941"><img src="media/2026/06/Artboard-1.png" alt="" loading="lazy"></a>
         <div class="event-info">
-          <h3 class="event-title"><a href="https://thevisualist.org/?p=190941">nánwàng de yī tiān</a> <a class="top-pick" href="tag.html?tag=top-pick">Top V</a></h3>
+          <h3 class="event-title"><a href="https://thevisualist.org/?p=190941">nánwàng de yī tiān</a> <a class="top-pick" href="tag.html?tag=top-v">Top V</a></h3>
           <p class="event-venue"><a href="https://shanghaiseminary.com/061226/" target="_blank" rel="noopener">SHANGHAI SEMINARY</a></p>
           <p class="event-when">Opening Friday, June 12th, from 6PM - 10PM</p>
           <p class="event-when">On view through Saturday, August 1st</p>
@@ -302,7 +302,7 @@
       <article class="event-card">
         <a class="event-thumb" href="https://thevisualist.org/?p=190657"><img src="media/2026/05/Esau-PR.jpg" alt="" loading="lazy"></a>
         <div class="event-info">
-          <h3 class="event-title"><a href="https://thevisualist.org/?p=190657">Josué Esaú:  The Carocal</a> <a class="top-pick" href="tag.html?tag=top-pick">Top V</a></h3>
+          <h3 class="event-title"><a href="https://thevisualist.org/?p=190657">Josué Esaú:  The Carocal</a> <a class="top-pick" href="tag.html?tag=top-v">Top V</a></h3>
           <p class="event-venue"><a href="https://www.boundarychicago.space/" target="_blank" rel="noopener">boundary</a></p>
           <p class="event-when">Opening Saturday, June 13th, from 6PM - 9PM</p>
           <p class="event-when">On view through Saturday, August 1st</p>
@@ -313,7 +313,7 @@
       <article class="event-card">
         <a class="event-thumb" href="https://thevisualist.org/?p=191006"><img src="media/2026/06/Richard-Marks-Concrete-Age-Flyer.jpeg" alt="" loading="lazy"></a>
         <div class="event-info">
-          <h3 class="event-title"><a href="https://thevisualist.org/?p=191006">Concrete Age</a> <a class="top-pick" href="tag.html?tag=top-pick">Top V</a></h3>
+          <h3 class="event-title"><a href="https://thevisualist.org/?p=191006">Concrete Age</a> <a class="top-pick" href="tag.html?tag=top-v">Top V</a></h3>
           <p class="event-venue"><a href="https://parlourandramp.com/" target="_blank" rel="noopener">Parlour and Ramp</a></p>
           <p class="event-when">Opening Saturday, June 13th, from 6PM - 9PM</p>
           <p class="event-when">On view through Friday, June 26th</p>
@@ -2205,12 +2205,15 @@
     // a horizontally scrolling river of square event images, one per event,
     // each square linking to its detail page; real sources are assigned only
     // when their row and position are close enough to matter
-    const thumbRiverHtml = items => `
-      <div class="thumb-river-frame">
+    const thumbTileHtml = item =>
+      `<a href="${escapeHtml(item.href)}" aria-label="${escapeHtml(item.title)}"><img src="${blankThumbSrc}" data-src="${escapeHtml(Visualist.thumbSrc(item.src))}" data-fallback-src="${escapeHtml(item.src)}" alt="" loading="lazy" decoding="async"></a>`;
+    // a "+N" tile closes a truncated river and carries on to the month page
+    const thumbMoreTileHtml = (href, n) =>
+      `<a class="thumb-river-more" href="${escapeHtml(href)}">+${n.toLocaleString()}</a>`;
+    const thumbRiverHtml = (items, attrs = '', tail = '') => `
+      <div class="thumb-river-frame"${attrs}>
         <div class="thumb-river" tabindex="0" aria-label="Event image links">
-          ${items.map(item =>
-            `<a href="${escapeHtml(item.href)}" aria-label="${escapeHtml(item.title)}"><img src="${blankThumbSrc}" data-src="${escapeHtml(Visualist.thumbSrc(item.src))}" data-fallback-src="${escapeHtml(item.src)}" alt="" loading="lazy" decoding="async"></a>`
-          ).join('')}
+          ${items.map(thumbTileHtml).join('')}${tail}
         </div>
       </div>`;
 
@@ -2256,15 +2259,42 @@
       frame.classList.toggle('has-right-overflow', river.scrollLeft < maxScroll - 1);
     };
 
+    const MONTH_RIVER_LIMIT = 80; // tiles per month row before the +N tile
+    // a month row beyond the loaded events carries data-month; its river
+    // fetches that month's thumbnails only when it scrolls near the viewport
+    const fillMonthRiver = async frame => {
+      const key = frame.dataset.month;
+      const count = Number(frame.dataset.count || 0);
+      delete frame.dataset.month;
+      const { data } = await window.supabaseClient
+        .from('events')
+        .select('image_url,path,permalink,title')
+        .gte('event_date', `${key}-01`).lte('event_date', `${key}-31`)
+        .not('image_url', 'is', null)
+        .order('event_date', { ascending: true })
+        .limit(MONTH_RIVER_LIMIT);
+      const items = (data || []).filter(e => e.image_url).map(e => ({
+        src: e.image_url,
+        href: e.path || e.permalink,
+        title: e.title || 'Untitled'
+      }));
+      const river = frame.querySelector('.thumb-river');
+      if (!river) return;
+      river.innerHTML = items.map(thumbTileHtml).join('') +
+        (count > items.length ? thumbMoreTileHtml(`tag.html?month=${key}`, count - items.length) : '');
+      initThumbRiverImages(frame);
+      updateThumbRiverFade(frame);
+    };
     const initThumbRivers = root => {
       const frames = (root || document).querySelectorAll('.thumb-river-frame');
       if (!('IntersectionObserver' in window)) {
-        frames.forEach(initThumbRiverImages);
+        frames.forEach(frame => frame.dataset.month ? fillMonthRiver(frame) : initThumbRiverImages(frame));
       } else if (!thumbFrameObserver) {
         thumbFrameObserver = new IntersectionObserver(entries => {
           entries.forEach(entry => {
             if (!entry.isIntersecting) return;
-            initThumbRiverImages(entry.target);
+            if (entry.target.dataset.month) fillMonthRiver(entry.target);
+            else initThumbRiverImages(entry.target);
             thumbFrameObserver.unobserve(entry.target);
           });
         }, { rootMargin: '700px 0px' });
@@ -2633,7 +2663,7 @@
             ? `<a class="event-thumb" href="${escapeHtml(event.p || event.u)}"><img src="${escapeHtml(event.i)}" alt="" loading="lazy"></a>`
             : '<span class="event-thumb event-thumb-empty"></span>'}
           <div class="event-info">
-            <h3 class="event-title"><a href="${escapeHtml(event.p || event.u)}">${escapeHtml(event.t || 'Untitled')}</a>${event.k ? ' <a class="top-pick" href="tag.html?tag=top-pick">Top V</a>' : ''}</h3>
+            <h3 class="event-title"><a href="${escapeHtml(event.p || event.u)}">${escapeHtml(event.t || 'Untitled')}</a>${event.k ? ' <a class="top-pick" href="tag.html?tag=top-v">Top V</a>' : ''}</h3>
             ${(event.v || event.a || event.d || event.o) ? `<div class="event-meta-grid">
               ${(event.v || event.a) ? `<div class="event-location">
                 ${event.v ? `<p class="event-venue"><a href="${escapeHtml(event.p || event.u)}">${escapeHtml(event.v)}</a></p>` : ''}
@@ -2657,37 +2687,57 @@
     // the archive's default face: each month heads a horizontally scrolling
     // river of every event image that month, each square linking to its
     // event; filtering swaps in the event list
+    let archiveMonths = null; // every month ever, via the archive_months view
+    let monthIndexShowing = false;
     const archiveMonthIndexHtml = () => {
-      const months = new Map(); // '2026-06' -> { count, items[] }
+      const local = new Map(); // '2026-06' -> { count, items[] } from loaded events
       archiveEvents.forEach(event => {
         const key = event.d.slice(0, 7);
-        const month = months.get(key) || { count: 0, items: [] };
+        const month = local.get(key) || { count: 0, items: [] };
         month.count += 1;
         if (event.i) month.items.push({
           src: event.i,
           href: event.p || event.u,
           title: event.t || 'Untitled'
         });
-        months.set(key, month);
+        local.set(key, month);
       });
+      // the server view indexes the whole archive; loaded events only feed
+      // rivers for months they fully cover (the oldest loaded month is partial)
+      const oldestLoaded = archiveEvents.length ? archiveEvents[archiveEvents.length - 1].d.slice(0, 7) : '';
+      let months = archiveMonths
+        ? archiveMonths.map(m => ({ key: m.month, count: m.event_count }))
+        : [...local.keys()].map(key => ({ key, count: local.get(key).count }));
+      if (window.SITE_SETTINGS && window.SITE_SETTINGS.limit_to_2026) {
+        months = months.filter(m => m.key.startsWith('2026'));
+      }
+      months.sort((a, b) => b.key.localeCompare(a.key));
       return `
         <ul class="archive-month-list">
-          ${[...months.keys()].sort((a, b) => b.localeCompare(a)).map(key => {
-            const month = months.get(key);
+          ${months.map(({ key, count }) => {
             const name = new Date(`${key}-15T12:00:00`).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+            const localMonth = local.get(key);
+            const useLocal = localMonth && key !== oldestLoaded;
+            const items = useLocal ? localMonth.items.slice(0, MONTH_RIVER_LIMIT) : [];
+            const more = useLocal && localMonth.items.length > items.length
+              ? thumbMoreTileHtml(`tag.html?month=${key}`, localMonth.items.length - items.length) : '';
+            const river = useLocal
+              ? thumbRiverHtml(items, '', more)
+              : thumbRiverHtml([], ` data-month="${key}" data-count="${count}"`);
             return `
             <li class="archive-month-item">
               <div class="month-head">
                 <a class="event-date-day" href="tag.html?month=${key}">${name}</a>
-                <a class="event-date-num month-count" href="tag.html?month=${key}">${month.count} events</a>
+                <a class="event-date-num month-count" href="tag.html?month=${key}">${count.toLocaleString()} events</a>
               </div>
-              ${thumbRiverHtml(month.items)}
+              ${river}
             </li>`;
           }).join('')}
         </ul>
+        ${archiveMonths ? '' : `
         <div class="archive-load-more" style="text-align: center; margin: 40px 0;">
           <button type="button" id="load-older-archives" class="form-button form-button-primary">Load Older Archives</button>
-        </div>`;
+        </div>`}`;
     };
     const updateArchiveSentinels = () => {
       archiveTopSentinel.hidden = archiveRenderStart <= 0;
@@ -2740,10 +2790,12 @@
         archiveSummary.hidden = true; // the month rows carry their own counts
         archiveEmpty.hidden = true;
         archiveResults.innerHTML = archiveMonthIndexHtml();
+        monthIndexShowing = true;
         initThumbRivers(archiveResults);
         updateArchiveSentinels();
         return;
       }
+      monthIndexShowing = false;
       archiveFiltered = archiveEvents.filter(event => {
         const text = `${event.t || ''} ${event.v || ''} ${(event.g || []).join(' ')}`.toLowerCase();
         return (!q || text.includes(q)) &&
@@ -2827,13 +2879,14 @@
             d: e.event_date,
             v: e.venue,
             a: e.address,
-            m: e.map_link,
-            w: e.event_time,
+            m: e.map_url,
+            w: e.time_window,
             x: e.description,
             g: e.tags,
             i: e.image_url,
-            o: e.on_view,
-            k: e.top_pick
+            vu: e.venue_url,
+            o: e.on_view_through,
+            k: e.top_pick ? 1 : 0
           }));
           archiveEvents = archiveEvents.concat(mapped);
           renderArchive();
@@ -2844,6 +2897,20 @@
     });
 
     renderArchive();
+    // the archive_months view indexes every month ever in one tiny query;
+    // when it exists the landing lists them all (rivers fill lazily) and the
+    // Load Older Archives button disappears. Without it (view not created
+    // yet), the button fallback stands. See schema_archive.sql.
+    (async () => {
+      const { data, error } = await window.supabaseClient
+        .from('archive_months')
+        .select('month,event_count')
+        .order('month', { ascending: false });
+      if (!error && Array.isArray(data) && data.length) {
+        archiveMonths = data;
+        if (monthIndexShowing) renderArchive();
+      }
+    })();
     // no auto-scroll on load: the header accordion stays exactly as the
     // previous page left it (tab clicks still scroll via showView)
   });

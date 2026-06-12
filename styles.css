@@ -1193,6 +1193,32 @@ body {
   opacity: 1;
 }
 
+/* an unfetched month river holds one tile of height so rows keep their
+   shape (and the lazy fetch fires row by row, not all at once) */
+.thumb-river:empty {
+  min-height: clamp(5.1rem, 12vw, 6.9rem);
+}
+
+/* the +N tile finishing a truncated river, carrying on to the month page */
+.thumb-river-more {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(5.1rem, 12vw, 6.9rem);
+  height: clamp(5.1rem, 12vw, 6.9rem);
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.7;
+}
+
+.thumb-river-more:hover {
+  opacity: 1;
+}
+
 /* a peek at next week under the This Week stream */
 .week-peek {
   margin-top: clamp(2.5rem, 5vw, 4rem);
