@@ -1272,6 +1272,15 @@ body {
   text-underline-offset: 0.2em;
 }
 
+/* the Top V peek heading is the card pill scaled up: identical em padding,
+   spacing, and radius — only the font size differs */
+.week-peek-title a.top-pick {
+  margin-left: 0;
+  font-size: 1.6rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .week-peek-copy {
   max-width: 42rem;
   margin: -0.15rem 0 0.75rem;
@@ -1308,7 +1317,9 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  border-radius: 2px;
+  /* em so larger renditions (the Top V peek heading) stay proportional;
+     equals the old 2px at this font size */
+  border-radius: 0.23em;
   white-space: nowrap;
   text-decoration: none;
 }

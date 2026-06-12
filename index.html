@@ -2437,21 +2437,21 @@
 
     const buildTopVPeek = () => {
       const todayIso = Visualist.todayIso();
+      const weekEndIso = isoPlusDays(todayIso, 7);
       const items = eventThumbItems(publicArchiveEvents
-        .filter(event => event.k && event.d >= todayIso && event.d <= isoPlusDays(todayIso, 6))
+        .filter(event => event.k && event.d >= todayIso && event.d <= weekEndIso)
         .sort(Visualist.sortAsc));
       if (!items.length) return;
-      const today = new Date('2026-06-12T00:00:00');
-      const weekEnds = new Date(today.getTime() + 6 * 24 * 60 * 60 * 1000);
-      const startStr = today.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
-      const endStr = weekEnds.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-      
+      const fmtDate = (iso, opts) => new Date(`${iso}T12:00:00`).toLocaleDateString('en-US', opts);
+      const startStr = fmtDate(todayIso, { month: 'long', day: 'numeric' });
+      const endStr = fmtDate(weekEndIso, { month: 'long', day: 'numeric', year: 'numeric' });
+
       document.getElementById('view-this-week').insertAdjacentHTML('afterbegin', `
-        <div class="week-peek" style="margin-bottom: 2rem;">
-          <h2 class="event-date" style="margin-top: 0;">
-            <a href="tag.html?tag=top-v" class="top-pick" style="margin-left: 0; font-size: 1.6rem; padding: 0.25em 0.5em; text-transform: none; text-decoration: none;">Top V</a>
+        <div class="week-peek week-peek-top-v">
+          <h2 class="week-peek-title">
+            <a href="tag.html?tag=top-v" class="top-pick">Top V</a>
           </h2>
-          <p class="event-date-num" style="margin-top: 0.5rem; margin-bottom: 1rem;">The top 5 visual arts events happening in Chicagoland ${startStr} – ${endStr}, published in collaboration with <a href="https://badatsports.com/author/visualist/" target="_blank" rel="noopener" class="inline-link">Bad at Sports</a>.</p>
+          <p class="week-peek-copy">The top 5 visual arts events happening in Chicagoland ${startStr} – ${endStr} published in collaboration with <a href="https://badatsports.com/author/visualist/" target="_blank" rel="noopener" class="inline-link">Bad at Sports</a>.</p>
           ${thumbRiverHtml(items)}
         </div>`);
       initThumbRivers(document.getElementById('view-this-week'));
@@ -2477,6 +2477,49 @@
           ${thumbRiverHtml(items)}
         </div>`);
       initThumbRivers(document.getElementById('view-this-week'));
+    };
+
+    // tease This Week at the bottom of Today: the heading jumps to the tab,
+    // each image links through to its event page; reads whatever cards This
+    // Week holds (static bake on landing, live render after the archive
+    // data loads), skipping days the bake has that are already past
+    const headingMonths = { january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+      july: 6, august: 7, september: 8, october: 9, november: 10, december: 11 };
+    const isoFromHeadingText = text => {
+      const match = text.match(/(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})/i);
+      if (!match) return '';
+      const year = new Date().getFullYear();
+      return `${year}-${String(headingMonths[match[1].toLowerCase()] + 1).padStart(2, '0')}-${String(match[2]).padStart(2, '0')}`;
+    };
+    const buildTodayPeek = () => {
+      const view = document.getElementById('view-today');
+      view.querySelector('.week-peek')?.remove();
+      const todayIso = Visualist.todayIso();
+      const weekEndIso = isoPlusDays(todayIso, 7);
+      let cardDate = '';
+      const items = [...document.getElementById('view-this-week').children].map(child => {
+        if (child.classList.contains('event-date')) {
+          cardDate = isoFromHeadingText(child.textContent);
+          return null;
+        }
+        // the static bake runs weeks deep; keep only this week's days
+        if (!child.classList.contains('event-card')) return null;
+        if (cardDate && (cardDate < todayIso || cardDate > weekEndIso)) return null;
+        const img = child.querySelector('.event-thumb img');
+        const link = child.querySelector('.event-title a');
+        return img && link ? {
+          src: img.getAttribute('src'),
+          href: link.getAttribute('href'),
+          title: link.textContent.trim()
+        } : null;
+      }).filter(Boolean);
+      if (!items.length) return;
+      view.insertAdjacentHTML('beforeend', `
+        <div class="week-peek">
+          <h2 class="week-peek-title"><a href="index.html#this-week" data-today-jump="this-week">This week</a></h2>
+          ${thumbRiverHtml(items)}
+        </div>`);
+      initThumbRivers(view);
     };
     const dateToggle = document.querySelector('.date-toggle');
     const datePanel = document.querySelector('.date-panel');
@@ -2912,10 +2955,11 @@
     const renderWeeks = () => {
       const todayIso = Visualist.todayIso();
       const empty = '<p class="view-empty">Nothing on the calendar yet.</p>';
+      // a week runs from today through the same day next week
       document.getElementById('view-this-week').innerHTML =
-        weekRangeHtml(todayIso, isoPlusDays(todayIso, 6)) || empty;
+        weekRangeHtml(todayIso, isoPlusDays(todayIso, 7)) || empty;
       document.getElementById('view-next-week').innerHTML =
-        weekRangeHtml(isoPlusDays(todayIso, 7), isoPlusDays(todayIso, 13)) || empty;
+        weekRangeHtml(isoPlusDays(todayIso, 8), isoPlusDays(todayIso, 14)) || empty;
     };
     // the archive's default face: each month heads a horizontally scrolling
     // river of every event image that month, each square linking to its
@@ -3078,6 +3122,7 @@ monthIndexShowing = false;
           </div>`;
       }
       Visualist.openExternalLinks(todayView);
+      buildTodayPeek();
     };
     const renderToday = async () => {
       const todayIso = Visualist.todayIso();
