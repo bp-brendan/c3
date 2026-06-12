@@ -1,8 +1,6 @@
 (function () {
-  const footerText = `<strong>The Visualist</strong> is an all-volunteer effort to document the
-working life of visual artists and amplify the independent arts scenes
-throughout Chicagoland. In time, <a href="index.html#archive" style="font-weight: 700; text-decoration: underline; color: inherit;">this archive</a> will reach back to the
-calendar's beginnings in 2011. Help us keep it growing.`;
+  const footerText = `<strong>The Visualist</strong> is more than just a list of dates and events on the
+internet.`;
 
   // hosted_button_id from the PayPal form on thevisualist.org/about/
   const DONATE_URL = 'https://www.paypal.com/donate?hosted_button_id=947PHJMCQD9Q4';
