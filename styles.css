@@ -2814,3 +2814,9 @@ body.logged-out .admin-main {
   font-size: 0.95rem;
   font-family: inherit;
 }
+
+/* Larger donate button for the about page */
+.about-donate {
+  font-size: 1.1rem;
+  padding: 1em 2em;
+}
