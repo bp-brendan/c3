@@ -133,14 +133,13 @@ body {
 /* ---- Navigation ---------------------------------------------------- */
 
 .nav-block {
-  /* stretches full width within nav-band */
-  width: 100%;
+  max-width: var(--content-max);
   margin-inline: auto;
 }
 
 .site-nav {
   display: flex;
-  justify-content: space-between;
+  gap: 2rem;
   align-items: baseline; /* tab and button text share one baseline */
 }
 

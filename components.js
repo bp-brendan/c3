@@ -194,15 +194,15 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const page = pageName();
     if (document.querySelector('.breadcrumb')) return;
     const crumb = readCrumb();
-    const origin = `<a href="${escapeHtml(localHref(crumb.href))}" class="breadcrumb-arrow">${escapeHtml(crumb.label)}</a>`;
+    const origin = `<a href="${escapeHtml(localHref(crumb.href))}" class="breadcrumb-arrow" style="opacity: 1;">${escapeHtml(crumb.label)}</a>`;
     if (page === 'event') {
       const title = document.querySelector('.event-detail-body .event-detail-title');
       if (!title) return;
       const dayDate = breadcrumbDayDate();
       const nav = breadcrumbNav(`
       ${origin}
-      ${dayDate ? `<span class="breadcrumb-date">${detailDate
-        ? `<a href="${escapeHtml(localHref(`index.html#archive?date=${detailDate.iso}`))}">${escapeHtml(dayDate)}</a>`
+      ${dayDate ? `<span class="breadcrumb-arrow" style="opacity: 0.6;">${detailDate
+        ? `<a href="${escapeHtml(localHref(`index.html#archive?date=${detailDate.iso}`))}" style="color:inherit;">${escapeHtml(dayDate)}</a>`
         : escapeHtml(dayDate)}</span>` : ''}${breadcrumbCalendarHtml()}`);
       title.insertAdjacentElement('beforebegin', nav);
       initBreadcrumbCalendar(nav);
@@ -668,7 +668,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const meta = document.querySelector('.event-detail-meta');
     if (!meta) return;
     const spans = [...meta.querySelectorAll('span')];
-    const dateSpan = spans.find(s => /^[A-Za-z]+,\s+[A-Za-z]+\s+\d{1,2},\s+\d{4}$/.test(s.textContent.trim()));
+    const dateSpan = spans.find(s => /^[A-Za-z]+,\s+[A-Za-z]+\s+\d{1,2},\s+\d{4}(?:,.*)?$/.test(s.textContent.trim()));
     let baseYear = 0;
     let baseMonth = 0;
     if (dateSpan) {
@@ -684,12 +684,19 @@ calendar's beginnings in 2011. Help us keep it growing.`;
           };
         }
       }
-      dateSpan.remove();
+      if (/(?:AM|PM)/i.test(dateSpan.textContent)) {
+        // If it has time (non-recurring event), keep it as the date/time display
+        dateSpan.classList.add('event-when');
+      } else {
+        // Otherwise it's redundant with the Opening line, so remove it
+        dateSpan.remove();
+      }
     }
-    const liveSpans = spans.filter(s => s !== dateSpan);
+    const liveSpans = spans.filter(s => s !== dateSpan || /(?:AM|PM)/i.test(s.textContent));
     // the address line links to a Google Maps search, like the listing cards
     liveSpans.forEach(span => {
       const text = span.textContent.trim();
+      if (span.classList.contains('event-when')) return;
       if (/^(opening|on view)/i.test(text)) return;
       if (span.querySelector('.event-source-link')) return; // ignore official link
 
@@ -777,9 +784,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
         <h3 class="event-title"><a href="${escapeHtml(local)}">${escapeHtml(title)}</a>${pick}</h3>
         ${(venue || match.a || opening || match.o) ? `<div class="event-meta-grid">
           ${(venue || match.a) ? `<div class="event-location">
-            ${venue ? `<p class="event-venue">${match.vu
-              ? `<a href="${escapeHtml(match.vu)}" target="_blank" rel="noopener">${escapeHtml(venue.textContent.trim())}</a>`
-              : escapeHtml(venue.textContent.trim())}</p>` : ''}
+            ${venue ? `<p class="event-venue"><a href="${escapeHtml(local)}">${escapeHtml(venue.textContent.trim())}</a></p>` : ''}
             ${match.a ? `<p class="event-address">${match.m
               ? `<a href="${escapeHtml(match.m)}">${escapeHtml(match.a)}</a>`
               : escapeHtml(match.a)}</p>` : ''}
@@ -795,11 +800,37 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     return article;
   };
 
-  const groupCardMeta = card => {
+  const groupCardMeta = (card, details = null) => {
     const info = card.querySelector('.event-info');
     if (!info || info.querySelector(':scope > .event-meta-grid')) return;
-    const venue = info.querySelector(':scope > .event-venue');
-    const address = info.querySelector(':scope > .event-address');
+    let venue = info.querySelector(':scope > .event-venue');
+    let address = info.querySelector(':scope > .event-address');
+    
+    if (details) {
+      if (venue) {
+        const venueLink = venue.querySelector('a');
+        if (venueLink && (details.p || details.u)) {
+          venueLink.setAttribute('href', details.p || details.u);
+          venueLink.removeAttribute('target');
+          venueLink.removeAttribute('rel');
+        }
+      }
+      if (!address && details.a) {
+        address = document.createElement('p');
+        address.className = 'event-address';
+        if (details.m) {
+          const a = document.createElement('a');
+          a.setAttribute('href', details.m);
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', 'noopener');
+          a.textContent = details.a;
+          address.append(a);
+        } else {
+          address.textContent = details.a;
+        }
+      }
+    }
+
     const whens = [...info.querySelectorAll(':scope > .event-when')];
     if (!venue && !address && !whens.length) return;
 
@@ -862,6 +893,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
           thumbLink.removeAttribute('rel');
         }
       }
+      groupCardMeta(card, details);
       if (!card.querySelector('.event-description')) {
         const text = eventExcerpt(title, href);
         if (text) liner.insertAdjacentHTML('beforebegin', excerptMarkup(text, details.p || href));
@@ -877,7 +909,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
         const html = onViewHtml({ ...match, o: match.o || onViewP.textContent.trim() });
         if (html) onViewP.outerHTML = html;
       }
-      groupCardMeta(card);
+      groupCardMeta(card, details);
     });
   };
 
