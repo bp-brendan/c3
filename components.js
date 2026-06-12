@@ -70,7 +70,8 @@ calendar's beginnings in 2011. Help us keep it growing.`;
   };
 
   const taglines = () => {
-    return window.TAGLINES ? window.TAGLINES.map(t => t.content) : ['Chicago Visual Arts Calendar'];
+    if (!window.TAGLINES) return ['Chicago Visual Arts Calendar'];
+    return window.TAGLINES.map(t => typeof t === 'string' ? t : t.content);
   };
 
   const saveTaglines = async lines => {
