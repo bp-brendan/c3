@@ -60,8 +60,10 @@ where lower(e.title) = s.t and lower(coalesce(e.venue, '')) = s.v;
 --    300-character plain-text excerpt (cards clamp to ~3 lines anyway), the
 --    auxiliary link labels ("Official Website", "Original Listing") dropped.
 --    Cuts the homepage data payload dramatically; admin keeps reading the
---    full events table.
-create or replace view events_list as
+--    full events table. Dropped first: replace-view cannot add columns
+--    anywhere but the end, and series_* sit before excerpt.
+drop view if exists events_list;
+create view events_list as
   select
     id, title, permalink, path, venue, venue_url, address, map_url,
     event_date, image_url, tags, time_window, on_view_through, top_pick,
