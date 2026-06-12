@@ -81,26 +81,41 @@ window.Visualist.loadData = async function(callback, options = {}) {
         .order('id', { ascending: true });
       if (windowed && !window.SITE_SETTINGS.limit_to_2026) q = q.gte('event_date', windowStart);
       if (window.SITE_SETTINGS.limit_to_2026) {
-        q = q.gte('event_date', '2026-01-01').lte('event_date', '2026-12-31');
+        q = q.gte('event_date', '2024-01-01').lte('event_date', '2026-12-31');
       }
       return q;
     };
 
     if (shouldLoadEvents) {
-      let events = null;
+let events = null;
       let eventsError = null;
-      const fetchRows = window.Visualist.fetchPagedRows
-        ? queryFactory => window.Visualist.fetchPagedRows(queryFactory)
-        : async queryFactory => {
-          const { data, error } = await queryFactory().limit(1000);
-          return { data: data || [], error };
-        };
-      if (!isAdmin) {
-        ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events_list', '*', true)));
-      }
-      if (isAdmin || eventsError || !events) {
-        ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events', '*', false)));
-        if (eventsError) console.error('Error fetching events:', eventsError);
+      
+      const cacheKey = isAdmin ? 'cached_events_admin' : 'cached_events_list';
+      try {
+        const cachedStr = sessionStorage.getItem(cacheKey);
+        if (cachedStr) events = JSON.parse(cachedStr);
+      } catch (e) {}
+
+      if (!events) {
+        const fetchRows = window.Visualist.fetchPagedRows
+          ? queryFactory => window.Visualist.fetchPagedRows(queryFactory)
+          : async queryFactory => {
+            const { data, error } = await queryFactory().limit(1000);
+            return { data: data || [], error };
+          };
+        if (!isAdmin) {
+          ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events_list', '*', true)));
+        }
+        if (isAdmin || eventsError || !events || !events.length) {
+          ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events', '*', false)));
+          if (eventsError) console.error('Error fetching events:', eventsError);
+        }
+        
+        if (events && !eventsError) {
+          try {
+            sessionStorage.setItem(cacheKey, JSON.stringify(events));
+          } catch (e) {}
+        }
       }
 
       // Map Supabase schema back to the short keys expected by the frontend

@@ -584,7 +584,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const logotype = document.querySelector('.logotype');
     const tagline = document.querySelector('.tagline');
     const navBand = document.querySelector('.nav-band');
-    if (!header || !logotype || !tagline || !navBand) return headerState;
+    if (!header || !logotype || !navBand) return headerState;
     // a second init would stack duplicate scroll/resize listeners
     if (accordionInit) return headerState;
     accordionInit = true;
@@ -595,7 +595,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     let taglineGlide = 0;
     let scaleTo = 1;
     let ticking = false;
-    const taglineSpan = tagline.querySelector('span');
+    const taglineSpan = tagline ? tagline.querySelector('span') : null;
     let taglineSpent = false; // fully faded once; next reveal gets a fresh line
 
     // the carried-over scroll must reach the nav band's pin point, not just

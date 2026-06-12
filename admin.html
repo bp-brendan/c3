@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>\n  <meta name="theme-color" content="#1c1c1c">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin | The Visualist</title>
@@ -19,7 +19,7 @@
   <header class="site-header" data-visualist-header></header>
 
   <main class="site-main submit-main admin-main">
-    <div data-visualist-nav></div>
+    <div data-visualist-nav hidden></div>
 
     <section class="view admin-view" id="view-login" aria-labelledby="login-title" hidden>
       <h1 class="submit-title" id="login-title">Admin Login</h1>
@@ -135,6 +135,15 @@
 
   <script>
   Visualist.loadData(() => {
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#logout') {
+        window.supabaseClient.auth.signOut().then(() => {
+          location.hash = '';
+          location.reload();
+        });
+      }
+    });
+
     Visualist.renderChrome();
     Visualist.initHeaderAccordion();
 

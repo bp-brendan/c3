@@ -918,7 +918,7 @@ body {
   border-bottom: var(--hairline-light);
   color: var(--content-ink);
   font-family: fenwick, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: clamp(2rem, 8vw, 7rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   letter-spacing: 0.06em;
   line-height: 1;
@@ -2597,4 +2597,69 @@ a.top-pick:hover,
 
 [data-page="admin"] .logotype-name {
   font-size: clamp(2.5rem, 13vw, 15.5rem);
+}
+
+/* User request: non-blue links with outline and darker color */
+.event-description a,
+.inline-link {
+  color: var(--content-ink);
+  text-decoration: none;
+  outline: 1px solid var(--content-ink);
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
+}
+.event-description a:hover,
+.inline-link:hover {
+  background: #eeeeee;
+}
+
+.event-description.clamp-lines::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  height: 1.5em; /* matching line-height */
+  background: linear-gradient(to right, transparent, var(--content-paper) 70%);
+  pointer-events: none;
+}
+.description-fade-link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  height: 1.5em;
+  z-index: 1;
+  cursor: pointer;
+  border: none !important;
+  outline: none !important;
+}
+.description-fade-link:hover {
+  background: transparent !important;
+}
+
+/* ---- Skeleton UI ------------------------------------------- */
+.skeleton { pointer-events: none; }
+.skeleton-image {
+  background: #e0e0e0;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+.skeleton-title {
+  background: #e0e0e0;
+  height: 1.5rem;
+  width: 60%;
+  margin-bottom: 0.5rem;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+.skeleton-text {
+  background: #e0e0e0;
+  height: 1rem;
+  width: 90%;
+  margin-bottom: 0.5rem;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.6; }
 }
