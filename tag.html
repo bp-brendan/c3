@@ -85,7 +85,7 @@
           ? a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '') // months read chronologically
           : b.d.localeCompare(a.d)));
     const tagCount = document.getElementById('tag-count');
-    if (tagCount) tagCount.textContent = `(${hits.length})`;
+    if (tagCount) tagCount.textContent = `(${hits.length} event${hits.length === 1 ? '' : 's'})`;
 
     if (hits.length) {
       const ordinalDay = n => {
