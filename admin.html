@@ -26,7 +26,7 @@
     <div data-visualist-nav hidden></div>
 
     <section class="view admin-view" id="view-login" aria-labelledby="login-title" hidden>
-      <h1 class="submit-title" id="login-title">Admin Login</h1>
+      <h1 class="day-heading" id="login-title">Admin Login</h1>
       <form class="submit-form admin-login-form" id="login-form">
         <label class="submit-field">
           <span>Email</span>
@@ -39,7 +39,7 @@
 
     <section class="view admin-view" id="view-queue" aria-labelledby="admin-queue-title" hidden>
       <div class="admin-view-head">
-        <h1 class="submit-title" id="admin-queue-title">New Items Queue</h1>
+        <h1 class="day-heading" id="admin-queue-title">New Items Queue</h1>
         <div class="admin-summary" data-admin-summary></div>
       </div>
       <div class="admin-tabs" data-admin-status-tabs></div>
@@ -49,7 +49,7 @@
 
     <section class="view admin-view admin-events" id="view-events" aria-labelledby="admin-events-title" hidden>
       <div class="admin-view-head">
-        <h1 class="submit-title" id="admin-events-title">Events</h1>
+        <h1 class="day-heading" id="admin-events-title">Events</h1>
         <p class="admin-events-count" data-admin-events-count></p>
       </div>
       <div class="admin-event-filters">
@@ -74,7 +74,7 @@
     </section>
 
     <section class="view admin-view" id="view-create" aria-labelledby="admin-create-title" hidden>
-      <h1 class="submit-title" id="admin-create-title">Create Event</h1>
+      <h1 class="day-heading" id="admin-create-title">Create Event</h1>
       <form class="admin-create-form" data-admin-create-form>
         <div class="admin-fields" data-admin-create-fields></div>
         <div class="admin-publish-controls">
@@ -105,7 +105,7 @@
     </section>
 
     <section class="view admin-view" id="view-funlines" aria-labelledby="admin-taglines-title" hidden>
-      <h1 class="submit-title" id="admin-taglines-title">Taglines</h1>
+      <h1 class="day-heading" id="admin-taglines-title">Taglines</h1>
       <form class="admin-taglines-form" data-admin-taglines-form>
         <div class="admin-tagline-list" data-admin-taglines></div>
         <div class="admin-actions">
@@ -117,7 +117,7 @@
     </section>
 
     <section class="view admin-view" id="view-settings" aria-labelledby="admin-settings-title" hidden>
-      <h1 class="submit-title" id="admin-settings-title">Settings</h1>
+      <h1 class="day-heading" id="admin-settings-title">Settings</h1>
       <form class="admin-settings-form" id="settings-form">
         <label class="submit-field admin-check-field">
           <input type="checkbox" id="admin-limit-2026" checked>
@@ -961,7 +961,7 @@
       const redirect = `${location.origin}${location.pathname}#pending`;
       const { error } = await window.supabaseClient.auth.signInWithOtp({
         email,
-        options: { emailRedirectTo: redirect }
+        options: { emailRedirectTo: redirect, shouldCreateUser: false }
       });
       message(loginMessage,
         error ? error.message : 'Magic link sent. Check your inbox.',

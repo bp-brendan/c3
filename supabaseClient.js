@@ -104,7 +104,7 @@ let events = null;
             return { data: data || [], error };
           };
         if (!isAdmin) {
-          ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events_list', '*', true)));
+          ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events', '*', true)));
         }
         if (isAdmin || eventsError || !events || !events.length) {
           ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events', '*', false)));
