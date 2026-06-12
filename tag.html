@@ -10,10 +10,8 @@
   <link rel="preconnect" href="https://use.typekit.net">
   <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="supabaseClient.js"></script>
-  <script src="components.js"></script>
-  <script src="cardthumbs.js"></script>
+  <link rel="preload" href="components.js" as="script">
+  <link rel="preload" href="supabaseClient.js" as="script">
 </head>
 <body data-page="tag">
 
@@ -22,7 +20,26 @@
   <main class="site-main tag-page">
     <div data-visualist-nav></div>
     <h1 class="tag-title"><span id="tag-name"></span><span class="tag-count" id="tag-count"></span></h1>
-    <div class="archive-listing" id="tag-results"><p style="text-align:center; padding: 20px;">Loading&hellip;</p></div>
+    <div class="archive-listing" id="tag-results">
+      <article class="event-card skeleton">
+        <div class="event-thumb skeleton-image" style="width: 150px; height: 150px;"></div>
+        <div class="event-info">
+          <h3 class="event-title skeleton-title"></h3>
+          <p class="event-venue skeleton-text" style="width: 40%;"></p>
+          <p class="event-description skeleton-text"></p>
+          <p class="event-description skeleton-text" style="width: 70%;"></p>
+        </div>
+      </article>
+      <article class="event-card skeleton">
+        <div class="event-thumb skeleton-image" style="width: 150px; height: 150px;"></div>
+        <div class="event-info">
+          <h3 class="event-title skeleton-title"></h3>
+          <p class="event-venue skeleton-text" style="width: 40%;"></p>
+          <p class="event-description skeleton-text"></p>
+          <p class="event-description skeleton-text" style="width: 70%;"></p>
+        </div>
+      </article>
+    </div>
     <p class="view-empty" id="tag-empty" hidden>No 2026 events carry this tag.</p>
   </main>
 
@@ -35,6 +52,11 @@
       document.body.dataset.activeNav = 'today';
     }
   </script>
+  <!-- scripts live at the end of the body so the static page paints first -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.108.1/dist/umd/supabase.min.js"></script>
+  <script src="supabaseClient.js"></script>
+  <script src="components.js"></script>
+  <script src="cardthumbs.js"></script>
   <script src="tags2026.js"></script>
 
   <!-- Events loaded dynamically via supabaseClient.js -->

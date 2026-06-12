@@ -1,0 +1,6 @@
+# Images are write-once uploads; let browsers keep them for a week
+/media/*
+  Cache-Control: public, max-age=604800
+
+/visualist-favicon.png
+  Cache-Control: public, max-age=604800

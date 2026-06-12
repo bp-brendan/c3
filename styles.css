@@ -2761,3 +2761,9 @@ body.logged-out .admin-main {
   padding: 0;
   border-radius: 0;
 }
+
+.admin-rich-text {
+  min-height: 150px;
+  background: #fff;
+  color: #000;
+}
