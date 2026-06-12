@@ -1,0 +1,113 @@
+# Archive Audit
+Generated: 2026-06-12T17:12:36.210Z
+- Local archive events: 36095
+- Supabase events: 36128
+- Matched events: 36095
+- Missing from Supabase: 0
+- Supabase-only rows: 162
+- Field mismatches: 481
+## Missing From Supabase
+## Field Mismatches
+- 190780 official_url: local="https://hardreturn.art/monika-niwelinska-1," db="https://hardreturn.art/monika-niwelinska-1, http://www.niwelinska.com"
+- 189354 official_url: local="https://thevisualist.org/allenvandever.com" db="https://thevisualist.org/allenvandever.com Childhoodfractured.com"
+- 185980 official_url: local="http://www.deveningprojects.com" db="http://deveningprojects.com/exhibitions/kitchen-harmonics/"
+- 185980 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2025/12/SSThe-Third-Floor.-Oil-stick-on-Kitakata-paper-brass-rivets-8-x-10-2024.jpg" db="https://thevisualist.org/wp-content/uploads/2025/12/webSean-Sullivan-Basil.-2025-oil-stick-on-Kitakata-paper-8.25-x-10.25-inches.jpg"
+- 185983 official_url: local="http://www.deveningprojects.com" db="http://deveningprojects.com/exhibitions/am-is-are-was-were/"
+- 185983 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2025/12/webWade_am-is-are_03.jpg" db="https://thevisualist.org/wp-content/uploads/2025/12/WEBDETAILWade_am-is-are_04-1.jpg"
+- 185744 official_url: local="https://thevisualist.org/915" db="https://thevisualist.org/915 E 60th St, Chicago, IL 60637"
+- 182249 official_url: local="https://www.chicagofilmsociety.org/calendar/current-season/#hmd," db="https://www.chicagofilmsociety.org/calendar/current-season/#hmd, https://www.chicagofilmarchives.org/calendar/event/home-movie-day-2025/,"
+- 182246 official_url: local="https://www.chicagofilmsociety.org/calendar/current-season/#littleman," db="https://www.chicagofilmsociety.org/calendar/current-season/#littleman, https://filmstudiescenter.uchicago.edu/event/little-man-what-now"
+- 182243 official_url: local="https://www.chicagofilmsociety.org/calendar/current-season/#parents," db="https://www.chicagofilmsociety.org/calendar/current-season/#parents, https://musicboxtheatre.com/films-and-events/parents"
+- 184303 address: local="37 S Wabash Ave, 1st Floor, Chicago, IL 60603" db="37 S Wabash Ave, 1st Fl, Chicago, IL 60603"
+- 184303 official_url: local="https://sites.saic.edu/sitegalleries/exhibition/-let-me-tell-you-all-i-can/" db="https://sites.saic.edu/sitegalleries/exhibition/%e7%9f%a5%e7%84%a1%e4%b8%8d%e8%a8%80-let-me-tell-you-all-i-can/"
+- 184303 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2025/10/1000018995.jpg" db="https://thevisualist.org/wp-content/uploads/2025/10/4838157953597175806.jpg"
+- 182240 official_url: local="https://www.chicagofilmsociety.org/calendar/current-season/#bigscreen," db="https://www.chicagofilmsociety.org/calendar/current-season/#bigscreen, https://musicboxtheatre.com/films-and-events/chris-heathers-16mm-big-screen-blowout-2"
+- 183145 official_url: local="https://musicboxtheatre.com/films-and-events/chris-heathers-16mm-big-screen-blowout-2" db="https://www.chicagofilmsociety.org/calendar/current-season/#bigscreen, https://musicboxtheatre.com/films-and-events/chris-heathers-16mm-big-screen-blowout-2"
+- 183145 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2025/09/5d35mlsA.png" db="https://thevisualist.org/wp-content/uploads/2025/09/Chris-and-Heather-web.jpg"
+- 182231 official_url: local="https://www.chicagofilmsociety.org/calendar/current-season/#cookie," db="https://www.chicagofilmsociety.org/calendar/current-season/#cookie, https://www.siskelfilmcenter.org/cookies-fortune"
+- 182226 official_url: local="https://www.chicagofilmsociety.org/calendar/current-season/#blind," db="https://www.chicagofilmsociety.org/calendar/current-season/#blind, https://musicboxtheatre.com/films-and-events/blind-husbands,"
+- 182333 official_url: local="https://thevisualist.org/222" db="https://thevisualist.org/222 W Merchandise Mart Plaza, Chicago, IL 60654"
+- 180000 official_url: local="https://fromsamira.com/" db="https://fromsamira.com/ "
+- 179599 official_url: local="https://thevisualist.org/touch" db="https://thevisualist.org/touch and accuracy"
+- 178581 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2025/06/della.jpg" db="https://thevisualist.org/wp-content/uploads/2025/06/Span-IntuitArtMuseum-Thumbnail-02-1.png"
+- 177614 address: local="400 S State St, Chicago, IL 60605" db="1854 West North Avenue Chicago, IL 60622"
+- 177614 official_url: local="https://www.chicagoprintersguild.org/" db="https://thevisualist.org/www.chicagoprintersguild.org"
+- 177614 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2025/05/IMG_3866.jpg" db="https://thevisualist.org/wp-content/uploads/2025/05/IMG_3866-1.jpg"
+- 176222 official_url: local="https://thevisualist.org/Henry" db="https://thevisualist.org/Henry Darger: The Room Revealed"
+- 176283 official_url: local="https://thevisualist.org/1102" db="https://thevisualist.org/1102 W 18th St, Chicago, IL 60608"
+- 176286 official_url: local="https://thevisualist.org/THE" db="https://thevisualist.org/THE POETICS OF MOVEMENT & PERFORMANCE FEATURING MAYA ODIM TAITAIXTINA WORKSHOP BY TEMPERANCE AGHAMOHAMMADI MORE INFORMATION poboxcollective.us IG: @poboxcollective workshop @ 6:30PM doors @ 7:30PM reading @ 8PM"
+- 175955 official_url: local="https://thevisualist.org/Potliquor" db="https://thevisualist.org/Potliquor ,Sharon Udoh ,Allen Moore, Ishmael Ali"
+- 173973 official_url: local="https://thevisualist.org/o" db="https://thevisualist.org/o https:/www.eventbrite.com/e/solo-art-exhibition-for-sheri-smith-aka-creme-sheri-tickets-1314442024479?aff=oddtdtcreator"
+- 175070 official_url: local="https://thevisualist.org/This" db="https://thevisualist.org/This event is free and open to the public. Please reserve your ticket here: https:/www.eventbrite.com/e/t..."
+- 170461 official_url: local="https://thevisualist.org/So" db="https://thevisualist.org/So is This / Side Seat Paintings Slides Sound Film (1982 / 1970) So is This / Side Seat Paintings Slides Sound Film (1982 / 1970) still Michael Snow · 49m / 20m · 16mm A film delivered one word at a time, So Is This proceeds at either a maddening or loving speed, depending on your mood. An orgy of reading, or Snow’s consciousness delivered into your skull. Paired with Side Seat Paintings Slides S"
+- 170458 official_url: local="https://thevisualist.org/La" db="https://thevisualist.org/La Région Centrale (1971) La Région Centrale (1971) still Michael Snow · 180m · 16mm A camera fixed to a gyroscopic machine arm is left alone for three hours on a Canadian mountaintop, turning to programmed musical commands. As the camera contorts with and through space, what’s in front of and around it begins to appear. La Région Centrale was rarely screened until new prints were struck in the e"
+- 167021 address: local="2842 W Chicago Ave, Chicago, IL 60622" db="2842 W Chicago Ave Chicago, IL 60622"
+- 167021 official_url: local="https://www.chicagograndgallery.com/?fbclid=PAZXh0bgNhZW0CMTEAAaa0jABYeq98ufFHi4F4dWpygdKSm92VoPmtAuwlPpqv_yRbmKvkKqAcLfI_aem_gr65cvKRq2wpRCG4PQr8oQ" db="https://www.chicagograndgallery.com/opening-receptions/heritage-of-resistance-heavyweight-graphics-of-war"
+- 167021 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2024/10/KRISHOVSKY-700x500_God-Bless_Ink-2024_Day-896.png" db="https://thevisualist.org/wp-content/uploads/2024/10/460826599_17882920419106506_4226935254770075984_n.jpg"
+- 163700 official_url: local="Lecture:" db="Lecture: Adenike Cosgrove on Collecting African Art Today"
+- 163030 official_url: local="http://www.lost" db="http://www.lost artists chicago"
+- 161627 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2024/06/20240615vert-715x1024-1.jpg" db="https://thevisualist.org/wp-content/uploads/2024/06/20240615vert-1431x2048-1.jpg"
+- 160227 address: local="2003 West Fulton Street, Suite 211" db="2003 W Fulton St, Chicago, IL 60612"
+- 160227 official_url: local="https://thevisualist.org/www.latitudechicago.org" db="https://www.latitudechicago.org/"
+- 160227 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2024/05/KenCarl-Post.png" db="https://thevisualist.org/wp-content/uploads/2024/04/NEWWORKSPACE28429.jpg"
+- 159052 official_url: local="https://pilsencommunitybooks.com/events" db="https://pilsencommunitybooks.com/events/33875"
+- 159052 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2024/04/event_image_33875.png" db="https://thevisualist.org/wp-content/uploads/2024/03/m-2.jpg"
+- 157065 address: local="One University Plaza, HSB 201, Springfield, IL 62703" db="One University Plaza Health and Sciences Building, 201, Springfield, IL 62703"
+- 157065 official_url: local="https://www.uis.edu/visual-arts/visual-arts-gallery/upcoming-exhibitions" db="https://www.uis.edu/visual-arts/visual-arts-gallery"
+- 157065 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2024/03/Screenshot-2024-03-01-141459.png" db="https://thevisualist.org/wp-content/uploads/2024/03/Guen-1.jpg"
+- 157343 image_url_basename: local="" db="https://thevisualist.org/wp-content/uploads/2024/03/IMG_3408_480x480.jpg"
+- 156730 official_url: local="https://thevisualist.org/Actions" db="https://thevisualist.org/Actions for the Earth Gallery Talk with Stephanie Smith"
+- 154688 image_url_basename: local="https://thevisualist.org/wp-content/uploads/2024/01/NEF2328-4x5-1.jpg" db="https://thevisualist.org/wp-content/uploads/2024/01/Gallery-discussion-group.jpg"
+- ...431 more
+## Supabase-Only Rows
+- 273e4273-3adf-4fb9-a1d9-eef08d9e3fd0 190927 2026-06-17 BMRC 20th Anniversary Symposium on Black Chicago @ The Regenstein Library, The University of Chicago
+- 85d46629-a36e-4b04-94b4-dfbeece0501b 191060 2026-06-17 Project Cinema: Films for Cabrini-Green @ National Public Housing Museum
+- d06a9b7d-d9fd-4a51-a19c-882d10ebd0aa 190667 2026-06-17 Aurora Film Society present: City Of Hope @ The Venue
+- 95526c61-57c8-4310-8118-19918fb1194f 190590 2026-06-16 Fibers Exhibition @ Side Practice Coffee
+- a22c746b-dc72-4461-a2e7-b162d33aa1f4 190834 2026-06-14 What’s The Story:  Cindy Bernhard, Larissa Borteh, Mark Ottens, Tom Torluemke, and Frank Trankina @ Riverside Arts Center
+- d7b9d5b5-962f-4d03-970c-8c5ea883e785 191018 2026-06-14 Creature Reverie- Artist Talk @ Heaven Gallery
+- 2769f19c-5eab-46e8-b7e1-881966e0813a 190828 2026-06-13 Spectral Psalm activation with Lindsey Dorr-Niro & Marty McConnell @ compound yellow
+- 4867297d-4d12-421b-94d0-5a29c398a03c 191006 2026-06-13 Concrete Age @ Parlour and Ramp
+- 5e6c9771-3d05-49d4-a43f-ef7a672da239 190953 2026-06-13 It’s On Us: A Day of Art and Action @ DuSable Black History Museum and Education Center
+- 6367ea08-5d06-41f6-a656-e7988e895adf 191045 2026-06-13 Figure Drawing Session @ SPACE 01
+- 6720d9d7-fa22-4f40-a72e-d3a08495544f 190702 2026-06-13 Closing Reception for Grey James and Wallace Bowling @ Bert Green Fine Art
+- 6e9d6ae7-326d-4018-a664-bd3fc2e5fb41 190496 2026-06-13 Ensemble Espanol: 50th Anniversary Celebration @ North Shore Center for the Performing Arts in Skokie
+- 84e52189-3664-4959-be79-d77cbb1a51c1 190997 2026-06-13 Old Town Art Fair @ Old Town Art Fair
+- a3d8af46-3f0d-4baa-a642-7ab7b0096b78 190967 2026-06-13 Be Seen, Be Proud @ 6311arts
+- bcf397d5-bc7b-47bf-8af4-0ba6e300d473 191015 2026-06-13 BLOOM: Art of Flowers, Foliage & Fruit Juried Exhibition @ Oak Park Art League
+- ce728e37-4609-4732-b9b3-08787efad8ba 190657 2026-06-13 Josué Esaú:  The Carocal @ boundary
+- 13b2abf3-e770-4afe-b824-ea1bdd621931 190941 2026-06-12 nánwàng de yī tiān @ SHANGHAI SEMINARY
+- 1e0870b5-76d1-4bd9-9d60-9a4c12f671dd 190660 2026-06-12 The Path To Nowhere @ Oliva Gallery
+- 289cbe63-d340-4a57-a038-1c11cdfa3160 190916 2026-06-12 Spudnik Press 19th Birthday Party and Carnival @ Spudnik Press
+- 42ab6f55-6599-4bbb-aed6-a0362d6a38b0 190738 2026-06-12 Helena Celewicz: Fundamentally Human @ Art City
+- 43b60e95-1db1-44ee-a0fb-397fd697dccb 190758 2026-06-12 Creature Reverie @ Heaven Gallery
+- 4daabaa3-42f7-491c-bd9e-9d15e780d42b 191070 2026-06-12 SUMMER SUITE 2026 @ Palette & Chisel Academy Of Fine Arts
+- 5414c49f-a3bf-47c2-9c3c-c44983f97c84 190741 2026-06-12 Carol Schrader: Rising Water Mythical Ships @ Art City
+- 644c37c9-2825-44d0-b5d6-ee7e1aa44f95 190944 2026-06-12 soccer island @ Roman Susan at Berger Park Cultural Center
+- 71cd4ca4-41d0-4d18-9336-68fd245a8a82 190639 2026-06-12 Carol Schrader: Rising Waters, Mythical Ships @ Art City
+- 73112e0f-8dca-4775-b851-59bd54ac3ce2 190831 2026-06-12 Convergence @ ARTRUSS
+- 8345a16e-7647-4266-b927-c7aadb6c1def 190599 2026-06-12 Chicago Alliance of Visual Artists Small Works Exhibition 2026 @ Elmhurst Artists Guild Gallery at the Elmhurst Art Museum
+- 9094e9ba-63d3-4310-8a6e-e41ecf7f8681 191048 2026-06-12 The Soccer Show: A Celebration of The World Cup @ Elise Seigenthaler Gallery
+- a8a02caa-0c42-4935-b041-5a485423a32b 190502 2026-06-12 SUMMER SUITE 2026 @ PALETTE & CHISEL ACADEMY OF FINE ARTS
+- b00fa283-a71b-4264-99cb-15c3d2265f3a 191000 2026-06-12 Relating to or Resembling a Degree of Disorder @ Heaven Gallery
+- 616493ad-395e-4fa6-8d9a-2167e676275b 190849 2026-06-11 Convergence @ ARTRUSS
+- 621825a4-5bf6-445a-9b86-515c5bc4af79 191024 2026-06-11 “Speak the Unhearable”: A Performance with Noa Micaela Fields and Nat Pyper @ Wrightwood 659
+- e23d7b8b-188b-4df9-891b-9f9b16bfc7a3 190777 2026-06-11 Vibrance @ Forum 301
+- c1f72a68-cc86-44d8-bea4-fd73fb760d50 (no legacy id) 2025-12-07 Sean Sullivan: Kitchen Harmonics @ Devening Projects
+- ee95b712-e9b6-4445-b622-a7d9fd58a894 (no legacy id) 2025-12-07 Allison Wade: am is are was were @ Devening Projects
+- f43832b7-0135-42a1-a23b-0864d0884a0e (no legacy id) 2025-10-17 知無不言: Let Me Tell You All I Can @ SITE Sharp Gallery
+- cc92f30b-47a7-4e53-b725-5c83729f4e69 (no legacy id) 2025-09-23 The Chicago Film Society Presents: Chris + Heather’s Big Screen Blowout #2 on 16mm @ Music Box Theatre
+- 15d8ade9-a411-4000-9041-9f373d5c8230 (no legacy id) 2025-06-19 Artist Talk: Della Wells @ Intuit Art Museum
+- f8aaaf0d-6809-45a6-9acd-b31c85dcc43c (no legacy id) 2025-05-30 All for print. Print for all. Archiving 16 Years of the Chicago Printers Guild. @ Harold Washington Library
+- 70ab4b4a-fd0f-4170-b6b9-81c9384ae41d (no legacy id) 2024-10-06 Dmytro Krishovsky: Heritage of Resistance: Heavyweight Graphics of War @ Chicago Grand Gallery
+- 97dc86e9-bcb1-44be-a6ae-82f4a876f923 (no legacy id) 2024-06-15 Donny Mahlmeister, Todd Mattei, Harris/Ali @ Tritriangle
+- e133b93b-c0af-4574-b2f5-c164272f7114 (no legacy id) 2024-04-28 Reflections of a Young Woman: Photographs from the Archive of Shigeko Kumamoto @ Latitude Chicago
+- f4d157c6-a511-4980-9b3b-14d6b273610e (no legacy id) 2024-04-17 SHORT WAR with Lily Meyer and Amanda Goldblatt @ Pilsen Community Books
+- a8f03798-b096-4530-963c-382a32b34638 (no legacy id) 2024-03-27 Guen Montgomery: Junk Drawer @ UIS Visual Arts Gallery
+- 62de4a91-09d1-4684-8423-1b6577ce7e89 (no legacy id) 2024-03-08 Maria Laureno: Landscape of Moments @ A Very Serious Gallery
+- e8f5dd20-30ac-4256-839e-e0a2e33eceb6 (no legacy id) 2024-01-13 The REAL Black History Series @ Urban Art Retreat
+- cb31fe2f-95f8-4229-a890-beac0d705212 (no legacy id) 2023-12-11 EUNIC Chicago Ukrainian Film Series: Inner Wars @ Goethe-Institut Chicago
+- 8e94e91a-866b-40a5-8580-e669f8a26ca1 (no legacy id) 2023-11-03 Natani Notah: Thoughts on Being Thrown @ DOCUMENT
+- c76fa3da-a116-4fc8-9aab-aed9aa8315ce (no legacy id) 2023-06-29 Housing Justice in Chicago Today: Arts & Activism @ Green Line Performing Arts Center
+- e9bb8ad7-d1d8-4fb2-82cd-bdd7c5c542c6 (no legacy id) 2023-05-26 Poetry off the Shelf: CM Burroughs, Camille Roy & Syd Staiti @ PO BOX Collective
+- ...112 more

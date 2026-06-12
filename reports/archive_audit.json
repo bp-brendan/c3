@@ -1,0 +1,4385 @@
+{
+  "generatedAt": "2026-06-12T17:12:36.210Z",
+  "localEventsPath": "/Users/brendan/Documents/visualist/data/processed/events.ndjson",
+  "liveSample": 3,
+  "counts": {
+    "localEvents": 36095,
+    "dbEvents": 36128,
+    "matched": 36095,
+    "missing": 0,
+    "dbOnly": 162,
+    "mismatches": 481
+  },
+  "missing": [],
+  "dbOnly": [
+    {
+      "id": "273e4273-3adf-4fb9-a1d9-eef08d9e3fd0",
+      "legacyId": "190927",
+      "title": "BMRC 20th Anniversary Symposium on Black Chicago",
+      "eventDate": "2026-06-17",
+      "venue": "The Regenstein Library, The University of Chicago",
+      "permalink": "https://thevisualist.org/?p=190927",
+      "path": "events/2026-06-17-190927-bmrc-20th-anniversary-symposium-on-black-chicago.html"
+    },
+    {
+      "id": "85d46629-a36e-4b04-94b4-dfbeece0501b",
+      "legacyId": "191060",
+      "title": "Project Cinema: Films for Cabrini-Green",
+      "eventDate": "2026-06-17",
+      "venue": "National Public Housing Museum",
+      "permalink": "https://thevisualist.org/?p=191060",
+      "path": "events/2026-06-17-191060-project-cinema-films-for-cabrini-green.html"
+    },
+    {
+      "id": "d06a9b7d-d9fd-4a51-a19c-882d10ebd0aa",
+      "legacyId": "190667",
+      "title": "Aurora Film Society present: City Of Hope",
+      "eventDate": "2026-06-17",
+      "venue": "The Venue",
+      "permalink": "https://thevisualist.org/?p=190667",
+      "path": "events/2026-06-17-190667-aurora-film-society-present-city-of-hope.html"
+    },
+    {
+      "id": "95526c61-57c8-4310-8118-19918fb1194f",
+      "legacyId": "190590",
+      "title": "Fibers Exhibition",
+      "eventDate": "2026-06-16",
+      "venue": "Side Practice Coffee",
+      "permalink": "https://thevisualist.org/?p=190590",
+      "path": "events/2026-06-16-190590-fibers-exhibition.html"
+    },
+    {
+      "id": "a22c746b-dc72-4461-a2e7-b162d33aa1f4",
+      "legacyId": "190834",
+      "title": "What’s The Story:  Cindy Bernhard, Larissa Borteh, Mark Ottens, Tom Torluemke, and Frank Trankina",
+      "eventDate": "2026-06-14",
+      "venue": "Riverside Arts Center",
+      "permalink": "https://thevisualist.org/?p=190834",
+      "path": "events/2026-06-14-190834-whats-the-story-cindy-bernhard-larissa-borteh-mark-ottens-tom-torluemke-and-frank-trankina.html"
+    },
+    {
+      "id": "d7b9d5b5-962f-4d03-970c-8c5ea883e785",
+      "legacyId": "191018",
+      "title": "Creature Reverie- Artist Talk",
+      "eventDate": "2026-06-14",
+      "venue": "Heaven Gallery",
+      "permalink": "https://thevisualist.org/?p=191018",
+      "path": "events/2026-06-14-191018-creature-reverie-artist-talk.html"
+    },
+    {
+      "id": "2769f19c-5eab-46e8-b7e1-881966e0813a",
+      "legacyId": "190828",
+      "title": "Spectral Psalm activation with Lindsey Dorr-Niro & Marty McConnell",
+      "eventDate": "2026-06-13",
+      "venue": "compound yellow",
+      "permalink": "https://thevisualist.org/?p=190828",
+      "path": "events/2026-06-13-190828-spectral-psalm-activation-with-lindsey-dorr-niro-marty-mcconnell.html"
+    },
+    {
+      "id": "4867297d-4d12-421b-94d0-5a29c398a03c",
+      "legacyId": "191006",
+      "title": "Concrete Age",
+      "eventDate": "2026-06-13",
+      "venue": "Parlour and Ramp",
+      "permalink": "https://thevisualist.org/?p=191006",
+      "path": "events/2026-06-13-191006-concrete-age.html"
+    },
+    {
+      "id": "5e6c9771-3d05-49d4-a43f-ef7a672da239",
+      "legacyId": "190953",
+      "title": "It’s On Us: A Day of Art and Action",
+      "eventDate": "2026-06-13",
+      "venue": "DuSable Black History Museum and Education Center",
+      "permalink": "https://thevisualist.org/?p=190953",
+      "path": "events/2026-06-13-190953-its-on-us-a-day-of-art-and-action.html"
+    },
+    {
+      "id": "6367ea08-5d06-41f6-a656-e7988e895adf",
+      "legacyId": "191045",
+      "title": "Figure Drawing Session",
+      "eventDate": "2026-06-13",
+      "venue": "SPACE 01",
+      "permalink": "https://thevisualist.org/?p=191045",
+      "path": "events/2026-06-13-191045-figure-drawing-session.html"
+    },
+    {
+      "id": "6720d9d7-fa22-4f40-a72e-d3a08495544f",
+      "legacyId": "190702",
+      "title": "Closing Reception for Grey James and Wallace Bowling",
+      "eventDate": "2026-06-13",
+      "venue": "Bert Green Fine Art",
+      "permalink": "https://thevisualist.org/?p=190702",
+      "path": "events/2026-06-13-190702-closing-reception-for-grey-james-and-wallace-bowling.html"
+    },
+    {
+      "id": "6e9d6ae7-326d-4018-a664-bd3fc2e5fb41",
+      "legacyId": "190496",
+      "title": "Ensemble Espanol: 50th Anniversary Celebration",
+      "eventDate": "2026-06-13",
+      "venue": "North Shore Center for the Performing Arts in Skokie",
+      "permalink": "https://thevisualist.org/?p=190496",
+      "path": "events/2026-06-13-190496-ensemble-espanol-50th-anniversary-celebration.html"
+    },
+    {
+      "id": "84e52189-3664-4959-be79-d77cbb1a51c1",
+      "legacyId": "190997",
+      "title": "Old Town Art Fair",
+      "eventDate": "2026-06-13",
+      "venue": "Old Town Art Fair",
+      "permalink": "https://thevisualist.org/?p=190997",
+      "path": "events/2026-06-13-190997-old-town-art-fair.html"
+    },
+    {
+      "id": "a3d8af46-3f0d-4baa-a642-7ab7b0096b78",
+      "legacyId": "190967",
+      "title": "Be Seen, Be Proud",
+      "eventDate": "2026-06-13",
+      "venue": "6311arts",
+      "permalink": "https://thevisualist.org/?p=190967",
+      "path": "events/2026-06-13-190967-be-seen-be-proud.html"
+    },
+    {
+      "id": "bcf397d5-bc7b-47bf-8af4-0ba6e300d473",
+      "legacyId": "191015",
+      "title": "BLOOM: Art of Flowers, Foliage & Fruit Juried Exhibition",
+      "eventDate": "2026-06-13",
+      "venue": "Oak Park Art League",
+      "permalink": "https://thevisualist.org/?p=191015",
+      "path": "events/2026-06-13-191015-bloom-art-of-flowers-foliage-fruit-juried-exhibition.html"
+    },
+    {
+      "id": "ce728e37-4609-4732-b9b3-08787efad8ba",
+      "legacyId": "190657",
+      "title": "Josué Esaú:  The Carocal",
+      "eventDate": "2026-06-13",
+      "venue": "boundary",
+      "permalink": "https://thevisualist.org/?p=190657",
+      "path": "events/2026-06-13-190657-josue-esau-the-carocal.html"
+    },
+    {
+      "id": "13b2abf3-e770-4afe-b824-ea1bdd621931",
+      "legacyId": "190941",
+      "title": "nánwàng de yī tiān",
+      "eventDate": "2026-06-12",
+      "venue": "SHANGHAI SEMINARY",
+      "permalink": "https://thevisualist.org/?p=190941",
+      "path": "events/2026-06-12-190941-nanwang-de-yi-tian.html"
+    },
+    {
+      "id": "1e0870b5-76d1-4bd9-9d60-9a4c12f671dd",
+      "legacyId": "190660",
+      "title": "The Path To Nowhere",
+      "eventDate": "2026-06-12",
+      "venue": "Oliva Gallery",
+      "permalink": "https://thevisualist.org/?p=190660",
+      "path": "events/2026-06-12-190660-the-path-to-nowhere.html"
+    },
+    {
+      "id": "289cbe63-d340-4a57-a038-1c11cdfa3160",
+      "legacyId": "190916",
+      "title": "Spudnik Press 19th Birthday Party and Carnival",
+      "eventDate": "2026-06-12",
+      "venue": "Spudnik Press",
+      "permalink": "https://thevisualist.org/?p=190916",
+      "path": "events/2026-06-12-190916-spudnik-press-19th-birthday-party-and-carnival.html"
+    },
+    {
+      "id": "42ab6f55-6599-4bbb-aed6-a0362d6a38b0",
+      "legacyId": "190738",
+      "title": "Helena Celewicz: Fundamentally Human",
+      "eventDate": "2026-06-12",
+      "venue": "Art City",
+      "permalink": "https://thevisualist.org/?p=190738",
+      "path": "events/2026-06-12-190738-helena-celewicz-fundamentally-human.html"
+    },
+    {
+      "id": "43b60e95-1db1-44ee-a0fb-397fd697dccb",
+      "legacyId": "190758",
+      "title": "Creature Reverie",
+      "eventDate": "2026-06-12",
+      "venue": "Heaven Gallery",
+      "permalink": "https://thevisualist.org/?p=190758",
+      "path": "events/2026-06-12-190758-creature-reverie.html"
+    },
+    {
+      "id": "4daabaa3-42f7-491c-bd9e-9d15e780d42b",
+      "legacyId": "191070",
+      "title": "SUMMER SUITE 2026",
+      "eventDate": "2026-06-12",
+      "venue": "Palette & Chisel Academy Of Fine Arts",
+      "permalink": "https://thevisualist.org/?p=191070",
+      "path": "events/2026-06-12-191070-summer-suite-2026.html"
+    },
+    {
+      "id": "5414c49f-a3bf-47c2-9c3c-c44983f97c84",
+      "legacyId": "190741",
+      "title": "Carol Schrader: Rising Water Mythical Ships",
+      "eventDate": "2026-06-12",
+      "venue": "Art City",
+      "permalink": "https://thevisualist.org/?p=190741",
+      "path": "events/2026-06-12-190741-carol-schrader-rising-water-mythical-ships.html"
+    },
+    {
+      "id": "644c37c9-2825-44d0-b5d6-ee7e1aa44f95",
+      "legacyId": "190944",
+      "title": "soccer island",
+      "eventDate": "2026-06-12",
+      "venue": "Roman Susan at Berger Park Cultural Center",
+      "permalink": "https://thevisualist.org/?p=190944",
+      "path": "events/2026-06-12-190944-soccer-island.html"
+    },
+    {
+      "id": "71cd4ca4-41d0-4d18-9336-68fd245a8a82",
+      "legacyId": "190639",
+      "title": "Carol Schrader: Rising Waters, Mythical Ships",
+      "eventDate": "2026-06-12",
+      "venue": "Art City",
+      "permalink": "https://thevisualist.org/?p=190639",
+      "path": "events/2026-06-12-190639-carol-schrader-rising-waters-mythical-ships.html"
+    },
+    {
+      "id": "73112e0f-8dca-4775-b851-59bd54ac3ce2",
+      "legacyId": "190831",
+      "title": "Convergence",
+      "eventDate": "2026-06-12",
+      "venue": "ARTRUSS",
+      "permalink": "https://thevisualist.org/?p=190831",
+      "path": "events/2026-06-12-190831-convergence.html"
+    },
+    {
+      "id": "8345a16e-7647-4266-b927-c7aadb6c1def",
+      "legacyId": "190599",
+      "title": "Chicago Alliance of Visual Artists Small Works Exhibition 2026",
+      "eventDate": "2026-06-12",
+      "venue": "Elmhurst Artists Guild Gallery at the Elmhurst Art Museum",
+      "permalink": "https://thevisualist.org/?p=190599",
+      "path": "events/2026-06-12-190599-chicago-alliance-of-visual-artists-small-works-exhibition-2026.html"
+    },
+    {
+      "id": "9094e9ba-63d3-4310-8a6e-e41ecf7f8681",
+      "legacyId": "191048",
+      "title": "The Soccer Show: A Celebration of The World Cup",
+      "eventDate": "2026-06-12",
+      "venue": "Elise Seigenthaler Gallery",
+      "permalink": "https://thevisualist.org/?p=191048",
+      "path": "events/2026-06-12-191048-the-soccer-show-a-celebration-of-the-world-cup.html"
+    },
+    {
+      "id": "a8a02caa-0c42-4935-b041-5a485423a32b",
+      "legacyId": "190502",
+      "title": "SUMMER SUITE 2026",
+      "eventDate": "2026-06-12",
+      "venue": "PALETTE & CHISEL ACADEMY OF FINE ARTS",
+      "permalink": "https://thevisualist.org/?p=190502",
+      "path": "events/2026-06-12-190502-summer-suite-2026.html"
+    },
+    {
+      "id": "b00fa283-a71b-4264-99cb-15c3d2265f3a",
+      "legacyId": "191000",
+      "title": "Relating to or Resembling a Degree of Disorder",
+      "eventDate": "2026-06-12",
+      "venue": "Heaven Gallery",
+      "permalink": "https://thevisualist.org/?p=191000",
+      "path": "events/2026-06-12-191000-relating-to-or-resembling-a-degree-of-disorder.html"
+    },
+    {
+      "id": "616493ad-395e-4fa6-8d9a-2167e676275b",
+      "legacyId": "190849",
+      "title": "Convergence",
+      "eventDate": "2026-06-11",
+      "venue": "ARTRUSS",
+      "permalink": "https://thevisualist.org/?p=190849",
+      "path": "events/2026-06-11-190849-convergence.html"
+    },
+    {
+      "id": "621825a4-5bf6-445a-9b86-515c5bc4af79",
+      "legacyId": "191024",
+      "title": "“Speak the Unhearable”: A Performance with Noa Micaela Fields and Nat Pyper",
+      "eventDate": "2026-06-11",
+      "venue": "Wrightwood 659",
+      "permalink": "https://thevisualist.org/?p=191024",
+      "path": "events/2026-06-11-191024-speak-the-unhearable-a-performance-with-noa-micaela-fields-and-nat-pyper.html"
+    },
+    {
+      "id": "e23d7b8b-188b-4df9-891b-9f9b16bfc7a3",
+      "legacyId": "190777",
+      "title": "Vibrance",
+      "eventDate": "2026-06-11",
+      "venue": "Forum 301",
+      "permalink": "https://thevisualist.org/?p=190777",
+      "path": "events/2026-06-11-190777-vibrance.html"
+    },
+    {
+      "id": "c1f72a68-cc86-44d8-bea4-fd73fb760d50",
+      "legacyId": "",
+      "title": "Sean Sullivan: Kitchen Harmonics",
+      "eventDate": "2025-12-07",
+      "venue": "Devening Projects",
+      "permalink": "https://thevisualist.org/2025/12/sean-sullivan-kitchen-harmonics-2/",
+      "path": "sean-sullivan-kitchen-harmonics-2"
+    },
+    {
+      "id": "ee95b712-e9b6-4445-b622-a7d9fd58a894",
+      "legacyId": "",
+      "title": "Allison Wade: am is are was were",
+      "eventDate": "2025-12-07",
+      "venue": "Devening Projects",
+      "permalink": "https://thevisualist.org/2025/12/allison-wade-am-is-are-was-were-2/",
+      "path": "allison-wade-am-is-are-was-were-2"
+    },
+    {
+      "id": "f43832b7-0135-42a1-a23b-0864d0884a0e",
+      "legacyId": "",
+      "title": "知無不言: Let Me Tell You All I Can",
+      "eventDate": "2025-10-17",
+      "venue": "SITE Sharp Gallery",
+      "permalink": "https://thevisualist.org/2025/10/知無不言-let-me-tell-you-all-i-can-2/",
+      "path": "%e7%9f%a5%e7%84%a1%e4%b8%8d%e8%a8%80-let-me-tell-you-all-i-can-2"
+    },
+    {
+      "id": "cc92f30b-47a7-4e53-b725-5c83729f4e69",
+      "legacyId": "",
+      "title": "The Chicago Film Society Presents: Chris + Heather’s Big Screen Blowout #2 on 16mm",
+      "eventDate": "2025-09-23",
+      "venue": "Music Box Theatre",
+      "permalink": "https://thevisualist.org/2025/09/the-chicago-film-society-presents-chris-heathers-big-screen-blowout-2-on-16mm-2/",
+      "path": "the-chicago-film-society-presents-chris-heathers-big-screen-blowout-2-on-16mm-2"
+    },
+    {
+      "id": "15d8ade9-a411-4000-9041-9f373d5c8230",
+      "legacyId": "",
+      "title": "Artist Talk: Della Wells",
+      "eventDate": "2025-06-19",
+      "venue": "Intuit Art Museum",
+      "permalink": "https://thevisualist.org/2025/06/artist-talk-della-wells/",
+      "path": "artist-talk-della-wells"
+    },
+    {
+      "id": "f8aaaf0d-6809-45a6-9acd-b31c85dcc43c",
+      "legacyId": "",
+      "title": "All for print. Print for all. Archiving 16 Years of the Chicago Printers Guild.",
+      "eventDate": "2025-05-30",
+      "venue": "Harold Washington Library",
+      "permalink": "https://thevisualist.org/2025/05/all-for-print-print-for-all-archiving-16-years-of-the-chicago-printers-guild/",
+      "path": "all-for-print-print-for-all-archiving-16-years-of-the-chicago-printers-guild"
+    },
+    {
+      "id": "70ab4b4a-fd0f-4170-b6b9-81c9384ae41d",
+      "legacyId": "",
+      "title": "Dmytro Krishovsky: Heritage of Resistance: Heavyweight Graphics of War",
+      "eventDate": "2024-10-06",
+      "venue": "Chicago Grand Gallery",
+      "permalink": "https://thevisualist.org/2024/10/dmytro-krishovsky-heritage-of-resistance-heavyweight-graphics-of-war-2/",
+      "path": "dmytro-krishovsky-heritage-of-resistance-heavyweight-graphics-of-war-2"
+    },
+    {
+      "id": "97dc86e9-bcb1-44be-a6ae-82f4a876f923",
+      "legacyId": "",
+      "title": "Donny Mahlmeister, Todd Mattei, Harris/Ali",
+      "eventDate": "2024-06-15",
+      "venue": "Tritriangle",
+      "permalink": "https://thevisualist.org/2024/06/donny-mahlmeister-todd-mattei-harris-ali/",
+      "path": "donny-mahlmeister-todd-mattei-harris-ali"
+    },
+    {
+      "id": "e133b93b-c0af-4574-b2f5-c164272f7114",
+      "legacyId": "",
+      "title": "Reflections of a Young Woman: Photographs from the Archive of Shigeko Kumamoto",
+      "eventDate": "2024-04-28",
+      "venue": "Latitude Chicago",
+      "permalink": "https://thevisualist.org/2024/04/reflections-of-a-young-woman-photographs-from-the-archive-of-shigeko-kumamoto-2/",
+      "path": "reflections-of-a-young-woman-photographs-from-the-archive-of-shigeko-kumamoto-2"
+    },
+    {
+      "id": "f4d157c6-a511-4980-9b3b-14d6b273610e",
+      "legacyId": "",
+      "title": "SHORT WAR with Lily Meyer and Amanda Goldblatt",
+      "eventDate": "2024-04-17",
+      "venue": "Pilsen Community Books",
+      "permalink": "https://thevisualist.org/2024/04/short-war-with-lily-meyer-and-amanda-goldblatt-2/",
+      "path": "short-war-with-lily-meyer-and-amanda-goldblatt-2"
+    },
+    {
+      "id": "a8f03798-b096-4530-963c-382a32b34638",
+      "legacyId": "",
+      "title": "Guen Montgomery: Junk Drawer",
+      "eventDate": "2024-03-27",
+      "venue": "UIS Visual Arts Gallery",
+      "permalink": "https://thevisualist.org/2024/03/guen-montgomery-junk-drawer/",
+      "path": "guen-montgomery-junk-drawer"
+    },
+    {
+      "id": "62de4a91-09d1-4684-8423-1b6577ce7e89",
+      "legacyId": "",
+      "title": "Maria Laureno: Landscape of Moments",
+      "eventDate": "2024-03-08",
+      "venue": "A Very Serious Gallery",
+      "permalink": "https://thevisualist.org/2024/03/maria-laureno-landscape-of-moments-2/",
+      "path": "maria-laureno-landscape-of-moments-2"
+    },
+    {
+      "id": "e8f5dd20-30ac-4256-839e-e0a2e33eceb6",
+      "legacyId": "",
+      "title": "The REAL Black History Series",
+      "eventDate": "2024-01-13",
+      "venue": "Urban Art Retreat",
+      "permalink": "https://thevisualist.org/2024/01/the-real-black-history-series/",
+      "path": "the-real-black-history-series"
+    },
+    {
+      "id": "cb31fe2f-95f8-4229-a890-beac0d705212",
+      "legacyId": "",
+      "title": "EUNIC Chicago Ukrainian Film Series: Inner Wars",
+      "eventDate": "2023-12-11",
+      "venue": "Goethe-Institut Chicago",
+      "permalink": "https://thevisualist.org/2023/12/eunic-chicago-ukrainian-film-series-inner-wars/",
+      "path": "eunic-chicago-ukrainian-film-series-inner-wars"
+    },
+    {
+      "id": "8e94e91a-866b-40a5-8580-e669f8a26ca1",
+      "legacyId": "",
+      "title": "Natani Notah: Thoughts on Being Thrown",
+      "eventDate": "2023-11-03",
+      "venue": "DOCUMENT",
+      "permalink": "https://thevisualist.org/2023/11/natani-notah-thoughts-on-being-thrown/",
+      "path": "natani-notah-thoughts-on-being-thrown"
+    },
+    {
+      "id": "c76fa3da-a116-4fc8-9aab-aed9aa8315ce",
+      "legacyId": "",
+      "title": "Housing Justice in Chicago Today: Arts & Activism",
+      "eventDate": "2023-06-29",
+      "venue": "Green Line Performing Arts Center",
+      "permalink": "https://thevisualist.org/2023/06/housing-justice-in-chicago-today-arts-activism-2/",
+      "path": "housing-justice-in-chicago-today-arts-activism-2"
+    },
+    {
+      "id": "e9bb8ad7-d1d8-4fb2-82cd-bdd7c5c542c6",
+      "legacyId": "",
+      "title": "Poetry off the Shelf: CM Burroughs, Camille Roy & Syd Staiti",
+      "eventDate": "2023-05-26",
+      "venue": "PO BOX Collective",
+      "permalink": "https://thevisualist.org/2023/05/poetry-off-the-shelf-cm-burroughs-camille-roy-syd-staiti/",
+      "path": "poetry-off-the-shelf-cm-burroughs-camille-roy-syd-staiti"
+    },
+    {
+      "id": "b96fdbf0-1902-45a4-8974-47e55cd678b5",
+      "legacyId": "",
+      "title": "Mind Mirage, Lula Asplund, nunn, Courtesy",
+      "eventDate": "2023-04-27",
+      "venue": "Tritriangle",
+      "permalink": "https://thevisualist.org/2023/04/mind-mirage-lula-asplund-nunn-courtesy-2/",
+      "path": "mind-mirage-lula-asplund-nunn-courtesy-2"
+    },
+    {
+      "id": "9f3f1311-145f-4cd8-9e2c-e5237d1982fd",
+      "legacyId": "",
+      "title": "In-Session | In Reciprocity: Reclaiming Narratives of Care",
+      "eventDate": "2023-04-19",
+      "venue": "Honeycomb Network",
+      "permalink": "https://thevisualist.org/2023/04/in-session-in-reciprocity-reclaiming-narratives-of-care-2/",
+      "path": "in-session-in-reciprocity-reclaiming-narratives-of-care-2"
+    },
+    {
+      "id": "d211559e-bd59-455a-9b92-a880ac271549",
+      "legacyId": "",
+      "title": "Talk | Access Praxis: Cripistemology and the Arts",
+      "eventDate": "2023-04-18",
+      "venue": "Museum of Contemporary Art Chicago",
+      "permalink": "https://thevisualist.org/2023/04/talk-access-praxis-cripistemology-and-the-arts/",
+      "path": "talk-access-praxis-cripistemology-and-the-arts"
+    },
+    {
+      "id": "358a7cc1-a2c3-466d-997c-e8264d1b4620",
+      "legacyId": "",
+      "title": "o_Man! and the Legacy of Curation",
+      "eventDate": "2023-04-15",
+      "venue": "21c Museum Hotel Chicago",
+      "permalink": "https://thevisualist.org/2023/04/o_man-and-the-legacy-of-curation-2/",
+      "path": "o_man-and-the-legacy-of-curation-2"
+    },
+    {
+      "id": "ed6a7263-64b0-40c7-9c35-9ac4c8dcb14e",
+      "legacyId": "",
+      "title": "Art for the Future: Artists Call and Central American Solidarities",
+      "eventDate": "2023-03-23",
+      "venue": "DePaul Art Museum",
+      "permalink": "https://thevisualist.org/2023/03/art-for-the-future-artists-call-and-central-american-solidarities/",
+      "path": "art-for-the-future-artists-call-and-central-american-solidarities"
+    },
+    {
+      "id": "fa689e94-e6c8-4546-90a7-5215d7d0244f",
+      "legacyId": "",
+      "title": "They have to seek it out",
+      "eventDate": "2023-02-18",
+      "venue": "Patient Info",
+      "permalink": "https://thevisualist.org/2023/02/they-have-to-seek-it-out/",
+      "path": "they-have-to-seek-it-out"
+    },
+    {
+      "id": "424726d7-4719-4092-b246-71f2260255e0",
+      "legacyId": "",
+      "title": "Left Unsaid: A Sound, Scent, Taste, and Sight Interchange",
+      "eventDate": "2023-02-10",
+      "venue": "ALMA Art and Interiors",
+      "permalink": "https://thevisualist.org/2023/02/left-unsaid-a-sound-scent-taste-and-sight-interchange/",
+      "path": "left-unsaid-a-sound-scent-taste-and-sight-interchange"
+    },
+    {
+      "id": "b06a062d-9bb6-4e0f-a6a8-8d3ad4c916fe",
+      "legacyId": "",
+      "title": "William Schaeuble: Inside Games, Outside Games",
+      "eventDate": "2022-08-05",
+      "venue": "Povos Chicago",
+      "permalink": "https://thevisualist.org/2022/08/william-schaeuble-inside-games-outside-games/",
+      "path": "william-schaeuble-inside-games-outside-games"
+    },
+    {
+      "id": "dc4122fb-b1b4-49e5-8162-2dafbf4951dc",
+      "legacyId": "",
+      "title": "Damiane Nickles: Pass With Care",
+      "eventDate": "2022-06-11",
+      "venue": "The Martin",
+      "permalink": "https://thevisualist.org/2022/06/damiane-nickles-pass-with-care-2/",
+      "path": "damiane-nickles-pass-with-care-2"
+    },
+    {
+      "id": "3ab0413f-5846-4d77-aa03-1977d8fb31be",
+      "legacyId": "",
+      "title": "HOOKING UP: MEET THE COLLECTION",
+      "eventDate": "2022-06-04",
+      "venue": "Cleve Carney Museum of Art",
+      "permalink": "https://thevisualist.org/2022/06/hooking-up-meet-the-collection/",
+      "path": "hooking-up-meet-the-collection"
+    },
+    {
+      "id": "87297cdb-9209-4e3f-8aa1-d1604755392c",
+      "legacyId": "",
+      "title": "Cecil McDonald, Jr.: The Making Mask",
+      "eventDate": "2022-05-20",
+      "venue": "Epiphany Center for the Arts",
+      "permalink": "https://thevisualist.org/2022/05/cecil-mcdonald-jr-the-making-mask/",
+      "path": "cecil-mcdonald-jr-the-making-mask"
+    },
+    {
+      "id": "d7273989-3858-436d-99d2-cb617da07628",
+      "legacyId": "",
+      "title": "Meet the Artist: Weiyang Gao",
+      "eventDate": "2022-03-19",
+      "venue": "Mu Gallery Chicago",
+      "permalink": "https://thevisualist.org/2022/03/meet-the-artist-weiyang-gao-2/",
+      "path": "meet-the-artist-weiyang-gao-2"
+    },
+    {
+      "id": "fdcda708-3af0-42a5-af59-8eb3765e5f8a",
+      "legacyId": "",
+      "title": "Crossings: Mapping American Journeys",
+      "eventDate": "2022-02-25",
+      "venue": "Newberry Library",
+      "permalink": "https://thevisualist.org/2022/02/crossings-mapping-american-journeys/",
+      "path": "crossings-mapping-american-journeys"
+    },
+    {
+      "id": "77dbd32d-dd8d-4997-a686-9b8c8e295f0f",
+      "legacyId": "",
+      "title": "Vida Sačić: Press and Clay",
+      "eventDate": "2021-10-25",
+      "venue": "Robert F. DiCaprio Art Gallery at Moraine Valley Community College",
+      "permalink": "https://thevisualist.org/2021/10/vida-sacic-press-and-clay-2/",
+      "path": "vida-sacic-press-and-clay-2"
+    },
+    {
+      "id": "420ca74d-937a-4379-8564-0793282ecf8f",
+      "legacyId": "",
+      "title": "Juan Arango Palacios: Payasadas",
+      "eventDate": "2021-05-07",
+      "venue": "Epiphany Center for the Arts",
+      "permalink": "https://thevisualist.org/2021/05/juan-arango-palacios-payasadas-2/",
+      "path": "juan-arango-palacios-payasadas-2"
+    },
+    {
+      "id": "64559e2c-a37b-4a05-9626-d1df0eb39f6c",
+      "legacyId": "",
+      "title": "Zine Club Chicago Online: Zine Bingo Edition",
+      "eventDate": "2021-04-20",
+      "venue": "Quimby's Bookstore",
+      "permalink": "https://thevisualist.org/2021/04/zine-club-chicago-online-zine-bingo-edition-2/",
+      "path": "zine-club-chicago-online-zine-bingo-edition-2"
+    },
+    {
+      "id": "a68d016f-08dd-4329-96f2-5e57dded4cb2",
+      "legacyId": "",
+      "title": "Art After Work: Sister Gertrude Morgan",
+      "eventDate": "2021-04-15",
+      "venue": "Intuit: The Center for Intuitive and Outsider Art",
+      "permalink": "https://thevisualist.org/2021/04/art-after-work-sister-gertrude-morgan/",
+      "path": "art-after-work-sister-gertrude-morgan"
+    },
+    {
+      "id": "7d79b1f2-4230-45ed-8c58-8c045ecd30a8",
+      "legacyId": "",
+      "title": "Teaching Methods in the Virtual Museum",
+      "eventDate": "2021-01-21",
+      "venue": "Smart Museum of Art",
+      "permalink": "https://thevisualist.org/2021/01/teaching-methods-in-the-virtual-museum-2/",
+      "path": "teaching-methods-in-the-virtual-museum-2"
+    },
+    {
+      "id": "f46a5951-8f90-460b-8981-51b212ee4ae5",
+      "legacyId": "",
+      "title": "Michael Joo: Michael Joo",
+      "eventDate": "2021-01-14",
+      "venue": "Kavi Gupta Gallery",
+      "permalink": "https://thevisualist.org/2021/01/michael-joo-michael-joo-2/",
+      "path": "michael-joo-michael-joo-2"
+    },
+    {
+      "id": "c897ca0c-1fe0-4fba-be4b-fad5391d0bfb",
+      "legacyId": "",
+      "title": "Anthony Iacuzzi: Polytonal: A Visual Monograph of Chicago Architecture",
+      "eventDate": "2020-10-30",
+      "venue": "Perspective Gallery",
+      "permalink": "https://thevisualist.org/2020/10/anthony-iacuzzi-polytonal-a-visual-monograph-of-chicago-architecture/",
+      "path": "anthony-iacuzzi-polytonal-a-visual-monograph-of-chicago-architecture"
+    },
+    {
+      "id": "c03f8e4f-4ea3-4fa8-a13a-d86c3ea76031",
+      "legacyId": "",
+      "title": "Club de Lectura #1: Las cosas que perdimos en el fuego",
+      "eventDate": "2020-10-29",
+      "venue": "Pilsen Community Books",
+      "permalink": "https://thevisualist.org/2020/10/club-de-lectura-1-las-cosas-que-perdimos-en-el-fuego-2/",
+      "path": "club-de-lectura-1-las-cosas-que-perdimos-en-el-fuego-2"
+    },
+    {
+      "id": "cb14416f-7207-42be-9f45-e15e5a44704b",
+      "legacyId": "",
+      "title": "The Quarantine Concerts",
+      "eventDate": "2020-10-02",
+      "venue": "Experimental Sound Studio",
+      "permalink": "https://thevisualist.org/2020/10/the-quarantine-concerts-105/",
+      "path": "the-quarantine-concerts-105"
+    },
+    {
+      "id": "c32eea72-500a-47ff-a7b4-c4ebe8c3f737",
+      "legacyId": "",
+      "title": "Screening: Sci-Fi Sessions",
+      "eventDate": "2020-09-13",
+      "venue": "Museum of Contemporary Art Chicago",
+      "permalink": "https://thevisualist.org/2020/09/screening-sci-fi-sessions-2/",
+      "path": "screening-sci-fi-sessions-2"
+    },
+    {
+      "id": "955817b2-699c-4a8a-ba62-165bf0e1e7d8",
+      "legacyId": "",
+      "title": "Igor & Marina: Midnight Sun",
+      "eventDate": "2020-09-11",
+      "venue": "Zolla / Lieberman Gallery",
+      "permalink": "https://thevisualist.org/2020/09/igor-marina-midnight-sun/",
+      "path": "igor-marina-midnight-sun"
+    },
+    {
+      "id": "d1d9101c-707e-4a00-b79b-610a9f27ea28",
+      "legacyId": "",
+      "title": "Dan Barry, Jason Houchen, and Victoria Reynolds",
+      "eventDate": "2020-07-10",
+      "venue": "Bert Green Fine Art",
+      "permalink": "https://thevisualist.org/2020/07/dan-barry-jason-houchen-and-victoria-reynolds-2/",
+      "path": "dan-barry-jason-houchen-and-victoria-reynolds-2"
+    },
+    {
+      "id": "fb11fdb8-cf4a-4107-9961-6b876f8fcca2",
+      "legacyId": "",
+      "title": "The Quarantine Concerts",
+      "eventDate": "2020-06-21",
+      "venue": "Experimental Sound Studio",
+      "permalink": "https://thevisualist.org/2020/06/the-quarantine-concerts-59/",
+      "path": "the-quarantine-concerts-59"
+    },
+    {
+      "id": "520686d6-095a-46d3-821c-11a03a970bb5",
+      "legacyId": "",
+      "title": "The Quarantine Concerts",
+      "eventDate": "2020-06-20",
+      "venue": "Experimental Sound Studio",
+      "permalink": "https://thevisualist.org/2020/06/the-quarantine-concerts-60/",
+      "path": "the-quarantine-concerts-60"
+    },
+    {
+      "id": "60dd2e0d-8e6d-4d4c-beb5-3bf69f4d30c3",
+      "legacyId": "",
+      "title": "Ricky McEachern: Moment",
+      "eventDate": "2020-03-13",
+      "venue": "Center on Halsted",
+      "permalink": "https://thevisualist.org/2020/03/ricky-mceachern-moment-2/",
+      "path": "ricky-mceachern-moment-2"
+    },
+    {
+      "id": "6062c049-ef37-4c73-810f-1d96328a3112",
+      "legacyId": "",
+      "title": "Re-Envisioning Masculinity: Storytelling, Workshop, and Dialogue",
+      "eventDate": "2020-02-27",
+      "venue": "Women & Children First Bookstore",
+      "permalink": "https://thevisualist.org/2020/02/re-envisioning-masculinity-storytelling-workshop-and-dialogue-2/",
+      "path": "re-envisioning-masculinity-storytelling-workshop-and-dialogue-2"
+    },
+    {
+      "id": "d0aff1c3-e816-499c-80e4-6aa5d26a2175",
+      "legacyId": "",
+      "title": "In Conversation: The Making of the Victor F. Keen Collection",
+      "eventDate": "2020-02-08",
+      "venue": "Intuit: The Center for Intuitive and Outsider Art",
+      "permalink": "https://thevisualist.org/2020/02/in-conversation-the-making-of-the-victor-f-keen-collection/",
+      "path": "in-conversation-the-making-of-the-victor-f-keen-collection"
+    },
+    {
+      "id": "979005e7-d6a5-4a6a-bcde-1d9e1426448f",
+      "legacyId": "",
+      "title": "Nazar Kozak: How Can Art Fight Back",
+      "eventDate": "2020-02-07",
+      "venue": "Ukrainian Institute of Modern Art",
+      "permalink": "https://thevisualist.org/2020/02/nazar-kozak-how-can-art-fight-back/",
+      "path": "nazar-kozak-how-can-art-fight-back"
+    },
+    {
+      "id": "8fac93c6-25f1-4688-8d1e-dd45404ea51f",
+      "legacyId": "",
+      "title": "What I really want to tell you…",
+      "eventDate": "2020-01-30",
+      "venue": "Mana Contemporary",
+      "permalink": "https://thevisualist.org/2020/01/what-i-really-want-to-tell-you/",
+      "path": "what-i-really-want-to-tell-you"
+    },
+    {
+      "id": "a909b5ab-745d-4da3-868e-85b49656edd2",
+      "legacyId": "",
+      "title": "Hyde Park Handmade Holiday Bazaar",
+      "eventDate": "2019-12-22",
+      "venue": "The Promontory",
+      "permalink": "https://thevisualist.org/2019/12/hyde-park-handmade-holiday-bazaar/",
+      "path": "hyde-park-handmade-holiday-bazaar"
+    },
+    {
+      "id": "f82d72d3-d9b6-4c13-a9df-8d343298bca1",
+      "legacyId": "",
+      "title": "Slow-Res: a Free and Self-Taught MFA Community",
+      "eventDate": "2019-12-22",
+      "venue": "Read/Write Library Chicago",
+      "permalink": "https://thevisualist.org/2019/12/slow-res-a-free-and-self-taught-mfa-community-9/",
+      "path": "slow-res-a-free-and-self-taught-mfa-community-9"
+    },
+    {
+      "id": "4541bda4-4642-4fc2-8ae8-77dca272be5e",
+      "legacyId": "",
+      "title": "The Wildest Flea Holiday Market",
+      "eventDate": "2019-12-08",
+      "venue": "Marz Community Brewing",
+      "permalink": "https://thevisualist.org/2019/12/the-wildest-flea-holiday-market-2/",
+      "path": "the-wildest-flea-holiday-market-2"
+    },
+    {
+      "id": "c2cd21f4-f771-470a-81ff-96b9135b5e35",
+      "legacyId": "",
+      "title": "Taiko Legacy 16",
+      "eventDate": "2019-12-08",
+      "venue": "Museum of Contemporary Art Chicago",
+      "permalink": "https://thevisualist.org/2019/12/taiko-legacy-16/",
+      "path": "taiko-legacy-16"
+    },
+    {
+      "id": "5ec918e5-bea4-418b-832f-0f26dfad5ac8",
+      "legacyId": "",
+      "title": "Workshop + Family Program: Making It What We Need",
+      "eventDate": "2019-11-23",
+      "venue": "Graham Foundation for Advanced Studies in the Fine Arts",
+      "permalink": "https://thevisualist.org/2019/11/workshop-family-program-making-it-what-we-need-2/",
+      "path": "workshop-family-program-making-it-what-we-need-2"
+    },
+    {
+      "id": "874825c7-293a-4496-957d-cc10a8eb651b",
+      "legacyId": "",
+      "title": "Unwrapped: A Holiday Artist Showcase",
+      "eventDate": "2019-11-23",
+      "venue": "Museum of Contemporary Art Chicago",
+      "permalink": "https://thevisualist.org/2019/11/unwrapped-a-holiday-artist-showcase-2/",
+      "path": "unwrapped-a-holiday-artist-showcase-2"
+    },
+    {
+      "id": "fadfe898-ff57-4b63-a1ea-9e35a3862714",
+      "legacyId": "",
+      "title": "Finding Japan’s “Lost Decade”: Tetsuya Ishida and the Ambivalence of Economic Decline",
+      "eventDate": "2019-11-22",
+      "venue": "Wrightwood 659",
+      "permalink": "https://thevisualist.org/2019/11/finding-japans-lost-decade-tetsuya-ishida-and-the-ambivalence-of-economic-decline/",
+      "path": "finding-japans-lost-decade-tetsuya-ishida-and-the-ambivalence-of-economic-decline"
+    },
+    {
+      "id": "7bf768b8-d087-45ac-867f-aaea272c708e",
+      "legacyId": "",
+      "title": "Experimental Mold Making Experience",
+      "eventDate": "2019-11-17",
+      "venue": "Basic Studios",
+      "permalink": "https://thevisualist.org/2019/11/experimental-mold-making-experience-2/",
+      "path": "experimental-mold-making-experience-2"
+    },
+    {
+      "id": "c5530126-4ed0-4382-b9cc-d5af5fe420ec",
+      "legacyId": "",
+      "title": "The Brothers Juguilon: Palaces Around the World",
+      "eventDate": "2019-11-15",
+      "venue": "Project Onward",
+      "permalink": "https://thevisualist.org/2019/11/the-brothers-juguilon-palaces-around-the-world-2/",
+      "path": "the-brothers-juguilon-palaces-around-the-world-2"
+    },
+    {
+      "id": "f0614b77-c877-47e9-bf6a-f662b152c5b8",
+      "legacyId": "",
+      "title": "The Scope of Surrealism: East, West, and Beyond",
+      "eventDate": "2019-11-14",
+      "venue": "Wrightwood 659",
+      "permalink": "https://thevisualist.org/2019/11/the-scope-of-surrealism-east-west-and-beyond-2/",
+      "path": "the-scope-of-surrealism-east-west-and-beyond-2"
+    },
+    {
+      "id": "fd612b35-a730-4e4d-8622-5888d802fb90",
+      "legacyId": "",
+      "title": "Lawrence Abu Hamdan",
+      "eventDate": "2019-11-14",
+      "venue": "Museum of Contemporary Art Chicago",
+      "permalink": "https://thevisualist.org/2019/11/lawrence-abu-hamdan-2/",
+      "path": "lawrence-abu-hamdan-2"
+    },
+    {
+      "id": "dff2b366-b0ba-437c-b3bf-e5f4d926a349",
+      "legacyId": "",
+      "title": "Grace Period",
+      "eventDate": "2019-11-13",
+      "venue": "6018North",
+      "permalink": "https://thevisualist.org/2019/11/grace-period/",
+      "path": "grace-period"
+    },
+    {
+      "id": "94bc340f-061f-498b-b99b-0ef1f1153457",
+      "legacyId": "",
+      "title": "Israel Martínez",
+      "eventDate": "2019-10-14",
+      "venue": "Reva and David Logan Center for the Arts",
+      "permalink": "https://thevisualist.org/2019/10/israel-martinez/",
+      "path": "israel-martinez"
+    },
+    {
+      "id": "9b19ffec-6094-4a9e-b06e-5ccf65605344",
+      "legacyId": "",
+      "title": "Lit & Luz Book Club: Antígona González by Sara Uribe",
+      "eventDate": "2019-09-23",
+      "venue": "Pilsen Outpost",
+      "permalink": "https://thevisualist.org/2019/09/lit-luz-book-club-antigona-gonzalez-by-sara-uribe-2/",
+      "path": "lit-luz-book-club-antigona-gonzalez-by-sara-uribe-2"
+    },
+    {
+      "id": "6e78c45a-fcd0-4809-87d5-9bdeef3c44c0",
+      "legacyId": "",
+      "title": "LEAD Conference 2019 Debrief",
+      "eventDate": "2019-09-19",
+      "venue": "The Chicago Community Trust",
+      "permalink": "https://thevisualist.org/2019/09/lead-conference-2019-debrief-2/",
+      "path": "lead-conference-2019-debrief-2"
+    },
+    {
+      "id": "ecb6f40a-294e-4835-a18c-ae8b2e972c5c",
+      "legacyId": "",
+      "title": "Fibers Circle",
+      "eventDate": "2019-09-16",
+      "venue": "PO Box Collective",
+      "permalink": "https://thevisualist.org/2019/09/fibers-circle/",
+      "path": "fibers-circle"
+    },
+    {
+      "id": "c5efbf3a-d456-4602-9b1b-3599973a4eac",
+      "legacyId": "",
+      "title": "Palette & Chisel Open House",
+      "eventDate": "2019-09-13",
+      "venue": "Palette & Chisel Academy of Fine Arts",
+      "permalink": "https://thevisualist.org/2019/09/palette-chisel-open-house/",
+      "path": "palette-chisel-open-house"
+    },
+    {
+      "id": "9b49b07f-884d-49bb-bf45-beb643b167f7",
+      "legacyId": "",
+      "title": "Office Hours: Portfolio Review",
+      "eventDate": "2019-09-10",
+      "venue": "Chicago Artists Coalition",
+      "permalink": "https://thevisualist.org/2019/09/office-hours-portfolio-review-5/",
+      "path": "office-hours-portfolio-review-5"
+    },
+    {
+      "id": "b76aa093-77c1-41f4-b9e8-a406d1b0a631",
+      "legacyId": "",
+      "title": "17th Annual Art in Motion",
+      "eventDate": "2019-09-06",
+      "venue": "Shirley Ryan AbilityLab",
+      "permalink": "https://thevisualist.org/2019/09/17th-annual-art-in-motion/",
+      "path": "17th-annual-art-in-motion"
+    },
+    {
+      "id": "8f4b6f94-bfda-4398-b00e-157e8dbc0a4e",
+      "legacyId": "",
+      "title": "Cooperation for Liberation Study & Working Group [BR]",
+      "eventDate": "2019-08-25",
+      "venue": "the #LetUsBreathe Collective",
+      "permalink": "https://thevisualist.org/2019/08/cooperation-for-liberation-study-working-group-br-3/",
+      "path": "cooperation-for-liberation-study-working-group-br-3"
+    },
+    {
+      "id": "fdb8ca6c-0f4d-47df-9630-04ab65a16b89",
+      "legacyId": "",
+      "title": "8th Annual Encaustic Exhibition",
+      "eventDate": "2019-08-02",
+      "venue": "Morpho Gallery",
+      "permalink": "https://thevisualist.org/2019/08/8th-annual-encaustic-exhibition/",
+      "path": "8th-annual-encaustic-exhibition"
+    },
+    {
+      "id": "c5c5f4fb-bade-4cb1-a26d-0e50bed40b1f",
+      "legacyId": "",
+      "title": "The Annals of Hell",
+      "eventDate": "2019-07-27",
+      "venue": "Zakaib",
+      "permalink": "https://thevisualist.org/2019/07/the-annals-of-hell/",
+      "path": "the-annals-of-hell"
+    },
+    {
+      "id": "ee7b4db6-660c-4083-9e2e-f50939b33e2d",
+      "legacyId": "",
+      "title": "Verónica Gerber Bicecci: EMPTY SET",
+      "eventDate": "2019-07-25",
+      "venue": "Volumes Bookcafe",
+      "permalink": "https://thevisualist.org/2019/07/veronica-gerber-bicecci-empty-set-2/",
+      "path": "veronica-gerber-bicecci-empty-set-2"
+    },
+    {
+      "id": "4e1eb36f-dc69-4be7-9965-256899a63956",
+      "legacyId": "",
+      "title": "Hotel Room Art Auction",
+      "eventDate": "2019-07-21",
+      "venue": "Ace Hotel Chicago",
+      "permalink": "https://thevisualist.org/2019/07/hotel-room-art-auction-2/",
+      "path": "hotel-room-art-auction-2"
+    },
+    {
+      "id": "ebda7986-6f88-4f6f-9854-821db7fc273a",
+      "legacyId": "",
+      "title": "Poets for Reproductive Justice",
+      "eventDate": "2019-07-15",
+      "venue": "Young Chicago Authors",
+      "permalink": "https://thevisualist.org/2019/07/poets-for-reproductive-justice-2/",
+      "path": "poets-for-reproductive-justice-2"
+    },
+    {
+      "id": "f1e4b514-507a-41f5-91af-fd576ce6a703",
+      "legacyId": "",
+      "title": "We Series Festival: A Ritual For Exchange",
+      "eventDate": "2019-05-28",
+      "venue": "Elastic Arts",
+      "permalink": "https://thevisualist.org/2019/05/we-series-festival-a-ritual-for-exchange/",
+      "path": "we-series-festival-a-ritual-for-exchange"
+    },
+    {
+      "id": "d569b9ba-d36e-427b-9dca-65e899f9a83f",
+      "legacyId": "",
+      "title": "Cathie Bleck: Immersion and Raeleen Kao: Widow’s Weeds",
+      "eventDate": "2019-05-18",
+      "venue": "Bert Green Fine Art",
+      "permalink": "https://thevisualist.org/2019/05/cathie-bleck-immersion-and-raeleen-kao-widows-weeds/",
+      "path": "cathie-bleck-immersion-and-raeleen-kao-widows-weeds"
+    },
+    {
+      "id": "b2c85f90-50a9-43de-b7a4-516d18ab6ee7",
+      "legacyId": "",
+      "title": "Manuela Infante: Estado Vegetal",
+      "eventDate": "2019-05-09",
+      "venue": "Museum of Contemporary Art Chicago",
+      "permalink": "https://thevisualist.org/2019/05/manuela-infante-estado-vegetal-2/",
+      "path": "manuela-infante-estado-vegetal-2"
+    },
+    {
+      "id": "764736f1-1453-46f0-8d9e-cafac2e3ecbf",
+      "legacyId": "",
+      "title": "Ellen Greene and Vanessa Filley: Our Next YouTime!",
+      "eventDate": "2019-04-11",
+      "venue": "Art Encounter",
+      "permalink": "https://thevisualist.org/2019/04/__trashed-60/",
+      "path": "__trashed-60"
+    },
+    {
+      "id": "7be59630-6300-4542-b178-c91de37f7263",
+      "legacyId": "",
+      "title": "Jessica Pierotti",
+      "eventDate": "2019-04-06",
+      "venue": "Lillstreet Art Center",
+      "permalink": "https://thevisualist.org/2019/04/jessica-pierotti/",
+      "path": "jessica-pierotti"
+    },
+    {
+      "id": "b2af7b2b-0897-4366-b62c-8bef8807b0f1",
+      "legacyId": "",
+      "title": "Kathy Halper: What A Day It’s Been",
+      "eventDate": "2019-04-06",
+      "venue": "1100 Florence",
+      "permalink": "https://thevisualist.org/2019/04/kathy-halper-what-a-day-its-been/",
+      "path": "kathy-halper-what-a-day-its-been"
+    },
+    {
+      "id": "fe3592d8-b3ea-471f-bf32-be7218a36136",
+      "legacyId": "",
+      "title": "Christian Arrecis",
+      "eventDate": "2019-04-05",
+      "venue": "Side Street Studio Arts",
+      "permalink": "https://thevisualist.org/2019/04/christian-arrecis/",
+      "path": "christian-arrecis"
+    },
+    {
+      "id": "6f88d9e0-b708-4b27-8bbe-7f3ce800b5c4",
+      "legacyId": "",
+      "title": "Jared Buckhiester: Fumbling Heart",
+      "eventDate": "2019-03-23",
+      "venue": "Iceberg Projects",
+      "permalink": "https://thevisualist.org/2019/03/jared-buckhiester-fumbling-heart-2/",
+      "path": "jared-buckhiester-fumbling-heart-2"
+    },
+    {
+      "id": "ccf6bc37-645b-4d00-a895-698539bf464a",
+      "legacyId": "",
+      "title": "Dorit Jordan Dotan: Redundant",
+      "eventDate": "2019-03-23",
+      "venue": "Wedge Projects",
+      "permalink": "https://thevisualist.org/2019/03/dorit-jordan-dotan-redundant/",
+      "path": "dorit-jordan-dotan-redundant"
+    },
+    {
+      "id": "e4a2c9a7-5ad4-43e1-bfb5-febb5d53ff49",
+      "legacyId": "",
+      "title": "Notes from Performing the Archive: Jackie Kennedy Flees the Scene of Her Husband’s Murder",
+      "eventDate": "2019-03-23",
+      "venue": "6018NORTH",
+      "permalink": "https://thevisualist.org/2019/03/notes-from-performing-the-archive-jackie-kennedy-flees-the-scene-of-her-husbands-murder-2/",
+      "path": "notes-from-performing-the-archive-jackie-kennedy-flees-the-scene-of-her-husbands-murder-2"
+    },
+    {
+      "id": "af79dd42-d1a2-43c6-a070-5b5dcf85a9c2",
+      "legacyId": "",
+      "title": "Annie Dorsen: The Great Outdoors",
+      "eventDate": "2019-03-21",
+      "venue": "Museum of Contemporary Art Chicago",
+      "permalink": "https://thevisualist.org/2019/03/annie-dorsen-the-great-outdoors/",
+      "path": "annie-dorsen-the-great-outdoors"
+    },
+    {
+      "id": "762becdf-c1ec-4235-903a-f9b76eee0ee3",
+      "legacyId": "",
+      "title": "Jumbo Mumbo",
+      "eventDate": "2019-03-15",
+      "venue": "Co-Prosperity Sphere",
+      "permalink": "https://thevisualist.org/2019/03/jumbo-mumbo/",
+      "path": "jumbo-mumbo"
+    },
+    {
+      "id": "af4d877e-09c9-4e41-8e83-da95f91a4524",
+      "legacyId": "",
+      "title": "Quiet Time – Changing Students’ Lives",
+      "eventDate": "2019-03-07",
+      "venue": "Weinberg/Newton Gallery",
+      "permalink": "https://thevisualist.org/2019/03/quiet-time-changing-students-lives/",
+      "path": "quiet-time-changing-students-lives"
+    },
+    {
+      "id": "52da7fdc-7fa5-48c9-aef0-91529bf768c2",
+      "legacyId": "",
+      "title": "Paul Lamantia",
+      "eventDate": "2019-03-02",
+      "venue": "One After 909",
+      "permalink": "https://thevisualist.org/2019/03/paul-lamantia/",
+      "path": "paul-lamantia"
+    },
+    {
+      "id": "360ca8f5-6574-4d3b-ada5-770a9f7ac6eb",
+      "legacyId": "",
+      "title": "Curtis William Readel: Feed the Beast",
+      "eventDate": "2019-02-23",
+      "venue": "Line Dot Editions",
+      "permalink": "https://thevisualist.org/2019/02/curtis-william-readel-feed-the-beast/",
+      "path": "curtis-william-readel-feed-the-beast"
+    },
+    {
+      "id": "c62f2709-0e20-4ee0-941d-92b416e2ac53",
+      "legacyId": "",
+      "title": "Reckless Comfort",
+      "eventDate": "2018-12-01",
+      "venue": "Extase",
+      "permalink": "https://thevisualist.org/2018/12/reckless-comfort-2/",
+      "path": "reckless-comfort-2"
+    },
+    {
+      "id": "dec92f6b-ac62-4a72-a81e-5702230c2b3c",
+      "legacyId": "",
+      "title": "Layers Revealed: Identities Explored",
+      "eventDate": "2018-11-29",
+      "venue": "National Hellenic Museum",
+      "permalink": "https://thevisualist.org/2018/11/layers-revealed-identities-explored/",
+      "path": "layers-revealed-identities-explored"
+    },
+    {
+      "id": "45fe457a-b5eb-4198-bfb8-a0cc5e2d9a40",
+      "legacyId": "",
+      "title": "Calaveras y Palmeras: A Dia de Muertos Party",
+      "eventDate": "2018-11-02",
+      "venue": "Co-Prosperity Sphere",
+      "permalink": "https://thevisualist.org/2018/11/calaveras-y-palmeras-a-dia-de-muertos-party-2/",
+      "path": "calaveras-y-palmeras-a-dia-de-muertos-party-2"
+    },
+    {
+      "id": "ccb80485-c217-4aa9-ac88-58dd4bf53471",
+      "legacyId": "",
+      "title": "Photography & the Refugee Crisis",
+      "eventDate": "2018-09-26",
+      "venue": "Art Works Projects",
+      "permalink": "https://thevisualist.org/2018/09/photography-the-refugee-crisis-2/",
+      "path": "photography-the-refugee-crisis-2"
+    },
+    {
+      "id": "96ab1f05-10ac-4936-9a04-70a21d64c5a2",
+      "legacyId": "",
+      "title": "Expressionist Treasure",
+      "eventDate": "2018-05-18",
+      "venue": "Morpho Gallery",
+      "permalink": "https://thevisualist.org/2018/05/expressionist-treasure/",
+      "path": "expressionist-treasure"
+    },
+    {
+      "id": "a30c4779-de6f-435f-a62d-f0b1ab253804",
+      "legacyId": "",
+      "title": "Hank Willis Thomas: Unbranded",
+      "eventDate": "2018-04-14",
+      "venue": "Block Museum",
+      "permalink": "https://thevisualist.org/2018/04/hank-willis-thomas-unbranded/",
+      "path": "hank-willis-thomas-unbranded"
+    },
+    {
+      "id": "bd10b577-2228-4398-9f9f-3f982e57211c",
+      "legacyId": "",
+      "title": "In The Family",
+      "eventDate": "2017-11-14",
+      "venue": "Weinberg/Newton Gallery",
+      "permalink": "https://thevisualist.org/2017/11/in-the-family-2/",
+      "path": "in-the-family-2"
+    },
+    {
+      "id": "ff4f92e6-7e68-47cf-8ff0-3921a98fcf06",
+      "legacyId": "",
+      "title": "Mike Stoltz: Toward The Concrete",
+      "eventDate": "2017-11-10",
+      "venue": "The Nightingale",
+      "permalink": "https://thevisualist.org/2017/11/mike-stoltz-toward-the-concrete-2/",
+      "path": "mike-stoltz-toward-the-concrete-2"
+    },
+    {
+      "id": "851292c5-814e-499e-8379-78dfbd32a132",
+      "legacyId": "",
+      "title": "The Secret Life of Indigenous Archives",
+      "eventDate": "2017-11-09",
+      "venue": "Newberry Library",
+      "permalink": "https://thevisualist.org/2017/11/the-secret-life-of-indigenous-archives-2/",
+      "path": "the-secret-life-of-indigenous-archives-2"
+    },
+    {
+      "id": "d15be187-3752-4241-a117-a77baba6879c",
+      "legacyId": "",
+      "title": "Making Out",
+      "eventDate": "2017-10-05",
+      "venue": "SITE Sharp",
+      "permalink": "https://thevisualist.org/2017/10/making-out/",
+      "path": "making-out"
+    },
+    {
+      "id": "460aba52-0a6e-441d-9460-1f40a256223a",
+      "legacyId": "",
+      "title": "If the wind were water we’d all be really whet",
+      "eventDate": "2017-08-19",
+      "venue": "Prairie",
+      "permalink": "https://thevisualist.org/2017/08/if-the-wind-were-water-wed-all-be-really-whet-2/",
+      "path": "if-the-wind-were-water-wed-all-be-really-whet-2"
+    },
+    {
+      "id": "77a6814a-a27d-4aaa-af6a-a3b369ea8822",
+      "legacyId": "",
+      "title": "Jaclyn Mednicov: A Faint Shadowy Trace",
+      "eventDate": "2017-06-03",
+      "venue": "Paris London Hong Kong",
+      "permalink": "https://thevisualist.org/2017/06/jaclyn-mednicov-a-faint-shadowy-trace/",
+      "path": "jaclyn-mednicov-a-faint-shadowy-trace"
+    },
+    {
+      "id": "bbd86efa-53d2-419a-b9a8-8743bafae4d0",
+      "legacyId": "",
+      "title": "You Need Help: A Motivational Training Seminar",
+      "eventDate": "2017-04-21",
+      "venue": "Corner",
+      "permalink": "https://thevisualist.org/2017/04/you-need-help-a-motivational-training-seminar-2/",
+      "path": "you-need-help-a-motivational-training-seminar-2"
+    },
+    {
+      "id": "d6c131e4-fe9e-4325-b126-c8ad7f1f66b4",
+      "legacyId": "",
+      "title": "VISIBLE AND PERMANENT",
+      "eventDate": "2017-03-17",
+      "venue": "Carrie Secrist Gallery",
+      "permalink": "https://thevisualist.org/2017/03/visible-and-permanent/",
+      "path": "visible-and-permanent"
+    },
+    {
+      "id": "8e5a6242-e959-4c69-992e-1ef1a0a4e490",
+      "legacyId": "",
+      "title": "Black Out Dinner",
+      "eventDate": "2016-11-03",
+      "venue": "6018North",
+      "permalink": "https://thevisualist.org/2016/11/black-out-dinner-10/",
+      "path": "black-out-dinner-10"
+    },
+    {
+      "id": "be64bcef-3f35-42cb-baec-381c92f28823",
+      "legacyId": "",
+      "title": "Book Launch with Tom Dryjanski",
+      "eventDate": "2016-06-11",
+      "venue": "LATITUDE",
+      "permalink": "https://thevisualist.org/2016/06/book-launch-with-tom-dryjanski/",
+      "path": "book-launch-with-tom-dryjanski"
+    },
+    {
+      "id": "a0b19dc1-f588-46cd-8f77-67102f2b5ad3",
+      "legacyId": "",
+      "title": "Chornobyl 30 Years Later",
+      "eventDate": "2016-04-01",
+      "venue": "Ukrainian Institute of Modern Art",
+      "permalink": "https://thevisualist.org/2016/04/chornobyl-30-years-later/",
+      "path": "chornobyl-30-years-later"
+    },
+    {
+      "id": "f485c140-4278-4d18-a100-4da4b1dd5300",
+      "legacyId": "",
+      "title": "Leslie Baum: MOUNTAIN and sea",
+      "eventDate": "2016-02-28",
+      "venue": "4th Ward Project Space",
+      "permalink": "https://thevisualist.org/2016/02/leslie-baum-mountain-and-sea/",
+      "path": "leslie-baum-mountain-and-sea"
+    },
+    {
+      "id": "61efb5d3-bdb6-407c-9099-00767a206c9e",
+      "legacyId": "",
+      "title": "DUDE . . . HEAVY",
+      "eventDate": "2016-02-14",
+      "venue": "South of the Tracks",
+      "permalink": "https://thevisualist.org/2016/02/dude-heavy/",
+      "path": "dude-heavy"
+    },
+    {
+      "id": "fc9c232a-9ce5-4be2-a9e7-600ced9dd5ad",
+      "legacyId": "",
+      "title": "Bob Faust: Betweens",
+      "eventDate": "2015-12-05",
+      "venue": "Riverside Arts Center",
+      "permalink": "https://thevisualist.org/2015/12/bob-faust-betweens/",
+      "path": "bob-faust-betweens"
+    },
+    {
+      "id": "f879b641-566e-481c-9b08-a4c824489133",
+      "legacyId": "",
+      "title": "Larassa Kabel: Stag Park",
+      "eventDate": "2015-11-06",
+      "venue": "The Mission",
+      "permalink": "https://thevisualist.org/2015/11/larassa-kabel-stag-park/",
+      "path": "larassa-kabel-stag-park"
+    },
+    {
+      "id": "ecd746dc-2434-4738-b55e-253947ef5f2b",
+      "legacyId": "",
+      "title": "Zoe Nelson: Recto / Verso",
+      "eventDate": "2015-10-18",
+      "venue": "Cleve Carney Art Gallery",
+      "permalink": "https://thevisualist.org/2015/10/zoe-nelson-recto-verso-2/",
+      "path": "zoe-nelson-recto-verso-2"
+    },
+    {
+      "id": "e0d346ab-e7b8-4229-84e3-d14f12d3398f",
+      "legacyId": "",
+      "title": "Kendell Carter: We",
+      "eventDate": "2015-09-12",
+      "venue": "Monique Meloche Gallery",
+      "permalink": "https://thevisualist.org/2015/09/kendell-carter-we/",
+      "path": "kendell-carter-we"
+    },
+    {
+      "id": "e677cfe7-7568-4147-9c31-ad2abaca53cd",
+      "legacyId": "",
+      "title": "Appropinquation",
+      "eventDate": "2015-09-12",
+      "venue": "Carrie Secrist Gallery",
+      "permalink": "https://thevisualist.org/2015/09/appropinquation-2/",
+      "path": "appropinquation-2"
+    },
+    {
+      "id": "e7c86da4-db83-47b3-b5fa-5fbf4f7f1e4d",
+      "legacyId": "",
+      "title": "Jeff Carter: Faktura",
+      "eventDate": "2015-09-12",
+      "venue": "cornerstore",
+      "permalink": "https://thevisualist.org/2015/09/jeff-carter-faktura-2/",
+      "path": "jeff-carter-faktura-2"
+    },
+    {
+      "id": "f77d1d6a-c512-4f8e-8dfb-99f5ea3a40da",
+      "legacyId": "",
+      "title": "A Home Coming (revisited)",
+      "eventDate": "2015-01-09",
+      "venue": "Chiacgo Artists Coalition",
+      "permalink": "https://thevisualist.org/2015/01/a-home-coming-revisited-3/",
+      "path": "a-home-coming-revisited-3"
+    },
+    {
+      "id": "cd613655-f36a-42e1-99cf-f7c6125c9924",
+      "legacyId": "",
+      "title": "Judith Brotman & Sandra Grauel: Duty",
+      "eventDate": "2014-10-04",
+      "venue": "Loo",
+      "permalink": "https://thevisualist.org/2014/10/judith-brotman-sandra-grauel-duty/",
+      "path": "judith-brotman-sandra-grauel-duty"
+    },
+    {
+      "id": "d1c87e7d-5ee0-4e70-a8c8-583a148a70db",
+      "legacyId": "",
+      "title": "The Making of Artists",
+      "eventDate": "2014-05-31",
+      "venue": "President's Gallery at Harold Washington College",
+      "permalink": "https://thevisualist.org/2014/05/the-making-of-artists-2/",
+      "path": "the-making-of-artists-2"
+    },
+    {
+      "id": "a5258f82-a80c-4ba0-aa92-307f8c5d3ea5",
+      "legacyId": "",
+      "title": "Suicide Narcissus",
+      "eventDate": "2013-09-15",
+      "venue": "The Renaissance Society",
+      "permalink": "https://thevisualist.org/2013/09/suicide-narcissus-3/",
+      "path": "suicide-narcissus-3"
+    },
+    {
+      "id": "b218ba3d-f532-4350-8ff1-96fe92ea1147",
+      "legacyId": "",
+      "title": "The Program: Tom Humphreys/Laure Prouvost",
+      "eventDate": "2013-09-06",
+      "venue": "CourtneyBlades",
+      "permalink": "https://thevisualist.org/2013/09/the-program-tom-humphreyslaure-prouvost/",
+      "path": "the-program-tom-humphreyslaure-prouvost"
+    },
+    {
+      "id": "abc695c2-afd5-4331-812f-b27f4d811f46",
+      "legacyId": "",
+      "title": "Jeremiah Hulsebos-Spofford: Hall of Khan",
+      "eventDate": "2013-04-14",
+      "venue": "Hyde Park Art Center",
+      "permalink": "https://thevisualist.org/2013/04/jeremiah-hulsebos-spofford-hall-of-khan-2/",
+      "path": "jeremiah-hulsebos-spofford-hall-of-khan-2"
+    },
+    {
+      "id": "8d3b0c36-d092-45f8-8100-1955ccca6a40",
+      "legacyId": "",
+      "title": "Thad Kellstadt: Lazy Dreams",
+      "eventDate": "2013-03-23",
+      "venue": "Cabin",
+      "permalink": "https://thevisualist.org/2013/03/thad-kellstadt-lazy-dreams/",
+      "path": "thad-kellstadt-lazy-dreams"
+    },
+    {
+      "id": "f887e682-f547-4813-8bf9-3b35cc380b2b",
+      "legacyId": "",
+      "title": "Atalanta & The Lion",
+      "eventDate": "2013-03-23",
+      "venue": "HAUSER Gallery",
+      "permalink": "https://thevisualist.org/2013/03/atalanta-the-lion-2/",
+      "path": "atalanta-the-lion-2"
+    },
+    {
+      "id": "eebf1bed-bb3e-4062-bd88-5edf365f0005",
+      "legacyId": "",
+      "title": "SAIC Visiting Artists Program: Julie Ault Lecture",
+      "eventDate": "2013-03-04",
+      "venue": "SAIC Columbus Auditorium",
+      "permalink": "https://thevisualist.org/2013/03/saic-visiting-artists-program-julie-ault-lecture/",
+      "path": "saic-visiting-artists-program-julie-ault-lecture"
+    },
+    {
+      "id": "eef3e7e3-5d02-4de0-9dfd-6527a3365752",
+      "legacyId": "",
+      "title": "Andrea Jablonski: Private Collection",
+      "eventDate": "2012-10-13",
+      "venue": "The Franklin",
+      "permalink": "https://thevisualist.org/2012/10/andrea-jablonski-private-collection-2/",
+      "path": "andrea-jablonski-private-collection-2"
+    },
+    {
+      "id": "d2703d5d-7f52-49fe-a582-3dc356a4ad12",
+      "legacyId": "",
+      "title": "Ari Marcopoulos: Midway",
+      "eventDate": "2012-03-30",
+      "venue": "Kavi Gupta Gallery",
+      "permalink": "https://thevisualist.org/2012/03/ari-marcopoulos-midway/",
+      "path": "ari-marcopoulos-midway"
+    },
+    {
+      "id": "341eac30-a5e8-45f4-a82a-8f884fb1cd5b",
+      "legacyId": "",
+      "title": "Michelle Anne Harris: Accidents of Gravity",
+      "eventDate": "2012-02-19",
+      "venue": "ACRE Projects",
+      "permalink": "https://thevisualist.org/2012/02/michelle-anne-harris-accidents-of-gravity/",
+      "path": "michelle-anne-harris-accidents-of-gravity"
+    },
+    {
+      "id": "a2c8e458-c1ee-4994-81b0-9d49e0a43544",
+      "legacyId": "",
+      "title": "Funding and Creating Your Independent Projects: Propeller and Beyond All-Day Workshop",
+      "eventDate": "2011-06-02",
+      "venue": "Gallery 400",
+      "permalink": "https://thevisualist.org/2011/06/funding-and-creating-your-independent-projects-propeller-and-beyond-all-day-workshop-2/",
+      "path": "funding-and-creating-your-independent-projects-propeller-and-beyond-all-day-workshop-2"
+    },
+    {
+      "id": "e4646082-9b4f-46b7-a615-2cf0206c4154",
+      "legacyId": "",
+      "title": "Uta Barth",
+      "eventDate": "2011-05-14",
+      "venue": "The Art Institute of Chicago",
+      "permalink": "https://thevisualist.org/2011/05/uta-barth-2/",
+      "path": "uta-barth-2"
+    },
+    {
+      "id": "cf246558-b3c1-4fe8-9d03-29eb6d3a361b",
+      "legacyId": "",
+      "title": "Mike Andrews",
+      "eventDate": "2010-12-16",
+      "venue": "GOLDEN",
+      "permalink": "https://thevisualist.org/2010/12/mike-andrews-2/",
+      "path": "mike-andrews-2"
+    }
+  ],
+  "mismatches": [
+    {
+      "legacyId": "190780",
+      "field": "official_url",
+      "local": "https://hardreturn.art/monika-niwelinska-1,",
+      "db": "https://hardreturn.art/monika-niwelinska-1, http://www.niwelinska.com"
+    },
+    {
+      "legacyId": "189354",
+      "field": "official_url",
+      "local": "https://thevisualist.org/allenvandever.com",
+      "db": "https://thevisualist.org/allenvandever.com Childhoodfractured.com"
+    },
+    {
+      "legacyId": "185980",
+      "field": "official_url",
+      "local": "http://www.deveningprojects.com",
+      "db": "http://deveningprojects.com/exhibitions/kitchen-harmonics/"
+    },
+    {
+      "legacyId": "185980",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2025/12/SSThe-Third-Floor.-Oil-stick-on-Kitakata-paper-brass-rivets-8-x-10-2024.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2025/12/webSean-Sullivan-Basil.-2025-oil-stick-on-Kitakata-paper-8.25-x-10.25-inches.jpg"
+    },
+    {
+      "legacyId": "185983",
+      "field": "official_url",
+      "local": "http://www.deveningprojects.com",
+      "db": "http://deveningprojects.com/exhibitions/am-is-are-was-were/"
+    },
+    {
+      "legacyId": "185983",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2025/12/webWade_am-is-are_03.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2025/12/WEBDETAILWade_am-is-are_04-1.jpg"
+    },
+    {
+      "legacyId": "185744",
+      "field": "official_url",
+      "local": "https://thevisualist.org/915",
+      "db": "https://thevisualist.org/915 E 60th St, Chicago, IL 60637"
+    },
+    {
+      "legacyId": "182249",
+      "field": "official_url",
+      "local": "https://www.chicagofilmsociety.org/calendar/current-season/#hmd,",
+      "db": "https://www.chicagofilmsociety.org/calendar/current-season/#hmd, https://www.chicagofilmarchives.org/calendar/event/home-movie-day-2025/,"
+    },
+    {
+      "legacyId": "182246",
+      "field": "official_url",
+      "local": "https://www.chicagofilmsociety.org/calendar/current-season/#littleman,",
+      "db": "https://www.chicagofilmsociety.org/calendar/current-season/#littleman, https://filmstudiescenter.uchicago.edu/event/little-man-what-now"
+    },
+    {
+      "legacyId": "182243",
+      "field": "official_url",
+      "local": "https://www.chicagofilmsociety.org/calendar/current-season/#parents,",
+      "db": "https://www.chicagofilmsociety.org/calendar/current-season/#parents, https://musicboxtheatre.com/films-and-events/parents"
+    },
+    {
+      "legacyId": "184303",
+      "field": "address",
+      "local": "37 S Wabash Ave, 1st Floor, Chicago, IL 60603",
+      "db": "37 S Wabash Ave, 1st Fl, Chicago, IL 60603"
+    },
+    {
+      "legacyId": "184303",
+      "field": "official_url",
+      "local": "https://sites.saic.edu/sitegalleries/exhibition/-let-me-tell-you-all-i-can/",
+      "db": "https://sites.saic.edu/sitegalleries/exhibition/%e7%9f%a5%e7%84%a1%e4%b8%8d%e8%a8%80-let-me-tell-you-all-i-can/"
+    },
+    {
+      "legacyId": "184303",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2025/10/1000018995.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2025/10/4838157953597175806.jpg"
+    },
+    {
+      "legacyId": "182240",
+      "field": "official_url",
+      "local": "https://www.chicagofilmsociety.org/calendar/current-season/#bigscreen,",
+      "db": "https://www.chicagofilmsociety.org/calendar/current-season/#bigscreen, https://musicboxtheatre.com/films-and-events/chris-heathers-16mm-big-screen-blowout-2"
+    },
+    {
+      "legacyId": "183145",
+      "field": "official_url",
+      "local": "https://musicboxtheatre.com/films-and-events/chris-heathers-16mm-big-screen-blowout-2",
+      "db": "https://www.chicagofilmsociety.org/calendar/current-season/#bigscreen, https://musicboxtheatre.com/films-and-events/chris-heathers-16mm-big-screen-blowout-2"
+    },
+    {
+      "legacyId": "183145",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2025/09/5d35mlsA.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2025/09/Chris-and-Heather-web.jpg"
+    },
+    {
+      "legacyId": "182231",
+      "field": "official_url",
+      "local": "https://www.chicagofilmsociety.org/calendar/current-season/#cookie,",
+      "db": "https://www.chicagofilmsociety.org/calendar/current-season/#cookie, https://www.siskelfilmcenter.org/cookies-fortune"
+    },
+    {
+      "legacyId": "182226",
+      "field": "official_url",
+      "local": "https://www.chicagofilmsociety.org/calendar/current-season/#blind,",
+      "db": "https://www.chicagofilmsociety.org/calendar/current-season/#blind, https://musicboxtheatre.com/films-and-events/blind-husbands,"
+    },
+    {
+      "legacyId": "182333",
+      "field": "official_url",
+      "local": "https://thevisualist.org/222",
+      "db": "https://thevisualist.org/222 W Merchandise Mart Plaza, Chicago, IL 60654"
+    },
+    {
+      "legacyId": "180000",
+      "field": "official_url",
+      "local": "https://fromsamira.com/",
+      "db": "https://fromsamira.com/ "
+    },
+    {
+      "legacyId": "179599",
+      "field": "official_url",
+      "local": "https://thevisualist.org/touch",
+      "db": "https://thevisualist.org/touch and accuracy"
+    },
+    {
+      "legacyId": "178581",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2025/06/della.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2025/06/Span-IntuitArtMuseum-Thumbnail-02-1.png"
+    },
+    {
+      "legacyId": "177614",
+      "field": "address",
+      "local": "400 S State St, Chicago, IL 60605",
+      "db": "1854 West North Avenue Chicago, IL 60622"
+    },
+    {
+      "legacyId": "177614",
+      "field": "official_url",
+      "local": "https://www.chicagoprintersguild.org/",
+      "db": "https://thevisualist.org/www.chicagoprintersguild.org"
+    },
+    {
+      "legacyId": "177614",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2025/05/IMG_3866.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2025/05/IMG_3866-1.jpg"
+    },
+    {
+      "legacyId": "176222",
+      "field": "official_url",
+      "local": "https://thevisualist.org/Henry",
+      "db": "https://thevisualist.org/Henry Darger: The Room Revealed"
+    },
+    {
+      "legacyId": "176283",
+      "field": "official_url",
+      "local": "https://thevisualist.org/1102",
+      "db": "https://thevisualist.org/1102 W 18th St, Chicago, IL 60608"
+    },
+    {
+      "legacyId": "176286",
+      "field": "official_url",
+      "local": "https://thevisualist.org/THE",
+      "db": "https://thevisualist.org/THE POETICS OF MOVEMENT & PERFORMANCE FEATURING MAYA ODIM TAITAIXTINA WORKSHOP BY TEMPERANCE AGHAMOHAMMADI MORE INFORMATION poboxcollective.us IG: @poboxcollective workshop @ 6:30PM doors @ 7:30PM reading @ 8PM"
+    },
+    {
+      "legacyId": "175955",
+      "field": "official_url",
+      "local": "https://thevisualist.org/Potliquor",
+      "db": "https://thevisualist.org/Potliquor ,Sharon Udoh ,Allen Moore, Ishmael Ali"
+    },
+    {
+      "legacyId": "173973",
+      "field": "official_url",
+      "local": "https://thevisualist.org/o",
+      "db": "https://thevisualist.org/o https:/www.eventbrite.com/e/solo-art-exhibition-for-sheri-smith-aka-creme-sheri-tickets-1314442024479?aff=oddtdtcreator"
+    },
+    {
+      "legacyId": "175070",
+      "field": "official_url",
+      "local": "https://thevisualist.org/This",
+      "db": "https://thevisualist.org/This event is free and open to the public. Please reserve your ticket here: https:/www.eventbrite.com/e/t..."
+    },
+    {
+      "legacyId": "170461",
+      "field": "official_url",
+      "local": "https://thevisualist.org/So",
+      "db": "https://thevisualist.org/So is This / Side Seat Paintings Slides Sound Film (1982 / 1970) So is This / Side Seat Paintings Slides Sound Film (1982 / 1970) still Michael Snow · 49m / 20m · 16mm A film delivered one word at a time, So Is This proceeds at either a maddening or loving speed, depending on your mood. An orgy of reading, or Snow’s consciousness delivered into your skull. Paired with Side Seat Paintings Slides S"
+    },
+    {
+      "legacyId": "170458",
+      "field": "official_url",
+      "local": "https://thevisualist.org/La",
+      "db": "https://thevisualist.org/La Région Centrale (1971) La Région Centrale (1971) still Michael Snow · 180m · 16mm A camera fixed to a gyroscopic machine arm is left alone for three hours on a Canadian mountaintop, turning to programmed musical commands. As the camera contorts with and through space, what’s in front of and around it begins to appear. La Région Centrale was rarely screened until new prints were struck in the e"
+    },
+    {
+      "legacyId": "167021",
+      "field": "address",
+      "local": "2842 W Chicago Ave, Chicago, IL 60622",
+      "db": "2842 W Chicago Ave Chicago, IL 60622"
+    },
+    {
+      "legacyId": "167021",
+      "field": "official_url",
+      "local": "https://www.chicagograndgallery.com/?fbclid=PAZXh0bgNhZW0CMTEAAaa0jABYeq98ufFHi4F4dWpygdKSm92VoPmtAuwlPpqv_yRbmKvkKqAcLfI_aem_gr65cvKRq2wpRCG4PQr8oQ",
+      "db": "https://www.chicagograndgallery.com/opening-receptions/heritage-of-resistance-heavyweight-graphics-of-war"
+    },
+    {
+      "legacyId": "167021",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2024/10/KRISHOVSKY-700x500_God-Bless_Ink-2024_Day-896.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2024/10/460826599_17882920419106506_4226935254770075984_n.jpg"
+    },
+    {
+      "legacyId": "163700",
+      "field": "official_url",
+      "local": "Lecture:",
+      "db": "Lecture: Adenike Cosgrove on Collecting African Art Today"
+    },
+    {
+      "legacyId": "163030",
+      "field": "official_url",
+      "local": "http://www.lost",
+      "db": "http://www.lost artists chicago"
+    },
+    {
+      "legacyId": "161627",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2024/06/20240615vert-715x1024-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2024/06/20240615vert-1431x2048-1.jpg"
+    },
+    {
+      "legacyId": "160227",
+      "field": "address",
+      "local": "2003 West Fulton Street, Suite 211",
+      "db": "2003 W Fulton St, Chicago, IL 60612"
+    },
+    {
+      "legacyId": "160227",
+      "field": "official_url",
+      "local": "https://thevisualist.org/www.latitudechicago.org",
+      "db": "https://www.latitudechicago.org/"
+    },
+    {
+      "legacyId": "160227",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2024/05/KenCarl-Post.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2024/04/NEWWORKSPACE28429.jpg"
+    },
+    {
+      "legacyId": "159052",
+      "field": "official_url",
+      "local": "https://pilsencommunitybooks.com/events",
+      "db": "https://pilsencommunitybooks.com/events/33875"
+    },
+    {
+      "legacyId": "159052",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2024/04/event_image_33875.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2024/03/m-2.jpg"
+    },
+    {
+      "legacyId": "157065",
+      "field": "address",
+      "local": "One University Plaza, HSB 201, Springfield, IL 62703",
+      "db": "One University Plaza Health and Sciences Building, 201, Springfield, IL 62703"
+    },
+    {
+      "legacyId": "157065",
+      "field": "official_url",
+      "local": "https://www.uis.edu/visual-arts/visual-arts-gallery/upcoming-exhibitions",
+      "db": "https://www.uis.edu/visual-arts/visual-arts-gallery"
+    },
+    {
+      "legacyId": "157065",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2024/03/Screenshot-2024-03-01-141459.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2024/03/Guen-1.jpg"
+    },
+    {
+      "legacyId": "157343",
+      "field": "image_url_basename",
+      "local": "",
+      "db": "https://thevisualist.org/wp-content/uploads/2024/03/IMG_3408_480x480.jpg"
+    },
+    {
+      "legacyId": "156730",
+      "field": "official_url",
+      "local": "https://thevisualist.org/Actions",
+      "db": "https://thevisualist.org/Actions for the Earth Gallery Talk with Stephanie Smith"
+    },
+    {
+      "legacyId": "154688",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2024/01/NEF2328-4x5-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2024/01/Gallery-discussion-group.jpg"
+    },
+    {
+      "legacyId": "152339",
+      "field": "address",
+      "local": "150 N Michigan Ave, #200 Chicago, IL 60601",
+      "db": "150 N Michigan Ave, Suite 200, Chicago, IL 60601"
+    },
+    {
+      "legacyId": "152339",
+      "field": "official_url",
+      "local": "https://www.goethe.de/ins/us/en/ver.cfm?event_id=25173305",
+      "db": "https://www.goethe.de/ins/us/en/sta/chi/ver.cfm?fuseaction=events.detail&event_id=25173305"
+    },
+    {
+      "legacyId": "152339",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2023/10/MicrosoftTeams-image.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2023/12/inner-wars-1403-x-610-px-formatkey-jpg-w1022.jpg"
+    },
+    {
+      "legacyId": "152746",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2023/11/Natani-Notah-Exhibition-at-Document-004_LR.jpeg",
+      "db": "https://thevisualist.org/wp-content/uploads/2023/10/Purple-Mass_LR.png"
+    },
+    {
+      "legacyId": "144590",
+      "field": "official_url",
+      "local": "https://www.almaartandinteriors.com/events",
+      "db": "https://www.almaartandinteriors.com/events "
+    },
+    {
+      "legacyId": "147388",
+      "field": "official_url",
+      "local": "https://events.uchicago.edu/event/219915-housing-justice-in-chicago-today-arts-activism",
+      "db": "https://artsandpubliclife.org"
+    },
+    {
+      "legacyId": "147388",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2023/07/13002_Housing_Justice_in_Chicago_Today_Arts__Activism_Instagram_Post_Square.rev_.1685479916.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2023/06/https-__cdn.evbuc_.com_images_537684879_167151709467_1_original.jpg"
+    },
+    {
+      "legacyId": "145898",
+      "field": "official_url",
+      "local": "https://thevisualist.org/3111",
+      "db": "https://thevisualist.org/3111 N Western Ave, Chicago, IL 60618https:/www.linkshall.org/upcoming-events/2023-co-mission-june-24"
+    },
+    {
+      "legacyId": "143803",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2023/05/Screenshot-2023-04-26-at-4.17.06-PM.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2023/05/b37b0fc809d91bb84a571b85d84a6862.jpg"
+    },
+    {
+      "legacyId": "143540",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2023/04/CHI-fliersss.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2023/04/CHI-flier.png"
+    },
+    {
+      "legacyId": "143238",
+      "field": "official_url",
+      "local": "https://three-walls.org/events/in-session-in-reciprocity-reclaiming-narratives-of-care/",
+      "db": "https://www.eventbrite.com/e/in-session-in-reciprocity-reclaiming-narratives-of-care-tickets-586117281567?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=escb"
+    },
+    {
+      "legacyId": "143238",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2023/04/unnamedsss.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2023/04/Screenshot-2023-04-13-at-06-01-20-Fwd-✨April-In-Session-Artists-in-Conversation-visualistchicago@gmail.com-Gmail.png"
+    },
+    {
+      "legacyId": "142754",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2023/04/Access-Praxis_2022-1024x731-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2023/04/Access-Praxis_2022-1024x731-2.jpg"
+    },
+    {
+      "legacyId": "142683",
+      "field": "address",
+      "local": "55 E Ontario St, Chicago, IL 60611",
+      "db": "55 East Ontario St, Chicago, IL 60611"
+    },
+    {
+      "legacyId": "142683",
+      "field": "official_url",
+      "local": "https://www.21cmuseumhotels.com/chicago/event/o_man-and-the-legacy-of-curation/",
+      "db": "https://www.21cmuseumhotels.com/chicago/"
+    },
+    {
+      "legacyId": "142683",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2023/04/O_Man-install-image-1.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2023/04/O_Man-install-image.png"
+    },
+    {
+      "legacyId": "142120",
+      "field": "official_url",
+      "local": "https://augusthousechicago.com/",
+      "db": "https://augusthousechicago.com/ "
+    },
+    {
+      "legacyId": "140931",
+      "field": "address",
+      "local": "935 W Fullerton Ave, Chicago, IL 60614",
+      "db": "935 W Fullerton Ave, Chicago IL 60614"
+    },
+    {
+      "legacyId": "140931",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/05/exp_poster_2019_v3.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2023/03/1-Artists-Call-1984-NYC-Dona-Ann-McAdams.jpg"
+    },
+    {
+      "legacyId": "140495",
+      "field": "official_url",
+      "local": "https://www.uis.edu/visual-arts/visual-arts-gallery",
+      "db": "https://www.uis.edu/visual-arts/visual-arts-gallery "
+    },
+    {
+      "legacyId": "139902",
+      "field": "address",
+      "local": "902 N Western Ave Chicago IL 60622",
+      "db": "902 N Western Ave, Chicago, IL 60622"
+    },
+    {
+      "legacyId": "139902",
+      "field": "official_url",
+      "local": "https://www.patientinfo.club/",
+      "db": "https://www.instagram.com/p/Cohr76mLUi-/"
+    },
+    {
+      "legacyId": "139902",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2023/01/Screenshot-2023-01-28-at-13-51-56-Home-Patient-Info.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2023/02/Screen-Shot-2023-02-17-at-6.42.11-PM.png"
+    },
+    {
+      "legacyId": "139795",
+      "field": "official_url",
+      "local": "https://www.almaartandinteriors.com/",
+      "db": "https://www.almaartandinteriors.com/events/left-unsaid-a-sound-scent-taste-and-sight-interchange"
+    },
+    {
+      "legacyId": "139795",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2023/02/Untitled-design2.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2023/02/Sanderson.jpeg"
+    },
+    {
+      "legacyId": "139412",
+      "field": "official_url",
+      "local": "http://www.hammergallery.com/",
+      "db": "http://www.hammergallery.com/ "
+    },
+    {
+      "legacyId": "137698",
+      "field": "official_url",
+      "local": "http://www.hammergallery.com/",
+      "db": "http://www.hammergallery.com/ "
+    },
+    {
+      "legacyId": "136902",
+      "field": "official_url",
+      "local": "HTTP://",
+      "db": "HTTP:// DIFFA.ORG"
+    },
+    {
+      "legacyId": "136757",
+      "field": "official_url",
+      "local": "https://thevisualist.org/Palmer",
+      "db": "https://thevisualist.org/Palmer Square Art Fair and Queer Social Club"
+    },
+    {
+      "legacyId": "136522",
+      "field": "official_url",
+      "local": "https://go.uic.edu/CampusConcert",
+      "db": "https://go.uic.edu/CampusConcert "
+    },
+    {
+      "legacyId": "135972",
+      "field": "official_url",
+      "local": "http://www.hammergallery.com/",
+      "db": "http://www.hammergallery.com/ "
+    },
+    {
+      "legacyId": "135931",
+      "field": "official_url",
+      "local": "http://singinginsects.net/events/",
+      "db": " http://singinginsects.net/events/"
+    },
+    {
+      "legacyId": "134272",
+      "field": "official_url",
+      "local": "http://www.artsbiz-chicago.org",
+      "db": "http://www.artsbiz-chicago.org "
+    },
+    {
+      "legacyId": "134822",
+      "field": "address",
+      "local": "2000 N Milwaukee Ave, Chicago, IL 60647",
+      "db": "2000 N Milwaukee Ave Chicago IL 60647"
+    },
+    {
+      "legacyId": "134822",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2022/08/Show-Card-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2022/09/closingflyer.jpg"
+    },
+    {
+      "legacyId": "134714",
+      "field": "official_url",
+      "local": "https://thevisualist.org/cleaner",
+      "db": "https://thevisualist.org/cleaner gallery.com"
+    },
+    {
+      "legacyId": "134276",
+      "field": "official_url",
+      "local": "http://www.artsbiz-chicago.org",
+      "db": "http://www.artsbiz-chicago.org "
+    },
+    {
+      "legacyId": "134437",
+      "field": "official_url",
+      "local": "http://www.hammergallery.com/",
+      "db": "http://www.hammergallery.com/ "
+    },
+    {
+      "legacyId": "134266",
+      "field": "official_url",
+      "local": "http://artsandpubliclife.org/all-that-light",
+      "db": "http://artsandpubliclife.org/all-that-light "
+    },
+    {
+      "legacyId": "133722",
+      "field": "official_url",
+      "local": "https://www.wndrmuseum.com/chicago/events/tickets/017fd640-8227-30a4-9325-d90402d168e5",
+      "db": "https://www.wndrmuseum.com/chicago/events/tickets/017fd640-8227-30a4-9325-d90402d168e5 "
+    },
+    {
+      "legacyId": "132912",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2022/06/ScreenShot2022-05-29at1.55.15PM.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2022/06/Screen-Shot-2022-05-19-at-4.33.19-PM.png"
+    },
+    {
+      "legacyId": "133506",
+      "field": "official_url",
+      "local": "https://www.wndrmuseum.com/chicago/events/tickets/017fd640-8227-30a4-9325-d90402d168e5",
+      "db": "https://www.wndrmuseum.com/chicago/events/tickets/017fd640-8227-30a4-9325-d90402d168e5 "
+    },
+    {
+      "legacyId": "132838",
+      "field": "address",
+      "local": "425 Fawell Blvd Glen Ellyn 60137",
+      "db": "425 Fawell Blvd Glen Ellyn IL 60137"
+    },
+    {
+      "legacyId": "132838",
+      "field": "official_url",
+      "local": "https://www.theccma.org/",
+      "db": "https://www.theccma.org/hooking-up"
+    },
+    {
+      "legacyId": "132838",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/1969/12/rembrandt.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2022/06/2013.007-_Hans-Christian-Andersen_-Andy-Warhol-Screenprint-on-Lenox-Museum-Board-40-x-40-1_8in.jpg"
+    },
+    {
+      "legacyId": "132201",
+      "field": "official_url",
+      "local": "https://e.givesmart.com/events/qdL/",
+      "db": "https://e.givesmart.com/events/qdL/ "
+    },
+    {
+      "legacyId": "132742",
+      "field": "official_url",
+      "local": "http://singinginsects.net/events/",
+      "db": " http://singinginsects.net/events/"
+    },
+    {
+      "legacyId": "132562",
+      "field": "official_url",
+      "local": "http://www.hammergallery.com/",
+      "db": "http://www.hammergallery.com/ "
+    },
+    {
+      "legacyId": "131769",
+      "field": "official_url",
+      "local": "contact:",
+      "db": "contact: mayfieldartspace@gmail.com"
+    },
+    {
+      "legacyId": "130678",
+      "field": "official_url",
+      "local": "https://epiphanychi.com/family-resemblancethe-evolution-of-chicago-style-graffiti/",
+      "db": "https://epiphanychi.com/family-resemblancethe-evolution-of-chicago-style-graffiti/ "
+    },
+    {
+      "legacyId": "130096",
+      "field": "address",
+      "local": "60 W Walton St, Chicago, IL 60610",
+      "db": "60 W Walton Street, Chicago, IL"
+    },
+    {
+      "legacyId": "130096",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2022/01/FOW-Coloney-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/1969/12/Crossings-Instagram-1600-x-1600.png"
+    },
+    {
+      "legacyId": "129505",
+      "field": "official_url",
+      "local": "http://www.hammergallery.com/",
+      "db": "http://www.hammergallery.com/ "
+    },
+    {
+      "legacyId": "128581",
+      "field": "official_url",
+      "local": "https://www.blueman.com/chicago/buy-tickets",
+      "db": "https://www.blueman.com/chicago/buy-tickets "
+    },
+    {
+      "legacyId": "127804",
+      "field": "official_url",
+      "local": "http://aacenterfordance.org",
+      "db": "http://aacenterfordance.org "
+    },
+    {
+      "legacyId": "128591",
+      "field": "official_url",
+      "local": "http://www.hammergallery.com/",
+      "db": "http://www.hammergallery.com/ "
+    },
+    {
+      "legacyId": "128094",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2021/10/MV_sacic-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2021/10/MV_sacic.jpg"
+    },
+    {
+      "legacyId": "128053",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.un-done-art.com"
+    },
+    {
+      "legacyId": "126457",
+      "field": "official_url",
+      "local": "http://www.hammergallery.com/",
+      "db": "http://www.hammergallery.com/ "
+    },
+    {
+      "legacyId": "126515",
+      "field": "official_url",
+      "local": "http://www.hairpin",
+      "db": "http://www.hairpin arts center.org"
+    },
+    {
+      "legacyId": "125309",
+      "field": "official_url",
+      "local": "https://www.21cmuseumhotels.com/chicago",
+      "db": "https://www.21cmuseumhotels.com/chicago "
+    },
+    {
+      "legacyId": "124807",
+      "field": "address",
+      "local": "201 S Ashland Ave, Chicago, IL 60607",
+      "db": "201 S. Ashland Ave. Chicago, IL 60607"
+    },
+    {
+      "legacyId": "124807",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/1969/12/DF1ACE2F-BAC2-49E5-96EF-6AE7711720BC.jpeg",
+      "db": "https://thevisualist.org/wp-content/uploads/2021/05/1E69F075-C924-45F9-9D06-811E2F625A8F.jpeg"
+    },
+    {
+      "legacyId": "123759",
+      "field": "official_url",
+      "local": "http://www.coincident.online",
+      "db": "http://www.coincident.online "
+    },
+    {
+      "legacyId": "122476",
+      "field": "official_url",
+      "local": "https://www.21cmuseumhotels.com/chicago/event/curator-conversations-april-14th/",
+      "db": "https://www.21cmuseumhotels.com/chicago/event/curator-conversations-april-14th/ "
+    },
+    {
+      "legacyId": "122627",
+      "field": "official_url",
+      "local": "https://thevisualist.org/875",
+      "db": "https://thevisualist.org/875 N. Michigan, Ste. 3800 John Hancock Center Chicago, IL 60611"
+    },
+    {
+      "legacyId": "120895",
+      "field": "official_url",
+      "local": "https://springboardarts.com/",
+      "db": "https://springboardarts.com/  "
+    },
+    {
+      "legacyId": "120506",
+      "field": "official_url",
+      "local": "https://smartmuseum.uchicago.edu/events/1816/teaching-methods-in-the-virtual-museum/",
+      "db": "https://smartmuseum.uchicago.edu/public-practice/calendar-of-events/day/2021/01/21/"
+    },
+    {
+      "legacyId": "120506",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2021/01/Chicago-21-January-2021Hyde-Park-Smart-Museum-of-Art-Teaching-Methods-in-the-Virtual-Museum.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2021/01/Chicago21-January-2021-Hyde-Park-Smart-Museum-of-Art-Teaching-Methods-in-the-Virtual-Museum.png"
+    },
+    {
+      "legacyId": "119256",
+      "field": "official_url",
+      "local": "https://www.eventbrite.com/e/fernando-dominguez-rubio-in-conversation-tickets-128684409533",
+      "db": "https://www.eventbrite.com/e/fernando-dominguez-rubio-in-conversation-tickets-128684409533 "
+    },
+    {
+      "legacyId": "118769",
+      "field": "official_url",
+      "local": "https://www.pilsencommunitybooks.com/",
+      "db": "https://www.pilsencommunitybooks.com/?q=h.calevents"
+    },
+    {
+      "legacyId": "118769",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2020/10/Chicago29-October-2020-Lower-West-Side-Pilsen-Community-Books-Club-de-Lectura-1-Las-cosas-que-perdimos-en-el-fuego-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2020/10/Chicago29-October-2020-Lower-West-Side-Pilsen-Community-Books-Club-de-Lectura-1-Las-cosas-que-perdimos-en-el-fuego.jpg"
+    },
+    {
+      "legacyId": "118433",
+      "field": "official_url",
+      "local": "https://thevisualist.org/Meet",
+      "db": "https://thevisualist.org/Meet the Artist: Sunday, October 4, 2020  Sign up via Eventbrite to meet the artist in-person!(link is external) Exhibiting artists include Jelena Berenc, Chris Hyndman, Carlos Melian & Hiromi Tanaka.  Registration is required, as a limited number of visitors will be allowed in the gallery space at the same time. Time slots are 12PM - 1PM; 1:15PM - 2:15PM; 2:30PM - 3:30PM.   ABOUT THE ARTIST  Chris Hyndman(link is external) makes paintings that focus on color and texture, structured surfaces, and the function of pattern and digital tools in staging contemporary identities. Chris’ work has been featured in New American Paintings, Manifest’s International Painting Annual, and solo exhibitions at Bluffton University, the Institute for the Humanities at the University of Michigan, and Susanne Hilberry Gallery. This fall, his paintings will be included in the 2020 Midwestern Biennial at the Rockford Art Museum and Form & Seek: Never Normal at Wasserman Projects in Detroit. Chris is a faculty member in the School of Art & Design at Eastern Michigan University where he has been teaching since 2001. He lives and works in Chicago.  ARTIST STATEMENT  For several years my paintings have suggested shallow stagelike spaces, activated by plaid-patterned forms performing in front of curtains. Recently, they have also included depictions of pennant strings and confetti streamers—the stuff of staged celebrations. I consider “staginess” a fundamental condition of painting and hope for a reflexive relationship between the scenes depicted and their mannered construction as paintings. In terms of fit with earlier work, the latest paintings continue my interest in color and texture, structured surfaces, and the function of pattern and digital tools in the shaping, performing, and imaging of contemporary identities.  GALLERY HOURS & VISITOR INFORMATION FOR COVID-19 GUIDELINES  This exhibition will be held in the First Floor Gallery of the Evanston Art Center (EAC). When arriving at the EAC during our Gallery Hours, please wait outside and call us at (847) 475-5300 for entry. All visitors are required to wear masks and take their temperature upon entry using provided gloves, and share results with an EAC staff member. Please adhere to 6' social distancing requirements when in the gallery space.   Gallery Hours  Monday - Friday: 1 PM - 6 PM  Saturday: 10 am - 4 PM  Sunday: 12 PM - 4 PM"
+    },
+    {
+      "legacyId": "117706",
+      "field": "address",
+      "local": "Online",
+      "db": "220 E Chicago Ave, Chicago, IL 60611"
+    },
+    {
+      "legacyId": "117706",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2020/09/Chicago13-September-2020-Near-North-Side-Museum-of-Contemporary-Art-Chicago-Screening-Sci-Fi-Sessions-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2020/09/Chicago13-September-2020-Near-North-Side-Museum-of-Contemporary-Art-Chicago-Screening-Sci-Fi-Sessions.jpg"
+    },
+    {
+      "legacyId": "116914",
+      "field": "official_url",
+      "local": "Http://www.olivagallery.com",
+      "db": "Http://www.olivagallery.com "
+    },
+    {
+      "legacyId": "116892",
+      "field": "official_url",
+      "local": "https://www.filterphoto.org/david-johnson-philip-matthews-wig-hChicago,",
+      "db": "https://www.filterphoto.org/david-johnson-philip-matthews-wig-hChicago, Near West Side, Filter Photo, Wig Heavier Than A Boot, Lunchtime Reading"
+    },
+    {
+      "legacyId": "116742",
+      "field": "official_url",
+      "local": "http://espusa.fyi",
+      "db": "http://espusa.fyi "
+    },
+    {
+      "legacyId": "115025",
+      "field": "official_url",
+      "local": "http://www.57thstreetartfair.org",
+      "db": " http://www.57thstreetartfair.org"
+    },
+    {
+      "legacyId": "114608",
+      "field": "official_url",
+      "local": "http://www.citybureau.org/",
+      "db": "http://www.citybureau.org/ "
+    },
+    {
+      "legacyId": "114271",
+      "field": "official_url",
+      "local": "Link:",
+      "db": "Link: https://colum.zoom.us/j/448939547"
+    },
+    {
+      "legacyId": "113539",
+      "field": "official_url",
+      "local": "http://www.centeronhalsted.org/newevents-details.cfm?ID=17371",
+      "db": "http://www.rickymceachernartist.com/"
+    },
+    {
+      "legacyId": "113539",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2020/03/13-March-2020-Lakeview-Moment-Center-on-Halsted.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2020/03/halstead_event_fb_v02.jpg"
+    },
+    {
+      "legacyId": "112530",
+      "field": "official_url",
+      "local": "https://www.womenandchildrenfirst.com/?fbclid=IwAR2L0Zov8wylzbXYLDDqE8eUNgOEgMW7LfoSyQAAC9rz31r7eedOFjeK0j0",
+      "db": "https://www.womenandchildrenfirst.com/event"
+    },
+    {
+      "legacyId": "112530",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2020/02/82944128_2580942555471709_6599780818732711936_n.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2020/02/ChicagoFebruary-2020-Edgewater-Women-Children-First-Bookstore-Re-Envisioning-Masculinity-StorytellingWorkshop-and-Dialogue.jpg"
+    },
+    {
+      "legacyId": "112612",
+      "field": "official_url",
+      "local": "http://www.artempopupgallery.com",
+      "db": " http://www.artempopupgallery.com"
+    },
+    {
+      "legacyId": "112597",
+      "field": "official_url",
+      "local": "http://www.smartmuseum.uchicago.edu",
+      "db": " http://www.smartmuseum.uchicago.edu"
+    },
+    {
+      "legacyId": "112599",
+      "field": "official_url",
+      "local": "http://www.1100florence.com",
+      "db": " http://www.1100florence.com"
+    },
+    {
+      "legacyId": "112603",
+      "field": "official_url",
+      "local": "http://lincolnsquare.oneriverschool.com",
+      "db": " http://lincolnsquare.oneriverschool.com"
+    },
+    {
+      "legacyId": "112068",
+      "field": "official_url",
+      "local": "http://www.blockmuseum.northwestern.edu",
+      "db": " http://www.blockmuseum.northwestern.edu"
+    },
+    {
+      "legacyId": "112200",
+      "field": "official_url",
+      "local": "http://www.ccct.uchicago.edu",
+      "db": " http://www.ccct.uchicago.edu"
+    },
+    {
+      "legacyId": "111905",
+      "field": "official_url",
+      "local": "http://www.blockmuseum.northwestern.edu",
+      "db": " http://www.blockmuseum.northwestern.edu"
+    },
+    {
+      "legacyId": "111907",
+      "field": "official_url",
+      "local": "https://www.",
+      "db": "https://www. poboxcollective.us"
+    },
+    {
+      "legacyId": "111891",
+      "field": "address",
+      "local": "756 N Milwaukee Ave. Chicago IL 60642",
+      "db": "756 N Milwaukee Ave, Chicago, IL 60642"
+    },
+    {
+      "legacyId": "111891",
+      "field": "official_url",
+      "local": "http://www.art.org",
+      "db": "https://www.art.org/curator-and-collector-conversation/?fbclid=IwAR2ImUY-h3sUSnHPMz9JJnCymiB8gDMkn31YVORNyzKvzzKXI9mP4jxA1tw"
+    },
+    {
+      "legacyId": "111891",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2020/02/victorkeen.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2020/02/82940551_10157759822425561_7022308753441554432_o.jpg"
+    },
+    {
+      "legacyId": "111675",
+      "field": "official_url",
+      "local": "https://uima-chicago.org/events/2020/2/7/how-can-art-fight-back-refugee-artists-and-the-ukrainian-crisis",
+      "db": "https://uima-chicago.org/?fbclid=IwAR2iNA3Qke5ZNUCGjS7OKzPyZzS7cB0_Fg7iRUX7jWmROBnOAY-6f2wO5mE"
+    },
+    {
+      "legacyId": "111675",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2020/02/7-February-2020-West-Town-Nazar-Kozak-How-can-Art-Fight-Back-Ukranian-Institute.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2020/02/83086831_10158256761903109_1369305427312902144_o.jpg"
+    },
+    {
+      "legacyId": "110647",
+      "field": "official_url",
+      "local": "https://www.manacontemporary.com/event/what-i-really-want-to-tell-you-opening/",
+      "db": "https://www.manacontemporary.com/visit/chicago/"
+    },
+    {
+      "legacyId": "110647",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2020/01/12_RL.jpeg",
+      "db": "https://thevisualist.org/wp-content/uploads/2020/01/IMG_5575.jpg"
+    },
+    {
+      "legacyId": "101228",
+      "field": "address",
+      "local": "1180 N Milwaukee Ave, Chicago, IL 60654",
+      "db": "1180 N Milwaukee Ave, Chicago, IL 60642"
+    },
+    {
+      "legacyId": "101228",
+      "field": "official_url",
+      "local": "https://www.womenandchildrenfirst.com/event/poets-reproductive-justice",
+      "db": "https://youngchicagoauthors.org/"
+    },
+    {
+      "legacyId": "101228",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/1969/12/poets-for-reproductive-justice.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/07/15-July-2019__Poets-for-Reproductive-Justice__YCA.jpg"
+    },
+    {
+      "legacyId": "109658",
+      "field": "address",
+      "local": "5311 S Lake Park Ave West, Chicago, IL 60615",
+      "db": "5311 S Lake Park Ave, Chicago, IL 60615"
+    },
+    {
+      "legacyId": "109658",
+      "field": "official_url",
+      "local": "https://www.hydeparkhandmade.com/",
+      "db": "http://www.promontorychicago.com"
+    },
+    {
+      "legacyId": "109658",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/12/22-December-2019-Hyde-Park-Hyde-Park-Handmade-Holiday-Bazaar-The-Promontory.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/12/The-Promontory-Hyde-Park-Handmade-Holiday-Bazaar.jpg"
+    },
+    {
+      "legacyId": "109660",
+      "field": "address",
+      "local": "914 N California Ave, Chicago, IL 60622",
+      "db": "914 N. California, Walton Entrance, Chicago, IL 60622"
+    },
+    {
+      "legacyId": "109660",
+      "field": "official_url",
+      "local": "https://readwritelibrary.org/events/slow-res-free-self-taught-diy-mfa",
+      "db": "http://www.readwritelibrary.org"
+    },
+    {
+      "legacyId": "109660",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/12/22-December-2019-West-Town-Slow-Res-Read-Wirght-Library.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/12/ReadWrite-Library-Slow-Res.jpg"
+    },
+    {
+      "legacyId": "109435",
+      "field": "official_url",
+      "local": "https://uima-chicago.org",
+      "db": "https://uima-chicago.org "
+    },
+    {
+      "legacyId": "109337",
+      "field": "official_url",
+      "local": "http://www.johallaprojects.com",
+      "db": " http://www.johallaprojects.com"
+    },
+    {
+      "legacyId": "107967",
+      "field": "official_url",
+      "local": "http://www.taikolegacy.com/tickets",
+      "db": "https://tl16.brownpapertickets.com/?fbclid=IwAR0lpNCMPvXU2rz9EPgxDKkEKJp9NggGDwcVVMRzAZQ55QWVzQI7KQFWWjc"
+    },
+    {
+      "legacyId": "107967",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/12/Taiko-Legacy-2016_1815-1-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/12/69829959_2862824907066352_4635711988171800576_n.jpg"
+    },
+    {
+      "legacyId": "109264",
+      "field": "official_url",
+      "local": "https://www.facebook.com/events/503481473830683",
+      "db": "https://marz.beer/?fbclid=IwAR1t1Q5SmILH3KfOdHCZhebcE7wM1vC-JajtYpxUyZ2LMWYYqQjPbTZfZ2M"
+    },
+    {
+      "legacyId": "109264",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/12/Chicago-8-December-2019Bridgeport-Marz-Community-Brewing-The-Wildest-Flea-Holiday-Market.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/12/marz.jpg"
+    },
+    {
+      "legacyId": "107965",
+      "field": "official_url",
+      "local": "http://www.taikolegacy.com/tickets",
+      "db": "http://www.taikolegacy.com/tickets "
+    },
+    {
+      "legacyId": "109162",
+      "field": "official_url",
+      "local": "http://www.colum.edu/deps",
+      "db": " http://www.colum.edu/deps"
+    },
+    {
+      "legacyId": "109009",
+      "field": "address",
+      "local": "4 W Burton Pl, Chicago, Illinois 60610",
+      "db": "4 W Burton Place, Chicago IL 60610"
+    },
+    {
+      "legacyId": "109009",
+      "field": "official_url",
+      "local": "",
+      "db": "http://www.grahamfoundation.org"
+    },
+    {
+      "legacyId": "109009",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/11/72357980_10156617851657844_3588875913783148544_o.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/11/Graham-Foundation-Cultural-Reproducers.jpg"
+    },
+    {
+      "legacyId": "109005",
+      "field": "address",
+      "local": "220 E Chicago Ave, Chicago, Illinois 60611",
+      "db": "220 E Chicago Ave, Chicago, IL 60611"
+    },
+    {
+      "legacyId": "109005",
+      "field": "official_url",
+      "local": "https://mcachicago.org/Calendar/2019/11/Unwrapped-A-Holiday-Artist-Showcase?fbclid=IwAR1B0Bq2HnAmkntkGUcNpjUatufHnmA8dAuuv5bHMvkd2Mre52LWxSfDjoo",
+      "db": "https://mcachicago.org/Calendar/2019/11/Unwrapped-A-Holiday-Artist-Showcase"
+    },
+    {
+      "legacyId": "109005",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/11/75302679_10156979220152762_3434754585778978816_o.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/11/Capture.jpg"
+    },
+    {
+      "legacyId": "108791",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.trikonechicago.org"
+    },
+    {
+      "legacyId": "108545",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. compoundyellow.com"
+    },
+    {
+      "legacyId": "108419",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/11/tetsuya-ishida.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/11/22-November-2019-Lincoln-Park-Tetsuya-Ishida-and-the-Ambivalenc-Wrightwood-659.jpg"
+    },
+    {
+      "legacyId": "108631",
+      "field": "official_url",
+      "local": "http://www.saic.edu/homan-square",
+      "db": " http://www.saic.edu/homan-square"
+    },
+    {
+      "legacyId": "108200",
+      "field": "official_url",
+      "local": "http://www.oppl.org",
+      "db": " http://www.oppl.org"
+    },
+    {
+      "legacyId": "107945",
+      "field": "official_url",
+      "local": "https://www.basicstudios.space/",
+      "db": "https://www.facebook.com/BasicStudiosChicago/"
+    },
+    {
+      "legacyId": "107945",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/11/poster_final_nov17-1-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/11/poster_final_nov17-1.jpg"
+    },
+    {
+      "legacyId": "108214",
+      "field": "official_url",
+      "local": "",
+      "db": "http://www.projectonward.org"
+    },
+    {
+      "legacyId": "108214",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/11/72277373_10156657969288581_4391964167397965824_o.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/11/Project-Onward-The-Brothers-Juguilon.jpg"
+    },
+    {
+      "legacyId": "108244",
+      "field": "official_url",
+      "local": "https://patrongallery.com/exhibition/194/turnover-rate",
+      "db": "https://patrongallery.com/exhibition/194/turnover-rate "
+    },
+    {
+      "legacyId": "107909",
+      "field": "official_url",
+      "local": "Workshop:",
+      "db": "Workshop: The Poem as a Place of Respite"
+    },
+    {
+      "legacyId": "108145",
+      "field": "address",
+      "local": "659 W Wrightwood, Chicago, IL 60614",
+      "db": "659 W Wrightwood Ave, Chicago, IL 60614"
+    },
+    {
+      "legacyId": "108145",
+      "field": "official_url",
+      "local": "https://wrightwood659.org/?fbclid=IwAR0iZbgoxjpn0aLtIJh1Hp9uAk_oA_i0fxPrZdY6_Bf9cr0uzNbhn9auFi0",
+      "db": "https://wrightwood659.org"
+    },
+    {
+      "legacyId": "108145",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/11/71147870_2503303826429983_6908775287291379712_o.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/11/Awakening-1998-©-Tetsuya-Ishida-2019-Photograph-Takemi-Art-Photos-courtesy-Kyuryudo-Art-Publishing-Co.-Ltd..jpg"
+    },
+    {
+      "legacyId": "108068",
+      "field": "official_url",
+      "local": "https://mcachicago.org/Calendar/2019/11/Screening-Lawrence-Abu-Hamdan?fbclid=IwAR0VRtP_YCtRwI1VWsdqwWJuO54TCrgP8Wdf--2ml9yDNaWd-3z9EOkbunQ",
+      "db": "https://mcachicago.org/Calendar/2019/11/Screening-Lawrence-Abu-Hamdan?fbclid=IwAR2NNJlCJr_AW9T-aLBB2pr1r9_wYKmeyPgqcyedfxpfHbOh0jvmCefBQ44"
+    },
+    {
+      "legacyId": "108068",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/11/14-November-2019-Near-North-Side-Screening-Lawrence-Abu-Hamdan-Museum-for-Contemproary-ARt-Chicago.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/11/14-November-2019-Near-North-Side-Screening-Lawrence-Abu-Hamdan-Museum-of-Contemporary-Art-Chicago.jpg"
+    },
+    {
+      "legacyId": "107307",
+      "field": "address",
+      "local": "6018 N Kenmore Ave, Chicago, IL 60660",
+      "db": "6018 N Kenmore Ave, Chicago, IL, 60660"
+    },
+    {
+      "legacyId": "107307",
+      "field": "official_url",
+      "local": "https://www.justicehotel.org/programs-events?fbclid=IwAR1-TCeLs3VFkea69bjuaFYwH1QAkG4K988mtoUDKB-TGN9MsnXWTLNcOEk",
+      "db": "http://www.6018north.org/new-events/2019/11/13/grace-period-screening-and-qampa-with-filmmaker"
+    },
+    {
+      "legacyId": "107307",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/11/Chicago-13-November-2019-Edgewater-6018North-Grace-Period.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/11/70246345_123574849003775_2304896651824726016_o.jpg"
+    },
+    {
+      "legacyId": "107800",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. chicago.aiga.org"
+    },
+    {
+      "legacyId": "106391",
+      "field": "official_url",
+      "local": "https://www.spudnikpress.org/event/tessellate/",
+      "db": "https://www.spudnikpress.org/event/tessellate/ "
+    },
+    {
+      "legacyId": "107788",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. logan.uchicago.edu"
+    },
+    {
+      "legacyId": "106844",
+      "field": "official_url",
+      "local": "https://thevisualist.org",
+      "db": "https:// www.1100florence.com"
+    },
+    {
+      "legacyId": "106764",
+      "field": "official_url",
+      "local": "http://www.nationalmuseumofmexicanart.org",
+      "db": " http://www.nationalmuseumofmexicanart.org"
+    },
+    {
+      "legacyId": "106770",
+      "field": "official_url",
+      "local": "http://www.6018north,",
+      "db": "http://www.6018north, org"
+    },
+    {
+      "legacyId": "106772",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. emporiumchicago.com"
+    },
+    {
+      "legacyId": "106756",
+      "field": "official_url",
+      "local": "http://www.graycenter.uchicago.edu",
+      "db": " http://www.graycenter.uchicago.edu"
+    },
+    {
+      "legacyId": "106411",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. logan.uchicago.edu"
+    },
+    {
+      "legacyId": "106153",
+      "field": "official_url",
+      "local": "https://www.eventbrite.com/e/lit-luz-artist-talk-with-israel-martinez-tickets-72405096593",
+      "db": "http://www. logan.uchicago.edu"
+    },
+    {
+      "legacyId": "106153",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/10/IM-LOVEANDRAGE.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/10/Logan-Center-Lit-Luz-Martinez.jpg"
+    },
+    {
+      "legacyId": "106144",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. project1612.com"
+    },
+    {
+      "legacyId": "105743",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. poboxcollective.us"
+    },
+    {
+      "legacyId": "105737",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. csrpc.uchicago.edu"
+    },
+    {
+      "legacyId": "105735",
+      "field": "official_url",
+      "local": "http://www.firecatprojects.org",
+      "db": " http://www.firecatprojects.org"
+    },
+    {
+      "legacyId": "105175",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.westtownchamber.org"
+    },
+    {
+      "legacyId": "105170",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. arts.uchicago.edu/apl"
+    },
+    {
+      "legacyId": "105083",
+      "field": "official_url",
+      "local": "https://www.litluz.org/bookclub?fbclid=IwAR1uOZ1GHkWCHz_18eYVpI91BHMy1y8SY3_BAu3jwXJ8igkc9eZKQa1uTuI",
+      "db": "https://www.pilsenoutpost.com/"
+    },
+    {
+      "legacyId": "105083",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/1969/12/65261889_10156846816758702_4116385347561062400_o.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/09/Chicago-Lower-West-Side-Pilsen-Outpost-Lit-Luz-Book-Club-Antígona-González-by-Sara-Uribena.jpg"
+    },
+    {
+      "legacyId": "104411",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. art-studio-oh.com"
+    },
+    {
+      "legacyId": "104667",
+      "field": "address",
+      "local": "225 N Michigan Ave. Suite 2200, Chicago, IL 60601",
+      "db": "225 N Michigan Ave, Ste 2200, Chicago, IL 60601"
+    },
+    {
+      "legacyId": "104667",
+      "field": "official_url",
+      "local": "https://chicagoculturalaccess.formstack.com/forms/2019_lead_debrief?fbclid=IwAR0k0YVLaFuIRoFPSP9T7bb_LSDNSoF46jL0DAgEMInVuXalJc5YGRNK4bw",
+      "db": "https://chicagoculturalaccess.formstack.com/forms/2019_lead_debrief"
+    },
+    {
+      "legacyId": "104667",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/09/69287010_2557098037653935_7812929644709019648_n.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/09/19-September-2019-Loop-LEAD-Conference-2019-Debrief-The-Chicago-Community-Trust.jpg"
+    },
+    {
+      "legacyId": "104205",
+      "field": "official_url",
+      "local": "http://poboxcollective.us/event/fiber-arts-circle-8/",
+      "db": "http://poboxcollective.us/?fbclid=IwAR2phvbXUADsGkvRZsHfguzcHj_yyb7QsFb3RvbRCFrJTk33vDd5H-J8s0o"
+    },
+    {
+      "legacyId": "104205",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/09/16-September-2019-Rogers-Park-Fibers-Circles-1st-and-3rd-Mondays-6-8pm-PO-Box-Collective.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/09/69475552_509118229891666_5810650972606693376_o.jpg"
+    },
+    {
+      "legacyId": "104173",
+      "field": "official_url",
+      "local": "http://www.lakevieweastfestivalofthearts.com",
+      "db": " http://www.lakevieweastfestivalofthearts.com"
+    },
+    {
+      "legacyId": "103990",
+      "field": "address",
+      "local": "1012 N Dearborn St, Chicago, IL 60610",
+      "db": "1012 N Dearborn St, Chicago, IL60610"
+    },
+    {
+      "legacyId": "103990",
+      "field": "official_url",
+      "local": "https://paletteandchisel.org/?fbclid=IwAR0_1OQ3MQTCok4oCyzvycf9aJS5-VxWRwWMS3wHSm3L96gGUp7qWJJbSG4",
+      "db": "https://paletteandchisel.org/?fbclid=IwAR0qW2R5gj27dwcy7BuFeimK1mopR-MyYAIRnoBdI0M6Di0N77q1NEUq5xY"
+    },
+    {
+      "legacyId": "103990",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/09/67171040_10157224854054870_370253522677006336_o.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/09/67171040_10157224854054870_370253522677006336_o-1.jpg"
+    },
+    {
+      "legacyId": "104372",
+      "field": "official_url",
+      "local": "http://www.laluzgallery.net",
+      "db": " http://www.laluzgallery.net"
+    },
+    {
+      "legacyId": "104433",
+      "field": "address",
+      "local": "2130 W Fulton St, Chicago, Illinois 60612",
+      "db": "2130 W Fulton St, Chicago, IL 60612"
+    },
+    {
+      "legacyId": "104433",
+      "field": "official_url",
+      "local": "https://chicagoartistscoalition.org/?fbclid=IwAR1GzlwW9FN-bFWvsSNSjLq-Cc5zP9kSmD3S9DTZAuWcyAX2LoYRayzGTJY",
+      "db": "https://chicagoartistscoalition.org/events/office-hours-portfolio-review-2"
+    },
+    {
+      "legacyId": "104433",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/09/68958556_2510721938980174_4831072247827398656_n.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/09/Portfolio-Review-image_4.jpg"
+    },
+    {
+      "legacyId": "104162",
+      "field": "official_url",
+      "local": "http://www.hideoutchicago.com",
+      "db": " http://www.hideoutchicago.com"
+    },
+    {
+      "legacyId": "104367",
+      "field": "official_url",
+      "local": "http://www.library.colum.edu",
+      "db": " http://www.library.colum.edu"
+    },
+    {
+      "legacyId": "104159",
+      "field": "official_url",
+      "local": "http://www.goethe.de/chicago",
+      "db": " http://www.goethe.de/chicago"
+    },
+    {
+      "legacyId": "104100",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. www.theouttaspace.com"
+    },
+    {
+      "legacyId": "104157",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// thefranklinoutdoor.tumblr.com"
+    },
+    {
+      "legacyId": "103463",
+      "field": "official_url",
+      "local": "https://www.facebook.com/ShirleyRyanAbilityLab/",
+      "db": "https://www.sralab.org/"
+    },
+    {
+      "legacyId": "103463",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/09/6-September-2019-Near-North-Sides-17th-Annual-Art-in-Motion-Shirley-Ryan-AbilityLab.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/09/6-September-2019-Near-North-Side-17th-Annual-Art-in-Motion-Shirley-Ryan-Ability-Lab.jpg"
+    },
+    {
+      "legacyId": "102975",
+      "field": "official_url",
+      "local": "http://www.donotsubmitchicago.com/dns-rogers-park.html",
+      "db": "http://www.donotsubmitchicago.com/dns-rogers-park.html "
+    },
+    {
+      "legacyId": "102676",
+      "field": "address",
+      "local": "1434 W 51st, Chicago, IL 60609",
+      "db": "1434 W 51st St, Chicago, IL 60609"
+    },
+    {
+      "legacyId": "102676",
+      "field": "official_url",
+      "local": "https://www.facebook.com/kolanutcollab/",
+      "db": "https://www.letusbreathecollective.com/?fbclid=IwAR3_b2cpgEEaaOKCZnYLOkFaoK2_PRHMS-OI8006R7NdQKt1eqkSWQ4K1fg"
+    },
+    {
+      "legacyId": "102676",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/08/Chicago11-August-2019-Hyde-Park-the-LetUsBreathe-Collective-Cooperation-for-Liberation-Study-Working-Group-The-Kola-Nut-Collaborative.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/08/25-August-2019-New-City-Cooperation-for-Liberation-Study-and-Working-Group-Let-Us-Breathe-Collective.jpg"
+    },
+    {
+      "legacyId": "102301",
+      "field": "address",
+      "local": "5216 N Damen Ave, Chicago, IL 60625",
+      "db": "5216 N. Damen, Chicago, IL 60625"
+    },
+    {
+      "legacyId": "102301",
+      "field": "official_url",
+      "local": "http://www.morphogallery.com/futureevents.htm",
+      "db": "http://www.morphogallery.com/"
+    },
+    {
+      "legacyId": "102301",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/08/2-Aug-2019__8th-Annual-Encaustic-Exhibition__Morpho.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/08/Postcard_2019-Encaustic-Show.jpg"
+    },
+    {
+      "legacyId": "101359",
+      "field": "official_url",
+      "local": "https://www.instagram.com/zakaibprojects/",
+      "db": "https://www.facebook.com/zakaibprojects/"
+    },
+    {
+      "legacyId": "101359",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/07/TheAnnalsofHell.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/07/27-July-2019-Avondale-The-Annals-of-Hell-Zakaib.jpg"
+    },
+    {
+      "legacyId": "101831",
+      "field": "official_url",
+      "local": "https://www.volumesbooks.com/event/lit-luz-book-club-empty-set-ver%C3%B3nica-gerber-bicecci",
+      "db": "https://www.litluz.org/bookclub?fbclid=IwAR3VjaJndYUrU5mOFgfvBHZzskd9O8yRLbWG53i2GPlNGi8IBmHLP281Cq8"
+    },
+    {
+      "legacyId": "101831",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/07/25-July-2019__Lit-Luz-Book-Club-2019-EMPTY-SET-by-Verónica-Gerber-Bicecci__Volumes.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/07/Chicago-25-July-2019-West-Town-Volumes-Bookcafe-Verónica-Gerber-Bicecci-EMPTY-SET.jpg"
+    },
+    {
+      "legacyId": "101833",
+      "field": "official_url",
+      "local": "http://singinginsects.net/events/",
+      "db": " http://singinginsects.net/events/"
+    },
+    {
+      "legacyId": "101728",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/07/21-July-2019__Hotel-Room-Art-Auction__Ace-Hotel.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/07/ACE_version_01.jpg"
+    },
+    {
+      "legacyId": "99478",
+      "field": "official_url",
+      "local": "https://thevisualist.org/www.tigerstrikesasteroid.com",
+      "db": "https://thevisualist.org/www.tigerstrikesasteroid.com "
+    },
+    {
+      "legacyId": "99974",
+      "field": "official_url",
+      "local": "http://www.wearethesyndicate.com/first-read-2019-1",
+      "db": "http://www.wearethesyndicate.com/first-read-2019-1 "
+    },
+    {
+      "legacyId": "97687",
+      "field": "address",
+      "local": "3429 W Diversey Ave, Ste 208, Chicago, IL 60647",
+      "db": "3429 W Diversey, #208, Chicago, IL 60647"
+    },
+    {
+      "legacyId": "97687",
+      "field": "official_url",
+      "local": "http://elasticarts.org/events/",
+      "db": "http://elasticarts.org/event/we-series-a-ritual-for-exchange/"
+    },
+    {
+      "legacyId": "97687",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/05/28-May-2019-Logan-Square-We-Series-A-ritual-for-Exchange-Elastic-Arts.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/05/28-May-2019__We-Series-Festival-a-Ritual-for-Exchange__Elastic-Arts.jpg"
+    },
+    {
+      "legacyId": "97641",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/05/bgfa_1905_combo_1400.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/05/bgfa_1905_combo_1400-1.jpg"
+    },
+    {
+      "legacyId": "97939",
+      "field": "official_url",
+      "local": "https://engage.saic.edu/event/3238322",
+      "db": "https://engage.saic.edu/event/3238322  "
+    },
+    {
+      "legacyId": "97902",
+      "field": "official_url",
+      "local": "https://www.mcachicago.org/Calendar/2019/05/Manuela-Infante-Estado-Vegetal",
+      "db": "https://mcachicago.org/Calendar/2019/05/Manuela-Infante-Estado-Vegetal?fbclid=IwAR0urvLJP-Tqpq6-s3n1q2Xf1AkfPxQEOVzLYFuldK_t0gOIceOgycnaIT8"
+    },
+    {
+      "legacyId": "97902",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/05/FY19-ManuelaInfante-7-PRINCIPAL-IMAGE.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/05/9-May-2019-Near-North-Side-Manuela-Infante-Estado-Vegetal.jpg"
+    },
+    {
+      "legacyId": "95726",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/04/11-April-2019-Evanston-Ellen-Greene-and-Vanessa-Filley-Our-Next-YouTime-Art-Encounter-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/04/11-April-2019-Evanston-Ellen-Greene-and-Vanessa-Filley-Our-Next-YouTime-Art-Encounter.jpg"
+    },
+    {
+      "legacyId": "95228",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/04/6-April-2019-Evanston-Exhibit-New-Works-by-Kathy-Halper-1100-Florence.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/04/6-Apr-2019__Kathy-Halper-What-a-Day-It’s-Been__1100-Florence.jpg"
+    },
+    {
+      "legacyId": "95190",
+      "field": "address",
+      "local": "4401 N Ravenswood Ave, Chicago, IL 60640, 3rd Floor",
+      "db": "4401 N Ravenswood Ave, Chicago, IL 60640"
+    },
+    {
+      "legacyId": "95190",
+      "field": "official_url",
+      "local": "https://lillstreet.com/",
+      "db": "https://lillstreetgallery.com/"
+    },
+    {
+      "legacyId": "95190",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/04/ICBSLT02.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/04/6-April-2019-Uptown-Discourse-Jessica-Pierotti-Lillstreet-Art-Center.jpg"
+    },
+    {
+      "legacyId": "95243",
+      "field": "address",
+      "local": "15 Ziegler Ct, Elgin, IL 60120",
+      "db": "15 Ziegler Ct. Elgin IL 60120"
+    },
+    {
+      "legacyId": "95243",
+      "field": "official_url",
+      "local": "https://www.sidestreetstudioarts.org/?fbclid=IwAR1iMuLkJcHQ3ptqGhHoy3xPuOj9WL-bta1jAo3U7GTxyV1Xo9oxWwSdotk",
+      "db": "https://www.christianarrecis.com"
+    },
+    {
+      "legacyId": "95243",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/04/5-April-2019-Elgin-Recent-Work-Christian-Arrecis-Side-Street-Studio-Arts.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/04/SSSA-AIR-CArrecis-Exhibition-Announcement.jpg"
+    },
+    {
+      "legacyId": "95445",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/03/29-Mar-2019__Jumbo-Mumbo__Co-Prosperity-Sphere.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/03/15-Mar-2019__Jumbo-Mumbo__Co-Prosperity-Sphere.jpg"
+    },
+    {
+      "legacyId": "95449",
+      "field": "official_url",
+      "local": "https://thevisualist.org/Elephant",
+      "db": "https://thevisualist.org/Elephant Room Gallery "
+    },
+    {
+      "legacyId": "94707",
+      "field": "address",
+      "local": "1448 W Howard St, Chicago, IL 60626",
+      "db": "1448 Howard St, Chicago, IL 60626"
+    },
+    {
+      "legacyId": "94707",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/03/23-March-2019-Rogers-Park-Dorit-Jordan-Dotan-Reduntant-Wedge-Projects.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/03/redundant_inv.png"
+    },
+    {
+      "legacyId": "94709",
+      "field": "official_url",
+      "local": "http://www.6018north.org/current-upcoming-projects#/notes-from-performing-the-archive",
+      "db": "http://www.6018north.org/notes-from-performing-the-archive/"
+    },
+    {
+      "legacyId": "94709",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/03/23-March-2019-Edgewater-Performance-Hancock-and-Kelly-Notes-from-performing-the-archive-6018-North.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/03/6018North-Press-Release-–-hancock-kelly-–-Notes-from-Performing-the-Archive-–-IN_TIME-19-–-hancock-kelly-–-Past-Work-Image-–-I-Feel-Your-Weight-and-My-.-.-.-–-Photo-credit-Mathew-Lewis-.jpg"
+    },
+    {
+      "legacyId": "94941",
+      "field": "official_url",
+      "local": "http://www.iceberchicago.com",
+      "db": "http://icebergchicago.com/?fbclid=IwAR38Aaji2fAHqSdnuG0K7bIwYtsSXgtWjHYmYAsJqftppuDG26FrLzbdcpc"
+    },
+    {
+      "legacyId": "94941",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/03/Fumbling-Heart-Invitation-Imagesmall.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/03/23-March-2019-Rogers-Park-Jared-Buckhiester-Fumbling-Heart-Iceberg-Projects.jpg"
+    },
+    {
+      "legacyId": "94346",
+      "field": "address",
+      "local": "220 E Chicago Ave, Chicago, IL 606011",
+      "db": "220 E Chicago Ave, Chicago, IL 60611"
+    },
+    {
+      "legacyId": "94346",
+      "field": "official_url",
+      "local": "https://mcachicago.org/Calendar/2019/03/Annie-Dorsen-The-Great-Outdoors",
+      "db": "https://mcachicago.org/Calendar/2019/03/Annie-Dorsen-The-Great-Outdoors?fbclid=IwAR168lRe9AQvEwSTEAniaB3Zmyk4xtR7vM6HA42V_53jJdKKAkDfO9091nc"
+    },
+    {
+      "legacyId": "94346",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/1969/12/FY19-AnnieDorsen-2.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/03/21-March-2019-Near-North-Side-Stage-Annie-Dorsen-The-Great-Outdoors-Museum-of-Contemporary-Art-Chicago.jpg"
+    },
+    {
+      "legacyId": "93798",
+      "field": "address",
+      "local": "300 W Superior St, Suite 203, Chicago, IL 60654",
+      "db": "300 W Superior St, Chicago, IL 60654"
+    },
+    {
+      "legacyId": "93798",
+      "field": "official_url",
+      "local": "http://weinbergnewtongallery.com/events/147-quiet-time-changing-students-lives/",
+      "db": "https://weinbergnewtongallery.com/events/upcoming/"
+    },
+    {
+      "legacyId": "93798",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/03/LeslieInstallBlackWall.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/03/7-March-2019-Near-North-Side-Panel-Quiet-Time-Changing-Students-Lives-WeinbergNewton-Gallery.jpg"
+    },
+    {
+      "legacyId": "93892",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/03/2-March-2019-West-Town-Artist-Talk-Paul-Lamantia-One-After-909.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/03/52100108_1682614015218107_5626880665019482112_n.jpg"
+    },
+    {
+      "legacyId": "93046",
+      "field": "official_url",
+      "local": "http://www.linedoteditions.com/",
+      "db": "https://www.linedoteditions.com/pages/exhibitions"
+    },
+    {
+      "legacyId": "93046",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2019/02/Curtis-Hype-Beast.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2019/02/23-Feb-2019__Curtis-William-Readel-Feed-the-Beast__Line-Dot.jpg"
+    },
+    {
+      "legacyId": "92328",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. thebronzevilleincubator.com"
+    },
+    {
+      "legacyId": "92320",
+      "field": "official_url",
+      "local": "http://www.pilsenoutpost.com",
+      "db": " http://www.pilsenoutpost.com"
+    },
+    {
+      "legacyId": "92246",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "92244",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "91884",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. logan.uchicago.edu"
+    },
+    {
+      "legacyId": "91897",
+      "field": "official_url",
+      "local": "http://www.morainevalley.edu/fpac/season-overview",
+      "db": " http://www.morainevalley.edu/fpac/season-overview"
+    },
+    {
+      "legacyId": "91901",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.expochicago.com"
+    },
+    {
+      "legacyId": "91441",
+      "field": "official_url",
+      "local": "https://www.babybluegallery.com/",
+      "db": "https://www.babybluegallery.com/ "
+    },
+    {
+      "legacyId": "91048",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. oi.uchicago.edu"
+    },
+    {
+      "legacyId": "91050",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. logan.uchicago.edu"
+    },
+    {
+      "legacyId": "90785",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.jewelist.com"
+    },
+    {
+      "legacyId": "90445",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.olivagallery.com"
+    },
+    {
+      "legacyId": "90437",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. 062official.com"
+    },
+    {
+      "legacyId": "90224",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.gnarwareworkshop.com"
+    },
+    {
+      "legacyId": "90233",
+      "field": "official_url",
+      "local": "http://www.westsuburbanmc.com",
+      "db": " http://www.westsuburbanmc.com"
+    },
+    {
+      "legacyId": "89995",
+      "field": "official_url",
+      "local": "http://www.colum.edu/art",
+      "db": " http://www.colum.edu/art"
+    },
+    {
+      "legacyId": "89936",
+      "field": "official_url",
+      "local": "http://www.chicagofilmarchives.org/current-events/designed-to-be-seen-form-and-function-the-legacy-of-the-institute-of-design",
+      "db": " http://www.chicagofilmarchives.org/current-events/designed-to-be-seen-form-and-function-the-legacy-of-the-institute-of-design"
+    },
+    {
+      "legacyId": "89922",
+      "field": "official_url",
+      "local": "https://www.extasechicago.com/",
+      "db": ""
+    },
+    {
+      "legacyId": "89922",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2018/12/Jesse-Meredith_Security-Stick.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2018/12/1-Dec-2018__Reckless-Comfort__Extase.jpg"
+    },
+    {
+      "legacyId": "89354",
+      "field": "official_url",
+      "local": "https://www.nationalhellenicmuseum.org/exhibits-collections/current-exhibitions/kokines/",
+      "db": "https://www.nationalhellenicmuseum.org/"
+    },
+    {
+      "legacyId": "89354",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2018/11/29-November-2018-Near-West-Side-Layers-Revealed-Identities-Explored-National-Hellenic-Museum.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2018/11/29-Nov-2018__Layers-Revealed-Identities-Explored__National-Hellenic-Museum.jpg"
+    },
+    {
+      "legacyId": "89420",
+      "field": "official_url",
+      "local": "http://www.",
+      "db": "http://www. coleschicago.blogspot.com"
+    },
+    {
+      "legacyId": "89544",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.hairpinartscenter.org"
+    },
+    {
+      "legacyId": "89405",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.que4.org"
+    },
+    {
+      "legacyId": "88636",
+      "field": "official_url",
+      "local": "https://www.artdesignchicago.org/events/near-north-design-day",
+      "db": "https://www.artdesignchicago.org/events/near-north-design-day "
+    },
+    {
+      "legacyId": "89136",
+      "field": "official_url",
+      "local": "http://www.coprosperity.org/?fbclid=IwAR22-9v52xLuhRikIAmGo5PbhMPN3CE1oGUN3ytauX_oHxSVgGCVSV3gpQE",
+      "db": "http://www.coprosperity.org/events/2018/10/12/calaveras-y-palmeras-a-dia-de-muertos-party"
+    },
+    {
+      "legacyId": "89136",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2018/11/Chicago-2-November-2018Bridgeport-Co-Prosperity-Sphere-Calaveras-y-Palmeras-A-Dia-de-Muertos-Party.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2018/11/2-Nov-2018__Calaveras-y-Palmeras-A-Dia-de-Muertos-Party__Co-Prosperity-Sphere-.jpg"
+    },
+    {
+      "legacyId": "88728",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "88698",
+      "field": "official_url",
+      "local": "http://www.artic.edu/event/artist-talk-james-casebere",
+      "db": " http://www.artic.edu/event/artist-talk-james-casebere"
+    },
+    {
+      "legacyId": "86421",
+      "field": "official_url",
+      "local": "https://thevisualist.org/www.wrightwood659.org",
+      "db": "https://thevisualist.org/www.wrightwood659.org  "
+    },
+    {
+      "legacyId": "73272",
+      "field": "official_url",
+      "local": "https://www.marriott.com/hotels/travel/chilc-the-gwen-a-luxury-collection-hotel-michigan-avenue-chicago/.",
+      "db": "https://www.marriott.com/hotels/travel/chilc-the-gwen-a-luxury-collection-hotel-michigan-avenue-chicago/.  "
+    },
+    {
+      "legacyId": "86691",
+      "field": "official_url",
+      "local": "https://www.eventbrite.com/e/the-collection-artwork-unveiling-event-at-fashion-outlets-of-chicago-tickets-50238669212",
+      "db": "https://www.eventbrite.com/e/the-collection-artwork-unveiling-event-at-fashion-outlets-of-chicago-tickets-50238669212 "
+    },
+    {
+      "legacyId": "87175",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.edelmangallery.com"
+    },
+    {
+      "legacyId": "87180",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.cultivateurbanrainforest.com"
+    },
+    {
+      "legacyId": "84779",
+      "field": "official_url",
+      "local": "http://chicago.theotherartfair.com/",
+      "db": " http://chicago.theotherartfair.com/"
+    },
+    {
+      "legacyId": "86906",
+      "field": "official_url",
+      "local": "http://www.gallery400.uic.edu",
+      "db": " http://www.gallery400.uic.edu"
+    },
+    {
+      "legacyId": "86898",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// smartmuseum.uchicago.edu"
+    },
+    {
+      "legacyId": "87108",
+      "field": "official_url",
+      "local": "https://thevisualist.org/forcedfromhome.com",
+      "db": "https://thevisualist.org/forcedfromhome.com "
+    },
+    {
+      "legacyId": "86900",
+      "field": "official_url",
+      "local": "http://www.artworksprojects.org",
+      "db": "http://www.artworksprojects.org/event/panel-photography-the-refugee-crisis/"
+    },
+    {
+      "legacyId": "86900",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2018/09/38544435_10155609475713456_6857096183496572928_n-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2018/09/38544435_10155609475713456_6857096183496572928_n.jpg"
+    },
+    {
+      "legacyId": "86902",
+      "field": "official_url",
+      "local": "http://www.grahamfoundation.org",
+      "db": " http://www.grahamfoundation.org"
+    },
+    {
+      "legacyId": "86363",
+      "field": "official_url",
+      "local": "http://www.dcc.uic.edu",
+      "db": " http://www.dcc.uic.edu"
+    },
+    {
+      "legacyId": "86264",
+      "field": "official_url",
+      "local": "http://www.rebuild-foundation.org",
+      "db": " http://www.rebuild-foundation.org"
+    },
+    {
+      "legacyId": "86139",
+      "field": "official_url",
+      "local": "http://www.quimbys.com",
+      "db": " http://www.quimbys.com"
+    },
+    {
+      "legacyId": "86132",
+      "field": "official_url",
+      "local": "http://www.chicagoculturalcenter.org",
+      "db": " http://www.chicagoculturalcenter.org"
+    },
+    {
+      "legacyId": "84759",
+      "field": "official_url",
+      "local": "http://www.chicagoartdepartment.org",
+      "db": "http://www.chicagoartdepartment.org "
+    },
+    {
+      "legacyId": "84024",
+      "field": "official_url",
+      "local": "https://www.galesburgarts.org/studios-midwest-artist-residency/",
+      "db": "https://www.galesburgarts.org/studios-midwest-artist-residency/ "
+    },
+    {
+      "legacyId": "83873",
+      "field": "official_url",
+      "local": "https://thevisualist.org/116",
+      "db": "https://thevisualist.org/116 S Michigan Ave, Chicago, IL 60603"
+    },
+    {
+      "legacyId": "82814",
+      "field": "official_url",
+      "local": "https://thevisualist.org/Www.rubberneckgallery.com",
+      "db": "https://thevisualist.org/Www.rubberneckgallery.com "
+    },
+    {
+      "legacyId": "80309",
+      "field": "official_url",
+      "local": "http://morphogallery.com/",
+      "db": "http://www.morphogallery.com/futureevents.htm"
+    },
+    {
+      "legacyId": "80309",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2018/05/16.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2018/05/FB_IMG_1526499037319.jpg"
+    },
+    {
+      "legacyId": "81709",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "81707",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "79842",
+      "field": "official_url",
+      "local": "http://www.chicagoartistscoalition.org/programs/hatch-projects/body-image",
+      "db": "http://www.chicagoartistscoalition.org/programs/hatch-projects/body-image "
+    },
+    {
+      "legacyId": "80405",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2018/04/14-Apr-2018__Unbranded__Block-Museum.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2018/05/Add-heading-2.jpg"
+    },
+    {
+      "legacyId": "78704",
+      "field": "official_url",
+      "local": "https://womanmade.org/woman-made-midwest-open",
+      "db": "https://womanmade.org/woman-made-midwest-open "
+    },
+    {
+      "legacyId": "78502",
+      "field": "official_url",
+      "local": "http://www.artsclubchicago.org/architecture-sound-panel/",
+      "db": " http://www.artsclubchicago.org/architecture-sound-panel/"
+    },
+    {
+      "legacyId": "74559",
+      "field": "official_url",
+      "local": "https://thevisualist.org/elmhurstartmuseum.org",
+      "db": "https://thevisualist.org/elmhurstartmuseum.org "
+    },
+    {
+      "legacyId": "74694",
+      "field": "address",
+      "local": "300 W Superior St, Suite 203, Chicago, IL 60654",
+      "db": "300 W Superior St. Suite 203, Chicago, IL 60654"
+    },
+    {
+      "legacyId": "74694",
+      "field": "official_url",
+      "local": "http://weinbergnewtongallery.com/events/110-screening-panel-family/",
+      "db": "http://weinbergnewtongallery.com"
+    },
+    {
+      "legacyId": "74694",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2017/11/14-Nov-2017__In-The-Family-Screening-and-Panel-Discussion__Weinberg-Newton.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2017/11/6902616594_4fe09ea156_o.jpg"
+    },
+    {
+      "legacyId": "74680",
+      "field": "official_url",
+      "local": "http://nightingalecinema.org/mike-stoltz/",
+      "db": "http://nightingalecinema.org"
+    },
+    {
+      "legacyId": "74680",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2017/11/10-Nov-2017__Toward-The-Concrete-Films-by-Mike-Stoltz__The-Nightengale.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2017/11/HalfHumanHV4.jpg"
+    },
+    {
+      "legacyId": "74552",
+      "field": "address",
+      "local": "60 W Walton, Chicago, IL 60610",
+      "db": "60 W Walton St, Chicago, IL 60610"
+    },
+    {
+      "legacyId": "74552",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2017/11/22550247_10155766140647790_89364650879370493_o.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2017/11/9-Nov-2017__The-Secret-Life-of-Indigenous-Archives__Newberry-Library.jpg"
+    },
+    {
+      "legacyId": "73096",
+      "field": "official_url",
+      "local": "https://artistanne.com/",
+      "db": "https://artistanne.com/ "
+    },
+    {
+      "legacyId": "73837",
+      "field": "official_url",
+      "local": "http://lillstreet.com/artist-in-residence",
+      "db": " http://lillstreet.com/artist-in-residence"
+    },
+    {
+      "legacyId": "73393",
+      "field": "official_url",
+      "local": "http://www.saic.edu/academics/departments/aiado/events/rural-urban-framework",
+      "db": " http://www.saic.edu/academics/departments/aiado/events/rural-urban-framework"
+    },
+    {
+      "legacyId": "72829",
+      "field": "official_url",
+      "local": "http://studiogang.com/project/nature-boardwalk-at-lincoln-park-zoo",
+      "db": "http://studiogang.com/project/nature-boardwalk-at-lincoln-park-zoo "
+    },
+    {
+      "legacyId": "72243",
+      "field": "address",
+      "local": "37 S. Wabash, Chicago IL, 60603",
+      "db": "37 S Wabash Ave, Chicago IL, 60603"
+    },
+    {
+      "legacyId": "72243",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2017/10/MAKINGOUTfrontimage8.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2017/10/MAKINGOUTfrontimage8-2.jpg"
+    },
+    {
+      "legacyId": "71248",
+      "field": "official_url",
+      "local": "https://thevisualist.org/Conversation",
+      "db": "https://thevisualist.org/Conversation between Patric McCoy and Stephen Jones $10 Member and $15 for Guests  Art Smart is Diasporal Rhythms art education series for its members and their guests.  Photo by Alison Green"
+    },
+    {
+      "legacyId": "71748",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "71255",
+      "field": "official_url",
+      "local": "http://mcachicago.org",
+      "db": " http://mcachicago.org"
+    },
+    {
+      "legacyId": "70223",
+      "field": "official_url",
+      "local": "http://www.kasiakaygallery.com",
+      "db": "http://www.kasiakaygallery.com "
+    },
+    {
+      "legacyId": "70926",
+      "field": "address",
+      "local": "629 W Cermak Rd, Ste 240, Chicago, IL 60616",
+      "db": "629 W Cermak Suite 240, Chicago, IL 60608"
+    },
+    {
+      "legacyId": "70926",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2017/08/prairie-skid-mark-poster-IG.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2017/08/20507701_2026550130704075_6407447932585828822_o.jpg"
+    },
+    {
+      "legacyId": "68539",
+      "field": "address",
+      "local": "1709 West Chicago Avenue, Chicago, IL 60642",
+      "db": "1709 W Chicago Ave, Chicago, IL 60642"
+    },
+    {
+      "legacyId": "68539",
+      "field": "official_url",
+      "local": "http://www.parislondonhongkong.com",
+      "db": "http://parislondonhongkong.com/"
+    },
+    {
+      "legacyId": "68539",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2017/06/JGM_PLHK_01.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2017/06/Chicago-3-June-2017-West-Town-Paris-London-Hong-Kong-Jaclyn-Mednicov-A-Faint-Shadowy-Trace.jpg"
+    },
+    {
+      "legacyId": "68503",
+      "field": "official_url",
+      "local": "https://thevisualist.org/2337",
+      "db": "https://thevisualist.org/2337 N Milwaukee Ave, Chicago, IL 60647"
+    },
+    {
+      "legacyId": "68490",
+      "field": "official_url",
+      "local": "http://www.chicagoartistscoalition.org/",
+      "db": "http://www.chicagoartistscoalition.org/ "
+    },
+    {
+      "legacyId": "67915",
+      "field": "official_url",
+      "local": "https://thevisualist.org/111",
+      "db": "https://thevisualist.org/111 S Michigan Ave, Chicago, IL 60603"
+    },
+    {
+      "legacyId": "67331",
+      "field": "official_url",
+      "local": "http://cargocollective.com/YouNeedHelp",
+      "db": "https://www.thejustbusinessagency.com/"
+    },
+    {
+      "legacyId": "67331",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2017/04/youneedhelp_orig.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2017/04/YouNeedHelp.jpg"
+    },
+    {
+      "legacyId": "66572",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "65532",
+      "field": "address",
+      "local": "Carrie Secrist Gallery, 835 W Washington Blvd.",
+      "db": "835 W Washington Blvd, Chicago, IL 60607`"
+    },
+    {
+      "legacyId": "65532",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2017/03/CPrice_over-volume-reolute_24x18_.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2017/03/Chicago-Near-West-Side-Carrie-Secrist-Gallery-Visible-and-Permanent.jpg"
+    },
+    {
+      "legacyId": "65344",
+      "field": "official_url",
+      "local": "http://www.autotelicstudios.org",
+      "db": "http://www.autotelicstudios.org "
+    },
+    {
+      "legacyId": "64522",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "64520",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "63047",
+      "field": "official_url",
+      "local": "http://www.autotelicstudios.org",
+      "db": "http://www.autotelicstudios.org   http://sarawilladsen.com/home.html"
+    },
+    {
+      "legacyId": "62705",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2016/11/BlackOutDinner-Image.jpeg",
+      "db": "https://thevisualist.org/wp-content/uploads/2016/11/BlackOutDinner-Image1.jpeg"
+    },
+    {
+      "legacyId": "60250",
+      "field": "official_url",
+      "local": "https://thevisualist.org/2124",
+      "db": "https://thevisualist.org/2124 N. Damen Ave."
+    },
+    {
+      "legacyId": "62018",
+      "field": "official_url",
+      "local": "http://www.grahamfoundation.org/",
+      "db": "http://www.grahamfoundation.org/ "
+    },
+    {
+      "legacyId": "60129",
+      "field": "official_url",
+      "local": "https://thevisualist.org/Www.americantangoinstitute.com",
+      "db": "https://thevisualist.org/Www.americantangoinstitute.com "
+    },
+    {
+      "legacyId": "59829",
+      "field": "official_url",
+      "local": "http://slatearts.com/",
+      "db": " http://slatearts.com/"
+    },
+    {
+      "legacyId": "58829",
+      "field": "official_url",
+      "local": "http://ROMANSUSAN.ORG/THE-WATERFALL",
+      "db": "http://ROMANSUSAN.ORG/THE-WATERFALL "
+    },
+    {
+      "legacyId": "58855",
+      "field": "address",
+      "local": "1821 West Hubbard Street, Suite 207 Chicago, IL 60622",
+      "db": "1821 W Hubbard St, Ste 207, Chicago, Illinois 60622"
+    },
+    {
+      "legacyId": "58855",
+      "field": "official_url",
+      "local": "http://www.latitudechicago.org",
+      "db": "http://www.latitudechicago.org/events/"
+    },
+    {
+      "legacyId": "58855",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2016/06/Chicago-11June2016-Latitude-West-Town-Tom-Dryjanski-Monuments-travel.png",
+      "db": "https://thevisualist.org/wp-content/uploads/2016/06/Chicago11June2016Near-West-Side-Latitude-Book-Launch-with-Tom-Dryjanski-Monuments-Travel-Chelsea-Ross-Thomson-Dryjanski.jpg"
+    },
+    {
+      "legacyId": "58375",
+      "field": "official_url",
+      "local": "http://sites.northwestern.edu/blackfeministfutures2016",
+      "db": " http://sites.northwestern.edu/blackfeministfutures2016"
+    },
+    {
+      "legacyId": "58004",
+      "field": "official_url",
+      "local": "http://www.edpaschkeartcenter.org",
+      "db": "http://www.edpaschkeartcenter.org "
+    },
+    {
+      "legacyId": "57659",
+      "field": "official_url",
+      "local": "https://thevisualist.org/Columbia",
+      "db": "https://thevisualist.org/Columbia College Chicago 600 S. Michigan Ave. Chicago, IL 60605"
+    },
+    {
+      "legacyId": "57450",
+      "field": "address",
+      "local": "2320 W Chicago Ave, Chicago, IL",
+      "db": "2320 W Chicago Ave Chicago, IL 60622"
+    },
+    {
+      "legacyId": "57450",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2016/04/Karolina-Kowalczyk.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2016/04/cover-chernobyl-web.jpg"
+    },
+    {
+      "legacyId": "56869",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "56871",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "56689",
+      "field": "address",
+      "local": "5338 S Kimbark Ave, Chicago, Illinois",
+      "db": "5338 S. Kimbark Ave., Chicago IL"
+    },
+    {
+      "legacyId": "56689",
+      "field": "official_url",
+      "local": "http://www.4wps.org/",
+      "db": "https://4wps.org/"
+    },
+    {
+      "legacyId": "56689",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2016/02/Leslie-Baum.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2016/02/12671824_473660696150913_4623596473989664291_o.jpg"
+    },
+    {
+      "legacyId": "56200",
+      "field": "address",
+      "local": "4223 W. Lake St #430, Chicago IL 60624",
+      "db": "4223 W. Lake St #430, Chicago IL"
+    },
+    {
+      "legacyId": "56200",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2016/02/dh_post.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2016/02/dh_post1.jpg"
+    },
+    {
+      "legacyId": "56212",
+      "field": "official_url",
+      "local": "http://www.patrongallery.com",
+      "db": "http://www.patrongallery.com "
+    },
+    {
+      "legacyId": "55913",
+      "field": "address",
+      "local": "217 N Carpenter St., Chicago, IL",
+      "db": "217 N Carpenter St., Chicago, IL 60607"
+    },
+    {
+      "legacyId": "55913",
+      "field": "image_url_basename",
+      "local": "",
+      "db": "https://thevisualist.org/wp-content/uploads/2015/01/2_Disappearance-Rabbit-peeping-3.jpg"
+    },
+    {
+      "legacyId": "55867",
+      "field": "official_url",
+      "local": "http://www.zygmanvossgallery.com",
+      "db": " http://www.zygmanvossgallery.com "
+    },
+    {
+      "legacyId": "55438",
+      "field": "address",
+      "local": "32 E. Quincy St., Chicago IL",
+      "db": "32 East Quincy Street, Riverside, IL"
+    },
+    {
+      "legacyId": "55438",
+      "field": "official_url",
+      "local": "http://www.riversideartscenter.com",
+      "db": "http://www.riversideartscenter.com/category/gallery/current-exhibition/"
+    },
+    {
+      "legacyId": "55438",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2015/12/Silent_Scream-Card.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2015/12/Gallery2.jpg"
+    },
+    {
+      "legacyId": "55402",
+      "field": "address",
+      "local": "1431 West Chicago Avenue, Chicago, IL",
+      "db": "1431 W. Chicago Ave., Chicago IL"
+    },
+    {
+      "legacyId": "55402",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2015/11/Tina.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2015/11/15265a7b-428a-471d-a758-8ce70b0fe8f2.jpg"
+    },
+    {
+      "legacyId": "55260",
+      "field": "address",
+      "local": "425 Fawell Blvd. Glen Ellyn IL",
+      "db": "McAninch Arts Center, 425 Fawell Blvd., Glen Ellyn"
+    },
+    {
+      "legacyId": "55260",
+      "field": "official_url",
+      "local": "http://www.cod.edu/gallery/current.htm",
+      "db": "http://cod.edu/gallery"
+    },
+    {
+      "legacyId": "55260",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2015/10/RCH-EKH_Zoe-Nelson_082815_009.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2015/10/ZoeNelsonFull.jpg"
+    },
+    {
+      "legacyId": "54493",
+      "field": "address",
+      "local": "2154 W. Division, Chicago IL",
+      "db": "2154 W Division, Chicago, IL 60622"
+    },
+    {
+      "legacyId": "54493",
+      "field": "official_url",
+      "local": "http://moniquemeloche.com/",
+      "db": "http://www.moniquemeloche.com"
+    },
+    {
+      "legacyId": "54836",
+      "field": "address",
+      "local": "835 W. Washington Blvd., Chicago, IL",
+      "db": "835 W. Washington Blvd. Chicago IL"
+    },
+    {
+      "legacyId": "54836",
+      "field": "official_url",
+      "local": "http://secristgallery.com/",
+      "db": "http://www.secristgallery.com/"
+    },
+    {
+      "legacyId": "54836",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2015/09/unnamed-16.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2015/09/S_Finley_Carrie-Secrist-Gallery.jpeg"
+    },
+    {
+      "legacyId": "54860",
+      "field": "address",
+      "local": "1701 W. Division #2e",
+      "db": "1701 W. Division #2E, Chicago IL"
+    },
+    {
+      "legacyId": "54860",
+      "field": "official_url",
+      "local": "http://www.cornerstoregallery.biz/",
+      "db": "http://cornerstoregallery.biz/"
+    },
+    {
+      "legacyId": "54860",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2015/09/FAKTURA-Final.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2015/09/11958186_1480917712232877_4018255927478730705_o.jpg"
+    },
+    {
+      "legacyId": "54797",
+      "field": "official_url",
+      "local": "http://www.hydeparkart.org/exhibitions/front-center-2015-center-program-final-exhibition",
+      "db": " http://www.hydeparkart.org/exhibitions/front-center-2015-center-program-final-exhibition"
+    },
+    {
+      "legacyId": "52580",
+      "field": "official_url",
+      "local": "http://www.themissionprojects.com",
+      "db": "http://www.themissionprojects.com "
+    },
+    {
+      "legacyId": "52582",
+      "field": "official_url",
+      "local": "http://www.themissionprojects.com",
+      "db": "http://www.themissionprojects.com "
+    },
+    {
+      "legacyId": "45624",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2014/10/Duty_BrotmanGrauel.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2014/10/Duty_BrotmanGrauel1.jpg"
+    },
+    {
+      "legacyId": "44550",
+      "field": "official_url",
+      "local": "http://www.andrewrafacz.com",
+      "db": "http://www.andrewrafacz.com "
+    },
+    {
+      "legacyId": "43583",
+      "field": "official_url",
+      "local": "http://cobaltartstudio.blogspot.com",
+      "db": "http://cobaltartstudio.blogspot.com "
+    },
+    {
+      "legacyId": "43488",
+      "field": "official_url",
+      "local": "http://www.andrewrafacz.com",
+      "db": "http://www.andrewrafacz.com "
+    },
+    {
+      "legacyId": "43490",
+      "field": "official_url",
+      "local": "http://www.andrewrafacz.com",
+      "db": "http://www.andrewrafacz.com "
+    },
+    {
+      "legacyId": "41728",
+      "field": "address",
+      "local": "30 E Lake Street, Room 1105 Chicago, IL",
+      "db": "30 E. Lake St."
+    },
+    {
+      "legacyId": "41728",
+      "field": "official_url",
+      "local": "http://www.pedestrianproject.org/presidents-gallery.html",
+      "db": "http://www.ccc.edu/colleges/washington/events/Pages/The-Making-of-Artists-Art-Exhibition.aspx"
+    },
+    {
+      "legacyId": "41728",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2014/05/10383816_702773659780453_4801136324277926903_o-1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2014/05/amanda3.png"
+    },
+    {
+      "legacyId": "35117",
+      "field": "official_url",
+      "local": "http://sandcastle.com/",
+      "db": "http://sandcastle.com/ "
+    },
+    {
+      "legacyId": "32816",
+      "field": "official_url",
+      "local": "https://thevisualist.org/220",
+      "db": "https://thevisualist.org/220 E. Chicago Ave, Chicago IL"
+    },
+    {
+      "legacyId": "33103",
+      "field": "official_url",
+      "local": "http://matthewavignone.com",
+      "db": "http://matthewavignone.com "
+    },
+    {
+      "legacyId": "32802",
+      "field": "official_url",
+      "local": "http://www.hydeparkart.org/events/2013-12-06-open-studio-john-preus-assaf-evron-jeremiah-hulsebos-spofford#sthash.6oq8RVJ1.dpuf",
+      "db": "http://www.hydeparkart.org/events/2013-12-06-open-studio-john-preus-assaf-evron-jeremiah-hulsebos-spofford#sthash.6oq8RVJ1.dpuf "
+    },
+    {
+      "legacyId": "32221",
+      "field": "official_url",
+      "local": "http://www.moniquemeloche.com",
+      "db": "http://www.moniquemeloche.com "
+    },
+    {
+      "legacyId": "31482",
+      "field": "official_url",
+      "local": "http://propellerfund.org/projects/2013-awardees",
+      "db": " http://propellerfund.org/projects/2013-awardees"
+    },
+    {
+      "legacyId": "30912",
+      "field": "address",
+      "local": "5811 S Ellis Ave Chicago, IL 60637",
+      "db": "5811 S. Ellis Avenue, Cobb Hall, Room 418, Chicago, Illinois 60637"
+    },
+    {
+      "legacyId": "30912",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2013/09/PetritschSix.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2013/09/Daniel-Steegman-16mm.jpg"
+    },
+    {
+      "legacyId": "30900",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2013/09/the_program_banner.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2013/09/the_program_banner1.jpg"
+    },
+    {
+      "legacyId": "30458",
+      "field": "official_url",
+      "local": "http://chicagoartistscoalition.org/bolt-assembling-vestiges/",
+      "db": "http://chicagoartistscoalition.org/bolt-assembling-vestiges/ ‎"
+    },
+    {
+      "legacyId": "29980",
+      "field": "official_url",
+      "local": "http://www.uglystepsisterartgallery.com",
+      "db": "http://www.uglystepsisterartgallery.com www.ericstefanski.com"
+    },
+    {
+      "legacyId": "23670",
+      "field": "official_url",
+      "local": "http://chicagoartistscoalition.org/no-gods-no-masters/",
+      "db": " http://chicagoartistscoalition.org/no-gods-no-masters/ "
+    },
+    {
+      "legacyId": "24173",
+      "field": "official_url",
+      "local": "http://juliuscaesarchicago.org",
+      "db": "http://juliuscaesarchicago.org "
+    },
+    {
+      "legacyId": "23379",
+      "field": "address",
+      "local": "5020 South Cornell Avenue, Chicago, IL 60615",
+      "db": "5020 South Cornell Avenue"
+    },
+    {
+      "legacyId": "23072",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2013/03/monuments_1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2013/03/web_wideshot.jpg"
+    },
+    {
+      "legacyId": "23141",
+      "field": "address",
+      "local": "1759 N Humboldt Blvd, Flr 2",
+      "db": "1759 N. Humboldt Blvd. 2nd Floor, Chicago IL"
+    },
+    {
+      "legacyId": "23141",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2013/03/Lazy-Dreams-press-picture.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2013/03/885996_484279394972166_1983338040_o.jpg"
+    },
+    {
+      "legacyId": "23101",
+      "field": "official_url",
+      "local": "http://www.southsidehub.org",
+      "db": "http://www.southsidehub.org "
+    },
+    {
+      "legacyId": "23027",
+      "field": "official_url",
+      "local": "http://juliuscaesarchicago.org",
+      "db": "http://juliuscaesarchicago.org "
+    },
+    {
+      "legacyId": "22204",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2013/03/01_Julie-Ault_Ever-Ephemeral.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2013/03/03_Julie-Ault_Installation-1.jpg"
+    },
+    {
+      "legacyId": "22449",
+      "field": "official_url",
+      "local": "http://juliuscaesarchicago.org",
+      "db": "http://juliuscaesarchicago.org "
+    },
+    {
+      "legacyId": "22351",
+      "field": "official_url",
+      "local": "http://www.rational-park.com/",
+      "db": "http://www.rational-park.com/ "
+    },
+    {
+      "legacyId": "13799",
+      "field": "official_url",
+      "local": "http://deveningprojects.com",
+      "db": "http://deveningprojects.com "
+    },
+    {
+      "legacyId": "13769",
+      "field": "official_url",
+      "local": "http://juliuscaesarchicago.org",
+      "db": "http://juliuscaesarchicago.org "
+    },
+    {
+      "legacyId": "13657",
+      "field": "official_url",
+      "local": "http://www.65grand.com/",
+      "db": "http://www.65grand.com/ "
+    },
+    {
+      "legacyId": "13408",
+      "field": "official_url",
+      "local": "http://www.magi-cac.org/",
+      "db": "http://www.magi-cac.org/ "
+    },
+    {
+      "legacyId": "13450",
+      "field": "official_url",
+      "local": "http://ebersmoore.com",
+      "db": "http://ebersmoore.com "
+    },
+    {
+      "legacyId": "13343",
+      "field": "official_url",
+      "local": "http://www.industryoftheordinary.com/html/culturalcenter.html",
+      "db": "http://www.industryoftheordinary.com/html/culturalcenter.html "
+    },
+    {
+      "legacyId": "13207",
+      "field": "official_url",
+      "local": "http://www.mariadimanshtein.com/2012/10/what-long-night-it-has-been-press.html",
+      "db": " http://www.mariadimanshtein.com/2012/10/what-long-night-it-has-been-press.html"
+    },
+    {
+      "legacyId": "13222",
+      "field": "official_url",
+      "local": "http://www.outofsitechicago.com/",
+      "db": "http://www.outofsitechicago.com/ "
+    },
+    {
+      "legacyId": "13199",
+      "field": "address",
+      "local": "3522 W. Franklin Blvd. Chicago IL 6062",
+      "db": "3522 W. Franklin Blvd, Chicago IL 60624"
+    },
+    {
+      "legacyId": "12869",
+      "field": "official_url",
+      "local": "http://www.valeriecarberry.com",
+      "db": " \thttp://www.valeriecarberry.com "
+    },
+    {
+      "legacyId": "12867",
+      "field": "official_url",
+      "local": "http://museums.depaul.edu/artwebsite",
+      "db": "http://museums.depaul.edu/artwebsite "
+    },
+    {
+      "legacyId": "12623",
+      "field": "official_url",
+      "local": "http://www.hammergallery.com/",
+      "db": "http://www.hammergallery.com/ "
+    },
+    {
+      "legacyId": "11958",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2011/06/eDogz10241.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2011/06/eDogz1024.jpg"
+    },
+    {
+      "legacyId": "11282",
+      "field": "official_url",
+      "local": "http://",
+      "db": "http:// www.UKUSArtistsChicago.com"
+    },
+    {
+      "legacyId": "11467",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2012/03/chew_III1.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2012/03/chew_III.jpg"
+    },
+    {
+      "legacyId": "11026",
+      "field": "official_url",
+      "local": "http://donaldyoung.com/",
+      "db": "http://donaldyoung.com/ and http://www.goethe.de/ins/us/chi/enindex.htm"
+    },
+    {
+      "legacyId": "10992",
+      "field": "official_url",
+      "local": "http://www.neiu.edu/~gallery/index.html",
+      "db": "http://www.neiu.edu/~gallery/index.html    "
+    },
+    {
+      "legacyId": "10929",
+      "field": "address",
+      "local": "1913 W 17th St",
+      "db": "1913 W 17th Street, Chicago IL 60608"
+    },
+    {
+      "legacyId": "10929",
+      "field": "official_url",
+      "local": "https://thevisualist.org/http/www.acreresidency.org",
+      "db": "http://www.acreresidency.org/"
+    },
+    {
+      "legacyId": "10929",
+      "field": "image_url_basename",
+      "local": "https://thevisualist.org/wp-content/uploads/2012/02/MichelleHarris-Feb191.jpg",
+      "db": "https://thevisualist.org/wp-content/uploads/2012/02/MichelleHarris-Feb19.jpg"
+    },
+    {
+      "legacyId": "10818",
+      "field": "official_url",
+      "local": "http://www.neiu.edu/~gallery/index.html",
+      "db": "http://www.neiu.edu/~gallery/index.html    "
+    },
+    {
+      "legacyId": "10845",
+      "field": "official_url",
+      "local": "http://juliuscaesarchicago.com/haidercorrea.html",
+      "db": "http://juliuscaesarchicago.com/haidercorrea.html  "
+    },
+    {
+      "legacyId": "10865",
+      "field": "official_url",
+      "local": "http://lucian.uchicago.edu/blogs/opc/",
+      "db": "http://lucian.uchicago.edu/blogs/opc/ "
+    },
+    {
+      "legacyId": "10005",
+      "field": "official_url",
+      "local": "http:",
+      "db": "http: //6018north.net"
+    },
+    {
+      "legacyId": "9927",
+      "field": "official_url",
+      "local": "http://www.colum.edu/Academics/Interarts/events/lectures-and-public-programs1/index.php",
+      "db": "http://www.colum.edu/Academics/Interarts/events/lectures-and-public-programs1/index.php "
+    },
+    {
+      "legacyId": "8994",
+      "field": "official_url",
+      "local": "http://themissionprojects.com/",
+      "db": "http://themissionprojects.com/ "
+    },
+    {
+      "legacyId": "9174",
+      "field": "official_url",
+      "local": "https://thevisualist.org/JettisonQuarterly.com",
+      "db": "https://thevisualist.org/JettisonQuarterly.com "
+    },
+    {
+      "legacyId": "8938",
+      "field": "official_url",
+      "local": "https://thevisualist.org/faculty.ccc.edu/hwgallery/",
+      "db": "https://thevisualist.org/faculty.ccc.edu/hwgallery/ "
+    },
+    {
+      "legacyId": "7145",
+      "field": "official_url",
+      "local": "http://www.saic.edu/exhibitions",
+      "db": "http://www.saic.edu/exhibitions\n"
+    },
+    {
+      "legacyId": "5903",
+      "field": "official_url",
+      "local": "http://www.saic.edu/exhibitions",
+      "db": "http://www.saic.edu/exhibitions\n"
+    },
+    {
+      "legacyId": "5265",
+      "field": "address",
+      "local": "3319 N Broadway St, Chicago, IL 60657",
+      "db": "816 W Newport Ave, Chicago, IL 60657"
+    },
+    {
+      "legacyId": "4677",
+      "field": "official_url",
+      "local": "http://www.saic.edu/exhibitions",
+      "db": "http://www.saic.edu/exhibitions\n"
+    },
+    {
+      "legacyId": "3568",
+      "field": "official_url",
+      "local": "http://www.saic.edu/exhibitions",
+      "db": "http://www.saic.edu/exhibitions\n"
+    },
+    {
+      "legacyId": "3036",
+      "field": "official_url",
+      "local": "http://www.saic.edu/exhibitions",
+      "db": "http://www.saic.edu/exhibitions\n"
+    },
+    {
+      "legacyId": "1283",
+      "field": "official_url",
+      "local": "http://www.saic.edu/exhibitions",
+      "db": "http://www.saic.edu/exhibitions\n"
+    },
+    {
+      "legacyId": "1076",
+      "field": "official_url",
+      "local": "http://www.saic.edu/exhibitions",
+      "db": "http://www.saic.edu/exhibitions\n"
+    }
+  ],
+  "live": [
+    {
+      "legacyId": "190733",
+      "url": "https://thevisualist.org/2026/06/blatant-gold/",
+      "status": 200,
+      "titlePresent": true,
+      "venuePresent": true
+    },
+    {
+      "legacyId": "190964",
+      "url": "https://thevisualist.org/2026/06/ways-of-living-design-showcase-and-party/",
+      "status": 200,
+      "titlePresent": true,
+      "venuePresent": true
+    },
+    {
+      "legacyId": "184901",
+      "url": "https://thevisualist.org/2026/06/the-79th-annual-57th-street-art-fair-june-6-7-2026/",
+      "status": 200,
+      "titlePresent": true,
+      "venuePresent": true
+    }
+  ]
+}
