@@ -1372,7 +1372,7 @@ if (tagline) {
     text = cleanExcerptText(text);
     const trail = String(text).match(/(\.{3}|…)\s*$/);
     const body = trail ? String(text).slice(0, trail.index).replace(/\s+$/, '') + '…' : String(text);
-    return `<p class="event-description clamp-lines">${escapeHtml(body)}</p>`;
+    return `<p class="event-description clamp-lines">${escapeHtml(body)}<a href="${escapeHtml(href || '')}" class="description-fade-link" aria-label="View event details" tabindex="-1"></a></p>`;
   };
 
   const eventTagMarkup = (title, href) => tagLinks(eventDetails(title, href).g);
