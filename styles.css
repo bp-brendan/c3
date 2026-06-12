@@ -1425,6 +1425,18 @@ a.top-pick:hover,
   height: auto;
 }
 
+/* Graceful fallback: a card with no usable image — either none was supplied or
+   a broken/404 image was removed by the image-error handler in components.js —
+   drops the thumb column and lets the text use the full width, instead of
+   leaving an empty 200px gap or showing a broken-image icon. */
+.event-card:not(:has(.event-thumb img)) {
+  grid-template-columns: 1fr;
+}
+
+.event-card:not(:has(.event-thumb img)) .event-thumb {
+  display: none;
+}
+
 .event-title {
   font-family: Georgia, serif;
   font-size: 1.6rem;
@@ -1700,6 +1712,16 @@ a.top-pick:hover,
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+/* a detail page with no usable image collapses the image column so the body
+   uses the full measure rather than sitting beside an empty gap */
+.event-detail:not(:has(.event-detail-image img)) {
+  grid-template-columns: 1fr;
+}
+
+.event-detail:not(:has(.event-detail-image img)) .event-detail-image {
+  display: none;
 }
 
 .event-detail-body {

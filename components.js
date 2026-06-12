@@ -167,6 +167,32 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     reader.readAsDataURL(file);
   });
 
+  const chicagoNeighborhoods = () => window.CHICAGO_NEIGHBORHOODS || [];
+
+  // auto-fill the neighborhood once a venue is chosen: prefer the precomputed
+  // venue→neighborhood map (mined from the whole archive), else scan the events
+  // loaded this session for a neighborhood tag on that venue.
+  const neighborhoodForVenue = venue => {
+    const key = String(venue || '').trim().toLowerCase();
+    if (!key) return '';
+    const map = window.VENUE_NEIGHBORHOODS || {};
+    if (map[key]) return map[key];
+    const known = new Set((window.CHICAGO_NEIGHBORHOODS || []).map(n => n.toLowerCase()));
+    if (!known.size) return '';
+    const counts = new Map();
+    (window.ARCHIVE_EVENTS_2026 || []).forEach(event => {
+      if (String(event.v || '').trim().toLowerCase() !== key) return;
+      (event.g || []).forEach(tag => {
+        const label = String(tag || '').trim();
+        if (known.has(label.toLowerCase())) counts.set(label, (counts.get(label) || 0) + 1);
+      });
+    });
+    let best = '';
+    let bestCount = 0;
+    counts.forEach((count, label) => { if (count > bestCount) { best = label; bestCount = count; } });
+    return best;
+  };
+
   const demoSubmissions = [
     {
       id: 'demo-chicago-dibs-summit',
@@ -348,7 +374,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
               : `<a href="${link.href}" target="_blank" rel="noopener">${link.label}</a>`
             ).join('')}</p>
           </div>
-          <p class="footer-copyright">&copy; ${new Date().getFullYear()} <a href="https://www.culturemath.org/" target="_blank" rel="noopener">culture/Math</a> &middot; made with <a href="https://madewithbestpractice.com" target="_blank" rel="noopener">best practice</a></p>
+          <p class="footer-copyright">&copy; ${new Date().getFullYear()} <a href="https://www.culturemath.org/" target="_blank" rel="noopener">culture/Math</a> &middot; made with <a href="https://madewithbestpractice.com" target="_blank" rel="noopener">Best Practice</a></p>
         </div>`;
     });
   };
@@ -713,9 +739,10 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const now = new Date().toISOString();
     const sourceUrl = String(submission.sourceUrl || submission.url || '').trim();
     const listingType = submission.listingType === 'exhibition' ? 'exhibition' : 'event';
-    const eventDate = listingType === 'exhibition'
-      ? String(submission.exhibitionStart || submission.eventDate || '').trim()
-      : String(submission.eventDate || submission.exhibitionStart || '').trim();
+    // keep the opening-reception date and the exhibition run distinct: an
+    // exhibition can carry both (opening + on-view-through). The listed date is
+    // resolved later in submissionToEvent (opening if present, else run start).
+    const eventDate = String(submission.eventDate || '').trim();
     const artists = Array.isArray(submission.artists)
       ? submission.artists
       : splitList(submission.artists);
@@ -734,6 +761,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       venueUrl: String(submission.venueUrl || '').trim(),
       address: String(submission.address || '').trim(),
       mapUrl: String(submission.mapUrl || '').trim(),
+      neighborhood: String(submission.neighborhood || '').trim(),
       listingType,
       eventDate,
       eventStart: String(submission.eventStart || '').trim(),
@@ -764,6 +792,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       venue: data.get('post-venue'),
       venueUrl: data.get('post-venue-url'),
       address: data.get('post-address'),
+      neighborhood: data.get('post-neighborhood'),
       listingType: data.get('listing-type'),
       eventDate: data.get('post-event-date'),
       eventStart: data.get('post-event-start'),
@@ -772,27 +801,128 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       exhibitionEnd: data.get('post-exhibition-end'),
       imageUrl,
       imageName: imageFile && imageFile.name ? imageFile.name : '',
-      detailUrl: data.get('post-detail-url'),
       description: data.get('post-content'),
       contactEmail: data.get('ContactE-mail'),
       tags: data.get('your-tags')
     });
   };
 
+  // the submissions table is snake_case in Postgres; the JS side stays
+  // camelCase. Empty strings have to become NULL for the DATE columns or the
+  // insert is rejected.
+  const SUBMISSION_DATE_COLS = ['event_date', 'exhibition_start', 'exhibition_end'];
+  const nullIfBlank = value => {
+    const trimmed = String(value ?? '').trim();
+    return trimmed === '' ? null : trimmed;
+  };
+
+  const submissionToRow = clean => {
+    const row = {
+      id: clean.id,
+      status: clean.status,
+      source_url: clean.sourceUrl,
+      title: clean.title,
+      artists: (clean.artists || []).join(', '),
+      venue: clean.venue,
+      venue_url: clean.venueUrl,
+      address: clean.address,
+      map_url: clean.mapUrl,
+      neighborhood: clean.neighborhood,
+      listing_type: clean.listingType,
+      event_date: clean.eventDate,
+      event_start: clean.eventStart,
+      event_end: clean.eventEnd,
+      exhibition_start: clean.exhibitionStart,
+      exhibition_end: clean.exhibitionEnd,
+      on_view_text: clean.onViewText,
+      image_url: clean.imageUrl,
+      image_name: clean.imageName,
+      detail_url: clean.detailUrl,
+      description: clean.description,
+      contact_email: clean.contactEmail,
+      tags: (clean.tags || []).join(', '),
+      submitted_at: clean.submittedAt,
+      updated_at: clean.updatedAt,
+      approved_at: nullIfBlank(clean.approvedAt),
+      passed_at: nullIfBlank(clean.passedAt)
+    };
+    SUBMISSION_DATE_COLS.forEach(col => { row[col] = nullIfBlank(row[col]); });
+    return row;
+  };
+
+  // admin reads the submissions table; map the snake_case row back to the
+  // camelCase shape the queue UI expects (artists/tags split into arrays).
+  const submissionFromRow = row => cleanSubmission({
+    id: row.id,
+    status: row.status,
+    submittedAt: row.submitted_at,
+    updatedAt: row.updated_at,
+    approvedAt: row.approved_at,
+    passedAt: row.passed_at,
+    sourceUrl: row.source_url,
+    title: row.title,
+    artists: row.artists,
+    venue: row.venue,
+    venueUrl: row.venue_url,
+    address: row.address,
+    mapUrl: row.map_url,
+    neighborhood: row.neighborhood,
+    listingType: row.listing_type,
+    eventDate: row.event_date,
+    eventStart: row.event_start,
+    eventEnd: row.event_end,
+    exhibitionStart: row.exhibition_start,
+    exhibitionEnd: row.exhibition_end,
+    onViewText: row.on_view_text,
+    imageUrl: row.image_url,
+    imageName: row.image_name,
+    detailUrl: row.detail_url,
+    description: row.description,
+    contactEmail: row.contact_email,
+    tags: row.tags
+  });
+
+  // map the frontend's short event keys onto the events table columns
+  const eventToRow = event => ({
+    title: event.t || '',
+    permalink: event.u || '',
+    path: event.p || '',
+    venue: event.v || '',
+    venue_url: event.vu || '',
+    address: event.a || '',
+    map_url: event.m || '',
+    event_date: nullIfBlank(event.d),
+    time_window: event.w || '',
+    on_view_through: event.o || '',
+    image_url: event.i || '',
+    description: event.x || '',
+    tags: Array.isArray(event.g) ? event.g : splitList(event.g),
+    top_pick: event.k === 1
+  });
+
+  // approving a submission inserts a fresh events row (the DB assigns the uuid
+  // primary key); returns the new event in short-key form, id included.
+  const publishEvent = async event => {
+    if (!window.supabaseClient) return event;
+    const { data, error } = await window.supabaseClient
+      .from('events')
+      .insert([eventToRow(event)])
+      .select()
+      .single();
+    if (error) throw error;
+    return { ...event, id: data && data.id };
+  };
+
+  // public submit page: store the raw submission for review. Let insert errors
+  // propagate so the form can tell the visitor it did not go through, instead
+  // of redirecting to a false "thank you".
   const saveSubmittedEvent = async submission => {
     const clean = cleanSubmission(submission);
-    
-    // Convert array to string for DB if needed, or if DB is TEXT, join it.
-    const dbSub = { ...clean };
-    if (Array.isArray(dbSub.artists)) dbSub.artists = dbSub.artists.join(', ');
-    if (Array.isArray(dbSub.tags)) dbSub.tags = dbSub.tags.join(', ');
-
     if (window.supabaseClient) {
-      try {
-        await window.supabaseClient.from('submissions').insert([dbSub]);
-      } catch (e) {
-        console.error(e);
-      }
+      const { error } = await window.supabaseClient
+        .from('submissions')
+        .insert([submissionToRow(clean)]);
+      if (error) throw error;
     }
     return clean;
   };
@@ -801,28 +931,25 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const events = submittedEvents();
     const index = events.findIndex(event => event.id === id);
     if (index < 0) return null;
-    
+
+    const previousStatus = events[index].status;
     const next = cleanSubmission({ ...events[index], ...patch, id });
-    
-    const dbSub = { ...next };
-    if (Array.isArray(dbSub.artists)) dbSub.artists = dbSub.artists.join(', ');
-    if (Array.isArray(dbSub.tags)) dbSub.tags = dbSub.tags.join(', ');
 
     if (window.supabaseClient) {
       try {
-        await window.supabaseClient.from('submissions').update(dbSub).eq('id', id);
-        
-        // If approved, insert into events table
-        if (dbSub.status === 'approved') {
-          const newEventPatch = submissionToEvent(dbSub);
-          await saveEventEdit(newEventPatch.id || id, newEventPatch);
+        await window.supabaseClient
+          .from('submissions')
+          .update(submissionToRow(next))
+          .eq('id', id);
+        // the first time a submission flips to approved, publish it to events
+        if (next.status === 'approved' && previousStatus !== 'approved') {
+          await publishEvent(submissionToEvent(next));
         }
       } catch (e) {
         console.error(e);
       }
     }
-    
-    // Update local cache
+
     events[index] = next;
     window.SUBMISSIONS = events;
     return next;
@@ -830,10 +957,10 @@ calendar's beginnings in 2011. Help us keep it growing.`;
 
   const submissionToEvent = submission => {
     const clean = cleanSubmission(submission);
-    const start = clean.listingType === 'exhibition'
-      ? clean.exhibitionStart || clean.eventDate
-      : clean.eventDate || clean.exhibitionStart;
-    const end = clean.listingType === 'exhibition' ? clean.exhibitionEnd : '';
+    // the listed date is the opening reception when there is one, otherwise the
+    // first day of the run (an exhibition with no opening reads as "no opening")
+    const start = clean.eventDate || clean.exhibitionStart;
+    const end = clean.exhibitionEnd;
     const time = clean.eventStart && clean.eventEnd
       ? `${clean.eventStart} – ${clean.eventEnd}`
       : (clean.eventStart || '');
@@ -841,6 +968,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       ...clean.tags,
       ...clean.artists,
       clean.venue,
+      clean.neighborhood,
       clean.title
     ].map(tagSlug).filter(Boolean);
     const event = {
@@ -1469,6 +1597,20 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     addEventDescriptions();
   };
 
+  // Graceful image degradation. Many archived listings have a missing or dead
+  // (404 / stale remote) image. Removing the broken <img> lets the card or
+  // detail page collapse to its no-image layout (the :has() rules in styles.css)
+  // instead of rendering the browser's broken-image icon. Image error events do
+  // not bubble but do fire in the capture phase, so one document-level listener
+  // covers every image, including ones added as the archive/listings render.
+  const degradeBrokenImage = img => {
+    if (!img || img.tagName !== 'IMG') return;
+    if (img.closest('.event-thumb') || img.closest('.event-detail-image')) img.remove();
+  };
+  if (typeof document !== 'undefined') {
+    document.addEventListener('error', event => degradeBrokenImage(event.target), true);
+  }
+
   window.Visualist = Object.assign(window.Visualist || {}, {
     renderChrome,
     trackEventLinks,
@@ -1488,8 +1630,12 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     saveSubmittedEvents,
     updateSubmittedEvent,
     submissionFromForm,
+    submissionFromRow,
     submissionToEvent,
+    publishEvent,
     approvedSubmittedEvents,
+    chicagoNeighborhoods,
+    neighborhoodForVenue,
     eventKey,
     eventEdits,
     saveEventEdit,

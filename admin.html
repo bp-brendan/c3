@@ -103,44 +103,6 @@
 
   <footer class="site-footer" data-visualist-footer></footer>
 
-    const funlinesForm = document.getElementById('funlines-form');
-    const funlinesText = document.getElementById('admin-funlines-text');
-
-    funlinesForm.addEventListener('submit', event => {
-      event.preventDefault();
-      const lines = funlinesText.value.split('\n').map(l => l.trim()).filter(Boolean);
-      Visualist.saveTaglines(lines);
-      alert('Taglines saved!');
-    });
-
-    window.addEventListener('hashchange', () => {
-      if (location.hash === '#funlines') {
-        funlinesText.value = Visualist.taglines().join('\n');
-      }
-    });
-    // Initialize funlines if it's the active tab on load
-    if (location.hash === '#funlines') {
-      funlinesText.value = Visualist.taglines().join('\n');
-    }
-    const funlinesForm = document.getElementById('funlines-form');
-    const funlinesText = document.getElementById('admin-funlines-text');
-
-    funlinesForm.addEventListener('submit', event => {
-      event.preventDefault();
-      const lines = funlinesText.value.split('\n').map(l => l.trim()).filter(Boolean);
-      Visualist.saveTaglines(lines);
-      alert('Taglines saved!');
-    });
-
-    window.addEventListener('hashchange', () => {
-      if (location.hash === '#funlines') {
-        funlinesText.value = Visualist.taglines().join('\n');
-      }
-    });
-    // Initialize funlines if it's the active tab on load
-    if (location.hash === '#funlines') {
-      funlinesText.value = Visualist.taglines().join('\n');
-    }
   <!-- Events loaded dynamically via supabaseClient.js -->
   <script>
   // Setup Authentication
@@ -151,9 +113,11 @@
     } else {
       document.body.classList.remove('logged-out');
       
-      // Fetch pending submissions
-      const { data } = await window.supabaseClient.from('submissions').select('*');
-      window.SUBMISSIONS = data || [];
+      // Fetch submissions for review (snake_case rows -> camelCase queue objects).
+      // The table may not exist yet (run schema_submissions.sql); fail soft.
+      const { data, error } = await window.supabaseClient.from('submissions').select('*');
+      if (error) console.error('Could not load submissions:', error.message);
+      window.SUBMISSIONS = (data || []).map(Visualist.submissionFromRow);
       
       if (location.hash === '#login' || !location.hash) {
         location.hash = '#pending';
@@ -234,6 +198,7 @@
       venueUrl: '',
       address: '',
       mapUrl: '',
+      neighborhood: '',
       listingType: 'event',
       eventDate: '',
       eventStart: '',
@@ -268,6 +233,10 @@
       <label class="submit-field" for="address-${submission.id}">
         <span>Address</span>
         <input id="address-${submission.id}" name="address" type="text" value="${valueAttr(submission.address)}" required>
+      </label>
+      <label class="submit-field" for="neighborhood-${submission.id}">
+        <span>Neighborhood</span>
+        <input id="neighborhood-${submission.id}" name="neighborhood" type="text" value="${valueAttr(submission.neighborhood)}">
       </label>
 
       <div class="submit-field admin-wide">
@@ -366,6 +335,7 @@
         venueUrl: data.get('venueUrl'),
         address,
         mapUrl: data.get('mapUrl') || mapUrlForAddress(address),
+        neighborhood: data.get('neighborhood'),
         listingType: data.get('listingType'),
         eventDate: data.get('eventDate'),
         eventStart: data.get('eventStart'),
@@ -555,7 +525,7 @@
       }
     });
 
-    queue.addEventListener('submit', event => {
+    queue.addEventListener('submit', async event => {
       event.preventDefault();
       const form = event.target;
       const id = form.dataset.submissionId;
@@ -570,8 +540,15 @@
         patch.passedAt = new Date().toISOString();
         patch.approvedAt = '';
       }
-      Visualist.updateSubmittedEvent(id, patch);
+      const submitter = event.submitter;
+      if (submitter) submitter.disabled = true;
+      try {
+        await Visualist.updateSubmittedEvent(id, patch);
+      } finally {
+        if (submitter) submitter.disabled = false;
+      }
       render();
+      renderEvents();
     });
 
     [eventSearch, eventFrom, eventTo, eventSource].forEach(input => {
@@ -593,26 +570,38 @@
     });
 
     createForm.querySelector('.admin-fields').innerHTML = rows(blankSubmission());
-    createForm.addEventListener('submit', event => {
+    createForm.addEventListener('submit', async event => {
       event.preventDefault();
       const now = new Date().toISOString();
-      const published = Visualist.saveSubmittedEvent({
+      const submission = {
         ...formPatch(createForm),
         status: 'approved',
         submittedAt: now,
         approvedAt: now
-      });
-      const publicEvent = Visualist.submissionToEvent(published);
+      };
+      const publicEvent = Visualist.submissionToEvent(submission);
+      const submitButton = createForm.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = true;
+      try {
+        // admin "Create Event" publishes straight to the events table
+        const saved = await Visualist.publishEvent(publicEvent);
+        if (window.ARCHIVE_EVENTS_2026) window.ARCHIVE_EVENTS_2026.unshift(saved);
+      } catch (e) {
+        createMessage.hidden = false;
+        createMessage.innerHTML = `<strong>Could not publish.</strong> <span>${escapeHtml(e.message || 'Please try again.')}</span>`;
+        return;
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
       createForm.reset();
       createForm.querySelector('input[name="listingType"][value="event"]').checked = true;
       createMessage.hidden = false;
       createMessage.innerHTML = `
-        <strong>Published ${escapeHtml(published.title || 'Untitled')}.</strong>
+        <strong>Published ${escapeHtml(submission.title || 'Untitled')}.</strong>
         <span>Ready for another.</span>
         <a href="index.html#archive?date=${encodeURIComponent(publicEvent.d)}">View in archive</a>`;
       history.replaceState(null, '', '#create');
       paintAdminNav();
-      render();
       renderEvents();
       window.scrollTo(0, 0);
     });

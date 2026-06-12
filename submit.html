@@ -29,12 +29,13 @@
           </label>
           <label class="submit-field" for="post-title">
             <span>Title</span>
-            <input id="post-title" name="post-title" type="text" placeholder="Title of the show or event" required>
+            <input id="post-title" name="post-title" type="text" placeholder="Artist Name: Exhibition Title" required>
+            <small class="submit-hint">A clear title like &ldquo;Artist Name: Exhibition Title&rdquo; helps people scan the calendar.</small>
           </label>
           <div class="submit-field">
-            <span id="post-artists-label">Artists <em class="submit-optional">optional</em></span>
+            <span id="post-artists-label">Artists, curators &amp; participants <em class="submit-optional">optional</em></span>
             <div class="tag-input" data-artist-box>
-              <input id="post-artists" type="text" placeholder="Type to add artists" autocomplete="off" role="combobox" aria-expanded="false" aria-labelledby="post-artists-label">
+              <input id="post-artists" type="text" placeholder="Add everyone important to the show" autocomplete="off" role="combobox" aria-expanded="false" aria-labelledby="post-artists-label">
               <div class="search-suggest" data-artist-suggest role="listbox" aria-label="Matching artists" hidden></div>
             </div>
             <input type="hidden" name="your-artists" data-artists-value>
@@ -45,6 +46,7 @@
               <input id="post-venue" name="post-venue" type="text" placeholder="Name of the gallery or space" autocomplete="off" role="combobox" aria-expanded="false" required>
               <div class="search-suggest" data-venue-suggest role="listbox" aria-label="Matching venues" hidden></div>
             </div>
+            <small class="submit-hint">Just the gallery or space &mdash; name any parent institution in the description.</small>
           </label>
           <label class="submit-field" for="post-venue-url">
             <span>Venue URL <em class="submit-optional">optional</em></span>
@@ -53,6 +55,12 @@
           <label class="submit-field" for="post-address">
             <span>Address</span>
             <input id="post-address" name="post-address" type="text" placeholder="Address - full mailing address works best" required>
+          </label>
+          <label class="submit-field" for="post-neighborhood">
+            <span>Neighborhood <em class="submit-optional">optional</em></span>
+            <input id="post-neighborhood" name="post-neighborhood" type="text" list="neighborhood-options" placeholder="e.g. Pilsen" autocomplete="off">
+            <datalist id="neighborhood-options"></datalist>
+            <small class="submit-hint">Fills in from the venue &mdash; edit if needed. Added to the tags for you.</small>
           </label>
           <div class="submit-field">
             <span id="listing-type-label">Listing type</span>
@@ -67,9 +75,21 @@
               </label>
             </div>
           </div>
-          <div class="submit-row submit-row-3" data-when="event">
+          <!-- exhibition run: only for multi-day exhibitions -->
+          <div class="submit-row submit-row-2" data-when="exhibition" hidden>
+            <label class="submit-field" for="post-exhibition-start">
+              <span>Exhibition Start</span>
+              <input id="post-exhibition-start" name="post-exhibition-start" type="date" data-req>
+            </label>
+            <label class="submit-field" for="post-exhibition-end">
+              <span>Exhibition End</span>
+              <input id="post-exhibition-end" name="post-exhibition-end" type="date" data-req>
+            </label>
+          </div>
+          <!-- shared date/time row: the single event, or the (optional) opening reception of an exhibition -->
+          <div class="submit-row submit-row-3">
             <label class="submit-field" for="post-event-date">
-              <span>Event Date</span>
+              <span data-date-label>Event Date</span>
               <input id="post-event-date" name="post-event-date" type="date">
             </label>
             <label class="submit-field" for="post-event-start">
@@ -81,16 +101,7 @@
               <input id="post-event-end" name="post-event-end" type="text" placeholder="9PM">
             </label>
           </div>
-          <div class="submit-row submit-row-2" data-when="exhibition" hidden>
-            <label class="submit-field" for="post-exhibition-start">
-              <span>Exhibition Start</span>
-              <input id="post-exhibition-start" name="post-exhibition-start" type="date">
-            </label>
-            <label class="submit-field" for="post-exhibition-end">
-              <span>Exhibition End</span>
-              <input id="post-exhibition-end" name="post-exhibition-end" type="date">
-            </label>
-          </div>
+          <small class="submit-hint" data-date-hint hidden>An opening reception is optional &mdash; leave these blank for an exhibition with no opening.</small>
           <label class="submit-field" for="post-image-url" data-image-url-field hidden>
             <span>Image URL</span>
             <input id="post-image-url" name="post-image-url" type="url" placeholder="Detected social image URL">
@@ -130,6 +141,7 @@
 
   <!-- chrome will render inside loadData to ensure Supabase taglines are ready -->
   <script src="tags2026.js"></script>
+  <script src="venueNeighborhoods.js"></script>
   <script>
   Visualist.loadData(() => {
     Visualist.renderChrome();
@@ -138,14 +150,22 @@
 
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-    // one-time event vs multi-day exhibition: show and require only the relevant dates
-    const whenSections = document.querySelectorAll('[data-when]');
+    // one-time event vs multi-day exhibition. An exhibition shows its run dates
+    // (required) plus the shared date row as an OPTIONAL opening reception; a
+    // one-time event hides the run and treats the shared row as the event date.
+    const exhibitionSection = document.querySelector('[data-when="exhibition"]');
+    const eventDateField = document.getElementById('post-event-date');
+    const dateLabelSpan = document.querySelector('[data-date-label]');
+    const dateHint = document.querySelector('[data-date-hint]');
     const setListingType = value => {
-      whenSections.forEach(section => {
-        const active = section.dataset.when === value;
-        section.hidden = !active;
-        section.querySelectorAll('input').forEach(input => { input.required = active; });
+      const exhibition = value === 'exhibition';
+      exhibitionSection.hidden = !exhibition;
+      exhibitionSection.querySelectorAll('input').forEach(input => {
+        input.required = exhibition && input.hasAttribute('data-req');
       });
+      eventDateField.required = !exhibition;
+      dateLabelSpan.textContent = exhibition ? 'Opening reception date' : 'Event Date';
+      dateHint.hidden = !exhibition;
     };
     document.querySelectorAll('input[name="listing-type"]').forEach(radio => {
       radio.addEventListener('change', () => setListingType(radio.value));
@@ -350,14 +370,46 @@
       }
       venueTag = value;
     };
+    // neighborhood: auto-filled from the venue, editable, mirrored into the tags
+    // (admins ask for the neighborhood as a tag — see thevisualist.org/info)
+    const neighborhoodInput = document.getElementById('post-neighborhood');
+    const neighborhoodList = document.getElementById('neighborhood-options');
+    (Visualist.chicagoNeighborhoods() || []).forEach(name => {
+      const option = document.createElement('option');
+      option.value = name;
+      neighborhoodList.appendChild(option);
+    });
+    let neighborhoodTag = '';
+    const mirrorNeighborhood = value => {
+      if (neighborhoodTag && neighborhoodTag.toLowerCase() !== value.toLowerCase()) tagField.remove(neighborhoodTag);
+      if (value && !tagField.has(value)) {
+        const known = TAGS_2026.find(tag => tag.n.toLowerCase() === value.toLowerCase());
+        tagField.add(known ? { n: known.n } : { n: value, create: true }, false);
+      }
+      neighborhoodTag = value;
+    };
+    neighborhoodInput.addEventListener('change', () => mirrorNeighborhood(neighborhoodInput.value.trim()));
+    const fillNeighborhoodFromVenue = venue => {
+      if (neighborhoodInput.value.trim()) return; // never overwrite a manual entry
+      const guess = Visualist.neighborhoodForVenue(venue);
+      if (guess) {
+        neighborhoodInput.value = guess;
+        mirrorNeighborhood(guess);
+      }
+    };
+
     suggestEngine(venueInput, document.querySelector('[data-venue-suggest]'), {
       allowCreate: false,
       onPick: option => {
         venueInput.value = option.n;
         mirrorVenue(option.n);
+        fillNeighborhoodFromVenue(option.n);
       }
     });
-    venueInput.addEventListener('change', () => mirrorVenue(venueInput.value.trim()));
+    venueInput.addEventListener('change', () => {
+      mirrorVenue(venueInput.value.trim());
+      fillNeighborhoodFromVenue(venueInput.value.trim());
+    });
 
     const imageUrlField = document.querySelector('[data-image-url-field]');
     const spinner = document.querySelector('[data-metadata-spinner]');
@@ -413,7 +465,10 @@
       setIfEmpty(fields.content, metadata.description);
       setIfEmpty(fields.venue, metadata.locationName);
       setIfEmpty(fields.address, metadata.locationAddress);
-      if (metadata.locationName && !venueTag) mirrorVenue(metadata.locationName);
+      if (metadata.locationName && !venueTag) {
+        mirrorVenue(metadata.locationName);
+        fillNeighborhoodFromVenue(metadata.locationName);
+      }
 
       const startDate = datePart(metadata.startDate);
       const endDate = datePart(metadata.endDate);

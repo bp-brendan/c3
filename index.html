@@ -2222,8 +2222,15 @@
       if (!src) return;
       const fallback = img.dataset.fallbackSrc;
       img.onerror = () => {
-        img.onerror = null;
-        if (fallback) img.src = fallback;
+        // the thumbnail 404'd: try the original once, then give up and drop the
+        // tile so the river shows no broken-image icon
+        if (fallback && img.src.indexOf(fallback) === -1) {
+          img.src = fallback;
+        } else {
+          img.onerror = null;
+          const tile = img.closest('a');
+          if (tile) tile.remove();
+        }
       };
       img.src = src;
       img.removeAttribute('data-src');
