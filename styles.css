@@ -1405,7 +1405,8 @@ a.top-pick:hover,
   color: inherit;
 }
 
-.event-schedule .event-when {
+.event-schedule .event-when,
+.event-detail-meta .event-when {
   display: inline;
   margin-right: 0.5em;
   color: var(--content-ink-muted);
@@ -1417,7 +1418,14 @@ a.top-pick:hover,
   text-transform: none;
 }
 
-.event-schedule .event-when strong {
+.event-schedule .event-time-bounds,
+.event-detail-meta .event-time-bounds {
+  display: block;
+  margin-bottom: 0.08rem;
+}
+
+.event-schedule .event-when strong,
+.event-detail-meta .event-when strong {
   color: var(--content-ink);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.74rem;
@@ -1646,57 +1654,6 @@ a.top-pick:hover,
   text-transform: uppercase;
 }
 
-.event-detail-meta > span {
-  display: block;
-  margin-top: 0.4rem;
-}
-
-/* the venue starts its line in full ink with the address running on
-   lighter after it, same treatment as the listing cards (the bare date
-   span is stripped at runtime, so venue and address lead the block) */
-.event-detail-meta > span:nth-child(1),
-.event-detail-meta > span:nth-child(2) {
-  display: inline;
-  margin: 0;
-}
-
-.event-detail-meta > span:nth-child(1) {
-  color: var(--content-ink);
-}
-
-.event-detail-meta > span:nth-child(1)::after {
-  content: " ";
-}
-
-.event-detail-meta > span:nth-child(2) {
-  font-family: Georgia, serif;
-  font-size: 0.85rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-/* opening/on-view lines: bold lead-in, lighter serif rest — the same
-   two-font treatment the listing cards use for their schedule block */
-.event-detail-meta > span:nth-child(n + 3) {
-  font-family: Georgia, serif;
-  font-size: 0.86rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.5;
-  text-transform: none;
-}
-
-.event-detail-meta > span:nth-child(n + 4) {
-  margin-top: 0.1rem; /* consecutive when-lines read as one tight block */
-}
-
-.event-detail-meta > span:nth-child(n + 3) strong {
-  color: var(--content-ink);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
