@@ -671,6 +671,12 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const dateSpan = spans.find(s => /^[A-Za-z]+,\s+[A-Za-z]+\s+\d{1,2},\s+\d{4}(?:,.*)?$/.test(s.textContent.trim()));
     let baseYear = 0;
     let baseMonth = 0;
+    
+    const locationDiv = document.createElement('div');
+    locationDiv.className = 'event-location';
+    const scheduleDiv = document.createElement('div');
+    scheduleDiv.className = 'event-schedule';
+    
     if (dateSpan) {
       const dm = dateSpan.textContent.match(/([A-Za-z]+)\s+(\d{1,2}),\s+(\d{4})/);
       if (dm) {
@@ -687,6 +693,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       if (/(?:AM|PM)/i.test(dateSpan.textContent)) {
         // If it has time (non-recurring event), keep it as the date/time display
         dateSpan.classList.add('event-when');
+        scheduleDiv.appendChild(dateSpan);
       } else {
         // Otherwise it's redundant with the Opening line, so remove it
         dateSpan.remove();
@@ -696,24 +703,37 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     // the address line links to a Google Maps search, like the listing cards
     liveSpans.forEach(span => {
       const text = span.textContent.trim();
-      if (span.classList.contains('event-when')) return;
-      if (/^(opening|on view)/i.test(text)) return;
+      if (span.classList.contains('event-when')) {
+        if (span.parentElement !== scheduleDiv) scheduleDiv.appendChild(span);
+        return;
+      }
+      if (/^(opening|on view)/i.test(text)) {
+        span.classList.add('event-when');
+        scheduleDiv.appendChild(span);
+        return;
+      }
       if (span.querySelector('.event-source-link')) return; // ignore official link
 
       // If it looks like an address, link it and mark as address
       if (!span.querySelector('a') && text.includes(',') && /\d/.test(text)) {
         span.innerHTML = `<a href="http://maps.google.com/maps?q=${encodeURIComponent(text)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`;
         span.classList.add('event-address');
+        locationDiv.appendChild(span);
       } else {
         // Otherwise, it's the venue name
         span.classList.add('event-venue');
+        locationDiv.appendChild(span);
       }
     });
+
+    if (scheduleDiv.hasChildNodes()) meta.insertBefore(scheduleDiv, meta.firstChild);
+    if (locationDiv.hasChildNodes()) meta.insertBefore(locationDiv, meta.firstChild);
+
     // when-lines lead with a bold "Opening"/"On view", like the listing cards
-    liveSpans.filter(s => /^(opening|on view)/i.test(s.textContent.trim()))
+    [...scheduleDiv.querySelectorAll('.event-when')]
       .forEach(emphasizeScheduleLine);
     // parseable opening times become their own Start/End row
-    const openingSpan = liveSpans.find(s => /^opening/i.test(s.textContent.trim()));
+    const openingSpan = [...scheduleDiv.querySelectorAll('.event-when')].find(s => /^opening/i.test(s.textContent.trim()));
     const openingSplit = openingSpan && detachOpeningTimes(openingSpan.textContent.trim());
     if (openingSplit) {
       openingSpan.innerHTML = scheduleLineHtml(openingSplit.line);
@@ -724,7 +744,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
           : '') +
         '</span>');
     }
-    const onViewSpan = spans.find(s => /^on view/i.test(s.textContent.trim()));
+    const onViewSpan = [...scheduleDiv.querySelectorAll('.event-when')].find(s => /^on view/i.test(s.textContent.trim()));
     if (!onViewSpan) return;
     const date = onViewDate(onViewSpan.textContent, baseYear, baseMonth);
     if (!date) return;
