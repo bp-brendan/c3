@@ -269,6 +269,9 @@ body {
 .tag-invoke[aria-expanded="true"] {
   /* a grey tab: open at the bottom to merge with panel */
   background: #eeeeee;
+  /* above the absolutely-positioned panel (z 19) so the bridge below
+     actually paints over its top border */
+  z-index: 20;
 }
 
 .tag-invoke[aria-expanded="true"]::after {
@@ -276,9 +279,11 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -1px;
-  height: 1px;
-  background: #eeeeee; /* opens the band's bottom hairline under the tab */
+  /* two rows sit between tab and panel — the band's bottom hairline and
+     the panel's top border; bridge both so tab and panel read as one */
+  bottom: -2px;
+  height: 2px;
+  background: #eeeeee;
 }
 
 .tag-invoke-icon {
