@@ -726,6 +726,23 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       }
     });
 
+    const whenSpans = [...scheduleDiv.querySelectorAll('.event-when')];
+    const openingSpan = whenSpans.find(s => /^opening/i.test(s.textContent.trim()));
+    const onViewSpan = whenSpans.find(s => /^on view/i.test(s.textContent.trim()));
+    
+    if (openingSpan && onViewSpan) {
+      const extractDateStr = text => {
+        const m = text.match(/([A-Za-z]+)\s+(\d{1,2})/);
+        return m ? `${m[1].toLowerCase()} ${m[2]}` : null;
+      };
+      const openDate = extractDateStr(openingSpan.textContent);
+      const closeDate = extractDateStr(onViewSpan.textContent);
+      if (openDate && closeDate && openDate === closeDate) {
+        openingSpan.remove();
+        onViewSpan.remove();
+      }
+    }
+
     if (scheduleDiv.hasChildNodes()) meta.insertBefore(scheduleDiv, meta.firstChild);
     if (locationDiv.hasChildNodes()) meta.insertBefore(locationDiv, meta.firstChild);
 
