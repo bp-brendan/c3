@@ -74,7 +74,7 @@
     // a virtual day page reads like a This Week day group: one heading,
     // that day's openings first, then the ongoing runs
     const dayIso = isTodayPage ? today : (isTomorrowPage ? tomorrow : '');
-    const tagEvents = Visualist.publicEvents(TAG_EVENTS_2026);
+    const tagEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
     const hits = tagEvents
       .filter(e => isTodayPage ? e.d === today // only what opens today
         : (isTomorrowPage ? runsTomorrow(e)

@@ -17,30 +17,33 @@
   <main class="site-main submit-main admin-main">
     <div data-visualist-nav></div>
 
-    <section class="view admin-view" aria-labelledby="admin-title">
+    <section class="view admin-view" id="view-queue" aria-labelledby="admin-title">
       <h1 class="submit-title" id="admin-title">Admin Queue</h1>
-      <div class="admin-summary" data-admin-summary></div>
-      <div class="admin-tabs" role="tablist" aria-label="Submission status">
-        <button type="button" class="active" data-admin-filter="pending">Pending</button>
-        <button type="button" data-admin-filter="approved">Approved</button>
-        <button type="button" data-admin-filter="passed">Passed</button>
-        <button type="button" data-admin-filter="all">All</button>
+      <div class="admin-queue-filters" data-admin-filters>
+        <a href="#queue-pending" data-admin-filter="pending">Pending</a>
+        <a href="#queue-approved" data-admin-filter="approved">Approved</a>
+        <a href="#queue-passed" data-admin-filter="passed">Passed</a>
+        <a href="#queue-all" data-admin-filter="all">All</a>
       </div>
+      <div class="admin-summary" data-admin-summary></div>
       <div class="admin-queue" data-admin-queue></div>
       <p class="view-empty" data-admin-empty hidden>No submissions in this queue.</p>
+    </section>
 
-      <details class="admin-create">
-        <summary>Create Event</summary>
+    <section class="view admin-view" id="view-create" aria-labelledby="admin-create-title" hidden>
+      <h1 class="submit-title" id="admin-create-title">Create Event</h1>
         <form data-admin-create-form>
+          <div class="admin-create-message" data-admin-create-message hidden></div>
           <div class="admin-fields"></div>
           <div class="admin-actions">
             <button class="form-button form-button-primary" type="submit">Publish Event</button>
           </div>
         </form>
-      </details>
+      </form>
+    </section>
 
-      <section class="admin-events" aria-labelledby="admin-events-title">
-        <h2 class="submit-title" id="admin-events-title">All 2026 Events</h2>
+    <section class="view admin-view admin-events" id="view-events" aria-labelledby="admin-events-title" hidden>
+      <h2 class="submit-title" id="admin-events-title">All 2026 Events</h2>
         <div class="admin-event-filters">
           <label class="submit-field" for="admin-event-search">
             <span>Search</span>
@@ -76,18 +79,20 @@
   <script src="archiveevents2026.js"></script>
   <script>
     Visualist.renderChrome();
-    Visualist.initHeaderAccordion();
-
-    const escapeHtml = value => String(value || '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
 
     const queue = document.querySelector('[data-admin-queue]');
-    const empty = document.querySelector('[data-admin-empty]');
     const summary = document.querySelector('[data-admin-summary]');
+    const empty = document.querySelector('[data-admin-empty]');
     const createForm = document.querySelector('[data-admin-create-form]');
+    const createMessage = document.querySelector('[data-admin-create-message]');
+    
+    // View sections
+    const views = {
+      queue: document.getElementById('view-queue'),
+      events: document.getElementById('view-events'),
+      create: document.getElementById('view-create')
+    };
+
     const eventList = document.querySelector('[data-admin-events]');
     const eventCount = document.querySelector('[data-admin-events-count]');
     const eventSearch = document.getElementById('admin-event-search');
@@ -95,7 +100,11 @@
     const eventTo = document.getElementById('admin-event-to');
     const eventSource = document.getElementById('admin-event-source');
     const filters = [...document.querySelectorAll('[data-admin-filter]')];
-    let activeFilter = 'pending';
+    const createLink = document.querySelector('[data-admin-create-link]');
+    const validFilters = new Set(['pending', 'approved', 'passed', 'all']);
+    let activeFilter = validFilters.has(location.hash.replace(/^#/, ''))
+      ? location.hash.replace(/^#/, '')
+      : 'pending';
     const EVENT_LIMIT = 120;
 
     const formatDateTime = value => {
@@ -107,6 +116,9 @@
 
     const valueAttr = value => escapeHtml(value || '');
     const checked = (value, expected) => value === expected ? ' checked' : '';
+    const mapUrlForAddress = address => address
+      ? `http://maps.google.com/maps?q=${encodeURIComponent(address)}`
+      : '';
     const blankSubmission = () => ({
       id: 'create',
       status: 'approved',
@@ -114,14 +126,18 @@
       title: '',
       artists: [],
       venue: '',
+      venueUrl: '',
       address: '',
+      mapUrl: '',
       listingType: 'event',
       eventDate: '',
       eventStart: '',
       eventEnd: '',
       exhibitionStart: '',
       exhibitionEnd: '',
+      onViewText: '',
       imageUrl: '',
+      detailUrl: '',
       description: '',
       contactEmail: '',
       tags: []
@@ -140,10 +156,15 @@
         <span>Venue</span>
         <input id="venue-${submission.id}" name="venue" type="text" value="${valueAttr(submission.venue)}" required>
       </label>
+      <label class="submit-field" for="venue-url-${submission.id}">
+        <span>Venue URL</span>
+        <input id="venue-url-${submission.id}" name="venueUrl" type="url" value="${valueAttr(submission.venueUrl)}">
+      </label>
       <label class="submit-field" for="address-${submission.id}">
         <span>Address</span>
         <input id="address-${submission.id}" name="address" type="text" value="${valueAttr(submission.address)}" required>
       </label>
+
       <div class="submit-field admin-wide">
         <span>Listing type</span>
         <div class="listing-type-toggle">
@@ -177,9 +198,17 @@
         <span>Exhibition End</span>
         <input id="exhibition-end-${submission.id}" name="exhibitionEnd" type="date" value="${valueAttr(submission.exhibitionEnd)}">
       </label>
+      <label class="submit-field" for="on-view-${submission.id}">
+        <span>On View Text</span>
+        <input id="on-view-${submission.id}" name="onViewText" type="text" value="${valueAttr(submission.onViewText)}" placeholder="On view through Saturday, July 4th">
+      </label>
       <label class="submit-field" for="image-${submission.id}">
         <span>Image URL</span>
         <input id="image-${submission.id}" name="imageUrl" type="url" value="${valueAttr(submission.imageUrl)}">
+      </label>
+      <label class="submit-field" for="detail-${submission.id}">
+        <span>Detail URL</span>
+        <input id="detail-${submission.id}" name="detailUrl" type="text" value="${valueAttr(submission.detailUrl)}">
       </label>
       <label class="submit-field" for="artists-${submission.id}">
         <span>Artists</span>
@@ -224,18 +253,23 @@
 
     const formPatch = form => {
       const data = new FormData(form);
+      const address = String(data.get('address') || '').trim();
       return {
         sourceUrl: data.get('sourceUrl'),
         title: data.get('title'),
         venue: data.get('venue'),
-        address: data.get('address'),
+        venueUrl: data.get('venueUrl'),
+        address,
+        mapUrl: data.get('mapUrl') || mapUrlForAddress(address),
         listingType: data.get('listingType'),
         eventDate: data.get('eventDate'),
         eventStart: data.get('eventStart'),
         eventEnd: data.get('eventEnd'),
         exhibitionStart: data.get('exhibitionStart'),
         exhibitionEnd: data.get('exhibitionEnd'),
+        onViewText: data.get('onViewText'),
         imageUrl: data.get('imageUrl'),
+        detailUrl: data.get('detailUrl'),
         description: data.get('description'),
         contactEmail: data.get('contactEmail'),
         artists: data.get('artists'),
@@ -245,6 +279,7 @@
 
     const eventPatch = form => {
       const data = new FormData(form);
+      const address = String(data.get('a') || '').trim();
       return {
         t: String(data.get('t') || '').trim(),
         u: String(data.get('u') || '').trim(),
@@ -255,8 +290,8 @@
         w: String(data.get('w') || '').trim(),
         o: String(data.get('o') || '').trim(),
         i: String(data.get('i') || '').trim(),
-        a: String(data.get('a') || '').trim(),
-        m: String(data.get('m') || '').trim(),
+        a: address,
+        m: String(data.get('m') || '').trim() || mapUrlForAddress(address),
         x: String(data.get('x') || '').trim(),
         g: String(data.get('g') || '').split(',').map(tag => tag.trim()).filter(Boolean)
       };
@@ -299,10 +334,7 @@
         <span>Address</span>
         <input name="a" type="text" value="${valueAttr(event.a)}">
       </label>
-      <label class="submit-field">
-        <span>Map URL</span>
-        <input name="m" type="url" value="${valueAttr(event.m)}">
-      </label>
+
       <label class="submit-field">
         <span>Image URL</span>
         <input name="i" type="text" value="${valueAttr(event.i)}">
@@ -382,12 +414,51 @@
       Visualist.openExternalLinks(queue);
     };
 
-    filters.forEach(button => {
-      button.addEventListener('click', () => {
-        activeFilter = button.dataset.adminFilter;
-        filters.forEach(item => item.classList.toggle('active', item === button));
-        render();
+    const paintAdminNav = () => {
+      // Primary tabs
+      const primary = (location.hash || '#queue').replace(/^#/, '').split('-')[0];
+      document.querySelectorAll('[data-admin-tab]').forEach(item => {
+        const active = item.dataset.adminTab === primary;
+        item.classList.toggle('active', active);
+        item.toggleAttribute('aria-current', active);
       });
+      
+      // View visibility
+      Object.entries(views).forEach(([key, el]) => {
+        if (el) el.hidden = key !== primary;
+      });
+
+      // Sub-filters for Queue
+      filters.forEach(item => {
+        const active = item.dataset.adminFilter === activeFilter;
+        item.classList.toggle('active', active);
+        item.toggleAttribute('aria-current', active);
+      });
+    };
+
+    const setQueueFilter = (value, updateHash = true) => {
+      if (!validFilters.has(value)) value = 'pending';
+      activeFilter = value;
+      if (updateHash) history.replaceState(null, '', `#queue-${value}`);
+      paintAdminNav();
+      render();
+    };
+
+    filters.forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        setQueueFilter(link.dataset.adminFilter);
+      });
+    });
+
+    window.addEventListener('hashchange', () => {
+      const target = location.hash.replace(/^#/, '');
+      const [primary, sub] = target.split('-');
+      if (primary === 'queue' && sub) {
+        setQueueFilter(sub, false);
+      } else {
+        paintAdminNav();
+      }
     });
 
     queue.addEventListener('submit', event => {
@@ -431,21 +502,37 @@
     createForm.addEventListener('submit', event => {
       event.preventDefault();
       const now = new Date().toISOString();
-      Visualist.saveSubmittedEvent({
+      const published = Visualist.saveSubmittedEvent({
         ...formPatch(createForm),
         status: 'approved',
         submittedAt: now,
         approvedAt: now
       });
+      const publicEvent = Visualist.submissionToEvent(published);
       createForm.reset();
       createForm.querySelector('input[name="listingType"][value="event"]').checked = true;
-      activeFilter = 'approved';
-      filters.forEach(item => item.classList.toggle('active', item.dataset.adminFilter === activeFilter));
+      createMessage.hidden = false;
+      createMessage.innerHTML = `
+        <strong>Published ${escapeHtml(published.title || 'Untitled')}.</strong>
+        <span>Ready for another.</span>
+        <a href="index.html#archive?date=${encodeURIComponent(publicEvent.d)}">View in archive</a>`;
+      history.replaceState(null, '', '#create');
+      paintAdminNav();
       render();
       renderEvents();
+      window.scrollTo(0, 0);
     });
 
-    render();
+    const initialHash = location.hash.replace(/^#/, '');
+    const [initialPrimary, initialSub] = initialHash.split('-');
+    if (initialPrimary === 'queue' && initialSub) {
+      setQueueFilter(initialSub, false);
+    } else if (initialPrimary === 'create' || initialPrimary === 'events') {
+      paintAdminNav();
+      setQueueFilter(activeFilter, false);
+    } else {
+      setQueueFilter(activeFilter, !location.hash);
+    }
     renderEvents();
   </script>
 

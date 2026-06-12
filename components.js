@@ -244,9 +244,9 @@ calendar's beginnings in 2011. Help us keep it growing.`;
   const renderHeader = () => {
     document.querySelectorAll('[data-visualist-header]').forEach(header => {
       header.className = 'site-header';
-      const logo = `
-        <span class="logotype-the">the</span>
-        <span class="logotype-name">VISUALIST</span>`;
+      const isAdmin = pageName() === 'admin';
+      const logo = `<span class="logotype-the">the</span>
+        <span class="logotype-name">${isAdmin ? 'BACKROOM' : 'VISUALIST'}</span>`;
       header.innerHTML = `
         <a class="header-home-hit" href="${localHref('index.html')}" aria-hidden="true" tabindex="-1"></a>
         <a class="logotype" href="${localHref('index.html')}" aria-label="The Visualist home">${logo}</a>
@@ -271,6 +271,14 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const page = pageName();
     const active = document.body.dataset.activeNav || (page === 'home' ? 'this-week' : page);
     document.querySelectorAll('[data-visualist-nav]').forEach(slot => {
+      const isAdmin = page === 'admin';
+      const adminActive = isAdmin
+        ? (location.hash || '#queue').replace(/^#/, '').split('-')[0] // 'queue' or 'events' or 'create'
+        : '';
+      const adminItems = [
+        { key: 'queue', label: 'Queue' },
+        { key: 'events', label: 'All Events' }
+      ];
       slot.innerHTML = `
         <div class="tab-band">
           <p class="band-label"><span class="flag-word">${chicagoFlagLetters}</span> Visual Arts Calendar</p>
@@ -278,11 +286,17 @@ calendar's beginnings in 2011. Help us keep it growing.`;
         <div class="nav-band">
           <div class="nav-block">
             <nav class="site-nav" aria-label="Primary">
-              ${navItems.map(item => item.page
-                ? `<a href="${localHref(item.page)}" class="${active === item.key ? 'active' : ''}">${item.label}</a>`
-                : `<a href="${navHref(item.key)}" data-view="${item.key}" class="${active === item.key ? 'active' : ''}">${item.label}</a>
-              `).join('')}
-              <a href="${localHref('submit.html')}" class="nav-button ${page === 'submit' ? 'active' : ''}" ${page === 'submit' ? 'aria-current="page"' : ''}>Add Event</a>
+              ${isAdmin
+                ? adminItems.map(item => `
+                  <a href="#${item.key}" data-admin-tab="${item.key}" class="${adminActive === item.key ? 'active' : ''}">${item.label}</a>
+                `).join('')
+                : navItems.map(item => item.page
+                  ? `<a href="${localHref(item.page)}" class="${active === item.key ? 'active' : ''}">${item.label}</a>`
+                  : `<a href="${navHref(item.key)}" data-view="${item.key}" class="${active === item.key ? 'active' : ''}">${item.label}</a>
+                `).join('')}
+              ${isAdmin
+                ? `<a href="#create" class="nav-button ${adminActive === 'create' ? 'active' : ''}" data-admin-tab="create">Create Event</a>`
+                : `<a href="${localHref('submit.html')}" class="nav-button ${page === 'submit' ? 'active' : ''}" ${page === 'submit' ? 'aria-current="page"' : ''}>Add Event</a>`}
             </nav>
           </div>
         </div>`;
@@ -395,14 +409,14 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const page = pageName();
     if (document.querySelector('.breadcrumb')) return;
     const crumb = readCrumb();
-    const origin = `<a href="${escapeHtml(localHref(crumb.href))}" class="breadcrumb-arrow" style="opacity: 1;">${escapeHtml(crumb.label)}</a>`;
+    const origin = `<a href="${escapeHtml(localHref(crumb.href))}" class="breadcrumb-arrow" style="opacity: 0.4;">${escapeHtml(crumb.label)}</a>`;
     if (page === 'event') {
       const title = document.querySelector('.event-detail-body .event-detail-title');
       if (!title) return;
       const dayDate = breadcrumbDayDate();
       const nav = breadcrumbNav(`
       ${origin}
-      ${dayDate ? `<span class="breadcrumb-arrow breadcrumb-arrow-date" style="opacity: 0.6;">${detailDate
+      ${dayDate ? `<span class="breadcrumb-arrow breadcrumb-arrow-date" style="opacity: 0.7;">${detailDate
         ? `<a href="${escapeHtml(localHref(`index.html#archive?date=${detailDate.iso}`))}" style="color:inherit;">${escapeHtml(dayDate)}</a>`
         : escapeHtml(dayDate)}${breadcrumbCalendarHtml()}</span>` : ''}`);
       title.insertAdjacentElement('beforebegin', nav);
@@ -672,15 +686,19 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       title: String(submission.title || '').trim(),
       artists: artists.map(item => String(item || '').trim()).filter(Boolean),
       venue: String(submission.venue || '').trim(),
+      venueUrl: String(submission.venueUrl || '').trim(),
       address: String(submission.address || '').trim(),
+      mapUrl: String(submission.mapUrl || '').trim(),
       listingType,
       eventDate,
       eventStart: String(submission.eventStart || '').trim(),
       eventEnd: String(submission.eventEnd || '').trim(),
       exhibitionStart: String(submission.exhibitionStart || '').trim(),
       exhibitionEnd: String(submission.exhibitionEnd || '').trim(),
+      onViewText: String(submission.onViewText || '').trim(),
       imageUrl: String(submission.imageUrl || '').trim(),
       imageName: String(submission.imageName || '').trim(),
+      detailUrl: String(submission.detailUrl || '').trim(),
       description: String(submission.description || '').trim(),
       contactEmail: String(submission.contactEmail || '').trim(),
       tags: tags.map(item => String(item || '').trim()).filter(Boolean),
@@ -699,6 +717,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       title: data.get('post-title'),
       artists: data.get('your-artists'),
       venue: data.get('post-venue'),
+      venueUrl: data.get('post-venue-url'),
       address: data.get('post-address'),
       listingType: data.get('listing-type'),
       eventDate: data.get('post-event-date'),
@@ -708,6 +727,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       exhibitionEnd: data.get('post-exhibition-end'),
       imageUrl,
       imageName: imageFile && imageFile.name ? imageFile.name : '',
+      detailUrl: data.get('post-detail-url'),
       description: data.get('post-content'),
       contactEmail: data.get('ContactE-mail'),
       tags: data.get('your-tags')
@@ -752,18 +772,21 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     const event = {
       t: clean.title || 'Untitled',
       u: clean.sourceUrl || `admin.html#${clean.id}`,
+      p: clean.detailUrl || '',
       v: clean.venue,
+      vu: clean.venueUrl,
       d: start,
       g: [...new Set(tagValues)],
       i: clean.imageUrl,
       x: clean.description,
       w: time,
       a: clean.address,
-      m: mapUrlForAddress(clean.address),
+      m: clean.mapUrl || mapUrlForAddress(clean.address),
       _submitted: true,
       _submittedId: clean.id
     };
-    if (end) event.o = `On view through ${dateLabel(end)}`;
+    if (clean.onViewText) event.o = clean.onViewText;
+    else if (end) event.o = `On view through ${dateLabel(end)}`;
     return event;
   };
 
@@ -1134,7 +1157,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
         <h3 class="event-title"><a href="${escapeHtml(local)}">${escapeHtml(title)}</a>${pick}</h3>
         ${(venue || match.a || opening || match.o) ? `<div class="event-meta-grid">
           ${(venue || match.a) ? `<div class="event-location">
-            ${venue ? `<p class="event-venue"><a href="${escapeHtml(local)}">${escapeHtml(venue.textContent.trim())}</a></p>` : ''}
+            ${venue ? `<p class="event-venue"><a href="${escapeHtml(match.u || local)}" target="_blank" rel="noopener">${escapeHtml(venue.textContent.trim())}</a></p>` : ''}
             ${match.a ? `<p class="event-address">${match.m
               ? `<a href="${escapeHtml(match.m)}">${escapeHtml(match.a)}</a>`
               : escapeHtml(match.a)}</p>` : ''}
@@ -1159,10 +1182,10 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     if (details) {
       if (venue) {
         const venueLink = venue.querySelector('a');
-        if (venueLink && (details.p || details.u)) {
-          venueLink.setAttribute('href', details.p || details.u);
-          venueLink.removeAttribute('target');
-          venueLink.removeAttribute('rel');
+        if (venueLink && (details.u || details.p)) {
+          venueLink.setAttribute('href', details.u || details.p);
+          venueLink.setAttribute('target', '_blank');
+          venueLink.setAttribute('rel', 'noopener');
         }
       }
       if (!address && details.a) {
@@ -1225,7 +1248,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
   };
 
   const addEventDescriptions = () => {
-    document.querySelectorAll('#view-this-week .event-card, #view-next-week .event-card').forEach(card => {
+    document.querySelectorAll('.event-card').forEach(card => {
       const titleLink = card.querySelector('.event-title a');
       const liner = card.querySelector('.event-liner');
       if (!titleLink || !liner) return;

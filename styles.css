@@ -1415,7 +1415,7 @@ a.top-pick:hover,
 
 .event-schedule .event-when strong,
 .event-detail-meta .event-when strong {
-  margin-right: 0.45em;
+  margin-right: 0.25em;
 }
 
 .event-location .event-venue a,
@@ -1459,6 +1459,16 @@ a.top-pick:hover,
 .event-info p a:hover {
   text-decoration: underline;
   text-underline-offset: 0.2em;
+}
+
+.event-info .event-when a {
+  text-decoration: none;
+}
+
+.event-info .event-when a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
 }
 
 .event-info .event-description {
@@ -2350,4 +2360,34 @@ a.top-pick:hover,
   .admin-event-source {
     justify-self: start;
   }
+}
+
+/* Admin Queue Sub-Filters */
+.admin-queue-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  padding-bottom: 0.5rem;
+}
+
+.admin-queue-filters a {
+  color: var(--content-ink-muted);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.admin-queue-filters a:hover {
+  background: var(--ink-muted);
+  color: var(--content-paper);
+}
+
+.admin-queue-filters a.active {
+  background: var(--content-ink);
+  color: var(--content-paper);
 }
