@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Queue | The Visualist</title>
+  <link rel="icon" href="visualist-favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="taglines.js"></script>
+  <script src="components.js"></script>
+</head>
+<body data-page="admin" data-active-nav="archive">
+
+  <header class="site-header" data-visualist-header></header>
+
+  <main class="site-main submit-main admin-main">
+    <div data-visualist-nav></div>
+
+    <section class="view admin-view" aria-labelledby="admin-title">
+      <h1 class="submit-title" id="admin-title">Admin Queue</h1>
+      <div class="admin-summary" data-admin-summary></div>
+      <div class="admin-tabs" role="tablist" aria-label="Submission status">
+        <button type="button" class="active" data-admin-filter="pending">Pending</button>
+        <button type="button" data-admin-filter="approved">Approved</button>
+        <button type="button" data-admin-filter="passed">Passed</button>
+        <button type="button" data-admin-filter="all">All</button>
+      </div>
+      <div class="admin-queue" data-admin-queue></div>
+      <p class="view-empty" data-admin-empty hidden>No submissions in this queue.</p>
+
+      <details class="admin-create">
+        <summary>Create Event</summary>
+        <form data-admin-create-form>
+          <div class="admin-fields"></div>
+          <div class="admin-actions">
+            <button class="form-button form-button-primary" type="submit">Publish Event</button>
+          </div>
+        </form>
+      </details>
+
+      <section class="admin-events" aria-labelledby="admin-events-title">
+        <h2 class="submit-title" id="admin-events-title">All 2026 Events</h2>
+        <div class="admin-event-filters">
+          <label class="submit-field" for="admin-event-search">
+            <span>Search</span>
+            <input id="admin-event-search" type="search" placeholder="Title, venue, tag, address">
+          </label>
+          <label class="submit-field" for="admin-event-from">
+            <span>From</span>
+            <input id="admin-event-from" type="date">
+          </label>
+          <label class="submit-field" for="admin-event-to">
+            <span>To</span>
+            <input id="admin-event-to" type="date">
+          </label>
+          <label class="submit-field" for="admin-event-source">
+            <span>Source</span>
+            <select id="admin-event-source">
+              <option value="all">All</option>
+              <option value="generated">Generated</option>
+              <option value="submitted">Submitted</option>
+              <option value="edited">Edited</option>
+            </select>
+          </label>
+        </div>
+        <p class="admin-events-count" data-admin-events-count></p>
+        <div class="admin-event-list" data-admin-events></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-visualist-footer></footer>
+
+  <script src="tags2026.js"></script>
+  <script src="archiveevents2026.js"></script>
+  <script>
+    Visualist.renderChrome();
+    Visualist.initHeaderAccordion();
+
+    const escapeHtml = value => String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+
+    const queue = document.querySelector('[data-admin-queue]');
+    const empty = document.querySelector('[data-admin-empty]');
+    const summary = document.querySelector('[data-admin-summary]');
+    const createForm = document.querySelector('[data-admin-create-form]');
+    const eventList = document.querySelector('[data-admin-events]');
+    const eventCount = document.querySelector('[data-admin-events-count]');
+    const eventSearch = document.getElementById('admin-event-search');
+    const eventFrom = document.getElementById('admin-event-from');
+    const eventTo = document.getElementById('admin-event-to');
+    const eventSource = document.getElementById('admin-event-source');
+    const filters = [...document.querySelectorAll('[data-admin-filter]')];
+    let activeFilter = 'pending';
+    const EVENT_LIMIT = 120;
+
+    const formatDateTime = value => {
+      if (!value) return '';
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return '';
+      return date.toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+    };
+
+    const valueAttr = value => escapeHtml(value || '');
+    const checked = (value, expected) => value === expected ? ' checked' : '';
+    const blankSubmission = () => ({
+      id: 'create',
+      status: 'approved',
+      sourceUrl: '',
+      title: '',
+      artists: [],
+      venue: '',
+      address: '',
+      listingType: 'event',
+      eventDate: '',
+      eventStart: '',
+      eventEnd: '',
+      exhibitionStart: '',
+      exhibitionEnd: '',
+      imageUrl: '',
+      description: '',
+      contactEmail: '',
+      tags: []
+    });
+
+    const rows = submission => `
+      <label class="submit-field" for="title-${submission.id}">
+        <span>Title</span>
+        <input id="title-${submission.id}" name="title" type="text" value="${valueAttr(submission.title)}" required>
+      </label>
+      <label class="submit-field" for="source-${submission.id}">
+        <span>URL</span>
+        <input id="source-${submission.id}" name="sourceUrl" type="url" value="${valueAttr(submission.sourceUrl)}">
+      </label>
+      <label class="submit-field" for="venue-${submission.id}">
+        <span>Venue</span>
+        <input id="venue-${submission.id}" name="venue" type="text" value="${valueAttr(submission.venue)}" required>
+      </label>
+      <label class="submit-field" for="address-${submission.id}">
+        <span>Address</span>
+        <input id="address-${submission.id}" name="address" type="text" value="${valueAttr(submission.address)}" required>
+      </label>
+      <div class="submit-field admin-wide">
+        <span>Listing type</span>
+        <div class="listing-type-toggle">
+          <label class="listing-type-option">
+            <input type="radio" name="listingType" value="event"${checked(submission.listingType, 'event')}>
+            <span>One-time event</span>
+          </label>
+          <label class="listing-type-option">
+            <input type="radio" name="listingType" value="exhibition"${checked(submission.listingType, 'exhibition')}>
+            <span>Multi-day exhibition</span>
+          </label>
+        </div>
+      </div>
+      <label class="submit-field" for="event-date-${submission.id}">
+        <span>Event Date</span>
+        <input id="event-date-${submission.id}" name="eventDate" type="date" value="${valueAttr(submission.eventDate)}">
+      </label>
+      <label class="submit-field" for="event-start-${submission.id}">
+        <span>Start</span>
+        <input id="event-start-${submission.id}" name="eventStart" type="text" value="${valueAttr(submission.eventStart)}">
+      </label>
+      <label class="submit-field" for="event-end-${submission.id}">
+        <span>End</span>
+        <input id="event-end-${submission.id}" name="eventEnd" type="text" value="${valueAttr(submission.eventEnd)}">
+      </label>
+      <label class="submit-field" for="exhibition-start-${submission.id}">
+        <span>Exhibition Start</span>
+        <input id="exhibition-start-${submission.id}" name="exhibitionStart" type="date" value="${valueAttr(submission.exhibitionStart)}">
+      </label>
+      <label class="submit-field" for="exhibition-end-${submission.id}">
+        <span>Exhibition End</span>
+        <input id="exhibition-end-${submission.id}" name="exhibitionEnd" type="date" value="${valueAttr(submission.exhibitionEnd)}">
+      </label>
+      <label class="submit-field" for="image-${submission.id}">
+        <span>Image URL</span>
+        <input id="image-${submission.id}" name="imageUrl" type="url" value="${valueAttr(submission.imageUrl)}">
+      </label>
+      <label class="submit-field" for="artists-${submission.id}">
+        <span>Artists</span>
+        <input id="artists-${submission.id}" name="artists" type="text" value="${valueAttr((submission.artists || []).join(', '))}">
+      </label>
+      <label class="submit-field" for="tags-${submission.id}">
+        <span>Tags</span>
+        <input id="tags-${submission.id}" name="tags" type="text" value="${valueAttr((submission.tags || []).join(', '))}">
+      </label>
+      <label class="submit-field" for="contact-${submission.id}">
+        <span>Contact Email</span>
+        <input id="contact-${submission.id}" name="contactEmail" type="email" value="${valueAttr(submission.contactEmail)}">
+      </label>
+      <label class="submit-field admin-wide" for="description-${submission.id}">
+        <span>Description</span>
+        <textarea id="description-${submission.id}" name="description" rows="6">${escapeHtml(submission.description)}</textarea>
+      </label>`;
+
+    const cardHtml = submission => {
+      const event = Visualist.submissionToEvent(submission);
+      return `
+        <article class="admin-card" data-status="${escapeHtml(submission.status)}">
+          <form data-submission-id="${escapeHtml(submission.id)}">
+            <div class="admin-card-head">
+              <div>
+                <p class="admin-status">${escapeHtml(submission.status)}</p>
+                <h2>${escapeHtml(submission.title || 'Untitled')}</h2>
+                <p class="admin-card-meta">Submitted ${escapeHtml(formatDateTime(submission.submittedAt))}</p>
+              </div>
+              ${event.i ? `<img src="${escapeHtml(event.i)}" alt="">` : '<span class="admin-thumb-empty"></span>'}
+            </div>
+            <div class="admin-fields">${rows(submission)}</div>
+            <div class="admin-actions">
+              <button class="form-button" type="submit" data-action="save">Save Edits</button>
+              <button class="form-button form-button-primary" type="submit" data-action="approve">Approve</button>
+              <button class="form-button form-button-pass" type="submit" data-action="pass" formnovalidate>Pass</button>
+              ${submission.status === 'approved' ? `<a class="event-source-link" href="index.html#archive?date=${encodeURIComponent(event.d)}">View in archive</a>` : ''}
+            </div>
+          </form>
+        </article>`;
+    };
+
+    const formPatch = form => {
+      const data = new FormData(form);
+      return {
+        sourceUrl: data.get('sourceUrl'),
+        title: data.get('title'),
+        venue: data.get('venue'),
+        address: data.get('address'),
+        listingType: data.get('listingType'),
+        eventDate: data.get('eventDate'),
+        eventStart: data.get('eventStart'),
+        eventEnd: data.get('eventEnd'),
+        exhibitionStart: data.get('exhibitionStart'),
+        exhibitionEnd: data.get('exhibitionEnd'),
+        imageUrl: data.get('imageUrl'),
+        description: data.get('description'),
+        contactEmail: data.get('contactEmail'),
+        artists: data.get('artists'),
+        tags: data.get('tags')
+      };
+    };
+
+    const eventPatch = form => {
+      const data = new FormData(form);
+      return {
+        t: String(data.get('t') || '').trim(),
+        u: String(data.get('u') || '').trim(),
+        p: String(data.get('p') || '').trim(),
+        v: String(data.get('v') || '').trim(),
+        vu: String(data.get('vu') || '').trim(),
+        d: String(data.get('d') || '').trim(),
+        w: String(data.get('w') || '').trim(),
+        o: String(data.get('o') || '').trim(),
+        i: String(data.get('i') || '').trim(),
+        a: String(data.get('a') || '').trim(),
+        m: String(data.get('m') || '').trim(),
+        x: String(data.get('x') || '').trim(),
+        g: String(data.get('g') || '').split(',').map(tag => tag.trim()).filter(Boolean)
+      };
+    };
+
+    const eventRows = event => `
+      <label class="submit-field">
+        <span>Title</span>
+        <input name="t" type="text" value="${valueAttr(event.t)}" required>
+      </label>
+      <label class="submit-field">
+        <span>Opening Date</span>
+        <input name="d" type="date" value="${valueAttr(event.d)}" required>
+      </label>
+      <label class="submit-field">
+        <span>Time</span>
+        <input name="w" type="text" value="${valueAttr(event.w)}" placeholder="6PM - 9PM">
+      </label>
+      <label class="submit-field">
+        <span>On View</span>
+        <input name="o" type="text" value="${valueAttr(event.o)}" placeholder="On view through Saturday, July 4th">
+      </label>
+      <label class="submit-field">
+        <span>Official URL</span>
+        <input name="u" type="url" value="${valueAttr(event.u)}">
+      </label>
+      <label class="submit-field">
+        <span>Detail URL</span>
+        <input name="p" type="text" value="${valueAttr(event.p)}">
+      </label>
+      <label class="submit-field">
+        <span>Venue</span>
+        <input name="v" type="text" value="${valueAttr(event.v)}">
+      </label>
+      <label class="submit-field">
+        <span>Venue URL</span>
+        <input name="vu" type="url" value="${valueAttr(event.vu)}">
+      </label>
+      <label class="submit-field">
+        <span>Address</span>
+        <input name="a" type="text" value="${valueAttr(event.a)}">
+      </label>
+      <label class="submit-field">
+        <span>Map URL</span>
+        <input name="m" type="url" value="${valueAttr(event.m)}">
+      </label>
+      <label class="submit-field">
+        <span>Image URL</span>
+        <input name="i" type="text" value="${valueAttr(event.i)}">
+      </label>
+      <label class="submit-field">
+        <span>Tags</span>
+        <input name="g" type="text" value="${valueAttr((event.g || []).map(Visualist.tagLabel).join(', '))}">
+      </label>
+      <label class="submit-field admin-wide">
+        <span>Description</span>
+        <textarea name="x" rows="5">${escapeHtml(event.x)}</textarea>
+      </label>`;
+
+    const sourceForEvent = event => event._edited ? 'edited' : (event._submitted ? 'submitted' : 'generated');
+    const eventSummary = event => `${event.t || ''} ${event.v || ''} ${event.a || ''} ${(event.g || []).join(' ')} ${event.x || ''}`.toLowerCase();
+    const eventCard = event => {
+      const key = Visualist.eventKey(event);
+      const source = sourceForEvent(event);
+      return `
+        <details class="admin-event-item" data-source="${source}">
+          <summary>
+            <span class="admin-event-date">${escapeHtml(event.d || '')}</span>
+            <span class="admin-event-title">${escapeHtml(event.t || 'Untitled')}</span>
+            <span class="admin-event-venue">${escapeHtml(event.v || '')}</span>
+            <span class="admin-event-source">${escapeHtml(source)}</span>
+          </summary>
+          <form data-event-key="${escapeHtml(key)}">
+            <div class="admin-fields">${eventRows(event)}</div>
+            <div class="admin-actions">
+              <button class="form-button form-button-primary" type="submit" data-action="save">Save Event</button>
+              <button class="form-button form-button-pass" type="submit" data-action="reset" formnovalidate>Reset Edits</button>
+              <a class="event-source-link" href="${escapeHtml(event.p || event.u)}">View public link</a>
+            </div>
+          </form>
+        </details>`;
+    };
+
+    const allEvents = () => Visualist.publicEvents(ARCHIVE_EVENTS_2026)
+      .sort((a, b) => b.d.localeCompare(a.d) || (a.t || '').localeCompare(b.t || ''));
+
+    const renderEvents = () => {
+      const q = eventSearch.value.trim().toLowerCase();
+      const from = eventFrom.value;
+      const to = eventTo.value;
+      const source = eventSource.value;
+      const matches = allEvents().filter(event =>
+        (!q || eventSummary(event).includes(q)) &&
+        (!from || event.d >= from) &&
+        (!to || event.d <= to) &&
+        (source === 'all' || sourceForEvent(event) === source)
+      );
+      const shown = matches.slice(0, EVENT_LIMIT);
+      eventCount.textContent = `${matches.length.toLocaleString()} events${matches.length > EVENT_LIMIT ? `, showing ${EVENT_LIMIT.toLocaleString()}` : ''}`;
+      eventList.innerHTML = shown.map(eventCard).join('');
+      Visualist.openExternalLinks(eventList);
+    };
+
+    const render = () => {
+      const submissions = Visualist.submittedEvents();
+      const counts = submissions.reduce((memo, item) => {
+        memo[item.status] = (memo[item.status] || 0) + 1;
+        return memo;
+      }, {});
+      summary.innerHTML = `
+        <span>${counts.pending || 0} pending</span>
+        <span>${counts.approved || 0} approved</span>
+        <span>${counts.passed || 0} passed</span>`;
+      const visible = submissions
+        .filter(item => activeFilter === 'all' || item.status === activeFilter)
+        .sort((a, b) => {
+          const rank = { pending: 0, approved: 1, passed: 2 };
+          return (rank[a.status] ?? 9) - (rank[b.status] ?? 9) ||
+            String(b.submittedAt || '').localeCompare(String(a.submittedAt || ''));
+        });
+      queue.innerHTML = visible.map(cardHtml).join('');
+      empty.hidden = visible.length > 0;
+      Visualist.openExternalLinks(queue);
+    };
+
+    filters.forEach(button => {
+      button.addEventListener('click', () => {
+        activeFilter = button.dataset.adminFilter;
+        filters.forEach(item => item.classList.toggle('active', item === button));
+        render();
+      });
+    });
+
+    queue.addEventListener('submit', event => {
+      event.preventDefault();
+      const form = event.target;
+      const id = form.dataset.submissionId;
+      const action = event.submitter?.dataset.action || 'save';
+      const patch = formPatch(form);
+      if (action === 'approve') {
+        patch.status = 'approved';
+        patch.approvedAt = new Date().toISOString();
+        patch.passedAt = '';
+      } else if (action === 'pass') {
+        patch.status = 'passed';
+        patch.passedAt = new Date().toISOString();
+        patch.approvedAt = '';
+      }
+      Visualist.updateSubmittedEvent(id, patch);
+      render();
+    });
+
+    [eventSearch, eventFrom, eventTo, eventSource].forEach(input => {
+      input.addEventListener('input', renderEvents);
+      input.addEventListener('change', renderEvents);
+    });
+
+    eventList.addEventListener('submit', event => {
+      event.preventDefault();
+      const form = event.target;
+      const key = form.dataset.eventKey;
+      const action = event.submitter?.dataset.action || 'save';
+      if (action === 'reset') {
+        Visualist.clearEventEdit(key);
+      } else {
+        Visualist.saveEventEdit(key, eventPatch(form));
+      }
+      renderEvents();
+    });
+
+    createForm.querySelector('.admin-fields').innerHTML = rows(blankSubmission());
+    createForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const now = new Date().toISOString();
+      Visualist.saveSubmittedEvent({
+        ...formPatch(createForm),
+        status: 'approved',
+        submittedAt: now,
+        approvedAt: now
+      });
+      createForm.reset();
+      createForm.querySelector('input[name="listingType"][value="event"]').checked = true;
+      activeFilter = 'approved';
+      filters.forEach(item => item.classList.toggle('active', item.dataset.adminFilter === activeFilter));
+      render();
+      renderEvents();
+    });
+
+    render();
+    renderEvents();
+  </script>
+
+</body>
+</html>

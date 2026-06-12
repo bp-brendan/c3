@@ -50,7 +50,7 @@
     const tag = TAGS_2026.find(t => t.s === slug);
     const label = isTodayPage ? 'Today'
       : (isTomorrowPage ? 'Tomorrow'
-        : (isMonthPage ? monthLabel : (tag ? tag.n : slug || 'unknown')));
+        : (isMonthPage ? monthLabel : (tag ? tag.n : Visualist.tagLabel(slug || 'unknown'))));
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
     document.getElementById('tag-name').textContent = label;
@@ -74,7 +74,8 @@
     // a virtual day page reads like a This Week day group: one heading,
     // that day's openings first, then the ongoing runs
     const dayIso = isTodayPage ? today : (isTomorrowPage ? tomorrow : '');
-    const hits = TAG_EVENTS_2026
+    const tagEvents = Visualist.publicEvents(TAG_EVENTS_2026);
+    const hits = tagEvents
       .filter(e => isTodayPage ? e.d === today // only what opens today
         : (isTomorrowPage ? runsTomorrow(e)
           : (isMonthPage ? e.d.startsWith(monthParam) : e.g.includes(slug))))
@@ -104,12 +105,11 @@
         }
         return line;
       };
-      const tagLabel = tagSlug => (TAGS_2026.find(t => t.s === tagSlug) || {}).n || tagSlug;
       const renderTags = tagSlugs => {
         const tags = [...new Set(tagSlugs || [])].slice(0, 4);
         if (!tags.length) return '';
         return `<span class="listing-tags">${tags.map(tagSlug =>
-          `<a href="tag.html?tag=${encodeURIComponent(tagSlug)}">${escapeHtml(tagLabel(tagSlug))}</a>`
+          `<a href="tag.html?tag=${encodeURIComponent(Visualist.tagSlug(tagSlug))}">${escapeHtml(Visualist.tagLabel(tagSlug))}</a>`
         ).join('')}</span>`;
       };
       let lastDate = '';

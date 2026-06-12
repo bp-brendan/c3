@@ -35,6 +35,207 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 
+  const SUBMISSIONS_KEY = 'visualist.submittedEvents.v1';
+  const EVENT_EDITS_KEY = 'visualist.eventEdits.v1';
+  const SUBMISSION_IMAGE_LIMIT = 900 * 1024;
+
+  const readJson = (key, fallback) => {
+    try {
+      const value = window.localStorage.getItem(key);
+      return value ? JSON.parse(value) : fallback;
+    } catch {
+      return fallback;
+    }
+  };
+
+  const writeJson = (key, value) => {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  };
+
+  const submittedEvents = () => {
+    const events = readJson(SUBMISSIONS_KEY, []);
+    const stored = Array.isArray(events) ? events : [];
+    const storedById = new Map(stored.map(event => [event.id, event]));
+    const seeded = demoSubmissions.map(event => storedById.get(event.id) || event);
+    const seedIds = new Set(demoSubmissions.map(event => event.id));
+    return [
+      ...stored.filter(event => !seedIds.has(event.id)),
+      ...seeded
+    ];
+  };
+
+  const saveSubmittedEvents = events => {
+    writeJson(SUBMISSIONS_KEY, events);
+    return events;
+  };
+
+  const eventKey = event => String(event._adminKey || [
+    event.p || '',
+    event.u || '',
+    event.d || '',
+    event.t || ''
+  ].join('|'));
+
+  const eventEdits = () => {
+    const edits = readJson(EVENT_EDITS_KEY, {});
+    return edits && typeof edits === 'object' && !Array.isArray(edits) ? edits : {};
+  };
+
+  const saveEventEdit = (key, patch) => {
+    const edits = eventEdits();
+    edits[key] = {
+      ...(edits[key] || {}),
+      ...patch,
+      _editedAt: new Date().toISOString()
+    };
+    writeJson(EVENT_EDITS_KEY, edits);
+    return edits[key];
+  };
+
+  const clearEventEdit = key => {
+    const edits = eventEdits();
+    delete edits[key];
+    writeJson(EVENT_EDITS_KEY, edits);
+  };
+
+  const applyEventEdits = events => {
+    const edits = eventEdits();
+    return (events || []).map(event => {
+      const key = eventKey(event);
+      const edit = edits[key];
+      return edit ? { ...event, ...edit, _adminKey: key, _edited: true } : { ...event, _adminKey: key };
+    });
+  };
+
+  const submissionId = () => {
+    const random = Math.random().toString(36).slice(2, 8);
+    return `sub-${Date.now().toString(36)}-${random}`;
+  };
+
+  const splitList = value => String(value || '')
+    .split(',')
+    .map(item => item.trim())
+    .filter(Boolean);
+
+  const dateLabel = iso => {
+    if (!iso) return '';
+    const date = new Date(`${iso}T12:00:00`);
+    if (Number.isNaN(date.getTime())) return '';
+    const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
+    const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);
+    return `${weekday}, ${month} ${ordinal(date.getDate())}`;
+  };
+
+  const mapUrlForAddress = address => address
+    ? `http://maps.google.com/maps?q=${encodeURIComponent(address)}`
+    : '';
+
+  const readFileAsDataUrl = file => new Promise(resolve => {
+    if (!file || file.size > SUBMISSION_IMAGE_LIMIT || !/^image\//.test(file.type || '')) {
+      resolve('');
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result || ''));
+    reader.onerror = () => resolve('');
+    reader.readAsDataURL(file);
+  });
+
+  const demoSubmissions = [
+    {
+      id: 'demo-chicago-dibs-summit',
+      status: 'approved',
+      submittedAt: '2026-06-01T12:00:00.000Z',
+      updatedAt: '2026-06-01T12:00:00.000Z',
+      approvedAt: '2026-06-01T12:00:00.000Z',
+      sourceUrl: '',
+      title: 'The Great Chicago Dibs Summit',
+      artists: [],
+      venue: 'Daley Plaza',
+      address: '50 W Washington St, Chicago, IL 60602',
+      listingType: 'event',
+      eventDate: '2026-06-18',
+      eventStart: '6PM',
+      eventEnd: '8PM',
+      exhibitionStart: '',
+      exhibitionEnd: '',
+      imageUrl: '',
+      imageName: '',
+      description: 'A nonbinding civic forum on lawn chairs, milk crates, and whether a traffic cone can hold emotional property rights after the snow melts.',
+      contactEmail: 'history@example.org',
+      tags: ['Chicago History', 'Dibs', 'Civic Rituals']
+    },
+    {
+      id: 'demo-oleary-cow-hearing',
+      status: 'approved',
+      submittedAt: '2026-06-01T12:05:00.000Z',
+      updatedAt: '2026-06-01T12:05:00.000Z',
+      approvedAt: '2026-06-01T12:05:00.000Z',
+      sourceUrl: '',
+      title: "Mrs. O'Leary's Cow Alibi Hearing",
+      artists: [],
+      venue: 'Chicago History Museum',
+      address: '1601 N Clark St, Chicago, IL 60614',
+      listingType: 'event',
+      eventDate: '2026-06-19',
+      eventStart: '7PM',
+      eventEnd: '9PM',
+      exhibitionStart: '',
+      exhibitionEnd: '',
+      imageUrl: '',
+      imageName: '',
+      description: 'A mock civic hearing reconsidering the most famous cow in town, with expert testimony from amateur historians, neighborhood skeptics, and one person who just really likes lanterns.',
+      contactEmail: 'history@example.org',
+      tags: ['Chicago Fire', 'Chicago History', 'Old Town']
+    },
+    {
+      id: 'demo-reverse-the-river-again',
+      status: 'approved',
+      submittedAt: '2026-06-01T12:10:00.000Z',
+      updatedAt: '2026-06-01T12:10:00.000Z',
+      approvedAt: '2026-06-01T12:10:00.000Z',
+      sourceUrl: '',
+      title: 'Reverse the River Again, Just To See',
+      artists: [],
+      venue: 'Chicago Riverwalk',
+      address: 'Chicago Riverwalk, Chicago, IL 60601',
+      listingType: 'event',
+      eventDate: '2026-06-20',
+      eventStart: '3PM',
+      eventEnd: '5PM',
+      exhibitionStart: '',
+      exhibitionEnd: '',
+      imageUrl: '',
+      imageName: '',
+      description: 'A walking tour and group thought experiment about civic engineering, stubbornness, and whether the river would appreciate a little variety.',
+      contactEmail: 'history@example.org',
+      tags: ['Chicago River', 'Civic Engineering', 'Chicago History']
+    },
+    {
+      id: 'demo-lower-wacker-support-group',
+      status: 'approved',
+      submittedAt: '2026-06-01T12:15:00.000Z',
+      updatedAt: '2026-06-01T12:15:00.000Z',
+      approvedAt: '2026-06-01T12:15:00.000Z',
+      sourceUrl: '',
+      title: 'Lower Wacker Wayfinding Support Group',
+      artists: [],
+      venue: 'Lower Wacker Drive',
+      address: 'Lower Wacker Dr, Chicago, IL 60601',
+      listingType: 'event',
+      eventDate: '2026-06-21',
+      eventStart: '11AM',
+      eventEnd: '12PM',
+      exhibitionStart: '',
+      exhibitionEnd: '',
+      imageUrl: '',
+      imageName: '',
+      description: 'A gentle meetup for anyone who has entered Lower Wacker with confidence and emerged in a different chapter of their life.',
+      contactEmail: 'history@example.org',
+      tags: ['Lower Wacker', 'Chicago History', 'Getting Lost']
+    }
+  ];
+
   const randomLine = () => {
     if (typeof window.randomTagline === 'function') return stripPeriods(window.randomTagline());
     return 'Chicago Visual Arts Calendar';
@@ -447,6 +648,152 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     return `<p class="listing-tags">${links.map(tag =>
       `<a href="${localHref(`tag.html?tag=${encodeURIComponent(tag.slug)}`)}">${escapeHtml(tag.label)}</a>`
     ).join('')}</p>`;
+  };
+
+  const cleanSubmission = submission => {
+    const now = new Date().toISOString();
+    const sourceUrl = String(submission.sourceUrl || submission.url || '').trim();
+    const listingType = submission.listingType === 'exhibition' ? 'exhibition' : 'event';
+    const eventDate = listingType === 'exhibition'
+      ? String(submission.exhibitionStart || submission.eventDate || '').trim()
+      : String(submission.eventDate || submission.exhibitionStart || '').trim();
+    const artists = Array.isArray(submission.artists)
+      ? submission.artists
+      : splitList(submission.artists);
+    const tags = Array.isArray(submission.tags)
+      ? submission.tags
+      : splitList(submission.tags);
+    return {
+      id: submission.id || submissionId(),
+      status: submission.status || 'pending',
+      submittedAt: submission.submittedAt || now,
+      updatedAt: now,
+      sourceUrl,
+      title: String(submission.title || '').trim(),
+      artists: artists.map(item => String(item || '').trim()).filter(Boolean),
+      venue: String(submission.venue || '').trim(),
+      address: String(submission.address || '').trim(),
+      listingType,
+      eventDate,
+      eventStart: String(submission.eventStart || '').trim(),
+      eventEnd: String(submission.eventEnd || '').trim(),
+      exhibitionStart: String(submission.exhibitionStart || '').trim(),
+      exhibitionEnd: String(submission.exhibitionEnd || '').trim(),
+      imageUrl: String(submission.imageUrl || '').trim(),
+      imageName: String(submission.imageName || '').trim(),
+      description: String(submission.description || '').trim(),
+      contactEmail: String(submission.contactEmail || '').trim(),
+      tags: tags.map(item => String(item || '').trim()).filter(Boolean),
+      passedAt: submission.passedAt || '',
+      approvedAt: submission.approvedAt || ''
+    };
+  };
+
+  const submissionFromForm = async form => {
+    const data = new FormData(form);
+    const imageFile = data.get('your-image-upload');
+    const imageUrl = String(data.get('post-image-url') || '').trim() ||
+      await readFileAsDataUrl(imageFile);
+    return cleanSubmission({
+      sourceUrl: data.get('post-website'),
+      title: data.get('post-title'),
+      artists: data.get('your-artists'),
+      venue: data.get('post-venue'),
+      address: data.get('post-address'),
+      listingType: data.get('listing-type'),
+      eventDate: data.get('post-event-date'),
+      eventStart: data.get('post-event-start'),
+      eventEnd: data.get('post-event-end'),
+      exhibitionStart: data.get('post-exhibition-start'),
+      exhibitionEnd: data.get('post-exhibition-end'),
+      imageUrl,
+      imageName: imageFile && imageFile.name ? imageFile.name : '',
+      description: data.get('post-content'),
+      contactEmail: data.get('ContactE-mail'),
+      tags: data.get('your-tags')
+    });
+  };
+
+  const saveSubmittedEvent = submission => {
+    const clean = cleanSubmission(submission);
+    const events = submittedEvents();
+    const existing = events.findIndex(event => event.id === clean.id);
+    if (existing >= 0) events[existing] = clean;
+    else events.unshift(clean);
+    saveSubmittedEvents(events);
+    return clean;
+  };
+
+  const updateSubmittedEvent = (id, patch) => {
+    const events = submittedEvents();
+    const index = events.findIndex(event => event.id === id);
+    if (index < 0) return null;
+    const next = cleanSubmission({ ...events[index], ...patch, id });
+    events[index] = next;
+    saveSubmittedEvents(events);
+    return next;
+  };
+
+  const submissionToEvent = submission => {
+    const clean = cleanSubmission(submission);
+    const start = clean.listingType === 'exhibition'
+      ? clean.exhibitionStart || clean.eventDate
+      : clean.eventDate || clean.exhibitionStart;
+    const end = clean.listingType === 'exhibition' ? clean.exhibitionEnd : '';
+    const time = clean.eventStart && clean.eventEnd
+      ? `${clean.eventStart} – ${clean.eventEnd}`
+      : (clean.eventStart || '');
+    const tagValues = [
+      ...clean.tags,
+      ...clean.artists,
+      clean.venue,
+      clean.title
+    ].map(tagSlug).filter(Boolean);
+    const event = {
+      t: clean.title || 'Untitled',
+      u: clean.sourceUrl || `admin.html#${clean.id}`,
+      v: clean.venue,
+      d: start,
+      g: [...new Set(tagValues)],
+      i: clean.imageUrl,
+      x: clean.description,
+      w: time,
+      a: clean.address,
+      m: mapUrlForAddress(clean.address),
+      _submitted: true,
+      _submittedId: clean.id
+    };
+    if (end) event.o = `On view through ${dateLabel(end)}`;
+    return event;
+  };
+
+  const approvedSubmittedEvents = () => submittedEvents()
+    .filter(event => event.status === 'approved')
+    .map(submissionToEvent)
+    .filter(event => event.d);
+
+  const publicEvents = events => {
+    const editedEvents = applyEventEdits(events || []);
+    const existing = new Set(editedEvents.map(event =>
+      `${String(event.u || '').toLowerCase()}|${String(event.t || '').toLowerCase()}|${event.d || ''}`
+    ));
+    const approved = approvedSubmittedEvents().filter(event => {
+      const key = `${String(event.u || '').toLowerCase()}|${String(event.t || '').toLowerCase()}|${event.d || ''}`;
+      if (existing.has(key)) return false;
+      existing.add(key);
+      return true;
+    });
+    return applyEventEdits([...editedEvents, ...approved]);
+  };
+
+  const tagLabel = value => {
+    const normalized = String(value || '').trim().toLowerCase();
+    const tags = window.TAGS_2026 || (typeof TAGS_2026 !== 'undefined' ? TAGS_2026 : []);
+    const match = tags.find(tag =>
+      tag.s.toLowerCase() === normalized || tag.n.toLowerCase() === normalized
+    );
+    if (match) return match.n;
+    return String(value || '').replace(/-/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase());
   };
 
   const eventExcerpt = (title, href) => {
@@ -983,6 +1330,21 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     onViewHtml,
     onViewEndIso,
     scheduleLineHtml,
+    submittedEvents,
+    saveSubmittedEvent,
+    saveSubmittedEvents,
+    updateSubmittedEvent,
+    submissionFromForm,
+    submissionToEvent,
+    approvedSubmittedEvents,
+    eventKey,
+    eventEdits,
+    saveEventEdit,
+    clearEventEdit,
+    applyEventEdits,
+    publicEvents,
+    tagLabel,
+    tagSlug,
     timeBounds,
     startEndWhenHtml,
     thumbSrc,

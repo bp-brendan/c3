@@ -1375,18 +1375,11 @@
     const dateFrom = document.querySelector('.date-from');
     const dateTo = document.querySelector('.date-to');
 
-    const positionPanelPointer = toggle => {
-      if (!controlsBand || !toggle) return;
-      const rect = toggle.getBoundingClientRect();
-      const bandRect = controlsBand.getBoundingClientRect();
-      controlsBand.style.setProperty('--panel-pointer-x', `${rect.left + rect.width / 2 - bandRect.left}px`);
-    };
     const setPanel = (panel, toggle, open, name = '') => {
       panel.hidden = !open;
       toggle.setAttribute('aria-expanded', String(open));
       if (open) {
         controlsBand.dataset.panel = name;
-        positionPanelPointer(toggle);
       } else if (controlsBand.dataset.panel === name) {
         delete controlsBand.dataset.panel;
       }
@@ -1401,10 +1394,6 @@
       if (event.target.closest('.filter-panel, .date-toggle, .tag-toggle')) return;
       if (!datePanel.hidden) setPanel(datePanel, dateToggle, false, 'date');
       if (!tagPanel.hidden) setPanel(tagPanel, tagToggle, false, 'tag');
-    });
-    window.addEventListener('resize', () => {
-      if (!datePanel.hidden) positionPanelPointer(dateToggle);
-      else if (!tagPanel.hidden) positionPanelPointer(tagToggle);
     });
 
     // quick ranges + free-form from/to
@@ -1530,7 +1519,8 @@
 
     // keep view + archive filters in the URL so back/breadcrumb restores them
     // pickers default to the full span of the archive
-    const allDates = ARCHIVE_EVENTS_2026.map(e => e.d).filter(Boolean).sort();
+    const publicArchiveEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
+    const allDates = publicArchiveEvents.map(e => e.d).filter(Boolean).sort();
     const minDate = allDates[0] || '';
     const maxDate = allDates[allDates.length - 1] || '';
     let endTouched = false; // a chosen start date drags the end date along until the user sets one
@@ -1591,7 +1581,7 @@
       }
       return line;
     };
-    const archiveEvents = [...ARCHIVE_EVENTS_2026].sort((a, b) =>
+    const archiveEvents = [...publicArchiveEvents].sort((a, b) =>
       b.d.localeCompare(a.d) || (a.t || '').localeCompare(b.t || '')
     );
     const matchingTag = value => {
@@ -1661,11 +1651,11 @@
       const tag = TAGS_2026.find(item =>
         item.n.toLowerCase() === normalized || item.s.toLowerCase() === normalized
       );
-      return tag ? tag.s : '';
+      return tag ? tag.s : Visualist.tagSlug(label);
     };
     const renderEventTags = tags => {
       const linked = (tags || [])
-        .map(tag => ({ label: tag, slug: slugForTag(tag) }))
+        .map(tag => ({ label: Visualist.tagLabel(tag), slug: slugForTag(tag) }))
         .filter(tag => tag.slug)
         .slice(0, 4);
       if (!linked.length) return '';

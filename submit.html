@@ -115,7 +115,7 @@
 
         <div class="submit-actions">
           <button class="form-button form-button-primary" type="submit">Submit</button>
-          <p>Prototype only</p>
+          <p>Goes to review</p>
         </div>
       </form>
     </section>
@@ -148,10 +148,21 @@
     });
     setListingType('event');
 
-    // prototype submit: validate, then hand off to the mock confirmation page
-    document.querySelector('.submit-form').addEventListener('submit', event => {
+    // Save submitted listings for the admin review queue, then confirm receipt.
+    document.querySelector('.submit-form').addEventListener('submit', async event => {
       event.preventDefault();
-      location.href = 'submitted.html';
+      const form = event.currentTarget;
+      const submitButton = form.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      try {
+        const submission = await Visualist.submissionFromForm(form);
+        Visualist.saveSubmittedEvent(submission);
+        location.href = 'submitted.html';
+      } catch {
+        alert('This browser could not save the submission for review. Please try a smaller image or send the event by email.');
+      } finally {
+        submitButton.disabled = false;
+      }
     });
 
     // ---- type-ahead over TAGS_2026, shared by tags / artists / venue ----
