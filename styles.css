@@ -1537,12 +1537,7 @@ a.top-pick:hover,
   margin-right: 0.25em; /* visual space before next item */
 }
 
-/* Expose underline on the link to the right of the arrow */
-.breadcrumb-arrow + a,
-.breadcrumb-arrow + * > a {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
+
 
 .breadcrumb-arrow::after {
   content: "";
