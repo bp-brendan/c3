@@ -1126,7 +1126,6 @@ body {
 
 .month-head {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
   margin-bottom: 0.5rem;
@@ -2702,17 +2701,22 @@ body.logged-out .admin-main {
 #view-login .login-logo .logotype {
   color: #3c434a;
   text-decoration: none;
+  text-shadow: none;
   font-size: 2rem;
-  display: inline-block;
+  display: inline-flex;
 }
+/* the masthead spans carry their own clamp() sizes (incl. the
+   [data-page="admin"] override), so the login logo must re-size both */
 #view-login .login-logo .logotype-the {
   font-style: italic;
   font-weight: 300;
+  font-size: 0.7rem;
   margin-right: 0.1em;
 }
 #view-login .login-logo .logotype-name {
   font-weight: 800;
   letter-spacing: 0.05em;
+  font-size: 2rem;
 }
 #login-title {
   display: none; /* Hide the day-heading */
