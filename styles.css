@@ -30,6 +30,12 @@
   display: none !important;
 }
 
+/* a hash-addressed view (#archive) keeps the default This Week listings
+   from painting before showView assigns the hidden attributes */
+html[data-boot-view] #view-this-week {
+  display: none !important;
+}
+
 body {
   /* subtle diagonal texture over near-black; viewport-fixed so the lines run
      continuously through every band that carries the same texture */

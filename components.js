@@ -464,7 +464,13 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     }
   };
 
+  let chromeRendered = false;
+
   const renderChrome = () => {
+    // loadData paints the chrome before its network fetches; the pages'
+    // post-load calls must not repaint it (the tagline would visibly swap)
+    if (chromeRendered) return;
+    chromeRendered = true;
     const page = pageName();
     if (page === 'event') {
       const crumb = readCrumb();
@@ -489,12 +495,17 @@ calendar's beginnings in 2011. Help us keep it growing.`;
 
   let headerState = { shrink: 1 };
 
+  let accordionInit = false;
+
   const initHeaderAccordion = () => {
     const header = document.querySelector('.site-header');
     const logotype = document.querySelector('.logotype');
     const tagline = document.querySelector('.tagline');
     const navBand = document.querySelector('.nav-band');
     if (!header || !logotype || !tagline || !navBand) return headerState;
+    // a second init would stack duplicate scroll/resize listeners
+    if (accordionInit) return headerState;
+    accordionInit = true;
 
     const compact = 48;
     const logoCompact = 30;

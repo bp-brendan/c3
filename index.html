@@ -11,6 +11,12 @@
     // the Today listing is the site's landing page; hash-addressed views
     // (#this-week, #archive) still load here directly
     if (!location.hash) location.replace('tag.html?tag=today');
+    // when the hash addresses another view, the default This Week listings
+    // must not paint first and then vanish — hide them until showView runs
+    const bootView = location.hash.slice(1).split('?')[0];
+    if (['next-week', 'archive'].includes(bootView)) {
+      document.documentElement.dataset.bootView = bootView;
+    }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabaseClient.js"></script>
@@ -2189,6 +2195,8 @@
     });
     const [initialView, initialParams] = location.hash.slice(1).split('?');
     if (['this-week', 'next-week', 'archive'].includes(initialView)) showView(initialView);
+    // showView owns the hidden attributes from here on
+    delete document.documentElement.dataset.bootView;
 
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
