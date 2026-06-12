@@ -1490,16 +1490,6 @@ a.top-pick:hover,
 
 /* shortened excerpts dissolve at the end: the tail's glyphs fade out via a
    text-clipped gradient; it doubles as the link to the detail page */
-.event-description .excerpt-fade {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 35%;
-  height: calc(1.5 * 0.94rem);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 60%);
-  color: transparent;
-  pointer-events: auto;
-}
 
 /* clear air between the description and the tag chips — same 1.5rem gap the
    detail view gets from .event-detail-description's bottom margin */

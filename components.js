@@ -850,21 +850,12 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     .replace(/&#x([0-9a-f]+);/gi, (m, n) => (parseInt(n, 16) <= 0x10ffff ? String.fromCodePoint(parseInt(n, 16)) : m))
     .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '');
 
-  // a shortened excerpt (the data marks it with a trailing "...") dissolves
-  // at the end instead of showing an ellipsis; the faded tail keeps the link
-  // to the event's detail page
   const excerptMarkup = (text, href) => {
     if (!text) return '';
     text = cleanExcerptText(text);
     const trail = String(text).match(/(\.{3}|…)\s*$/);
-    if (!trail) return `<p class="event-description">${escapeHtml(text)}</p>`;
-    const body = String(text).slice(0, trail.index).replace(/\s+$/, '');
-    const cut = Math.max(0, body.length - 16);
-    const head = escapeHtml(body.slice(0, cut));
-    const tail = escapeHtml(body.slice(cut));
-    return `<p class="event-description clamp-lines">${head}${href
-      ? `<a class="excerpt-fade" href="${escapeHtml(href)}" aria-label="Read more">${tail}</a>`
-      : `<span class="excerpt-fade">${tail}</span>`}</p>`;
+    const body = trail ? String(text).slice(0, trail.index).replace(/\s+$/, '') + '…' : String(text);
+    return `<p class="event-description clamp-lines">${escapeHtml(body)}</p>`;
   };
 
   const eventTagMarkup = (title, href) => tagLinks(eventDetails(title, href).g);
