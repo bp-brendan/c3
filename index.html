@@ -2996,9 +2996,13 @@
         updateArchiveSentinels();
         return;
       }
-      monthIndexShowing = false;
+monthIndexShowing = false;
       archiveFiltered = archiveEvents.filter(event => {
         const text = `${event.t || ''} ${event.v || ''} ${(event.g || []).join(' ')}`.toLowerCase();
+        if (from && to && from === to) {
+            return (!q || text.includes(q)) && event.d === from &&
+              (!activeTags.size || [...activeTags].every(slug => eventTagSlugs(event).has(slug)));
+        }
         return (!q || text.includes(q)) &&
           (!from || eventEnd(event) >= from) &&
           (!to || event.d <= to) &&
