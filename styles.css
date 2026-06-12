@@ -1611,6 +1611,7 @@ a.top-pick:hover,
   gap: clamp(1.25rem, 3vw, 2.5rem);
   max-width: var(--measure);
   margin-inline: auto;
+  align-items: start;
 }
 
 .event-detail-image {
@@ -1634,6 +1635,7 @@ a.top-pick:hover,
 }
 
 .event-detail-title {
+  margin-top: 0;
   margin-bottom: 1rem;
   color: var(--content-ink);
   font-family: Georgia, serif;
