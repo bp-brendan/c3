@@ -124,7 +124,7 @@
       if (error || !data) ({ data, error } = await dayQuery('events'));
       if (!error && data) {
         hits = Visualist.publicEvents(data.map(mapEvent))
-          .sort((a, b) => (a.t || '').localeCompare(b.t || ''));
+          .sort(Visualist.sortAsc);
       }
     } else {
       // Month or Tag: query the deep archive directly, via the light

@@ -625,10 +625,12 @@ calendar's beginnings in 2011. Help us keep it growing.`;
         taglineSpent = false;
         if (taglineSpan) taglineSpan.textContent = randomLine();
       }
-      tagline.style.opacity = fade.toFixed(3);
-      const scale = 1 - (1 - scaleTo) * p;
-      tagline.style.transform = `translateY(${(taglineGlide * p).toFixed(2)}px) scale(${scale.toFixed(3)})`;
-      tagline.style.transformOrigin = 'top center';
+if (tagline) {
+        tagline.style.opacity = fade.toFixed(3);
+        const scale = 1 - (1 - scaleTo) * p;
+        tagline.style.transform = `translateY(${(taglineGlide * p).toFixed(2)}px) scale(${scale.toFixed(3)})`;
+        tagline.style.transformOrigin = 'top center';
+      }
       navBand.classList.toggle('pinned', navBand.getBoundingClientRect().top <= compact + 0.5);
     };
 
@@ -1459,6 +1461,31 @@ calendar's beginnings in 2011. Help us keep it growing.`;
   };
 
   // "6PM – 9PM" → {start, end}; "7PM" → {start}; anything else → null
+  
+  const timeValue = w => {
+    if (!w) return 2400; // no time -> end of day
+    const match = String(w).match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
+    if (!match) return 2400;
+    let hours = parseInt(match[1], 10);
+    const minutes = parseInt(match[2] || '0', 10);
+    const ampm = match[3].toUpperCase();
+    if (ampm === 'PM' && hours < 12) hours += 12;
+    if (ampm === 'AM' && hours === 12) hours = 0;
+    return hours * 100 + minutes;
+  };
+
+  const sortAsc = (a, b) => {
+    return (a.d || '').localeCompare(b.d || '') || 
+           (timeValue(a.w) - timeValue(b.w)) || 
+           (a.t || '').localeCompare(b.t || '');
+  };
+
+  const sortDesc = (a, b) => {
+    return (b.d || '').localeCompare(a.d || '') || 
+           (timeValue(a.w) - timeValue(b.w)) || 
+           (a.t || '').localeCompare(b.t || '');
+  };
+
   const timeBounds = value => {
     const text = String(value || '').trim();
     const time = /^\d{1,2}(?::\d{2})?\s*(?:AM|PM)$/i;
@@ -2124,6 +2151,9 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     normalizeEvents,
     eventFromRow,
     publicEvents,
+    timeValue,
+    sortAsc,
+    sortDesc,
     tagLabel,
     tagSlug,
     timeBounds,

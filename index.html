@@ -2405,7 +2405,7 @@
       const todayIso = Visualist.todayIso();
       const items = eventThumbItems(publicArchiveEvents
         .filter(event => event.k && event.d >= todayIso && event.d <= isoPlusDays(todayIso, 6))
-        .sort((a, b) => a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '')));
+        .sort(Visualist.sortAsc));
       if (!items.length) return;
       const today = new Date('2026-06-12T00:00:00');
       const weekEnds = new Date(today.getTime() + 6 * 24 * 60 * 60 * 1000);
@@ -2724,14 +2724,10 @@
     });
     const rebuildArchiveData = ({ preserveFilters = false } = {}) => {
       publicArchiveEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
-      archiveEvents = [...publicArchiveEvents].sort((a, b) =>
-        b.d.localeCompare(a.d) || (a.t || '').localeCompare(b.t || '')
-      );
+      archiveEvents = [...publicArchiveEvents].sort(Visualist.sortDesc);
       refreshArchiveBounds({ preserve: preserveFilters });
     };
-    let archiveEvents = [...publicArchiveEvents].sort((a, b) =>
-      b.d.localeCompare(a.d) || (a.t || '').localeCompare(b.t || '')
-    );
+    let archiveEvents = [...publicArchiveEvents].sort(Visualist.sortDesc);
     const matchingTag = value => {
       const normalized = value.trim().toLowerCase();
       if (!normalized) return null;
@@ -2873,7 +2869,7 @@
     const weekRangeHtml = (fromIso, toIso) => {
       const inRange = publicArchiveEvents
         .filter(e => e.d >= fromIso && e.d <= toIso)
-        .sort((a, b) => a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || ''));
+        .sort(Visualist.sortAsc);
       let lastDate = '';
       return inRange.map(e =>
         `${e.d !== lastDate ? Visualist.dayHeadingHtml(lastDate = e.d) : ''}${eventCardHtml(e)}`
@@ -3049,7 +3045,7 @@ monthIndexShowing = false;
       if (error || !data) ({ data, error } = await dayQuery('events'));
       const hits = error || !data
         ? []
-        : Visualist.publicEvents(data.map(mapEventRow)).sort((a, b) => (a.t || '').localeCompare(b.t || ''));
+        : Visualist.publicEvents(data.map(mapEventRow)).sort(Visualist.sortAsc);
       const todayView = document.getElementById('view-today');
       if (hits.length) {
         todayView.innerHTML = Visualist.dayHeadingHtml(todayIso) + hits.map(eventCardHtml).join('');
