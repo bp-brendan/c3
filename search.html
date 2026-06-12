@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search | The Visualist</title>
   <link rel="icon" href="visualist-favicon.png" type="image/png">
+  <link rel="preconnect" href="https://avxlexkqcxamixyhyxcd.supabase.co">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://use.typekit.net">
   <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -149,7 +152,7 @@
     } else {
       document.getElementById('search-empty').hidden = false;
     }
-  });
+  }, { events: false });
   </script>
 
 </body>

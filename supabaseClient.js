@@ -8,7 +8,8 @@ const TAGLINES_CACHE_KEY = 'visualist.taglines.v1';
 const SETTINGS_CACHE_KEY = 'visualist.settings.v1';
 
 window.Visualist = window.Visualist || {};
-window.Visualist.loadData = async function(callback) {
+window.Visualist.loadData = async function(callback, options = {}) {
+  const shouldLoadEvents = options.events !== false;
   // Paint the chrome before touching the network, seeded from the previous
   // visit's cached taglines and settings — waiting for Supabase pops the
   // header in late and shoves the whole page down on every navigation.
@@ -74,38 +75,42 @@ window.Visualist.loadData = async function(callback) {
       return q;
     };
 
-    let events = null;
-    let eventsError = null;
-    if (!isAdmin) {
-      ({ data: events, error: eventsError } = await buildQuery('events_list', '*', true));
-    }
-    if (isAdmin || eventsError || !events) {
-      ({ data: events, error: eventsError } = await buildQuery('events', '*', false));
-      if (eventsError) console.error('Error fetching events:', eventsError);
-    }
+    if (shouldLoadEvents) {
+      let events = null;
+      let eventsError = null;
+      if (!isAdmin) {
+        ({ data: events, error: eventsError } = await buildQuery('events_list', '*', true));
+      }
+      if (isAdmin || eventsError || !events) {
+        ({ data: events, error: eventsError } = await buildQuery('events', '*', false));
+        if (eventsError) console.error('Error fetching events:', eventsError);
+      }
 
-    // Map Supabase schema back to the short keys expected by the frontend
-    window.ARCHIVE_EVENTS_2026 = (events || []).map(e => ({
-      id: e.id, // Keep the id for admin CRUD
-      t: e.title,
-      u: e.permalink,
-      p: e.path,
-      v: e.venue,
-      d: e.event_date,
-      i: e.image_url,
-      x: e.excerpt !== undefined ? e.excerpt : e.description,
-      g: e.tags,
-      w: e.time_window,
-      vu: e.venue_url,
-      a: e.address,
-      m: e.map_url,
-      o: e.on_view_through,
-      k: e.top_pick ? 1 : 0,
-      // series flags stay undefined until the columns exist; the client
-      // then derives them from the loaded window (scopeSeriesRuns)
-      sf: e.series_first == null ? undefined : (e.series_first ? 1 : 0),
-      sl: e.series_last == null ? undefined : (e.series_last ? 1 : 0)
-    }));
+      // Map Supabase schema back to the short keys expected by the frontend
+      window.ARCHIVE_EVENTS_2026 = (events || []).map(e => ({
+        id: e.id, // Keep the id for admin CRUD
+        t: e.title,
+        u: e.permalink,
+        p: e.path,
+        v: e.venue,
+        d: e.event_date,
+        i: e.image_url,
+        x: e.excerpt !== undefined ? e.excerpt : e.description,
+        g: e.tags,
+        w: e.time_window,
+        vu: e.venue_url,
+        a: e.address,
+        m: e.map_url,
+        o: e.on_view_through,
+        k: e.top_pick ? 1 : 0,
+        // series flags stay undefined until the columns exist; the client
+        // then derives them from the loaded window (scopeSeriesRuns)
+        sf: e.series_first == null ? undefined : (e.series_first ? 1 : 0),
+        sl: e.series_last == null ? undefined : (e.series_last ? 1 : 0)
+      }));
+    } else {
+      window.ARCHIVE_EVENTS_2026 = window.ARCHIVE_EVENTS_2026 || [];
+    }
 
     if (callback) callback();
   } catch (err) {

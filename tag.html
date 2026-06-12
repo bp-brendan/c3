@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tagged | The Visualist</title>
   <link rel="icon" href="visualist-favicon.png" type="image/png">
+  <link rel="preconnect" href="https://avxlexkqcxamixyhyxcd.supabase.co">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://use.typekit.net">
   <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -84,11 +87,45 @@
     let hits = [];
     document.getElementById('tag-results').innerHTML = '<p style="text-align:center; padding: 20px;">Loading archive...</p>';
 
+    const mapEvent = e => ({
+      id: e.id,
+      t: e.title,
+      u: e.permalink,
+      p: e.path,
+      v: e.venue,
+      d: e.event_date,
+      i: e.image_url,
+      x: e.excerpt !== undefined ? e.excerpt : e.description,
+      g: e.tags || [],
+      w: e.time_window,
+      vu: e.venue_url,
+      a: e.address,
+      m: e.map_url,
+      o: e.on_view_through,
+      k: e.top_pick ? 1 : 0,
+      sf: e.series_first == null ? undefined : (e.series_first ? 1 : 0),
+      sl: e.series_last == null ? undefined : (e.series_last ? 1 : 0)
+    });
+
     if (isTodayPage || isTomorrowPage) {
-      const tagEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
-      hits = tagEvents
-        .filter(e => e.d === dayIso)
-        .sort((a, b) => (a.t || '').localeCompare(b.t || ''));
+      const dayQuery = table => {
+        let query = window.supabaseClient
+          .from(table)
+          .select('*')
+          .eq('event_date', dayIso)
+          .order('title', { ascending: true })
+          .limit(100);
+        if (window.SITE_SETTINGS && window.SITE_SETTINGS.limit_to_2026) {
+          query = query.gte('event_date', '2026-01-01').lte('event_date', '2026-12-31');
+        }
+        return query;
+      };
+      let { data, error } = await dayQuery('events_list');
+      if (error || !data) ({ data, error } = await dayQuery('events'));
+      if (!error && data) {
+        hits = Visualist.publicEvents(data.map(mapEvent))
+          .sort((a, b) => (a.t || '').localeCompare(b.t || ''));
+      }
     } else {
       // Month or Tag: query the deep archive directly, via the light
       // events_list view (plain-text excerpts); the full table is the
@@ -128,25 +165,7 @@
       let { data, error } = await deepQuery('events_list');
       if (error || !data) ({ data, error } = await deepQuery('events'));
       if (!error && data) {
-         hits = data.map(e => ({
-            id: e.id,
-            t: e.title,
-            u: e.permalink,
-            p: e.path,
-            v: e.venue,
-            d: e.event_date,
-            i: e.image_url,
-            x: e.excerpt !== undefined ? e.excerpt : e.description,
-            g: e.tags || [],
-            w: e.time_window,
-            vu: e.venue_url,
-            a: e.address,
-            m: e.map_url,
-            o: e.on_view_through,
-            k: e.top_pick ? 1 : 0,
-            sf: e.series_first == null ? undefined : (e.series_first ? 1 : 0),
-            sl: e.series_last == null ? undefined : (e.series_last ? 1 : 0)
-          }));
+         hits = data.map(mapEvent);
 
           hits = Visualist.publicEvents(hits).sort((a, b) => isMonthPage
             ? a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '') // months read chronologically
@@ -222,7 +241,7 @@
       document.getElementById('tag-empty').hidden = false;
     }
 
-  });
+  }, { events: false });
   </script>
 
 </body>
