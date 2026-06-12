@@ -7,44 +7,9 @@
   <link rel="icon" href="visualist-favicon.png" type="image/png">
   <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
   <link rel="stylesheet" href="styles.css">
-    const funlinesForm = document.getElementById('funlines-form');
-    const funlinesText = document.getElementById('admin-funlines-text');
-
-    funlinesForm.addEventListener('submit', event => {
-      event.preventDefault();
-      const lines = funlinesText.value.split('\n').map(l => l.trim()).filter(Boolean);
-      Visualist.saveTaglines(lines);
-      alert('Taglines saved!');
-    });
-
-    window.addEventListener('hashchange', () => {
-      if (location.hash === '#funlines') {
-        funlinesText.value = Visualist.taglines().join('\n');
-      }
-    });
-    // Initialize funlines if it's the active tab on load
-    if (location.hash === '#funlines') {
-      funlinesText.value = Visualist.taglines().join('\n');
-    }
-    const funlinesForm = document.getElementById('funlines-form');
-    const funlinesText = document.getElementById('admin-funlines-text');
-
-    funlinesForm.addEventListener('submit', event => {
-      event.preventDefault();
-      const lines = funlinesText.value.split('\n').map(l => l.trim()).filter(Boolean);
-      Visualist.saveTaglines(lines);
-      alert('Taglines saved!');
-    });
-
-    window.addEventListener('hashchange', () => {
-      if (location.hash === '#funlines') {
-        funlinesText.value = Visualist.taglines().join('\n');
-      }
-    });
-    // Initialize funlines if it's the active tab on load
-    if (location.hash === '#funlines') {
-      funlinesText.value = Visualist.taglines().join('\n');
-    }
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabaseClient.js"></script>
+  <script src="components.js"></script>
 </head>
 <body data-page="admin" data-active-nav="archive">
 
@@ -52,6 +17,18 @@
 
   <main class="site-main submit-main admin-main">
     <div data-visualist-nav></div>
+
+    <section class="view admin-view" id="view-login" aria-labelledby="login-title">
+      <h1 class="submit-title" id="login-title">Admin Login</h1>
+      <form class="submit-form" id="login-form">
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+        <button type="submit" class="submit-button">Send Magic Link</button>
+        <p id="login-error" style="margin-top: 10px;"></p>
+      </form>
+    </section>
 
     <section class="view admin-view" id="view-queue" aria-labelledby="admin-title">
       <h1 class="submit-title" id="admin-title">Admin Queue</h1>
@@ -111,6 +88,17 @@
         <button type="submit">Save Changes</button>
       </form>
     </section>
+    <section class="view admin-view" id="view-settings" aria-labelledby="admin-settings-title" hidden>
+      <h2 class="submit-title" id="admin-settings-title">Site Settings</h2>
+      <p class="submit-prompt">Manage global site configuration.</p>
+      <form id="settings-form">
+        <label class="submit-field" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+          <input type="checkbox" id="admin-limit-2026" style="width: auto;">
+          <span>Limit public frontend to 2026 events only</span>
+        </label>
+        <button type="submit" style="margin-top: 20px;">Save Changes</button>
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer" data-visualist-footer></footer>
@@ -153,7 +141,46 @@
     if (location.hash === '#funlines') {
       funlinesText.value = Visualist.taglines().join('\n');
     }
+  <!-- Events loaded dynamically via supabaseClient.js -->
   <script>
+  // Setup Authentication
+  window.supabaseClient.auth.onAuthStateChange(async (event, session) => {
+    if (!session) {
+      document.body.classList.add('logged-out');
+      location.hash = '#login';
+    } else {
+      document.body.classList.remove('logged-out');
+      
+      // Fetch pending submissions
+      const { data } = await window.supabaseClient.from('submissions').select('*');
+      window.SUBMISSIONS = data || [];
+      
+      if (location.hash === '#login' || !location.hash) {
+        location.hash = '#pending';
+      } else {
+        // Force a re-render if already on a tab
+        window.dispatchEvent(new HashChangeEvent('hashchange'));
+      }
+    }
+  });
+
+  document.getElementById('login-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const msgEl = document.getElementById('login-error');
+    msgEl.textContent = 'Sending...';
+    msgEl.style.color = 'inherit';
+    const { error } = await window.supabaseClient.auth.signInWithOtp({ email });
+    if (error) {
+      msgEl.textContent = error.message;
+      msgEl.style.color = 'red';
+    } else {
+      msgEl.textContent = 'Magic link sent! Please check your inbox (and spam folder).';
+      msgEl.style.color = 'green';
+    }
+  });
+
+  Visualist.loadData(() => {
     Visualist.renderChrome();
     Visualist.initHeaderAccordion();
 
@@ -610,16 +637,29 @@
       alert('Taglines saved!');
     });
 
-    window.addEventListener('hashchange', () => {
+    window.addEventListener('hashchange', async () => {
       if (location.hash === '#funlines') {
         funlinesText.value = Visualist.taglines().join('\n');
+      } else if (location.hash === '#settings') {
+        const { data } = await window.supabaseClient.from('settings').select('*').single();
+        document.getElementById('admin-limit-2026').checked = data ? data.limit_to_2026 : false;
       }
+    });
+
+    const settingsForm = document.getElementById('settings-form');
+    settingsForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      const limit = document.getElementById('admin-limit-2026').checked;
+      const { error } = await window.supabaseClient.from('settings').update({ limit_to_2026: limit }).eq('id', 1);
+      if (error) alert('Error saving settings');
+      else alert('Settings saved successfully!');
     });
     // Initialize funlines if it's the active tab on load
     if (location.hash === '#funlines') {
       funlinesText.value = Visualist.taglines().join('\n');
     }
 
+  });
+  </script>
 </body>
 </html>
-</script>

@@ -7,7 +7,8 @@
   <link rel="icon" href="visualist-favicon.png" type="image/png">
   <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="taglines.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabaseClient.js"></script>
   <script src="components.js"></script>
 </head>
 <body data-page="search" data-active-nav="archive">
@@ -23,14 +24,13 @@
 
   <footer class="site-footer" data-visualist-footer></footer>
 
-  <!-- chrome renders before the heavy data scripts so the header doesn't flash in late -->
+  <!-- chrome will render inside loadData to ensure Supabase taglines are ready -->
+  <script src="tags2026.js"></script>
+  <!-- Events loaded dynamically via supabaseClient.js -->
   <script>
+  Visualist.loadData(async () => {
     Visualist.renderChrome();
     Visualist.initHeaderAccordion();
-  </script>
-  <script src="tags2026.js"></script>
-  <script src="archiveevents2026.js"></script>
-  <script>
     const q = (new URLSearchParams(location.search).get('q') || '').trim();
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -44,10 +44,46 @@
     }));
 
     const norm = q.toLowerCase();
-    const searchEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
-    const hits = !norm ? [] : searchEvents
-      .filter(e => `${e.t || ''} ${e.v || ''} ${(e.g || []).join(' ')}`.toLowerCase().includes(norm))
-      .sort((a, b) => b.d.localeCompare(a.d) || (a.t || '').localeCompare(b.t || ''));
+    let hits = [];
+    
+    if (norm) {
+      document.getElementById('search-results').innerHTML = '<p style="text-align:center; padding: 20px;">Searching deep archive...</p>';
+      document.getElementById('search-empty').hidden = true;
+      
+      let query = window.supabaseClient
+        .from('events')
+        .select('*')
+        .or(`title.ilike.%${norm}%,venue.ilike.%${norm}%,description.ilike.%${norm}%`)
+        .order('event_date', { ascending: false })
+        .limit(1000);
+        
+      if (window.SITE_SETTINGS && window.SITE_SETTINGS.limit_to_2026) {
+        query = query.gte('event_date', '2026-01-01').lte('event_date', '2026-12-31');
+      }
+        
+      const { data, error } = await query;
+        
+      if (!error && data) {
+         hits = data.map(e => ({
+            id: e.id,
+            t: e.title,
+            u: e.permalink,
+            p: e.path,
+            v: e.venue,
+            d: e.event_date,
+            i: e.image_url,
+            x: e.description,
+            g: e.tags || [],
+            w: e.time_window,
+            vu: e.venue_url,
+            a: e.address,
+            m: e.map_url,
+            o: e.on_view_through,
+            k: e.top_pick ? 1 : 0
+          }));
+      }
+    }
+
     document.getElementById('search-count').textContent = `(${hits.length})`;
 
     if (hits.length) {
@@ -110,6 +146,7 @@
     } else {
       document.getElementById('search-empty').hidden = false;
     }
+  });
   </script>
 
 </body>

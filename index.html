@@ -12,7 +12,8 @@
     // (#this-week, #archive) still load here directly
     if (!location.hash) location.replace('tag.html?tag=today');
   </script>
-  <script src="taglines.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabaseClient.js"></script>
   <script src="components.js"></script>
 </head>
 <body data-page="home">
@@ -1170,15 +1171,13 @@
 
   <footer class="site-footer" data-visualist-footer></footer>
 
-  <!-- chrome renders before the heavy data scripts so the header doesn't flash in late -->
+  <!-- chrome will render inside loadData to ensure Supabase taglines are ready -->
+  <script src="tags2026.js"></script>
+  <!-- Events are now loaded dynamically via supabaseClient.js -->
   <script>
+  Visualist.loadData(() => {
     Visualist.renderChrome();
     Visualist.initHeaderAccordion();
-  </script>
-  <script src="tags2026.js"></script>
-  <script src="archiveevents2026.js"></script>
-  <script src="eventdescriptions2026.js"></script>
-  <script>
     Visualist.initDatePickers();
     Visualist.mergeOngoingIntoDatedFlow();
 
@@ -1584,7 +1583,7 @@
       }
       return line;
     };
-    const archiveEvents = [...publicArchiveEvents].sort((a, b) =>
+    let archiveEvents = [...publicArchiveEvents].sort((a, b) =>
       b.d.localeCompare(a.d) || (a.t || '').localeCompare(b.t || '')
     );
     const matchingTag = value => {
@@ -1745,7 +1744,10 @@
               ${thumbRiverHtml(month.items)}
             </li>`;
           }).join('')}
-        </ul>`;
+        </ul>
+        <div class="archive-load-more" style="text-align: center; margin: 40px 0;">
+          <button type="button" id="load-older-archives" class="form-button form-button-primary">Load Older Archives</button>
+        </div>`;
     };
     const updateArchiveSentinels = () => {
       archiveTopSentinel.hidden = archiveRenderStart <= 0;
@@ -1857,10 +1859,54 @@
       renderArchive();
       syncHash();
     });
+    archiveResults.addEventListener('click', async event => {
+      if (event.target.id === 'load-older-archives') {
+        const btn = event.target;
+        btn.disabled = true;
+        btn.textContent = 'Loading...';
+        
+        const lastDate = archiveEvents[archiveEvents.length - 1]?.d || Visualist.todayIso();
+        let query = window.supabaseClient
+          .from('events')
+          .select('*')
+          .lt('event_date', lastDate)
+          .order('event_date', { ascending: false })
+          .limit(1000);
+          
+        if (window.SITE_SETTINGS && window.SITE_SETTINGS.limit_to_2026) {
+          query = query.gte('event_date', '2026-01-01');
+        }
+        
+        const { data } = await query;
+        if (data && data.length) {
+          const mapped = data.map(e => ({
+            id: e.id,
+            t: e.title,
+            u: e.permalink,
+            p: e.path,
+            d: e.event_date,
+            v: e.venue,
+            a: e.address,
+            m: e.map_link,
+            w: e.event_time,
+            x: e.description,
+            g: e.tags,
+            i: e.image_url,
+            o: e.on_view,
+            k: e.top_pick
+          }));
+          archiveEvents = archiveEvents.concat(mapped);
+          renderArchive();
+        } else {
+          btn.textContent = 'No more archives';
+        }
+      }
+    });
+
     renderArchive();
     // no auto-scroll on load: the header accordion stays exactly as the
     // previous page left it (tab clicks still scroll via showView)
-
+  });
   </script>
 
 </body>

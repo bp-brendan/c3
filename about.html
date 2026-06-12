@@ -7,7 +7,8 @@
   <link rel="icon" href="visualist-favicon.png" type="image/png">
   <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="taglines.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabaseClient.js"></script>
   <script src="components.js"></script>
 </head>
 <body data-page="about">
@@ -41,8 +42,10 @@
   <footer class="site-footer" data-visualist-footer></footer>
 
   <script>
-    Visualist.renderChrome();
-    Visualist.initHeaderAccordion();
+    Visualist.loadData(() => {
+      Visualist.renderChrome();
+      Visualist.initHeaderAccordion();
+    });
   </script>
 
 </body>

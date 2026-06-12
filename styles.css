@@ -1382,7 +1382,13 @@ a.top-pick:hover,
 
 .event-location .event-venue,
 .event-detail-meta .event-venue {
-  display: block;
+  display: inline;
+  margin-right: 0.5em;
+}
+
+.event-location .event-address,
+.event-detail-meta .event-address {
+  display: inline;
 }
 
 .event-location .event-address,

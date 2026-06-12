@@ -54,28 +54,15 @@ calendar's beginnings in 2011. Help us keep it growing.`;
   };
 
   const submittedEvents = () => {
-    const events = readJson(SUBMISSIONS_KEY, []);
-    const stored = Array.isArray(events) ? events : [];
-    const storedById = new Map(stored.map(event => [event.id, event]));
-    const seeded = demoSubmissions.map(event => storedById.get(event.id) || event);
-    const seedIds = new Set(demoSubmissions.map(event => event.id));
-    return [
-      ...stored.filter(event => !seedIds.has(event.id)),
-      ...seeded
-    ];
+    return window.SUBMISSIONS || [];
   };
 
   const saveSubmittedEvents = events => {
-    writeJson(SUBMISSIONS_KEY, events);
-    return events;
+    // Legacy function, no longer used directly.
+    window.SUBMISSIONS = events;
   };
 
-  const eventKey = event => String(event._adminKey || [
-    event.p || '',
-    event.u || '',
-    event.d || '',
-    event.t || ''
-  ].join('|'));
+  const eventKey = event => event.id;
 
   const eventEdits = () => {
     const edits = readJson(EVENT_EDITS_KEY, {});
@@ -83,41 +70,67 @@ calendar's beginnings in 2011. Help us keep it growing.`;
   };
 
   const taglines = () => {
-    const custom = readJson(TAGLINES_KEY, null);
-    if (Array.isArray(custom)) return custom;
-    // window.TAGLINES exposed by taglines.js
-    return window.TAGLINES || ['Chicago Visual Arts Calendar'];
+    return window.TAGLINES ? window.TAGLINES.map(t => t.content) : ['Chicago Visual Arts Calendar'];
   };
 
-  const saveTaglines = lines => {
-    writeJson(TAGLINES_KEY, lines);
+  const saveTaglines = async lines => {
+    if (!window.supabaseClient) return;
+    try {
+      await window.supabaseClient.from('taglines').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+      const inserts = lines.map(l => ({ content: l, is_active: true }));
+      await window.supabaseClient.from('taglines').insert(inserts);
+      window.TAGLINES = inserts;
+      window.PUBLIC_TAGLINES = lines;
+    } catch (e) {
+      console.error(e);
+    }
   };
 
-  const saveEventEdit = (key, patch) => {
-    const edits = eventEdits();
-    edits[key] = {
-      ...(edits[key] || {}),
-      ...patch,
-      _editedAt: new Date().toISOString()
-    };
-    writeJson(EVENT_EDITS_KEY, edits);
-    return edits[key];
+  const saveEventEdit = async (key, patch) => {
+    if (!window.supabaseClient) return;
+    
+    // Map short keys to Supabase schema
+    const updateData = { id: key };
+    if ('t' in patch) updateData.title = patch.t;
+    if ('u' in patch) updateData.permalink = patch.u;
+    if ('v' in patch) updateData.venue = patch.v;
+    if ('d' in patch) updateData.event_date = patch.d;
+    if ('i' in patch) updateData.image_url = patch.i;
+    if ('x' in patch) updateData.description = patch.x;
+    if ('g' in patch) updateData.tags = patch.g;
+    if ('w' in patch) updateData.time_window = patch.w;
+    if ('vu' in patch) updateData.venue_url = patch.vu;
+    if ('a' in patch) updateData.address = patch.a;
+    if ('m' in patch) updateData.map_url = patch.m;
+    if ('o' in patch) updateData.on_view_through = patch.o;
+    if ('k' in patch) updateData.top_pick = patch.k === 1;
+
+    try {
+      await window.supabaseClient.from('events').upsert(updateData);
+      
+      // Update local cache
+      const eventIndex = window.ARCHIVE_EVENTS_2026.findIndex(e => e.id === key);
+      if (eventIndex !== -1) {
+        window.ARCHIVE_EVENTS_2026[eventIndex] = { ...window.ARCHIVE_EVENTS_2026[eventIndex], ...patch };
+      }
+    } catch (e) {
+      console.error(e);
+    }
   };
 
-  const clearEventEdit = key => {
-    const edits = eventEdits();
-    delete edits[key];
-    writeJson(EVENT_EDITS_KEY, edits);
+  const clearEventEdit = async key => {
+    // We don't really 'clear' in Supabase without a history table, but we can delete the event.
+    // Assuming clear means delete here? Or maybe we just remove from local memory.
+    if (!window.supabaseClient) return;
+    try {
+      await window.supabaseClient.from('events').delete().eq('id', key);
+      window.ARCHIVE_EVENTS_2026 = window.ARCHIVE_EVENTS_2026.filter(e => e.id !== key);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
-  const applyEventEdits = events => {
-    const edits = eventEdits();
-    return (events || []).map(event => {
-      const key = eventKey(event);
-      const edit = edits[key];
-      return edit ? { ...event, ...edit, _adminKey: key, _edited: true } : { ...event, _adminKey: key };
-    });
-  };
+  const applyEventEdits = events => events;
 
   const submissionId = () => {
     const random = Math.random().toString(36).slice(2, 8);
@@ -519,7 +532,8 @@ calendar's beginnings in 2011. Help us keep it growing.`;
         if (taglineSpan) taglineSpan.textContent = randomLine();
       }
       tagline.style.opacity = fade.toFixed(3);
-      tagline.style.transform = `translateY(${(taglineGlide * p).toFixed(2)}px)`;
+      tagline.style.transform = `translateY(${(taglineGlide * p).toFixed(2)}px) scale(${scale.toFixed(3)})`;
+      tagline.style.transformOrigin = 'top center';
       navBand.classList.toggle('pinned', navBand.getBoundingClientRect().top <= compact + 0.5);
     };
 
@@ -752,23 +766,52 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     });
   };
 
-  const saveSubmittedEvent = submission => {
+  const saveSubmittedEvent = async submission => {
     const clean = cleanSubmission(submission);
-    const events = submittedEvents();
-    const existing = events.findIndex(event => event.id === clean.id);
-    if (existing >= 0) events[existing] = clean;
-    else events.unshift(clean);
-    saveSubmittedEvents(events);
+    
+    // Convert array to string for DB if needed, or if DB is TEXT, join it.
+    const dbSub = { ...clean };
+    if (Array.isArray(dbSub.artists)) dbSub.artists = dbSub.artists.join(', ');
+    if (Array.isArray(dbSub.tags)) dbSub.tags = dbSub.tags.join(', ');
+
+    if (window.supabaseClient) {
+      try {
+        await window.supabaseClient.from('submissions').insert([dbSub]);
+      } catch (e) {
+        console.error(e);
+      }
+    }
     return clean;
   };
 
-  const updateSubmittedEvent = (id, patch) => {
+  const updateSubmittedEvent = async (id, patch) => {
     const events = submittedEvents();
     const index = events.findIndex(event => event.id === id);
     if (index < 0) return null;
+    
     const next = cleanSubmission({ ...events[index], ...patch, id });
+    
+    const dbSub = { ...next };
+    if (Array.isArray(dbSub.artists)) dbSub.artists = dbSub.artists.join(', ');
+    if (Array.isArray(dbSub.tags)) dbSub.tags = dbSub.tags.join(', ');
+
+    if (window.supabaseClient) {
+      try {
+        await window.supabaseClient.from('submissions').update(dbSub).eq('id', id);
+        
+        // If approved, insert into events table
+        if (dbSub.status === 'approved') {
+          const newEventPatch = submissionToEvent(dbSub);
+          await saveEventEdit(newEventPatch.id || id, newEventPatch);
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    
+    // Update local cache
     events[index] = next;
-    saveSubmittedEvents(events);
+    window.SUBMISSIONS = events;
     return next;
   };
 

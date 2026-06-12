@@ -7,7 +7,8 @@
   <link rel="icon" href="visualist-favicon.png" type="image/png">
   <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="taglines.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabaseClient.js"></script>
   <script src="components.js"></script>
 </head>
 <body data-page="submit">
@@ -127,13 +128,12 @@
 
   <footer class="site-footer" data-visualist-footer></footer>
 
-  <!-- chrome renders before the heavy data scripts so the header doesn't flash in late -->
-  <script>
-    Visualist.renderChrome();
-    Visualist.initHeaderAccordion();
-  </script>
+  <!-- chrome will render inside loadData to ensure Supabase taglines are ready -->
   <script src="tags2026.js"></script>
   <script>
+  Visualist.loadData(() => {
+    Visualist.renderChrome();
+    Visualist.initHeaderAccordion();
     Visualist.initDatePickers();
 
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -160,7 +160,7 @@
       submitButton.disabled = true;
       try {
         const submission = await Visualist.submissionFromForm(form);
-        Visualist.saveSubmittedEvent(submission);
+        await Visualist.saveSubmittedEvent(submission);
         location.href = 'submitted.html';
       } catch {
         alert('This browser could not save the submission for review. Please try a smaller image or send the event by email.');
@@ -480,6 +480,7 @@
 
     fields.url.addEventListener('input', queueMetadataFetch);
     fields.url.addEventListener('blur', queueMetadataFetch);
+  });
   </script>
 
 </body>

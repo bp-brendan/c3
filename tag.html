@@ -7,7 +7,8 @@
   <link rel="icon" href="visualist-favicon.png" type="image/png">
   <link rel="stylesheet" href="https://use.typekit.net/orw0adz.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="taglines.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabaseClient.js"></script>
   <script src="components.js"></script>
 </head>
 <body data-page="tag">
@@ -23,19 +24,20 @@
 
   <footer class="site-footer" data-visualist-footer></footer>
 
-  <!-- chrome renders before the heavy data scripts so the header doesn't flash in late -->
+  <!-- chrome will render inside loadData to ensure Supabase taglines are ready -->
   <script>
     // the virtual today page is the nav's TODAY destination
     if (new URLSearchParams(location.search).get('tag') === 'today') {
       document.body.dataset.activeNav = 'today';
     }
-    Visualist.renderChrome();
-    Visualist.initHeaderAccordion();
   </script>
   <script src="tags2026.js"></script>
-  <script src="tagevents2026.js"></script>
-  <script src="archiveevents2026.js"></script>
+
+  <!-- Events loaded dynamically via supabaseClient.js -->
   <script>
+  Visualist.loadData(async () => {
+    Visualist.renderChrome();
+    Visualist.initHeaderAccordion();
     const pageParams = new URLSearchParams(location.search);
     const slug = pageParams.get('tag') || '';
     // "today" and "tomorrow" are virtual tags: everything opening or on view then, always current
@@ -74,17 +76,59 @@
     // a virtual day page reads like a This Week day group: one heading,
     // that day's openings first, then the ongoing runs
     const dayIso = isTodayPage ? today : (isTomorrowPage ? tomorrow : '');
-    const tagEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
-    const hits = tagEvents
-      .filter(e => isTodayPage ? e.d === today // only what opens today
-        : (isTomorrowPage ? runsTomorrow(e)
-          : (isMonthPage ? e.d.startsWith(monthParam) : e.g.includes(slug))))
-      .sort((a, b) => dayIso
-        ? (Number(b.d === dayIso) - Number(a.d === dayIso)) ||
-          a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '')
-        : (isMonthPage
-          ? a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '') // months read chronologically
-          : b.d.localeCompare(a.d)));
+    
+    let hits = [];
+    document.getElementById('tag-results').innerHTML = '<p style="text-align:center; padding: 20px;">Loading archive...</p>';
+    
+    if (isTodayPage || isTomorrowPage) {
+      // Today and Tomorrow only need recent events, local filtering is fine
+      const tagEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
+      hits = tagEvents
+        .filter(e => isTodayPage ? e.d === today : runsTomorrow(e))
+        .sort((a, b) => dayIso
+          ? (Number(b.d === dayIso) - Number(a.d === dayIso)) ||
+            a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '')
+          : b.d.localeCompare(a.d));
+    } else {
+      // Month or Tag: Query deep archive directly
+      let query = window.supabaseClient.from('events').select('*').limit(1000);
+      
+      if (isMonthPage) {
+        query = query.gte('event_date', `${monthParam}-01`).lte('event_date', `${monthParam}-31`).order('event_date', { ascending: true });
+      } else {
+        query = query.contains('tags', [slug]).order('event_date', { ascending: false });
+      }
+      
+      if (window.SITE_SETTINGS && window.SITE_SETTINGS.limit_to_2026) {
+        query = query.gte('event_date', '2026-01-01').lte('event_date', '2026-12-31');
+      }
+      
+      const { data, error } = await query;
+      if (!error && data) {
+         hits = data.map(e => ({
+            id: e.id,
+            t: e.title,
+            u: e.permalink,
+            p: e.path,
+            v: e.venue,
+            d: e.event_date,
+            i: e.image_url,
+            x: e.description,
+            g: e.tags || [],
+            w: e.time_window,
+            vu: e.venue_url,
+            a: e.address,
+            m: e.map_url,
+            o: e.on_view_through,
+            k: e.top_pick ? 1 : 0
+          }));
+          
+          hits = Visualist.publicEvents(hits).sort((a, b) => isMonthPage
+            ? a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '') // months read chronologically
+            : b.d.localeCompare(a.d));
+      }
+    }
+    
     const tagCount = document.getElementById('tag-count');
     if (tagCount) tagCount.textContent = `(${hits.length} event${hits.length === 1 ? '' : 's'})`;
 
@@ -152,6 +196,7 @@
     } else {
       document.getElementById('tag-empty').hidden = false;
     }
+  });
   </script>
 
 </body>
