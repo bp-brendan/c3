@@ -76,20 +76,30 @@
 
     const today = Visualist.todayIso();
     const tomorrow = Visualist.tomorrowIso();
+    const runsOn = (e, iso) => e.d <= iso && (Visualist.onViewEndIso(e) || e.d) >= iso;
     // a virtual day page reads like a This Week day group: one heading,
-    // then that day's events
+    // that day's own events first, then everything on view that day as
+    // regular cards
     const dayIso = isTodayPage ? today : (isTomorrowPage ? tomorrow : '');
     
     let hits = [];
     document.getElementById('tag-results').innerHTML = '<p style="text-align:center; padding: 20px;">Loading archive...</p>';
     
+    let onViewToday = [];
     if (isTodayPage || isTomorrowPage) {
-      // a day page lists that day only — events opening (or holding a
-      // session) on the date itself, not every run that spans it
+      // the day's own events get full cards; everything else on view that
+      // day follows as a compact On View listing
       const tagEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
       hits = tagEvents
         .filter(e => e.d === dayIso)
-        .sort((a, b) => a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || ''));
+        .sort((a, b) => (a.t || '').localeCompare(b.t || ''));
+      const seriesKey = e => `${String(e.t || '').toLowerCase()}|${String(e.v || '').toLowerCase()}`;
+      const daySeries = new Set(hits.map(seriesKey));
+      onViewToday = tagEvents
+        .filter(e => e.d < dayIso && runsOn(e, dayIso) && !daySeries.has(seriesKey(e)))
+        .sort((a, b) =>
+          (Visualist.onViewEndIso(a) || '').localeCompare(Visualist.onViewEndIso(b) || '') ||
+          (a.t || '').localeCompare(b.t || ''));
     } else {
       // Month or Tag: query the deep archive directly, via the light
       // events_list view (plain-text excerpts); the full table is the
@@ -193,12 +203,12 @@
             <div class="event-liner"></div>
           </div>
         </article>`).join('');
-    } else if (isTodayPage) {
+    } else if (isTodayPage || isTomorrowPage) {
       // a quiet day: invite the reader onward instead of a bare empty note
       document.getElementById('tag-results').innerHTML = `
-        ${Visualist.dayHeadingHtml(today)}
+        ${Visualist.dayHeadingHtml(dayIso)}
         <div class="day-empty">
-          <p class="day-empty-lede">Nothing opening today.</p>
+          <p class="day-empty-lede">Nothing opening ${isTodayPage ? 'today' : 'tomorrow'}.</p>
           <div class="day-empty-actions">
             <a href="index.html#this-week">See what&rsquo;s happening this week</a>
             <a href="index.html#archive">Explore the archive</a>
@@ -206,6 +216,22 @@
         </div>`;
     } else {
       document.getElementById('tag-empty').hidden = false;
+    }
+
+    // everything else on view that day, compact: title, venue, closing
+    if (onViewToday.length) {
+      document.getElementById('tag-results').insertAdjacentHTML('beforeend', `
+        <section class="onview-section">
+          <h2 class="view-heading">On view</h2>
+          <ul class="listing">
+            ${onViewToday.map(e => `
+            <li class="listing-item">
+              <a class="listing-title" href="${escapeHtml(e.p || e.u)}">${escapeHtml(e.t || 'Untitled')}</a>${e.k ? ' <a class="top-pick" href="tag.html?tag=top-v">Top V</a>' : ''}
+              <span class="listing-venue">${escapeHtml(e.v || '')}</span>
+              ${Visualist.onViewHtml(e)}
+            </li>`).join('')}
+          </ul>
+        </section>`);
     }
   });
   </script>

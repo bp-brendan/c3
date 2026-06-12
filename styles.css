@@ -1199,6 +1199,21 @@ body {
   min-height: clamp(5.1rem, 12vw, 6.9rem);
 }
 
+/* compact On View listing under a day page's full cards */
+.onview-section {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.onview-section .listing-item {
+  gap: 0.2rem;
+}
+
+.onview-section .event-when {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--content-ink-muted);
+}
+
 /* the +N tile finishing a truncated river, carrying on to the month page */
 .thumb-river-more {
   flex: none;
