@@ -2118,7 +2118,6 @@
     Visualist.renderChrome();
     Visualist.initHeaderAccordion();
     Visualist.initDatePickers();
-    Visualist.mergeOngoingIntoDatedFlow();
 
     // the archive controls band sticks just below the pinned nav band
     const navBandEl = document.querySelector('.nav-band');
@@ -2331,8 +2330,9 @@
     window.addEventListener('resize', () => initThumbRivers(), { passive: true });
 
     // tease next week at the bottom of This Week: a scrolling river of its
-    // event images, each linking through to its event page
-    (() => {
+    // event images, each linking through to its event page (runs after
+    // renderWeeks so it reads the live cards, not the static bake)
+    const buildWeekPeek = () => {
       const items = [...document.querySelectorAll('#view-next-week .event-card')].map(card => {
         const img = card.querySelector('.event-thumb img');
         const link = card.querySelector('.event-title a');
@@ -2349,7 +2349,7 @@
           ${thumbRiverHtml(items)}
         </div>`);
       initThumbRivers(document.getElementById('view-this-week'));
-    })();
+    };
     const dateToggle = document.querySelector('.date-toggle');
     const datePanel = document.querySelector('.date-panel');
     const tagToggle = document.querySelector('.tag-toggle');
@@ -2658,19 +2658,7 @@
       while (index > 0 && archiveFiltered[index - 1].d === archiveFiltered[index].d) index--;
       return index;
     };
-    const archiveEventHtml = (event, index) => {
-      let dateHeading = '';
-      if (index === 0 || archiveFiltered[index - 1].d !== event.d) {
-        dateHeading = Visualist.dayHeadingHtml(event.d);
-        if (event.d === archiveCurrentStartDate) {
-          dateHeading = dateHeading.replace(
-            'class="event-date',
-            'id="archive-current-start" class="event-date archive-current-start'
-          );
-        }
-      }
-      return `
-        ${dateHeading}
+    const eventCardHtml = event => `
         <article class="event-card">
           ${event.i
             ? `<a class="event-thumb" href="${escapeHtml(event.p || event.u)}"><img src="${escapeHtml(event.i)}" alt="" loading="lazy"></a>`
@@ -2694,9 +2682,48 @@
           </div>
         </article>
       `;
+    const archiveEventHtml = (event, index) => {
+      let dateHeading = '';
+      if (index === 0 || archiveFiltered[index - 1].d !== event.d) {
+        dateHeading = Visualist.dayHeadingHtml(event.d);
+        if (event.d === archiveCurrentStartDate) {
+          dateHeading = dateHeading.replace(
+            'class="event-date',
+            'id="archive-current-start" class="event-date archive-current-start'
+          );
+        }
+      }
+      return `
+        ${dateHeading}
+        ${eventCardHtml(event)}`;
     };
     const archiveRangeHtml = (start, end) =>
       archiveFiltered.slice(start, end).map((event, i) => archiveEventHtml(event, start + i)).join('');
+
+    // This Week / Next Week render from live data: the static listings go
+    // stale the day after a build (and ran five weeks deep)
+    const isoPlusDays = (iso, n) => {
+      const date = new Date(`${iso}T12:00:00`);
+      date.setDate(date.getDate() + n);
+      return date.toISOString().slice(0, 10);
+    };
+    const weekRangeHtml = (fromIso, toIso) => {
+      const inRange = publicArchiveEvents
+        .filter(e => e.d >= fromIso && e.d <= toIso)
+        .sort((a, b) => a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || ''));
+      let lastDate = '';
+      return inRange.map(e =>
+        `${e.d !== lastDate ? Visualist.dayHeadingHtml(lastDate = e.d) : ''}${eventCardHtml(e)}`
+      ).join('');
+    };
+    const renderWeeks = () => {
+      const todayIso = Visualist.todayIso();
+      const empty = '<p class="view-empty">Nothing on the calendar yet.</p>';
+      document.getElementById('view-this-week').innerHTML =
+        weekRangeHtml(todayIso, isoPlusDays(todayIso, 6)) || empty;
+      document.getElementById('view-next-week').innerHTML =
+        weekRangeHtml(isoPlusDays(todayIso, 7), isoPlusDays(todayIso, 13)) || empty;
+    };
     // the archive's default face: each month heads a horizontally scrolling
     // river of every event image that month, each square linking to its
     // event; filtering swaps in the event list
@@ -2911,6 +2938,8 @@
       }
     });
 
+    renderWeeks();
+    buildWeekPeek();
     renderArchive();
     // the archive_months view indexes every month ever in one tiny query;
     // when it exists the landing lists them all (rivers fill lazily) and the

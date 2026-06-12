@@ -36,13 +36,14 @@ grant select on archive_months to anon;
 
 -- 4) Light list rows for the public pages: everything an event card shows,
 --    with the (often multi-KB, often raw-HTML) description reduced to a
---    500-character plain-text excerpt. Cuts the homepage data payload by
---    roughly 10x; admin keeps reading the full events table.
+--    300-character plain-text excerpt (cards clamp to ~3 lines anyway).
+--    Cuts the homepage data payload dramatically; admin keeps reading the
+--    full events table.
 create or replace view events_list as
   select
     id, title, permalink, path, venue, venue_url, address, map_url,
     event_date, image_url, tags, time_window, on_view_through, top_pick,
-    left(regexp_replace(coalesce(description, ''), '<[^>]+>', ' ', 'g'), 500) as excerpt
+    left(regexp_replace(coalesce(description, ''), '<[^>]+>', ' ', 'g'), 300) as excerpt
   from events;
 
 grant select on events_list to anon;

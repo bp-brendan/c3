@@ -59,7 +59,7 @@ window.Visualist.loadData = async function(callback) {
     // ~10x lighter) over a recent window that still covers long on-view
     // runs; the view not existing yet falls back to the full table.
     const isAdmin = document.body && document.body.dataset.page === 'admin';
-    const windowStart = new Date(Date.now() - 180 * 86400 * 1000).toISOString().slice(0, 10);
+    const windowStart = new Date(Date.now() - 120 * 86400 * 1000).toISOString().slice(0, 10);
 
     const buildQuery = (table, columns, windowed) => {
       let q = window.supabaseClient

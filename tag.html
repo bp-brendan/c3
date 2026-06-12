@@ -76,50 +76,45 @@
 
     const today = Visualist.todayIso();
     const tomorrow = Visualist.tomorrowIso();
-    const runsToday = e => e.d <= today && (Visualist.onViewEndIso(e) || e.d) >= today;
-    const runsTomorrow = e => e.d <= tomorrow && (Visualist.onViewEndIso(e) || e.d) >= tomorrow;
     // a virtual day page reads like a This Week day group: one heading,
-    // that day's openings first, then the ongoing runs
+    // then that day's events
     const dayIso = isTodayPage ? today : (isTomorrowPage ? tomorrow : '');
     
     let hits = [];
     document.getElementById('tag-results').innerHTML = '<p style="text-align:center; padding: 20px;">Loading archive...</p>';
     
     if (isTodayPage || isTomorrowPage) {
-      // Today and Tomorrow only need recent events, local filtering is fine
+      // a day page lists that day only — events opening (or holding a
+      // session) on the date itself, not every run that spans it
       const tagEvents = Visualist.publicEvents(ARCHIVE_EVENTS_2026);
-      hits = tagEvents.filter(e => isTodayPage ? runsToday(e) : runsTomorrow(e));
-      // on a session day an exhibition matches twice — as the day's own row
-      // and as the ongoing run — so the run row yields to the day's row
-      const seriesKey = e => `${String(e.t || '').toLowerCase()}|${String(e.v || '').toLowerCase()}`;
-      const daySeries = new Set(hits.filter(e => e.d === dayIso).map(seriesKey));
-      hits = hits
-        .filter(e => e.d === dayIso || !daySeries.has(seriesKey(e)))
-        .sort((a, b) => dayIso
-          ? (Number(b.d === dayIso) - Number(a.d === dayIso)) ||
-            a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '')
-          : b.d.localeCompare(a.d));
+      hits = tagEvents
+        .filter(e => e.d === dayIso)
+        .sort((a, b) => a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || ''));
     } else {
-      // Month or Tag: Query deep archive directly
-      let query = window.supabaseClient.from('events').select('*').limit(1000);
-      
-      if (isMonthPage) {
-        // exclusive next-month bound: a literal "-31" is an invalid date for
-        // short months and errors the whole query (blank Feb/Apr/Jun/Sep/Nov)
-        const [year, month] = monthParam.split('-').map(Number);
-        const nextMonth = `${month === 12 ? year + 1 : year}-${String(month === 12 ? 1 : month + 1).padStart(2, '0')}-01`;
-        query = query.gte('event_date', `${monthParam}-01`).lt('event_date', nextMonth).order('event_date', { ascending: true });
-      } else if (isTopVPage) {
-        query = query.eq('top_pick', true).order('event_date', { ascending: false });
-      } else {
-        query = query.contains('tags', [slug]).order('event_date', { ascending: false });
-      }
-      
-      if (window.SITE_SETTINGS && window.SITE_SETTINGS.limit_to_2026) {
-        query = query.gte('event_date', '2026-01-01').lte('event_date', '2026-12-31');
-      }
-      
-      const { data, error } = await query;
+      // Month or Tag: query the deep archive directly, via the light
+      // events_list view (plain-text excerpts); the full table is the
+      // fallback if the view is missing
+      const deepQuery = table => {
+        let query = window.supabaseClient.from(table).select('*').limit(1000);
+        if (isMonthPage) {
+          // exclusive next-month bound: a literal "-31" is an invalid date for
+          // short months and errors the whole query (blank Feb/Apr/Jun/Sep/Nov)
+          const [year, month] = monthParam.split('-').map(Number);
+          const nextMonth = `${month === 12 ? year + 1 : year}-${String(month === 12 ? 1 : month + 1).padStart(2, '0')}-01`;
+          query = query.gte('event_date', `${monthParam}-01`).lt('event_date', nextMonth).order('event_date', { ascending: true });
+        } else if (isTopVPage) {
+          query = query.eq('top_pick', true).order('event_date', { ascending: false });
+        } else {
+          query = query.contains('tags', [slug]).order('event_date', { ascending: false });
+        }
+        if (window.SITE_SETTINGS && window.SITE_SETTINGS.limit_to_2026) {
+          query = query.gte('event_date', '2026-01-01').lte('event_date', '2026-12-31');
+        }
+        return query;
+      };
+
+      let { data, error } = await deepQuery('events_list');
+      if (error || !data) ({ data, error } = await deepQuery('events'));
       if (!error && data) {
          hits = data.map(e => ({
             id: e.id,
@@ -129,7 +124,7 @@
             v: e.venue,
             d: e.event_date,
             i: e.image_url,
-            x: e.description,
+            x: e.excerpt !== undefined ? e.excerpt : e.description,
             g: e.tags || [],
             w: e.time_window,
             vu: e.venue_url,
@@ -138,7 +133,7 @@
             o: e.on_view_through,
             k: e.top_pick ? 1 : 0
           }));
-          
+
           hits = Visualist.publicEvents(hits).sort((a, b) => isMonthPage
             ? a.d.localeCompare(b.d) || (a.t || '').localeCompare(b.t || '') // months read chronologically
             : b.d.localeCompare(a.d));
