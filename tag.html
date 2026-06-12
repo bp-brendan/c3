@@ -104,7 +104,20 @@
         } else if (isTopVPage) {
           query = query.eq('top_pick', true).order('event_date', { ascending: false });
         } else {
-          query = query.contains('tags', [slug]).order('event_date', { ascending: false });
+          // events store the human-readable tag label ("Chicago", "Hyde Park"),
+          // but the URL slug is lowercased and hyphenated. PostgREST array
+          // containment is exact and case-sensitive, so match any plausible
+          // stored form — exact label, Title Case, spaced lowercase, raw slug —
+          // or capitalized/multi-word tags return nothing (tag pages showed 0).
+          const spaced = slug.replace(/-/g, ' ');
+          const titleCase = spaced.replace(/\b\w/g, ch => ch.toUpperCase());
+          const candidates = [...new Set(
+            [Visualist.tagLabel(slug), titleCase, spaced, slug].filter(Boolean)
+          )];
+          const orFilter = candidates
+            .map(v => `tags.cs.{"${String(v).replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"}`)
+            .join(',');
+          query = query.or(orFilter).order('event_date', { ascending: false });
         }
         if (window.SITE_SETTINGS && window.SITE_SETTINGS.limit_to_2026) {
           query = query.gte('event_date', '2026-01-01').lte('event_date', '2026-12-31');
