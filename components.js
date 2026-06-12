@@ -1,6 +1,8 @@
 (function () {
   const footerText = `<strong>The Visualist</strong> is more than just a list of dates and events on the
-internet.`;
+internet. It's a really long list of dates and events for exhibitions,
+artist talks, receptions, festivals, panels, performances, readings,
+fairs, workshops, and curated content all kinds.`;
 
   // hosted_button_id from the PayPal form on thevisualist.org/about/
   const DONATE_URL = 'https://www.paypal.com/donate?hosted_button_id=947PHJMCQD9Q4';
