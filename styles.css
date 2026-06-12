@@ -166,7 +166,7 @@ body {
 .site-nav .nav-button {
   background: var(--content-ink);
   color: var(--content-paper);
-  padding: 0.6em 1.2em;
+  padding: 0.4em 1.2em;
   border-radius: 2px;
   border-bottom-color: transparent;
 }
@@ -612,7 +612,7 @@ body {
 
 /* the label band stays in flow: it scrolls up behind the collapsed dark row */
 .tab-band {
-  padding: clamp(1.25rem, 2.5vw, 2rem) var(--edge) 0;
+  padding: clamp(1.25rem, 2.5vw, 2rem) var(--edge) 0.5rem;
 }
 
 /* the tabs row alone pins beneath the collapsed dark row (JS COMPACT) */
