@@ -90,7 +90,7 @@ window.Visualist.loadData = async function(callback, options = {}) {
 let events = null;
       let eventsError = null;
       
-      const cacheKey = isAdmin ? 'cached_events_admin' : 'cached_events_list';
+      const cacheKey = isAdmin ? 'cached_events_admin' : 'cached_events_list_v2';
       try {
         const cachedStr = sessionStorage.getItem(cacheKey);
         if (cachedStr) events = JSON.parse(cachedStr);
