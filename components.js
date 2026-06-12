@@ -1858,7 +1858,16 @@ if (tagline) {
         }
 
         if (child.classList.contains('event-card') && activeDate) {
-          items.push({ date: activeDate, order: order++, node: child, ongoing: false });
+          const tEl = child.querySelector('.event-title');
+          const wEl = child.querySelector('.event-when');
+          items.push({ 
+            date: activeDate, 
+            order: order++, 
+            node: child, 
+            ongoing: false,
+            t: tEl ? tEl.textContent.trim() : '',
+            w: wEl ? wEl.textContent.trim() : ''
+          });
           return;
         }
 
@@ -1866,8 +1875,6 @@ if (tagline) {
           const list = child.nextElementSibling;
           if (!list) return;
 
-          // scope to this view's week: only closings that fall on the days
-          // already in the flow belong here (the rest live in All Events)
           const openDates = items.filter(it => !it.ongoing).map(it => it.date).sort();
           const lo = openDates[0];
           const hi = openDates[openDates.length - 1];
@@ -1878,20 +1885,34 @@ if (tagline) {
             const date = meta ? isoFromTextDate(meta.textContent) : '';
             if (!date || date < lo || date > hi) return;
             const card = ongoingCardFromListing(item);
-            if (card) items.push({ date, order: order++, node: card, ongoing: true });
+            if (card) {
+              const tEl = card.querySelector('.event-title');
+              const wEl = card.querySelector('.event-when');
+              items.push({ 
+                date, 
+                order: order++, 
+                node: card, 
+                ongoing: true,
+                t: tEl ? tEl.textContent.trim() : '',
+                w: wEl ? wEl.textContent.trim() : ''
+              });
+            }
           });
         }
       });
 
-      if (!items.some(item => item.ongoing)) return;
-
+      // Always sort and replace children to ensure correct chronological order
       view.replaceChildren();
       const dates = [...new Set(items.map(item => item.date))].sort();
       dates.forEach(date => {
         view.append(dateHeading(date));
         items
           .filter(item => item.date === date)
-          .sort((a, b) => Number(a.ongoing) - Number(b.ongoing) || a.order - b.order)
+          .sort((a, b) => 
+            Number(a.ongoing) - Number(b.ongoing) || 
+            (timeValue(a.w) - timeValue(b.w)) || 
+            a.t.localeCompare(b.t)
+          )
           .forEach(item => view.append(item.node));
       });
     });

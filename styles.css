@@ -2754,3 +2754,10 @@ body.logged-out .admin-main {
   background: #135e96;
   border-color: #135e96;
 }
+
+/* Fix inline-link to not look like a button */
+.inline-link {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
