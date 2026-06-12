@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>\n  <meta name="theme-color" content="#1c1c1c">
+<head><meta name="theme-color" content="#1c1c1c">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin | The Visualist</title>
@@ -13,6 +13,10 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabaseClient.js"></script>
   <script src="components.js"></script>
+
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
 </head>
 <body data-page="admin" data-active-nav="archive">
 
@@ -518,6 +522,7 @@
       queueEmpty.hidden = visible.length > 0;
       Visualist.initAddressAutocomplete(queue);
       Visualist.openExternalLinks(queue);
+      window.initRichText(queue);
     };
 
     const saveSettings = async ({ quiet = false } = {}) => {
@@ -676,6 +681,7 @@
       eventList.innerHTML = shown.map(eventCard).join('');
       Visualist.initAddressAutocomplete(eventList);
       Visualist.openExternalLinks(eventList);
+      window.initRichText(eventList);
     };
 
     const paintAdminView = () => {
