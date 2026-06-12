@@ -490,7 +490,9 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       const link = event.target.closest('a[href*="events/"], a[href*="tag.html"]');
       if (!link) return;
       try {
-        sessionStorage.setItem(CRUMB_KEY, JSON.stringify(getCrumb()));
+        // the clicked link lets providers derive context from the markup
+        // around it (e.g. a peek river borrows its week's identity)
+        sessionStorage.setItem(CRUMB_KEY, JSON.stringify(getCrumb(link)));
       } catch {}
     });
   };

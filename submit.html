@@ -225,6 +225,21 @@
       try {
         const submission = await Visualist.submissionFromForm(form);
         await Visualist.saveSubmittedEvent(submission);
+        // fire-and-forget: confirmation + admin alert; keepalive survives the
+        // redirect, and a mail hiccup must never block the submission
+        try {
+          fetch('/api/notify', {
+            method: 'POST',
+            keepalive: true,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              title: submission.title,
+              venue: submission.venue,
+              eventDate: submission.eventDate || submission.exhibitionStart || '',
+              contactEmail: submission.contactEmail
+            })
+          }).catch(() => {});
+        } catch {}
         location.href = 'submitted.html';
       } catch {
         alert('This browser could not save the submission for review. Please try a smaller image or send the event by email.');

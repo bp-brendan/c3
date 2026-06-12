@@ -2737,13 +2737,22 @@
       updateTagInvoke();
     }
     const viewLabels = { today: 'Today', 'this-week': 'This Week', 'next-week': 'Next Week', archive: 'Archive' };
-    Visualist.trackEventLinks(() => ({
-      label: viewLabels[currentView],
-      nav: currentView,
-      href: currentView === 'today'
-        ? 'index.html'
-        : `index.html#${currentView}${currentView === 'archive' ? archiveParams() : ''}`
-    }));
+    Visualist.trackEventLinks(link => {
+      // a click inside a peek river belongs to the week the peek shows, not
+      // the view it sits on (This Week peek on Today, Next Week on This Week)
+      let view = currentView;
+      const peekTitle = link?.closest('.week-peek')
+        ?.querySelector('.week-peek-title')?.textContent.trim().toLowerCase();
+      if (peekTitle === 'this week') view = 'this-week';
+      else if (peekTitle === 'next week') view = 'next-week';
+      return {
+        label: viewLabels[view],
+        nav: view,
+        href: view === 'today'
+          ? 'index.html'
+          : `index.html#${view}${view === 'archive' ? archiveParams() : ''}`
+      };
+    });
     const tagSuggest = document.getElementById('tag-suggest');
     // same "Opening Friday, June 12th, from 6PM – 9PM" line the week cards carry
     const ordinalDay = n => {
