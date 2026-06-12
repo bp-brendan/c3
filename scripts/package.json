@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "add-top-v-source-item": "node add_top_v_source_item.js",
+    "audit-archive": "node audit_archive_completeness.js",
+    "refresh-series-flags": "node refresh_series_flags.js",
+    "refresh-top-v-flags": "node refresh_top_v_flags.js"
   },
   "keywords": [],
   "author": "",

@@ -10,7 +10,7 @@
 
 CREATE TABLE IF NOT EXISTS submissions (
   id               TEXT PRIMARY KEY,
-  status           TEXT NOT NULL DEFAULT 'pending',  -- pending | approved | passed
+  status           TEXT NOT NULL DEFAULT 'pending',  -- pending | approved | passed | draft | scheduled
   source_url       TEXT,
   title            TEXT,
   artists          TEXT,                             -- comma-joined
@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS submissions (
   updated_at       TIMESTAMPTZ,
   approved_at      TIMESTAMPTZ,
   passed_at        TIMESTAMPTZ,
+  publish_at       TIMESTAMPTZ,
   created_at       TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
@@ -47,6 +48,7 @@ ALTER TABLE submissions ADD COLUMN IF NOT EXISTS submitted_at TIMESTAMPTZ;
 ALTER TABLE submissions ADD COLUMN IF NOT EXISTS updated_at   TIMESTAMPTZ;
 ALTER TABLE submissions ADD COLUMN IF NOT EXISTS approved_at  TIMESTAMPTZ;
 ALTER TABLE submissions ADD COLUMN IF NOT EXISTS passed_at    TIMESTAMPTZ;
+ALTER TABLE submissions ADD COLUMN IF NOT EXISTS publish_at   TIMESTAMPTZ;
 
 CREATE INDEX IF NOT EXISTS submissions_status_idx
   ON submissions (status, created_at DESC);

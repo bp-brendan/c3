@@ -6,6 +6,17 @@ window.supabaseClient = client;
 
 const TAGLINES_CACHE_KEY = 'visualist.taglines.v1';
 const SETTINGS_CACHE_KEY = 'visualist.settings.v1';
+const DEFAULT_SITE_SETTINGS = { limit_to_2026: true, google_maps_api_key: '' };
+const normalizeSiteSettings = row => {
+  const settings = { ...DEFAULT_SITE_SETTINGS, ...(row || {}) };
+  // The first settings table only had limit_to_2026 and was seeded false.
+  // Until schema_settings.sql is re-run, treat that legacy row as the new
+  // default (2026 only). Once google_maps_api_key exists, respect the toggle.
+  if (row && !Object.prototype.hasOwnProperty.call(row, 'google_maps_api_key')) {
+    settings.limit_to_2026 = true;
+  }
+  return settings;
+};
 
 window.Visualist = window.Visualist || {};
 window.Visualist.loadData = async function(callback, options = {}) {
@@ -20,9 +31,9 @@ window.Visualist.loadData = async function(callback, options = {}) {
     }
   } catch {}
   try {
-    window.SITE_SETTINGS = JSON.parse(localStorage.getItem(SETTINGS_CACHE_KEY)) || { limit_to_2026: false };
+    window.SITE_SETTINGS = normalizeSiteSettings(JSON.parse(localStorage.getItem(SETTINGS_CACHE_KEY)) || {});
   } catch {
-    window.SITE_SETTINGS = { limit_to_2026: false };
+    window.SITE_SETTINGS = normalizeSiteSettings();
   }
   if (window.Visualist.renderChrome) {
     window.Visualist.renderChrome();
@@ -36,7 +47,7 @@ window.Visualist.loadData = async function(callback, options = {}) {
       window.supabaseClient.from('settings').select('*').eq('id', 1).single(),
       window.supabaseClient.from('taglines').select('*').order('created_at', { ascending: true })
     ]);
-    window.SITE_SETTINGS = settingsRes.data || { limit_to_2026: false };
+    window.SITE_SETTINGS = normalizeSiteSettings(settingsRes.data || {});
 
     const taglines = taglinesRes.data;
     if (taglinesRes.error) console.error('Error fetching taglines:', taglinesRes.error);
@@ -67,7 +78,7 @@ window.Visualist.loadData = async function(callback, options = {}) {
         .from(table)
         .select(columns)
         .order('event_date', { ascending: false })
-        .limit(1000);
+        .order('id', { ascending: true });
       if (windowed && !window.SITE_SETTINGS.limit_to_2026) q = q.gte('event_date', windowStart);
       if (window.SITE_SETTINGS.limit_to_2026) {
         q = q.gte('event_date', '2026-01-01').lte('event_date', '2026-12-31');
@@ -78,11 +89,17 @@ window.Visualist.loadData = async function(callback, options = {}) {
     if (shouldLoadEvents) {
       let events = null;
       let eventsError = null;
+      const fetchRows = window.Visualist.fetchPagedRows
+        ? queryFactory => window.Visualist.fetchPagedRows(queryFactory)
+        : async queryFactory => {
+          const { data, error } = await queryFactory().limit(1000);
+          return { data: data || [], error };
+        };
       if (!isAdmin) {
-        ({ data: events, error: eventsError } = await buildQuery('events_list', '*', true));
+        ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events_list', '*', true)));
       }
       if (isAdmin || eventsError || !events) {
-        ({ data: events, error: eventsError } = await buildQuery('events', '*', false));
+        ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events', '*', false)));
         if (eventsError) console.error('Error fetching events:', eventsError);
       }
 

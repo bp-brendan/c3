@@ -17,7 +17,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
 
   const navItems = [
     // Today is the always-current virtual tag page, not an index view
-    { key: 'today', label: 'Today', page: 'tag.html?tag=today' },
+    { key: 'today', label: 'Today', page: 'index.html' },
     { key: 'this-week', label: 'This Week' },
     { key: 'archive', label: 'Archive' }
   ];
@@ -64,6 +64,13 @@ calendar's beginnings in 2011. Help us keep it growing.`;
 
   const eventKey = event => event.id;
 
+  const eventHref = event => {
+    if (!event) return '#';
+    if (event.p && String(event.p).trim()) return event.p;
+    const match = archiveMatch(event.t || '', event.u || '');
+    return match.p || event.u || '#';
+  };
+
   const eventEdits = () => {
     const edits = readJson(EVENT_EDITS_KEY, {});
     return edits && typeof edits === 'object' && !Array.isArray(edits) ? edits : {};
@@ -87,8 +94,46 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     }
   };
 
+  const saveTaglineRows = async rows => {
+    if (!window.supabaseClient) return [];
+    const cleanRows = (rows || [])
+      .map(row => ({
+        id: row.id || undefined,
+        content: String(row.content || '').trim(),
+        is_active: row.is_active !== false
+      }))
+      .filter(row => row.content);
+    try {
+      await window.supabaseClient.from('taglines').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+      if (cleanRows.length) {
+        const { data, error } = await window.supabaseClient
+          .from('taglines')
+          .insert(cleanRows.map(row => ({ content: row.content, is_active: row.is_active })))
+          .select()
+          .order('created_at', { ascending: true });
+        if (error) throw error;
+        window.TAGLINES = data || cleanRows;
+      } else {
+        window.TAGLINES = [];
+      }
+      window.PUBLIC_TAGLINES = (window.TAGLINES || [])
+        .filter(row => row.is_active !== false)
+        .map(row => row.content);
+      return window.TAGLINES;
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
+  };
+
   const saveEventEdit = async (key, patch) => {
     if (!window.supabaseClient) return;
+    const priorIndex = window.ARCHIVE_EVENTS_2026
+      ? window.ARCHIVE_EVENTS_2026.findIndex(e => e.id === key)
+      : -1;
+    const priorEvent = priorIndex !== -1
+      ? window.ARCHIVE_EVENTS_2026[priorIndex]
+      : await fetchEventById(key);
     
     // Map short keys to Supabase schema
     const updateData = { id: key };
@@ -110,10 +155,12 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       await window.supabaseClient.from('events').upsert(updateData);
       
       // Update local cache
-      const eventIndex = window.ARCHIVE_EVENTS_2026.findIndex(e => e.id === key);
+      const eventIndex = window.ARCHIVE_EVENTS_2026 ? window.ARCHIVE_EVENTS_2026.findIndex(e => e.id === key) : -1;
       if (eventIndex !== -1) {
         window.ARCHIVE_EVENTS_2026[eventIndex] = { ...window.ARCHIVE_EVENTS_2026[eventIndex], ...patch };
       }
+      const nextEvent = { ...(priorEvent || {}), ...patch, id: key };
+      await refreshSeriesFlagsForEvents([priorEvent, nextEvent]);
     } catch (e) {
       console.error(e);
     }
@@ -124,8 +171,12 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     // Assuming clear means delete here? Or maybe we just remove from local memory.
     if (!window.supabaseClient) return;
     try {
+      const priorEvent = window.ARCHIVE_EVENTS_2026
+        ? window.ARCHIVE_EVENTS_2026.find(e => e.id === key)
+        : await fetchEventById(key);
       await window.supabaseClient.from('events').delete().eq('id', key);
-      window.ARCHIVE_EVENTS_2026 = window.ARCHIVE_EVENTS_2026.filter(e => e.id !== key);
+      window.ARCHIVE_EVENTS_2026 = (window.ARCHIVE_EVENTS_2026 || []).filter(e => e.id !== key);
+      await refreshSeriesFlagsForEvents([priorEvent]);
     } catch (e) {
       console.error(e);
     }
@@ -322,20 +373,22 @@ calendar's beginnings in 2011. Help us keep it growing.`;
 
   const renderNav = () => {
     const page = pageName();
-    const active = document.body.dataset.activeNav || (page === 'home' ? 'this-week' : page);
+    const hashView = location.hash.slice(1).split('?')[0];
+    const active = document.body.dataset.activeNav ||
+      (page === 'home' && navItems.some(item => item.key === hashView) ? hashView : (page === 'home' ? 'today' : page));
     document.querySelectorAll('[data-visualist-nav]').forEach(slot => {
       const isAdmin = page === 'admin';
       const adminActive = isAdmin
         ? (location.hash || '#pending').replace(/^#/, '')
         : '';
+      const queueTabs = new Set(['pending', 'scheduled', 'draft', 'approved', 'passed']);
       const adminItems = [
-        { key: 'pending', label: 'Pending' },
-        { key: 'approved', label: 'Approved' },
-        { key: 'passed', label: 'Passed' },
-        { key: 'all', label: 'All' },
-        { key: 'funlines', label: 'Fun Lines' },
-        { key: 'submit', label: 'Create Event' },
-        { key: 'home', label: 'Exit Admin' }
+        { key: 'pending', label: 'Queue' },
+        { key: 'all', label: 'Events' },
+        { key: 'create', label: 'Create' },
+        { key: 'funlines', label: 'Taglines' },
+        { key: 'settings', label: 'Settings' },
+        { key: 'home', label: 'Exit Admin', href: localHref('index.html') }
       ];
       slot.innerHTML = `
         ${isAdmin ? '' : `<div class="tab-band">
@@ -345,15 +398,18 @@ calendar's beginnings in 2011. Help us keep it growing.`;
           <div class="nav-block">
             <nav class="site-nav" aria-label="Primary">
               ${isAdmin
-                ? adminItems.map(item => `
-                  <a href="#${item.key}" data-admin-tab="${item.key}" class="${adminActive === item.key ? 'active' : ''}">${item.label}</a>
-                `).join('')
-                : navItems.map(item => item.page
+                ? adminItems.map(item => {
+                  const activeTab = item.key === 'pending' ? queueTabs.has(adminActive) : adminActive === item.key;
+                  return `<a href="${item.href || `#${item.key}`}" data-admin-tab="${item.key}" class="${activeTab ? 'active' : ''}">${item.label}</a>`;
+                }).join('')
+                : navItems.map(item => page === 'home' && item.key === 'today'
+                  ? `<a href="${localHref('index.html')}" data-view="today" class="${active === item.key ? 'active' : ''}">${item.label}</a>`
+                  : item.page
                   ? `<a href="${localHref(item.page)}" class="${active === item.key ? 'active' : ''}">${item.label}</a>`
                   : `<a href="${navHref(item.key)}" data-view="${item.key}" class="${active === item.key ? 'active' : ''}">${item.label}</a>
                 `).join('')}
               ${isAdmin
-                ? `<a href="#create" class="nav-button ${adminActive === 'create' ? 'active' : ''}" data-admin-tab="create">Create Event</a>`
+                ? ''
                 : `<a href="${localHref('submit.html')}" class="nav-button ${page === 'submit' ? 'active' : ''}" ${page === 'submit' ? 'aria-current="page"' : ''}>Add Event</a>`}
             </nav>
           </div>
@@ -776,7 +832,8 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       contactEmail: String(submission.contactEmail || '').trim(),
       tags: tags.map(item => String(item || '').trim()).filter(Boolean),
       passedAt: submission.passedAt || '',
-      approvedAt: submission.approvedAt || ''
+      approvedAt: submission.approvedAt || '',
+      publishAt: submission.publishAt || ''
     };
   };
 
@@ -792,6 +849,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       venue: data.get('post-venue'),
       venueUrl: data.get('post-venue-url'),
       address: data.get('post-address'),
+      mapUrl: data.get('post-map-url'),
       neighborhood: data.get('post-neighborhood'),
       listingType: data.get('listing-type'),
       eventDate: data.get('post-event-date'),
@@ -844,7 +902,8 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       submitted_at: clean.submittedAt,
       updated_at: clean.updatedAt,
       approved_at: nullIfBlank(clean.approvedAt),
-      passed_at: nullIfBlank(clean.passedAt)
+      passed_at: nullIfBlank(clean.passedAt),
+      publish_at: nullIfBlank(clean.publishAt)
     };
     SUBMISSION_DATE_COLS.forEach(col => { row[col] = nullIfBlank(row[col]); });
     return row;
@@ -859,6 +918,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     updatedAt: row.updated_at,
     approvedAt: row.approved_at,
     passedAt: row.passed_at,
+    publishAt: row.publish_at,
     sourceUrl: row.source_url,
     title: row.title,
     artists: row.artists,
@@ -900,6 +960,82 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     top_pick: event.k === 1
   });
 
+  const eventFromRow = row => ({
+    id: row.id,
+    t: row.title,
+    u: row.permalink,
+    p: row.path,
+    v: row.venue,
+    d: row.event_date,
+    i: row.image_url,
+    x: row.excerpt !== undefined ? row.excerpt : row.description,
+    g: row.tags || [],
+    w: row.time_window,
+    vu: row.venue_url,
+    a: row.address,
+    m: row.map_url,
+    o: row.on_view_through,
+    k: row.top_pick ? 1 : 0,
+    sf: row.series_first ? 1 : 0,
+    sl: row.series_last ? 1 : 0
+  });
+
+  const seriesGroupKey = event => `${String(event?.t || '').trim().toLowerCase()}|${String(event?.v || '').trim().toLowerCase()}`;
+
+  const fetchEventById = async id => {
+    if (!window.supabaseClient || !id) return null;
+    const { data, error } = await window.supabaseClient
+      .from('events')
+      .select('*')
+      .eq('id', id)
+      .maybeSingle();
+    if (error) throw error;
+    return data ? eventFromRow(data) : null;
+  };
+
+  const refreshSeriesFlagsForEvents = async events => {
+    if (!window.supabaseClient) return [];
+    const targets = (events || []).filter(event => event && event.t);
+    const seen = new Set();
+    const refreshed = [];
+    for (const target of targets) {
+      const key = seriesGroupKey(target);
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      let query = window.supabaseClient
+        .from('events')
+        .select('*')
+        .eq('title', target.t || '');
+      if (target.v) query = query.eq('venue', target.v);
+      else query = query.or('venue.is.null,venue.eq.');
+      const { data, error } = await query.order('event_date', { ascending: true });
+      if (error) throw error;
+      const rows = (data || []).map(row => ({ ...eventFromRow(row), sf: 0, sl: 0 }));
+      scopeSeriesRuns(rows);
+      refreshed.push(...rows);
+      for (const event of rows) {
+        const { error: updateError } = await window.supabaseClient
+          .from('events')
+          .update({ series_first: event.sf === 1, series_last: event.sl === 1 })
+          .eq('id', event.id);
+        if (updateError) throw updateError;
+      }
+      if (window.ARCHIVE_EVENTS_2026) {
+        rows.forEach(event => {
+          const index = window.ARCHIVE_EVENTS_2026.findIndex(row => row.id === event.id);
+          if (index !== -1) {
+            window.ARCHIVE_EVENTS_2026[index] = {
+              ...window.ARCHIVE_EVENTS_2026[index],
+              sf: event.sf,
+              sl: event.sl
+            };
+          }
+        });
+      }
+    }
+    return refreshed;
+  };
+
   // approving a submission inserts a fresh events row (the DB assigns the uuid
   // primary key); returns the new event in short-key form, id included.
   const publishEvent = async event => {
@@ -910,7 +1046,9 @@ calendar's beginnings in 2011. Help us keep it growing.`;
       .select()
       .single();
     if (error) throw error;
-    return { ...event, id: data && data.id };
+    const saved = { ...event, id: data && data.id };
+    const refreshed = await refreshSeriesFlagsForEvents([saved]);
+    return refreshed.find(row => row.id === saved.id) || saved;
   };
 
   // public submit page: store the raw submission for review. Let insert errors
@@ -1011,35 +1149,106 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     return [...byKey.values()];
   };
 
+  const isoPlusDays = (iso, days) => {
+    const date = new Date(`${iso}T12:00:00`);
+    if (Number.isNaN(date.getTime())) return iso;
+    date.setDate(date.getDate() + days);
+    return date.toISOString().slice(0, 10);
+  };
+
+  const rawOnViewEndIso = ev => {
+    if (!ev) return '';
+    let row = ev;
+    if (!row.o) {
+      const match = archiveMatch(row.t || '', row.p || row.u || '');
+      if (!match.o) return '';
+      row = { ...row, o: match.o, d: row.d || match.d };
+    }
+    const [baseYear, baseMonth] = (row.d || '').split('-').map(Number);
+    const end = onViewEnd(row.o, baseYear, baseMonth);
+    if (!end) return '';
+    const pad = n => String(n).padStart(2, '0');
+    const iso = `${end.year}-${pad(end.month)}-${pad(end.day)}`;
+    return iso >= (row.d || '') ? iso : '';
+  };
+
+  const seriesPillsHtml = event => {
+    if (!rawOnViewEndIso(event)) return '';
+    return `${event.sf ? ' <span class="series-pill">Opening</span>' : ''}${event.sl ? ' <span class="series-pill">Last in series</span>' : ''}`;
+  };
+
   // an exhibition posted once per session (opening, artist talk, closing)
-  // repeats the same on-view run on every row, so each row matches every day
-  // of the run in date-scoped views. Only the earliest row keeps the run;
-  // later rows match their own date alone — display-level until occurrences
-  // hang off parent_event_id.
+  // repeats the same on-view run on every row. Only overlapping dated rows in
+  // a real exhibition run get badges; recurring programs with the same title
+  // and venue but no shared run are left alone.
   const scopeSeriesRuns = events => {
     const groups = new Map();
     events.forEach(event => {
+      event._serverSeriesLast = event.sl === 1;
+      event._serverSeriesFirst = event.sf === 1;
+      event.sf = 0;
+      event.sl = 0;
+      if (event._runScoped) {
+        event._runScoped = false;
+        delete event._end;
+      }
       const key = `${String(event.t || '').toLowerCase()}|${String(event.v || '').toLowerCase()}`;
       const group = groups.get(key) || [];
       group.push(event);
       groups.set(key, group);
     });
-    groups.forEach(rows => {
-      if (new Set(rows.map(event => event.d)).size < 2) return;
-      const first = rows.reduce((a, b) => (b.d < a.d ? b : a));
-      rows.forEach(event => {
+    const applyCluster = cluster => {
+      if (new Set(cluster.map(item => item.event.d)).size < 2) return;
+      const first = cluster.reduce((a, b) => (b.event.d < a.event.d ? b : a)).event;
+      const last = cluster.reduce((a, b) => (b.event.d > a.event.d ? b : a)).event;
+      cluster.forEach(({ event }) => {
         const scoped = event !== first;
         if (event._runScoped !== scoped) {
           event._runScoped = scoped;
           delete event._end; // archive caches the run end per row
         }
       });
+      first.sf = 1;
+      last.sl = 1;
+    };
+    groups.forEach(rows => {
+      if (new Set(rows.map(event => event.d)).size < 2) return;
+      const runnable = rows
+        .map(event => ({ event, end: rawOnViewEndIso(event) }))
+        .filter(item => item.event.d && item.end)
+        .sort((a, b) => a.event.d.localeCompare(b.event.d));
+      let cluster = [];
+      let clusterEnd = '';
+      runnable.forEach(item => {
+        if (!cluster.length || item.event.d <= isoPlusDays(clusterEnd, 1)) {
+          cluster.push(item);
+          if (!clusterEnd || item.end > clusterEnd) clusterEnd = item.end;
+        } else {
+          applyCluster(cluster);
+          cluster = [item];
+          clusterEnd = item.end;
+        }
+      });
+      applyCluster(cluster);
+    });
+    events.forEach(event => {
+      const end = rawOnViewEndIso(event);
+      if (!event.sf && event._serverSeriesFirst && end && event.d < end) {
+        event.sf = 1;
+      }
+      if (!event.sl && event._serverSeriesLast && end && event.d === end) {
+        event.sl = 1;
+      }
+      delete event._serverSeriesFirst;
+      delete event._serverSeriesLast;
     });
     return events;
   };
 
+  const normalizeEvents = events => scopeSeriesRuns(applyEventEdits(dedupeEvents(events)));
+
   const publicEvents = events => {
-    const editedEvents = applyEventEdits(dedupeEvents(events));
+    const editedEvents = normalizeEvents(events);
     const existing = new Set(editedEvents.map(event =>
       `${String(event.u || '').toLowerCase()}|${String(event.t || '').toLowerCase()}|${event.d || ''}`
     ));
@@ -1607,9 +1816,207 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     if (!img || img.tagName !== 'IMG') return;
     if (img.closest('.event-thumb') || img.closest('.event-detail-image')) img.remove();
   };
+
+  let googlePlacesPromise = null;
+  let googlePlacesKeyWarned = false;
+
+  const googleMapsApiKey = () => String(
+    window.VISUALIST_GOOGLE_MAPS_API_KEY ||
+    window.SITE_SETTINGS?.google_maps_api_key ||
+    document.querySelector('meta[name="visualist-google-maps-key"]')?.content ||
+    ''
+  ).trim();
+
+  const loadGooglePlaces = () => {
+    if (window.google?.maps?.importLibrary) {
+      return window.google.maps.importLibrary('places');
+    }
+    if (googlePlacesPromise) return googlePlacesPromise;
+    const key = googleMapsApiKey();
+    if (!key) {
+      if (!googlePlacesKeyWarned) {
+        console.info('Google Maps address autocomplete is disabled: set window.VISUALIST_GOOGLE_MAPS_API_KEY or a visualist-google-maps-key meta tag.');
+        googlePlacesKeyWarned = true;
+      }
+      return Promise.resolve(null);
+    }
+    googlePlacesPromise = new Promise((resolve, reject) => {
+      const callback = `visualistGoogleMapsReady_${Date.now().toString(36)}`;
+      window[callback] = () => {
+        delete window[callback];
+        window.google.maps.importLibrary('places').then(resolve, reject);
+      };
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(key)}&v=weekly&loading=async&libraries=places&callback=${callback}`;
+      script.async = true;
+      script.onerror = () => {
+        delete window[callback];
+        reject(new Error('Could not load Google Maps Places'));
+      };
+      document.head.appendChild(script);
+    });
+    return googlePlacesPromise;
+  };
+
+  const googleMapUrlForPlace = (place, fallbackAddress) => {
+    if (place?.id) {
+      const query = encodeURIComponent(place.formattedAddress || place.displayName || fallbackAddress || '');
+      return `https://www.google.com/maps/search/?api=1&query=${query}&query_place_id=${encodeURIComponent(place.id)}`;
+    }
+    if (place?.location) {
+      const lat = typeof place.location.lat === 'function' ? place.location.lat() : place.location.lat;
+      const lng = typeof place.location.lng === 'function' ? place.location.lng() : place.location.lng;
+      if (lat != null && lng != null) return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+    }
+    return mapUrlForAddress(fallbackAddress);
+  };
+
+  const initAddressAutocomplete = (root = document) => {
+    const inputs = [...root.querySelectorAll('input[data-address-autocomplete]')]
+      .filter(input => !input.dataset.addressAutocompleteReady);
+    inputs.forEach(input => {
+      input.dataset.addressAutocompleteReady = '1';
+      const field = input.closest('.submit-field') || input.parentElement;
+      if (field) field.classList.add('has-address-autocomplete');
+      const suggest = document.createElement('div');
+      suggest.className = 'search-suggest address-suggest';
+      suggest.setAttribute('role', 'listbox');
+      suggest.setAttribute('aria-label', 'Suggested addresses');
+      suggest.hidden = true;
+      input.insertAdjacentElement('afterend', suggest);
+
+      let sessionToken = null;
+      let suggestions = [];
+      let suggestIndex = -1;
+      let requestId = 0;
+      let timer = null;
+
+      const hide = () => {
+        suggestions = [];
+        suggestIndex = -1;
+        suggest.hidden = true;
+        suggest.innerHTML = '';
+        input.setAttribute('aria-expanded', 'false');
+      };
+      const paint = () => {
+        [...suggest.querySelectorAll('.search-suggest-item')].forEach((item, index) => {
+          item.classList.toggle('active', index === suggestIndex);
+          item.setAttribute('aria-selected', String(index === suggestIndex));
+        });
+      };
+      const placeLabel = prediction => prediction?.text?.toString?.() || prediction?.mainText?.toString?.() || '';
+      const render = () => {
+        if (!suggestions.length) return hide();
+        suggest.innerHTML = suggestions.map(item => {
+          const label = placeLabel(item.placePrediction);
+          return `<button type="button" class="search-suggest-item" role="option" aria-selected="false">${escapeHtml(label)}</button>`;
+        }).join('');
+        suggest.hidden = false;
+        input.setAttribute('aria-expanded', 'true');
+        [...suggest.querySelectorAll('.search-suggest-item')].forEach((button, index) => {
+          button.addEventListener('mousedown', event => event.preventDefault());
+          button.addEventListener('click', () => selectSuggestion(index));
+          button.addEventListener('mousemove', () => {
+            if (suggestIndex !== index) {
+              suggestIndex = index;
+              paint();
+            }
+          });
+        });
+      };
+      const updateMapUrl = (place, address) => {
+        const form = input.form || input.closest('form');
+        const mapInput = form?.querySelector('input[name="post-map-url"], input[name="mapUrl"], input[name="m"]');
+        if (mapInput) mapInput.value = googleMapUrlForPlace(place, address);
+      };
+      const selectSuggestion = async index => {
+        const prediction = suggestions[index]?.placePrediction;
+        if (!prediction) return;
+        const label = placeLabel(prediction);
+        try {
+          const place = prediction.toPlace();
+          await place.fetchFields({ fields: ['id', 'displayName', 'formattedAddress', 'location'] });
+          const address = place.formattedAddress || label;
+          input.value = address;
+          updateMapUrl(place, address);
+          if (place.displayName) {
+            const form = input.form || input.closest('form');
+            const venue = form?.querySelector('input[name="post-venue"], input[name="venue"], input[name="v"]');
+            if (venue && !venue.value.trim()) {
+              venue.value = String(place.displayName);
+              venue.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          }
+        } catch {
+          input.value = label;
+          updateMapUrl(null, label);
+        }
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+        sessionToken = null;
+        hide();
+      };
+      const fetchSuggestions = async () => {
+        const query = input.value.trim();
+        const thisRequest = ++requestId;
+        if (query.length < 3) return hide();
+        const places = await loadGooglePlaces().catch(() => null);
+        if (!places?.AutocompleteSuggestion || !places?.AutocompleteSessionToken) return;
+        sessionToken ||= new places.AutocompleteSessionToken();
+        const { suggestions: next = [] } = await places.AutocompleteSuggestion.fetchAutocompleteSuggestions({
+          input: query,
+          sessionToken,
+          region: 'us',
+          language: 'en-US',
+          includedRegionCodes: ['us'],
+          locationBias: { west: -88.7, north: 42.8, east: -87.0, south: 41.0 }
+        });
+        if (thisRequest !== requestId) return;
+        suggestions = next.filter(item => item.placePrediction).slice(0, 6);
+        suggestIndex = suggestions.length ? 0 : -1;
+        render();
+        paint();
+      };
+
+      input.setAttribute('autocomplete', 'street-address');
+      input.setAttribute('role', 'combobox');
+      input.setAttribute('aria-expanded', 'false');
+      input.addEventListener('input', () => {
+        window.clearTimeout(timer);
+        timer = window.setTimeout(fetchSuggestions, 180);
+      });
+      input.addEventListener('blur', () => window.setTimeout(hide, 120));
+      input.addEventListener('keydown', event => {
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          if (suggest.hidden || !suggestions.length) return;
+          event.preventDefault();
+          const step = event.key === 'ArrowDown' ? 1 : -1;
+          suggestIndex = (suggestIndex + step + suggestions.length) % suggestions.length;
+          paint();
+        } else if (event.key === 'Enter' && !suggest.hidden && suggestions[suggestIndex]) {
+          event.preventDefault();
+          selectSuggestion(suggestIndex);
+        } else if (event.key === 'Escape') {
+          hide();
+        }
+      });
+    });
+  };
+
   if (typeof document !== 'undefined') {
     document.addEventListener('error', event => degradeBrokenImage(event.target), true);
   }
+
+  const fetchPagedRows = async (buildQuery, pageSize = 1000) => {
+    const rows = [];
+    for (let start = 0; ; start += pageSize) {
+      const { data, error } = await buildQuery().range(start, start + pageSize - 1);
+      if (error) return { data: rows, error };
+      rows.push(...(data || []));
+      if (!data || data.length < pageSize) break;
+    }
+    return { data: rows, error: null };
+  };
 
   window.Visualist = Object.assign(window.Visualist || {}, {
     renderChrome,
@@ -1624,6 +2031,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     openExternalLinks,
     onViewHtml,
     onViewEndIso,
+    seriesPillsHtml,
     scheduleLineHtml,
     submittedEvents,
     saveSubmittedEvent,
@@ -1637,13 +2045,19 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     chicagoNeighborhoods,
     neighborhoodForVenue,
     eventKey,
+    eventHref,
+    fetchPagedRows,
     eventEdits,
     saveEventEdit,
     clearEventEdit,
+    refreshSeriesFlagsForEvents,
     taglines,
     saveTaglines,
+    saveTaglineRows,
     randomLine,
     applyEventEdits,
+    normalizeEvents,
+    eventFromRow,
     publicEvents,
     tagLabel,
     tagSlug,
@@ -1651,6 +2065,7 @@ calendar's beginnings in 2011. Help us keep it growing.`;
     startEndWhenHtml,
     thumbSrc,
     todayIso,
+    initAddressAutocomplete,
     dayHeadingHtml: iso => dateHeading(iso).outerHTML,
     mergeOngoingIntoDatedFlow,
     showDatePicker,

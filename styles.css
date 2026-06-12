@@ -1251,29 +1251,14 @@ body {
   color: var(--content-ink-muted);
 }
 
-/* the +N tile finishing a truncated river, carrying on to the month page */
-.thumb-river-more {
-  flex: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(5.1rem, 12vw, 6.9rem);
-  height: clamp(5.1rem, 12vw, 6.9rem);
-  border: 1px solid currentColor;
-  border-radius: 2px;
-  font-weight: 700;
-  text-decoration: none;
-  color: inherit;
-  opacity: 0.7;
-}
-
-.thumb-river-more:hover {
-  opacity: 1;
-}
-
 /* a peek at next week under the This Week stream */
 .week-peek {
   margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.week-peek-top-v {
+  margin-top: 0;
+  margin-bottom: clamp(1.8rem, 4vw, 3rem);
 }
 
 .week-peek-title {
@@ -1282,6 +1267,27 @@ body {
   font-family: Georgia, serif;
   font-size: clamp(1.35rem, 2.6vw, 1.75rem);
   font-weight: 400;
+}
+
+.week-peek-title a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.week-peek-copy {
+  max-width: 42rem;
+  margin: -0.15rem 0 0.75rem;
+  color: var(--content-ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.week-peek-copy a {
+  color: var(--content-ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .archive-listing {
@@ -1315,7 +1321,7 @@ body {
   color: var(--content-paper);
 }
 
-/* first/last night of a multi-date series: a quiet chip beside the title */
+/* opening/last event of a multi-date exhibition: a quiet chip beside the title */
 .series-pill {
   display: inline-block;
   vertical-align: middle;
@@ -1875,6 +1881,10 @@ a.top-pick:hover,
   padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 
+.submit-view {
+  width: min(100%, 38rem);
+}
+
 .submit-title {
   margin: 0 0 1rem;
   font-size: 1rem;
@@ -1887,7 +1897,8 @@ a.top-pick:hover,
   display: grid;
   gap: 2.5rem;
   margin-top: 2rem;
-  max-width: 38rem; /* comfortable single-column field measure within the page column */
+  width: min(100%, 38rem); /* comfortable single-column field measure within the page column */
+  max-width: 100%;
 }
 
 .submit-section {
@@ -1966,6 +1977,10 @@ a.top-pick:hover,
   position: relative;
 }
 
+.submit-field.has-address-autocomplete {
+  position: relative;
+}
+
 .tag-input {
   position: relative;
   display: flex;
@@ -2005,8 +2020,9 @@ a.top-pick:hover,
   align-items: center;
   gap: 0.45em;
   padding: 0.45em 0.55em 0.45em 0.7em;
-  background: var(--content-ink);
-  color: var(--content-paper);
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
   border-radius: 2px;
   font-size: 0.78rem;
   font-weight: 700;
@@ -2019,22 +2035,23 @@ a.top-pick:hover,
 .tag-chip-locked em {
   font-style: normal;
   font-size: 0.85em;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .tag-chip-locked button {
   border: 0;
-  padding: 0 0.1em;
-  background: none;
-  color: inherit;
+  border-left: 1px solid rgba(255, 255, 255, 0.42);
+  padding: 0 0.1em 0 0.45em;
+  background: transparent;
+  color: #ffffff;
   cursor: pointer;
   font-size: 1.05em;
   line-height: 1;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .tag-chip-locked button:hover {
-  opacity: 1;
+  color: #d9d9d9;
 }
 
 .search-suggest-create span:first-child {
@@ -2101,6 +2118,14 @@ a.top-pick:hover,
   max-width: var(--measure);
 }
 
+.admin-view-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
 .admin-summary {
   display: flex;
   flex-wrap: wrap;
@@ -2149,6 +2174,12 @@ a.top-pick:hover,
   border-right-color: #d4d4d4;
   border-top-color: #d4d4d4;
   color: var(--content-ink);
+}
+
+.admin-tabs button span {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
 }
 
 .admin-queue {
@@ -2209,6 +2240,40 @@ a.top-pick:hover,
   margin-top: 1.25rem;
 }
 
+.admin-live-actions {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.admin-publish-controls {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) minmax(12rem, 1fr) auto;
+  gap: 1rem;
+  align-items: end;
+  margin-top: 1rem;
+}
+
+.admin-preview {
+  margin-top: 1rem;
+  border-top: var(--hairline-light);
+  padding-top: 1rem;
+}
+
+.admin-message {
+  margin-top: 1rem;
+  color: var(--content-ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.admin-message[data-tone="success"] {
+  color: #0b6b3a;
+}
+
+.admin-message[data-tone="error"] {
+  color: #b42318;
+}
+
 .admin-create {
   margin-top: 2rem;
   border-top: 1px solid #d4d4d4;
@@ -2232,9 +2297,9 @@ a.top-pick:hover,
 }
 
 .admin-events {
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid #d4d4d4;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .admin-event-filters {
@@ -2301,6 +2366,20 @@ a.top-pick:hover,
   padding: 0 0.9rem 1rem;
 }
 
+.admin-tagline-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-tagline-row {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1fr) auto auto;
+  gap: 1rem;
+  align-items: end;
+  border-bottom: var(--hairline-light);
+  padding-bottom: 1rem;
+}
+
 .form-button-pass {
   background: transparent;
   color: var(--content-ink);
@@ -2339,6 +2418,36 @@ a.top-pick:hover,
   font-size: 0.95rem;
   letter-spacing: 0;
   padding: 0.75rem 0.9rem;
+}
+
+.admin-check-field {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  align-self: end;
+  min-height: 3.05rem;
+}
+
+.admin-check-field input[type="checkbox"] {
+  width: 1.15rem;
+  min-width: 1.15rem;
+  height: 1.15rem;
+  padding: 0;
+  accent-color: var(--content-ink);
+}
+
+.submit-field .listing-type-option input {
+  position: absolute;
+  width: 1px;
+  min-width: 1px;
+  height: 1px;
+  padding: 0;
+  opacity: 0;
+}
+
+.admin-check-field span {
+  color: var(--content-ink);
+  line-height: 1.2;
 }
 
 .submit-field textarea {
@@ -2464,6 +2573,8 @@ a.top-pick:hover,
 
   .admin-card-head,
   .admin-fields,
+  .admin-publish-controls,
+  .admin-tagline-row,
   .admin-event-filters,
   .admin-event-item summary {
     grid-template-columns: 1fr;

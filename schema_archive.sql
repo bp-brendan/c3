@@ -25,35 +25,24 @@ where t.content = k.content
 --    its event count, so the frontend can list every month back to the
 --    calendar's beginnings without paging full event rows through the
 --    1000-row response cap.
-create or replace view archive_months as
+create or replace view archive_months with (security_invoker = true) as
   select
     to_char(event_date, 'YYYY-MM') as month,
     count(*)::int as event_count
   from events
   group by 1;
 
+alter view archive_months set (security_invoker = true);
+
 grant select on archive_months to anon;
 
--- 4) Series flags: an event posted once per session (every Friday, opening +
---    closing, etc.) shares a title and venue across dates. Mark the first and
---    last dated rows so listings can badge them. Re-runnable; re-run after
---    bulk imports to refresh the flags.
+-- 4) Series flags: an event posted once per session (opening, talk, closing)
+--    shares a title, venue, and overlapping on-view run across dates. The
+--    on_view_through text needs app-level date parsing/rollover logic, so
+--    refresh these booleans after imports with:
+--      cd scripts && npm run refresh-series-flags -- --write
 alter table events add column if not exists series_first boolean;
 alter table events add column if not exists series_last boolean;
-
-with series as (
-  select lower(title) as t, lower(coalesce(venue, '')) as v,
-         count(distinct event_date) as dates,
-         min(event_date) as first_date,
-         max(event_date) as last_date
-  from events
-  group by 1, 2
-)
-update events e set
-  series_first = case when s.dates >= 2 then e.event_date = s.first_date end,
-  series_last  = case when s.dates >= 2 then e.event_date = s.last_date end
-from series s
-where lower(e.title) = s.t and lower(coalesce(e.venue, '')) = s.v;
 
 -- 5) Light list rows for the public pages: everything an event card shows,
 --    with the (often multi-KB, often raw-HTML) description reduced to a
@@ -63,7 +52,7 @@ where lower(e.title) = s.t and lower(coalesce(e.venue, '')) = s.v;
 --    full events table. Dropped first: replace-view cannot add columns
 --    anywhere but the end, and series_* sit before excerpt.
 drop view if exists events_list;
-create view events_list as
+create view events_list with (security_invoker = true) as
   select
     id, title, permalink, path, venue, venue_url, address, map_url,
     event_date, image_url, tags, time_window, on_view_through, top_pick,
@@ -73,5 +62,7 @@ create view events_list as
       '\s*(Official Website|Original Listing)\s*', ' ', 'g'
     ), 300) as excerpt
   from events;
+
+alter view events_list set (security_invoker = true);
 
 grant select on events_list to anon;

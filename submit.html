@@ -27,7 +27,7 @@
       <form class="submit-form" action="#" method="post" enctype="multipart/form-data">
         <fieldset class="submit-section">
           <label class="submit-field" for="event-url">
-            <span>URL <i class="metadata-spinner" data-metadata-spinner hidden aria-hidden="true"></i></span>
+            <span>Official URL <i class="metadata-spinner" data-metadata-spinner hidden aria-hidden="true"></i></span>
             <input id="event-url" name="post-website" type="url" placeholder="https://example.org/event" autocomplete="url" required>
           </label>
           <label class="submit-field" for="post-title">
@@ -44,7 +44,7 @@
             <input type="hidden" name="your-artists" data-artists-value>
           </div>
           <label class="submit-field" for="post-venue">
-            <span>Venue</span>
+            <span>Venue Name</span>
             <div class="typeahead">
               <input id="post-venue" name="post-venue" type="text" placeholder="Name of the gallery or space" autocomplete="off" role="combobox" aria-expanded="false" required>
               <div class="search-suggest" data-venue-suggest role="listbox" aria-label="Matching venues" hidden></div>
@@ -57,7 +57,8 @@
           </label>
           <label class="submit-field" for="post-address">
             <span>Address</span>
-            <input id="post-address" name="post-address" type="text" placeholder="Address - full mailing address works best" required>
+            <input id="post-address" name="post-address" type="text" placeholder="Address - full mailing address works best" data-address-autocomplete required>
+            <input type="hidden" name="post-map-url" id="post-map-url">
           </label>
           <label class="submit-field" for="post-neighborhood">
             <span>Neighborhood <em class="submit-optional">optional</em></span>
@@ -150,6 +151,7 @@
     Visualist.renderChrome();
     Visualist.initHeaderAccordion();
     Visualist.initDatePickers();
+    Visualist.initAddressAutocomplete();
 
     const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
