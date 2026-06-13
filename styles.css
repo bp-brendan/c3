@@ -1266,12 +1266,14 @@ body {
   margin-bottom: clamp(1.8rem, 4vw, 3rem);
 }
 
+/* match the day/date headings in the listings: all-caps, bold, tracked */
 .week-peek-title {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
   color: var(--content-ink);
-  font-family: Georgia, serif;
-  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
-  font-weight: 400;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
 }
 
 .week-peek-title a {
@@ -2260,6 +2262,15 @@ a.top-pick:hover,
   background: var(--content-paper);
 }
 
+/* brief highlight when arriving from an email deep-link */
+.admin-card-focus {
+  animation: admin-card-focus 2.4s ease-out;
+}
+@keyframes admin-card-focus {
+  0%, 25% { border-color: #41b6e6; box-shadow: 0 0 0 3px rgba(65, 182, 230, 0.35); }
+  100% { border-color: #d4d4d4; box-shadow: 0 0 0 3px rgba(65, 182, 230, 0); }
+}
+
 .admin-card-head {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 7rem;
@@ -2486,6 +2497,58 @@ a.top-pick:hover,
   padding: 0.75rem 0.9rem;
 }
 
+/* Settings: notification recipients + editable email copy */
+.admin-settings-group {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #d4d4d4;
+}
+.admin-subhead {
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+}
+.admin-help {
+  color: var(--content-ink-muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin: 0 0 1rem;
+}
+.admin-help code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8em;
+  background: #ededed;
+  padding: 0.05em 0.35em;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.admin-recipient-list {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+.admin-recipient-row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.admin-recipient-row input {
+  flex: 1;
+  min-width: 0;
+}
+.admin-template-list {
+  display: grid;
+  gap: 1.75rem;
+}
+.admin-template-title {
+  font-size: 0.95rem;
+  margin: 0 0 0.2rem;
+}
+.admin-template textarea {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
 .admin-check-field {
   display: flex;
   align-items: center;
@@ -2664,8 +2727,20 @@ a.top-pick:hover,
 }
 
 
+/* BACKROOM has wider glyphs than VISUALIST, so it needs a smaller ratio to
+   stay on one line. On phones it shrinks further, and the header clips any
+   residual overflow so an oversized masthead can never widen the page and push
+   the form fields off-screen. */
 [data-page="admin"] .logotype-name {
-  font-size: clamp(2.5rem, 13vw, 15.5rem);
+  font-size: clamp(2.2rem, 12.5vw, 15.5rem);
+}
+[data-page="admin"] .site-header {
+  overflow-x: clip;
+}
+@media (max-width: 32rem) {
+  [data-page="admin"] .logotype-name {
+    font-size: 9vw;
+  }
 }
 
 /* User request: non-blue links with outline and darker color */
