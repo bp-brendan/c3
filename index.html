@@ -599,10 +599,11 @@
   const todayFetchPromise = initialViewName === 'today'
     ? todayDayQuery('events_list').then(res => (res.error || !res.data) ? todayDayQuery('events') : res)
     : null;
-  // Top V only needs its five flagged picks, not the whole year of events, so
-  // give it its own tiny query that paints independently of the full archive
-  // fetch the rest of This Week waits on. top_pick is cumulative, so pull the
-  // latest five that have opened by next week (this week's batch).
+  // Top V only needs its flagged picks, not the whole year of events, so give
+  // it its own tiny query that paints independently of the full archive fetch
+  // the rest of This Week waits on. Pull the flagged events whose run overlaps
+  // this week — opens by next week's end and hasn't closed yet (on_view_end in
+  // the future, or no parsed end date); buildTopVPeek applies the exact filter.
   const topVCacheKey = `cached_top_v_v1:${Visualist.todayIso()}`;
   const topVDayQuery = table => window.supabaseClient
     .from(table)
@@ -610,7 +611,7 @@
     .eq('top_pick', true)
     .lte('event_date', bootWeekEndIso)
     .order('event_date', { ascending: false })
-    .limit(5);
+    .limit(100);
   const topVFetchPromise = topVDayQuery('events_list')
     .then(res => (res.error || !res.data || !res.data.length) ? topVDayQuery('events') : res);
   Visualist.loadData(() => {
@@ -848,15 +849,14 @@
     const buildTopVPeek = (events = publicArchiveEvents) => {
       const todayIso = Visualist.todayIso();
       const weekEndIso = isoPlusDays(todayIso, 7);
-      // top_pick is a cumulative flag — every week's picks stay marked all
-      // year — and a pick's event_date is its opening day, which slips into
-      // the past as the week wears on. A today-forward window therefore drops
-      // shows that opened earlier this week (by Saturday most of the batch is
-      // already "yesterday"). Instead take the five most recent picks that
-      // have opened by next week: that's the current Bad at Sports batch for
-      // the whole week. Then show them oldest-first.
+      // The top_pick flag is permanent (it badges the event in the archive too),
+      // so the This Week section narrows it to the current batch: events flagged
+      // Top V that open by next week's end and are still on view today (closing
+      // date = on_view_end, or the event date for a one-day show), then the five
+      // most recent of those. That drops shows that already closed and the older
+      // long-runners that keep their badge but aren't this week's picks.
       const items = eventThumbItems(events
-        .filter(event => event.k && event.d <= weekEndIso)
+        .filter(event => event.k && event.d <= weekEndIso && (event.oe || event.d) >= todayIso)
         .sort(Visualist.sortDesc)
         .slice(0, 5)
         .sort(Visualist.sortAsc));
