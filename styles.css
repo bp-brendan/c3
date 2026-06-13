@@ -182,7 +182,7 @@ body {
   }
 }
 
-/* the admin nav runs seven items deep; let it scroll rather than wrap */
+/* the admin nav runs nine items deep; let it scroll rather than wrap */
 [data-page="admin"] .site-nav {
   overflow-x: auto;
   max-width: 100%;
@@ -2340,6 +2340,155 @@ a.top-pick:hover,
   margin-top: 1rem;
   border-top: var(--hairline-light);
   padding-top: 1rem;
+}
+
+/* "Set status" button reveals the four moderation actions on click */
+.admin-action-menu {
+  position: relative;
+  display: inline-flex;
+}
+
+.admin-action-menu-list {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  min-width: 13rem;
+  padding: 0.35rem;
+  gap: 0.25rem;
+  background: #fff;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+.admin-action-menu-list[hidden] {
+  display: none;
+}
+
+.admin-action-menu-list .form-button {
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* full-listing preview overlay */
+.admin-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(1rem, 5vw, 3rem);
+  overflow-y: auto;
+}
+
+.admin-overlay[hidden] {
+  display: none;
+}
+
+.admin-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.admin-overlay-panel {
+  position: relative;
+  z-index: 1;
+  width: min(46rem, 100%);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.admin-overlay-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: var(--hairline-light);
+}
+
+.admin-overlay-open {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.admin-overlay-open[hidden] {
+  visibility: hidden;
+}
+
+.admin-overlay-x {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--content-ink-muted);
+}
+
+.admin-overlay-x:hover {
+  color: var(--content-ink);
+}
+
+.admin-overlay-body {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+body.admin-overlay-open {
+  overflow: hidden;
+}
+
+.admin-full-preview-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.25rem;
+  border-radius: 4px;
+}
+
+.admin-full-preview-title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.admin-full-preview-venue,
+.admin-full-preview-when,
+.admin-full-preview-address {
+  margin: 0.2rem 0;
+}
+
+.admin-full-preview-desc {
+  margin: 1rem 0;
+}
+
+.admin-full-preview-tags {
+  margin-top: 1rem;
+  color: var(--content-ink-muted);
+  font-size: 0.85rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .admin-message {

@@ -382,9 +382,11 @@ a nonprofit supporting the Chicago arts community.`;
       const adminActive = isAdmin
         ? (location.hash || '#pending').replace(/^#/, '')
         : '';
-      const queueTabs = new Set(['pending', 'scheduled', 'draft', 'approved', 'passed']);
       const adminItems = [
-        { key: 'pending', label: 'Queue' },
+        { key: 'pending', label: 'Pending' },
+        { key: 'unpublished', label: 'Unpublished' },
+        { key: 'published', label: 'Published' },
+        { key: 'archive', label: 'Archive' },
         { key: 'all', label: 'Events' },
         { key: 'create', label: 'Create' },
         { key: 'funlines', label: 'Taglines' },
@@ -400,7 +402,7 @@ a nonprofit supporting the Chicago arts community.`;
             <nav class="site-nav" aria-label="Primary">
               ${isAdmin
                 ? adminItems.map(item => {
-                  const activeTab = item.key === 'pending' ? queueTabs.has(adminActive) : adminActive === item.key;
+                  const activeTab = adminActive === item.key;
                   return `<a href="${item.href || `#${item.key}`}" data-admin-tab="${item.key}" class="${activeTab ? 'active' : ''}">${item.label}</a>`;
                 }).join('')
                 : navItems.map(item => page === 'home' && item.key === 'today'

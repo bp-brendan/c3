@@ -42,13 +42,9 @@
     </section>
 
     <section class="view admin-view" id="view-queue" aria-labelledby="admin-queue-title" hidden>
-      <div class="admin-view-head">
-        <h1 class="day-heading" id="admin-queue-title">New Items Queue</h1>
-        <div class="admin-summary" data-admin-summary></div>
-      </div>
-      <div class="admin-tabs" data-admin-status-tabs></div>
+      <h1 class="visually-hidden" id="admin-queue-title">Submissions</h1>
       <div class="admin-queue" data-admin-queue></div>
-      <p class="view-empty" data-admin-empty hidden>No submissions in this queue.</p>
+      <p class="view-empty" data-admin-empty hidden>Nothing here right now.</p>
     </section>
 
     <section class="view admin-view admin-events" id="view-events" aria-labelledby="admin-events-title" hidden>
@@ -153,6 +149,17 @@
     </section>
   </main>
 
+  <div class="admin-overlay" data-admin-overlay hidden>
+    <div class="admin-overlay-backdrop" data-admin-overlay-close></div>
+    <div class="admin-overlay-panel" role="dialog" aria-modal="true" aria-label="Full listing preview">
+      <div class="admin-overlay-bar">
+        <a class="admin-overlay-open" data-admin-overlay-open href="#" target="_blank" rel="noopener" hidden>Open in new tab</a>
+        <button type="button" class="admin-overlay-x" data-admin-overlay-close aria-label="Close preview">&times;</button>
+      </div>
+      <div class="admin-overlay-body" data-admin-overlay-body></div>
+    </div>
+  </div>
+
   <footer class="site-footer" data-visualist-footer></footer>
 
   <!-- scripts live at the end of the body so the static page paints first -->
@@ -205,20 +212,33 @@
     Visualist.renderChrome();
     Visualist.initHeaderAccordion();
 
-    const queueStatuses = ['pending', 'scheduled', 'draft', 'approved', 'passed'];
+    // Underlying submission statuses, grouped into the four queue tabs shown in
+    // the admin nav. The raw status values are unchanged (publish.js still keys
+    // on 'approved'); 'archived' is an additive value for retired/parked items.
+    const queueGroups = {
+      pending:     { label: 'Pending',     statuses: ['pending'] },
+      unpublished: { label: 'Unpublished', statuses: ['draft', 'scheduled'] },
+      published:   { label: 'Published',   statuses: ['approved'] },
+      archive:     { label: 'Archive',     statuses: ['passed', 'archived'] }
+    };
+    const groupKeys = Object.keys(queueGroups);
+    const groupForStatus = status =>
+      groupKeys.find(key => queueGroups[key].statuses.includes(status)) || 'pending';
+    // per-card status pill labels (one per raw status)
     const queueLabels = {
       pending: 'Pending',
       scheduled: 'Scheduled',
-      draft: 'Drafts',
-      approved: 'Approved',
-      passed: 'Passed'
+      draft: 'Draft',
+      approved: 'Published',
+      passed: 'Not approved',
+      archived: 'Archived'
     };
-    const viewKeys = new Set([...queueStatuses, 'all', 'create', 'funlines', 'settings', 'login']);
+    const viewKeys = new Set([...groupKeys, 'all', 'create', 'funlines', 'settings', 'login']);
     const isAuthed = () => Boolean(state.session);
     const state = {
       session: null,
       submissions: [],
-      activeQueue: queueStatuses.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'pending',
+      activeQueue: groupKeys.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'pending',
       // admin CRUD scope, independent of the public limit_to_2026 setting:
       // true = 2026 onward (incl. future), false = every year ever
       eventScope2026: true,
@@ -238,9 +258,7 @@
       settings: document.getElementById('view-settings')
     };
     const queue = document.querySelector('[data-admin-queue]');
-    const summary = document.querySelector('[data-admin-summary]');
     const queueEmpty = document.querySelector('[data-admin-empty]');
-    const statusTabs = document.querySelector('[data-admin-status-tabs]');
     const eventList = document.querySelector('[data-admin-events]');
     const eventCount = document.querySelector('[data-admin-events-count]');
     const eventSearch = document.getElementById('admin-event-search');
@@ -530,6 +548,55 @@
         </div>
       </article>`;
 
+    // a fuller "as the public detail page sees it" render for the overlay:
+    // hero image, full description, venue/address/on-view, tags.
+    const fullPreviewHtml = event => {
+      const when = `${escapeHtml(event.d || '')}${event.w ? `, ${escapeHtml(event.w)}` : ''}`;
+      const tags = (event.g || []).map(Visualist.tagLabel).filter(Boolean);
+      return `
+        <article class="admin-full-preview">
+          ${event.i ? `<img class="admin-full-preview-image" src="${escapeHtml(event.i)}" alt="">` : ''}
+          <h1 class="admin-full-preview-title">${escapeHtml(event.t || 'Untitled')}${event.k ? ' <span class="top-pick">Top V</span>' : ''}</h1>
+          ${event.v ? `<p class="admin-full-preview-venue">${event.vu ? `<a href="${escapeHtml(event.vu)}" target="_blank" rel="noopener">${escapeHtml(event.v)}</a>` : escapeHtml(event.v)}</p>` : ''}
+          ${when.trim() ? `<p class="admin-full-preview-when">${when}</p>` : ''}
+          ${event.o ? Visualist.onViewHtml(event) : ''}
+          ${event.a ? `<p class="admin-full-preview-address">${event.m ? `<a href="${escapeHtml(event.m)}" target="_blank" rel="noopener">${escapeHtml(event.a)}</a>` : escapeHtml(event.a)}</p>` : ''}
+          ${event.x ? `<div class="admin-full-preview-desc">${event.x}</div>` : ''}
+          ${tags.length ? `<p class="admin-full-preview-tags">${tags.map(t => escapeHtml(t)).join(' · ')}</p>` : ''}
+          ${event.u ? `<p class="admin-full-preview-link"><a href="${escapeHtml(event.u)}" target="_blank" rel="noopener">Official link</a></p>` : ''}
+        </article>`;
+    };
+
+    const overlay = document.querySelector('[data-admin-overlay]');
+    const overlayBody = document.querySelector('[data-admin-overlay-body]');
+    const overlayOpen = document.querySelector('[data-admin-overlay-open]');
+    const closeOverlay = () => {
+      overlay.hidden = true;
+      overlayBody.innerHTML = '';
+      document.body.classList.remove('admin-overlay-open');
+    };
+    const openFullPreview = event => {
+      overlayBody.innerHTML = fullPreviewHtml(event);
+      // a live, published event has a real detail page; otherwise fall back to
+      // the official source URL. No external target means nothing to open.
+      const href = event.status === 'approved' ? Visualist.eventHref(event) : (event.u || '');
+      if (href) {
+        overlayOpen.href = href;
+        overlayOpen.hidden = false;
+      } else {
+        overlayOpen.hidden = true;
+      }
+      overlay.hidden = false;
+      document.body.classList.add('admin-overlay-open');
+      Visualist.openExternalLinks(overlayBody);
+    };
+    overlay.addEventListener('click', event => {
+      if (event.target.closest('[data-admin-overlay-close]')) closeOverlay();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !overlay.hidden) closeOverlay();
+    });
+
     const renderFormPreview = (form, target) => {
       const event = Visualist.submissionToEvent({ ...blankSubmission(), ...formPatch(form) });
       event.k = form.querySelector('input[name="topPick"]')?.checked ? 1 : 0;
@@ -556,44 +623,32 @@
               <label class="submit-field">
                 <span>Publish at</span>
                 <input name="publishAt" type="datetime-local" value="${valueAttr(datetimeLocalValue(submission.publishAt))}">
+                <span class="admin-help">A future date with “Approve &amp; publish” schedules it.</span>
               </label>
             </div>
             <div class="admin-actions">
-              <button class="form-button" type="button" data-preview-submission>Preview</button>
-              <button class="form-button" type="submit" data-action="save">Save Edits</button>
-              <button class="form-button form-button-primary" type="submit" data-action="approve">Publish Now</button>
-              <button class="form-button" type="submit" data-action="schedule">Schedule</button>
-              <button class="form-button" type="submit" data-action="draft">Draft</button>
-              <button class="form-button form-button-pass" type="submit" data-action="pass" formnovalidate>Pass</button>
-              ${submission.status === 'approved' ? `<a class="event-source-link" href="${escapeHtml(Visualist.eventHref(event))}" target="_blank" rel="noopener">Live view</a>` : ''}
+              <button class="form-button" type="button" data-preview-submission>Preview card</button>
+              <button class="form-button" type="button" data-preview-full>Full preview</button>
+              <button class="form-button form-button-primary" type="submit" data-action="save">Save edits</button>
+              <span class="admin-action-menu" data-action-menu>
+                <button class="form-button" type="button" data-action-menu-toggle aria-haspopup="true" aria-expanded="false">Set status ▾</button>
+                <span class="admin-action-menu-list" data-action-menu-list hidden>
+                  <button class="form-button" type="submit" data-action="approve">Approve &amp; publish</button>
+                  <button class="form-button" type="submit" data-action="draft">Approve &amp; draft</button>
+                  <button class="form-button" type="submit" data-action="pass" formnovalidate>Do not approve</button>
+                  <button class="form-button" type="submit" data-action="archive" formnovalidate>Archive</button>
+                </span>
+              </span>
             </div>
             <div class="admin-preview" hidden></div>
           </form>
         </article>`;
     };
 
-    const statusCounts = () => state.submissions.reduce((memo, item) => {
-      memo[item.status] = (memo[item.status] || 0) + 1;
-      return memo;
-    }, {});
-
-    const renderStatusTabs = () => {
-      const counts = statusCounts();
-      statusTabs.innerHTML = queueStatuses.map(status => `
-        <button type="button" data-queue-status="${status}" class="${state.activeQueue === status ? 'active' : ''}">
-          ${queueLabels[status]} <span>${counts[status] || 0}</span>
-        </button>
-      `).join('');
-    };
-
     const renderQueue = () => {
-      const counts = statusCounts();
-      summary.innerHTML = queueStatuses
-        .map(status => `<span>${counts[status] || 0} ${queueLabels[status]}</span>`)
-        .join('');
-      renderStatusTabs();
+      const statuses = queueGroups[state.activeQueue]?.statuses || ['pending'];
       const visible = state.submissions
-        .filter(item => item.status === state.activeQueue)
+        .filter(item => statuses.includes(item.status))
         .sort((a, b) => String(b.submittedAt || '').localeCompare(String(a.submittedAt || '')));
       queue.innerHTML = visible.map(submissionCard).join('');
       queueEmpty.hidden = visible.length > 0;
@@ -865,25 +920,23 @@
       if (rawHash.startsWith('focus-')) {
         focusId = decodeURIComponent(rawHash.slice('focus-'.length));
         const sub = state.submissions.find(item => item.id === focusId);
-        if (sub && queueStatuses.includes(sub.status)) state.activeQueue = sub.status;
+        if (sub) state.activeQueue = groupForStatus(sub.status);
       }
       const hash = focusId ? state.activeQueue : rawHash;
       const target = viewKeys.has(hash) ? hash : (isAuthed() ? state.activeQueue : 'login');
-      if (queueStatuses.includes(target)) state.activeQueue = target;
+      if (groupKeys.includes(target)) state.activeQueue = target;
       const showLogin = !isAuthed() || target === 'login';
       views.login.hidden = !showLogin;
-      views.queue.hidden = showLogin || !queueStatuses.includes(target);
+      views.queue.hidden = showLogin || !groupKeys.includes(target);
       views.all.hidden = showLogin || target !== 'all';
       views.create.hidden = showLogin || target !== 'create';
       views.funlines.hidden = showLogin || target !== 'funlines';
       views.settings.hidden = showLogin || target !== 'settings';
       document.querySelectorAll('[data-admin-tab]').forEach(link => {
-        const key = link.dataset.adminTab;
-        const active = key === 'pending' ? queueStatuses.includes(target) : key === target;
+        const active = link.dataset.adminTab === target;
         link.classList.toggle('active', active);
         link.toggleAttribute('aria-current', active);
       });
-      renderStatusTabs();
       if (target === 'funlines') renderTaglines();
       if (target === 'settings') renderSettings();
       // the events table isn't loaded at boot (admin loadData uses events:false);
@@ -892,7 +945,7 @@
         if (!state.eventsLoaded && !state.eventsLoading) reloadEvents();
         else renderEvents();
       }
-      if (queueStatuses.includes(target)) renderQueue();
+      if (groupKeys.includes(target)) renderQueue();
       if (focusId && !showLogin) scrollToSubmission(focusId);
     };
 
@@ -944,19 +997,43 @@
       paintAdminView();
     };
 
-    statusTabs.addEventListener('click', event => {
-      const button = event.target.closest('[data-queue-status]');
-      if (!button) return;
-      history.replaceState(null, '', `#${button.dataset.queueStatus}`);
-      paintAdminView();
+    const closeActionMenus = except => {
+      queue.querySelectorAll('[data-action-menu-list]').forEach(list => {
+        if (list === except) return;
+        list.hidden = true;
+        const toggle = list.parentElement.querySelector('[data-action-menu-toggle]');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    };
+    document.addEventListener('click', event => {
+      if (!event.target.closest('[data-action-menu]')) closeActionMenus();
     });
 
     queue.addEventListener('click', event => {
-      const button = event.target.closest('[data-preview-submission]');
-      if (!button) return;
-      const form = button.closest('form');
-      const preview = form.querySelector('.admin-preview');
-      renderFormPreview(form, preview);
+      const menuToggle = event.target.closest('[data-action-menu-toggle]');
+      if (menuToggle) {
+        const list = menuToggle.parentElement.querySelector('[data-action-menu-list]');
+        const open = list.hidden;
+        closeActionMenus(open ? list : null);
+        list.hidden = !open;
+        menuToggle.setAttribute('aria-expanded', String(open));
+        return;
+      }
+      const cardPreview = event.target.closest('[data-preview-submission]');
+      if (cardPreview) {
+        const form = cardPreview.closest('form');
+        renderFormPreview(form, form.querySelector('.admin-preview'));
+        return;
+      }
+      const fullPreview = event.target.closest('[data-preview-full]');
+      if (fullPreview) {
+        const form = fullPreview.closest('form');
+        const submission = state.submissions.find(item => item.id === form.dataset.submissionId);
+        const event_ = Visualist.submissionToEvent({ ...(submission || blankSubmission()), ...formPatch(form) });
+        event_.k = form.querySelector('input[name="topPick"]')?.checked ? 1 : 0;
+        event_.status = submission?.status || 'pending';
+        openFullPreview(event_);
+      }
     });
 
     queue.addEventListener('submit', async event => {
@@ -967,12 +1044,11 @@
       const patch = formPatch(form);
       const now = new Date().toISOString();
       if (action === 'approve') {
-        patch.status = 'approved';
-        patch.approvedAt = now;
-        patch.passedAt = '';
-      } else if (action === 'schedule') {
-        patch.status = 'scheduled';
-        patch.approvedAt = '';
+        // a future publish-at schedules instead of going live immediately
+        const when = patch.publishAt ? new Date(patch.publishAt).getTime() : 0;
+        const scheduled = when && when > Date.now();
+        patch.status = scheduled ? 'scheduled' : 'approved';
+        patch.approvedAt = scheduled ? '' : now;
         patch.passedAt = '';
       } else if (action === 'draft') {
         patch.status = 'draft';
@@ -980,6 +1056,10 @@
         patch.passedAt = '';
       } else if (action === 'pass') {
         patch.status = 'passed';
+        patch.passedAt = now;
+        patch.approvedAt = '';
+      } else if (action === 'archive') {
+        patch.status = 'archived';
         patch.passedAt = now;
         patch.approvedAt = '';
       }
