@@ -69,9 +69,9 @@
           <span>To</span>
           <input id="admin-event-to" type="date">
         </label>
-        <label class="submit-field admin-check-field" for="admin-event-2026">
+        <label class="submit-field admin-check-field" for="admin-event-2026" title="Uncheck to load every year in the archive">
           <input id="admin-event-2026" type="checkbox" checked>
-          <span>2026 only</span>
+          <span>2026 onward</span>
         </label>
       </div>
       <div class="admin-event-list" data-admin-events></div>
@@ -204,7 +204,9 @@
       session: null,
       submissions: [],
       activeQueue: queueStatuses.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'pending',
-      eventScope2026: window.SITE_SETTINGS?.limit_to_2026 !== false,
+      // admin CRUD scope, independent of the public limit_to_2026 setting:
+      // true = 2026 onward (incl. future), false = every year ever
+      eventScope2026: true,
       eventsLoading: false,
       eventLimit: 160
     };
@@ -586,7 +588,9 @@
           .select('*')
           .order('event_date', { ascending: false })
           .order('id', { ascending: true });
-        if (state.eventScope2026) query = query.gte('event_date', '2026-01-01').lte('event_date', '2026-12-31');
+        // "2026 onward" keeps the admin snappy by skipping the deep archive,
+        // but never caps the top end — future-dated events must stay editable.
+        if (state.eventScope2026) query = query.gte('event_date', '2026-01-01');
         return query;
       };
       const { data, error } = await Visualist.fetchPagedRows(queryFactory);
@@ -718,8 +722,12 @@
         (!to || event.d <= to)
       );
       const shown = matches.slice(0, state.eventLimit);
-      eventCount.textContent = `${matches.length.toLocaleString()} events${matches.length > state.eventLimit ? `, showing ${state.eventLimit.toLocaleString()}` : ''}`;
-      eventList.innerHTML = shown.map(eventCard).join('');
+      const remaining = matches.length - shown.length;
+      eventCount.textContent = `${matches.length.toLocaleString()} events${remaining > 0 ? `, showing ${shown.length.toLocaleString()}` : ''}`;
+      eventList.innerHTML = shown.map(eventCard).join('') +
+        (remaining > 0
+          ? `<button type="button" class="form-button" data-events-show-more>Show ${Math.min(160, remaining).toLocaleString()} more · ${remaining.toLocaleString()} hidden</button>`
+          : '');
       Visualist.initAddressAutocomplete(eventList);
       Visualist.openExternalLinks(eventList);
       window.initRichText(eventList);
@@ -851,14 +859,17 @@
     });
 
     eventScope.addEventListener('change', async () => {
+      // purely an admin view filter now — it does not touch the public
+      // limit_to_2026 setting (that lives in the Settings tab)
       state.eventScope2026 = eventScope.checked;
-      document.getElementById('admin-limit-2026').checked = eventScope.checked;
-      try {
-        await saveSettings({ quiet: true });
-      } catch (error) {
-        eventCount.textContent = error.message || 'Could not save setting.';
-      }
+      state.eventLimit = 160;
       await reloadEvents();
+    });
+
+    eventList.addEventListener('click', event => {
+      if (!event.target.closest('[data-events-show-more]')) return;
+      state.eventLimit += 160;
+      renderEvents();
     });
 
     eventList.addEventListener('click', event => {
@@ -981,16 +992,11 @@
     const renderSettings = () => {
       document.getElementById('admin-limit-2026').checked = window.SITE_SETTINGS?.limit_to_2026 !== false;
       document.getElementById('admin-google-maps-key').value = window.SITE_SETTINGS?.google_maps_api_key || '';
-      eventScope.checked = document.getElementById('admin-limit-2026').checked;
-      state.eventScope2026 = eventScope.checked;
     };
     settingsForm.addEventListener('submit', async event => {
       event.preventDefault();
       try {
         await saveSettings();
-        eventScope.checked = document.getElementById('admin-limit-2026').checked;
-        state.eventScope2026 = eventScope.checked;
-        await reloadEvents();
       } catch (error) {
         message(settingsMessage, error.message || 'Could not save settings.', 'error');
       }
