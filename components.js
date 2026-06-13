@@ -1,6 +1,6 @@
 (function () {
   const footerText = `<strong>The Visualist</strong> is a calendar and archive for the visual arts in
-and around Chicago. It documents exhibitions, screenings, performances, and
+and around Chicago documenting exhibitions, screenings, performances, and
 independent art events across the city, kept current with help from a community
 that submits events year-round. The Visualist is a project of <a class="footer-inline-link"
 href="https://www.culturemath.org/" target="_blank" rel="noopener">culture/Math</a>, a
