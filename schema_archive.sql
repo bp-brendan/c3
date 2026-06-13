@@ -44,6 +44,14 @@ grant select on archive_months to anon;
 alter table events add column if not exists series_first boolean;
 alter table events add column if not exists series_last boolean;
 
+-- 4b) On-view end date: the human "On view through Saturday, March 21st" text
+--     needs the same app-level parse + year-rollover logic as the series
+--     flags. Storing the resolved ISO date once lets the frontend filter and
+--     cluster runs without re-parsing free text on every load. Backfill after
+--     imports (rows left null fall back to the client parser) with:
+--       cd scripts && npm run refresh-on-view-end -- --write
+alter table events add column if not exists on_view_end date;
+
 -- 5) Light list rows for the public pages: everything an event card shows,
 --    with the (often multi-KB, often raw-HTML) description reduced to a
 --    300-character plain-text excerpt (cards clamp to ~3 lines anyway), the
@@ -55,7 +63,7 @@ drop view if exists events_list;
 create view events_list with (security_invoker = true) as
   select
     id, title, permalink, path, venue, venue_url, address, map_url,
-    event_date, image_url, tags, time_window, on_view_through, top_pick,
+    event_date, image_url, tags, time_window, on_view_through, on_view_end, top_pick,
     series_first, series_last,
     left(regexp_replace(
       regexp_replace(coalesce(description, ''), '<[^>]+>', ' ', 'g'),

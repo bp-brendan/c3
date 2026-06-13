@@ -6,6 +6,7 @@
   "scripts": {
     "add-top-v-source-item": "node add_top_v_source_item.js",
     "audit-archive": "node audit_archive_completeness.js",
+    "refresh-on-view-end": "node refresh_on_view_end.js",
     "refresh-series-flags": "node refresh_series_flags.js",
     "refresh-top-v-flags": "node refresh_top_v_flags.js"
   },

@@ -154,6 +154,7 @@ let events = null;
         a: e.address,
         m: e.map_url,
         o: e.on_view_through,
+        oe: e.on_view_end || '',
         k: e.top_pick ? 1 : 0,
         // series flags stay undefined until the columns exist; the client
         // then derives them from the loaded window (scopeSeriesRuns)

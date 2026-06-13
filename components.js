@@ -1229,6 +1229,9 @@ if (tagline) {
 
   const rawOnViewEndIso = ev => {
     if (!ev) return '';
+    // prefer the date resolved once by refresh_on_view_end.js; the text parse
+    // below is the fallback for rows not yet backfilled (and merged entries)
+    if (ev.oe) return ev.oe >= (ev.d || '') ? ev.oe : '';
     let row = ev;
     if (!row.o) {
       const match = archiveMatch(row.t || '', row.p || row.u || '');
@@ -1411,6 +1414,8 @@ if (tagline) {
   const onViewEndIso = ev => {
     if (!ev) return '';
     if (ev._runScoped) return ''; // a series row matches its own date only
+    // prefer the stored end date over re-parsing the free-text on-view line
+    if (ev.oe) return ev.oe >= (ev.d || '') ? ev.oe : '';
     if (!ev.o) {
       // tag data lacks o on the homepage-merged entries; the archive has them
       const match = archiveMatch(ev.t || '', ev.p || ev.u || '');
