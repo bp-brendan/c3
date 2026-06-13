@@ -2202,41 +2202,50 @@ a.top-pick:hover,
   text-transform: uppercase;
 }
 
+/* queue status sub-tabs: same underline-tab language as the site nav, so the
+   admin reads as one system (was a boxed folder-tab style) */
 .admin-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0;
+  gap: clamp(0.7rem, 3.5vw, 2rem);
+  align-items: baseline;
   margin: 0 0 1.5rem;
-  border-bottom: 1px solid #d4d4d4;
 }
 
 .admin-tabs button {
-  border: 1px solid transparent;
-  border-bottom: 0;
+  border: 0;
+  border-bottom: 2px solid transparent; /* reserve space so .active doesn't shift the row */
   border-radius: 0;
-  padding: 0.7rem 0.95rem;
+  padding: 0 0 0.25em;
   background: transparent;
   color: var(--content-ink-muted);
   cursor: pointer;
   font: inherit;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.admin-tabs button.active {
-  background: #eeeeee;
-  border-left-color: #d4d4d4;
-  border-right-color: #d4d4d4;
-  border-top-color: #d4d4d4;
+.admin-tabs button:hover {
   color: var(--content-ink);
 }
 
+.admin-tabs button.active {
+  color: var(--content-ink);
+  border-bottom-color: var(--content-ink);
+}
+
+/* the per-tab count rides along a touch lighter than its label */
 .admin-tabs button span {
-  color: inherit;
+  color: var(--content-ink-muted);
   font: inherit;
   letter-spacing: inherit;
+}
+
+.admin-tabs button.active span {
+  color: var(--content-ink);
 }
 
 .admin-queue {
