@@ -1376,15 +1376,23 @@
       return date.toISOString().slice(0, 10);
     };
     const weekRangeHtml = (fromIso, toIso) => {
-      // openings within the window only — continuing on-view runs are no
-      // longer listed separately; an opening card already carries its own
-      // "On view through" line on the day the show opens
-      const openings = publicArchiveEvents
-        .filter(e => e.d >= fromIso && e.d <= toIso)
-        .sort(Visualist.sortAsc);
+      const runEnd = e => e._weekRunEnd || (e._weekRunEnd = Visualist.onViewEndIso(e) || e.d);
+      // openings within the window, grouped under their opening day
+      const openings = publicArchiveEvents.filter(e => e.d >= fromIso && e.d <= toIso);
+      // exhibitions that opened earlier but are still on view during the
+      // window — listed once as full cards, filed under the first day (they
+      // are on view then), so the week shows everything happening, not just
+      // what newly opens
+      const ongoing = publicArchiveEvents.filter(e => e.d < fromIso && runEnd(e) >= fromIso);
+      const items = [
+        ...openings.map(event => ({ event, day: event.d, rank: 0 })),
+        ...ongoing.map(event => ({ event, day: fromIso, rank: 1 }))
+      ].sort((a, b) =>
+        a.day.localeCompare(b.day) || (a.rank - b.rank) || Visualist.sortAsc(a.event, b.event)
+      );
       let lastDate = '';
-      return openings.map(event =>
-        `${event.d !== lastDate ? Visualist.dayHeadingHtml(lastDate = event.d) : ''}${eventCardHtml(event)}`
+      return items.map(({ event, day }) =>
+        `${day !== lastDate ? Visualist.dayHeadingHtml(lastDate = day) : ''}${eventCardHtml(event)}`
       ).join('');
     };
     const renderWeeks = () => {
