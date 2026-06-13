@@ -141,14 +141,34 @@ export const onRequestPost = async ({ request, env }) => {
   const resendKey = env.RESEND_API_KEY;
   if (resendKey) {
     const from = env.NOTIFY_FROM_EMAIL || 'The Visualist <notify@madewithbestpractice.com>';
-    const adminTo = env.NOTIFY_ADMIN_EMAIL || 'Visualistchicago@gmail.com';
     const adminBase = (env.ADMIN_BASE_URL || new URL(request.url).origin).replace(/\/+$/, '');
+
+    // Notification config lives on the settings row (recipient list + editable
+    // copy), edited in the admin Settings tab. settings is readable here with
+    // the insert key; fall back to the env/default recipient if it's unset.
+    let recipients = [];
+    let templates = {};
+    try {
+      const sRes = await fetch(`${supabaseUrl}/rest/v1/email_settings?id=eq.1&select=notify_recipients,email_templates`, {
+        headers: { apikey: insertKey, Authorization: `Bearer ${insertKey}` }
+      });
+      if (sRes.ok) {
+        const s = (await sRes.json())[0] || {};
+        if (Array.isArray(s.notify_recipients)) recipients = s.notify_recipients.filter(Boolean);
+        if (s.email_templates && typeof s.email_templates === 'object') templates = s.email_templates;
+      }
+    } catch (err) {
+      console.error('settings fetch failed', err);
+    }
+    if (!recipients.length) recipients = [env.NOTIFY_ADMIN_EMAIL || 'Visualistchicago@gmail.com'];
+
     try {
       email = await sendSubmissionEmails({
         key: resendKey,
         from,
-        adminTo,
-        queueUrl: `${adminBase}/admin.html#pending`,
+        recipients,
+        templates,
+        adminUrl: `${adminBase}/admin.html#focus-${encodeURIComponent(row.id)}`,
         title,
         venue: clip(row.venue, 200),
         eventDate: clip(row.event_date || row.exhibition_start || '', 40),

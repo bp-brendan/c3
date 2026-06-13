@@ -1,9 +1,10 @@
 (function () {
-  const footerText = `<strong>The Visualist</strong> is an all-volunteer effort, and more than just a
-list of dates and events on the internet. It's a really long list of
-dates and events for exhibitions, artist talks, receptions, festivals,
-panels, performances, readings, fairs, workshops, and curated content
-all kinds.`;
+  const footerText = `<strong>The Visualist</strong> is Chicago's go-to calendar and archive for the
+visual arts &mdash; exhibitions, screenings, performances, and all the artist-run
+happenings in between, gathered in one place. We're a hub for the people who
+make and love art around here, and a growing record of what the city's been up
+to. Run by the artist-service nonprofit culture/Math, we're in it to help
+Chicago's creative community keep its feet under it.`;
 
   // hosted_button_id from the PayPal form on thevisualist.org/about/
   const DONATE_URL = 'https://www.paypal.com/donate?hosted_button_id=947PHJMCQD9Q4';
@@ -1101,6 +1102,21 @@ if (tagline) {
             if (i === 0 && eventsToPublish.length > 1) {
                 parentEventId = published.id;
             }
+          }
+          // let the server email the submitter that their event is live (it
+          // re-reads the row and sends via Resend; needs the admin's token)
+          try {
+            const { data: sess } = await window.supabaseClient.auth.getSession();
+            const token = sess && sess.session && sess.session.access_token;
+            if (token) {
+              await fetch('/api/publish', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id, token })
+              });
+            }
+          } catch (err) {
+            console.error('publish notify failed', err);
           }
         }
 } catch (e) {

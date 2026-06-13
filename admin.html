@@ -131,6 +131,20 @@
           <span>Google Maps API Key</span>
           <input type="text" id="admin-google-maps-key" autocomplete="off">
         </label>
+
+        <div class="admin-settings-group">
+          <h2 class="admin-subhead">Notification recipients</h2>
+          <p class="admin-help">Email addresses that get notified when a new event is submitted.</p>
+          <div class="admin-recipient-list" data-admin-recipients></div>
+          <button type="button" class="form-button" data-add-recipient>Add recipient</button>
+        </div>
+
+        <div class="admin-settings-group">
+          <h2 class="admin-subhead">Email copy</h2>
+          <p class="admin-help">Edit the wording of each notification. Use the placeholders shown &mdash; the masthead, event card, and button are added automatically.</p>
+          <div class="admin-template-list" data-admin-templates></div>
+        </div>
+
         <div class="admin-actions">
           <button class="form-button form-button-primary" type="submit">Save Settings</button>
         </div>
@@ -200,6 +214,7 @@
       passed: 'Passed'
     };
     const viewKeys = new Set([...queueStatuses, 'all', 'create', 'funlines', 'settings', 'login']);
+    const isAuthed = () => Boolean(state.session);
     const state = {
       session: null,
       submissions: [],
@@ -208,7 +223,10 @@
       // true = 2026 onward (incl. future), false = every year ever
       eventScope2026: true,
       eventsLoading: false,
-      eventLimit: 160
+      eventsLoaded: false,
+      eventLimit: 160,
+      emailRecipients: [],
+      emailTemplates: {}
     };
 
     const views = {
@@ -238,6 +256,23 @@
     const taglinesMessage = document.querySelector('[data-admin-taglines-message]');
     const settingsForm = document.getElementById('settings-form');
     const settingsMessage = document.querySelector('[data-admin-settings-message]');
+    const recipientsEl = document.querySelector('[data-admin-recipients]');
+    const templatesEl = document.querySelector('[data-admin-templates]');
+
+    // Editable notification copy. These defaults mirror DEFAULT_TEMPLATES in
+    // functions/api/_email.js — keep them in sync; the server uses its own copy
+    // for any template an admin hasn't overridden, this just seeds the editor.
+    const EMAIL_TEMPLATE_DEFS = [
+      { key: 'admin_alert', label: 'Admin alert — new submission', placeholders: ['title', 'venue', 'date', 'submitter'],
+        subject: 'New submission: {{title}}',
+        body: 'A new event was submitted for review.\n\nSubmitted by {{submitter}}.' },
+      { key: 'confirmation', label: 'Submitter — submission received', placeholders: ['title', 'venue', 'date'],
+        subject: 'We received your event: {{title}}',
+        body: 'Thanks for submitting to The Visualist!\n\nAn editor will review your listing and it will appear on the calendar once approved — usually within a day or two. If anything needs a correction, just reply to this email.\n\n— The Visualist' },
+      { key: 'published', label: 'Submitter — event published', placeholders: ['title', 'venue', 'date'],
+        subject: 'Your event is live: {{title}}',
+        body: 'Good news — your event has been published on The Visualist calendar.\n\nThanks for sharing it with Chicago.\n\n— The Visualist' }
+    ];
 
     const escapeHtml = value => String(value || '')
       .replace(/&/g, '&amp;')
@@ -568,16 +603,93 @@
       window.initRichText(queue);
     };
 
+    const renderRecipients = () => {
+      const rows = state.emailRecipients.length ? state.emailRecipients : [''];
+      recipientsEl.innerHTML = rows.map((email, i) => `
+        <div class="admin-recipient-row">
+          <input type="email" name="recipient" value="${valueAttr(email)}" placeholder="name@example.com" autocomplete="off">
+          <button type="button" class="form-button form-button-pass" data-remove-recipient="${i}" aria-label="Remove recipient">Remove</button>
+        </div>`).join('');
+    };
+    const renderTemplates = () => {
+      templatesEl.innerHTML = EMAIL_TEMPLATE_DEFS.map(def => {
+        const saved = state.emailTemplates[def.key] || {};
+        const subject = saved.subject != null ? saved.subject : def.subject;
+        const body = saved.body != null ? saved.body : def.body;
+        return `
+          <div class="admin-template" data-template="${def.key}">
+            <h3 class="admin-template-title">${escapeHtml(def.label)}</h3>
+            <p class="admin-help">Placeholders: ${def.placeholders.map(p => `<code>{{${p}}}</code>`).join(' ')}</p>
+            <label class="submit-field">
+              <span>Subject</span>
+              <input type="text" name="subject" value="${valueAttr(subject)}">
+            </label>
+            <label class="submit-field">
+              <span>Body</span>
+              <textarea name="body" rows="6">${escapeHtml(body)}</textarea>
+            </label>
+          </div>`;
+      }).join('');
+    };
+    // read the email config off the settings row (the public app no longer
+    // selects these columns, so fetch them here when the tab opens)
+    const loadEmailConfig = async () => {
+      try {
+        const { data } = await window.supabaseClient
+          .from('email_settings').select('notify_recipients, email_templates').eq('id', 1).single();
+        state.emailRecipients = Array.isArray(data?.notify_recipients) ? data.notify_recipients.filter(Boolean) : [];
+        state.emailTemplates = (data?.email_templates && typeof data.email_templates === 'object') ? data.email_templates : {};
+      } catch {
+        state.emailRecipients = [];
+        state.emailTemplates = {};
+      }
+      renderRecipients();
+      renderTemplates();
+    };
+
     const saveSettings = async ({ quiet = false } = {}) => {
       const limit = document.getElementById('admin-limit-2026').checked;
       const googleKey = document.getElementById('admin-google-maps-key').value.trim();
-      const payload = { id: 1, limit_to_2026: limit, google_maps_api_key: googleKey };
-      const { error } = await window.supabaseClient.from('settings').upsert(payload);
+      const recipients = [...recipientsEl.querySelectorAll('input[name="recipient"]')]
+        .map(input => input.value.trim()).filter(Boolean);
+      const templates = {};
+      templatesEl.querySelectorAll('[data-template]').forEach(el => {
+        templates[el.dataset.template] = {
+          subject: el.querySelector('input[name="subject"]').value.trim(),
+          body: el.querySelector('textarea[name="body"]').value
+        };
+      });
+      const { error } = await window.supabaseClient.from('settings')
+        .upsert({ id: 1, limit_to_2026: limit, google_maps_api_key: googleKey });
       if (error) throw error;
-      window.SITE_SETTINGS = { ...(window.SITE_SETTINGS || {}), ...payload };
+      // recipient list + templates live in the admin-only email_settings table,
+      // never the public settings row
+      const { error: emailError } = await window.supabaseClient.from('email_settings')
+        .upsert({ id: 1, notify_recipients: recipients, email_templates: templates });
+      if (emailError) throw emailError;
+      state.emailRecipients = recipients;
+      state.emailTemplates = templates;
+      // keep the public-facing cache lean — only the two columns it uses
+      window.SITE_SETTINGS = { ...(window.SITE_SETTINGS || {}), limit_to_2026: limit, google_maps_api_key: googleKey };
       try { localStorage.setItem('visualist.settings.v1', JSON.stringify(window.SITE_SETTINGS)); } catch {}
       if (!quiet) message(settingsMessage, 'Settings saved.', 'success');
     };
+
+    recipientsEl.addEventListener('click', event => {
+      const remove = event.target.closest('[data-remove-recipient]');
+      if (!remove) return;
+      state.emailRecipients = [...recipientsEl.querySelectorAll('input[name="recipient"]')]
+        .map(input => input.value.trim())
+        .filter((_, i) => i !== Number(remove.dataset.removeRecipient));
+      renderRecipients();
+    });
+    document.querySelector('[data-add-recipient]').addEventListener('click', () => {
+      state.emailRecipients = [
+        ...[...recipientsEl.querySelectorAll('input[name="recipient"]')].map(input => input.value.trim()),
+        ''
+      ];
+      renderRecipients();
+    });
 
     const reloadEvents = async () => {
       state.eventsLoading = true;
@@ -600,6 +712,7 @@
         return;
       }
       window.ARCHIVE_EVENTS_2026 = Visualist.normalizeEvents((data || []).map(Visualist.eventFromRow));
+      state.eventsLoaded = true;
       renderEvents();
     };
 
@@ -733,11 +846,31 @@
       window.initRichText(eventList);
     };
 
+    // arriving from an admin-alert email link (#focus-<id>): route to that
+    // submission's queue tab and scroll/highlight its card once rendered
+    const scrollToSubmission = id => {
+      requestAnimationFrame(() => {
+        const form = queue.querySelector(`[data-submission-id="${(window.CSS && CSS.escape) ? CSS.escape(id) : id}"]`);
+        const card = form && form.closest('.admin-card');
+        if (!card) return;
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        card.classList.add('admin-card-focus');
+        setTimeout(() => card.classList.remove('admin-card-focus'), 2400);
+      });
+    };
+
     const paintAdminView = () => {
-      const hash = location.hash.slice(1);
-      const target = viewKeys.has(hash) ? hash : (state.session ? state.activeQueue : 'login');
+      const rawHash = location.hash.slice(1);
+      let focusId = '';
+      if (rawHash.startsWith('focus-')) {
+        focusId = decodeURIComponent(rawHash.slice('focus-'.length));
+        const sub = state.submissions.find(item => item.id === focusId);
+        if (sub && queueStatuses.includes(sub.status)) state.activeQueue = sub.status;
+      }
+      const hash = focusId ? state.activeQueue : rawHash;
+      const target = viewKeys.has(hash) ? hash : (isAuthed() ? state.activeQueue : 'login');
       if (queueStatuses.includes(target)) state.activeQueue = target;
-      const showLogin = !state.session || target === 'login';
+      const showLogin = !isAuthed() || target === 'login';
       views.login.hidden = !showLogin;
       views.queue.hidden = showLogin || !queueStatuses.includes(target);
       views.all.hidden = showLogin || target !== 'all';
@@ -753,8 +886,14 @@
       renderStatusTabs();
       if (target === 'funlines') renderTaglines();
       if (target === 'settings') renderSettings();
-      if (target === 'all') renderEvents();
+      // the events table isn't loaded at boot (admin loadData uses events:false);
+      // pull it the first time the Events view is opened, then reuse the cache
+      if (target === 'all') {
+        if (!state.eventsLoaded && !state.eventsLoading) reloadEvents();
+        else renderEvents();
+      }
       if (queueStatuses.includes(target)) renderQueue();
+      if (focusId && !showLogin) scrollToSubmission(focusId);
     };
 
     const loadSubmissions = async () => {
@@ -793,8 +932,8 @@
 
     const setSession = async session => {
       state.session = session;
-      document.body.classList.toggle('logged-out', !session);
-      if (!session) {
+      document.body.classList.toggle('logged-out', !isAuthed());
+      if (!isAuthed()) {
         if (location.hash !== '#login') history.replaceState(null, '', '#login');
         paintAdminView();
         return;
@@ -992,6 +1131,9 @@
     const renderSettings = () => {
       document.getElementById('admin-limit-2026').checked = window.SITE_SETTINGS?.limit_to_2026 !== false;
       document.getElementById('admin-google-maps-key').value = window.SITE_SETTINGS?.google_maps_api_key || '';
+      renderRecipients();
+      renderTemplates();
+      loadEmailConfig();
     };
     settingsForm.addEventListener('submit', async event => {
       event.preventDefault();

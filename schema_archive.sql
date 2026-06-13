@@ -152,3 +152,30 @@ create view events_list with (security_invoker = true) as
 alter view events_list set (security_invoker = true);
 
 grant select on events_list to anon;
+
+-- 6) Notification config: who receives the "new submission" alert and the
+--    editable subject/body copy for each notification email, edited in the
+--    admin Settings tab and read by the Cloudflare Pages email functions.
+--    Deliberately NOT on the public-readable settings table — recipient
+--    addresses are admin-only, so this lives behind RLS: anon gets nothing,
+--    signed-in admins read/write, and the email functions read it with the
+--    service-role key (which bypasses RLS). Templates default to '{}'; the
+--    functions fall back to built-in copy for any key not overridden.
+create table if not exists email_settings (
+  id                integer primary key default 1,
+  notify_recipients jsonb default '["Visualistchicago@gmail.com"]'::jsonb,
+  email_templates   jsonb default '{}'::jsonb
+);
+insert into email_settings (id) values (1) on conflict (id) do nothing;
+
+-- if an earlier draft added these to the public settings table, remove them
+alter table settings drop column if exists notify_recipients;
+alter table settings drop column if exists email_templates;
+
+alter table email_settings enable row level security;
+drop policy if exists "Admins read email settings"   on email_settings;
+drop policy if exists "Admins insert email settings" on email_settings;
+drop policy if exists "Admins update email settings" on email_settings;
+create policy "Admins read email settings"   on email_settings for select using (auth.role() = 'authenticated');
+create policy "Admins insert email settings" on email_settings for insert with check (auth.role() = 'authenticated');
+create policy "Admins update email settings" on email_settings for update using (auth.role() = 'authenticated');
