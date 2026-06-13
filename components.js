@@ -1,10 +1,8 @@
 (function () {
-  const footerText = `<strong>The Visualist</strong> is Chicago's go-to calendar and archive for the
-visual arts &mdash; exhibitions, screenings, performances, and all the artist-run
-happenings in between, gathered in one place. We're a hub for the people who
-make and love art around here, and a growing record of what the city's been up
-to. Run by the artist-service nonprofit culture/Math, we're in it to help
-Chicago's creative community keep its feet under it.`;
+  const footerText = `<strong>The Visualist</strong> is a calendar and archive for the visual arts in
+and around Chicago, documenting exhibitions, screenings, performances, and
+independent art events across the city. It is a project of culture/Math, a
+nonprofit dedicated to supporting the Chicago arts community.`;
 
   // hosted_button_id from the PayPal form on thevisualist.org/about/
   const DONATE_URL = 'https://www.paypal.com/donate?hosted_button_id=947PHJMCQD9Q4';
