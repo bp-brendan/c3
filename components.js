@@ -1,7 +1,9 @@
 (function () {
   const footerText = `<strong>The Visualist</strong> is a calendar and archive for the visual arts in
-and around Chicago, documenting exhibitions, screenings, performances, and
-independent art events across the city. It is a project of culture/Math, a
+and around Chicago. It documents exhibitions, screenings, performances, and
+independent art events across the city, kept current with help from a community
+that submits events year-round. The Visualist is a project of <a class="footer-inline-link"
+href="https://www.culturemath.org/" target="_blank" rel="noopener">culture/Math</a>, a
 nonprofit dedicated to supporting the Chicago arts community.`;
 
   // hosted_button_id from the PayPal form on thevisualist.org/about/
