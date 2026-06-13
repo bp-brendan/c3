@@ -1057,17 +1057,18 @@ if (tagline) {
     return refreshed.find(row => row.id === saved.id) || saved;
   };
 
-  // public submit page: store the raw submission for review. Let insert errors
-  // propagate so the form can tell the visitor it did not go through, instead
-  // of redirecting to a false "thank you".
-  const saveSubmittedEvent = async submission => {
+  // public submit page: hand the submission to /api/submit, which verifies the
+  // Turnstile token, stores it server-side (the submissions table no longer
+  // takes public writes), and sends the emails. Errors propagate so the form
+  // can tell the visitor it did not go through, instead of a false "thank you".
+  const saveSubmittedEvent = async (submission, token) => {
     const clean = cleanSubmission(submission);
-    if (window.supabaseClient) {
-      const { error } = await window.supabaseClient
-        .from('submissions')
-        .insert([submissionToRow(clean)]);
-      if (error) throw error;
-    }
+    const res = await fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token: token || '', row: submissionToRow(clean) })
+    });
+    if (!res.ok) throw new Error(`submit failed: ${res.status}`);
     return clean;
   };
 

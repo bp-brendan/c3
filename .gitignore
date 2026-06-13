@@ -1,6 +1,8 @@
 *.zip
 node_modules/
 .DS_Store
+.dev.vars
+.wrangler/
 recovery/data/processed/events.ndjson
 recovery/data/processed/events.csv
 recovery/

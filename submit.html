@@ -14,6 +14,8 @@
   <link rel="preload" href="components.js" as="script">
   <link rel="preload" href="supabaseClient.js" as="script">
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <!-- Cloudflare Turnstile (bot check on the submit form) -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body data-page="submit">
 
@@ -134,6 +136,10 @@
         </fieldset>
 
         <div class="submit-actions">
+          <!-- Turnstile site key (public). Its matching secret is set as the
+               TURNSTILE_SECRET_KEY secret on the Pages project, where the
+               /api/submit function verifies tokens. -->
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADjx-qL4fQBkk9GP"></div>
           <button class="form-button form-button-primary" type="submit">Submit</button>
           <p>Goes to review</p>
         </div>
@@ -223,26 +229,18 @@
       const submitButton = form.querySelector('button[type="submit"]');
       submitButton.disabled = true;
       try {
+        // Turnstile drops its token into a hidden input the widget renders; when
+        // the script hasn't loaded the token is blank and the server skips the
+        // check (or rejects, once it's configured to enforce).
+        const token = (form.querySelector('[name="cf-turnstile-response"]') || {}).value || '';
         const submission = await Visualist.submissionFromForm(form);
-        await Visualist.saveSubmittedEvent(submission);
-        // fire-and-forget: confirmation + admin alert; keepalive survives the
-        // redirect, and a mail hiccup must never block the submission
-        try {
-          fetch('/api/notify', {
-            method: 'POST',
-            keepalive: true,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              title: submission.title,
-              venue: submission.venue,
-              eventDate: submission.eventDate || submission.exhibitionStart || '',
-              contactEmail: submission.contactEmail
-            })
-          }).catch(() => {});
-        } catch {}
+        // /api/submit verifies Turnstile, stores the submission server-side, and
+        // sends the confirmation + admin emails — one round trip, no public DB write
+        await Visualist.saveSubmittedEvent(submission, token);
         location.href = 'submitted.html';
       } catch {
         alert('This browser could not save the submission for review. Please try a smaller image or send the event by email.');
+        if (window.turnstile) try { window.turnstile.reset(); } catch {}
       } finally {
         submitButton.disabled = false;
       }

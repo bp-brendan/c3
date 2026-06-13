@@ -122,7 +122,9 @@ let events = null;
             return { data: data || [], error };
           };
         if (!isAdmin) {
-          ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events', '*', true)));
+          // the events_list view ships 500-char excerpts (~10x lighter), so
+          // This Week + Top V paint without waiting on full descriptions
+          ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events_list', '*', true)));
         }
         if (isAdmin || eventsError || !events || !events.length) {
           ({ data: events, error: eventsError } = await fetchRows(() => buildQuery('events', '*', false)));

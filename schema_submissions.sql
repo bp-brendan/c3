@@ -53,17 +53,22 @@ ALTER TABLE submissions ADD COLUMN IF NOT EXISTS publish_at   TIMESTAMPTZ;
 CREATE INDEX IF NOT EXISTS submissions_status_idx
   ON submissions (status, created_at DESC);
 
--- Row-Level Security: the public may submit; only signed-in admins may read,
+-- Row-Level Security: NO public writes. The public form posts to the
+-- /api/submit Pages Function, which verifies a Cloudflare Turnstile token and
+-- then inserts with the service-role key (service_role bypasses RLS), so no
+-- INSERT policy is granted to the anon key. Only signed-in admins may read,
 -- edit (approve/pass), or delete.
+--
+-- NOTE on rollout ordering: deploy /api/submit with SUPABASE_SERVICE_ROLE_KEY
+-- set on the Pages project BEFORE running this — once the old public INSERT
+-- policy is dropped, anon-key inserts (the previous client path) stop working.
 ALTER TABLE submissions ENABLE ROW LEVEL SECURITY;
 
+-- Drop the legacy public INSERT policy if it exists; we no longer recreate it.
 DROP POLICY IF EXISTS "Anyone can submit an event"  ON submissions;
 DROP POLICY IF EXISTS "Admins can view submissions"  ON submissions;
 DROP POLICY IF EXISTS "Admins can update submissions" ON submissions;
 DROP POLICY IF EXISTS "Admins can delete submissions" ON submissions;
-
-CREATE POLICY "Anyone can submit an event"
-  ON submissions FOR INSERT WITH CHECK ( true );
 
 CREATE POLICY "Admins can view submissions"
   ON submissions FOR SELECT USING ( auth.role() = 'authenticated' );
