@@ -30,10 +30,12 @@
   display: none !important;
 }
 
-/* a hash-addressed view (#archive) keeps the default This Week listings
-   from painting before showView assigns the hidden attributes */
-html[data-boot-view] #view-this-week {
-  display: none !important;
+/* during boot, override [hidden] to display only the view being booted */
+html[data-boot-view="today"] #view-today,
+html[data-boot-view="this-week"] #view-this-week,
+html[data-boot-view="next-week"] #view-next-week,
+html[data-boot-view="archive"] #view-archive {
+  display: block !important;
 }
 
 body {
