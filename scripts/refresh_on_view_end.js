@@ -1,3 +1,9 @@
+// Backfill / audit the events.on_view_end column from the free-text
+// on_view_through line. The schema_archive.sql trigger now keeps this column
+// current on every write, so routine runs aren't needed — this stays as a
+// dry-run auditor (run with no flags to confirm the trigger's parse still
+// matches, expecting "0 rows would change") and a fallback for setups without
+// the trigger.
 const { createClient } = require('@supabase/supabase-js');
 
 const SUPABASE_URL = 'https://avxlexkqcxamixyhyxcd.supabase.co';

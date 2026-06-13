@@ -50,7 +50,85 @@ alter table events add column if not exists series_last boolean;
 --     cluster runs without re-parsing free text on every load. Backfill after
 --     imports (rows left null fall back to the client parser) with:
 --       cd scripts && npm run refresh-on-view-end -- --write
+--     (the trigger in 4c keeps it current automatically; the script is just
+--      a dry-run auditor / fallback for setups without the trigger).
 alter table events add column if not exists on_view_end date;
+
+-- 4c) Keep on_view_end in sync automatically. parse_on_view_end resolves the
+--     free-text on-view line to an ISO date, mirroring components.js onViewEnd
+--     exactly: the year rolls over for a plausible span (a winter opening
+--     closing in spring); a close 7+ months "later" is a scrape artifact, not
+--     a real run; and a run can't close before it opens. A BEFORE trigger
+--     recomputes it on every insert/update (admin edits + scraper imports), so
+--     the value is always right in the DB and the frontend never has to parse.
+create or replace function parse_on_view_end(txt text, base date)
+  returns date
+  language plpgsql
+  immutable
+as $$
+declare
+  m text[];
+  mon int;
+  base_month int;
+  rolled boolean;
+  yr int;
+  result date;
+begin
+  if txt is null or base is null then
+    return null;
+  end if;
+  m := regexp_match(txt, 'through\s+(?:[A-Za-z]+,\s*)?([A-Za-z]+)\s+(\d{1,2})', 'i');
+  if m is null then
+    return null;
+  end if;
+  mon := case lower(m[1])
+    when 'january' then 1 when 'february' then 2 when 'march' then 3
+    when 'april' then 4 when 'may' then 5 when 'june' then 6
+    when 'july' then 7 when 'august' then 8 when 'september' then 9
+    when 'october' then 10 when 'november' then 11 when 'december' then 12
+    else null end;
+  if mon is null then
+    return null;
+  end if;
+  base_month := extract(month from base)::int;
+  rolled := mon < base_month;
+  if rolled and (12 - base_month + mon) > 6 then
+    return null;  -- a close that "rolls" more than ~half a year is an artifact
+  end if;
+  yr := extract(year from base)::int + (case when rolled then 1 else 0 end);
+  begin
+    result := make_date(yr, mon, m[2]::int);
+  exception when others then
+    return null;  -- malformed day (e.g. "February 30th")
+  end;
+  if result < base then
+    return null;  -- a run can't close before it opens
+  end if;
+  return result;
+end;
+$$;
+
+create or replace function events_set_on_view_end()
+  returns trigger
+  language plpgsql
+as $$
+begin
+  new.on_view_end := parse_on_view_end(new.on_view_through, new.event_date);
+  return new;
+end;
+$$;
+
+drop trigger if exists trg_events_on_view_end on events;
+create trigger trg_events_on_view_end
+  before insert or update of on_view_through, event_date on events
+  for each row
+  execute function events_set_on_view_end();
+
+-- one-time backfill for rows that predate the trigger (idempotent; the
+-- trigger maintains every write from here on)
+update events
+  set on_view_end = parse_on_view_end(on_view_through, event_date)
+  where on_view_end is distinct from parse_on_view_end(on_view_through, event_date);
 
 -- 5) Light list rows for the public pages: everything an event card shows,
 --    with the (often multi-KB, often raw-HTML) description reduced to a
