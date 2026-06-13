@@ -1280,11 +1280,13 @@ body {
 
 /* the Top V peek heading is the card pill scaled up: identical em padding,
    spacing, and radius — only the font size differs */
-.week-peek-title a.top-pick {
-  margin-left: 0;
-  font-size: 1.6rem;
-  color: #ffffff;
+.top-pick-heading-link {
+  color: #41b6e6; /* Chicago-flag stripe blue */
   text-decoration: none;
+}
+
+.top-pick-heading-link:hover {
+  text-decoration: underline;
 }
 
 .week-peek-copy {
@@ -1314,7 +1316,7 @@ body {
   display: inline-block;
   vertical-align: middle;
   margin-left: 0.5em;
-  padding: 0.25em 0.55em;
+  padding: 0.4em 1.2em; /* same as add event button */
   background: #41b6e6; /* Chicago-flag stripe blue */
   color: #ffffff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1323,11 +1325,50 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  /* em so larger renditions (the Top V peek heading) stay proportional;
-     equals the old 2px at this font size */
-  border-radius: 0.23em;
+  border-radius: 0; /* hard corners */
   white-space: nowrap;
   text-decoration: none;
+}
+
+/* ---- Top V Popover ------------------------------------------- */
+.top-pick-popover {
+  position: absolute;
+  background: var(--content-paper);
+  border: 2px solid #41b6e6; /* Chicago blue */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.8rem 1rem;
+  z-index: 2000;
+  max-width: 290px;
+  color: var(--content-ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  border-radius: 0; /* hard corners */
+}
+
+.top-pick-popover .popover-text {
+  margin: 0 0 0.5rem;
+}
+
+.top-pick-popover .popover-text a {
+  color: #41b6e6;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.top-pick-popover .popover-link {
+  display: inline-block;
+  color: #41b6e6;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.top-pick-popover .popover-link:hover {
+  text-decoration: underline;
 }
 
 /* inside card titles, .event-title a would otherwise paint the badge ink-on-ink */

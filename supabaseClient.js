@@ -21,6 +21,7 @@ const normalizeSiteSettings = row => {
 window.Visualist = window.Visualist || {};
 window.Visualist.loadData = async function(callback, options = {}) {
   const shouldLoadEvents = options.events !== false;
+  const deferMeta = !shouldLoadEvents && options.deferMeta !== false;
   // Paint the chrome before touching the network, seeded from the previous
   // visit's cached taglines and settings — waiting for Supabase pops the
   // header in late and shoves the whole page down on every navigation.
@@ -40,7 +41,7 @@ window.Visualist.loadData = async function(callback, options = {}) {
     window.Visualist.initHeaderAccordion();
   }
 
-  try {
+  const refreshMeta = async () => {
     // Settings and taglines share one round trip; events follow because the
     // query shape depends on settings.limit_to_2026.
     const [settingsRes, taglinesRes] = await Promise.all([
@@ -65,6 +66,23 @@ window.Visualist.loadData = async function(callback, options = {}) {
       localStorage.setItem(TAGLINES_CACHE_KEY, JSON.stringify(window.TAGLINES));
       localStorage.setItem(SETTINGS_CACHE_KEY, JSON.stringify(window.SITE_SETTINGS));
     } catch {}
+  };
+
+  if (!shouldLoadEvents) {
+    window.ARCHIVE_EVENTS_2026 = window.ARCHIVE_EVENTS_2026 || [];
+  }
+
+  try {
+    const metaPromise = refreshMeta();
+    if (deferMeta) {
+      if (callback) callback();
+      metaPromise.catch(err => {
+        console.error('Failed to refresh Visualist metadata:', err);
+      });
+      return;
+    }
+
+    await metaPromise;
 
     // Admin edits full descriptions, so it reads the events table whole.
     // Public pages read the events_list view (500-char plain-text excerpts,

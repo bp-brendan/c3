@@ -2209,6 +2209,66 @@ if (tagline) {
 
   if (typeof document !== 'undefined') {
     document.addEventListener('error', event => degradeBrokenImage(event.target), true);
+
+    // Global listener for Top V tag popovers
+    document.addEventListener('click', event => {
+      const tag = event.target.closest('.top-pick, .top-pick-heading-link');
+      if (!tag) {
+        // If clicking outside, close any open popover
+        const openPopover = document.querySelector('.top-pick-popover');
+        if (openPopover && !event.target.closest('.top-pick-popover')) {
+          openPopover.remove();
+        }
+        return;
+      }
+
+      // If it's a click on a Top V tag/heading link
+      event.preventDefault();
+      event.stopPropagation();
+
+      const existing = document.querySelector('.top-pick-popover');
+      if (existing) {
+        const openedBy = existing.dataset.openedBy;
+        existing.remove();
+        // If clicked the same tag, we just close it and return
+        if (openedBy === tag.textContent + tag.getBoundingClientRect().left) {
+          return;
+        }
+      }
+
+      // Create new popover
+      const popover = document.createElement('div');
+      popover.className = 'top-pick-popover';
+      popover.dataset.openedBy = tag.textContent + tag.getBoundingClientRect().left;
+      popover.innerHTML = `
+        <p class="popover-text">The top 5 visual arts events happening in Chicagoland this week, published in collaboration with <a href="https://badatsports.com/author/visualist/" target="_blank" rel="noopener">Bad at Sports</a>.</p>
+        <a href="${localHref('tag.html?tag=top-v')}" class="popover-link">View all Top V picks →</a>
+      `;
+      document.body.appendChild(popover);
+
+      // Position popover
+      const rect = tag.getBoundingClientRect();
+      const scrollX = window.scrollX;
+      const scrollY = window.scrollY;
+
+      // Position below the tag, centered horizontally relative to it
+      let top = rect.bottom + scrollY + 8;
+      let left = rect.left + scrollX + (rect.width / 2) - 145; // 145 is half of 290px max-width
+
+      // Keep within viewport boundaries
+      if (left < 10) left = 10;
+      if (left + 290 > window.innerWidth - 10) {
+        left = window.innerWidth - 300;
+      }
+
+      // If there isn't enough space below, show it above the tag
+      if (rect.bottom + 150 > window.innerHeight && rect.top > 150) {
+        top = rect.top + scrollY - popover.offsetHeight - 8;
+      }
+
+      popover.style.top = `${top}px`;
+      popover.style.left = `${left}px`;
+    });
   }
 
   const fetchPagedRows = async (buildQuery, pageSize = 1000) => {
