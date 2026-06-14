@@ -479,10 +479,11 @@ body {
   gap: 0.75rem;
 }
 
-.tag-panel-filter {
+.tag-panel-filter,
+.category-panel-filter {
   flex: 1;
-  min-width: 0;
-  border: 1px solid #d4d4d4;
+  background: var(--surface-main);
+  border: 1px solid var(--border-soft);
   border-radius: 3px;
   padding: 0.55em 0.8em;
   font: inherit;
@@ -491,7 +492,8 @@ body {
   outline: none;
 }
 
-.tag-panel-filter:focus {
+.tag-panel-filter:focus,
+.category-panel-filter:focus {
   border-color: var(--content-ink);
 }
 
