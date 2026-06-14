@@ -619,7 +619,7 @@
     .order('title', { ascending: true })
     .limit(400);
   const todayFetchPromise = initialViewName === 'today'
-    ? todayDayQuery('events_list').then(res => (res.error || !res.data) ? todayDayQuery('events') : res)
+    ? todayDayQuery('events')
     : null;
   // Top V only needs its flagged picks, not the whole year of events, so give
   // it its own tiny query that paints independently of the full archive fetch
@@ -1686,8 +1686,7 @@
           painted = true;
         }
       } catch {}
-      let { data, error } = await (todayFetchPromise || todayDayQuery('events_list'));
-      if (error || !data) ({ data, error } = await todayDayQuery('events'));
+      let { data, error } = await (todayFetchPromise || todayDayQuery('events'));
       if (error || !data) {
         if (!painted) paintToday(todayIso, []);
         return;
