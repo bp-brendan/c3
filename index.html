@@ -1141,7 +1141,7 @@
         }
       }
       if (!categoryList.childElementCount) {
-        categoryList.innerHTML = ART_CATEGORIES.map(s => TAGS_2026.find(t => t.s === s)).filter(Boolean).map(t =>
+        categoryList.innerHTML = ART_CATEGORIES.map(s => TAGS_2026.find(t => t.s === s)).filter(Boolean).sort((a, b) => a.n.localeCompare(b.n)).map(t =>
           `<button type="button" class="tag-chip" data-slug="${t.s}">${escapeHtml(t.n)} <span>${t.c}</span></button>`
         ).join('');
         for (const chip of categoryList.children) {
