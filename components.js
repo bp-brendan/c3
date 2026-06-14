@@ -2264,7 +2264,7 @@ if (tagline) {
       popover.className = 'top-pick-popover';
       popover.dataset.openedBy = tag.textContent + tag.getBoundingClientRect().left;
       popover.innerHTML = `
-        <p class="popover-text">The top 5 visual arts events happening in Chicagoland this week, published in collaboration with <a href="https://badatsports.com/author/visualist/" target="_blank" rel="noopener">Bad at Sports</a>.</p>
+        <p class="popover-text">The top 5 visual arts events happening in Chicagoland this week. <em>Published in collaboration with <a href="https://badatsports.com/author/visualist/" target="_blank" rel="noopener">Bad at Sports</a>.</em></p>
         <a href="${localHref('tag.html?tag=top-v')}" class="popover-link">View all Top V picks →</a>
       `;
       document.body.appendChild(popover);

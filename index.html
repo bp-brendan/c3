@@ -878,7 +878,7 @@
           <div class="event-date">
             <span class="event-date-day"><a href="tag.html?tag=top-v" class="top-pick-heading-link">Top V</a></span>
           </div>
-          <p class="week-peek-copy">The top 5 visual arts events happening in Chicagoland ${startStr} – ${endStr}<br>published in collaboration with <a href="https://badatsports.com/author/visualist/" target="_blank" rel="noopener" class="inline-link">Bad at Sports</a>.</p>
+          <p class="week-peek-copy">The top 5 visual arts events happening in Chicagoland ${startStr} – ${endStr}<br><em>Published in collaboration with <a href="https://badatsports.com/author/visualist/" target="_blank" rel="noopener" class="inline-link">Bad at Sports</a>.</em></p>
           ${thumbRiverHtml(items)}
         `;
         initThumbRivers(container);
@@ -1376,23 +1376,15 @@
       return date.toISOString().slice(0, 10);
     };
     const weekRangeHtml = (fromIso, toIso) => {
-      const runEnd = e => e._weekRunEnd || (e._weekRunEnd = Visualist.onViewEndIso(e) || e.d);
-      // openings within the window, grouped under their opening day
-      const openings = publicArchiveEvents.filter(e => e.d >= fromIso && e.d <= toIso);
-      // exhibitions that opened earlier but are still on view during the
-      // window — listed once as full cards, filed under the first day (they
-      // are on view then), so the week shows everything happening, not just
-      // what newly opens
-      const ongoing = publicArchiveEvents.filter(e => e.d < fromIso && runEnd(e) >= fromIso);
-      const items = [
-        ...openings.map(event => ({ event, day: event.d, rank: 0 })),
-        ...ongoing.map(event => ({ event, day: fromIso, rank: 1 }))
-      ].sort((a, b) =>
-        a.day.localeCompare(b.day) || (a.rank - b.rank) || Visualist.sortAsc(a.event, b.event)
-      );
+      // openings within the window only — continuing on-view runs are no
+      // longer listed separately; an opening card already carries its own
+      // "On view through" line on the day the show opens
+      const openings = publicArchiveEvents
+        .filter(e => e.d >= fromIso && e.d <= toIso)
+        .sort(Visualist.sortAsc);
       let lastDate = '';
-      return items.map(({ event, day }) =>
-        `${day !== lastDate ? Visualist.dayHeadingHtml(lastDate = day) : ''}${eventCardHtml(event)}`
+      return openings.map(event =>
+        `${event.d !== lastDate ? Visualist.dayHeadingHtml(lastDate = event.d) : ''}${eventCardHtml(event)}`
       ).join('');
     };
     const renderWeeks = () => {
