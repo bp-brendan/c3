@@ -4,16 +4,39 @@ import sys
 
 archive_js_path = "/Users/brendan/Documents/GitHub/c3/archiveevents2026.js"
 
-ART_CATEGORIES = {
-    "photography", "painting", "performance", "sculpture", "installation", 
-    "video", "film", "printmaking", "drawing", "architecture", "collage", 
-    "ceramics", "design", "new-media", "sound-art", "mixed-media", 
-    "animation", "digital-art", "fiber-art", "illustration", "jewelry", 
-    "glass", "watercolor", "pottery", "print", "video-art", "performance-art", 
-    "graphic-design"
-}
-
 import unicodedata
+
+ART_CATEGORIES = {
+    "photography": r"\bphotography\b",
+    "painting": r"\bpaintings?\b",
+    "performance": r"\bperformances?\b",
+    "sculpture": r"\bsculptures?\b",
+    "installation": r"\binstallations?\b",
+    "video": r"\bvideos?\b",
+    "film": r"\bfilms?\b",
+    "printmaking": r"\bprintmaking\b",
+    "drawing": r"\bdrawings?\b",
+    "architecture": r"\barchitecture\b",
+    "collage": r"\bcollages?\b",
+    "ceramics": r"\bceramics?\b",
+    "design": r"\bdesign(s|ers?)?\b",
+    "new-media": r"\bnew media\b",
+    "sound-art": r"\bsound art\b",
+    "mixed-media": r"\bmixed media\b",
+    "animation": r"\banimations?\b",
+    "digital-art": r"\bdigital art\b",
+    "fiber-art": r"\bfiber art\b",
+    "illustration": r"\billustrations?\b",
+    "jewelry": r"\bjewelry\b",
+    "glass": r"\bglass\b",
+    "watercolor": r"\bwatercolors?\b",
+    "pottery": r"\bpottery\b",
+    "print": r"\bprints?\b",
+    "video-art": r"\bvideo art\b",
+    "performance-art": r"\bperformance art\b",
+    "graphic-design": r"\bgraphic design\b"
+}
+COMPILED_CATS = {k: re.compile(v, re.IGNORECASE) for k, v in ART_CATEGORIES.items()}
 
 def slugify(name):
     name = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
@@ -33,11 +56,13 @@ archive_events = json.loads(json_str)
 patched_count = 0
 for event in archive_events:
     tags = event.get("g", [])
+    title = event.get("t", "")
+    desc = event.get("x", "")
+    text_to_search = title + " " + " ".join(tags) + " " + desc
     cats = []
-    for tag in tags:
-        slug = slugify(tag)
-        if slug in ART_CATEGORIES:
-            cats.append(tag)
+    for slug, pattern in COMPILED_CATS.items():
+        if pattern.search(text_to_search):
+            cats.append(slug)
     if cats:
         event["c"] = sorted(set(cats))
         patched_count += 1

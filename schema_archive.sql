@@ -134,11 +134,45 @@ update events
 alter table events add column if not exists categories text[];
 
 update events
-  set categories = array(
-    select t from unnest(tags) as t 
-    where lower(t) in ('photography', 'painting', 'performance', 'sculpture', 'installation', 'video', 'film', 'printmaking', 'drawing', 'architecture', 'collage', 'ceramics', 'design', 'new media', 'sound art', 'mixed media', 'animation', 'digital art', 'fiber art', 'illustration', 'jewelry', 'glass', 'watercolor', 'pottery', 'print', 'video art', 'performance art', 'graphic design')
-  )
-  where categories is null;
+  set categories = (
+    select array_agg(cat) from (
+      select unnest(array['photography', 'painting', 'performance', 'sculpture', 'installation', 'video', 'film', 'printmaking', 'drawing', 'architecture', 'collage', 'ceramics', 'design', 'new-media', 'sound-art', 'mixed-media', 'animation', 'digital-art', 'fiber-art', 'illustration', 'jewelry', 'glass', 'watercolor', 'pottery', 'print', 'video-art', 'performance-art', 'graphic-design']) as cat
+    ) c
+    where (
+      coalesce(title, '') || ' ' || coalesce(array_to_string(tags, ' '), '') || ' ' || coalesce(description, '')
+    ) ~* (
+      case 
+        when cat = 'photography' then '\yphotography\y'
+        when cat = 'painting' then '\ypaintings?\y'
+        when cat = 'performance' then '\yperformances?\y'
+        when cat = 'sculpture' then '\ysculptures?\y'
+        when cat = 'installation' then '\yinstallations?\y'
+        when cat = 'video' then '\yvideos?\y'
+        when cat = 'film' then '\yfilms?\y'
+        when cat = 'printmaking' then '\yprintmaking\y'
+        when cat = 'drawing' then '\ydrawings?\y'
+        when cat = 'architecture' then '\yarchitecture\y'
+        when cat = 'collage' then '\ycollages?\y'
+        when cat = 'ceramics' then '\yceramics?\y'
+        when cat = 'design' then '\ydesign(s|ers?)?\y'
+        when cat = 'new-media' then '\ynew media\y'
+        when cat = 'sound-art' then '\ysound art\y'
+        when cat = 'mixed-media' then '\ymixed media\y'
+        when cat = 'animation' then '\yanimations?\y'
+        when cat = 'digital-art' then '\ydigital art\y'
+        when cat = 'fiber-art' then '\yfiber art\y'
+        when cat = 'illustration' then '\yillustrations?\y'
+        when cat = 'jewelry' then '\yjewelry\y'
+        when cat = 'glass' then '\yglass\y'
+        when cat = 'watercolor' then '\ywatercolors?\y'
+        when cat = 'pottery' then '\ypottery\y'
+        when cat = 'print' then '\yprints?\y'
+        when cat = 'video-art' then '\yvideo art\y'
+        when cat = 'performance-art' then '\yperformance art\y'
+        when cat = 'graphic-design' then '\ygraphic design\y'
+      end
+    )
+  );
 
 -- 5) Light list rows for the public pages: everything an event card shows,
 --    with the (often multi-KB, often raw-HTML) description reduced to a
