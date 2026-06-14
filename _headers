@@ -1,3 +1,15 @@
+# App code and styles ship on every deploy and are referenced from the HTML
+# without a version hash. Without this, Cloudflare's default 4h Browser Cache
+# TTL serves stale JS/CSS against fresh (max-age=0) HTML on the first load of a
+# session — old listing styles, missing descriptions — until a hard refresh.
+# max-age=0 + must-revalidate makes the browser revalidate every load; the
+# ETag turns unchanged files into a cheap 304, so this costs a round trip, not
+# a re-download.
+/*.js
+  Cache-Control: public, max-age=0, must-revalidate
+/*.css
+  Cache-Control: public, max-age=0, must-revalidate
+
 # Images are write-once uploads; let browsers keep them for a week
 /media/*
   Cache-Control: public, max-age=604800
