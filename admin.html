@@ -149,17 +149,6 @@
     </section>
   </main>
 
-  <div class="admin-overlay" data-admin-overlay hidden>
-    <div class="admin-overlay-backdrop" data-admin-overlay-close></div>
-    <div class="admin-overlay-panel" role="dialog" aria-modal="true" aria-label="Full listing preview">
-      <div class="admin-overlay-bar">
-        <a class="admin-overlay-open" data-admin-overlay-open href="#" target="_blank" rel="noopener" hidden>Open in new tab</a>
-        <button type="button" class="admin-overlay-x" data-admin-overlay-close aria-label="Close preview">&times;</button>
-      </div>
-      <div class="admin-overlay-body" data-admin-overlay-body></div>
-    </div>
-  </div>
-
   <footer class="site-footer" data-visualist-footer></footer>
 
   <!-- scripts live at the end of the body so the static page paints first -->
@@ -567,35 +556,30 @@
         </article>`;
     };
 
-    const overlay = document.querySelector('[data-admin-overlay]');
-    const overlayBody = document.querySelector('[data-admin-overlay-body]');
-    const overlayOpen = document.querySelector('[data-admin-overlay-open]');
-    const closeOverlay = () => {
-      overlay.hidden = true;
-      overlayBody.innerHTML = '';
-      document.body.classList.remove('admin-overlay-open');
+    // open the full listing (as the public detail page renders it) in a new
+    // tab; unpublished submissions have no live page, so we render the detail
+    // into the new window from the submission's current form values
+    const openFullDetail = event => {
+      const win = window.open('', '_blank');
+      if (!win) return; // popup blocked
+      win.document.write(`<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>${escapeHtml(event.t || 'Preview')} — full detail preview</title>
+        <link rel="stylesheet" href="${location.origin}/styles.css">
+        </head><body data-page="event"><main class="site-main" style="max-width:48rem;margin:0 auto;padding:2rem 1.25rem;">
+        <p style="font:700 0.72rem/1.4 'Helvetica Neue',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#999;margin:0 0 1.5rem;">Preview — ${escapeHtml(event.status || 'pending')}, not the live page</p>
+        ${fullPreviewHtml(event)}
+        </main></body></html>`);
+      win.document.close();
     };
-    const openFullPreview = event => {
-      overlayBody.innerHTML = fullPreviewHtml(event);
-      // a live, published event has a real detail page; otherwise fall back to
-      // the official source URL. No external target means nothing to open.
-      const href = event.status === 'approved' ? Visualist.eventHref(event) : (event.u || '');
-      if (href) {
-        overlayOpen.href = href;
-        overlayOpen.hidden = false;
-      } else {
-        overlayOpen.hidden = true;
-      }
-      overlay.hidden = false;
-      document.body.classList.add('admin-overlay-open');
-      Visualist.openExternalLinks(overlayBody);
+    // build a short-key event from a card's current form values (+ saved row)
+    const eventFromCard = form => {
+      const submission = state.submissions.find(item => item.id === form.dataset.submissionId);
+      const event = Visualist.submissionToEvent({ ...(submission || blankSubmission()), ...formPatch(form) });
+      event.k = form.querySelector('input[name="topPick"]')?.checked ? 1 : 0;
+      event.status = submission?.status || 'pending';
+      return event;
     };
-    overlay.addEventListener('click', event => {
-      if (event.target.closest('[data-admin-overlay-close]')) closeOverlay();
-    });
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && !overlay.hidden) closeOverlay();
-    });
 
     const renderFormPreview = (form, target) => {
       const event = Visualist.submissionToEvent({ ...blankSubmission(), ...formPatch(form) });
@@ -607,38 +591,42 @@
 
     const submissionCard = submission => {
       const event = Visualist.submissionToEvent(submission);
+      // the listing preview is rendered up front so the admin can scan and act
+      // without opening anything; edit fields stay collapsed for a clean queue
       return `
         <article class="admin-card" data-status="${escapeHtml(submission.status)}">
           <form data-submission-id="${escapeHtml(submission.id)}">
             <div class="admin-card-head">
-              <div>
-                <p class="admin-status">${escapeHtml(queueLabels[submission.status] || submission.status)}${submission.publishAt ? ` · ${escapeHtml(formatDateTime(submission.publishAt))}` : ''}</p>
-                <h2>${escapeHtml(submission.title || 'Untitled')}</h2>
-                <p class="admin-card-meta">Submitted ${escapeHtml(formatDateTime(submission.submittedAt))}</p>
-              </div>
-              ${event.i ? `<img src="${escapeHtml(event.i)}" alt="" loading="lazy" decoding="async" fetchpriority="low">` : ''}
+              <p class="admin-status">${escapeHtml(queueLabels[submission.status] || submission.status)}${submission.publishAt ? ` · ${escapeHtml(formatDateTime(submission.publishAt))}` : ''}</p>
+              <p class="admin-card-meta">Submitted ${escapeHtml(formatDateTime(submission.submittedAt))}</p>
             </div>
-            <div class="admin-fields">${submissionRows(submission)}</div>
-            <div class="admin-publish-controls">
-              <label class="submit-field">
-                <span>Publish at</span>
-                <input name="publishAt" type="datetime-local" value="${valueAttr(datetimeLocalValue(submission.publishAt))}">
-                <span class="admin-help">A future date with “Approve &amp; publish” schedules it.</span>
-              </label>
-            </div>
-            <div class="admin-actions">
-              <button class="form-button" type="button" data-preview-submission>Preview card</button>
-              <button class="form-button" type="button" data-preview-full>Full preview</button>
-              <button class="form-button form-button-primary" type="submit" data-action="save">Save edits</button>
+            <div class="admin-card-preview" data-card-preview>${eventPreviewHtml(event)}</div>
+            <div class="admin-actions admin-review-actions">
+              <button class="form-button form-button-primary admin-accept" type="submit" data-action="approve" formnovalidate>Accept &amp; publish</button>
               <span class="admin-action-menu" data-action-menu>
-                <button class="form-button" type="button" data-action-menu-toggle aria-haspopup="true" aria-expanded="false">Set status ▾</button>
+                <button class="form-button" type="button" data-action-menu-toggle aria-haspopup="true" aria-expanded="false">More ▾</button>
                 <span class="admin-action-menu-list" data-action-menu-list hidden>
-                  <button class="form-button" type="submit" data-action="approve">Approve &amp; publish</button>
-                  <button class="form-button" type="submit" data-action="draft">Approve &amp; draft</button>
+                  <button class="form-button" type="submit" data-action="draft" formnovalidate>Approve &amp; draft</button>
                   <button class="form-button" type="submit" data-action="pass" formnovalidate>Do not approve</button>
                   <button class="form-button" type="submit" data-action="archive" formnovalidate>Archive</button>
                 </span>
               </span>
+              <button class="form-button" type="button" data-preview-full>Full detail ↗</button>
+              <button class="form-button" type="button" data-edit-toggle>Edit</button>
+            </div>
+            <div class="admin-edit" data-admin-edit hidden>
+              <div class="admin-fields">${submissionRows(submission)}</div>
+              <div class="admin-publish-controls">
+                <label class="submit-field">
+                  <span>Publish at</span>
+                  <input name="publishAt" type="datetime-local" value="${valueAttr(datetimeLocalValue(submission.publishAt))}">
+                  <span class="admin-help">A future date with “Accept &amp; publish” schedules it.</span>
+                </label>
+              </div>
+              <div class="admin-actions">
+                <button class="form-button" type="button" data-preview-submission>Refresh preview</button>
+                <button class="form-button form-button-primary" type="submit" data-action="save">Save edits</button>
+              </div>
             </div>
             <div class="admin-preview" hidden></div>
           </form>
@@ -652,10 +640,9 @@
         .sort((a, b) => String(b.submittedAt || '').localeCompare(String(a.submittedAt || '')));
       queue.innerHTML = visible.map(submissionCard).join('');
       queueEmpty.hidden = visible.length > 0;
-      Visualist.initAddressAutocomplete(queue);
-      Visualist.initNeighborhoodTypeahead(queue);
+      // only the pre-loaded previews need wiring up front (external links +
+      // clamp/Read-more); each card's editor inits lazily when its Edit opens
       Visualist.openExternalLinks(queue);
-      window.initRichText(queue);
     };
 
     const renderRecipients = () => {
@@ -1019,20 +1006,32 @@
         menuToggle.setAttribute('aria-expanded', String(open));
         return;
       }
-      const cardPreview = event.target.closest('[data-preview-submission]');
-      if (cardPreview) {
-        const form = cardPreview.closest('form');
-        renderFormPreview(form, form.querySelector('.admin-preview'));
+      const editToggle = event.target.closest('[data-edit-toggle]');
+      if (editToggle) {
+        const form = editToggle.closest('form');
+        const pane = form.querySelector('[data-admin-edit]');
+        pane.hidden = !pane.hidden;
+        editToggle.classList.toggle('active', !pane.hidden);
+        editToggle.textContent = pane.hidden ? 'Edit' : 'Close edit';
+        // initialise the editor widgets the first time the pane is opened, not
+        // for every collapsed card at render time
+        if (!pane.hidden && !pane.dataset.ready) {
+          pane.dataset.ready = '1';
+          Visualist.initAddressAutocomplete(pane);
+          Visualist.initNeighborhoodTypeahead(pane);
+          window.initRichText(pane);
+        }
+        return;
+      }
+      const refresh = event.target.closest('[data-preview-submission]');
+      if (refresh) {
+        const form = refresh.closest('form');
+        renderFormPreview(form, form.querySelector('[data-card-preview]'));
         return;
       }
       const fullPreview = event.target.closest('[data-preview-full]');
       if (fullPreview) {
-        const form = fullPreview.closest('form');
-        const submission = state.submissions.find(item => item.id === form.dataset.submissionId);
-        const event_ = Visualist.submissionToEvent({ ...(submission || blankSubmission()), ...formPatch(form) });
-        event_.k = form.querySelector('input[name="topPick"]')?.checked ? 1 : 0;
-        event_.status = submission?.status || 'pending';
-        openFullPreview(event_);
+        openFullDetail(eventFromCard(fullPreview.closest('form')));
       }
     });
 

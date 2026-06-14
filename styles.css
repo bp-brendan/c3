@@ -2278,11 +2278,44 @@ a.top-pick:hover,
 }
 
 .admin-card-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 7rem;
-  gap: 1rem;
-  align-items: start;
-  margin-bottom: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.9rem;
+}
+
+/* the listing preview rendered up front so the queue is scannable at a glance */
+.admin-card-preview {
+  margin: 0;
+}
+.admin-card-preview .event-card {
+  margin: 0;
+}
+
+/* primary review row: Accept stays left, secondary actions float right */
+.admin-review-actions {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: var(--hairline-light);
+}
+.admin-accept {
+  margin-right: auto;
+}
+
+/* edit fields stay collapsed until the admin opens them */
+.admin-edit {
+  margin-top: 1rem;
+  padding-top: 1.25rem;
+  border-top: var(--hairline-light);
+}
+.admin-edit[hidden] {
+  display: none;
+}
+[data-edit-toggle].active {
+  background: var(--content-ink);
+  color: var(--content-paper);
 }
 
 .admin-card-head h2 {
@@ -2374,81 +2407,7 @@ a.top-pick:hover,
   text-align: left;
 }
 
-/* full-listing preview overlay */
-.admin-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: clamp(1rem, 5vw, 3rem);
-  overflow-y: auto;
-}
-
-.admin-overlay[hidden] {
-  display: none;
-}
-
-.admin-overlay-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-}
-
-.admin-overlay-panel {
-  position: relative;
-  z-index: 1;
-  width: min(46rem, 100%);
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-}
-
-.admin-overlay-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  border-bottom: var(--hairline-light);
-}
-
-.admin-overlay-open {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.admin-overlay-open[hidden] {
-  visibility: hidden;
-}
-
-.admin-overlay-x {
-  margin-left: auto;
-  border: 0;
-  background: transparent;
-  font-size: 1.6rem;
-  line-height: 1;
-  cursor: pointer;
-  color: var(--content-ink-muted);
-}
-
-.admin-overlay-x:hover {
-  color: var(--content-ink);
-}
-
-.admin-overlay-body {
-  padding: clamp(1rem, 3vw, 2rem);
-}
-
-body.admin-overlay-open {
-  overflow: hidden;
-}
-
+/* full-listing preview rendered into a new tab (Full detail ↗) */
 .admin-full-preview-image {
   display: block;
   width: 100%;
