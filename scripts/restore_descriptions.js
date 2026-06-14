@@ -62,6 +62,13 @@ const stripOfficialTail = s => s
 const ALLOWED = new Set(['p', 'br', 'strong', 'b', 'em', 'i', 'u', 's', 'a', 'ul', 'ol', 'li']);
 const sanitizeHtml = raw => {
   let html = String(raw || '');
+  // scraped WordPress copy carries Unicode line/paragraph separators (U+2028/
+  // U+2029), NEL, and stray control chars; drop them so they never land in the
+  // DB or SQL (Supabase's editor flags them, and they can break JS string
+  // literals / rendering)
+  html = html
+    .replace(/[\u2028\u2029\u0085]/g, ' ')
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '');
   // unwrap the WordPress body container if present
   const m = html.match(/<div class="event-single-body">([\s\S]*?)<\/div>\s*$/i);
   if (m) html = m[1];

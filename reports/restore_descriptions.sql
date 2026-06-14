@@ -1084,16 +1084,6 @@ UPDATE events SET description = '<p>Curated by Kelvin Larue Taylor</p>
  <p>
  <a>Official Website</a>
  </p>' WHERE id = '40cc66b8-8bbe-4fa6-b471-7d4bf59b2bba';
-UPDATE events SET description = '<p>Juried by Laurie Hogin, acclaimed artist and Professor at the University of Illinois Urbana-Champaign, the 2026 Rockford Midwestern is the 78th presentation of the museum’s survey exhibition of new work by contemporary artists from across the Midwest. Hogin selected 98 pieces by 98 artists to be included in this year’s exhibition. First choice and two Juror’s Choice awards will be announced at the opening – as well as the 2026 Dean Alan Olson Purchase Award, to the artist whose work has been selected for inclusion in the Rockford Art Museum permanent collection.</p>
-<p>Exhibition-related programs—<br>
-July 23, 5:30 PM | Lecture with exhibiting artist (free, public)<br>
-September 11, 9 – 10 AM | Coffee with the Curator (free, public)</p>
-<p>The Rockford Midwestern Biennial is organized by Executive Director/Chief Curator Carrie Johnson and juried by Laurie Hogin. This exhibition and its related educational programming are sponsored by the Dean Alan Olson Foundation and partially supported by a grant from the Illinois Arts Council Agency.</p>
-<p><strong>Featured artists:</strong> Luke Achterberg, Deidre Argyle, Nelson Armour, Karen Azarnia, Heidi Bailey, Patricia Baldwin Seggebruch, Michael Banning, Audrey Barcio, Jason Beck, Victoria Bein, Lauren Bertelson, Lois Bielefeld, Jill Birschbach, Rebecca Bissi, Sharon Bladholm, Mark Blassage, Jennifer Bock-Nelson, Mark Brautigam, Deborah Brooks, H. Buchholz, Roy Cacek, Rebecca Carlton, Danielle Casali, Ethan Chan, Bob Cholke, Bobbye Cochran, Brent Cole, Bridget Conn, Benjamin Cook, Kevin Corotis, Dragana Crnjak, Gary Cudworth, Geornica Daniels, Anita Dawson, Jacob Del Negro, Sessah DelaRue, Brian DePauli, Jason Dunda, Darlys Ewoldt, Deirdre Fox, Rhonda Gates, Shelley Gilchrist, Tanya Gill, Rita Grendze, Camryn Gulledge, Denis Hagen, Fletcher Hayes, Alan Hobscheid, Ellen Holtzblatt, Larsen Husby, Jeff Ignatius, Shane-Jahi Jackson, Noah Kashiani, Paula Kloczkowski Luberda, Kara Knutson, John Kurman, Diane Lamboley, Isaiah Lee, Braydon Letsinger, Diane Levesque, Tanya Lunina, Lisa Madden, Ellen Mahaffy, Valerie Mangion, T. Michael Martin, Madeline Martin, Aeron Maxwell, Don McCurdy, Tom McHale, Nancie King Mertz, Renee Meyer Ernst, Ryan Peter Miller, Zach Mory, Therese Mulgrew, Louisa Murzyn, Catherine Nelson, Dan Oliver, Robert C Osborne, Mark Pack, Mielle Park, Lorraine Peltz, Denise Presnell, Jessie Rebik, Jason Reblando, CoCo Ree Lemery, Kimberly Rodey, Kurt Schabell, Edwin Shelton, Dan Simoneau, DeAnna Skedel, Kathy Snow Stratton, Shalen Stephenson, Dan Swanson, Tori Tasch, Ron Testa, Ged Trias, Mark Weller, A M Yeager</p>
-<p>Rockford Art Museum aims to provide an accessible, engaging, and educational experience to all visitors. <em><strong><a href="https://rockfordartmuseum.org/visit/accessibility/" target="_blank" rel="noopener">Click here</a></strong></em> to find details outlining the accessibility of our layout and our accessibility initiatives.</p>
- <p>
- <a>Official Website</a>
- </p>' WHERE id = '427cf0c2-cda4-4bad-9b07-188999160bfd';
 UPDATE events SET description = '<p>A celebration of our student artists and community members. Enjoy art, light bites, and a special live performance by the CAPE band Dandelites from North-Grand High School.</p>
 <p>This event coincides with Perspective(s), CAPE’s annual exhibition featuring artwork by more than 400 after-school student artists from 10 schools across Chicago and West Chicago.</p>
 <p>Learn more and RSVP here: https://secure.qgiv.com/for/dtxtsa/event/perpesctivesclosing/</p>
@@ -1842,11 +1832,11 @@ While situated within a month of recognition, softly it remains, moves beyond ce
  <p>
  <a>Official Website</a>
  </p>' WHERE id = '994f64ee-6ee8-4822-bc4a-3877bbdb5059';
-UPDATE events SET description = '<p>in a quieter way: refusing acceleration a durational performance by joseph ravens</p>
+UPDATE events SET description = '<p>in a quieter way: refusing acceleration a durational performance by joseph ravens</p>
 <p>The installation is a living archive and the body serves as a temporary index. A figure moves slowly. Marking and unmarking. Making and unmaking. Negotiating negative space. Extending and fragmenting across rigid structures and elastic time.</p>
 <p>Duration is the spine of the work. Repetition makes time visible. Transformation emerges quietly because the performance refuses to hurry, inviting accidental viewers to catch fragments, moments, and shifts that might otherwise go unnoticed.</p>
 <p>Grab a coffee at one of the charming cafés nearby and sit with the artist for a while to watch the work unfold over time.</p>
-<p>🗓 SUN 01 MAR 2026 ⏰ 9AM to noon 📍 Evanston Art Center &gt; 1717 Central St</p>
+<p>🗓 SUN 01 MAR 2026 ⏰ 9AM to noon 📍 Evanston Art Center &gt; 1717 Central St</p>
 <p>This piece is part of CHOREOGRAPHIC PLACE by David Sundry, Michael Workman, and Michelle Kranicke. Resolutely architectural, the project exists between archive and performance installation. Defibrillator Performance Art Gallery is featured prominently. Open through March 15, with live activations throughout. Parking is available on site. The gallery is steps from the Central stop on the Metra UP-N line.</p>
 <p>IMAGE: Joseph Ravens | Sea Inside Me | Curated by Marita Bullmann | Photo by Thomas Reul | Marie Wolfgang Gallery | Essen, Germany, 2022</p>
  <p>

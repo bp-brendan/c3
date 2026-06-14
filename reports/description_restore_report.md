@@ -1,11 +1,11 @@
 # Description restore — dry run
 Scope: all events
 Supabase events scanned: 36129
-Clean truncations (current is a prefix of the fuller text — safe to apply): 304
-Divergent (scrape fuller but text differs — review before applying): 296
+Clean truncations (current is a prefix of the fuller text — safe to apply): 303
+Divergent (scrape fuller but text differs — review before applying): 297
 Not in scrape & short (live-site backfill candidates): 6
 Unmatched to reference (skipped): 30
-Apply set this run (clean only): 304
+Apply set this run (clean only): 303
 
 ## Clean truncations (largest gain first)
 - 190427 **Isaac Couch: The Blue Works, closing reception** — 740 → 855 chars
@@ -58,7 +58,7 @@ Apply set this run (clean only): 304
 - 186417 **XINGYI ZHAU: Frameworks** — 1124 → 1141 chars
 - 188801 **MOONLIGHT: Out of the Chaos** — 3027 → 3044 chars
 - 187577 **Emma Dwyer and Izze Norman: Public Reading** — 1882 → 1899 chars
-… and 254 more (see restore_descriptions.sql).
+… and 253 more (see restore_descriptions.sql).
 
 ## Divergent — review these (current differs from scrape)
 - 185776 **Figure Drawing Session** — 769 → 1249 chars
@@ -101,7 +101,7 @@ Apply set this run (clean only): 304
 - 188439 **Janny Baek: Life Forms** — 3044 → 3103 chars
 - 187328 **CLEAT Series: Norman Long (Album Release), Regina Martinez** — 2250 → 2309 chars
 - 188962 **Andrew Zarou: Waves of Return of Waves** — 2172 → 2231 chars
-… and 256 more (see restore_divergent.sql).
+… and 257 more (see restore_divergent.sql).
 
 ## Sample before/after (clean, top 3)
 ### 190427 Isaac Couch: The Blue Works, closing reception
