@@ -174,6 +174,47 @@ update events
     )
   );
 
+update events
+  set tags = (
+    select array_agg(distinct t) from (
+      select unnest(coalesce(tags, '{}')) as t
+      union
+      select 
+        case 
+          when c = 'photography' then 'Photography'
+          when c = 'painting' then 'Painting'
+          when c = 'performance' then 'Performance'
+          when c = 'sculpture' then 'Sculpture'
+          when c = 'installation' then 'Installation'
+          when c = 'video' then 'Video'
+          when c = 'film' then 'Film'
+          when c = 'printmaking' then 'Printmaking'
+          when c = 'drawing' then 'Drawing'
+          when c = 'architecture' then 'Architecture'
+          when c = 'collage' then 'Collage'
+          when c = 'ceramics' then 'Ceramics'
+          when c = 'design' then 'Design'
+          when c = 'new-media' then 'New Media'
+          when c = 'sound-art' then 'Sound Art'
+          when c = 'mixed-media' then 'Mixed Media'
+          when c = 'animation' then 'Animation'
+          when c = 'digital-art' then 'Digital Art'
+          when c = 'fiber-art' then 'Fiber Art'
+          when c = 'illustration' then 'Illustration'
+          when c = 'jewelry' then 'Jewelry'
+          when c = 'glass' then 'Glass'
+          when c = 'watercolor' then 'Watercolor'
+          when c = 'pottery' then 'Pottery'
+          when c = 'print' then 'Print'
+          when c = 'video-art' then 'Video Art'
+          when c = 'performance-art' then 'Performance Art'
+          when c = 'graphic-design' then 'Graphic Design'
+        end
+      from unnest(categories) as c
+    ) sub
+  )
+  where categories is not null and array_length(categories, 1) > 0;
+
 -- 5) Light list rows for the public pages: everything an event card shows,
 --    with the (often multi-KB, often raw-HTML) description reduced to a
 --    300-character plain-text excerpt (cards clamp to ~3 lines anyway), the

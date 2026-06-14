@@ -65,6 +65,13 @@ for event in archive_events:
             cats.append(slug)
     if cats:
         event["c"] = sorted(set(cats))
+        
+        # also ensure they are in tags
+        for c in event["c"]:
+            if c not in tags:
+                tags.append(c)
+        event["g"] = sorted(set(tags))
+        
         patched_count += 1
 
 new_json_str = json.dumps(archive_events, ensure_ascii=False)
