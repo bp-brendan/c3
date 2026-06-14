@@ -90,6 +90,15 @@ const legacyIdFromPath = p => {
   return m ? m[1] : null;
 };
 
+// newer events carry events/DATE-<id>-<slug>.html; the older archive stores a
+// bare slug as the path. Reduce both to the trailing slug so we can match the
+// reference by slug when there's no legacy id.
+const slugFromPath = p => {
+  const s = String(p || '').replace(/\.html$/, '').replace(/^events\//, '');
+  const m = s.match(/^\d{4}-\d{2}-\d{2}-\d+-(.+)$/);
+  return m ? m[1] : s;
+};
+
 // --- main -------------------------------------------------------------------
 
 async function main() {
@@ -99,13 +108,26 @@ async function main() {
   }
 
   console.log('Loading reference scrape:', NDJSON);
-  const ref = new Map();
+  const ref = new Map();          // legacy_id -> record
+  const slugCount = new Map();     // slug -> count (to drop ambiguous slugs)
+  const refBySlug = new Map();     // slug -> record (unique slugs only)
   for (const line of fs.readFileSync(NDJSON, 'utf8').split('\n')) {
     if (!line.trim()) continue;
     let d; try { d = JSON.parse(line); } catch { continue; }
     if (d.legacy_id) ref.set(String(d.legacy_id), d);
+    if (d.slug) {
+      slugCount.set(d.slug, (slugCount.get(d.slug) || 0) + 1);
+      refBySlug.set(d.slug, d);
+    }
   }
-  console.log(`Reference events: ${ref.size}`);
+  // a slug that maps to more than one event is ambiguous — don't risk it
+  for (const [slug, n] of slugCount) if (n > 1) refBySlug.delete(slug);
+  const lookup = ev => {
+    const id = legacyIdFromPath(ev.path);
+    if (id && ref.has(id)) return ref.get(id);
+    return refBySlug.get(slugFromPath(ev.path)) || null;
+  };
+  console.log(`Reference: ${ref.size} by id, ${refBySlug.size} by unique slug`);
 
   const supabase = readClient();
   let all = [];
@@ -124,14 +146,13 @@ async function main() {
 
   const updates = [];
   const missingFromScrape = [];
-  let noLegacyId = 0;
+  let unmatched = 0;
 
   for (const ev of all) {
-    const legacyId = legacyIdFromPath(ev.path);
-    if (!legacyId) { noLegacyId++; continue; }
-    const r = ref.get(legacyId);
+    const r = lookup(ev);
     if (!r) {
-      if (toPlain(ev.description).length < 400) missingFromScrape.push({ id: ev.id, legacyId, title: ev.title });
+      unmatched++;
+      if (toPlain(ev.description).length < 400) missingFromScrape.push({ id: ev.id, path: ev.path, title: ev.title });
       continue;
     }
     const fullHtml = sanitizeHtml(r.description_html || r.description_text || '');
@@ -142,7 +163,7 @@ async function main() {
     const isTruncation = fullPlain.length > curPlain.length + 10 &&
       fullPlain.replace(/\s/g, '').startsWith(curPlain.replace(/\s/g, '').slice(0, Math.max(20, curPlain.length - 5)));
     if (isTruncation) {
-      updates.push({ id: ev.id, legacyId, title: ev.title, oldLen: curPlain.length, newLen: fullPlain.length, html: fullHtml });
+      updates.push({ id: ev.id, legacyId: r.legacy_id, title: ev.title, oldLen: curPlain.length, newLen: fullPlain.length, html: fullHtml });
     }
   }
 
@@ -155,7 +176,7 @@ async function main() {
     `Supabase events scanned: ${all.length}`,
     `Truncated (will restore): ${updates.length}`,
     `Not in scrape & short (live-site backfill candidates): ${missingFromScrape.length}`,
-    `Events without a legacy id in path (skipped): ${noLegacyId}`,
+    `Unmatched to reference (skipped): ${unmatched}`,
     '',
     '## Restorations (largest gain first)',
     ...updates.slice(0, 60).map(u => `- ${u.legacyId} **${u.title}** — ${u.oldLen} → ${u.newLen} chars`),
@@ -178,7 +199,7 @@ async function main() {
   for (const u of updates) sql += `UPDATE events SET description = '${u.html.replace(/'/g, "''")}' WHERE id = '${u.id}';\n`;
   fs.writeFileSync(path.join(OUT_DIR, 'restore_descriptions.sql'), sql);
 
-  console.log(`\nTruncated: ${updates.length} | missing-from-scrape: ${missingFromScrape.length} | no-legacy-id: ${noLegacyId}`);
+  console.log(`\nTruncated: ${updates.length} | missing-from-scrape: ${missingFromScrape.length} | unmatched: ${unmatched}`);
   console.log(`Report:  reports/description_restore_report.md`);
   console.log(`SQL:     reports/restore_descriptions.sql`);
 
