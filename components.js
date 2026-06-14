@@ -1,9 +1,9 @@
 (function () {
-  const footerText = `<strong>The Visualist</strong> is a living archive and calendar of exhibitions,
-screenings, performances, and independent art events across Chicagoland, preserving a record
-of the region's visual culture and kept current with community submissions year-round. A project
-of <a class="footer-inline-link" href="https://www.culturemath.org/" target="_blank" rel="noopener">culture/Math</a>,
-a nonprofit supporting the Chicago arts community.`;
+  const footerText = `<strong>The Visualist</strong> is a calendar and archive of the visual arts —
+a living document of our communities and their shared identity as cultural producers in and around
+Chicago, kept current by year-round submissions. A project of <a class="footer-inline-link"
+href="https://www.culturemath.org/" target="_blank" rel="noopener">culture/Math</a>, a nonprofit
+supporting the Chicago arts community.`;
 
   // hosted_button_id from the PayPal form on thevisualist.org/about/
   const DONATE_URL = 'https://www.paypal.com/donate?hosted_button_id=947PHJMCQD9Q4';
