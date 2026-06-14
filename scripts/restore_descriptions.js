@@ -31,6 +31,7 @@ const OUT_DIR = path.join(__dirname, '..', 'reports');
 
 const args = process.argv.slice(2);
 const APPLY = args.includes('--apply');
+const INCLUDE_DIVERGENT = args.includes('--include-divergent');
 const sinceArg = args.indexOf('--since');
 const SINCE = sinceArg >= 0 ? args[sinceArg + 1] : null;
 
@@ -85,6 +86,14 @@ const sanitizeHtml = raw => {
     .trim();
 };
 
+// fold case, curly quotes, dashes, nbsp and whitespace for prefix comparison
+const norm = s => String(s || '').toLowerCase()
+  .replace(/[‘’‚‛]/g, "'")
+  .replace(/[“”„]/g, '"')
+  .replace(/[–—−]/g, '-')
+  .replace(/ /g, ' ')
+  .replace(/\s+/g, '');
+
 const legacyIdFromPath = p => {
   const m = String(p || '').match(/events\/\d{4}-\d{2}-\d{2}-(\d+)-/);
   return m ? m[1] : null;
@@ -134,7 +143,10 @@ async function main() {
   let start = 0;
   const limit = 1000;
   while (true) {
-    let q = supabase.from('events').select('id, path, title, description').range(start, start + limit - 1);
+    // stable order is required — without it PostgREST .range() pagination
+    // returns overlapping/missing rows and the counts wobble between runs
+    let q = supabase.from('events').select('id, path, title, description')
+      .order('id', { ascending: true }).range(start, start + limit - 1);
     if (SINCE) q = q.gte('event_date', SINCE);
     const { data, error } = await q;
     if (error) { console.error('Fetch error:', error.message); process.exit(1); }
@@ -144,7 +156,8 @@ async function main() {
   }
   console.log(`Fetched ${all.length} events from Supabase${SINCE ? ` (since ${SINCE})` : ''}.`);
 
-  const updates = [];
+  const clean = [];      // current is a prefix of the fuller reference — safe
+  const divergent = [];  // reference is longer but current isn't its prefix — review
   const missingFromScrape = [];
   let unmatched = 0;
 
@@ -158,50 +171,58 @@ async function main() {
     const fullHtml = sanitizeHtml(r.description_html || r.description_text || '');
     const curPlain = toPlain(ev.description);
     const fullPlain = toPlain(fullHtml);
-    // restore only when the reference is clearly longer AND the current text is
-    // a leading slice of it — i.e. a genuine truncation, not a different edit
-    const isTruncation = fullPlain.length > curPlain.length + 10 &&
-      fullPlain.replace(/\s/g, '').startsWith(curPlain.replace(/\s/g, '').slice(0, Math.max(20, curPlain.length - 5)));
-    if (isTruncation) {
-      updates.push({ id: ev.id, legacyId: r.legacy_id, title: ev.title, oldLen: curPlain.length, newLen: fullPlain.length, html: fullHtml });
-    }
+    if (fullPlain.length <= curPlain.length + 10) continue; // current already full/longer — keep it
+    const rec = { id: ev.id, legacyId: r.legacy_id, title: ev.title, oldLen: curPlain.length, newLen: fullPlain.length, html: fullHtml };
+    // fold quotes/dashes/nbsp/whitespace/case so a genuine truncation with minor
+    // encoding drift between DB and scrape still reads as a clean prefix
+    const curN = norm(curPlain), fullN = norm(fullPlain);
+    const isPrefix = !curN || fullN.startsWith(curN.slice(0, Math.max(20, curN.length - 5)));
+    (isPrefix ? clean : divergent).push(rec);
   }
-
-  updates.sort((a, b) => (b.newLen - b.oldLen) - (a.newLen - a.oldLen));
+  clean.sort((a, b) => (b.newLen - b.oldLen) - (a.newLen - a.oldLen));
+  divergent.sort((a, b) => (b.newLen - b.oldLen) - (a.newLen - a.oldLen));
+  // for a canonical DB we want every post complete; --include-divergent also
+  // applies the cases where the scrape is fuller but text diverged from current
+  const updates = INCLUDE_DIVERGENT ? clean.concat(divergent) : clean;
+  const sqlFor = list => list.map(u => `UPDATE events SET description = '${u.html.replace(/'/g, "''")}' WHERE id = '${u.id}';`).join('\n') + '\n';
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const md = [
     '# Description restore — dry run',
     `Scope: ${SINCE ? `events since ${SINCE}` : 'all events'}`,
     `Supabase events scanned: ${all.length}`,
-    `Truncated (will restore): ${updates.length}`,
+    `Clean truncations (current is a prefix of the fuller text — safe to apply): ${clean.length}`,
+    `Divergent (scrape fuller but text differs — review before applying): ${divergent.length}`,
     `Not in scrape & short (live-site backfill candidates): ${missingFromScrape.length}`,
     `Unmatched to reference (skipped): ${unmatched}`,
+    `Apply set this run (${INCLUDE_DIVERGENT ? 'clean + divergent' : 'clean only'}): ${updates.length}`,
     '',
-    '## Restorations (largest gain first)',
-    ...updates.slice(0, 60).map(u => `- ${u.legacyId} **${u.title}** — ${u.oldLen} → ${u.newLen} chars`),
-    updates.length > 60 ? `… and ${updates.length - 60} more (see SQL).` : '',
+    '## Clean truncations (largest gain first)',
+    ...clean.slice(0, 50).map(u => `- ${u.legacyId} **${u.title}** — ${u.oldLen} → ${u.newLen} chars`),
+    clean.length > 50 ? `… and ${clean.length - 50} more (see restore_descriptions.sql).` : '',
     '',
-    '## Sample before/after (top 3)',
-    ...updates.slice(0, 3).flatMap(u => [
+    '## Divergent — review these (current differs from scrape)',
+    ...divergent.slice(0, 40).map(u => `- ${u.legacyId} **${u.title}** — ${u.oldLen} → ${u.newLen} chars`),
+    divergent.length > 40 ? `… and ${divergent.length - 40} more (see restore_divergent.sql).` : '',
+    '',
+    '## Sample before/after (clean, top 3)',
+    ...clean.slice(0, 3).flatMap(u => [
       `### ${u.legacyId} ${u.title}`,
       `OLD (${u.oldLen}): ${all.find(e => e.id === u.id).description?.slice(0, 280) || ''}`,
       `NEW (${u.newLen}): ${u.html.slice(0, 400)}`,
       ''
     ]),
-    '',
     '## Missing from scrape (backfill from thevisualist.org)',
-    ...missingFromScrape.slice(0, 40).map(m => `- ${m.legacyId} ${m.title}`),
+    ...missingFromScrape.slice(0, 60).map(m => `- ${m.title} (${m.path})`),
   ].join('\n');
   fs.writeFileSync(path.join(OUT_DIR, 'description_restore_report.md'), md);
+  fs.writeFileSync(path.join(OUT_DIR, 'restore_descriptions.sql'), '-- Clean truncations (safe)\n' + sqlFor(clean));
+  fs.writeFileSync(path.join(OUT_DIR, 'restore_divergent.sql'), '-- Divergent: scrape is fuller but differs from current — review\n' + sqlFor(divergent));
 
-  let sql = '-- Restore full descriptions truncated at ingest (review before running)\n';
-  for (const u of updates) sql += `UPDATE events SET description = '${u.html.replace(/'/g, "''")}' WHERE id = '${u.id}';\n`;
-  fs.writeFileSync(path.join(OUT_DIR, 'restore_descriptions.sql'), sql);
-
-  console.log(`\nTruncated: ${updates.length} | missing-from-scrape: ${missingFromScrape.length} | unmatched: ${unmatched}`);
+  console.log(`\nClean: ${clean.length} | divergent: ${divergent.length} | missing-from-scrape: ${missingFromScrape.length} | unmatched: ${unmatched}`);
+  console.log(`Apply set: ${updates.length} (${INCLUDE_DIVERGENT ? 'clean + divergent' : 'clean only'})`);
   console.log(`Report:  reports/description_restore_report.md`);
-  console.log(`SQL:     reports/restore_descriptions.sql`);
+  console.log(`SQL:     reports/restore_descriptions.sql  (+ restore_divergent.sql)`);
 
   if (APPLY) {
     console.log(`\n--apply: writing ${updates.length} descriptions to Supabase...`);
