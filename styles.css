@@ -2935,6 +2935,27 @@ body.admin-overlay-open {
   background: transparent !important;
 }
 
+/* visible affordance, shown only when the blurb actually overflows its clamp
+   (markClampedDescriptions adds .is-clamped after measuring) so a mid-word cut
+   no longer reads as missing text */
+.description-more-link {
+  display: none;
+  margin-top: 0.35rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--content-ink-muted);
+}
+.clamp-lines.is-clamped + .description-more-link {
+  display: inline-block;
+}
+.description-more-link:hover {
+  color: var(--content-ink);
+}
+
 /* ---- Skeleton UI ------------------------------------------- */
 .skeleton { pointer-events: none; }
 .skeleton-image {

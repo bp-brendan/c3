@@ -455,6 +455,7 @@ a nonprofit supporting the Chicago arts community.`;
       rel.add('noopener');
       link.setAttribute('rel', [...rel].join(' '));
     });
+    markClampedDescriptions(root);
   };
 
   const initExternalLinkObserver = () => {
@@ -1396,7 +1397,20 @@ if (tagline) {
     text = cleanExcerptText(text);
     const trail = String(text).match(/(\.{3}|…)\s*$/);
     const body = trail ? String(text).slice(0, trail.index).replace(/\s+$/, '') + '…' : String(text);
-    return `<p class="event-description clamp-lines">${escapeHtml(body)}<a href="${escapeHtml(href || '')}" class="description-fade-link" aria-label="View event details" tabindex="-1"></a></p>`;
+    // the clamp can cut mid-word at line 4, which reads as missing text; pair it
+    // with a "Read more" link revealed only when the text is actually clamped
+    // (markClampedDescriptions adds .is-clamped after measuring)
+    return `<p class="event-description clamp-lines">${escapeHtml(body)}<a href="${escapeHtml(href || '')}" class="description-fade-link" aria-label="View event details" tabindex="-1"></a></p><a href="${escapeHtml(href || '')}" class="description-more-link">Read more →</a>`;
+  };
+
+  // a clamped paragraph hides its trailing text behind a fade; reveal the
+  // sibling "Read more" link only on the ones that overflow their 4 lines
+  const markClampedDescriptions = root => {
+    if (!root || !root.querySelectorAll) return;
+    const items = root.matches?.('.clamp-lines') ? [root] : root.querySelectorAll('.clamp-lines');
+    items.forEach(p => {
+      p.classList.toggle('is-clamped', p.scrollHeight - p.clientHeight > 1);
+    });
   };
 
   const eventTagMarkup = (title, href) => tagLinks(eventDetails(title, href).g);
