@@ -1,4 +1,4 @@
--- Divergent: scrape is fuller but differs from current — review
+-- Conflicts: current has content the scrape lacks — REVIEW each before running
 UPDATE events SET description = '<p>This three-hour session features a live model and offers artists of all levels the opportunity to explore the human form through drawing.<br>
 Figure Drawing Session: Timeless Bodies<br>
 Date: Sunday, December 7, 2025<br>

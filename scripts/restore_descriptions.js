@@ -164,7 +164,10 @@ async function main() {
   console.log(`Fetched ${all.length} events from Supabase${SINCE ? ` (since ${SINCE})` : ''}.`);
 
   const clean = [];      // current is a prefix of the fuller reference — safe
-  const divergent = [];  // reference is longer but current isn't its prefix — review
+  const additive = [];   // current isn't a prefix but is fully contained in the
+                         // scrape (header prepended / body reformatted) — safe
+  const conflict = [];   // current has content the scrape lacks (e.g. CANCELED)
+                         // — hold for manual review
   const missingFromScrape = [];
   let unmatched = 0;
 
@@ -184,13 +187,18 @@ async function main() {
     // encoding drift between DB and scrape still reads as a clean prefix
     const curN = norm(curPlain), fullN = norm(fullPlain);
     const isPrefix = !curN || fullN.startsWith(curN.slice(0, Math.max(20, curN.length - 5)));
-    (isPrefix ? clean : divergent).push(rec);
+    // additive: everything the DB says still appears verbatim in the scrape, so
+    // applying it only adds (a prepended header, reflowed body); a conflict is
+    // where the DB carries words the scrape dropped (an edit like CANCELED)
+    const isContained = curN.length > 30 && fullN.includes(curN);
+    if (isPrefix || isContained) (isPrefix ? clean : additive).push(rec);
+    else conflict.push(rec);
   }
-  clean.sort((a, b) => (b.newLen - b.oldLen) - (a.newLen - a.oldLen));
-  divergent.sort((a, b) => (b.newLen - b.oldLen) - (a.newLen - a.oldLen));
-  // for a canonical DB we want every post complete; --include-divergent also
-  // applies the cases where the scrape is fuller but text diverged from current
-  const updates = INCLUDE_DIVERGENT ? clean.concat(divergent) : clean;
+  const byGain = (a, b) => (b.newLen - b.oldLen) - (a.newLen - a.oldLen);
+  clean.sort(byGain); additive.sort(byGain); conflict.sort(byGain);
+  // clean + additive are both safe to apply; --include-divergent also applies
+  // the conflicts (only do this if you've reviewed restore_conflicts.sql)
+  const updates = INCLUDE_DIVERGENT ? clean.concat(additive, conflict) : clean.concat(additive);
   const sqlFor = list => list.map(u => `UPDATE events SET description = '${u.html.replace(/'/g, "''")}' WHERE id = '${u.id}';`).join('\n') + '\n';
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -198,38 +206,33 @@ async function main() {
     '# Description restore — dry run',
     `Scope: ${SINCE ? `events since ${SINCE}` : 'all events'}`,
     `Supabase events scanned: ${all.length}`,
-    `Clean truncations (current is a prefix of the fuller text — safe to apply): ${clean.length}`,
-    `Divergent (scrape fuller but text differs — review before applying): ${divergent.length}`,
+    `Clean (current is a prefix of the fuller text — safe): ${clean.length}`,
+    `Additive (current fully contained in the scrape — safe): ${additive.length}`,
+    `Conflict (current has content the scrape lacks — HOLD, review): ${conflict.length}`,
     `Not in scrape & short (live-site backfill candidates): ${missingFromScrape.length}`,
     `Unmatched to reference (skipped): ${unmatched}`,
-    `Apply set this run (${INCLUDE_DIVERGENT ? 'clean + divergent' : 'clean only'}): ${updates.length}`,
+    `Apply set this run (${INCLUDE_DIVERGENT ? 'clean + additive + conflict' : 'clean + additive'}): ${updates.length}`,
     '',
-    '## Clean truncations (largest gain first)',
-    ...clean.slice(0, 50).map(u => `- ${u.legacyId} **${u.title}** — ${u.oldLen} → ${u.newLen} chars`),
-    clean.length > 50 ? `… and ${clean.length - 50} more (see restore_descriptions.sql).` : '',
+    '## Additive (safe to apply — largest gain first)',
+    ...additive.slice(0, 50).map(u => `- ${u.legacyId} **${u.title}** — ${u.oldLen} → ${u.newLen} chars`),
+    additive.length > 50 ? `… and ${additive.length - 50} more (see restore_additive.sql).` : '',
     '',
-    '## Divergent — review these (current differs from scrape)',
-    ...divergent.slice(0, 40).map(u => `- ${u.legacyId} **${u.title}** — ${u.oldLen} → ${u.newLen} chars`),
-    divergent.length > 40 ? `… and ${divergent.length - 40} more (see restore_divergent.sql).` : '',
+    '## Conflict — review before applying (current has words the scrape dropped)',
+    ...conflict.slice(0, 60).map(u => `- ${u.legacyId} **${u.title}** — ${u.oldLen} → ${u.newLen} chars`),
+    conflict.length > 60 ? `… and ${conflict.length - 60} more (see restore_conflicts.sql).` : '',
     '',
-    '## Sample before/after (clean, top 3)',
-    ...clean.slice(0, 3).flatMap(u => [
-      `### ${u.legacyId} ${u.title}`,
-      `OLD (${u.oldLen}): ${all.find(e => e.id === u.id).description?.slice(0, 280) || ''}`,
-      `NEW (${u.newLen}): ${u.html.slice(0, 400)}`,
-      ''
-    ]),
     '## Missing from scrape (backfill from thevisualist.org)',
     ...missingFromScrape.slice(0, 60).map(m => `- ${m.title} (${m.path})`),
   ].join('\n');
   fs.writeFileSync(path.join(OUT_DIR, 'description_restore_report.md'), md);
   fs.writeFileSync(path.join(OUT_DIR, 'restore_descriptions.sql'), '-- Clean truncations (safe)\n' + sqlFor(clean));
-  fs.writeFileSync(path.join(OUT_DIR, 'restore_divergent.sql'), '-- Divergent: scrape is fuller but differs from current — review\n' + sqlFor(divergent));
+  fs.writeFileSync(path.join(OUT_DIR, 'restore_additive.sql'), '-- Additive: scrape adds to current, nothing lost (safe)\n' + sqlFor(additive));
+  fs.writeFileSync(path.join(OUT_DIR, 'restore_conflicts.sql'), '-- Conflicts: current has content the scrape lacks — REVIEW each before running\n' + sqlFor(conflict));
 
-  console.log(`\nClean: ${clean.length} | divergent: ${divergent.length} | missing-from-scrape: ${missingFromScrape.length} | unmatched: ${unmatched}`);
-  console.log(`Apply set: ${updates.length} (${INCLUDE_DIVERGENT ? 'clean + divergent' : 'clean only'})`);
-  console.log(`Report:  reports/description_restore_report.md`);
-  console.log(`SQL:     reports/restore_descriptions.sql  (+ restore_divergent.sql)`);
+  console.log(`\nClean: ${clean.length} | additive: ${additive.length} | conflict: ${conflict.length} | missing: ${missingFromScrape.length} | unmatched: ${unmatched}`);
+  console.log(`Apply set: ${updates.length} (${INCLUDE_DIVERGENT ? 'clean+additive+conflict' : 'clean+additive'})`);
+  console.log(`Report: reports/description_restore_report.md`);
+  console.log(`SQL: restore_descriptions.sql, restore_additive.sql, restore_conflicts.sql`);
 
   if (APPLY) {
     console.log(`\n--apply: writing ${updates.length} descriptions to Supabase...`);

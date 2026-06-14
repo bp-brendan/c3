@@ -1,66 +1,17 @@
 # Description restore — dry run
 Scope: all events
 Supabase events scanned: 36129
-Clean truncations (current is a prefix of the fuller text — safe to apply): 303
-Divergent (scrape fuller but text differs — review before applying): 297
+Clean (current is a prefix of the fuller text — safe): 0
+Additive (current fully contained in the scrape — safe): 0
+Conflict (current has content the scrape lacks — HOLD, review): 297
 Not in scrape & short (live-site backfill candidates): 6
 Unmatched to reference (skipped): 30
-Apply set this run (clean only): 303
+Apply set this run (clean + additive): 0
 
-## Clean truncations (largest gain first)
-- 190427 **Isaac Couch: The Blue Works, closing reception** — 740 → 855 chars
-- 187747 **Many Times: Closing** — 211 → 321 chars
-- 189017 **Isaac Couch: The Blue Works** — 716 → 816 chars
-- 189255 **Dawn Holder: What We Gatherd** — 1702 → 1801 chars
-- 189426 **Onion City: Mutable Records** — 777 → 876 chars
-- 189298 **Onion City: Invisible Cities** — 653 → 750 chars
-- 190257 **2026 Studio Sale** — 656 → 747 chars
-- 187622 **Hay _____ en Casa** — 749 → 839 chars
-- 186796 **Avant to Live! The Films of Craig Baldwin with guest Brett Kashmere** — 2402 → 2492 chars
-- 189796 **Art Salon at Oliva Gallery: Artist-Led Critique & Conversation** — 1391 → 1477 chars
-- 188198 **The Power of Her Voice: Native Matriarchs Leading Change** — 655 → 740 chars
-- 190220 **Spring 2026 Puppetry Workshop: Puppet Design Strategies (Level 1)** — 640 → 719 chars
-- 190818 **Sixty on Stage: Poetry & Prose!** — 902 → 981 chars
-- 190147 **Vivian Lu & Rose Tianyu Qi: Don’t Look At Me** — 1643 → 1719 chars
-- 189258 **Mary Ann Trzyna: Earthly Delights** — 1842 → 1915 chars
-- 186641 **Creative Space Grand Opening at Douglass** — 519 → 588 chars
-- 188088 **PLAY [002]** — 293 → 357 chars
-- 186758 **Stop Worshipping Corpses Screening** — 192 → 253 chars
-- 186352 **SECRET DREAMS** — 808 → 863 chars
-- 189273 **Marina Kuchinski: Close to the Ground** — 1675 → 1722 chars
-- 190577 **Closing Night Celebration for Without Permission** — 746 → 793 chars
-- 185717 **Collaboration in Progress: Normal Editions Workshop at 50** — 7775 → 7821 chars
-- 186587 **Valentine’s Day Pop-up Art Market** — 325 → 370 chars
-- 187262 **Pay What You Want Art Show** — 762 → 791 chars
-- 188476 **Oren Pinhassi: Into Your Arm’s Length** — 3396 → 3424 chars
-- 187921 **Immigrant Owned: Photographer Jonathan Castillo in Conversation** — 3380 → 3403 chars
-- 190218 **The Sanctuary Circle** — 1697 → 1717 chars
-- 189325 **The Lovers Screening at Dorothy** — 737 → 757 chars
-- 189324 **Artists Book-Making Workshop led by Yoonshin Park** — 538 → 557 chars
-- 188745 **Glory! Glory! Salon Talk** — 497 → 516 chars
-- 190840 **Kathryn Rodrigues: Homesick** — 895 → 914 chars
-- 187922 **Zosha Warpeha** — 2455 → 2473 chars
-- 188146 **Mike Cloud & Nyeema Morgan: Story Structure, Pt. 2** — 3152 → 3170 chars
-- 189396 **Impressions of a City: Drawings by Marvin Young** — 1358 → 1376 chars
-- 190250 **Late Wednesdays: May** — 957 → 975 chars
-- 187164 **Embodying the Spirit** — 2867 → 2885 chars
-- 189840 **School of the Art Institute of Chicago Fashion Design Runway Presentation 2026 (MATINEE)** — 698 → 716 chars
-- 188083 **Lecture in Photography: Joel Sternfeld** — 1158 → 1176 chars
-- 187405 **Hai-Wen Lin & Ivan David Ng: Mountain Call** — 1706 → 1724 chars
-- 189333 **Alison Ruttan: The Paradox of Inaction** — 1931 → 1949 chars
-- 189893 **First Annual Chicago and Vicinity Riso Exhibition** — 2946 → 2964 chars
-- 189837 **School of the Art Institute of Chicago Fashion Design Runway Presentation 2026** — 659 → 677 chars
-- 190583 **Her** — 612 → 629 chars
-- 188965 **Taj Matumbi: The Lower World** — 2460 → 2477 chars
-- 190643 **TRIAGE: Relic Activation Lab (Dr AL)** — 1104 → 1121 chars
-- 187371 **Hunter Foster: Involition** — 3925 → 3942 chars
-- 187541 **ATP Visiting Artist Talk: Rush Baker IV** — 2982 → 2999 chars
-- 186417 **XINGYI ZHAU: Frameworks** — 1124 → 1141 chars
-- 188801 **MOONLIGHT: Out of the Chaos** — 3027 → 3044 chars
-- 187577 **Emma Dwyer and Izze Norman: Public Reading** — 1882 → 1899 chars
-… and 253 more (see restore_descriptions.sql).
+## Additive (safe to apply — largest gain first)
 
-## Divergent — review these (current differs from scrape)
+
+## Conflict — review before applying (current has words the scrape dropped)
 - 185776 **Figure Drawing Session** — 769 → 1249 chars
 - 189662 **Convergence** — 323 → 546 chars
 - 189193 **Ben Blount & Catherine Jacobi: Good Trouble** — 7237 → 7411 chars
@@ -101,44 +52,27 @@ Apply set this run (clean only): 303
 - 188439 **Janny Baek: Life Forms** — 3044 → 3103 chars
 - 187328 **CLEAT Series: Norman Long (Album Release), Regina Martinez** — 2250 → 2309 chars
 - 188962 **Andrew Zarou: Waves of Return of Waves** — 2172 → 2231 chars
-… and 257 more (see restore_divergent.sql).
-
-## Sample before/after (clean, top 3)
-### 190427 Isaac Couch: The Blue Works, closing reception
-OLD (740): <p>Closing Reception: May 9, 1:00–5:00 PM</p>
-          <p>Originally from Western Kentucky, I have carried the textures, tensions, and rhythms of the South to Chicago. My work, that is rooted in fashion, but never confined by it, has earned fellowships with Luminarts (2021), the
-NEW (855): <p>Closing Reception: May 9, 1:00–5:00 PM</p>
-<p>Originally from Western Kentucky, I have carried the textures, tensions, and rhythms of the South to Chicago. My work, that is rooted in fashion, but never confined by it, has earned fellowships with Luminarts (2021), the Arts Club of Chicago (2023-24), Chicago Artist Coalition (2024-26), and has been shown in spaces from the Comfort Station, Co-Pro
-
-### 187747 Many Times: Closing
-OLD (211): <p>Join us for the closing of Many Times! The last time to see this incredible show. Featuring works by:</p>
-          <p>Maya Nguyen</p>
-          <p>David Vosburg</p>
-          <p>Liz Flood</p>
-          <p>Dylan Bissonette</p>
-          <p>Avin HannahSmith</p>
-          <p>Bec
-NEW (321): <p>Join us for the closing of Many Times! The last time to see this incredible show. Featuring works by:<br>
-Maya Nguyen<br>
-David Vosburg<br>
-Liz Flood<br>
-Dylan Bissonette<br>
-Avin HannahSmith<br>
-Beck Corrigan<br>
-Marcela Okeke<br>
-olivier (x)<br>
-Phoebe Chen<br>
-James Hosking<br>
-Emilka Wolniewicz<br>
-Johnny Doley<br>
-Madison Mae Parker &amp; Dennissa Young</p>
-<p>&nbsp;</p>
- <p>
- <a>Official 
-
-### 189017 Isaac Couch: The Blue Works
-OLD (716): <p>Originally from Western Kentucky, I have carried the textures, tensions, and rhythms of the South to Chicago. My work, that is rooted in fashion, but never confined by it, has earned fellowships with Luminarts (2021), the Arts Club of Chicago (2023-24), Chicago Artist Coalitio
-NEW (816): <p>Originally from Western Kentucky, I have carried the textures, tensions, and rhythms of the South to Chicago. My work, that is rooted in fashion, but never confined by it, has earned fellowships with Luminarts (2021), the Arts Club of Chicago (2023-24), Chicago Artist Coalition (2024-26), and has been shown in spaces from the Comfort Station, Co-Prosperity Sphere, Epiphany Center of the Arts, t
+- 188831 **Noelle Africh: Signal** — 3605 → 3664 chars
+- 190753 **Naked From The Horizon Down – Closing Reception** — 500 → 557 chars
+- 189805 **Hearth: Kai Boone, Carmen Casillas, Fatimah Farooqi, Beck Lech, and Maddalena Piazza** — 7684 → 7738 chars
+- 186570 **Ross Sawyers: The Future Still Isn’t What It Used to Be** — 4391 → 4445 chars
+- 190536 **Phantom Frame** — 11353 → 11407 chars
+- 189190 **LATINITUDES: A Collection of Latin American Modern Architecture** — 5792 → 5846 chars
+- 189547 **Glimmers: Performance by Sebastian Hernandez & Ále ‘Celeste’ Campos** — 5053 → 5107 chars
+- 190574 **Beyond the Black Rainbow: Justin Beachler, Laveen Gammie, Tristan Higginbotham, Nico Ramirez Rosas** — 6650 → 6704 chars
+- 190523 **Hazel Katz: WHO GETS TO FLY** — 3102 → 3155 chars
+- 190070 **Good Trouble: Ben Blount + Catherine Jacobi Artists Talk** — 2865 → 2918 chars
+- 188157 **Irene Hsiao: Mond(e): 月亮代表我的心** — 3520 → 3569 chars
+- 189589 **A Hair Never Dissolves** — 2893 → 2941 chars
+- 187082 **Carroll Dunham Conversation and Book Launch** — 1179 → 1226 chars
+- 188935 **Thomas Holton: Warm Numb, Jagged Spiral, Hey Teddy!** — 1009 → 1056 chars
+- 189264 **Gaylen Gerber** — 390 → 437 chars
+- 187983 **Artist Walkthrough with Luftwerk and Kate Joyce** — 1985 → 2032 chars
+- 189802 **Garry Noland: Loot Box** — 2381 → 2423 chars
+- 186567 **Bias Cut** — 248 → 290 chars
+- 187560 **Chicago Poetry Center Presents: Blue Hour featuring Jalen Eutsey + Michelle Penuloza** — 2510 → 2552 chars
+- 186752 **Perry Pollock: Interplay** — 2543 → 2585 chars
+… and 237 more (see restore_conflicts.sql).
 
 ## Missing from scrape (backfill from thevisualist.org)
 - Helena Celewicz: Fundamentally Human (events/2026-06-12-190738-helena-celewicz-fundamentally-human.html)
