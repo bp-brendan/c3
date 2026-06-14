@@ -50,14 +50,6 @@
             </svg>
             <span>Dates</span>
           </button>
-          <button type="button" class="tag-invoke tag-toggle" aria-expanded="false" aria-label="Tags">
-            <svg class="tag-invoke-icon" viewBox="0 0 20 20" aria-hidden="true">
-              <path d="M2.5 2.5h7.2l7.8 7.8-7.2 7.2-7.8-7.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
-              <circle cx="6.6" cy="6.6" r="1.5" fill="currentColor"></circle>
-            </svg>
-            <span>Tags</span>
-            <em class="tag-invoke-count" hidden></em>
-          </button>
           <button type="button" class="tag-invoke category-toggle" aria-expanded="false" aria-label="Categories">
             <svg class="tag-invoke-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="3" y="3" width="7" height="7"></rect>
@@ -67,6 +59,14 @@
             </svg>
             <span>Categories</span>
             <em class="category-invoke-count" hidden></em>
+          </button>
+          <button type="button" class="tag-invoke tag-toggle" aria-expanded="false" aria-label="Tags">
+            <svg class="tag-invoke-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M2.5 2.5h7.2l7.8 7.8-7.2 7.2-7.8-7.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+              <circle cx="6.6" cy="6.6" r="1.5" fill="currentColor"></circle>
+            </svg>
+            <span>Tags</span>
+            <em class="tag-invoke-count" hidden></em>
           </button>
         </div>
         <!-- open panels hang off the sticky band so they stay in view at any scroll depth -->
@@ -88,15 +88,6 @@
             </label>
           </div>
         </div>
-        <div class="filter-panel tag-panel" hidden>
-          <div class="tag-panel-head">
-            <input type="search" class="tag-panel-filter" placeholder="Filter tags" aria-label="Filter tags">
-          </div>
-          <div class="date-presets" style="margin-bottom: 0.75rem;">
-            <button type="button" class="preset-chip tag-clear" disabled>Clear selected</button>
-          </div>
-          <div class="tag-panel-list"></div>
-        </div>
         <div class="filter-panel category-panel" hidden>
           <div class="tag-panel-head">
             <input type="search" class="category-panel-filter" placeholder="Filter categories" aria-label="Filter categories">
@@ -105,6 +96,15 @@
             <button type="button" class="preset-chip category-clear" disabled>Clear selected</button>
           </div>
           <div class="category-panel-list tag-panel-list"></div>
+        </div>
+        <div class="filter-panel tag-panel" hidden>
+          <div class="tag-panel-head">
+            <input type="search" class="tag-panel-filter" placeholder="Filter tags" aria-label="Filter tags">
+          </div>
+          <div class="date-presets" style="margin-bottom: 0.75rem;">
+            <button type="button" class="preset-chip tag-clear" disabled>Clear selected</button>
+          </div>
+          <div class="tag-panel-list"></div>
         </div>
       </div>
     <div id="archive-chrome" hidden>
