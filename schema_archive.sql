@@ -130,6 +130,16 @@ update events
   set on_view_end = parse_on_view_end(on_view_through, event_date)
   where on_view_end is distinct from parse_on_view_end(on_view_through, event_date);
 
+-- 4d) Categories metadata: Elevate visual art category tags into a dedicated column
+alter table events add column if not exists categories text[];
+
+update events
+  set categories = array(
+    select t from unnest(tags) as t 
+    where lower(t) in ('photography', 'painting', 'performance', 'sculpture', 'installation', 'video', 'film', 'printmaking', 'drawing', 'architecture', 'collage', 'ceramics', 'design', 'new media', 'sound art', 'mixed media', 'animation', 'digital art', 'fiber art', 'illustration', 'jewelry', 'glass', 'watercolor', 'pottery', 'print', 'video art', 'performance art', 'graphic design')
+  )
+  where categories is null;
+
 -- 5) Light list rows for the public pages: everything an event card shows,
 --    with the (often multi-KB, often raw-HTML) description reduced to a
 --    300-character plain-text excerpt (cards clamp to ~3 lines anyway), the
@@ -141,7 +151,7 @@ drop view if exists events_list;
 create view events_list with (security_invoker = true) as
   select
     id, title, permalink, path, venue, venue_url, address, map_url,
-    event_date, image_url, tags, time_window, on_view_through, on_view_end, top_pick,
+    event_date, image_url, tags, categories, time_window, on_view_through, on_view_end, top_pick,
     series_first, series_last,
     left(regexp_replace(
       regexp_replace(coalesce(description, ''), '<[^>]+>', ' ', 'g'),

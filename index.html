@@ -58,6 +58,16 @@
             <span>Tags</span>
             <em class="tag-invoke-count" hidden></em>
           </button>
+          <button type="button" class="tag-invoke category-toggle" aria-expanded="false" aria-label="Categories">
+            <svg class="tag-invoke-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Category</span>
+            <em class="category-invoke-count" hidden></em>
+          </button>
         </div>
         <!-- open panels hang off the sticky band so they stay in view at any scroll depth -->
         <div class="filter-panel date-panel" hidden>
@@ -84,6 +94,12 @@
             <button type="button" class="tag-clear" hidden>Clear selected</button>
           </div>
           <div class="tag-panel-list"></div>
+        </div>
+        <div class="filter-panel category-panel" hidden>
+          <div class="tag-panel-head">
+            <button type="button" class="category-clear" hidden>Clear selected</button>
+          </div>
+          <div class="category-panel-list tag-panel-list"></div>
         </div>
       </div>
     <div id="archive-chrome" hidden>
@@ -1005,11 +1021,19 @@
 
     // tag picker: toggleable chips that filter the listing in place
     const tagList = document.querySelector('.tag-panel-list');
+    const categoryList = document.querySelector('.category-panel-list');
     const tagPanelFilter = document.querySelector('.tag-panel-filter');
     const tagClear = document.querySelector('.tag-clear');
+    const categoryClear = document.querySelector('.category-clear');
     const activeTags = new Set();
+    const activeCategories = new Set();
+
+    const ART_CATEGORIES = ["photography", "painting", "performance", "sculpture", "installation", "video", "film", "printmaking", "drawing", "architecture", "collage", "ceramics", "design", "new-media", "sound-art", "mixed-media", "animation", "digital-art", "fiber-art", "illustration", "jewelry", "glass", "watercolor", "pottery", "print", "video-art", "performance-art", "graphic-design"];
 
     const tagInvokeCount = document.querySelector('.tag-invoke-count');
+    const categoryInvokeCount = document.querySelector('.category-invoke-count');
+    const categoryToggle = document.querySelector('.category-toggle');
+    const categoryPanel = document.querySelector('.category-panel');
     const activeTagsBar = document.getElementById('active-tags');
     const tagNameFor = slug => (TAGS_2026.find(t => t.s === slug) || {}).n || slug;
 
@@ -1017,12 +1041,20 @@
       tagInvokeCount.hidden = !activeTags.size;
       tagInvokeCount.textContent = activeTags.size;
       tagToggle.classList.toggle('has-tags', activeTags.size > 0);
+      
+      categoryInvokeCount.hidden = !activeCategories.size;
+      categoryInvokeCount.textContent = activeCategories.size;
+      categoryToggle.classList.toggle('has-tags', activeCategories.size > 0);
     };
     const paintTagChips = () => {
       for (const chip of tagList.children) {
         chip.classList.toggle('active', activeTags.has(chip.dataset.slug));
       }
+      for (const chip of categoryList.children) {
+        chip.classList.toggle('active', activeCategories.has(chip.dataset.slug));
+      }
       tagClear.hidden = !activeTags.size;
+      categoryClear.hidden = !activeCategories.size;
       updateTagInvoke();
     };
     const formatFilterDate = iso => {
@@ -1053,13 +1085,16 @@
       const tagPills = [...activeTags].map(slug =>
         `<button type="button" class="active-tag-pill" data-slug="${slug}" aria-label="Remove ${escapeHtml(tagNameFor(slug))}">${escapeHtml(tagNameFor(slug))}<span aria-hidden="true">&times;</span></button>`
       ).join('');
-      if (!datePill && !tagPills) {
+      const categoryPills = [...activeCategories].map(slug =>
+        `<button type="button" class="active-tag-pill" data-cat="${slug}" aria-label="Remove ${escapeHtml(tagNameFor(slug))}">${escapeHtml(tagNameFor(slug))}<span aria-hidden="true">&times;</span></button>`
+      ).join('');
+      if (!datePill && !tagPills && !categoryPills) {
         activeTagsBar.hidden = true;
         activeTagsBar.innerHTML = '';
         return;
       }
       activeTagsBar.hidden = false;
-      activeTagsBar.innerHTML = datePill + tagPills + '<button type="button" class="tag-clear-all">Clear all</button>';
+      activeTagsBar.innerHTML = datePill + tagPills + categoryPills + '<button type="button" class="tag-clear-all">Clear all</button>';
       activeTagsBar.querySelectorAll('[data-filter="date"]').forEach(pill => {
         pill.addEventListener('click', () => {
           clearDateFilter();
@@ -1072,9 +1107,16 @@
           applyFilterChange();
         });
       });
+      activeTagsBar.querySelectorAll('[data-cat]').forEach(pill => {
+        pill.addEventListener('click', () => {
+          activeCategories.delete(pill.dataset.cat);
+          applyFilterChange();
+        });
+      });
       activeTagsBar.querySelector('.tag-clear-all').addEventListener('click', () => {
         clearDateFilter();
         activeTags.clear();
+        activeCategories.clear();
         applyFilterChange();
       });
     };
@@ -1085,17 +1127,31 @@
       syncHash();
     };
     const buildTagChips = () => {
-      if (tagList.childElementCount) return;
-      tagList.innerHTML = TAGS_2026.map(t =>
-        `<button type="button" class="tag-chip" data-slug="${t.s}">${escapeHtml(t.n)} <span>${t.c}</span></button>`
-      ).join('');
-      for (const chip of tagList.children) {
-        chip.addEventListener('click', () => {
-          const slug = chip.dataset.slug;
-          if (activeTags.has(slug)) activeTags.delete(slug);
-          else activeTags.add(slug);
-          applyFilterChange();
-        });
+      if (!tagList.childElementCount) {
+        tagList.innerHTML = TAGS_2026.filter(t => !ART_CATEGORIES.includes(t.s)).map(t =>
+          `<button type="button" class="tag-chip" data-slug="${t.s}">${escapeHtml(t.n)} <span>${t.c}</span></button>`
+        ).join('');
+        for (const chip of tagList.children) {
+          chip.addEventListener('click', () => {
+            const slug = chip.dataset.slug;
+            if (activeTags.has(slug)) activeTags.delete(slug);
+            else activeTags.add(slug);
+            applyFilterChange();
+          });
+        }
+      }
+      if (!categoryList.childElementCount) {
+        categoryList.innerHTML = ART_CATEGORIES.map(s => TAGS_2026.find(t => t.s === s)).filter(Boolean).map(t =>
+          `<button type="button" class="tag-chip" data-slug="${t.s}">${escapeHtml(t.n)} <span>${t.c}</span></button>`
+        ).join('');
+        for (const chip of categoryList.children) {
+          chip.addEventListener('click', () => {
+            const slug = chip.dataset.slug;
+            if (activeCategories.has(slug)) activeCategories.delete(slug);
+            else activeCategories.add(slug);
+            applyFilterChange();
+          });
+        }
       }
       paintTagChips();
     };
@@ -1103,10 +1159,26 @@
       const open = tagPanel.hidden;
       if (open) buildTagChips();
       setPanel(tagPanel, tagToggle, open, 'tag');
-      if (open) setPanel(datePanel, dateToggle, false, 'date');
+      if (open) {
+          setPanel(datePanel, dateToggle, false, 'date');
+          setPanel(categoryPanel, categoryToggle, false, 'category');
+      }
+    });
+    categoryToggle.addEventListener('click', () => {
+      const open = categoryPanel.hidden;
+      if (open) buildTagChips();
+      setPanel(categoryPanel, categoryToggle, open, 'category');
+      if (open) {
+          setPanel(datePanel, dateToggle, false, 'date');
+          setPanel(tagPanel, tagToggle, false, 'tag');
+      }
     });
     tagClear.addEventListener('click', () => {
       activeTags.clear();
+      applyFilterChange();
+    });
+    categoryClear.addEventListener('click', () => {
+      activeCategories.clear();
       applyFilterChange();
     });
     tagPanelFilter.addEventListener('input', () => {
@@ -1138,6 +1210,7 @@
       if (dateFrom.value && dateFrom.value !== minDate) params.set('from', dateFrom.value);
       if (dateTo.value && dateTo.value !== maxDate) params.set('to', dateTo.value);
       if (activeTags.size) params.set('tags', [...activeTags].join(','));
+      if (activeCategories.size) params.set('cats', [...activeCategories].join(','));
       const encoded = params.toString();
       return encoded ? `?${encoded}` : '';
     };
@@ -1172,6 +1245,7 @@
         setPanel(datePanel, dateToggle, true, 'date');
       }
       (restored.get('tags') || '').split(',').filter(Boolean).forEach(slug => activeTags.add(slug));
+      (restored.get('cats') || '').split(',').filter(Boolean).forEach(slug => activeCategories.add(slug));
       renderActiveFilters();
       updateTagInvoke();
     }
@@ -1225,6 +1299,7 @@
       w: e.time_window,
       x: e.excerpt !== undefined ? e.excerpt : e.description,
       g: e.tags || [],
+      c: e.categories || [],
       i: e.image_url,
       vu: e.venue_url,
       o: e.on_view_through,
@@ -1504,11 +1579,13 @@
       const today = Visualist.todayIso();
       const eventTagSlugs = event =>
         event._slugs || (event._slugs = new Set((event.g || []).map(slugForTag)));
+      const eventCategorySlugs = event =>
+        event._catSlugs || (event._catSlugs = new Set((event.c || []).map(slugForTag)));
       // an event occupies its whole run (opening through on-view close), so a
       // date range matches when the run overlaps it, not just the opening day
       const eventEnd = event =>
         event._end || (event._end = Visualist.onViewEndIso(event) || event.d);
-      const filtersActive = Boolean(q) || activeTags.size > 0 ||
+      const filtersActive = Boolean(q) || activeTags.size > 0 || activeCategories.size > 0 ||
         (from && from !== minDate) || (to && to !== maxDate);
       if (!filtersActive) {
         archiveFiltered = [];
@@ -1522,17 +1599,19 @@
         updateArchiveSentinels();
         return;
       }
-monthIndexShowing = false;
+      monthIndexShowing = false;
       archiveFiltered = archiveEvents.filter(event => {
-        const text = `${event.t || ''} ${event.v || ''} ${(event.g || []).join(' ')}`.toLowerCase();
+        const text = `${event.t || ''} ${event.v || ''} ${(event.g || []).join(' ')} ${(event.c || []).join(' ')}`.toLowerCase();
         if (from && to && from === to) {
             return (!q || text.includes(q)) && event.d === from &&
-              (!activeTags.size || [...activeTags].every(slug => eventTagSlugs(event).has(slug)));
+              (!activeTags.size || [...activeTags].every(slug => eventTagSlugs(event).has(slug))) &&
+              (!activeCategories.size || [...activeCategories].every(slug => eventCategorySlugs(event).has(slug)));
         }
         return (!q || text.includes(q)) &&
           (!from || eventEnd(event) >= from) &&
           (!to || event.d <= to) &&
-          (!activeTags.size || [...activeTags].every(slug => eventTagSlugs(event).has(slug)));
+          (!activeTags.size || [...activeTags].every(slug => eventTagSlugs(event).has(slug))) &&
+          (!activeCategories.size || [...activeCategories].every(slug => eventCategorySlugs(event).has(slug)));
       });
 
       const currentStartIndex = archiveFiltered.findIndex(event => event.d >= today);
