@@ -4,10 +4,19 @@
 # session — old listing styles, missing descriptions — until a hard refresh.
 # max-age=0 + must-revalidate makes the browser revalidate every load; the
 # ETag turns unchanged files into a cheap 304, so this costs a round trip, not
-# a re-download.
-/*.js
+# a re-download. (Pages _headers matches exact paths / prefixes, not *.ext
+# globs, so each referenced asset is listed explicitly.)
+/components.js
   Cache-Control: public, max-age=0, must-revalidate
-/*.css
+/supabaseClient.js
+  Cache-Control: public, max-age=0, must-revalidate
+/tags2026.js
+  Cache-Control: public, max-age=0, must-revalidate
+/cardthumbs.js
+  Cache-Control: public, max-age=0, must-revalidate
+/venueNeighborhoods.js
+  Cache-Control: public, max-age=0, must-revalidate
+/styles.css
   Cache-Control: public, max-age=0, must-revalidate
 
 # Images are write-once uploads; let browsers keep them for a week
