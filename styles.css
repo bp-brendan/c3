@@ -422,10 +422,16 @@ body {
   white-space: nowrap;
 }
 
-.preset-chip:hover,
-.tag-chip:hover {
+.preset-chip:hover:not(:disabled),
+.tag-chip:hover:not(:disabled) {
   border-color: var(--content-ink);
   color: var(--content-ink);
+}
+
+.preset-chip:disabled,
+.tag-chip:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
 .tag-chip.active {

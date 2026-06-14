@@ -91,13 +91,18 @@
         <div class="filter-panel tag-panel" hidden>
           <div class="tag-panel-head">
             <input type="search" class="tag-panel-filter" placeholder="Filter tags" aria-label="Filter tags">
-            <button type="button" class="tag-clear" hidden>Clear selected</button>
+          </div>
+          <div class="date-presets" style="margin-bottom: 0.75rem;">
+            <button type="button" class="preset-chip tag-clear" disabled>Clear selected</button>
           </div>
           <div class="tag-panel-list"></div>
         </div>
         <div class="filter-panel category-panel" hidden>
           <div class="tag-panel-head">
-            <button type="button" class="category-clear" hidden>Clear selected</button>
+            <input type="search" class="category-panel-filter" placeholder="Filter categories" aria-label="Filter categories">
+          </div>
+          <div class="date-presets" style="margin-bottom: 0.75rem;">
+            <button type="button" class="preset-chip category-clear" disabled>Clear selected</button>
           </div>
           <div class="category-panel-list tag-panel-list"></div>
         </div>
@@ -1054,8 +1059,8 @@
       for (const chip of categoryList.children) {
         chip.classList.toggle('active', activeCategories.has(chip.dataset.slug));
       }
-      tagClear.hidden = !activeTags.size;
-      categoryClear.hidden = !activeCategories.size;
+      tagClear.disabled = !activeTags.size;
+      categoryClear.disabled = !activeCategories.size;
       updateTagInvoke();
     };
     const formatFilterDate = iso => {
@@ -1183,9 +1188,18 @@
       activeCategories.clear();
       applyFilterChange();
     });
+    const categoryPanelFilter = document.querySelector('.category-panel-filter');
+
     tagPanelFilter.addEventListener('input', () => {
       const q = tagPanelFilter.value.trim().toLowerCase();
       for (const chip of tagList.children) {
+        chip.style.display = chip.textContent.toLowerCase().includes(q) ? '' : 'none';
+      }
+    });
+
+    categoryPanelFilter.addEventListener('input', () => {
+      const q = categoryPanelFilter.value.trim().toLowerCase();
+      for (const chip of categoryList.children) {
         chip.style.display = chip.textContent.toLowerCase().includes(q) ? '' : 'none';
       }
     });
