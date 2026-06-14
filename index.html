@@ -117,6 +117,7 @@
       <div id="top-v-peek-container" class="week-peek week-peek-top-v skeleton">
         <div class="event-date">
           <span class="event-date-day" style="color: #41b6e6;">Top V</span>
+          <em class="event-date-num">Published in collaboration with Bad at Sports.</em>
         </div>
         <p class="week-peek-copy skeleton-text" style="width: 80%; max-width: 42rem; height: 1.2rem; margin-bottom: 1.2rem;"></p>
         <div class="thumb-river-frame">
@@ -877,8 +878,9 @@
         container.innerHTML = `
           <div class="event-date">
             <span class="event-date-day"><a href="tag.html?tag=top-v" class="top-pick-heading-link">Top V</a></span>
+            <em class="event-date-num">Published in collaboration with <a href="https://badatsports.com/author/visualist/" target="_blank" rel="noopener" class="inline-link">Bad at Sports</a>.</em>
           </div>
-          <p class="week-peek-copy">The top 5 visual arts events happening in Chicagoland ${startStr} – ${endStr}<br><em>Published in collaboration with <a href="https://badatsports.com/author/visualist/" target="_blank" rel="noopener" class="inline-link">Bad at Sports</a>.</em></p>
+          <p class="week-peek-copy">The top 5 visual arts events happening in Chicagoland ${startStr} – ${endStr}</p>
           ${thumbRiverHtml(items)}
         `;
         initThumbRivers(container);
